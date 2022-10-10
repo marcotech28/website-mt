@@ -1,0 +1,52 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}
+    nom du produit
+{% endblock %}
+
+{% block body %}
+    <div class="product_top">
+        <img src="https://picsum.photos/80/80" alt="">
+        <div class="product_small_infos">
+            <p>Nom du produit</p>
+            <p>Une description du produit</p>
+            <a href="#">Plus d'informations...</a>
+            <p>Faire une demande de devis...</p>
+        </div>
+    </div>
+
+    <div class="sommaire">
+        <ul>
+            <li>Description</li>
+            <li>Caractéristiques</li>
+            <li>Vidéos</li>
+            <li>Documentations</li>
+            <li>Avantages</li>
+        </ul>
+    </div>
+
+    <div class="avantages">
+    <p>Un avantage</p>
+    <p>Un avantage</p>
+    <p>Un avantage</p>
+    <p>Un avantage</p>
+    <p>Un avantage</p>
+    </div>
+
+    <div class="description">
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Incidunt iusto possimus quae reiciendis cumque, dolores accusamus unde esse voluptate delectus cum velit porro a praesentium, necessitatibus magni tenetur provident consequatur.</p>
+    </div>
+
+    <div class="caracteristiques">
+        <h3>Caractéristiques</h3>
+        TODO : afficher les caractéristiques
+    </div>
+
+    <div class="video">
+        <h3>Vidéos</h3>
+        <iframe width="560" height="315" src="https://www.youtube.com/embed/MiAaHzh-lBA" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+        <iframe width="560" height="315" src="https://www.youtube.com/embed/MiAaHzh-lBA" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+        <p>Nous vous informons que Marconnet technologies™ dispose d’une chaîne youtube. N’hésitez pas à vous abonner et à activer les notifications pour ne rater aucune vidéo en cliquant <a href="https://www.youtube.com/channel/UCBVjkgVyozExIOlx5O40zxQ">ici</a>.</p>
+    </div>
+
+{% endblock %}
