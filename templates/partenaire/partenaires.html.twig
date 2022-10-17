@@ -1,43 +1,38 @@
 {% extends 'base.html.twig' %}
 
-{% block title %}Nos partenaires{% endblock %}
+{% block title %}Nos partenaires
+{% endblock %}
 
 {% block body %}
 
-<ol>
-    <li>Accueil</li>
-    <li>Partenairescompo</li>
-</ol>
+	{% include "partenaire/_partenaires_top.html.twig" with {
+        'marque': 'Stricker',
+        'logo' : 'images/stricker_logo.png' } %}
 
-<h3>Stricker</h3>
+	<p>Stricker développe et conçoit des handbikes depuis plus de 20 ans. C'est le premier fabricant de Handbikes au monde !
+																																																																															Tous les handbikes sont réalisés sur-mesure en fonction de la morphologie de chaque personne.
+																																																																															Stricker a la gamme de Handbikes la plus large du marché :</p>
 
-<img src="https://picsum.photos/50/50" alt="">
+	<ul>
+		<li>Tout Electrique en 12", 16" et 20"</li>
+		<li>Manuels</li>
+		<li>Manuels avec assistance électrique</li>
+	</ul>
 
-<p>Stricker développe et conçoit des handbikes depuis plus de 20 ans. C'est le premier fabricant de Handbikes au monde !
-Tous les handbikes sont réalisés sur-mesure en fonction de la morphologie de chaque personne.
-Stricker a la gamme de Handbikes la plus large du marché :</p>
+	<p>
+		Tous les matériels peuvent être équipéS d'un équipement pour personnes tétraplégiques.
+	</p>
+	<p>
+		Equipements disponibles pour tous les handicaps.
+	</p>
 
-<ul>
-    <li>Tout Electrique en 12", 16" et 20"</li>
-    <li>Manuels</li>
-    <li>Manuels avec assistance électrique</li>
-</ul>
+	{% include "partenaire/_partenaires_bottom.html.twig" with {
+        'youtube': 'https://www.youtube.com/embed/FhaAFwz2WlM',
+        'website' : 'www.google.fr',
+        'adresse' : 'Une adresse',
+        'codePostal' : '75000',
+        'ville' : 'Paris',
+        'pays' : 'FRANCE'} %}
 
-<p>
-Tous les matériels peuvent être équipéS d'un équipement pour personnes tétraplégiques.
-
-Equipements disponibles pour tous les handicaps.
-</p>
-
-<iframe width="560" height="315" src="https://www.youtube.com/embed/FhaAFwz2WlM" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-
-<img src="https://picsum.photos/40/40" alt="">
-<p>http://www.stricker-handbikes.de/en/</p>
-
-<img src="https://picsum.photos/40/40" alt="">
-<p>	
-Klotzbergstraße 64
-77815 Bühl
-Allemagne</p>
 
 {% endblock %}

@@ -1,47 +1,68 @@
 {% extends 'base.html.twig' %}
 
-{% block title %}Hello AboutController!{% endblock %}
+{% block title %}Hello AboutController!
+{% endblock %}
 
 {% block body %}
 
-<ol>
-    <li>Accueil</li>
-    <li>Qui sommes-nous ?</li>
-</ol>
+	<ol>
+		<li>Accueil</li>
+		<li>Qui sommes-nous ?</li>
+	</ol>
 
-<h3>À propos de Marconnet technologies™</h3>
+	<div class="row">
+		<h1>À propos de Marconnet technologies™</h1>
+	</div>
 
-<h4>Présentation de la société</h4>
+	<div class="row">
+		<h2>Présentation de la société</h2>
+	</div>
 
-<p>Marconnet technologies™ commercialise depuis plus de 13 ans une large gamme de produits sur mesure destinée aux personnes à mobilité réduite.
+	<div class="row">
+		<p>Marconnet technologies™ commercialise depuis plus de 13 ans une large gamme de produits sur mesure destinée aux personnes à mobilité réduite.</p>
+		<p>Notre écoute et nos conseils vous permettront de vous orienter vers le matériel le plus adapté à vos besoins afin de vous satisfaire pleinement.</p>
+		<p>Notre objectif : Votre satisfaction !</p>
+		<p>Les produits commercialisés ont été testés et approuvés par un grand nombre de professionnels de la santé et par les utilisateurs finaux. De nombreux témoignages attestent de la qualité des produits.</p>
+		<p>Nous choisissons uniquement un fabricant par gamme de matériels que nous avons soigneusement sélectionné afin de proposer les meilleurs matériels sur chaque segment de marché.</p>
+	</div>
 
-Notre écoute et nos conseils vous permettront de vous orienter vers le matériel le plus adapté à vos besoins afin de vous satisfaire pleinement.
+	{% include "about/_about_partenaires.html.twig" with {
+        'logoEntreprise' : 'https://picsum.photos/50/50',
+        'shortDescription' : 'Handbikes manuel, à assistance électrique et tout électrique'
+    } %}
 
-Notre objectif : Votre satisfaction !
+	{% include "about/_about_partenaires.html.twig" with {
+        'logoEntreprise' : 'https://picsum.photos/50/50',
+        'shortDescription' : 'Handbikes manuel, à assistance électrique et tout électrique'
+    } %}
 
-Les produits commercialisés ont été testés et approuvés par un grand nombre de professionnels de la santé et par les utilisateurs finaux. De nombreux témoignages attestent de la qualité des produits.
+	{% include "about/_about_partenaires.html.twig" with {
+        'logoEntreprise' : 'https://picsum.photos/50/50',
+        'shortDescription' : 'Handbikes manuel, à assistance électrique et tout électrique'
+    } %}
 
-Nous choisissons uniquement un fabricant par gamme de matériels que nous avons soigneusement sélectionné afin de proposer les meilleurs matériels sur chaque segment de marché.
-</p>
+	{% include "about/_about_partenaires.html.twig" with {
+        'logoEntreprise' : 'https://picsum.photos/50/50',
+        'shortDescription' : 'Handbikes manuel, à assistance électrique et tout électrique'
+    } %}
 
-<img src="https://picsum.photos/70/70" alt="">
-<p>Handbikes manuel, à assistance électrique et tout électrique</p>
 
-<img src="https://picsum.photos/70/70" alt="">
-<p>Handbikes manuel, à assistance électrique et tout électrique</p>
+	<div class="row"></div>
+	<div class="row">
+		<p>N'hésitez pas à solliciter votre revendeur habituel pour toutes questions ou essais de matériels.</p>
+	</div>
 
-<img src="https://picsum.photos/70/70" alt="">
-<p>Handbikes manuel, à assistance électrique et tout électrique</p>
-
-<p>N'attendez plus et contactez-nous pour plus d’informations sur nos différents matériels. 
-</p>
-
-<h4>Notre réseau de distribution national</h4>
-
-<p>Marconnet technologies™ s'appuie sur un réseau de distribution national avec grandes enseignes de revendeurs médicaux  mais aussi avec les revendeurs indépendants. Vous trouverez près de chez vous la solution adaptée à vos besoins.
-
-N'hésitez pas à solliciter votre revendeur habituel pour toutes questions ou essais de matériels.</p>
-
-<img src="https://picsum.photos/70/70" alt="">
-
+	<div class="row">
+		<div class="col">
+			<div class="row">
+				<h2>Notre réseau de distribution national</h2>
+			</div>
+			<div class="row">
+				<p>Marconnet technologies™ s'appuie sur un réseau de distribution national avec grandes enseignes de revendeurs médicaux  mais aussi avec les revendeurs indépendants. Vous trouverez près de chez vous la solution adaptée à vos besoins.</p>
+			</div>
+		</div>
+		<div class="col">
+			<img src="https://picsum.photos/70/70" alt="">
+		</div>
+	</div>
 {% endblock %}

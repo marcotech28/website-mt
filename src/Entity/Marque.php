@@ -19,6 +19,9 @@ class Marque
     #[ORM\Column(length: 255, nullable: true)]
     private ?string $catalogue = null;
 
+    #[ORM\Column(length: 255)]
+    private ?string $nom = null;
+
     public function getId(): ?int
     {
         return $this->id;
@@ -44,6 +47,18 @@ class Marque
     public function setCatalogue(?string $catalogue): self
     {
         $this->catalogue = $catalogue;
+
+        return $this;
+    }
+
+    public function getNom(): ?string
+    {
+        return $this->nom;
+    }
+
+    public function setNom(string $nom): self
+    {
+        $this->nom = $nom;
 
         return $this;
     }

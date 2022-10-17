@@ -5,28 +5,42 @@
 
 {% block body %}
 
-	<h3>Demander une démonstration</h3>
+	<div class="row">
+		<h1>Demander une démonstration</h1>
+	</div>
 
-	<p>Vous souhaitez essayer un matériel avant de l'acheter ? Vous avez entièrement raison !
-	</p>
+	<div class="row">
+		<p>Vous souhaitez essayer un matériel avant de l'acheter ? Vous avez entièrement raison !</p>
+	</div>
 
-	<p>Deux possibilités s'offrent à vous :
-	</p>
-	<ul>
-		<li>Essayer le matériel dans notre showroom à Epernon en prenant RDV via le formulaire ci-dessous. Si vous vous déplacez jusqu’à notre showroom, nous vous offrirons un bon d’achat. Voir détails ici.</li>
-		<li>Nous venons vous rencontrer directement à domicile : les essais sont payants en fonction de la zone géographique.</li>
-	</ul>
+	<div class="row">
+		<p>Deux possibilités s'offrent à vous :</p>
+		<ul>
+			<li>Essayer le matériel dans notre showroom à Epernon en prenant RDV via le formulaire ci-dessous. Si vous vous déplacez jusqu’à notre showroom, nous vous offrirons un bon d’achat. Voir détails ici.</li>
+			<li>Nous venons vous rencontrer directement à domicile : les essais sont payants en fonction de la zone géographique.</li>
+		</ul>
+	</div>
 
-	<p>Veuillez dûment compléter le formulaire pour traiter votre demande dans les meilleurs délais. Dès la demande reçue, nous vous recontacterons dans les plus brefs délais.
-	</p>
+	<div class="row">
+		<p>Veuillez dûment compléter le formulaire pour traiter votre demande dans les meilleurs délais. Dès la demande reçue, nous vous recontacterons dans les plus brefs délais.</p>
+	</div>
 
-	<p>Pour les professionnels, nous pouvons vous envoyer directement le matériel à votre magasin.</p>
+	<div class="row">
+		<p>Pour les professionnels, nous pouvons vous envoyer directement le matériel à votre magasin.</p>
+	</div>
 
-	TODO : formulaire démonstration
 
-	<p>Les champs marqués d’un * sont obligatoires.</p>
+	<div class="row">
+		{{form_start(formView)}}
 
-	<p>Demander une démonstration</p>
+		{{form_widget(formView)}}
+
+		<p class="champsObligat">Les champs marqués d'un * sont obligatoires.</p>
+
+		<button type="button" class="btn btn-primary">Demander une démonstration</button>
+
+		{{form_end(formView)}}
+	</div>
 
 
 {% endblock %}
