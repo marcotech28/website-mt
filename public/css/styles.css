@@ -1,16 +1,12 @@
 .footer {
     background-color: #0F434E;
     color: white;
-    height: 500000px;
+    margin-top: 50px;
 }
 
 .titreFooter {
     font-weight: bold;
     font-size: 1.5em;
-}
-
-.bottomFooter {
-    font-size: 0.85em;
 }
 
 .btn-primary,
@@ -34,4 +30,55 @@
     font-size: 1.5em;
     font-weight: bold;
     color: #0F434E;
+}
+
+.h1 {
+    color: #0F434E;
+}
+
+.youtube {
+    width: 550px;
+    height: 300px;
+}
+
+.navbar_bottom {
+    color: white;
+    padding: 30px;
+}
+
+.navbar_logo {
+    width: 300px;
+    height: auto;
+}
+
+.top_footer,
+.content_footer {
+    border-bottom: 1px solid white;
+}
+
+.content_footer {
+    font-size: 0.85em;
+}
+
+.bottom_footer {
+    font-size: 0.85em;
+}
+
+.top_footer,
+.bottom_footer,
+.content_footer {
+    padding: 13px;
+}
+
+.footer_logo {
+    width: 230px;
+}
+
+#test {
+    fill: yellow;
+}
+
+.newsletter {
+    background-color: #F3F3F3;
+    height: 200px;
 }

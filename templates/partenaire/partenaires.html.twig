@@ -10,8 +10,8 @@
         'logo' : 'images/stricker_logo.png' } %}
 
 	<p>Stricker développe et conçoit des handbikes depuis plus de 20 ans. C'est le premier fabricant de Handbikes au monde !
-																																																																															Tous les handbikes sont réalisés sur-mesure en fonction de la morphologie de chaque personne.
-																																																																															Stricker a la gamme de Handbikes la plus large du marché :</p>
+																																																																																													Tous les handbikes sont réalisés sur-mesure en fonction de la morphologie de chaque personne.
+																																																																																													Stricker a la gamme de Handbikes la plus large du marché :</p>
 
 	<ul>
 		<li>Tout Electrique en 12", 16" et 20"</li>
@@ -28,11 +28,41 @@
 
 	{% include "partenaire/_partenaires_bottom.html.twig" with {
         'youtube': 'https://www.youtube.com/embed/FhaAFwz2WlM',
-        'website' : 'www.google.fr',
+        'website' : 'https://www.stricker-handbikes.de/en/',
         'adresse' : 'Une adresse',
         'codePostal' : '75000',
         'ville' : 'Paris',
-        'pays' : 'FRANCE'} %}
+        'pays' : 'FRANCE'}
+	%}
 
+	{% include "partenaire/_partenaires_top.html.twig" with {
+        'marque': 'Stricker',
+        'logo' : 'images/stricker_logo.png' } %}
+
+	<p>Stricker développe et conçoit des handbikes depuis plus de 20 ans. C'est le premier fabricant de Handbikes au monde !
+																																																																																													Tous les handbikes sont réalisés sur-mesure en fonction de la morphologie de chaque personne.
+																																																																																													Stricker a la gamme de Handbikes la plus large du marché :</p>
+
+	<ul>
+		<li>Tout Electrique en 12", 16" et 20"</li>
+		<li>Manuels</li>
+		<li>Manuels avec assistance électrique</li>
+	</ul>
+
+	<p>
+		Tous les matériels peuvent être équipéS d'un équipement pour personnes tétraplégiques.
+	</p>
+	<p>
+		Equipements disponibles pour tous les handicaps.
+	</p>
+
+	{% include "partenaire/_partenaires_bottom.html.twig" with {
+        'youtube': 'https://www.youtube.com/embed/FhaAFwz2WlM',
+        'website' : 'https://www.stricker-handbikes.de/en/',
+        'adresse' : 'Une adresse',
+        'codePostal' : '75000',
+        'ville' : 'Paris',
+        'pays' : 'FRANCE'}
+	%}
 
 {% endblock %}

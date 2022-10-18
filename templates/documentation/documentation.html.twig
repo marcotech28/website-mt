@@ -1,20 +1,35 @@
 {% extends 'base.html.twig' %}
 
-{% block title %}Hello DocumentationController!{% endblock %}
+{% block title %}Documentations
+{% endblock %}
 
 {% block body %}
 
-<ol>
-    <li>Accueil</li>
-    <li>Documentations</li>
-</ol>
+	<div class="container-xl">
+		<nav aria-label="breadcrumb">
+			<ol class="breadcrumb">
+				<li class="breadcrumb-item">
+					<a href="{{path('homepage')}}">Accueil</a>
+				</li>
+				<li class="breadcrumb-item active" aria-current="page">Documentations</li>
+			</ol>
+		</nav>
 
-<h3>Nos tarifs et documentations destinés aux revendeurs médicaux</h3>
+		<div class="row">
+			<div class="col-12">
+				<h1>Nos tarifs et documentations destinés aux revendeurs médicaux</h1>
+			</div>
+		</div>
 
-<p>Découvrez toutes nos documentations avec les prix hors taxe sur nos produits et nos marques.</p>
+		<div class="row">
+			<div class="col-12">
+				<p>Découvrez toutes nos documentations avec les prix hors taxe sur nos produits et nos marques.</p>
+			</div>
+		</div>
 
-<img src="https://picsum.photos/100/100" alt="">
-<img src="https://picsum.photos/100/100" alt="">
-<img src="https://picsum.photos/100/100" alt="">
-
+		{# les catalogues seront générés via un include #}
+		{# <div class="row">
+				{% include "documentation/_marqueCatalogue.html.twig" %}
+			</div> #}
+	</div>
 {% endblock %}

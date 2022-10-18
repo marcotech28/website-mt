@@ -4,43 +4,62 @@
 {% endblock %}
 
 {% block body %}
+	<div class="container-fluid">
+		<div class="container-xl">
 
-	<div class="row">
-		<h1>Nous contacter</h1>
-	</div>
+			<nav aria-label="breadcrumb">
+				<ol class="breadcrumb">
+					<li class="breadcrumb-item">
+						<a href="{{path('homepage')}}">Accueil</a>
+					</li>
+					<li class="breadcrumb-item active" aria-current="page">Contact</li>
+				</ol>
+			</nav>
 
-	<div class="row">
-		<p>Besoin d’un renseignement ou d’un devis ? Faites le nous savoir en remplissant ce formulaire. Nous vous recontacterons très prochainement.</p>
-	</div>
-
-	<div class="row">
-		<div class="col-auto">
-			<img src="https://picsum.photos/50/50" alt="">
-		</div>
-		<div class="col-auto">
 			<div class="row">
-				<p>Besoin d'aide ?</p>
+				<div class="col-12">
+					<h1>Nous contacter</h1>
+				</div>
 			</div>
+
 			<div class="row">
-				<p>02 45 26 01 70</p>
+				<div class="col-12">
+					<p>Besoin d’un renseignement ou d’un devis ? Faites le nous savoir en remplissant ce formulaire. Nous vous recontacterons très prochainement.</p>
+				</div>
+			</div>
+
+			<div class="row align-items-center">
+				<div class="col-auto">
+					<img src="https://picsum.photos/50/50" alt="">
+				</div>
+				<div class="col-auto">
+					<div class="row">
+						<div class="col-12">
+							<p>Besoin d'aide ?</p>
+						</div>
+					</div>
+					<div class="row">
+						<div class="col-12">
+							<p>02 45 26 01 70</p>
+						</div>
+					</div>
+				</div>
+			</div>
+
+			<div class="row justify-content-around">
+				<div class="col-6">
+					{{form_start(formView)}}
+
+					{{form_widget(formView)}}
+
+					<button type="button" class="btn btn-primary">Envoyer</button>
+
+					{{form_end(formView)}}
+				</div>
+				<div class="col-6">
+					<iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2638.638083836414!2d1.6816035343273175!3d48.59762818133382!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x47e418e496cd2791%3A0xc4a74471adfe7ab2!2sMARCONNET%20TECHNOLOGIES%E2%84%A2!5e0!3m2!1sfr!2sfr!4v1665396643766!5m2!1sfr!2sfr" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+				</div>
 			</div>
 		</div>
 	</div>
-
-	<div class="row">
-		<div class="col-6">
-			{{form_start(formView)}}
-
-			{{form_widget(formView)}}
-
-			<button type="button" class="btn btn-primary">Envoyer</button>
-
-			{{form_end(formView)}}
-		</div>
-		<div class="col-6">
-			<iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2638.638083836414!2d1.6816035343273175!3d48.59762818133382!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x47e418e496cd2791%3A0xc4a74471adfe7ab2!2sMARCONNET%20TECHNOLOGIES%E2%84%A2!5e0!3m2!1sfr!2sfr!4v1665396643766!5m2!1sfr!2sfr" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
-		</div>
-	</div>
-
-
 {% endblock %}

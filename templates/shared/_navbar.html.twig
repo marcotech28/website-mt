@@ -1,67 +1,69 @@
-<div class="container-xl">
-	<div id="wrap_top">
-		<ul class="navbar">
-			<li>
-				<a href="{{path("homepage")}}"><img src="https://picsum.photos/80/80"></a>
-			</li>
-			<li>
-				<img src="https://picsum.photos/80/80">
-			</li>
-			<li>
-				Besoin d'aide ?
-			</li>
-			<li>
-				02 45 26 01 70
-			</li>
-			<li>
-				<a href="{{path("about")}}">À propos</a>
-			</li>
-			<li>
-				Actualités
-			</li>
-			<li>
-				<a href="{{path("contact")}}">Contact</a>
-			</li>
-			<li>
-				<a href="{{path("demonstration")}}">Démonstration</a>
-			</li>
-			<li>
-				Créer mon compte
-			</li>
-			<li>
-				<a href="{{path("security_login")}}">Se connecter</a>
-			</li>
-		</ul>
+<div
+	class="container-fluid">
+
+	{# navbar-top #}
+	<div style="padding: 10px" class="container-xl">
+		<div class="row row justify-content-between align-items-center">
+			<div class="col-auto">
+				<a href="{{path("homepage")}}"><img class="navbar_logo" src="{{asset('images/logo_mt_navbar.jpg')}}"></a>
+			</div>
+			<div class="col-auto">
+				<div class="row">
+					<div class="col-auto align-items-center">
+						<img src="{{asset('images/telephone.svg')}}" alt="">
+					</div>
+					<div class="col-auto">
+						<div class="row">
+							<div class="col-12">
+								Besoin d'aide ?
+							</div>
+						</div>
+						<div class="row">
+							<div class="col-12">
+								02 45 26 01 70
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="col-auto">
+				<div class="row">
+					<div class="col-auto">
+						<a href="{{path("about")}}">À propos</a>
+					</div>
+					<div class="col-auto">Actualités</div>
+					<div class="col-auto">
+						<a href="{{path("contact")}}">Contact</a>
+					</div>
+					<div class="col-auto">
+						<a href="{{path("demonstration")}}">Démonstration</a>
+					</div>
+					<div class="col-auto">Créer mon compte</div>
+					<div class="col-auto">
+						<a href="{{path("security_login")}}">Se connecter</a>
+					</div>
+				</div>
+			</div>
+		</div>
 	</div>
+</div>
 
+{# navbar-bottom #}
+<div style="background-color: #0F434E" class="container-fluid">
 
-	<div id="wrap_bottom">
-		<ul class="navbar">
-			<li>
-				HANDBIKES
-			</li>
-			<li>
-				TRICYCLES VANRAAM
-			</li>
-			<li>
-				DRAISIN
-			</li>
-			<li>
-				TRICYCLES UTILITAIRES
-			</li>
-			<li>
-				SCOOTERS
-			</li>
-			<li>
-				FAUTEIL TOUS TERRAINS
-			</li>
-			<li>
-				<a href="https://www.marconnet-robotique.com/">ROBOTS
-				</a>
-			</li>
-			<li>
-				AUTRES
-			</li>
-		</ul>
+	<div class="container-xl navbar_bottom">
+
+		<div class="row justify-content-between">
+			<div class="col-auto">HANDBIKES</div>
+			<div class="col-auto">TRICYCLES VANRAAM</div>
+			<div class="col-auto">DRAISIN</div>
+			<div class="col-auto">TRICYCLES UTILITAIRES</div>
+			<div class="col-auto">SCOOTERS</div>
+			<div class="col-auto">FAUTEUILS TOUT TERRAIN</div>
+			<div class="col-auto">
+				<a href="https://www.marconnet-robotique.com/">ROBOTS</a>
+			</div>
+			<div class="col-auto">AUTRES</div>
+		</div>
 	</div>
 </div>
