@@ -1,0 +1,13 @@
+<div class="card">
+    <img src="image.jpg" class="card-img-top" alt="Image produit">
+    <div class="card-body">
+        <h5 class="card-title badge bg-success">Nom du produit</h5>
+        <p class="card-text"><img class="img-fluid" src="ok.svg" style="width: 20px; height: auto;"> Un
+            avantage</p>
+        <p class="card-text"><img class="img-fluid" src="ok.svg" style="width: 20px; height: auto;"> Un
+            2eme avantage</p>
+        <p class="card-text"><img class="img-fluid" src="ok.svg" style="width: 20px; height: auto;"> Un
+            3eme avantage</p>
+        <span class="badge bg-info text-dark">Voir le produit</span>
+    </div>
+</div>

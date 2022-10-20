@@ -4,30 +4,35 @@
 {% endblock %}
 
 {% block body %}
-	<h1>Ouvrir un nouveau compte professionnel</h1>
+	<div class="container-xl">
 
-	<p>Nous vous proposons de vous inscrire afin de pouvoir accéder à Espace revendeur et nous vous enverrons régulièrement une newsletter	.</p>
 
-	{{ form_start(registrationForm) }}
-	{{ form_row(registrationForm.civilite) }}
-	{{ form_row(registrationForm.prenom) }}
-	{{ form_row(registrationForm.nom) }}
-	{{ form_row(registrationForm.email) }}
-	{{ form_row(registrationForm.telephone) }}
-	{{ form_row(registrationForm.nomSociete) }}
-	{{ form_row(registrationForm.siret) }}
-	{{ form_row(registrationForm.pays) }}
-	{{ form_row(registrationForm.adresse) }}
-	{{ form_row(registrationForm.complementAdresse) }}
-	{{ form_row(registrationForm.region) }}
-	{{ form_row(registrationForm.ville) }}
-	{{ form_row(registrationForm.codePostal) }}
-	{{ form_row(registrationForm.plainPassword, {}) }}
-	{{ form_row(registrationForm.newsletter) }}
-	{{ form_row(registrationForm.agreeTerms) }}
+		<h1>Ouvrir un nouveau compte professionnel</h1>
 
-	<button type="submit" class="btn">Register</button>
-	{{ form_end(registrationForm) }}
+		<p>Nous vous proposons de vous inscrire afin de pouvoir accéder à Espace revendeur et nous vous enverrons régulièrement une newsletter	.</p>
 
-	<p>Votre compte sera accessible une fois validé par notre équipe commerciale.</p>
+		{{ form_start(registrationForm) }}
+		{{ form_row(registrationForm.civilite) }}
+		{{ form_row(registrationForm.prenom) }}
+		{{ form_row(registrationForm.nom) }}
+		{{ form_row(registrationForm.email) }}
+		{{ form_row(registrationForm.telephone) }}
+		{{ form_row(registrationForm.nomSociete) }}
+		{{ form_row(registrationForm.siret) }}
+		{{ form_row(registrationForm.pays) }}
+		{{ form_row(registrationForm.adresse) }}
+		{{ form_row(registrationForm.complementAdresse) }}
+		{{ form_row(registrationForm.region) }}
+		{{ form_row(registrationForm.ville) }}
+		{{ form_row(registrationForm.codePostal) }}
+		{{ form_row(registrationForm.plainPassword, {}) }}
+		{{ form_row(registrationForm.newsletter) }}
+		{{ form_row(registrationForm.agreeTerms) }}
+
+		<button type="submit" class="btn">Register</button>
+		{{ form_end(registrationForm) }}
+
+		<p>Votre compte sera accessible une fois validé par notre équipe commerciale.</p>
+
+	</div>
 {% endblock %}

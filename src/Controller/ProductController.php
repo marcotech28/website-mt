@@ -13,4 +13,10 @@ class ProductController extends AbstractController
     {
         return $this->render('product/show.html.twig');
     }
+
+    #[Route('/products', name: 'product_product')]
+    public function listeProduits(): Response
+    {
+        return $this->render('product/liste.html.twig');
+    }
 }
