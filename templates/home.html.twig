@@ -5,66 +5,155 @@
 {% endblock %}
 
 {% block body %}
-	<div class="container-xl">
+<div
+	class="container-xl">
 
-
-		<div class="site_top">
+	{# presentation site #}
+	<div class="row home_top">
+		<div class="col-12">
 			<h1>Marconnet technologies™</h1>
 			<h2>Le spécialiste de la mobilité sur mesure dans le monde du handicap.</h2>
-			<img src="https://picsum.photos/80/80" alt="">
+			<img src="https://picsum.photos/400/400" alt="">
 		</div>
+	</div>
 
+	{# carousel #}
+	<div class="row produits_en_avant">
+		TODO CARAOUSEL
+	</div>
 
-		<div class="produits_en_avant">
-			<h3>Trycicles thérapeuthiques Draisin</h3>
-			<img src="https://picsum.photos/80/80" alt="">
-			<p>Nous avons décidé d'importer une nouvelle gamme de tricycle.
-																																																															Les VELOS UTILITAIRES, destinés aux entreprises, collectivités locales, mairies, établissements de santé ... qui souhaite transporter écologiquement des marchandises ou modifier leur façon de travailler.</p>
-		</div>
-
-		<div class="produits_preferes">
-			<h3>Les produits préférés de nos clients</h3>
-		</div>
-
-		<div class"a_propos">
-			<h3>À propos de Marconnet technologies™</h3>
-
-			<p>Marconnet technologies™ est spécialisée dans la mobilité et unique sur le marché depuis plus de 18 ans.
-																																																															Nous commercialisons des matériels pour améliorer le déplacement des gens en perte de mobilité.</p>
-
-			TODO: METTRE LES BLOCS D'ICONES
-
-			<p>En savoir plus sur Marconnet technologies™</p>
-		</div>
-
-		<div class="test_materiel">
-			<h3>Nous vous proposons de tester le matériel avant de l'acheter.</h3>
-
-			<p>Assurez-vous que le matériel soit parfaitement adapté à vous en essayant nos produits. Vous pouvez venir au showroom, ou alors, c'est le showroom qui viendra à vous.</p>
-
-			<p>Je souhaite tester le matériel.</p>
-		</div>
-
-		<div class="confiance">
-			<h3>Ils nous ont fait confiance</h3>
-			<p>Depuis plus de 15 ans, Marconnet technologies™ travaille avec des acteurs importants du monde de la santé. Nous sommes fiers d’accompagner des marques leaders.</p>
-			<h4>Des professionnels de santé : Ehpads, ADAPEI, Fondations</h4>
-			<img src="https://picsum.photos/80/80" alt="">
-			<img src="https://picsum.photos/80/80" alt="">
-			<img src="https://picsum.photos/80/80" alt="">
-			<h4>Prestataires de santé à domicile :</h4>
-			<img src="https://picsum.photos/80/80" alt="">
-			<img src="https://picsum.photos/80/80" alt="">
-			<img src="https://picsum.photos/80/80" alt="">
-		</div>
-
-		<div class="container-fluid newsletter">
-			<div class="container-xl">
-				<h3>Inscrivez-vous à notre newsletter</h3>
-				<p>Recevez régulièrement nos actualités et tenez-vous informé des nouveautés.</p>
-				<input type="text" id="email" name="email">
-				<button type="button" class="btn btn-primary">Je m'inscris</button>
+	{# produits préférés #}
+	<div class="produits-preferes">
+		<div class="row">
+			<div class="col-12">
+				<h1>Les produits préférés de nos clients</h1>
 			</div>
+		</div>
+		<div class="row justify-content-around">
+			<div class="col-4">
+				{% include "product/_produit_prefere.html.twig" with {
+					'productName' : 'Un nom de produit',
+					'image' : 'https://picsum.photos/300/300'
+				}%}
+			</div>
+
+			<div class="col-4">
+				{% include "product/_produit_prefere.html.twig" with {
+					'productName' : 'Un nom de produit',
+					'image' : 'https://picsum.photos/300/300'
+				}%}
+			</div>
+
+			<div class="col-4">
+				{% include "product/_produit_prefere.html.twig" with {
+					'productName' : 'Un nom de produit',
+					'image' : 'https://picsum.photos/300/300'
+				}%}
+			</div>
+		</div>
+	</div>
+
+	{# a propos #}
+	<div class="a_propos">
+		<div class="row">
+			<div class="col-12">
+				<h1>À propos de Marconnet technologies™</h1>
+			</div>
+		</div>
+		<div class="row">
+			<div class="col-12">
+				<p>Marconnet technologies™ est spécialisée dans la mobilité et unique sur le marché depuis plus de 18 ans.</p>
+				<p>Nous commercialisons des matériels pour améliorer le déplacement des gens en perte de mobilité.</p>
+			</div>
+		</div>
+		<div class="row">
+			<div class="col-3">
+				{% include "_home_apropos.html.twig" with {
+					'image' : 'https://picsum.photos/150/150',
+					'titre' : 'Conseils personnalisés',
+					'contenu' : 'Notre rôle est de vous conseiller avant de passer à l\'acte d\'achat et c’est pour cela qu\’il faut prendre contact avec nous avant de passer à l\’acte d’achat.'
+				} %}
+			</div>
+			<div class="col-3">
+				{% include "_home_apropos.html.twig" with {
+					'image' : 'https://picsum.photos/150/150',
+					'titre' : 'Des produits innovants',
+					'contenu' : 'Notre force est de rechercher des nouveaux produits innovants dans le monde entier et de les proposer en France. Nous choisissons uniquement un fabricant par gamme de matériels que nous avons soigneusement sélectionné afin de proposer les meilleurs matériels sur chaque segment de marché.'
+				} %}
+			</div>
+			<div class="col-3">
+				{% include "_home_apropos.html.twig" with {
+					'image' : 'https://picsum.photos/150/150',
+					'titre' : 'Nos clients',
+					'contenu' : 'Nos produits de grande qualité nous permettent de cibler aussi bien les particuliers que les professionnels du monde de la santé.'
+				} %}
+			</div>
+			<div class="col-3">
+				{% include "_home_apropos.html.twig" with {
+					'image' : 'https://picsum.photos/150/150',
+					'titre' : 'Nos services',
+					'contenu' : 'Aujourd\'hui nous vendons, louons et réparons nos matériels dans notre atelier.'
+				} %}
+			</div>
+			</div>			
+			<div class="row">
+				<div class="col-12 d-flex justify-content-center">
+					<a class="btn btn-primary" href="{{path('about')}}" role="button">En savoir plus sur Marconnet technologies™</a>
+				</div>
+			</div>
+		</div>
+
+
+	{# test de materiel #}
+		<div class="test_materiel">
+			<div class="row">
+				<div class="col-12">
+					<h3>Nous vous proposons de tester le matériel avant de l'acheter.</h3>
+					<p>Assurez-vous que le matériel soit parfaitement adapté à vous en essayant nos produits. Vous pouvez venir au showroom, ou alors, c'est le showroom qui viendra à vous.</p>
+					<a class="btn btn-primary" href="{{path('demonstration')}}" role="button">Je souhaite tester le matériel</a>
+				</div>
+			</div>
+		</div>
+
+	{# entreprises qui nous font confiance #}
+	<div class="confiance">
+		<div class="row">
+			<div class="col-12">
+				<h3>Ils nous ont fait confiance</h3>
+				<p>Depuis plus de 15 ans, Marconnet technologies™ travaille avec des acteurs importants du monde de la santé. Nous sommes fiers d’accompagner des marques leaders.</p>
+			</div>
+		</div>
+		<div class="row">
+			<div class="col-12">
+				<h4>Des professionnels de santé : Ehpads, ADAPEI, Fondations</h4>
+			</div>
+		</div>
+		<div class="row justify-content-evenly">
+			<div class="col-auto"><a href="https://www.google.fr" target="_blank"><img src="https://picsum.photos/200/200" alt=""></a></div>
+			<div class="col-auto"><a href="https://www.google.fr" target="_blank"><img src="https://picsum.photos/200/200" alt=""></a></div>
+			<div class="col-auto"><a href="https://www.google.fr" target="_blank"><img src="https://picsum.photos/200/200" alt=""></a></div>
+		</div>
+		<div class="row">
+			<div class="col-12">
+				<h4>Prestataires de santé à domicile :</h4>
+			</div>
+		</div>
+		<div class="row justify-content-evenly">
+			<div class="col-auto"><a href="https://www.google.fr" target="_blank"><img src="https://picsum.photos/200/200" alt=""></a></div>
+			<div class="col-auto"><a href="https://www.google.fr" target="_blank"><img src="https://picsum.photos/200/200" alt=""></a></div>
+			<div class="col-auto"><a href="https://www.google.fr" target="_blank"><img src="https://picsum.photos/200/200" alt=""></a></div>
+		</div>
+	</div>
+</div>
+	
+
+	{# newsletter #}
+	<div class="container-fluid newsletter">
+		<div class="container-xl">
+			<h3>Inscrivez-vous à notre newsletter</h3>
+			<p>Recevez régulièrement nos actualités et tenez-vous informé des nouveautés.</p>
+			<input type="text" id="email" name="email">
+			<button type="button" class="btn btn-primary">Je m'inscris</button>
 		</div>
 	</div>
 {% endblock %}
