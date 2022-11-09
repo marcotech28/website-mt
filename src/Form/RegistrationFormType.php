@@ -28,9 +28,10 @@ class RegistrationFormType extends AbstractType
                 'mapped' => false,
                 'constraints' => [
                     new IsTrue([
-                        'message' => 'You should agree to our terms.',
+                        'message' => 'Merci d\'accepter nos conditions d\'utilisations',
                     ]),
                 ],
+                'label' => "J'accepte les conditions Marconnet technologies™"
             ])
             ->add('plainPassword', PasswordType::class, [
                 // instead of being set onto the object directly,

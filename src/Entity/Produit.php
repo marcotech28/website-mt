@@ -14,14 +14,14 @@ class Produit
     #[ORM\Column]
     private ?int $id = null;
 
-    #[ORM\Column(length: 255)]
-    private ?string $descriptioCourte = null;
-
-    #[ORM\Column(length: 255)]
-    private ?string $descriptionCourte = null;
-
     #[ORM\Column(type: Types::TEXT)]
     private ?string $description = null;
+
+    #[ORM\Column(length: 255)]
+    private ?string $nom = null;
+
+    #[ORM\Column(type: Types::TEXT)]
+    private ?string $description_courte = null;
 
     #[ORM\Column(type: Types::TEXT, nullable: true)]
     private ?string $video1 = null;
@@ -30,16 +30,16 @@ class Produit
     private ?string $video2 = null;
 
     #[ORM\Column(type: Types::TEXT, nullable: true)]
-    private ?string $ficheDescriptive = null;
+    private ?string $fiche_descriptive = null;
 
-    #[ORM\Column(type: Types::TEXT)]
+    #[ORM\Column(type: Types::TEXT, nullable: true)]
     private ?string $caracteristiques = null;
 
     #[ORM\Column]
-    private ?float $prixHT = null;
+    private ?float $prix_ht = null;
 
-    #[ORM\Column(length: 255, nullable: true)]
-    private ?string $ficheTarifProd = null;
+    #[ORM\Column(type: Types::TEXT, nullable: true)]
+    private ?string $fiche_tarif_prod = null;
 
     #[ORM\Column(type: Types::TEXT, nullable: true)]
     private ?string $image1 = null;
@@ -50,22 +50,10 @@ class Produit
     #[ORM\Column(type: Types::TEXT, nullable: true)]
     private ?string $image3 = null;
 
-    public function getId(): ?int
-    {
-        return $this->id;
-    }
+    #[ORM\Column(length: 255, nullable: true)]
+    private ?string $slug = null;
 
-    public function getDescriptioCourte(): ?string
-    {
-        return $this->descriptioCourte;
-    }
 
-    public function setDescriptioCourte(string $descriptioCourte): self
-    {
-        $this->descriptioCourte = $descriptioCourte;
-
-        return $this;
-    }
 
     public function getDescriptionCourte(): ?string
     {
@@ -79,14 +67,14 @@ class Produit
         return $this;
     }
 
-    public function getDescription(): ?string
+    public function getNom(): ?string
     {
-        return $this->description;
+        return $this->nom;
     }
 
-    public function setDescription(string $description): self
+    public function setNom(string $nom): self
     {
-        $this->description = $description;
+        $this->nom = $nom;
 
         return $this;
     }
@@ -117,12 +105,12 @@ class Produit
 
     public function getFicheDescriptive(): ?string
     {
-        return $this->ficheDescriptive;
+        return $this->fiche_descriptive;
     }
 
-    public function setFicheDescriptive(?string $ficheDescriptive): self
+    public function setFicheDescriptive(?string $fiche_descriptive): self
     {
-        $this->ficheDescriptive = $ficheDescriptive;
+        $this->fiche_descriptive = $fiche_descriptive;
 
         return $this;
     }
@@ -132,33 +120,33 @@ class Produit
         return $this->caracteristiques;
     }
 
-    public function setCaracteristiques(string $caracteristiques): self
+    public function setCaracteristiques(?string $caracteristiques): self
     {
         $this->caracteristiques = $caracteristiques;
 
         return $this;
     }
 
-    public function getPrixHT(): ?float
+    public function getPrixHt(): ?float
     {
-        return $this->prixHT;
+        return $this->prix_ht;
     }
 
-    public function setPrixHT(float $prixHT): self
+    public function setPrixHt(float $prix_ht): self
     {
-        $this->prixHT = $prixHT;
+        $this->prix_ht = $prix_ht;
 
         return $this;
     }
 
     public function getFicheTarifProd(): ?string
     {
-        return $this->ficheTarifProd;
+        return $this->fiche_tarif_prod;
     }
 
-    public function setFicheTarifProd(?string $ficheTarifProd): self
+    public function setFicheTarifProd(?string $fiche_tarif_prod): self
     {
-        $this->ficheTarifProd = $ficheTarifProd;
+        $this->fiche_tarif_prod = $fiche_tarif_prod;
 
         return $this;
     }
@@ -195,6 +183,18 @@ class Produit
     public function setImage3(?string $image3): self
     {
         $this->image3 = $image3;
+
+        return $this;
+    }
+
+    public function getSlug(): ?string
+    {
+        return $this->slug;
+    }
+
+    public function setSlug(?string $slug): self
+    {
+        $this->slug = $slug;
 
         return $this;
     }
