@@ -2,11 +2,11 @@
 
 namespace App\Entity;
 
-use App\Repository\SousCategorieRepository;
+use App\Repository\UtilisationRepository;
 use Doctrine\ORM\Mapping as ORM;
 
-#[ORM\Entity(repositoryClass: SousCategorieRepository::class)]
-class SousCategorie
+#[ORM\Entity(repositoryClass: UtilisationRepository::class)]
+class Utilisation
 {
     #[ORM\Id]
     #[ORM\GeneratedValue]
@@ -18,6 +18,9 @@ class SousCategorie
 
     #[ORM\Column(length: 255)]
     private ?string $image = null;
+
+    #[ORM\Column(length: 255, nullable: true)]
+    private ?string $slug = null;
 
     public function getId(): ?int
     {
@@ -44,6 +47,18 @@ class SousCategorie
     public function setImage(string $image): self
     {
         $this->image = $image;
+
+        return $this;
+    }
+
+    public function getSlug(): ?string
+    {
+        return $this->slug;
+    }
+
+    public function setSlug(?string $slug): self
+    {
+        $this->slug = $slug;
 
         return $this;
     }

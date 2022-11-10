@@ -43,9 +43,15 @@
 					<div class="col-auto">
 						<a href="{{path("app_register")}}">Créer mon compte</a>
 					</div>
-					<div class="col-auto">
-						<a href="{{path("security_login")}}">Se connecter</a>
-					</div>
+					{% if app.user %}
+						<div class="col-auto">
+							<a href="{{path("security_logout")}}">Se déconnecter</a>
+						</div>
+					{% else %}
+						<div class="col-auto">
+							<a href="{{path('security_login')}}">Se connecter</a>
+						</div>
+					{% endif %}
 				</div>
 			</div>
 		</div>
@@ -58,16 +64,15 @@
 	<div class="container-xl navbar_bottom">
 
 		<div class="row justify-content-between">
-			<div class="col-auto">HANDBIKES</div>
-			<div class="col-auto">TRICYCLES VANRAAM</div>
-			<div class="col-auto">DRAISIN</div>
-			<div class="col-auto">TRICYCLES UTILITAIRES</div>
-			<div class="col-auto">SCOOTERS</div>
-			<div class="col-auto">FAUTEUILS TOUT TERRAIN</div>
+			{% for c in categorieRepository.findAll() %}
+				<div class="col-auto">
+					<a href="{{path('app_categorie', {'slug': c.slug})}}">{{c.libelle}}</a>
+				</div>
+			{% endfor %}
 			<div class="col-auto">
-				<a href="https://www.marconnet-robotique.com/">ROBOTS</a>
+				<a href="https://www.marconnet-robotique.com/">Robots</a>
 			</div>
-			<div class="col-auto">AUTRES</div>
+			<div class="col-auto">Autres</div>
 		</div>
 	</div>
 </div>
