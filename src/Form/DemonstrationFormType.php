@@ -8,6 +8,7 @@ use Symfony\Component\OptionsResolver\OptionsResolver;
 use Symfony\Component\Form\Extension\Core\Type\TextType;
 use Symfony\Component\Form\Extension\Core\Type\EmailType;
 use Symfony\Component\Form\Extension\Core\Type\ChoiceType;
+use Symfony\Component\Form\Extension\Core\Type\TextareaType;
 
 class DemonstrationFormType extends AbstractType
 {
@@ -80,7 +81,7 @@ class DemonstrationFormType extends AbstractType
                     'placeholder' => 'Veuillez indiquer les produits que vous souhaitez essayer'
                 ]
             ])
-            ->add('message', TextType::class, [
+            ->add('message', TextareaType::class, [
                 'label' => false,
                 'attr' => [
                     'placeholder' => 'Votre message...'

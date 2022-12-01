@@ -20,7 +20,7 @@ class Marque
     private ?string $catalogue = null;
 
     #[ORM\Column(length: 255)]
-    private ?string $nom = null;
+    private ?string $logo = null;
 
     public function getId(): ?int
     {
@@ -51,14 +51,14 @@ class Marque
         return $this;
     }
 
-    public function getNom(): ?string
+    public function getLogo(): ?string
     {
-        return $this->nom;
+        return $this->logo;
     }
 
-    public function setNom(string $nom): self
+    public function setLogo(string $logo): self
     {
-        $this->nom = $nom;
+        $this->logo = $logo;
 
         return $this;
     }

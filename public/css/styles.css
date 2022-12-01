@@ -1,7 +1,23 @@
-.footer {
+.in-line {
+    display: inline;
+    padding: 8px;
+}
+
+
+footer {
     background-color: #0F434E;
     color: white;
     margin-top: 50px;
+    text-decoration: none;
+}
+
+.footer a {
+    text-decoration: none;
+    color: white;
+}
+
+.footer a:visited {
+    text-decoration: none;
 }
 
 .titreFooter {

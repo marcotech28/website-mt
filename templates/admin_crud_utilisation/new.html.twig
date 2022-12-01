@@ -1,0 +1,12 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Créer un nouveau type d'utilisation
+{% endblock %}
+
+{% block body %}
+	<h1>Créer un nouveau type d'utilisation</h1>
+
+	{{ include('admin_crud_utilisation/_form.html.twig') }}
+
+	<a href="{{ path('app_admin_crud_utilisation_index') }}">Retour à la liste des types d'utilisation</a>
+{% endblock %}

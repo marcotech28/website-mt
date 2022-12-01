@@ -1,5 +1,5 @@
 <div
-	class="container-fluid">
+	class="container-fluid maNav">
 
 	{# navbar-top #}
 	<div style="padding: 10px" class="container-xl">
@@ -40,9 +40,17 @@
 					<div class="col-auto">
 						<a href="{{path("demonstration")}}">Démonstration</a>
 					</div>
-					<div class="col-auto">
-						<a href="{{path("app_register")}}">Créer mon compte</a>
-					</div>
+					{% if app.user %}
+						<div class="col-auto">
+							<a href="#">Gérer mon compte</a>
+						</div>
+					{% else %}
+						<div class="col-auto">
+							<a href="{{path("app_register")}}">Créer mon compte</a>
+						</div>
+					{% endif %}
+
+
 					{% if app.user %}
 						<div class="col-auto">
 							<a href="{{path("security_logout")}}">Se déconnecter</a>
@@ -70,9 +78,39 @@
 				</div>
 			{% endfor %}
 			<div class="col-auto">
-				<a href="https://www.marconnet-robotique.com/">Robots</a>
+				<a href="https://www.marconnet-robotique.com/" target="_notblank">Robots</a>
 			</div>
 			<div class="col-auto">Autres</div>
 		</div>
 	</div>
 </div>
+{% if app.user %}
+	<div class="container-xl">
+		<p>Vous êtes connecté en tant qu'administrateur. Vous possédez donc les droits pour administrer le site.</p>
+		<p>Que voulez-vous faire ?</p>
+		{% for role in app.user.roles %}
+			{% if role is same as 'ROLE_ADMIN' %}
+				<ul>
+					<li class="in-line">
+						<a href=" {{path('app_admin_crud_index')}}">Gérer les utilisateurs</a>
+					</li>
+					<li class="in-line">
+						<a href="#">Gérer les produits</a>
+					</li>
+					<li class="in-line">
+						<a href=" {{path('app_admin_crud_categorie_index')}}">Gérer les catégories</a>
+					</li>
+					<li class="in-line">
+						<a href=" {{path('app_admin_crud_utilisation_index')}}">Gérer les types d'utilisation</a>
+					</li>
+					<li class="in-line">
+						<a href=" {{path('app_admin_crud_avantage_index')}}">Gérer les avantages</a>
+					</li>
+					<li class="in-line">
+						<a href=" {{path('app_admin_crud_marque_index')}}">Gérer les marques</a>
+					</li>
+				</ul>
+			{% endif %}
+		{% endfor %}
+	</div>
+{% endif %}

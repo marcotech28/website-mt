@@ -3,6 +3,8 @@
 namespace App\Entity;
 
 use App\Repository\ProduitRepository;
+use Doctrine\Common\Collections\ArrayCollection;
+use Doctrine\Common\Collections\Collection;
 use Doctrine\DBAL\Types\Types;
 use Doctrine\ORM\Mapping as ORM;
 
@@ -52,6 +54,14 @@ class Produit
 
     #[ORM\Column(length: 255, nullable: true)]
     private ?string $slug = null;
+
+    #[ORM\ManyToMany(targetEntity: Avantage::class, inversedBy: 'produits')]
+    private Collection $avantages;
+
+    public function __construct()
+    {
+        $this->avantages = new ArrayCollection();
+    }
 
 
 
@@ -195,6 +205,30 @@ class Produit
     public function setSlug(?string $slug): self
     {
         $this->slug = $slug;
+
+        return $this;
+    }
+
+    /**
+     * @return Collection<int, Avantage>
+     */
+    public function getAvantages(): Collection
+    {
+        return $this->avantages;
+    }
+
+    public function addAvantage(Avantage $avantage): self
+    {
+        if (!$this->avantages->contains($avantage)) {
+            $this->avantages->add($avantage);
+        }
+
+        return $this;
+    }
+
+    public function removeAvantage(Avantage $avantage): self
+    {
+        $this->avantages->removeElement($avantage);
 
         return $this;
     }
