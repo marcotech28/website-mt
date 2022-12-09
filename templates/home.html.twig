@@ -117,43 +117,121 @@
 
 	{# entreprises qui nous font confiance #}
 	<div class="confiance">
-		<div class="row">
-			<div class="col-12">
-				<h3>Ils nous ont fait confiance</h3>
-				<p>Depuis plus de 15 ans, Marconnet technologies™ travaille avec des acteurs importants du monde de la santé. Nous sommes fiers d’accompagner des marques leaders.</p>
-			</div>
-		</div>
-		<div class="row">
-			<div class="col-12">
-				<h4>Des professionnels de santé : Ehpads, ADAPEI, Fondations</h4>
-			</div>
-		</div>
-		<div class="row justify-content-evenly">
-			<div class="col-auto"><a href="https://www.google.fr" target="_blank"><img src="https://picsum.photos/200/200" alt=""></a></div>
-			<div class="col-auto"><a href="https://www.google.fr" target="_blank"><img src="https://picsum.photos/200/200" alt=""></a></div>
-			<div class="col-auto"><a href="https://www.google.fr" target="_blank"><img src="https://picsum.photos/200/200" alt=""></a></div>
-		</div>
-		<div class="row">
-			<div class="col-12">
-				<h4>Prestataires de santé à domicile :</h4>
-			</div>
-		</div>
-		<div class="row justify-content-evenly">
-			<div class="col-auto"><a href="https://www.google.fr" target="_blank"><img src="https://picsum.photos/200/200" alt=""></a></div>
-			<div class="col-auto"><a href="https://www.google.fr" target="_blank"><img src="https://picsum.photos/200/200" alt=""></a></div>
-			<div class="col-auto"><a href="https://www.google.fr" target="_blank"><img src="https://picsum.photos/200/200" alt=""></a></div>
+	<div class="row">
+		<div class="col-12">
+			<h3>Ils nous ont fait confiance</h3>
 		</div>
 	</div>
+	<div class="row">
+		<div class="col-12">
+			<p>Depuis plus de 15 ans, Marconnet technologies™ travaille avec des acteurs importants du monde de la santé. <br>Nous sommes fiers d’accompagner des marques leaders.</p>
+		</div>
+	</div>
+<div class="partners">
+<div class="row">
+		{% include "shared/_home_etab_sante.html.twig" with {
+			'nom' : 'DomusVi',
+			'cat' : 'Établissement de santé',
+			'souscat' : 'EHPAD',
+			'description' : 'Lorem ipsum, dolor sit amet consectetur adipisicing elit. Saepe, omnis!',
+			'website' : 'https://www.domusvi.com/'
+	 	} %}
+
+		{% include "shared/_home_etab_sante.html.twig" with {
+			'nom' : 'Korian',
+			'cat' : 'Établissement de santé',
+			'souscat' : 'EHPAD',
+			'description' : 'Lorem, ipsum dolor sit amet consectetur adipisicing elit. Temporibus, sunt.',
+			'website' : 'https://www.korian.fr/'
+	 	} %}
+
+		{% include "shared/_home_etab_sante.html.twig" with {
+			'nom' : 'Orpea',
+			'cat' : 'Établissement de santé',
+			'souscat' : 'EHPAD',
+			'description' : 'Lorem ipsum, dolor sit amet consectetur adipisicing elit. Cum, delectus!',
+			'website' : 'https://www.orpea-groupe.com/'
+	 	} %}
+
+		{% include "shared/_home_etab_sante.html.twig" with {
+			'nom' : 'Adapei',
+			'cat' : 'Établissement de santé',
+			'souscat' : 'FAM/MAS',
+			'description' : 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Asperiores, aliquid.',
+			'website' : 'https://www.adapei72.asso.fr/'
+	 	} %}
+
+		{% include "shared/_home_etab_sante.html.twig" with {
+			'nom' : 'Perce-Neige',
+			'cat' : 'Établissement de santé',
+			'souscat' : 'FAM/MAS',
+			'description' : 'Lorem ipsum dolor, sit amet consectetur adipisicing elit. Perspiciatis, minima.',
+			'website' : 'https://www.perce-neige.org/'
+	 	} %}
+
+		{% include "shared/_home_revendeur.html.twig" with {
+			'nom' : 'Bastide',
+			'cat' : 'Revendeur médical',
+			'description' : 'Lorem ipsum dolor sit, amet consectetur adipisicing elit. Aperiam, labore?',
+			'website' : 'https://www.bastideleconfortmedical.com/'
+	 	} %}
+
+		{% include "shared/_home_revendeur.html.twig" with {
+			'nom' : 'Harmonie Médical Service',
+			'cat' : 'Revendeur médical',
+			'description' : 'Lorem ipsum dolor sit, amet consectetur adipisicing elit. Perferendis, quasi!',
+			'website' : 'https://www.harmonie-medical-service.fr/'
+	 	} %}
+
+		{% include "shared/_home_revendeur.html.twig" with {
+			'nom' : 'Oxypharm',
+			'cat' : 'Revendeur médical',
+			'description' : 'Lorem, ipsum dolor sit amet consectetur adipisicing elit. Tenetur, consequuntur.',
+			'website' : 'https://www.vitadomia.com/'
+	 	} %}
+
+		{% include "shared/_home_revendeur.html.twig" with {
+			'nom' : 'Paramat',
+			'cat' : 'Revendeur médical',
+			'description' : 'Lorem ipsum dolor, sit amet consectetur adipisicing elit. Illum, reiciendis!',
+			'website' : 'https://www.paramat.com/'
+	 	} %}
+
+				</div>
 </div>
 	
+			</div>
+			</div>
 
-	{# newsletter #}
-	<div class="container-fluid newsletter">
-		<div class="container-xl">
-			<h3>Inscrivez-vous à notre newsletter</h3>
-			<p>Recevez régulièrement nos actualités et tenez-vous informé des nouveautés.</p>
-			<input type="text" id="email" name="email">
-			<button type="button" class="btn btn-primary">Je m'inscris</button>
-		</div>
-	</div>
-{% endblock %}
+
+
+			{# newsletter #}
+			<div class="container-fluid newsletter">
+				<div class="container-xl">
+					<div class="row align-self-end">
+						<div class="col">
+							<div class="row">
+								<div class="col">
+									<h3>Inscrivez-vous à notre newsletter</h3>
+								</div>
+							</div>
+							<div class="row">
+								<div class="col">
+									<p>Recevez régulièrement nos actualités et tenez-vous informé des nouveautés.</p>
+								</div>
+							</div>
+							<div class="row">
+								<div class="col">
+									<input type="text" id="email" name="email">
+									<button type="button" class="btn btn-primary">Je m'inscris</button>
+								</div>
+							</div>
+						</div>
+						<div class="col">
+							<img src="{{asset('images/newsletter.png')}}" alt="">
+						</div>
+
+					</div>
+				</div>
+			</div>
+		{% endblock %}

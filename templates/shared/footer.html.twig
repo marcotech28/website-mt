@@ -4,51 +4,63 @@
 			class="container-xl">
 
 			{# footer partie 1 #}
-			<div class="row top_footer">
-				<div class="row justify-content-between align-items-center bottom_footer">
+			<div class="row">
+				<div class="row justify-content-between top-footer align-items-center">
 					<div class="col-auto">
-						<a href=""><img class="footer_logo" src="{{asset('images/logo_base_blanc_mt.png')}}" alt=""></a>
+						<a href=""><img class="footer-logo" src="{{asset('images/logo_base_blanc_mt.png')}}" alt=""></a>
 					</div>
 					<div class="col-auto">
-						<div class="row align-items-center">
-							<div class="col-auto">
-								<p>Suivez-nous sur les réseaux sociaux</p>
+
+						<div class="row socials align-items-center">
+							<div class="col-auto" style="font-style: italic">
+								Suivez-nous sur les réseaux sociaux
 							</div>
 							<div class="col-auto">
-								<a href="https://www.youtube.com/channel/UCBVjkgVyozExIOlx5O40zxQ" target="_blank"><img class="logo" src="{{asset('images/youtube-logo.svg')}}" alt=""></a>
+								<a href="https://www.youtube.com/channel/UCBVjkgVyozExIOlx5O40zxQ" target="_blank">
+									<i class="fa fa-youtube" style="color: #0F434E"></i>
+								</a>
 							</div>
 							<div class="col-auto">
-								<a href="https://fr-fr.facebook.com/marconnettechnologies/" target="_blank"><img class="logo" src="{{asset('images/facebook-logo.svg')}}" alt=""></a>
+								<a href="https://fr-fr.facebook.com/marconnettechnologies/" target="_blank">
+									<i class="fa fa-facebook" style="color: #0F434E"></i>
+								</a>
 							</div>
 							<div class="col-auto">
-								<a href="https://www.instagram.com/marconnet_technologies/" target="_blank"><img class="logo" src="{{asset('images/instagram-logo.svg')}}" alt=""></a>
+								<a href="https://www.instagram.com/marconnet_technologies/" target="_blank">
+									<i class="fa fa-instagram" style="color: #0F434E"></i>
+								</a>
 							</div>
 							<div class="col-auto">
-								<a href="https://fr.linkedin.com/company/marconnet-technologies%E2%84%A2" target="_blank"><img id="test" class="logo" src="{{asset('images/linkedin-logo.svg')}}" alt=""></a>
+								<a href="https://fr.linkedin.com/company/marconnet-technologies%E2%84%A2" target="_blank">
+									<i class="fa fa-linkedin" style="color: #0F434E"></i>
+								</a>
 							</div>
 						</div>
+
 					</div>
 				</div>
 			</div>
 
 			{# footer partie 2 #}
-			<div class="row content_footer">
+			<div class="row content-footer">
 				<div class="col-3">
 					<div class="row titreFooter">
 						<p>Revendeurs</p>
 					</div>
 					<div class="row contentFooter">
-						<p>Espace revendeurs</p>
+						<p>
+							<a class="underline-effect-white" href="#">Espace revendeurs</a>
+						</p>
 					</div>
 					<div class="row contentFooter">
 						<p>
-							<a href="{{ path('app_register') }}">
+							<a class="underline-effect-white" href="{{ path('app_register') }}">
 								S'inscrire</a>
 						</p>
 					</div>
 					<div class="row contentFooter">
 						<p>
-							<a href="{{ path('security_login') }}">Se connecter</a>
+							<a class="underline-effect-white" href="{{ path('security_login') }}">Se connecter</a>
 						</p>
 					</div>
 				</div>
@@ -59,20 +71,28 @@
 					</div>
 					<div class="row contentFooter">
 						<p>
-							<a href="{{ path('about') }}">Qui sommes-nous ?</a>
+							<a class="underline-effect-white" href="{{ path('about') }}">Qui sommes-nous ?</a>
 						</p>
 					</div>
 					<div class="row contentFooter">
-						<p>S'inscrire à la newsletter</p>
+						<p>
+							<a class="underline-effect-white" href="#">S'inscrire à la newsletter</a>
+						</p>
 					</div>
 					<div class="row contentFooter">
-						<p>Itinéraire et plan d'accès</p>
+						<p>
+							<a class="underline-effect-white" href="#">Itinéraire et plan d'accès</a>
+						</p>
 					</div>
 					<div class="row contentFooter">
-						<p>Notre catalogue</p>
+						<p>
+							<a class="underline-effect-white" href="#">Notre catalogue</a>
+						</p>
 					</div>
 					<div class="row contentFooter">
-						<p>Nos moyens de livraison</p>
+						<p>
+							<a class="underline-effect-white" href="#">Nos moyens de livraison</a>
+						</p>
 					</div>
 				</div>
 
@@ -81,7 +101,9 @@
 						<p>À propos</p>
 					</div>
 					<div class="row contentFooter">
-						<p>Mentions légales</p>
+						<p>
+							<a class="underline-effect-white" href="#">Mentions légales</a>
+						</p>
 					</div>
 				</div>
 
@@ -96,20 +118,20 @@
 						<p>28 230 Épernon</p>
 					</div>
 					<div class="row contentFooter">
-						<div class="col-auto">
-							<img src="{{ asset('monlogo') }}"/>
+						<div class="col-1">
+							<i class="fa fa-phone"></i>
 						</div>
-						<div class="col-auto contentFooter">
-							<p>02 45 26 01 70</p>
+						<div class="col-11 contentFooter">
+							<a class="underline-effect-white" href="tel:+33245260170">02 45 26 01 70</a>
 						</div>
 					</div>
 				</div>
 			</div>
 
 			{# footer partie  #}
-			<div class="row bottom_footer">
+			<div class="row bottom-footer align-items-center">
 				<div class="col-12">
-					<p>Copyright marconnet technologies™ 2022</p>
+					Copyright marconnet technologies™ 2022
 				</div>
 			</div>
 		</div>

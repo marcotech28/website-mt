@@ -24,13 +24,13 @@
 
 			<div class="row">
 				<div class="col-12">
-					<p>Besoin d’un renseignement ou d’un devis ? Faites le nous savoir en remplissant ce formulaire. Nous vous recontacterons très prochainement.</p>
+					<p>Besoin d’un renseignement ou d’un devis ? Faites-le nous savoir en remplissant ce formulaire. Nous vous recontacterons très prochainement.</p>
 				</div>
 			</div>
 
-			<div class="row align-items-center">
+			<div class="row align-items-center contact-help">
 				<div class="col-auto">
-					<img src="https://picsum.photos/50/50" alt="">
+					<i class="fa-solid fa-phone fa-2xl" style="color: #0F434E"></i>
 				</div>
 				<div class="col-auto">
 					<div class="row">
@@ -47,10 +47,12 @@
 			</div>
 
 			<div class="row justify-content-around">
-				<div class="col-6">
+				<div class="col-6 contact-form">
 					{{form_start(formView)}}
 
 					{{form_widget(formView)}}
+
+					<p style="font-style: italic">Les champs marqués d’un * sont obligatoires.</p>
 
 					<button type="button" class="btn btn-primary">Envoyer</button>
 

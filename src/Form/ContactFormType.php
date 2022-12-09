@@ -8,6 +8,7 @@ use Symfony\Component\OptionsResolver\OptionsResolver;
 use Symfony\Component\Form\Extension\Core\Type\TextType;
 use Symfony\Component\Form\Extension\Core\Type\EmailType;
 use Symfony\Component\Form\Extension\Core\Type\ChoiceType;
+use Symfony\Component\Form\Extension\Core\Type\TextareaType;
 
 class ContactFormType extends AbstractType
 {
@@ -15,54 +16,34 @@ class ContactFormType extends AbstractType
     {
         $builder
             ->add('nom', TextType::class, [
-                'label' => false,
-                'attr' => [
-                    'placeholder' => 'Votre nom'
-                ]
+                'label' => 'Nom'
             ])
             ->add('prenom', TextType::class, [
-                'label' => false,
-                'attr' => [
-                    'placeholder' => 'Votre prénom'
-                ]
+                'label' => 'Prénom'
             ])
             ->add('email', EmailType::class, [
-                'label' => false,
-                'attr' => [
-                    'placeholder' => 'Votre email'
-                ]
+                'label' => 'Adresse mail'
             ])
             ->add('societe', TextType::class, [
-                'label' => false,
-                'attr' => [
-                    'placeholder' => 'Le nom de votre société'
-                ]
+                'label' => 'Société'
             ])
             ->add('codePostal', TextType::class, [
-                'label' => false,
-                'attr' => [
-                    'placeholder' => 'Votre code postal'
-                ]
+                'label' => 'Code postal'
             ])
             ->add('ville', TextType::class, [
-                'label' => false,
-                'attr' => [
-                    'placeholder' => 'Votre ville'
-                ]
+                'label' => 'Ville'
             ])
             ->add('telephone', TextType::class, [
-                'label' => false,
-                'attr' => [
-                    'placeholder' => 'Votre numéro de téléphone'
-                ]
+                'label' => 'Téléphone'
             ])
             ->add('objet', ChoiceType::class, [
+                'label' => 'Objet de votre demande',
                 'choices' => [
                     'Demande de devis' => 'devis',
                     'Demande de renseignement' => 'renseignement'
                 ]
             ])
-            ->add('message', TextType::class, [
+            ->add('message', TextareaType::class, [
                 'label' => false,
                 'attr' => [
                     'placeholder' => 'Votre message...'

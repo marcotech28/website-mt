@@ -12,9 +12,7 @@ class Avantage1Type extends AbstractType
     public function buildForm(FormBuilderInterface $builder, array $options): void
     {
         $builder
-            ->add('libelle')
-            ->add('produits')
-        ;
+            ->add('libelle');
     }
 
     public function configureOptions(OptionsResolver $resolver): void

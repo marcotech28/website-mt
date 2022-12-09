@@ -12,7 +12,7 @@
 				<li class="breadcrumb-item">
 					<a href="{{path('homepage')}}">Accueil</a>
 				</li>
-				<li class="breadcrumb-item active" aria-current="page">Demander de démonstration</li>
+				<li class="breadcrumb-item active" aria-current="page">Demande de démonstration</li>
 			</ol>
 		</nav>
 
@@ -51,16 +51,18 @@
 		</div>
 
 
-		<div class="row">
-			{{form_start(formView)}}
+		<div class="form-demonstration">
+			<div class="row">
+				{{form_start(formView)}}
 
-			{{form_widget(formView)}}
+				{{form_widget(formView)}}
 
-			<p class="champsObligat">Les champs marqués d'un * sont obligatoires.</p>
+				<p style="font-style: italic">Les champs marqués d'un * sont obligatoires.</p>
 
-			<button type="button" class="btn btn-primary">Demander une démonstration</button>
+				<button type="button" class="btn btn-primary">Demander une démonstration</button>
 
-			{{form_end(formView)}}
+				{{form_end(formView)}}
+			</div>
 		</div>
 
 

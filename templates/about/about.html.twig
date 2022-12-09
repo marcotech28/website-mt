@@ -21,64 +21,148 @@
 			</div>
 		</div>
 
-		<div class="row">
-			<div class="col-12">
-				<h2>Présentation de la société</h2>
+		<div class="presentation-marconnet">
+
+
+			<div class="row">
+				<div class="col-12">
+					<h2>Présentation de la société</h2>
+				</div>
+
+				<div class="row">
+					<p>Marconnet technologies™ commercialise depuis plus de 13 ans une large gamme de produits sur mesure destinée aux personnes à mobilité réduite.</p>
+					<p>Notre écoute et nos conseils vous permettront de vous orienter vers le matériel le plus adapté à vos besoins afin de vous satisfaire pleinement.</p>
+					<p>Notre objectif : Votre satisfaction !</p>
+					<p>Les produits commercialisés ont été testés et approuvés par un grand nombre de professionnels de la santé et par les utilisateurs finaux. De nombreux témoignages attestent de la qualité des produits.</p>
+					<p>Nous choisissons uniquement les meilleurs fabricants par gamme de matériels que nous avons soigneusement sélectionnés afin de proposer les meilleurs matériels sur chaque segment de marché.</p>
+				</div>
+			</div>
+
+			{% include "about/_about_partenaires.html.twig" with {
+        'logoEntreprise' : 'https://picsum.photos/50/50',
+        'shortDescription' : 'Stricker, le spécialiste des handbikes manuel, à assistance électrique et tout électrique.'
+    } %}
+
+			{% include "about/_about_partenaires.html.twig" with {
+        'logoEntreprise' : 'https://picsum.photos/50/50',
+        'shortDescription' : 'Draisin, notre partenaire historique, le spécialiste du tricycle depuis 30 ans.'
+    } %}
+
+			{% include "about/_about_partenaires.html.twig" with {
+        'logoEntreprise' : 'https://picsum.photos/50/50',
+        'shortDescription' : 'Van Raam, '
+    } %}
+
+			{% include "about/_about_partenaires.html.twig" with {
+        'logoEntreprise' : 'https://picsum.photos/50/50',
+        'shortDescription' : 'Handbikes manuel, à assistance électrique et tout électrique'
+    } %}
+
+			<div class="row">
+				<div class="col">
+					<p>N'attendez plus et<a href="{{path('contact')}}">contactez-nous</a>
+						pour plus d’informations sur nos différents matériels.
+					</p>
+				</div>
+			</div>
+
+		</div>
+
+		{# l'equipe marconnet technologies™ #}
+		<div class="team-members">
+			<div class="row">
+				{% include "about/_members.html.twig" with {
+					'banner' : 'montagne1.jpg',
+					'profilePicture' : 'benjamin.png',
+					'nom' : 'Benjamin MARCONNET',
+					'fonction' : 'Gérant',
+					'presentationMember' : 'En recherche constante de solutions et produits innovants à proposer à nos clients.',
+					'linkedin' : 'https://fr.linkedin.com/in/benjamin-marconnet'
+				} %}
+
+				{% include "about/_members.html.twig" with {
+					'banner' : 'montagne2.jpg',
+					'profilePicture' : 'alexandre.png',
+					'nom' : 'Alexandre Pres Houeix',
+					'fonction' : 'Conseiller Technique Handicap',
+					'presentationMember' : 'Toujours là pour faire des blagues et distraire mes collaborateurs.',
+					'linkedin' : 'https://fr.linkedin.com/in/alexandre-pres-houeix-a38683123'
+				} %}
+
+				{% include "about/_members.html.twig" with {
+					'banner' : 'montagne3.jpg',
+					'profilePicture' : 'luigi.png',
+					'nom' : 'Luigi LENFANT-HOUICHE',
+					'fonction' : 'Conseiller Technique Handicap',
+					'presentationMember' : 'Participe à la stratégie de communication  de Marconnet robotique™.',
+					'linkedin' : 'https://fr.linkedin.com/in/luigi-lenfant-houiche'
+				} %}
+
+				{% include "about/_members.html.twig" with {
+					'banner' : 'montagne4.jpg',
+					'profilePicture' : 'elodie.png',
+					'nom' : 'Élodie CHICAULT',
+					'fonction' : 'Assistante ADV',
+					'presentationMember' : 'Assure le bon suivi administratif et financier.',
+					'linkedin' : 'https://fr.linkedin.com/in/elodie-chicault-a2a3b9197'
+				} %}
+
+				{% include "about/_members.html.twig" with {
+					'banner' : 'montagne5.jpg',
+					'profilePicture' : 'charlie.png',
+					'nom' : 'Charlie NASSAR',
+					'fonction' : 'Chargé de marketing',
+					'presentationMember' : 'Participe à la stratégie de communication  de Marconnet robotique™.',
+					'linkedin' : 'https://fr.linkedin.com/in/charlie-nassar-ba68b8165'
+				} %}
+
+				{% include "about/_members.html.twig" with {
+					'banner' : 'montagne6.jpg',
+					'profilePicture' : 'bryan.png',
+					'nom' : 'Bryan FOTSO',
+					'fonction' : 'Chargé de marketing',
+					'presentationMember' : 'Participe à la stratégie de communication  de Marconnet robotique™.',
+					'linkedin' : 'https://fr.linkedin.com/in/bryan-fotso-1b3b821a7'
+				} %}
+
+				{% include "about/_members.html.twig" with {
+					'banner' : 'montagne7.jpg',
+					'profilePicture' : 'victor.png',
+					'nom' : 'Victor Bruneau',
+					'fonction' : 'Chargé de marketing',
+					'presentationMember' : 'Participe à la stratégie de communication  de Marconnet robotique™.',
+					'linkedin' : 'https://fr.linkedin.com/in/bryan-fotso-1b3b821a7'
+				} %}
+
+				{% include "about/_members.html.twig" with {
+					'banner' : 'fleuve.jpg',
+					'profilePicture' : 'antonin.png',
+					'nom' : 'Antonin Cavanne',
+					'fonction' : 'Développeur web',
+					'presentationMember' : 'Chargé du développement du site Marconnet technologies™.',
+					'linkedin' : 'https://fr.linkedin.com/in/bryan-fotso-1b3b821a7'
+				} %}
 			</div>
 		</div>
 
-		<div class="row">
-			<p>Marconnet technologies™ commercialise depuis plus de 13 ans une large gamme de produits sur mesure destinée aux personnes à mobilité réduite.</p>
-			<p>Notre écoute et nos conseils vous permettront de vous orienter vers le matériel le plus adapté à vos besoins afin de vous satisfaire pleinement.</p>
-			<p>Notre objectif : Votre satisfaction !</p>
-			<p>Les produits commercialisés ont été testés et approuvés par un grand nombre de professionnels de la santé et par les utilisateurs finaux. De nombreux témoignages attestent de la qualité des produits.</p>
-			<p>Nous choisissons uniquement un fabricant par gamme de matériels que nous avons soigneusement sélectionné afin de proposer les meilleurs matériels sur chaque segment de marché.</p>
-		</div>
 
-		{% include "about/_about_partenaires.html.twig" with {
-        'logoEntreprise' : 'https://picsum.photos/50/50',
-        'shortDescription' : 'Handbikes manuel, à assistance électrique et tout électrique'
-    } %}
-
-		{% include "about/_about_partenaires.html.twig" with {
-        'logoEntreprise' : 'https://picsum.photos/50/50',
-        'shortDescription' : 'Handbikes manuels, à assistance électrique et tout électrique'
-    } %}
-
-		{% include "about/_about_partenaires.html.twig" with {
-        'logoEntreprise' : 'https://picsum.photos/50/50',
-        'shortDescription' : 'Handbikes manuel, à assistance électrique et tout électrique'
-    } %}
-
-		{% include "about/_about_partenaires.html.twig" with {
-        'logoEntreprise' : 'https://picsum.photos/50/50',
-        'shortDescription' : 'Handbikes manuel, à assistance électrique et tout électrique'
-    } %}
-
-		{% include "about/_members.html.twig" with {
-			'photo' : 'https://picsum.photos/50/50',
-			'nomComplet' : 'Jean Pierre',
-			'fonction' : 'Big boss'
-		} %}
-
-		{# l'equipe marconnet technologies™ #}
-		TODO : effectif
-
-
-		<div class="row distribNational">
-			<div class="col">
-				<div class="row">
+		<div class="distribNational">
+			<div class="row">
+				<div class="col-12">
 					<h2>Notre réseau de distribution national</h2>
 				</div>
-				<div class="row">
+			</div>
+			<div class="row">
+				<div class="col">
 					<p>Marconnet technologies™ s'appuie sur un réseau de distribution national avec de grandes enseignes de revendeurs médicaux mais aussi avec les revendeurs indépendants. Vous trouverez près de chez vous la solution adaptée à vos besoins.</p>
 					<p>N'hésiez pas à solliciter votre revendeur habituel pour toutes questions ou essais de matériels.</p>
 				</div>
-			</div>
-			<div class="col">
-				<img src="https://picsum.photos/70/70" alt="">
+				<div class="col">
+					<img src="{{asset('images/reseau-vente.jpg')}}" alt="">
+				</div>
 			</div>
 		</div>
+
 
 	</div>
 {% endblock %}

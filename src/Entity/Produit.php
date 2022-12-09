@@ -3,8 +3,6 @@
 namespace App\Entity;
 
 use App\Repository\ProduitRepository;
-use Doctrine\Common\Collections\ArrayCollection;
-use Doctrine\Common\Collections\Collection;
 use Doctrine\DBAL\Types\Types;
 use Doctrine\ORM\Mapping as ORM;
 
@@ -23,7 +21,7 @@ class Produit
     private ?string $nom = null;
 
     #[ORM\Column(type: Types::TEXT)]
-    private ?string $description_courte = null;
+    private ?string $shortDescription = null;
 
     #[ORM\Column(type: Types::TEXT, nullable: true)]
     private ?string $video1 = null;
@@ -32,47 +30,33 @@ class Produit
     private ?string $video2 = null;
 
     #[ORM\Column(type: Types::TEXT, nullable: true)]
-    private ?string $fiche_descriptive = null;
+    private ?string $ficheDescriptive = null;
 
-    #[ORM\Column(type: Types::TEXT, nullable: true)]
+    #[ORM\Column(type: Types::TEXT)]
     private ?string $caracteristiques = null;
 
-    #[ORM\Column]
-    private ?float $prix_ht = null;
+    #[ORM\ManyToOne(inversedBy: 'produits')]
+    private ?Categorie $categorie = null;
 
-    #[ORM\Column(type: Types::TEXT, nullable: true)]
-    private ?string $fiche_tarif_prod = null;
-
-    #[ORM\Column(type: Types::TEXT, nullable: true)]
-    private ?string $image1 = null;
-
-    #[ORM\Column(type: Types::TEXT, nullable: true)]
-    private ?string $image2 = null;
-
-    #[ORM\Column(type: Types::TEXT, nullable: true)]
-    private ?string $image3 = null;
+    #[ORM\ManyToOne(inversedBy: 'produits')]
+    private ?Utilisation $utilisation = null;
 
     #[ORM\Column(length: 255, nullable: true)]
     private ?string $slug = null;
 
-    #[ORM\ManyToMany(targetEntity: Avantage::class, inversedBy: 'produits')]
-    private Collection $avantages;
-
-    public function __construct()
+    public function getId(): ?int
     {
-        $this->avantages = new ArrayCollection();
+        return $this->id;
     }
 
-
-
-    public function getDescriptionCourte(): ?string
+    public function getDescription(): ?string
     {
-        return $this->descriptionCourte;
+        return $this->description;
     }
 
-    public function setDescriptionCourte(string $descriptionCourte): self
+    public function setDescription(string $description): self
     {
-        $this->descriptionCourte = $descriptionCourte;
+        $this->description = $description;
 
         return $this;
     }
@@ -85,6 +69,18 @@ class Produit
     public function setNom(string $nom): self
     {
         $this->nom = $nom;
+
+        return $this;
+    }
+
+    public function getShortDescription(): ?string
+    {
+        return $this->shortDescription;
+    }
+
+    public function setShortDescription(string $shortDescription): self
+    {
+        $this->shortDescription = $shortDescription;
 
         return $this;
     }
@@ -115,12 +111,12 @@ class Produit
 
     public function getFicheDescriptive(): ?string
     {
-        return $this->fiche_descriptive;
+        return $this->ficheDescriptive;
     }
 
-    public function setFicheDescriptive(?string $fiche_descriptive): self
+    public function setFicheDescriptive(?string $ficheDescriptive): self
     {
-        $this->fiche_descriptive = $fiche_descriptive;
+        $this->ficheDescriptive = $ficheDescriptive;
 
         return $this;
     }
@@ -130,69 +126,51 @@ class Produit
         return $this->caracteristiques;
     }
 
-    public function setCaracteristiques(?string $caracteristiques): self
+    public function setCaracteristiques(string $caracteristiques): self
     {
         $this->caracteristiques = $caracteristiques;
 
         return $this;
     }
 
-    public function getPrixHt(): ?float
+    // fonction qui renvoie les caracteristiques du produit sous forme d'un tableau associatif
+    // Exemple :
+    // Array ( [Nombre de roues] => 4 [Freins] => électriques [Poids] => 5kg [Selle] => Extra confortable )
+    public function getTableauCaracteristiques()
     {
-        return $this->prix_ht;
+        $res = array();
+        $chaineCarac = $this->getCaracteristiques();
+
+        $caracLine = explode(";", $chaineCarac);
+
+        foreach ($caracLine as $elem) {
+            $key = explode(":", $elem)[0];
+            $value = explode(":", $elem)[1];
+            $res += [$key => $value];
+        }
+        return $res;
     }
 
-    public function setPrixHt(float $prix_ht): self
+    public function getCategorie(): ?Categorie
     {
-        $this->prix_ht = $prix_ht;
+        return $this->categorie;
+    }
+
+    public function setCategorie(?Categorie $categorie): self
+    {
+        $this->categorie = $categorie;
 
         return $this;
     }
 
-    public function getFicheTarifProd(): ?string
+    public function getUtilisation(): ?Utilisation
     {
-        return $this->fiche_tarif_prod;
+        return $this->utilisation;
     }
 
-    public function setFicheTarifProd(?string $fiche_tarif_prod): self
+    public function setUtilisation(?Utilisation $utilisation): self
     {
-        $this->fiche_tarif_prod = $fiche_tarif_prod;
-
-        return $this;
-    }
-
-    public function getImage1(): ?string
-    {
-        return $this->image1;
-    }
-
-    public function setImage1(?string $image1): self
-    {
-        $this->image1 = $image1;
-
-        return $this;
-    }
-
-    public function getImage2(): ?string
-    {
-        return $this->image2;
-    }
-
-    public function setImage2(?string $image2): self
-    {
-        $this->image2 = $image2;
-
-        return $this;
-    }
-
-    public function getImage3(): ?string
-    {
-        return $this->image3;
-    }
-
-    public function setImage3(?string $image3): self
-    {
-        $this->image3 = $image3;
+        $this->utilisation = $utilisation;
 
         return $this;
     }
@@ -205,30 +183,6 @@ class Produit
     public function setSlug(?string $slug): self
     {
         $this->slug = $slug;
-
-        return $this;
-    }
-
-    /**
-     * @return Collection<int, Avantage>
-     */
-    public function getAvantages(): Collection
-    {
-        return $this->avantages;
-    }
-
-    public function addAvantage(Avantage $avantage): self
-    {
-        if (!$this->avantages->contains($avantage)) {
-            $this->avantages->add($avantage);
-        }
-
-        return $this;
-    }
-
-    public function removeAvantage(Avantage $avantage): self
-    {
-        $this->avantages->removeElement($avantage);
 
         return $this;
     }

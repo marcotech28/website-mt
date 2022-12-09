@@ -1,15 +1,20 @@
-<div class="row">
-	<div class="col-12">
-		<img src="{{photo}}" alt="">
-	</div>
-</div>
-<div class="row">
-	<div class="col-12">
-		{{nomComplet}}
-	</div>
-</div>
-<div class="row">
-	<div class="col-12">
-		{{fonction}}
+<div class="col-3 carr">
+	<div class="card" style="height : 550px;">
+		<div class="img1">
+			<img src="{{ asset('images/' ~ banner ) }}" alt="">
+		</div>
+		<div class="img2">
+			<img src="{{ asset('images/' ~ profilePicture ) }}" alt="">
+		</div>
+		<div class="main-text">
+			<h2>{{ nom }}</h2>
+			<h3>{{ fonction}}</h3>
+			<p>{{ presentationMember }}</p>
+		</div>
+		<div class="linkedin">
+			<a href="{{linkedin}}" target="_blank">
+				<i class="fa fa-linkedin"></i>
+			</a>
+		</div>
 	</div>
 </div>

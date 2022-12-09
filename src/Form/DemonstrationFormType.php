@@ -16,70 +16,41 @@ class DemonstrationFormType extends AbstractType
     {
         $builder
             ->add('choixTypeUser', ChoiceType::class, [
+                'label' => "Type d'utilisateur",
                 'choices' => [
                     'Un particulier' => true,
                     'Un professionnel de santé' => false
                 ]
             ])
             ->add('nom', TextType::class, [
-                'label' => false,
-                'attr' => [
-                    'placeholder' => 'Votre nom'
-                ]
+                'label' => 'Nom'
             ])
             ->add('prenom', TextType::class, [
-                'label' => false,
-                'attr' => [
-                    'placeholder' => 'Votre prénom'
-                ]
+                'label' => 'Prénom'
             ])
             ->add('email', EmailType::class, [
-                'label' => false,
-                'attr' => [
-                    'placeholder' => 'Votre email'
-                ]
+                'label' => 'Adresse mail'
             ])
             ->add('societe', TextType::class, [
-                'label' => false,
-                'attr' => [
-                    'placeholder' => 'Votre société'
-                ]
+                'label' => 'Société'
             ])
             ->add('codePostal', TextType::class, [
-                'label' => false,
-                'attr' => [
-                    'placeholder' => 'Votre code postal'
-                ]
+                'label' => 'Code Postal'
             ])
             ->add('ville', TextType::class, [
-                'label' => false,
-                'attr' => [
-                    'placeholder' => 'Votre ville'
-                ]
+                'label' => 'Ville'
             ])
             ->add('adresse', TextType::class, [
-                'label' => false,
-                'attr' => [
-                    'placeholder' => 'Votre adresse'
-                ]
+                'label' => 'Adresse'
             ])
             ->add('complementAdresse', TextType::class, [
-                'label' => false,
-                'attr' => [
-                    'placeholder' => 'Votre Complément d\'adresse'
-                ]
+                'label' => 'Complément d\'adresse'
             ])
             ->add('telephone', TextType::class, [
-                'label' => false,
-                'attr' => [
-                    'placeholder' => 'Votre numéro de téléphone'
-                ]
+                'label' => 'Téléphone'
             ])
             ->add('produitsInteresses', TextType::class, [
-                'label' => false,
-                'attr' => [
-                    'placeholder' => 'Veuillez indiquer les produits que vous souhaitez essayer'
-                ]
+                'label' => 'Les produits que vous souhaitez essayer'
             ])
             ->add('message', TextareaType::class, [
                 'label' => false,

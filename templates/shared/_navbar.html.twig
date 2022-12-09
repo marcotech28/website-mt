@@ -1,26 +1,24 @@
 <div
-	class="container-fluid maNav">
+	class="container-fluid">
 
 	{# navbar-top #}
-	<div style="padding: 10px" class="container-xl">
+	<div class="container-xl navbar-top">
 		<div class="row row justify-content-between align-items-center">
 			<div class="col-auto">
-				<a href="{{path("homepage")}}"><img class="navbar_logo" src="{{asset('images/logo_mt_navbar.jpg')}}"></a>
+				<a href="{{path("homepage")}}"><img class="navbar-logo" src="{{asset('images/logo_mt_navbar.jpg')}}"></a>
 			</div>
 			<div class="col-auto">
 				<div class="row">
 					<div class="col-auto align-items-center">
-						<img src="https:picsum.photos/90/90" alt="">
+						<img src="https:picsum.photos/100/100" alt="">
 					</div>
 					<div class="col-auto">
 						<div class="row">
-							<div class="col-12">
-								Besoin d'aide ?
+							<div class="col-2">
+								<i class="fa-solid fa-phone" style="color: #0F434E"></i>
 							</div>
-						</div>
-						<div class="row">
-							<div class="col-12">
-								<a href="tel:+33245260170">02 45 26 01 70</a>
+							<div class="col-10">
+								<a class="underline-effect-dark" href="tel:+33245260170">02 45 26 01 70</a>
 							</div>
 						</div>
 					</div>
@@ -29,35 +27,35 @@
 			<div class="col-auto">
 				<div class="row">
 					<div class="col-auto">
-						<a href="{{path("about")}}">À propos</a>
+						<a class="underline-effect-dark" href="{{path("about")}}">À propos</a>
 					</div>
 					<div class="col-auto">
-						<a href="{{path("app_actu")}}">Actualités</a>
+						<a class="underline-effect-dark" href="{{path("app_actu")}}">Actualités</a>
 					</div>
 					<div class="col-auto">
-						<a href="{{path("contact")}}">Contact</a>
+						<a class="underline-effect-dark" href="{{path("contact")}}">Contact</a>
 					</div>
 					<div class="col-auto">
-						<a href="{{path("demonstration")}}">Démonstration</a>
+						<a class="underline-effect-dark" href="{{path("demonstration")}}">Démonstration</a>
 					</div>
 					{% if app.user %}
 						<div class="col-auto">
-							<a href="#">Gérer mon compte</a>
+							<a class="underline-effect-dark" href="#">Gérer mon compte</a>
 						</div>
 					{% else %}
 						<div class="col-auto">
-							<a href="{{path("app_register")}}">Créer mon compte</a>
+							<a class="underline-effect-dark" href="{{path("app_register")}}">Créer mon compte</a>
 						</div>
 					{% endif %}
 
 
 					{% if app.user %}
 						<div class="col-auto">
-							<a href="{{path("security_logout")}}">Se déconnecter</a>
+							<a class="underline-effect-dark" href="{{path("security_logout")}}">Se déconnecter</a>
 						</div>
 					{% else %}
 						<div class="col-auto">
-							<a href="{{path('security_login')}}">Se connecter</a>
+							<a class="underline-effect-dark" href="{{path('security_login')}}">Se connecter</a>
 						</div>
 					{% endif %}
 				</div>
@@ -69,33 +67,41 @@
 {# navbar-bottom #}
 <div style="background-color: #0F434E" class="container-fluid">
 
-	<div class="container-xl navbar_bottom">
+	<div class="container-xl navbar-bottom">
 
 		<div class="row justify-content-between">
 			{% for c in categorieRepository.findAll() %}
 				<div class="col-auto">
-					<a href="{{path('app_categorie', {'slug': c.slug})}}">{{c.libelle}}</a>
+					<a class="underline-effect-white" href="{{path('app_categorie', {'slug': c.slug})}}">{{c.libelle}}</a>
 				</div>
 			{% endfor %}
 			<div class="col-auto">
-				<a href="https://www.marconnet-robotique.com/" target="_notblank">Robots</a>
+				<a href="https://www.marconnet-robotique.com/" class="underline-effect-white" target="_notblank">Robots</a>
 			</div>
-			<div class="col-auto">Autres</div>
+			<div class="col-auto">
+				<a class="underline-effect-white" href="#">Autres</a>
+			</div>
 		</div>
 	</div>
 </div>
+
+{# partie admin #}
 {% if app.user %}
-	<div class="container-xl">
-		<p>Vous êtes connecté en tant qu'administrateur. Vous possédez donc les droits pour administrer le site.</p>
-		<p>Que voulez-vous faire ?</p>
+	<div class="container-xl admin">
+
 		{% for role in app.user.roles %}
 			{% if role is same as 'ROLE_ADMIN' %}
+				<strong>
+					<p>
+						Vous êtes connecté en tant qu'administrateur. Vous possédez donc les droits pour administrer le site.
+						<br>Que voulez-vous faire ?</p>
+				</strong>
 				<ul>
 					<li class="in-line">
 						<a href=" {{path('app_admin_crud_index')}}">Gérer les utilisateurs</a>
 					</li>
 					<li class="in-line">
-						<a href="#">Gérer les produits</a>
+						<a href=" {{path('app_admin_crud_produit_index')}}">Gérer les produits</a>
 					</li>
 					<li class="in-line">
 						<a href=" {{path('app_admin_crud_categorie_index')}}">Gérer les catégories</a>
