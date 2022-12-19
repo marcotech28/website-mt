@@ -15,29 +15,41 @@ class ContactFormType extends AbstractType
     public function buildForm(FormBuilderInterface $builder, array $options): void
     {
         $builder
-            ->add('nom', TextType::class, [
-                'label' => 'Nom'
-            ])
-            ->add('prenom', TextType::class, [
-                'label' => 'Prénom'
-            ])
-            ->add('email', EmailType::class, [
-                'label' => 'Adresse mail'
-            ])
             ->add('societe', TextType::class, [
                 'label' => 'Société'
             ])
-            ->add('codePostal', TextType::class, [
-                'label' => 'Code postal'
+            ->add('siret', TextType::class, [
+                'label' => 'SIRET'
             ])
-            ->add('ville', TextType::class, [
-                'label' => 'Ville'
+            ->add('nom', TextType::class, [
+                'label' => 'Nom *'
+            ])
+            ->add('prenom', TextType::class, [
+                'label' => 'Prénom *'
+            ])
+            ->add('fonction', TextType::class, [
+                'label' => 'Fonction dans la société'
+            ])
+            ->add('email', EmailType::class, [
+                'label' => 'Adresse mail *'
             ])
             ->add('telephone', TextType::class, [
-                'label' => 'Téléphone'
+                'label' => 'Téléphone *'
+            ])
+            ->add('adresse', TextType::class, [
+                'label' => 'Adresse *'
+            ])
+            ->add('complementAdresse', TextType::class, [
+                'label' => 'Complément d\'adresse'
+            ])
+            ->add('ville', TextType::class, [
+                'label' => 'Ville *'
+            ])
+            ->add('codePostal', TextType::class, [
+                'label' => 'Code postal *'
             ])
             ->add('objet', ChoiceType::class, [
-                'label' => 'Objet de votre demande',
+                'label' => 'Objet de votre demande *',
                 'choices' => [
                     'Demande de devis' => 'devis',
                     'Demande de renseignement' => 'renseignement'

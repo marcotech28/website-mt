@@ -48,9 +48,6 @@ class User implements UserInterface, PasswordAuthenticatedUserInterface
     private ?string $complementAdresse = null;
 
     #[ORM\Column(length: 255)]
-    private ?string $region = null;
-
-    #[ORM\Column(length: 255)]
     private ?string $ville = null;
 
     #[ORM\Column(length: 255)]
@@ -65,8 +62,8 @@ class User implements UserInterface, PasswordAuthenticatedUserInterface
     #[ORM\Column(length: 255)]
     private ?string $siret = null;
 
-    #[ORM\Column]
-    private ?bool $civilite = null;
+    #[ORM\Column(length: 255)]
+    private ?string $fonction = null;
 
     public function getId(): ?int
     {
@@ -210,18 +207,6 @@ class User implements UserInterface, PasswordAuthenticatedUserInterface
         return $this;
     }
 
-    public function getRegion(): ?string
-    {
-        return $this->region;
-    }
-
-    public function setRegion(string $region): self
-    {
-        $this->region = $region;
-
-        return $this;
-    }
-
     public function getVille(): ?string
     {
         return $this->ville;
@@ -282,14 +267,14 @@ class User implements UserInterface, PasswordAuthenticatedUserInterface
         return $this;
     }
 
-    public function isCivilite(): ?bool
+    public function getFonction(): ?string
     {
-        return $this->civilite;
+        return $this->fonction;
     }
 
-    public function setCivilite(bool $civilite): self
+    public function setFonction(string $fonction): self
     {
-        $this->civilite = $civilite;
+        $this->fonction = $fonction;
 
         return $this;
     }

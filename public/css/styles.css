@@ -6,16 +6,29 @@ body {
 
 /* -- NAVBAR --  */
 
+.navbar-border {
+    background-color: #0F434E;
+    border-bottom: 1px solid #0F434E;
+}
+
 .navbar-top {
-    padding: 10px 0;
+    padding: 23px 0;
+    height: 10vh;
+}
+
+#house {
+    background-color: #0F434E;
 }
 
 .navbar-top a:hover {
-    color: #0F434E;
+    text-decoration: underline;
+    color: white;
 }
 
 .navbar-bottom a:hover {
-    color: white;
+    background-color: #0F434E;
+    color: black;
+    text-decoration: underline;
 }
 
 .navbar-top a,
@@ -23,31 +36,55 @@ body {
 .navbar-top {
     text-decoration: none;
     font-weight: 500;
+    font-size: 14px;
 }
 
 .navbar-top a {
-
-    color: #0F434E;
-}
-
-.navbar-bottom a {
-
     color: white;
 }
 
 .navbar-bottom {
     color: white;
-    padding: 20px;
+    padding: 0px !important;
+    height: 7vh;
+    background-color: #0f444ee7;
+}
+
+.navbar-bottom .nav {
+    height: 100%;
+}
+
+.border-a {
+    height: 100%;
+    justify-content: center;
+    align-items: center;
+}
+
+.nav-link {
+    height: 100% !important;
+}
+
+.navbar-bottom .nav a {
+    display: flex;
+    height: 100% !important;
+    margin: auto;
+    text-transform: uppercase;
+    color: white;
+    padding: 0 20px;
+    border-left: 1px solid #0F434E;
+    align-items: center;
+    justify-content: center;
 }
 
 .navbar-logo {
-    width: 240px;
-    height: auto;
+    height: 45px;
+    width: auto;
 }
 
+.navbar-bottom
 /* -- EFFECT UNDERLINE DARK -- */
 
-.underline-effect-dark {
+/* .underline-effect-dark {
     display: inline-block;
     position: relative;
     text-decoration: none;
@@ -69,11 +106,11 @@ body {
 .underline-effect-dark:hover::after {
     transform: scaleX(1);
     transform-origin: bottom left;
-}
+} */
 
 /* -- EFFECT UNDERLINE WHITE -- */
 
-.underline-effect-white {
+/* .underline-effect-white {
     display: inline-block;
     position: relative;
     text-decoration: none;
@@ -95,7 +132,7 @@ body {
 .underline-effect-white:hover::after {
     transform: scaleX(1);
     transform-origin: bottom left;
-}
+} */
 
 /* -- FOOTER -- */
 
@@ -129,7 +166,7 @@ footer a {
 }
 
 footer a:hover {
-    color: white;
+    color: #168896;
 }
 
 .titreFooter {
@@ -221,6 +258,44 @@ h5 {
 }
 
 /* -- HOMEPAGE -- */
+
+.banner {
+    height: 83vh;
+    width: 100%;
+    background-color: beige;
+    background: url('../images/overlay.png'), url('../images/road.jpg');
+    background-position: top;
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+
+.banner .info h1 {
+    padding-top: 15%;
+    font-size: 3em;
+    font-weight: 700;
+    color: #168896;
+    letter-spacing: 2px;
+}
+
+.banner .info p {
+    font-size: 2em;
+    font-weight: 500;
+    color: white;
+    letter-spacing: 2px;
+}
+
+.banner .info a {
+    margin-left: 50%;
+    transform: translateX(-50%);
+    color: white;
+    padding: 10px 20px;
+    font-size: 0.9em;
+    font-weight: 600;
+}
+
+.banner .info a:hover {
+    color: #168896;
+}
 
 .confiance .row img {
     width: 150px;
@@ -444,10 +519,9 @@ h5 {
 
 
 
-
-
 .logo {
-    width: 30px;
+    height: 45px;
+    width: auto;
 }
 
 .nomPartenaire {

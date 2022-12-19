@@ -55,17 +55,6 @@ class RegistrationFormType extends AbstractType
                     ]),
                 ],
             ])
-            ->add(
-                'civilite',
-                ChoiceType::class,
-                [
-                    'choices' => [
-                        'Un homme' => true,
-                        'Une femme' => false
-                    ],
-                    'label' => 'Je suis '
-                ]
-            )
             ->add('nom', TextType::class, [
                 'label' => "Nom"
             ])
@@ -78,6 +67,9 @@ class RegistrationFormType extends AbstractType
             ->add('nomSociete', TextType::class, [
                 'label' => "Société"
             ])
+            ->add('fonction', TextType::class, [
+                'label' => "Fonction"
+            ])
             ->add('siret', TextType::class, [
                 'label' => "Numéro de SIRET"
             ])
@@ -89,9 +81,6 @@ class RegistrationFormType extends AbstractType
             ])
             ->add('complementAdresse', TextType::class, [
                 'label' => "Complément d'adresse"
-            ])
-            ->add('region', TextType::class, [
-                'label' => "Région"
             ])
             ->add('ville', TextType::class, [
                 'label' => "Ville"

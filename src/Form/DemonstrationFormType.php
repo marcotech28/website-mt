@@ -16,41 +16,47 @@ class DemonstrationFormType extends AbstractType
     {
         $builder
             ->add('choixTypeUser', ChoiceType::class, [
-                'label' => "Type d'utilisateur",
+                'label' => "Type d'utilisateur *",
                 'choices' => [
                     'Un particulier' => true,
                     'Un professionnel de santé' => false
                 ]
             ])
-            ->add('nom', TextType::class, [
-                'label' => 'Nom'
-            ])
-            ->add('prenom', TextType::class, [
-                'label' => 'Prénom'
-            ])
-            ->add('email', EmailType::class, [
-                'label' => 'Adresse mail'
-            ])
             ->add('societe', TextType::class, [
                 'label' => 'Société'
             ])
-            ->add('codePostal', TextType::class, [
-                'label' => 'Code Postal'
+            ->add('SIRET', TextType::class, [
+                'label' => 'SIRET'
             ])
-            ->add('ville', TextType::class, [
-                'label' => 'Ville'
+            ->add('nom', TextType::class, [
+                'label' => 'Nom *'
+            ])
+            ->add('prenom', TextType::class, [
+                'label' => 'Prénom *'
+            ])
+            ->add('Fonction', TextType::class, [
+                'label' => 'Fonction dans la société *'
+            ])
+            ->add('email', EmailType::class, [
+                'label' => 'Adresse mail *'
+            ])
+            ->add('telephone', TextType::class, [
+                'label' => 'Téléphone *'
             ])
             ->add('adresse', TextType::class, [
-                'label' => 'Adresse'
+                'label' => 'Adresse *'
             ])
             ->add('complementAdresse', TextType::class, [
                 'label' => 'Complément d\'adresse'
             ])
-            ->add('telephone', TextType::class, [
-                'label' => 'Téléphone'
+            ->add('ville', TextType::class, [
+                'label' => 'Ville *'
+            ])
+            ->add('codePostal', TextType::class, [
+                'label' => 'Code Postal *'
             ])
             ->add('produitsInteresses', TextType::class, [
-                'label' => 'Les produits que vous souhaitez essayer'
+                'label' => 'Les produits que vous souhaitez essayer *'
             ])
             ->add('message', TextareaType::class, [
                 'label' => false,

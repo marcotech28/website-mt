@@ -1,11 +1,11 @@
 <div
-	class="container-fluid">
+	class="container-fluid navbar-border">
 
 	{# navbar-top #}
 	<div class="container-xl navbar-top">
 		<div class="row row justify-content-between align-items-center">
 			<div class="col-auto">
-				<a href="{{path("homepage")}}"><img class="navbar-logo" src="{{asset('images/logo_mt_navbar.jpg')}}"></a>
+				<a href="{{path("homepage")}}"><img class="navbar-logo" src="{{asset('images/logo_base_blanc_mt.png')}}"></a>
 			</div>
 			<div class="col-auto">
 				<div class="row">
@@ -15,7 +15,7 @@
 					<div class="col-auto">
 						<div class="row">
 							<div class="col-2">
-								<i class="fa-solid fa-phone" style="color: #0F434E"></i>
+								<i class="fa-solid fa-phone" style="color: white"></i>
 							</div>
 							<div class="col-10">
 								<a class="underline-effect-dark" href="tel:+33245260170">02 45 26 01 70</a>
@@ -65,25 +65,29 @@
 </div>
 
 {# navbar-bottom #}
-<div style="background-color: #0F434E" class="container-fluid">
 
-	<div class="container-xl navbar-bottom">
 
-		<div class="row justify-content-between">
-			{% for c in categorieRepository.findAll() %}
-				<div class="col-auto">
-					<a class="underline-effect-white" href="{{path('app_categorie', {'slug': c.slug})}}">{{c.libelle}}</a>
-				</div>
-			{% endfor %}
-			<div class="col-auto">
-				<a href="https://www.marconnet-robotique.com/" class="underline-effect-white" target="_notblank">Robots</a>
-			</div>
-			<div class="col-auto">
-				<a class="underline-effect-white" href="#">Autres</a>
-			</div>
-		</div>
-	</div>
-</div>
+<nav class="container-fluid navbar-bottom">
+	<ul class="nav justify-content-center">
+		<li class="nav-item border-a">
+			<a href="#" id="house">
+				<i class="fa-solid fa-house"></i>
+			</a>
+		</li>
+		{% for c in categorieRepository.findAll() %}
+			<li class="nav-item border-a">
+				<a href="{{path('app_categorie', {'slug': c.slug})}}" class="nav-link">{{c.libelle}}</a>
+			</li>
+		{% endfor %}
+		<li class="nav-item border-a">
+			<a href="https://www.marconnet-robotique.com/" class="nav-link" target="_notblank">Robots</a>
+		</li>
+		<li class="nav-item border-a">
+			<a href="#" class="nav-link" target="_notblank">Autres</a>
+		</li>
+	</ul>
+</nav>
+
 
 {# partie admin #}
 {% if app.user %}
