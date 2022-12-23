@@ -9,108 +9,169 @@
 
 <div class="container-fluid banner">
 	<div class="col-md-8 offset-md-2 info">
-		<h1 class="text-center">MARCONNET TECHNOLOGIES</h1>
+		<h1 class="text-center">MARCONNET TECHNOLOGIES™</h1>
 		<p class="text-center">
 			Le spécialiste de la mobilité sur mesure dans le monde du handicap
 		</p>
-		<a href="#marconnet-technologies" class="btn btn-lg text-center">DECOUVRIR MARCONNET TECHNOLOGIES</a>
+		<a href="#produitpref" class="btn btn-lg text-center">DECOUVRIR MARCONNET TECHNOLOGIES</a>
 	</div>
 </div>
 
 <div
 	class="container-xl">
-
-	{# presentation site #}
-	<div class="row home_top">
-		<div class="col-12">
-			<h1 id="marconnet-technologies">Marconnet technologies™</h1>
-			<h2>Le spécialiste de la mobilité sur mesure dans le monde du handicap.</h2>
-			<img src="https://picsum.photos/400/400" alt="">
-		</div>
-	</div>
-
-	{# carousel #}
-	<div class="row produits_en_avant">
-		TODO CARAOUSEL
-	</div>
-
 	{# produits préférés #}
-	<div class="produits-preferes">
+	<div id="produitpref" class="produits-preferes">
 		<div class="row">
 			<div class="col-12">
 				<h1>Les produits préférés de nos clients</h1>
 			</div>
 		</div>
-		<div class="row justify-content-around">
-			<div class="col-4">
-				{% include "product/_produit_prefere.html.twig" with {
-					'productName' : 'Un nom de produit',
-					'image' : 'https://picsum.photos/300/300'
-				}%}
-			</div>
+		<div class="row">
+			{% include "product/_produit_prefere.html.twig" with {
+						'nomProduit' : 'Un nom',
+						'photo' : 'nature.jpg',
+						'description' : 'Une petite description bien sympathique bien sympatoche.',
+						'lien' : '#'
+					}%}
 
-			<div class="col-4">
-				{% include "product/_produit_prefere.html.twig" with {
-					'productName' : 'Un nom de produit',
-					'image' : 'https://picsum.photos/300/300'
-				}%}
+			{% include "product/_produit_prefere.html.twig" with {
+						'nomProduit' : 'Un nom',
+						'photo' : 'nature.jpg',
+						'description' : 'Une petite description bien sympathique bien sympatoche.',
+						'lien' : '#'
+					}%}
+			{% include "product/_produit_prefere.html.twig" with {
+						'nomProduit' : 'Un nom',
+						'photo' : 'nature.jpg',
+						'description' : 'Une petite description bien sympathique bien sympatoche.',
+						'lien' : '#'
+					}%}
+			{% include "product/_produit_prefere.html.twig" with {
+						'nomProduit' : 'Un nom',
+						'photo' : 'nature.jpg',
+						'description' : 'Une petite description bien sympathique bien sympatoche.',
+						'lien' : '#'
+					}%}
+		</div>
+	</div>
+</div></div>{# carousel #}<div class="container-fluid" style=" margin: 100px 0px; background: #0F434E">
+<div id="mon-carousel" class="carousel slide" data-bs-ride="carousel" style="background: rgb(197, 194, 194)">
+	<ol class=" carousel-indicators">
+		<li data-bs-target="#mon-carousel" data-bs-slide-to="0" class="active"></li>
+		<li data-bs-target="#mon-carousel" data-bs-slide-to="1"></li>
+		<li data-bs-target="#mon-carousel" data-bs-slide-to="2"></li>
+	</ol>
+	<div class="carousel-inner">
+		<div class="carousel-item active" data-bs-interval="10000">
+			<div class="container">
+				<div class="row p-5">
+					<div class="mx-auto col-md-8 col-lg-6 order-lg-last">
+						<img class="img-fluid" src="{{asset('images/fun2go.png')}}" alt=" ">
+					</div>
+					<div class="col-lg-6 mb-0 d-flex align-items-center">
+						<div class="text-align-left align-self-center">
+							<h1>Lorem ipsum dolor sit amet.</h1>
+							<h3>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Dolore, optio.</h3>
+							<p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Iusto temporibus blanditiis dolor, dolorem possimus eos!
+							</p>
+							<p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Debitis, incidunt.</p>
+							<a href="#">
+								<div class="btn btn-outline-primary btn-lg">Voir le produit</div>
+							</a>
+						</div>
+					</div>
+				</div>
 			</div>
-
-			<div class="col-4">
-				{% include "product/_produit_prefere.html.twig" with {
-					'productName' : 'Un nom de produit',
-					'image' : 'https://picsum.photos/300/300'
-				}%}
+		</div>
+		<div class="carousel-item" data-bs-interval="10000">
+			<div class="container">
+				<div class="row p-5">
+					<div class="mx-auto col-md-8 col-lg-6 order-lg-last">
+						<img class="img-fluid" src="{{asset('images/easyrider.jpg')}}" alt=" ">
+					</div>
+					<div class="col-lg-6 mb-0 d-flex align-items-center">
+						<div class="text-align-left">
+							<h1>Lorem ipsum dolor sit amet.</h1>
+							<h3>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Labore, beatae.</h3>
+							<p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Quas, dolorum. Suscipit dolor eveniet voluptas. Quos?
+							</p>
+							<p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Eos aliquid architecto, eaque neque aspernatur expedita.</p>
+							<a href="#">
+								<div class="btn btn-outline-primary btn-lg">Voir le produit</div>
+							</a>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="carousel-item" data-bs-interval="10000">
+			<div class="container">
+				<div class="row p-5">
+					<div class="mx-auto col-md-8 col-lg-6 order-lg-last">
+						<img class="img-fluid" src="{{asset('images/citymax.jpg')}}" alt="">
+					</div>
+					<div class="col-lg-6 mb-0 d-flex align-items-center">
+						<div class="text-align-left">
+							<h1>Lorem ipsum dolor sit amet.</h1>
+							<h3>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Tenetur, error?</h3>
+							<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Reiciendis, maiores fuga. Officiis temporibus vitae recusandae?</p>
+							<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Architecto, quos iure dignissimos optio suscipit deserunt.</p>
+							<a href="#">
+								<div class="btn btn-outline-primary btn-lg">Voir le produit</div>
+							</a>
+						</div>
+					</div>
+				</div>
 			</div>
 		</div>
 	</div>
+	<a class="carousel-control-prev text-decoration-none w-auto ps-3" href="#mon-carousel" role="button" data-bs-slide="prev">
+		<i class="fas fa-chevron-left"></i>
+	</a>
+	<a class="carousel-control-next text-decoration-none w-auto pe-3" href="#mon-carousel" role="button" data-bs-slide="next">
+		<i class="fas fa-chevron-right"></i>
+	</a>
+</div></div><div
+class="container-xl">
 
-	{# a propos #}
-	<div class="a_propos">
-		<div class="row">
-			<div class="col-12">
-				<h1>À propos de Marconnet technologies™</h1>
-			</div>
+{# a propos #}
+<div class="a_propos">
+	<div class="row">
+		<div class="col-12">
+			<h1>À propos de Marconnet technologies™</h1>
 		</div>
-		<div class="row">
-			<div class="col-12">
-				<p>Marconnet technologies™ est spécialisée dans la mobilité et unique sur le marché depuis plus de 18 ans.</p>
-				<p>Nous commercialisons des matériels pour améliorer le déplacement des gens en perte de mobilité.</p>
-			</div>
+	</div>
+	<div class="row">
+		<div class="col-12">
+			<p>Marconnet technologies™ est spécialisée dans la mobilité et unique sur le marché depuis plus de 18 ans.</p>
+			<p>Nous commercialisons des matériels pour améliorer le déplacement des gens en perte de mobilité.</p>
 		</div>
-		<div class="row">
-			<div class="col-3">
-				{% include "_home_apropos.html.twig" with {
-					'image' : 'https://picsum.photos/150/150',
+	</div>
+	<div class="row" style="padding-top: 70px; padding-bottom: 20px">
+		{% include "_home_apropos.html.twig" with {
+					'image' : 'conseil.png',
 					'titre' : 'Conseils personnalisés',
 					'contenu' : 'Notre rôle est de vous conseiller avant de passer à l\'acte d\'achat et c’est pour cela qu\’il faut prendre contact avec nous avant de passer à l\’acte d’achat.'
 				} %}
-			</div>
-			<div class="col-3">
-				{% include "_home_apropos.html.twig" with {
-					'image' : 'https://picsum.photos/150/150',
+		{% include "_home_apropos.html.twig" with {
+					'image' : 'innovation.png',
 					'titre' : 'Des produits innovants',
 					'contenu' : 'Notre force est de rechercher des nouveaux produits innovants dans le monde entier et de les proposer en France. Nous choisissons uniquement un fabricant par gamme de matériels que nous avons soigneusement sélectionné afin de proposer les meilleurs matériels sur chaque segment de marché.'
 				} %}
-			</div>
-			<div class="col-3">
-				{% include "_home_apropos.html.twig" with {
-					'image' : 'https://picsum.photos/150/150',
+		{% include "_home_apropos.html.twig" with {
+					'image' : 'client.png',
 					'titre' : 'Nos clients',
 					'contenu' : 'Nos produits de grande qualité nous permettent de cibler aussi bien les particuliers que les professionnels du monde de la santé.'
 				} %}
-			</div>
-			<div class="col-3">
-				{% include "_home_apropos.html.twig" with {
-					'image' : 'https://picsum.photos/150/150',
+		{% include "_home_apropos.html.twig" with {
+					'image' : 'services.png',
 					'titre' : 'Nos services',
 					'contenu' : 'Aujourd\'hui nous vendons, louons et réparons nos matériels dans notre atelier.'
 				} %}
-			</div>
 			</div>			
 			<div class="row">
 				<div class="col-12 d-flex justify-content-center">
-					<a class="btn btn-primary" href="{{path('about')}}" role="button">En savoir plus sur Marconnet technologies™</a>
+					<a class="btn btn-outline-primary" href="{{path('about')}}" role="button">En savoir plus sur Marconnet technologies™</a>
 				</div>
 			</div>
 		</div>
@@ -122,7 +183,7 @@
 				<div class="col-12">
 					<h3>Nous vous proposons de tester le matériel avant de l'acheter.</h3>
 					<p>Assurez-vous que le matériel soit parfaitement adapté à vous en essayant nos produits. Vous pouvez venir au showroom, ou alors, c'est le showroom qui viendra à vous.</p>
-					<a class="btn btn-primary" href="{{path('demonstration')}}" role="button">Je souhaite tester le matériel</a>
+					<a class="btn btn-outline-primary" href="{{path('demonstration')}}" role="button">Je souhaite tester le matériel</a>
 				</div>
 			</div>
 		</div>
@@ -139,83 +200,81 @@
 			<p>Depuis plus de 15 ans, Marconnet technologies™ travaille avec des acteurs importants du monde de la santé. <br>Nous sommes fiers d’accompagner des marques leaders.</p>
 		</div>
 	</div>
-<div class="partners">
-<div class="row">
-		{% include "shared/_home_etab_sante.html.twig" with {
-			'nom' : 'DomusVi',
-			'cat' : 'Établissement de santé',
-			'souscat' : 'EHPAD',
-			'description' : 'Lorem ipsum, dolor sit amet consectetur adipisicing elit. Saepe, omnis!',
-			'website' : 'https://www.domusvi.com/'
-	 	} %}
+	<div class="partners">
+		<div class="row">
+				{% include "shared/_home_etab_sante.html.twig" with {
+					'nom' : 'DomusVi',
+					'cat' : 'Établissement de santé',
+					'souscat' : 'EHPAD',
+					'image' : asset('images/revend/domusvi.png'),
+					'website' : 'https://www.domusvi.com/'
+				} %}
 
-		{% include "shared/_home_etab_sante.html.twig" with {
-			'nom' : 'Korian',
-			'cat' : 'Établissement de santé',
-			'souscat' : 'EHPAD',
-			'description' : 'Lorem, ipsum dolor sit amet consectetur adipisicing elit. Temporibus, sunt.',
-			'website' : 'https://www.korian.fr/'
-	 	} %}
+				{% include "shared/_home_etab_sante.html.twig" with {
+					'nom' : 'Korian',
+					'cat' : 'Établissement de santé',
+					'souscat' : 'EHPAD',
+					'image' : asset('images/revend/korian.png'),
+					'website' : 'https://www.korian.fr/'
+				} %}
 
-		{% include "shared/_home_etab_sante.html.twig" with {
-			'nom' : 'Orpea',
-			'cat' : 'Établissement de santé',
-			'souscat' : 'EHPAD',
-			'description' : 'Lorem ipsum, dolor sit amet consectetur adipisicing elit. Cum, delectus!',
-			'website' : 'https://www.orpea-groupe.com/'
-	 	} %}
+				{% include "shared/_home_etab_sante.html.twig" with {
+					'nom' : 'Orpea',
+					'cat' : 'Établissement de santé',
+					'souscat' : 'EHPAD',
+					'image' : asset('images/revend/orpea.png'),
+					'website' : 'https://www.orpea-groupe.com/'
+				} %}
 
-		{% include "shared/_home_etab_sante.html.twig" with {
-			'nom' : 'Adapei',
-			'cat' : 'Établissement de santé',
-			'souscat' : 'FAM/MAS',
-			'description' : 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Asperiores, aliquid.',
-			'website' : 'https://www.adapei72.asso.fr/'
-	 	} %}
+				{% include "shared/_home_etab_sante.html.twig" with {
+					'nom' : 'Adapei',
+					'cat' : 'Établissement de santé',
+					'souscat' : 'FAM/MAS',
+					'image' : asset('images/revend/adapei.png'),
+					'website' : 'https://www.adapei72.asso.fr/'
+				} %}
 
-		{% include "shared/_home_etab_sante.html.twig" with {
-			'nom' : 'Perce-Neige',
-			'cat' : 'Établissement de santé',
-			'souscat' : 'FAM/MAS',
-			'description' : 'Lorem ipsum dolor, sit amet consectetur adipisicing elit. Perspiciatis, minima.',
-			'website' : 'https://www.perce-neige.org/'
-	 	} %}
+				{% include "shared/_home_etab_sante.html.twig" with {
+					'nom' : 'Perce-Neige',
+					'cat' : 'Établissement de santé',
+					'souscat' : 'FAM/MAS',
+					'image' : asset('images/revend/perce-neige2.png'),
+					'website' : 'https://www.perce-neige.org/'
+				} %}
 
-		{% include "shared/_home_revendeur.html.twig" with {
-			'nom' : 'Bastide',
-			'cat' : 'Revendeur médical',
-			'description' : 'Lorem ipsum dolor sit, amet consectetur adipisicing elit. Aperiam, labore?',
-			'website' : 'https://www.bastideleconfortmedical.com/'
-	 	} %}
+				{% include "shared/_home_revendeur.html.twig" with {
+					'nom' : 'Bastide',
+					'cat' : 'Prestataire de santé',
+					'image' : asset('images/revend/bastide.png'),
+					'website' : 'https://www.bastideleconfortmedical.com/'
+				} %}
 
-		{% include "shared/_home_revendeur.html.twig" with {
-			'nom' : 'Harmonie Médical Service',
-			'cat' : 'Revendeur médical',
-			'description' : 'Lorem ipsum dolor sit, amet consectetur adipisicing elit. Perferendis, quasi!',
-			'website' : 'https://www.harmonie-medical-service.fr/'
-	 	} %}
+				{% include "shared/_home_revendeur.html.twig" with {
+					'nom' : 'Harmonie Médical Service',
+					'cat' : 'Prestataire de santé',
+					'image' : asset('images/revend/hms.png'),
+					'website' : 'https://www.harmonie-medical-service.fr/'
+				} %}
 
-		{% include "shared/_home_revendeur.html.twig" with {
-			'nom' : 'Oxypharm',
-			'cat' : 'Revendeur médical',
-			'description' : 'Lorem, ipsum dolor sit amet consectetur adipisicing elit. Tenetur, consequuntur.',
-			'website' : 'https://www.vitadomia.com/'
-	 	} %}
+				{% include "shared/_home_revendeur.html.twig" with {
+					'nom' : 'Oxypharm',
+					'cat' : 'Prestataire de santé',
+					'image' : asset('images/revend/oxypharm.png'),
+					'website' : 'https://www.vitadomia.com/'
+				} %}
 
-		{% include "shared/_home_revendeur.html.twig" with {
-			'nom' : 'Paramat',
-			'cat' : 'Revendeur médical',
-			'description' : 'Lorem ipsum dolor, sit amet consectetur adipisicing elit. Illum, reiciendis!',
-			'website' : 'https://www.paramat.com/'
-	 	} %}
+				{% include "shared/_home_revendeur.html.twig" with {
+					'nom' : 'Paramat',
+					'cat' : 'Prestataire de santé',
+					'image' : asset('images/revend/paramat.png'),
+					'website' : 'https://www.paramat.com/'
+				} %}
 
-				</div>
-</div>
+		</div>
+	</div>
 	
 			</div>
 			</div>
-
-
 
 			{# newsletter #}
 			<div class="container-fluid newsletter">
@@ -233,16 +292,25 @@
 								</div>
 							</div>
 							<div class="row">
-								<div class="col">
+								{# <div class="col">
 									<input type="text" id="email" name="email">
 									<button type="button" class="btn btn-primary">Je m'inscris</button>
+								</div> #}
+								<div class="col">
+									<div class="input-group mb-3">
+										<div class="input-group-prepend">
+											<span class="input-group-text" id="basic-addon1">@</span>
+										</div>
+										<input type="text" class="form-control" placeholder="Mon adresse email" aria-label="Username" aria-describedby="basic-addon1">
+									</div>
+									<button type="button" class="btn btn-outline-primary btn-lg">Je m'inscris</button>
 								</div>
+								
 							</div>
 						</div>
 						<div class="col">
 							<img src="{{asset('images/newsletter.png')}}" alt="">
 						</div>
-
 					</div>
 				</div>
 			</div>

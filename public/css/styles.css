@@ -84,7 +84,7 @@ body {
 .navbar-bottom
 /* -- EFFECT UNDERLINE DARK -- */
 
-/* .underline-effect-dark {
+.underline-effect-dark {
     display: inline-block;
     position: relative;
     text-decoration: none;
@@ -106,7 +106,7 @@ body {
 .underline-effect-dark:hover::after {
     transform: scaleX(1);
     transform-origin: bottom left;
-} */
+}
 
 /* -- EFFECT UNDERLINE WHITE -- */
 
@@ -138,7 +138,6 @@ body {
 
 .socials a {
     background: white;
-    color: #201545;
     font-size: 22px;
     padding: 7px 7px 7px 7px;
     width: 45px;
@@ -151,13 +150,19 @@ body {
 }
 
 .socials a:hover {
-    background: #e7e2e2;
+    background: #168896;
 }
 
 footer {
+    position: relative;
     background-color: #0F434E;
     color: white;
     text-decoration: none;
+    background-image: url('logo_footer.png');
+    background-size: 550px;
+    background-position: 80% bottom;
+    background-repeat: no-repeat;
+
 }
 
 footer a {
@@ -166,7 +171,8 @@ footer a {
 }
 
 footer a:hover {
-    color: #168896;
+    color: white;
+    text-decoration: underline;
 }
 
 .titreFooter {
@@ -257,6 +263,22 @@ h5 {
     border-color: #168896 !important;
 }
 
+.btn-outline-primary,
+.btn-outline-primary:hover,
+.btn-outline-primary:active,
+.btn-outline-primary:visited,
+.btn-outline-primary:focus {
+    border-color: #168896 !important;
+}
+
+.btn-outline-primary {
+    --bs-btn-color: #168896 !important;
+}
+
+.btn-outline-primary:hover {
+    background-color: #168896 !important;
+}
+
 /* -- HOMEPAGE -- */
 
 .banner {
@@ -297,17 +319,115 @@ h5 {
     color: #168896;
 }
 
-.confiance .row img {
-    width: 150px;
-    height: auto;
-    transition: all 0.3s ease-in-out;
+/* - produits préférés - */
+
+.bannerProduct {
+    height: 60px;
+    background-color: #0F434E;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
-.confiance .row img:hover {
-    z-index: -1;
-    border-radius: 5px;
-    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
-    transform: scale(1.1);
+.pictureProduct img {
+    width: 100%;
+    background-size: cover;
+    background-repeat: no-repeat;
+    border-top: 2px solid #168896;
+}
+
+.bannerProduct h1 {
+    color: white;
+    font-size: 16px !important;
+    text-align: center;
+}
+
+.voir-plus {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.voir-plus a {
+    text-decoration: underline;
+    text-decoration-color: #168896;
+    text-decoration-thickness: 2px;
+    color: black;
+    text-transform: uppercase;
+    font-weight: 500;
+    font-size: 14px;
+}
+
+.voir-plus a:hover {
+    color: #168896;
+}
+
+.main-text {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.main-text p {
+    margin: 25px 10px;
+    font-style: italic;
+    text-align: center;
+    font-size: 13px;
+    font-weight: 500;
+}
+
+/* - carousel - */
+
+.carousel-item {
+    background: #fff;
+    opacity: 0.9;
+    color: black;
+    position: relative;
+    background-position: center;
+    background-size: cover;
+}
+
+.overlay-image {
+    /* position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    top: 0; */
+    background-position: center;
+    background-size: cover;
+    opacity: 0.9;
+}
+
+#mon-carousel .carousel-control-next i,
+#mon-carousel .carousel-control-prev i {
+    font-size: 40px;
+    color: #0F434E !important;
+}
+
+#mon-carousel .carousel-indicators li {
+    background-color: #0F434E;
+}
+
+.carousel-inner h1 {
+    color: #168896;
+    font-size: 55px;
+    padding-top: 10px;
+    padding-bottom: 15px;
+}
+
+.carousel-inner h3 {
+    padding: 20px 0;
+}
+
+.carousel-inner .btn {
+    margin-top: 5px;
+}
+
+/* - confiance - */
+.confiance .row img {
+    padding-top: 20px;
+    width: 140px;
+    height: auto;
 }
 
 .revend {
@@ -315,7 +435,7 @@ h5 {
 }
 
 .newsletter {
-    background-color: #F3F3F3;
+    background-color: #f9f9f9;
     height: 500px;
 }
 
@@ -378,7 +498,7 @@ h5 {
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
     overflow: hidden;
     border-radius: 15px;
-    height: 250px;
+    height: 280px;
     margin-bottom: 80px;
 }
 
@@ -390,6 +510,47 @@ h5 {
     margin: 90px 0;
 }
 
+/* - conseils - */
+
+.a_propos {
+    margin: 100px 0;
+}
+
+.card-services {
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+    overflow: hidden;
+    border-radius: 15px;
+    height: 420px;
+    margin-bottom: 80px;
+    border-top: 5px solid #168896;
+    border-bottom: 5px solid #168896;
+}
+
+.card-services img {
+    display: block;
+    width: 50px;
+    height: auto;
+    margin: auto;
+    padding: 30px 0;
+}
+
+.card-services p,
+.card-services h1,
+.card-services img {
+    text-align: center;
+}
+
+.card-services h1 {
+    font-size: 28px;
+    color: #168896;
+    padding-bottom: 15px;
+    padding-top: 0;
+}
+
+.card-services p {
+    padding: 0 20px;
+    font-size: 15px;
+}
 
 /*-- CONTACT --*/
 
@@ -417,14 +578,15 @@ h5 {
     border-radius: 15px;
 }
 
-.img1 img {
-    height: 200px;
+.img11 img {
+    height: 100px;
+    object-fit: cover;
     border-top-right-radius: 0px;
     border-top-left-radius: 0px;
     width: 100%;
 }
 
-.img2 img {
+.img22 img {
     position: relative;
     display: block;
     margin-left: auto;
@@ -432,22 +594,17 @@ h5 {
     z-index: 1;
     width: 140px;
     height: 140px;
-    border-radius: 50px;
-    border: 4px solid #fff;
+    border-radius: 30px;
+    border: 4px solid #0F434E;
     margin-top: -70px;
 }
 
-.card:hover .img2 img {
-    border-color: #0F434E;
-    transition: .5s;
-}
-
-.main-text {
+.main-texte {
     padding: 10px 0;
     text-align: center;
 }
 
-.main-text h2 {
+.main-texte h2 {
     text-transform: uppercase;
     font-weight: 500;
     font-size: 20px;
@@ -456,7 +613,7 @@ h5 {
     padding: 20px;
 }
 
-.main-text h3 {
+.main-texte h3 {
     font-weight: 400;
     font-size: 20px;
     margin: 0 0 1px;
@@ -464,7 +621,7 @@ h5 {
     padding: 10px;
 }
 
-.main-text p {
+.main-texte p {
     font-size: 16px;
     padding: 0 35px;
 }
@@ -516,9 +673,6 @@ h5 {
 
 /* --------- */
 
-
-
-
 .logo {
     height: 45px;
     width: auto;
@@ -529,8 +683,6 @@ h5 {
     font-weight: bold;
     color: #0F434E;
 }
-
-
 
 .youtube {
     width: 550px;
