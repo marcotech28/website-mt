@@ -1,0 +1,63 @@
+.gradient-custom-2 {
+    /* fallback for old browsers */
+    background: #fccb90;
+
+    /* Chrome 10-25, Safari 5.1-6 */
+    background: -webkit-linear-gradient(to right, #0F434E, #168896);
+
+    /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+    background: linear-gradient(to right, #0F434E, #168896);
+}
+
+@media (min-width: 768px) {
+    .gradient-form {
+        height: 100vh !important;
+    }
+}
+
+@media (min-width: 769px) {
+    .gradient-custom-2 {
+        border-top-right-radius: .3rem;
+        border-bottom-right-radius: .3rem;
+    }
+}
+
+.card-login {
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+    overflow: hidden;
+    border-radius: 15px;
+    margin-bottom: 80px;
+    border-top: 5px solid #168896;
+    border-bottom: 5px solid #168896;
+}
+
+.btn-primary {
+    padding-left: 30% !important;
+    padding-right: 30% !important;
+    border-color: #168896 !important;
+    background-color: #168896 !important;
+}
+
+.form-control {
+    border: none;
+    border-bottom: 1px solid #168896;
+    padding-left: 0;
+    padding-right: 0;
+    border-radius: 0;
+}
+
+.btn-outline-primary,
+.btn-outline-primary:hover,
+.btn-outline-primary:active,
+.btn-outline-primary:visited,
+.btn-outline-primary:focus {
+    border-color: #168896 !important;
+}
+
+.btn-outline-primary {
+    --bs-btn-color: #168896 !important;
+}
+
+.btn-outline-primary:hover {
+    background-color: #168896 !important;
+}

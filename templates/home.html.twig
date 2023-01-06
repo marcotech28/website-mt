@@ -26,144 +26,149 @@
 				<h1>Les produits préférés de nos clients</h1>
 			</div>
 		</div>
+		<div class="row h-100">
+			{% include "product/_produit_prefere.html.twig" with {
+						'nomProduit' : 'Un nom',
+						'photo' : 'nature.jpg',
+						'description' : 'Une petite description bien sympathique bien sympatoche.',
+						'lien' : '#'
+					}%}
+
+
+			{% include "product/_produit_prefere.html.twig" with {
+						'nomProduit' : 'Un nom',
+						'photo' : 'nature.jpg',
+						'description' : 'Blabla blablablabla blabla blabla blabla blablablablablabla blabla blabla blabla blabla blablablabla blabla blabla blabla blabla blablablabla blabla blabla blabla blabla',
+						'lien' : '#'
+					}%}
+			{% include "product/_produit_prefere.html.twig" with {
+						'nomProduit' : 'Un nom',
+						'photo' : 'nature.jpg',
+						'description' : 'Blabla blablablabla blabla blabla blabla blablablablablabla blabla blabla blabla blabla blablablabla blabla blabla blabla blabla blablablabla blabla blabla blabla blabla Blabla blablablabla blabla blabla blabla blablablablablabla blabla blabla blabla blabla blablablabla blabla blabla blabla blabla blablablabla blabla blabla blabla blabla Blabla blablablabla blabla blabla blabla blablablablablabla blabla blabla blabla blabla blablablabla blabla blabla blabla blabla blablablabla blabla blabla blabla blabla',
+						'lien' : '#'
+					}%}
+			{% include "product/_produit_prefere.html.twig" with {
+						'nomProduit' : 'Un nom',
+						'photo' : 'nature.jpg',
+						'description' : 'Une petite description bien sympathique bien sympatoche.',
+						'lien' : '#'
+					}%}
+		</div>
+	</div>
+</div>
+
+<div class="container-fluid" style=" border-right: 8px solid #0F434E; border-left: 8px solid #0F434E">
+	<div id="mon-carousel" class="carousel slide" data-bs-ride="carousel" style="background: rgb(197, 194, 194)">
+		<ol class=" carousel-indicators">
+			<li data-bs-target="#mon-carousel" data-bs-slide-to="0" class="active"></li>
+			<li data-bs-target="#mon-carousel" data-bs-slide-to="1"></li>
+			<li data-bs-target="#mon-carousel" data-bs-slide-to="2"></li>
+		</ol>
+		<div class="carousel-inner">
+			<div class="carousel-item active" data-bs-interval="10000">
+				<div class="container">
+					<div class="row p-5">
+						<div class="mx-auto col-md-8 col-lg-6 order-lg-last">
+							<img class="img-fluid" src="{{asset('images/fun2go.png')}}" alt=" ">
+						</div>
+						<div class="col-lg-6 mb-0 d-flex align-items-center">
+							<div class="text-align-left align-self-center">
+								<h1>Lorem ipsum dolor sit amet.</h1>
+								<h3>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Dolore, optio.</h3>
+								<p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Iusto temporibus blanditiis dolor, dolorem possimus eos!
+								</p>
+								<p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Debitis, incidunt.</p>
+								<a href="#">
+									<div class="btn btn-outline-primary btn-lg">Voir le produit</div>
+								</a>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="carousel-item" data-bs-interval="10000">
+				<div class="container">
+					<div class="row p-5">
+						<div class="mx-auto col-md-8 col-lg-6 order-lg-last">
+							<img class="img-fluid" src="{{asset('images/easyrider.jpg')}}" alt=" ">
+						</div>
+						<div class="col-lg-6 mb-0 d-flex align-items-center">
+							<div class="text-align-left">
+								<h1>Lorem ipsum dolor sit amet.</h1>
+								<h3>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Labore, beatae.</h3>
+								<p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Quas, dolorum. Suscipit dolor eveniet voluptas. Quos?
+								</p>
+								<p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Eos aliquid architecto, eaque neque aspernatur expedita.</p>
+								<a href="#">
+									<div class="btn btn-outline-primary btn-lg">Voir le produit</div>
+								</a>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="carousel-item" data-bs-interval="10000">
+				<div class="container">
+					<div class="row p-5">
+						<div class="mx-auto col-md-8 col-lg-6 order-lg-last">
+							<img class="img-fluid" src="{{asset('images/citymax.jpg')}}" alt="">
+						</div>
+						<div class="col-lg-6 mb-0 d-flex align-items-center">
+							<div class="text-align-left">
+								<h1>Lorem ipsum dolor sit amet.</h1>
+								<h3>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Tenetur, error?</h3>
+								<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Reiciendis, maiores fuga. Officiis temporibus vitae recusandae?</p>
+								<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Architecto, quos iure dignissimos optio suscipit deserunt.</p>
+								<a href="#">
+									<div class="btn btn-outline-primary btn-lg">Voir le produit</div>
+								</a>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<a class="carousel-control-prev text-decoration-none w-auto ps-3" href="#mon-carousel" role="button" data-bs-slide="prev">
+			<i class="fas fa-chevron-left"></i>
+		</a>
+		<a class="carousel-control-next text-decoration-none w-auto pe-3" href="#mon-carousel" role="button" data-bs-slide="next">
+			<i class="fas fa-chevron-right"></i>
+		</a>
+	</div>
+</div>
+<div
+	class="container-xl">
+
+	{# a propos #}
+	<div class="a_propos">
 		<div class="row">
-			{% include "product/_produit_prefere.html.twig" with {
-						'nomProduit' : 'Un nom',
-						'photo' : 'nature.jpg',
-						'description' : 'Une petite description bien sympathique bien sympatoche.',
-						'lien' : '#'
-					}%}
-
-			{% include "product/_produit_prefere.html.twig" with {
-						'nomProduit' : 'Un nom',
-						'photo' : 'nature.jpg',
-						'description' : 'Une petite description bien sympathique bien sympatoche.',
-						'lien' : '#'
-					}%}
-			{% include "product/_produit_prefere.html.twig" with {
-						'nomProduit' : 'Un nom',
-						'photo' : 'nature.jpg',
-						'description' : 'Une petite description bien sympathique bien sympatoche.',
-						'lien' : '#'
-					}%}
-			{% include "product/_produit_prefere.html.twig" with {
-						'nomProduit' : 'Un nom',
-						'photo' : 'nature.jpg',
-						'description' : 'Une petite description bien sympathique bien sympatoche.',
-						'lien' : '#'
-					}%}
-		</div>
-	</div>
-</div></div>{# carousel #}<div class="container-fluid" style=" margin: 100px 0px; background: #0F434E">
-<div id="mon-carousel" class="carousel slide" data-bs-ride="carousel" style="background: rgb(197, 194, 194)">
-	<ol class=" carousel-indicators">
-		<li data-bs-target="#mon-carousel" data-bs-slide-to="0" class="active"></li>
-		<li data-bs-target="#mon-carousel" data-bs-slide-to="1"></li>
-		<li data-bs-target="#mon-carousel" data-bs-slide-to="2"></li>
-	</ol>
-	<div class="carousel-inner">
-		<div class="carousel-item active" data-bs-interval="10000">
-			<div class="container">
-				<div class="row p-5">
-					<div class="mx-auto col-md-8 col-lg-6 order-lg-last">
-						<img class="img-fluid" src="{{asset('images/fun2go.png')}}" alt=" ">
-					</div>
-					<div class="col-lg-6 mb-0 d-flex align-items-center">
-						<div class="text-align-left align-self-center">
-							<h1>Lorem ipsum dolor sit amet.</h1>
-							<h3>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Dolore, optio.</h3>
-							<p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Iusto temporibus blanditiis dolor, dolorem possimus eos!
-							</p>
-							<p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Debitis, incidunt.</p>
-							<a href="#">
-								<div class="btn btn-outline-primary btn-lg">Voir le produit</div>
-							</a>
-						</div>
-					</div>
-				</div>
+			<div class="col-12">
+				<h1>À propos de Marconnet technologies™</h1>
 			</div>
 		</div>
-		<div class="carousel-item" data-bs-interval="10000">
-			<div class="container">
-				<div class="row p-5">
-					<div class="mx-auto col-md-8 col-lg-6 order-lg-last">
-						<img class="img-fluid" src="{{asset('images/easyrider.jpg')}}" alt=" ">
-					</div>
-					<div class="col-lg-6 mb-0 d-flex align-items-center">
-						<div class="text-align-left">
-							<h1>Lorem ipsum dolor sit amet.</h1>
-							<h3>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Labore, beatae.</h3>
-							<p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Quas, dolorum. Suscipit dolor eveniet voluptas. Quos?
-							</p>
-							<p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Eos aliquid architecto, eaque neque aspernatur expedita.</p>
-							<a href="#">
-								<div class="btn btn-outline-primary btn-lg">Voir le produit</div>
-							</a>
-						</div>
-					</div>
-				</div>
+		<div class="row">
+			<div class="col-12">
+				<p>Marconnet technologies™ est spécialisée dans la mobilité et unique sur le marché depuis plus de 18 ans.</p>
+				<p>Nous commercialisons des matériels pour améliorer le déplacement des gens en perte de mobilité.</p>
 			</div>
 		</div>
-		<div class="carousel-item" data-bs-interval="10000">
-			<div class="container">
-				<div class="row p-5">
-					<div class="mx-auto col-md-8 col-lg-6 order-lg-last">
-						<img class="img-fluid" src="{{asset('images/citymax.jpg')}}" alt="">
-					</div>
-					<div class="col-lg-6 mb-0 d-flex align-items-center">
-						<div class="text-align-left">
-							<h1>Lorem ipsum dolor sit amet.</h1>
-							<h3>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Tenetur, error?</h3>
-							<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Reiciendis, maiores fuga. Officiis temporibus vitae recusandae?</p>
-							<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Architecto, quos iure dignissimos optio suscipit deserunt.</p>
-							<a href="#">
-								<div class="btn btn-outline-primary btn-lg">Voir le produit</div>
-							</a>
-						</div>
-					</div>
-				</div>
-			</div>
-		</div>
-	</div>
-	<a class="carousel-control-prev text-decoration-none w-auto ps-3" href="#mon-carousel" role="button" data-bs-slide="prev">
-		<i class="fas fa-chevron-left"></i>
-	</a>
-	<a class="carousel-control-next text-decoration-none w-auto pe-3" href="#mon-carousel" role="button" data-bs-slide="next">
-		<i class="fas fa-chevron-right"></i>
-	</a>
-</div></div><div
-class="container-xl">
-
-{# a propos #}
-<div class="a_propos">
-	<div class="row">
-		<div class="col-12">
-			<h1>À propos de Marconnet technologies™</h1>
-		</div>
-	</div>
-	<div class="row">
-		<div class="col-12">
-			<p>Marconnet technologies™ est spécialisée dans la mobilité et unique sur le marché depuis plus de 18 ans.</p>
-			<p>Nous commercialisons des matériels pour améliorer le déplacement des gens en perte de mobilité.</p>
-		</div>
-	</div>
-	<div class="row" style="padding-top: 70px; padding-bottom: 20px">
-		{% include "_home_apropos.html.twig" with {
+		<div class="row h-100" style="padding-top: 70px; padding-bottom: 20px">
+			{% include "_home_apropos.html.twig" with {
 					'image' : 'conseil.png',
 					'titre' : 'Conseils personnalisés',
 					'contenu' : 'Notre rôle est de vous conseiller avant de passer à l\'acte d\'achat et c’est pour cela qu\’il faut prendre contact avec nous avant de passer à l\’acte d’achat.'
 				} %}
-		{% include "_home_apropos.html.twig" with {
+			{% include "_home_apropos.html.twig" with {
 					'image' : 'innovation.png',
 					'titre' : 'Des produits innovants',
 					'contenu' : 'Notre force est de rechercher des nouveaux produits innovants dans le monde entier et de les proposer en France. Nous choisissons uniquement un fabricant par gamme de matériels que nous avons soigneusement sélectionné afin de proposer les meilleurs matériels sur chaque segment de marché.'
 				} %}
-		{% include "_home_apropos.html.twig" with {
+			{% include "_home_apropos.html.twig" with {
 					'image' : 'client.png',
 					'titre' : 'Nos clients',
 					'contenu' : 'Nos produits de grande qualité nous permettent de cibler aussi bien les particuliers que les professionnels du monde de la santé.'
 				} %}
-		{% include "_home_apropos.html.twig" with {
+			{% include "_home_apropos.html.twig" with {
 					'image' : 'services.png',
 					'titre' : 'Nos services',
 					'contenu' : 'Aujourd\'hui nous vendons, louons et réparons nos matériels dans notre atelier.'
@@ -176,23 +181,33 @@ class="container-xl">
 			</div>
 		</div>
 
+</div>
 
-	{# test de materiel #}
-		<div class="test_materiel">
+{# test de materiel #}
+<div class="container-fluid">
+	<div class="test_materiel">
+		<div class="container-xl">
 			<div class="row">
 				<div class="col-12">
-					<h3>Nous vous proposons de tester le matériel avant de l'acheter.</h3>
+					<h1>Nous vous proposons de tester le matériel avant de l'acheter.</h1>
 					<p>Assurez-vous que le matériel soit parfaitement adapté à vous en essayant nos produits. Vous pouvez venir au showroom, ou alors, c'est le showroom qui viendra à vous.</p>
-					<a class="btn btn-outline-primary" href="{{path('demonstration')}}" role="button">Je souhaite tester le matériel</a>
+					<div class="d-flex justify-content-center align-items-center" style="padding-top: 20px">
+  						<a class="btn btn-outline-primary" href="{{path('demonstration')}}" role="button">Je souhaite tester le matériel</a>
+					</div>
+					
 				</div>
 			</div>
 		</div>
+	</div>
+</div>
+
+<div class="container-xl">
 
 	{# entreprises qui nous font confiance #}
 	<div class="confiance">
 	<div class="row">
 		<div class="col-12">
-			<h3>Ils nous ont fait confiance</h3>
+			<h1>Ils nous ont fait confiance</h1>
 		</div>
 	</div>
 	<div class="row">
@@ -201,7 +216,7 @@ class="container-xl">
 		</div>
 	</div>
 	<div class="partners">
-		<div class="row">
+		<div class="row h-100">
 				{% include "shared/_home_etab_sante.html.twig" with {
 					'nom' : 'DomusVi',
 					'cat' : 'Établissement de santé',
@@ -279,11 +294,14 @@ class="container-xl">
 			{# newsletter #}
 			<div class="container-fluid newsletter">
 				<div class="container-xl">
-					<div class="row align-self-end">
-						<div class="col">
+					<div class="row align-self-end newsletter">
+						<div class="col-4 d-flex flex-column-reverse">
+							<img class="img-fluid align-self-end" src="{{asset('images/newsletter.png')}}" alt="">
+						</div>
+						<div class="col-8">	
 							<div class="row">
 								<div class="col">
-									<h3>Inscrivez-vous à notre newsletter</h3>
+									<h1>Inscrivez-vous à notre newsletter</h1>
 								</div>
 							</div>
 							<div class="row">
@@ -292,25 +310,20 @@ class="container-xl">
 								</div>
 							</div>
 							<div class="row">
-								{# <div class="col">
-									<input type="text" id="email" name="email">
-									<button type="button" class="btn btn-primary">Je m'inscris</button>
-								</div> #}
 								<div class="col">
 									<div class="input-group mb-3">
 										<div class="input-group-prepend">
-											<span class="input-group-text" id="basic-addon1">@</span>
+											<div class="input-group-prepend">
+												<span class="input-group-text" id="basic-addon1">@</span>
+											</div>
+											</div>
+											<input type="text" class="form-control" placeholder="Mon adresse email" aria-label="" aria-describedby="basic-addon1">
+											<button class="btn btn-outline-primary" type="button">Je m'inscris</button>
 										</div>
-										<input type="text" class="form-control" placeholder="Mon adresse email" aria-label="Username" aria-describedby="basic-addon1">
-									</div>
-									<button type="button" class="btn btn-outline-primary btn-lg">Je m'inscris</button>
 								</div>
-								
 							</div>
 						</div>
-						<div class="col">
-							<img src="{{asset('images/newsletter.png')}}" alt="">
-						</div>
+						
 					</div>
 				</div>
 			</div>

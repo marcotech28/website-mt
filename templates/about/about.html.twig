@@ -5,72 +5,76 @@
 
 {% block body %}
 
-	<div class="container-xl">
-		<nav aria-label="breadcrumb">
-			<ol class="breadcrumb">
-				<li class="breadcrumb-item">
-					<a href="{{path('homepage')}}">Accueil</a>
-				</li>
-				<li class="breadcrumb-item active" aria-current="page">Qui sommes-nous ?</li>
-			</ol>
-		</nav>
+<div class="container-xl">
+	<nav aria-label="breadcrumb">
+		<ol class="breadcrumb">
+			<li class="breadcrumb-item">
+				<a href="{{path('homepage')}}">Accueil</a>
+			</li>
+			<li class="breadcrumb-item active" aria-current="page">Qui sommes-nous ?</li>
+		</ol>
+	</nav>
+
+	<div class="row">
+		<div class="col-12">
+			<h1>À propos de Marconnet technologies™</h1>
+		</div>
+	</div>
+
+	<div class="presentation-marconnet">
+
 
 		<div class="row">
 			<div class="col-12">
-				<h1>À propos de Marconnet technologies™</h1>
+				<h2>Présentation de la société</h2>
 			</div>
-		</div>
-
-		<div class="presentation-marconnet">
-
 
 			<div class="row">
-				<div class="col-12">
-					<h2>Présentation de la société</h2>
-				</div>
-
-				<div class="row">
-					<p>Marconnet technologies™ commercialise depuis plus de 13 ans une large gamme de produits sur mesure destinée aux personnes à mobilité réduite.</p>
-					<p>Notre écoute et nos conseils vous permettront de vous orienter vers le matériel le plus adapté à vos besoins afin de vous satisfaire pleinement.</p>
-					<p>Notre objectif : Votre satisfaction !</p>
-					<p>Les produits commercialisés ont été testés et approuvés par un grand nombre de professionnels de la santé et par les utilisateurs finaux. De nombreux témoignages attestent de la qualité des produits.</p>
-					<p>Nous choisissons uniquement les meilleurs fabricants par gamme de matériels que nous avons soigneusement sélectionnés afin de proposer les meilleurs matériels sur chaque segment de marché.</p>
-				</div>
+				<p>Marconnet technologies™ commercialise depuis plus de 13 ans une large gamme de produits sur mesure destinée aux personnes à mobilité réduite.</p>
+				<p>Notre écoute et nos conseils vous permettront de vous orienter vers le matériel le plus adapté à vos besoins afin de vous satisfaire pleinement.</p>
+				<p>Notre objectif : Votre satisfaction !</p>
+				<p>Les produits commercialisés ont été testés et approuvés par un grand nombre de professionnels de la santé et par les utilisateurs finaux. De nombreux témoignages attestent de la qualité des produits.</p>
+				<p>Nous choisissons uniquement les meilleurs fabricants par gamme de matériels que nous avons soigneusement sélectionnés afin de proposer les meilleurs matériels sur chaque segment de marché.</p>
 			</div>
+		</div>
+	</div>
 
-			{% include "about/_about_partenaires.html.twig" with {
-        'logoEntreprise' : 'https://picsum.photos/50/50',
-        'shortDescription' : 'Stricker, le spécialiste des handbikes manuel, à assistance électrique et tout électrique.'
-    } %}
 
-			{% include "about/_about_partenaires.html.twig" with {
-        'logoEntreprise' : 'https://picsum.photos/50/50',
-        'shortDescription' : 'Draisin, notre partenaire historique, le spécialiste du tricycle depuis 30 ans.'
-    } %}
-
-			{% include "about/_about_partenaires.html.twig" with {
-        'logoEntreprise' : 'https://picsum.photos/50/50',
-        'shortDescription' : 'Van Raam, '
-    } %}
-
-			{% include "about/_about_partenaires.html.twig" with {
-        'logoEntreprise' : 'https://picsum.photos/50/50',
-        'shortDescription' : 'Handbikes manuel, à assistance électrique et tout électrique'
-    } %}
+	<div class="nos-fournisseurs">
+		<div class="row h-100">
+			{% include "about/_about_marques_partenaires.html.twig" with {
+					'logo' : 'stricker.png',
+					'marque' : 'Stricker',
+					'contenu' : 'Stricker, le spécialiste des handbikes manuel, à assistance électrique et tout électrique.'
+				} %}
+			{% include "about/_about_marques_partenaires.html.twig" with {
+					'logo' : 'draisin.png',
+					'marque' : 'Draisin',
+					'contenu' : 'Draisin, notre partenaire historique spécialisé dans les tricycles. Nous travaillons avec Draisin depuis plus de 20 ans !'
+				} %}
+			{% include "about/_about_marques_partenaires.html.twig" with {
+					'logo' : 'vanraam.png',
+					'marque' : 'Van Raam',
+					'contenu' : 'Van Raam est une marque néerlandaise de vélos et de tricycles adaptés aux personnes à mobilité réduite. La marque propose une large gamme de modèles adaptés aux besoins et aux préférences de chaque utilisateur, allant des vélos à assistance électrique aux tricycles manuels en passant par les vélos tandems et les vélos à pédales. Van Raam s\'efforce de concevoir des vélos qui soient non seulement pratiques et fiables, mais aussi esthétiquement attrayants et agréables à utiliser.'
+				} %}
+				{% include "about/_about_marques_partenaires.html.twig" with {
+					'logo' : 'moving-life.png',
+					'marque' : 'Moving Life',
+					'contenu' : 'Moving Life est une marque de véhicules de mobilité personnelle, notamment de scooters électriques portables et pliables. Ils sont conçus pour être faciles à transporter et à utiliser dans les déplacements quotidiens.'
+				} %}</div>
 
 			<div class="row">
 				<div class="col">
-					<p>N'attendez plus et<a href="{{path('contact')}}">contactez-nous</a>
-						pour plus d’informations sur nos différents matériels.
+					<p>N'attendez plus et <a href="{{path('contact')}}">contactez-nous</a> pour plus d’informations sur nos différents matériels.
 					</p>
 				</div>
 			</div>
-
 		</div>
+		
 
 		{# l'equipe marconnet technologies™ #}
 		<div class="team-members">
-			<div class="row">
+			<div class="row h-100">
 				{% include "about/_members.html.twig" with {
 					'banner' : 'montagne1.jpg',
 					'profilePicture' : 'benjamin.png',
@@ -85,7 +89,7 @@
 					'profilePicture' : 'alexandre.jpg',
 					'nom' : 'Alexandre Pres-Houeix',
 					'fonction' : 'Conseiller Technique Handicap',
-					'presentationMember' : 'Toujours là pour faire des blagues et distraire mes collaborateurs.',
+					'presentationMember' : 'Lorem ipsum dolor sit, amet consectetur adipisicing elit. Amet, ut.',
 					'linkedin' : 'https://fr.linkedin.com/in/alexandre-pres-houeix-a38683123'
 				} %}
 
@@ -144,25 +148,32 @@
 				} %}
 			</div>
 		</div>
+	</div>
 
 
-		<div class="distribNational">
-			<div class="row">
-				<div class="col-12">
-					<h2>Notre réseau de distribution national</h2>
-				</div>
-			</div>
-			<div class="row">
-				<div class="col">
-					<p>Marconnet technologies™ s'appuie sur un réseau de distribution national avec de grandes enseignes de revendeurs médicaux mais aussi avec les revendeurs indépendants. Vous trouverez près de chez vous la solution adaptée à vos besoins.</p>
-					<p>N'hésiez pas à solliciter votre revendeur habituel pour toutes questions ou essais de matériels.</p>
-				</div>
-				<div class="col">
-					<img src="{{asset('images/reseau-vente.jpg')}}" alt="">
+	{# notre reseau de distribution nationale #}
+	<div class="container-fluid" style="background-color: #f9f9f9">
+		<div class="container-xl">
+			<div class="distribNational">
+				<div class="row">
+					<div class="col-6">
+						<div class="row">
+							<div class="col-12">
+								<h2>Notre réseau de distribution national</h2>
+							</div>
+						</div>
+						<div class="row">
+							<div class="col-12">
+								<p>Marconnet technologies™ s'appuie sur un réseau de distribution national avec de grandes enseignes de revendeurs médicaux mais aussi avec les revendeurs indépendants. Vous trouverez près de chez vous la solution adaptée à vos besoins.</p>
+								<p>N'hésiez pas à solliciter votre revendeur habituel pour toutes questions ou essais de matériels.</p>
+							</div>
+						</div>
+					</div>
+					<div class="col-6">
+						<img src="{{asset('images/reseau-vente.jpg')}}" alt="">
+					</div>
 				</div>
 			</div>
 		</div>
-
-
 	</div>
 {% endblock %}
