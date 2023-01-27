@@ -5,7 +5,7 @@
 {% endblock %}
 
 {% block body %}
-	<div class="container-lg">
+	<div class="container-xl">
 		<div class="row">
 			<div class="col-12">
 				<nav aria-label="breadcrumb">
@@ -17,10 +17,20 @@
 					</ol>
 				</nav>
 			</div>
-			<div class="col-12">
-				<h1>Nos
-					{{categorie.libelle}}</h1>
+		</div>
+		<h1>{{categorie.libelle}}</h1>
+		<p>{{categorie.description}}</p>
+	</div>
+
+	<div class="container-fluid" style="background-color: #F3F3F3; padding: 50px 0 !important;">
+		<div class="container-xl">
+			<div class="row">
+				{% for p in categorie.produits %}
+					{% include "product/_product_card.html.twig" %}
+				{% endfor %}
 			</div>
 		</div>
 	</div>
+
+
 {% endblock %}

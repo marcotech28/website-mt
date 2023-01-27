@@ -15,50 +15,102 @@ class ContactFormType extends AbstractType
     public function buildForm(FormBuilderInterface $builder, array $options): void
     {
         $builder
-            ->add('societe', TextType::class, [
-                'label' => 'Société'
+            ->add('typeUser', ChoiceType::class, [
+                'attr' => [
+                    'class' => 'form-control form-select',
+                ],
+                'choices' => [
+                    'Un particulier' => 'particulier',
+                    'Un professionnel de santé' => 'professionel'
+                ],
+                'placeholder' => 'Type d\'utilisateur',
             ])
-            ->add('siret', TextType::class, [
-                'label' => 'SIRET'
+            ->add('societe', TextType::class, [
+                'label' => false,
+                'attr' => [
+                    'class' => 'form-control',
+                    'placeholder' => 'Société'
+                ]
+            ])
+            ->add('poste', TextType::class, [
+                'label' => false,
+                'attr' => [
+                    'class' => 'form-control',
+                    'placeholder' => 'Votre poste'
+                ]
             ])
             ->add('nom', TextType::class, [
-                'label' => 'Nom *'
+                'label' => false,
+                'attr' => [
+                    'class' => 'form-control',
+                    'placeholder' => 'Nom *'
+                ]
             ])
             ->add('prenom', TextType::class, [
-                'label' => 'Prénom *'
-            ])
-            ->add('fonction', TextType::class, [
-                'label' => 'Fonction dans la société'
+                'label' => false,
+                'attr' => [
+                    'class' => 'form-control',
+                    'placeholder' => 'Prénom *'
+                ]
             ])
             ->add('email', EmailType::class, [
-                'label' => 'Adresse mail *'
+                'label' => false,
+                'attr' => [
+                    'class' => 'form-control',
+                    'placeholder' => 'Adresse email *'
+                ]
             ])
             ->add('telephone', TextType::class, [
-                'label' => 'Téléphone *'
+                'label' => false,
+                'attr' => [
+                    'class' => 'form-control',
+                    'placeholder' => 'Téléphone *'
+                ]
             ])
             ->add('adresse', TextType::class, [
-                'label' => 'Adresse *'
+                'label' => false,
+                'attr' => [
+                    'class' => 'form-control',
+                    'placeholder' => 'Adresse *'
+                ]
             ])
             ->add('complementAdresse', TextType::class, [
-                'label' => 'Complément d\'adresse'
+                'label' => false,
+                'attr' => [
+                    'class' => 'form-control',
+                    'placeholder' => 'Complément d\'adresse'
+                ]
             ])
             ->add('ville', TextType::class, [
-                'label' => 'Ville *'
+                'label' => false,
+                'attr' => [
+                    'class' => 'form-control',
+                    'placeholder' => 'Ville *'
+                ]
             ])
             ->add('codePostal', TextType::class, [
-                'label' => 'Code postal *'
+                'label' => false,
+                'attr' => [
+                    'class' => 'form-control',
+                    'placeholder' => 'Code postal *'
+                ]
             ])
             ->add('objet', ChoiceType::class, [
-                'label' => 'Objet de votre demande *',
+                'attr' => [
+                    'class' => 'form-control form-select',
+                ],
                 'choices' => [
                     'Demande de devis' => 'devis',
                     'Demande de renseignement' => 'renseignement'
-                ]
+                ],
+                'placeholder' => 'Objet',
             ])
             ->add('message', TextareaType::class, [
                 'label' => false,
                 'attr' => [
-                    'placeholder' => 'Votre message...'
+                    'placeholder' => 'Votre message...',
+                    'class' => 'form-control',
+                    'rows' => 4
                 ]
             ]);
     }

@@ -1,0 +1,34 @@
+<div class="col-3 mb-5 categorie">
+	<div class="card h-100">
+		<div class="pictureProduct">
+			<img src="https://picsum.photos/900/900" alt="">
+		</div>
+		<div class="card-body">
+			<h4 class="d-inline-block mr-2" style="padding: 0">
+				<span class="badge bg-primary">{{p.nom}}</span>
+			</h4>
+			<span class="badge bg-primary">{{p.marque.libelle}}</span>
+			<div class="minia-avantages">
+				{% set advantages = p.avantages|split(';') %}
+				{% set a = 0 %}
+				{% set break = false %}
+				{% for advantage in advantages %}
+					{% set a = a + 1 %}
+					{% if a > 4 %}
+						{% set break = true %}
+					{% endif %}
+					{% if break == false %}
+						<p>
+							<i style="color: white" class="fa-solid fa-check"></i>
+							{{ advantage }}</p>
+					{% endif %}
+				{% endfor %}
+			</div>
+
+
+			<p class="btn-center">
+				<a href="{{path('product_show', {'category_slug' : p.categorie.slug, 'utilisation_slug' : p.utilisation.slug, 'slug' : p.slug})}}" class="btn btn-outline-primary">Voir ce produit</a>
+			</p>
+		</div>
+	</div>
+</div>

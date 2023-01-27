@@ -15,53 +15,116 @@ class DemonstrationFormType extends AbstractType
     public function buildForm(FormBuilderInterface $builder, array $options): void
     {
         $builder
-            ->add('choixTypeUser', ChoiceType::class, [
-                'label' => "Type d'utilisateur *",
+            ->add('typeUser', ChoiceType::class, [
+                'attr' => [
+                    'class' => 'form-control form-select',
+                ],
                 'choices' => [
-                    'Un particulier' => true,
-                    'Un professionnel de santé' => false
-                ]
+                    'Un particulier' => 'particulier',
+                    'Un professionnel de santé' => 'professionel'
+                ],
+                'placeholder' => 'Type d\'utilisateur',
+                'label' => false
             ])
             ->add('societe', TextType::class, [
-                'label' => 'Société'
+                'label' => false,
+                'attr' => [
+                    'class' => 'form-control',
+                    'placeholder' => 'Société'
+                ]
             ])
-            ->add('SIRET', TextType::class, [
-                'label' => 'SIRET'
+            ->add('poste', TextType::class, [
+                'label' => false,
+                'attr' => [
+                    'class' => 'form-control',
+                    'placeholder' => 'Votre poste'
+                ]
             ])
             ->add('nom', TextType::class, [
-                'label' => 'Nom *'
+                'label' => false,
+                'attr' => [
+                    'class' => 'form-control',
+                    'placeholder' => 'Nom *'
+                ]
             ])
             ->add('prenom', TextType::class, [
-                'label' => 'Prénom *'
-            ])
-            ->add('Fonction', TextType::class, [
-                'label' => 'Fonction dans la société *'
+                'label' => false,
+                'attr' => [
+                    'class' => 'form-control',
+                    'placeholder' => 'Prénom *'
+                ]
             ])
             ->add('email', EmailType::class, [
-                'label' => 'Adresse mail *'
+                'label' => false,
+                'attr' => [
+                    'class' => 'form-control',
+                    'placeholder' => 'Adresse email *'
+                ]
             ])
             ->add('telephone', TextType::class, [
-                'label' => 'Téléphone *'
+                'label' => false,
+                'attr' => [
+                    'class' => 'form-control',
+                    'placeholder' => 'Téléphone *'
+                ]
             ])
             ->add('adresse', TextType::class, [
-                'label' => 'Adresse *'
+                'label' => false,
+                'attr' => [
+                    'class' => 'form-control',
+                    'placeholder' => 'Adresse *'
+                ]
             ])
             ->add('complementAdresse', TextType::class, [
-                'label' => 'Complément d\'adresse'
+                'label' => false,
+                'attr' => [
+                    'class' => 'form-control',
+                    'placeholder' => 'Complément d\'adresse'
+                ]
             ])
             ->add('ville', TextType::class, [
-                'label' => 'Ville *'
+                'label' => false,
+                'attr' => [
+                    'class' => 'form-control',
+                    'placeholder' => 'Ville *'
+                ]
             ])
             ->add('codePostal', TextType::class, [
-                'label' => 'Code Postal *'
+                'label' => false,
+                'attr' => [
+                    'class' => 'form-control',
+                    'placeholder' => 'Code postal *'
+                ]
             ])
-            ->add('produitsInteresses', TextType::class, [
-                'label' => 'Les produits que vous souhaitez essayer *'
+            ->add('produitsDemo', ChoiceType::class, [
+                'choices'  => [
+                    'Produit 1' => 'prod1',
+                    'Produit 2' => 'prod2',
+                ],
+                'expanded' => true,
+                'multiple' => true,
+                'label' => 'Les produits que vous voulez tester',
+                'attr' => [
+                    'class' => 'form-control',
+                ],
+            ])
+            ->add('lieuDemo', ChoiceType::class, [
+                'attr' => [
+                    'class' => 'form-control form-select',
+                ],
+                'choices' => [
+                    'À votre domicile' => 'domicile',
+                    'À notre showroom' => 'showroom'
+                ],
+                'placeholder' => 'Lieu de la démonstration',
+                'label' => false
             ])
             ->add('message', TextareaType::class, [
                 'label' => false,
                 'attr' => [
-                    'placeholder' => 'Votre message...'
+                    'placeholder' => 'Votre message...',
+                    'class' => 'form-control',
+                    'rows' => 4
                 ]
             ]);
     }

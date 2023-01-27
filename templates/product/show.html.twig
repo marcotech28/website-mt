@@ -1,77 +1,137 @@
 {% extends 'base.html.twig' %}
 
 {% block title %}
-	nom du produit
+	{{produit.nom}}
 {% endblock %}
 
 {% block body %}
-	<div class="product_top">
-		<img src="https://picsum.photos/80/80" alt="">
-		<div class="product_small_infos">
-			<p>Nom du produit</p>
-			<p>Une description du produit</p>
-			<a href="#">Plus d'informations...</a>
-			<p>Faire une demande de devis...</p>
+
+	<div class="container-xl">
+
+		<div class="intro-produit">
+			<h1>{{produit.nom}}</h1>
+			<h5>
+				<span class="badge bg-primary">{{produit.marque.libelle}}</span>
+			</h5>
+			<p>
+				{{produit.description}}
+			</p>
+			<p>
+				<a href="#menu">Voir plus d'informations ></a>
+			</p>
+		</div>
+
+		{# gallery images produits #}
+		<div class="gallery">
+			<div class="row">
+				<div class="col-lg-5">
+					<a href="https://picsum.photos/3000/3000" data-lightbox="mygallery"><img src="https://picsum.photos/3000/3000" alt="" class="img-fluid"></a>
+				</div>
+				<div class="col-lg-5 d-flex justify-content-between flex-column">
+					<div class="row">
+						<div class="col-6">
+							<a href="https://picsum.photos/900/900" data-lightbox="mygallery" data-title><img src="https://picsum.photos/900/900" alt="" class="img-fluid"></a>
+						</div>
+						<div class="col-6">
+							<a href="https://picsum.photos/900/900" data-lightbox="mygallery" data-title><img src="https://picsum.photos/900/900" alt="" class="img-fluid"></a>
+						</div>
+					</div>
+					<div class="row">
+						<div class="col-6">
+							<a href="https://picsum.photos/900/900" data-lightbox="mygallery" data-title><img src="https://picsum.photos/900/900" alt="" class="img-fluid"></a>
+						</div>
+						<div class="col-6">
+							<a href="https://picsum.photos/300/300" data-lightbox="mygallery" data-title><img src="https://picsum.photos/300/300" alt="" class="img-fluid"></a>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+
+		<div class="sommaire" id="menu">
+			<ul>
+				<li><a href="#avantages">Avantages</a></li>
+				<li><a href="#description">Description</a></li>
+				<li><a href="#caracteristiques">Caractéristiques</a></li>
+				<li><a href="#video">Vidéos</a></li>
+				<li><a href="#documentation">Documentations</a></li>
+			</ul>
+		</div>
+
+
+		<div class="avantages" id="avantages">
+			<h1>Avantages</h1>
+
+			{% set advantages = produit	.avantages|split(';') %}
+
+			{% for advantage in advantages %}
+				<p>
+					<i style="color: white" class="fa-solid fa-check"></i>
+					{{ advantage }}</p>
+			{% endfor %}
+
+		</div>
+
+
+		<div class="container-xl">
+			<div class="description" id="description">
+				<h1>Description du produit</h1>
+				{% for description in produit.description|split(';') %}
+					<p>{{ description }}</p>
+				{% endfor %}
+			</div>
+
+			<div class="caracteristiques" id="caracteristiques">
+				<h1>Caractéristiques</h1>
+				<table class="table table-striped">
+					{% for caracteristique in produit.caracteristiques|split(';') %}
+						{% set caracteristique = caracteristique|split(':') %}
+						<tr>
+							<td class="col-3">{{ caracteristique[0] }}</td>
+							<td>{{ caracteristique[1] }}</td>
+						</tr>
+					{% endfor %}
+				</table>
+			</div>
+
+
+			<div class="video" id="video">
+				<h1>Vidéos</h1>
+				<div class="row">
+					{% if produit.video1 %}
+						<div class="col-auto">
+							<iframe width="444" height="250" src="{{produit.video1}}" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+						</div>
+					{% endif %}
+					{% if produit.video2 %}
+						<div class="col-auto">
+							<iframe width="444" height="250" src="{{produit.video2}}" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+						</div>
+					{% endif %}
+
+				</div>
+				<p>Nous vous informons que Marconnet technologies™ dispose d’une chaîne youtube.</p>
+				<p>N’hésitez pas à vous abonner et à activer les notifications pour ne rater aucune vidéo en cliquant
+					<a href="https://www.youtube.com/channel/UCBVjkgVyozExIOlx5O40zxQ" target="_blank">ici</a>.</p>
+			</div>
+
+			<div class="documentation" id="documentation">
+				<h1>Documentation</h1>
+				{% if produit.ficheDescriptive %}
+					<div class="doc">
+						<p>
+							<i class="fa-solid fa-download"></i>
+							{{produit.ficheDescriptive}}</p>
+					</div>
+				{% endif %}
+				{% if produit.ficheDescriptive %}
+					<div class="doc">
+						<p>
+							<i class="fa-solid fa-download"></i>
+							{{produit.marque.catalogue}}</p>
+					</div>
+				{% endif %}
+			</div>
 		</div>
 	</div>
-
-	<div class="sommaire">
-		<ul>
-			<li>Description</li>
-			<li>Caractéristiques</li>
-			<li>Vidéos</li>
-			<li>Documentations</li>
-			<li>Avantages</li>
-		</ul>
-	</div>
-
-	<div class="avantages">
-		<p>Un avantage</p>
-		<p>Un avantage</p>
-		<p>Un avantage</p>
-		<p>Un avantage</p>
-		<p>Un avantage</p>
-	</div>
-
-	<div class="description">
-		<p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Incidunt iusto possimus quae reiciendis cumque, dolores accusamus unde esse voluptate delectus cum velit porro a praesentium, necessitatibus magni tenetur provident consequatur.</p>
-	</div>
-
-	<div class="caracteristiques">
-		<h3>Caractéristiques</h3>
-		<TABLe>
-			<tbody>
-				<tr>
-					<td>SKU</td>
-					<td>335-0000</td>
-				</tr>
-				<tr>
-					<td>Poids du vélo</td>
-					<td>28 kg</td>
-				</tr>
-			</tbody>
-		</TABLe>
-	</div>
-
-	<div class="video">
-		<h3>Vidéos</h3>
-		<iframe width="560" height="315" src="https://www.youtube.com/embed/MiAaHzh-lBA" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-		<iframe width="560" height="315" src="https://www.youtube.com/embed/MiAaHzh-lBA" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-		<p>Nous vous informons que Marconnet technologies™ dispose d’une chaîne youtube. N’hésitez pas à vous abonner et à activer les notifications pour ne rater aucune vidéo en cliquant
-			<a href="https://www.youtube.com/channel/UCBVjkgVyozExIOlx5O40zxQ">ici</a>.</p>
-	</div>
-
-	<div class="documentation">
-		<ul>
-			<li>
-				<img src="https://picsum.photos/60/60" alt="">
-				<a href="#">Le catalogue du produit</a>
-			</li>
-			<li>
-				<img src="https://picsum.photos/60/60" alt="">
-				<a href="#">Fiche descriptive du produit</a>
-			</li>
-		</ul>
-	</div>
-
 {% endblock %}

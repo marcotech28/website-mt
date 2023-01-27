@@ -31,9 +31,11 @@
 		<div class="row">
 			<div class="col-12">
 				<p>Deux possibilités s'offrent à vous :</p>
-				<ul>
-					<li>Essayer le matériel dans notre showroom à Epernon en prenant RDV via le formulaire ci-dessous. Si vous vous déplacez jusqu’à notre showroom, nous vous offrirons un bon d’achat. Voir détails ici.</li>
-					<li>Nous venons vous rencontrer directement à domicile : les essais sont payants en fonction de la zone géographique.</li>
+				<ul class="demonstration-list">
+					<li>
+						<i class="fa-solid fa-chevron-right"></i>Vous essayez le matériel dans notre showroom à Epernon en prenant RDV via le formulaire ci-dessous. Si vous vous déplacez jusqu’à notre showroom, nous vous offrirons un bon d’achat. Voir détails ici.</li>
+					<li>
+						<i class="fa-solid fa-chevron-right"></i>Nous venons vous rencontrer directement à votre domicile : les essais sont payants en fonction de la zone géographique.</li>
 				</ul>
 			</div>
 		</div>
@@ -52,21 +54,64 @@
 
 
 		<div class="form-demonstration">
-			<div class="row">
-				{{form_start(formView)}}
+			<div class="col-11 mx-auto">
+				<div class="col-lg-7 mb-5 mb-lg-0 contact-form">
+					<div class="row mb-2">
+						<div class="col">
+							{{ form_widget(formView.typeUser) }}
+						</div>
+					</div>
+					<div class="row mb-2">
+						<div class="col-6">{{ form_row(formView.societe) }}</div>
+						<div class="col-6">{{ form_row(formView.poste) }}</div>
+					</div>
 
-				{{form_widget(formView)}}
+					<div class="row mb-2">
+						<div class="col-6">{{ form_row(formView.nom) }}</div>
+						<div class="col-6">{{ form_row(formView.prenom) }}</div>
+					</div>
 
+					<div class="row mb-2">
+						<div class="col">
+							{{ form_row(formView.email) }}
+						</div>
+					</div>
+					<div class="row mb-2">
+						<div class="col">{{ form_row(formView.telephone) }}</div>
+					</div>
+					<div class="row mb-2">
+						<div class="col">{{ form_row(formView.adresse) }}</div>
+					</div>
+					<div class="row mb-2">
+						<div class="col">{{ form_row(formView.complementAdresse) }}</div>
+					</div>
+					<div class="row mb-2">
+						<div class="col-6">{{ form_row(formView.ville) }}</div>
+						<div class="col-6">{{ form_row(formView.codePostal) }}</div>
+					</div>
+					<div class="row mb-2">
+						<div id="radio" class="col">
+							{{ form_label(formView.produitsDemo) }}
+							{{ form_widget(formView.produitsDemo) }}
+						</div>
+					</div>
+					<div class="row mb-2">
+						<div id="radio" class="col">
+							{{ form_label(formView.lieuDemo) }}
+							{{ form_widget(formView.lieuDemo) }}
+						</div>
+					</div>
+					<div class="row mb-2">
+						<div class="col">
+							{{ form_row(formView.message) }}
+						</div>
+					</div>
+				</div>
 				<p style="font-style: italic">Les champs marqués d'un * sont obligatoires.</p>
 
-				<button type="button" class="btn btn-primary">Demander une démonstration</button>
-
+				<button type="button" class="btn btn-primary form-contact">Demander une démonstration</button>
 				{{form_end(formView)}}
 			</div>
 		</div>
-
-
 	</div>
-
-
-{% endblock %}
+</div>{% endblock %}

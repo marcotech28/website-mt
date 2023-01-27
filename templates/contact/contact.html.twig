@@ -34,32 +34,78 @@
 				</div>
 				<div class="col-auto">
 					<div class="row">
-						<div class="col-12">
-							<p>Besoin d'aide ?</p>
+						<div class="col-12 contact-telephone">
+							<p class="contact-telephone" style="font-size: 22px">Besoin d'aide ?</p>
 						</div>
 					</div>
 					<div class="row">
 						<div class="col-12">
-							<p>02 45 26 01 70</p>
+							<a class="contact-telephone" href="tel:+33245260170">02 45 26 01 70</a>
 						</div>
 					</div>
 				</div>
 			</div>
+			<div class="col-11 mx-auto">
+				<div
+					class="row justify-content-center">
 
-			<div class="row justify-content-around">
-				<div class="col-6 contact-form">
-					{{form_start(formView)}}
 
-					{{form_widget(formView)}}
+					{# 1ere colonne #}
+					<div class="col-lg-7 mb-5 mb-lg-0 contact-form">
+						<div class="row mb-2">
+							<div class="col">
+								{{ form_widget(formView.typeUser) }}
+							</div>
+						</div>
+						<div class="row mb-2">
+							<div class="col-6">{{ form_row(formView.societe) }}</div>
+							<div class="col-6">{{ form_row(formView.poste) }}</div>
+						</div>
 
-					<p style="font-style: italic">Les champs marqués d’un * sont obligatoires.</p>
+						<div class="row mb-2">
+							<div class="col-6">{{ form_row(formView.nom) }}</div>
+							<div class="col-6">{{ form_row(formView.prenom) }}</div>
+						</div>
 
-					<button type="button" class="btn btn-primary">Envoyer</button>
+						<div class="row mb-2">
+							<div class="col">
+								{{ form_row(formView.email) }}
+							</div>
+						</div>
+						<div class="row mb-2">
+							<div class="col">{{ form_row(formView.telephone) }}</div>
+						</div>
+						<div class="row mb-2">
+							<div class="col">{{ form_row(formView.adresse) }}</div>
+						</div>
+						<div class="row mb-2">
+							<div class="col">{{ form_row(formView.complementAdresse) }}</div>
+						</div>
+						<div class="row mb-2">
+							<div class="col-6">{{ form_row(formView.ville) }}</div>
+							<div class="col-6">{{ form_row(formView.codePostal) }}</div>
+						</div>
+						<div class="row mb-2">
+							<div class="col">
+								{{ form_widget(formView.objet) }}
+							</div>
+						</div>
+						<div class="row mb-2">
+							<div class="col">
+								{{ form_row(formView.message) }}
+							</div>
+						</div>
+						{{form_end(formView)}}
 
-					{{form_end(formView)}}
-				</div>
-				<div class="col-6">
-					<iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2638.638083836414!2d1.6816035343273175!3d48.59762818133382!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x47e418e496cd2791%3A0xc4a74471adfe7ab2!2sMARCONNET%20TECHNOLOGIES%E2%84%A2!5e0!3m2!1sfr!2sfr!4v1665396643766!5m2!1sfr!2sfr" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+						<p style="font-style: italic">Les champs marqués d’un * sont obligatoires.</p>
+
+						<button type="button" class="btn btn-primary form-contact">Envoyer le message</button>
+					</div>
+
+					{# 2eme colonne #}
+					<div class="col-5 d-none d-sm-block">
+						<iframe src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d168885.17109920242!2d1.5924522480468892!3d48.593938518257396!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0xc4a74471adfe7ab2!2sMARCONNET%20TECHNOLOGIES%E2%84%A2!5e0!3m2!1sfr!2sfr!4v1672922455052!5m2!1sfr!2sfr" width="100%" height="90%" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+					</div>
 				</div>
 			</div>
 		</div>

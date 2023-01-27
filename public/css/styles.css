@@ -9,11 +9,17 @@ body {
     padding: 0 !important;
 }
 
-p {
-    text-align: center;
-}
-
 /* -- NAVBAR --  */
+
+/* -- navbar du bas -- */
+
+.navbar-bottom ul {
+    list-style-type: none;
+    display: flex;
+    /* Affiche les éléments de la liste côte à côte */
+    justify-content: space-between;
+    margin: 0;
+}
 
 /* navbar fixée */
 .fixed {
@@ -126,32 +132,6 @@ p {
     transform-origin: bottom left;
 }
 
-/* -- EFFECT UNDERLINE WHITE -- */
-
-/* .underline-effect-white {
-    display: inline-block;
-    position: relative;
-    text-decoration: none;
-}
-
-.underline-effect-white::after {
-    content: '';
-    position: absolute;
-    width: 100%;
-    transform: scaleX(0);
-    height: 1px;
-    bottom: 0;
-    left: 0;
-    background-color: white;
-    transform-origin: bottom right;
-    transition: transform 0.2s ease-out;
-}
-
-.underline-effect-white:hover::after {
-    transform: scaleX(1);
-    transform-origin: bottom left;
-} */
-
 /* -- FOOTER -- */
 
 .socials a {
@@ -186,10 +166,14 @@ footer {
 footer a {
     text-decoration: none;
     color: white;
+    font-weight: 400;
+    font-size: 14px;
 }
 
 footer p {
     text-align: left;
+    font-weight: 400;
+    font-size: 14px;
 }
 
 footer a:hover {
@@ -197,7 +181,7 @@ footer a:hover {
     text-decoration: underline;
 }
 
-.titreFooter {
+.titreFooter p {
     font-weight: bold;
     font-size: 1.5em;
 }
@@ -246,16 +230,16 @@ footer a:hover {
 h1 {
     padding-top: 40px;
     padding-bottom: 35px;
+    line-height: 1.2;
+    font-size: 3.5rem;
+    font-weight: 700;
     color: #0F434E;
-    font-weight: 350;
-    text-align: center;
 }
 
 h2 {
     font-weight: 300;
     color: #168896;
     padding-bottom: 40px;
-    text-align: center;
 }
 
 h3 {
@@ -270,21 +254,25 @@ h4 {
     font-weight: 200;
 }
 
-h5 {
-    color: #0F434E;
-    padding: 40px 0;
-    font-weight: 10;
+p,
+td {
+    font-size: 1rem;
+    font-weight: 400;
+    margin-bottom: 5px;
 }
 
 /* -- BOUTONS -- */
 
 .btn-primary,
-.btn-primary:hover,
 .btn-primary:active,
 .btn-primary:visited,
 .btn-primary:focus {
     background-color: #168896 !important;
     border-color: #168896 !important;
+}
+
+.btn-primary:hover {
+    background-color: #0F434E !important;
 }
 
 .btn-outline-primary,
@@ -301,6 +289,29 @@ h5 {
 
 .btn-outline-primary:hover {
     background-color: #168896 !important;
+    transition: 0.2s !important;
+}
+
+/* -- BADGES -- */
+
+.bg-primary {
+    background-color: #168896 !important;
+    border-color: #168896 !important;
+}
+
+/* -- FICHE PRODUIT -- */
+
+.intro-produit a {
+    color: black;
+    font-weight: 500;
+}
+
+.intro-produit h1 {
+    padding-bottom: 9px;
+}
+
+.gallery {
+    padding-top: 16px;
 }
 
 /* -- HOMEPAGE -- */
@@ -528,7 +539,6 @@ h5 {
     margin: 30px 0 5px;
     color: #0F434E;
     padding: 10px;
-    text-align: center;
 }
 
 .content-partners h3 {
@@ -553,6 +563,7 @@ h5 {
 
 .content-partners a h2 {
     color: #168896;
+    font-weight: 500;
 }
 
 .content-partners a {
@@ -621,6 +632,47 @@ h5 {
 .contact-help {
     padding: 20px 0;
 }
+
+.contact-telephone {
+    font-weight: 500;
+    color: black;
+    text-decoration: none;
+}
+
+a:hover.contact-telephone {
+    color: #0F434E;
+    text-decoration: underline;
+}
+
+/* -- FORMULAIRES -- */
+
+.form-control {
+    border: none;
+    border-bottom: 1px solid #000000;
+    padding-left: 0;
+    padding-right: 0;
+    border-radius: 0;
+}
+
+.form-contact {
+    margin-top: 20px;
+    margin-bottom: 50px;
+}
+
+.form-check .checkbox,
+.form-check .radio {
+    padding-right: 50px;
+}
+
+#radio label {
+    padding-right: 30px;
+}
+
+.form-control:focus {
+    border-color: #168896;
+    box-shadow: 0 0 0 0.2rem rgba(22, 136, 150, 0.5);
+}
+
 
 /* -- ABOUT -- */
 
@@ -759,6 +811,114 @@ h5 {
     margin: 40px 0 100px;
 }
 
+.demonstration-list {
+    list-style: none;
+}
+
+/*-- PRODUIT --*/
+
+.product_global {
+    padding: 100px 0;
+}
+
+.product_global img {
+    max-height: 400px;
+    border-radius: 15px;
+}
+
+.product_small_infos {
+    background-color: white;
+    border-radius: 15px;
+    padding: 30px;
+}
+
+.product_small_infos p:nth-child(1) {
+    font-size: 35px;
+    color: #168896;
+    font-weight: 500;
+}
+
+.product_small_infos p:nth-child(3) {
+    color: #938A8A;
+}
+
+.product_small_infos .badge {
+    margin-bottom: 1rem;
+}
+
+.product_small_infos a {
+    text-decoration: none;
+    font-weight: 600;
+    color: black;
+}
+
+.product_small_infos .btn {
+    margin-top: 1rem;
+}
+
+
+
+
+/* -- sommaire -- */
+
+.sommaire ul {
+    list-style-type: none;
+    display: flex;
+    margin: 0;
+    padding: 16px 0;
+}
+
+.sommaire li {
+    padding-right: 100px;
+}
+
+
+.sommaire a {
+    color: #168896;
+    text-decoration: underline;
+    text-decoration-thickness: 2px;
+    font-weight: 500;
+    font-size: 16px;
+}
+
+.sommaire a:hover {
+    color: #0F434E;
+}
+
+/* -- video -- */
+
+.video p:nth-child(3) {
+    padding-top: 40px;
+}
+
+
+.video a {
+    text-decoration: underline;
+    text-decoration-color: #168896;
+    text-decoration-thickness: 2px;
+    color: #168896;
+    font-weight: 500;
+    font-size: 14px;
+}
+
+.video a:hover {
+    color: #0F434E;
+}
+
+/* -- documentation -- */
+
+.documentation {
+    padding-bottom: 120px;
+}
+
+.documentation i {
+    color: #168896;
+}
+
+.doc {
+    padding: 10px 0;
+}
+
 /* -- ADMIN -- */
 .in-line {
     display: inline;
@@ -767,6 +927,49 @@ h5 {
 
 .admin {
     padding-top: 40px;
+}
+
+/* -- CATEGORIE -- */
+
+.card-body h4 .bg-primary {
+    background-color: #0F434E !important;
+    border-color: #0F434E !important;
+}
+
+.categorie .card {
+    box-shadow: none;
+    border: none;
+    overflow: hidden;
+    border-radius: 15px;
+}
+
+.categorie .card:hover {
+    transition: 0.2s;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+    overflow: hidden;
+    border-radius: 15px;
+}
+
+.btn-center {
+    text-align: center;
+    margin-top: 23px;
+}
+
+.minia-avantages {
+    margin-top: 18px;
+}
+
+.categorie .pictureProduct img {
+    border-top: none;
+    padding: 10px;
+    border-radius: 20px;
+}
+
+.fa-check:before {
+    content: "\f00c";
+    background-color: green;
+    border-radius: 15px;
+    padding: 3px;
 }
 
 /* --------- */
