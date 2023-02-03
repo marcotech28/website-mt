@@ -9,103 +9,117 @@ body {
     padding: 0 !important;
 }
 
+/* -- FORMULAIRES -- */
+
+#demonstration_form_produitsDemo input[type="checkbox"] {
+    display: block;
+    float: left;
+    margin-right: 10px;
+}
+
+#demonstration_form_produitsDemo label {
+    display: block;
+    margin-bottom: 10px;
+}
+
+.formulaire .form-control {
+    border: none;
+    border-bottom: 1px solid #000000;
+    padding-left: 0;
+    padding-right: 0;
+    border-radius: 0;
+}
+
+.form-control:focus {
+    border-color: #168896;
+    box-shadow: 0 0 0 0.2rem rgba(22, 136, 150, 0.5);
+}
+
+.form-contact {
+    margin-top: 20px;
+    margin-bottom: 50px;
+}
+
+.form-check .checkbox,
+.form-check .radio {
+    padding-right: 50px;
+}
+
+#radio label {
+    padding-right: 30px;
+}
+
 /* -- NAVBAR --  */
 
-/* -- navbar du bas -- */
-
-.navbar-bottom ul {
-    list-style-type: none;
-    display: flex;
-    /* Affiche les éléments de la liste côte à côte */
-    justify-content: space-between;
-    margin: 0;
-}
-
-/* navbar fixée */
-.fixed {
-    position: fixed;
-    top: 0;
-    left: 0;
-    right: 0;
-    z-index: 1000;
-}
-
-.navbar-border {
-    background-color: #0F434E;
-    border-bottom: 1px solid #0F434E;
-}
-
-.navbar-top {
-    padding: 23px 0;
-    height: 10vh;
-}
-
-#house {
-    background-color: #0F434E;
-}
-
-.navbar-top a:hover {
+.dropdown-item .navbar a:hover {
     text-decoration: underline;
     color: white;
 }
 
-.navbar-bottom a:hover {
+.navbar-top {
     background-color: #0F434E;
-    color: black;
-    text-decoration: underline;
 }
 
-.navbar-top a,
-.navbar-bottom a,
-.navbar-top {
-    text-decoration: none;
-    font-weight: 500;
+.nav-item a,
+.nav-link {
+    color: white;
     font-size: 14px;
 }
 
-.navbar-top a {
-    color: white;
-}
-
 .navbar-bottom {
-    color: white;
-    padding: 0px !important;
-    height: 6vh;
     background-color: #0f444ee8;
 }
 
-.navbar-bottom .nav {
-    height: 100%;
-}
-
-.border-a {
-    height: 100%;
-    justify-content: center;
-    align-items: center;
-}
-
-.nav-link {
-    height: 100% !important;
-}
-
-.navbar-bottom .nav a {
-    display: flex;
-    height: 100% !important;
-    margin: auto;
-    text-transform: uppercase;
+.navbar-bottom .nav-link {
     color: white;
-    padding: 0 20px;
-    border-left: 1px solid #0F434E;
-    align-items: center;
-    justify-content: center;
+    text-align: center;
+    margin: 0 !important;
+    padding: 15px 0;
 }
 
-.navbar-logo {
-    height: 45px;
-    width: auto;
+.navbar-bottom .nav-link:hover {
+    background-color: #0F434E;
+    transition: 0.2s;
 }
 
-.navbar-bottom
+.nav-link-bordure-gauche {
+    border-left: 1px solid black;
+}
+
+.dropdown-item img {
+    padding-right: 10px;
+}
+
+.dropdown-menu {
+    background-color: #F3F3F3 !important;
+}
+
+.dropdown-header {
+    font-size: 15px !important;
+    color: #0F434E !important;
+}
+
+.phone .col-auto {
+    padding: 0 4px !important;
+}
+
+@media screen and (max-width: 991px) {
+    .nav-link-bordure-gauche {
+        border-left: none;
+    }
+}
+
+@media screen and (max-width: 1250px) {
+    .house {
+        display: none;
+    }
+}
+
+.dropdown-item {
+    color: #6c757d !important;
+    font-weight: 500 !important;
+}
+
 /* -- EFFECT UNDERLINE DARK -- */
 
 .underline-effect-dark {
@@ -202,7 +216,7 @@ footer a:hover {
 
 .top-footer,
 .content-footer {
-    padding: 45px;
+    padding: 35px;
 }
 
 
@@ -228,16 +242,15 @@ footer a:hover {
 /* -- TITRES -- */
 
 h1 {
-    padding-top: 40px;
-    padding-bottom: 35px;
+    padding: 40px 0;
     line-height: 1.2;
-    font-size: 3.5rem;
+    font-size: 50px;
     font-weight: 700;
     color: #0F434E;
 }
 
 h2 {
-    font-weight: 300;
+    font-weight: 400;
     color: #168896;
     padding-bottom: 40px;
 }
@@ -256,9 +269,9 @@ h4 {
 
 p,
 td {
-    font-size: 1rem;
-    font-weight: 400;
     margin-bottom: 5px;
+    font-size: 1.25rem;
+    font-weight: 300;
 }
 
 /* -- BOUTONS -- */
@@ -371,11 +384,6 @@ td {
 }
 
 /* - produits préférés - */
-
-#produitpref {
-    padding: 70px 0;
-}
-
 .bannerProduct {
     height: 60px;
     background-color: #0F434E;
@@ -408,9 +416,12 @@ td {
     text-decoration-color: #168896;
     text-decoration-thickness: 2px;
     color: black;
-    text-transform: uppercase;
     font-weight: 500;
     font-size: 14px;
+}
+
+.majuscule {
+    text-transform: uppercase;
 }
 
 .voir-plus a:hover {
@@ -463,20 +474,8 @@ td {
     background-color: #0F434E;
 }
 
-#mon-carousel h1,
-#mon-carousel h3,
-#mon-carousel p {
-    text-align: left;
-}
-
-.carousel-inner h1 {
-    color: #168896;
-    font-size: 55px;
-    padding-top: 10px;
-    padding-bottom: 15px;
-}
-
 .carousel-inner h3 {
+    color: #168896;
     padding: 20px 0;
 }
 
@@ -507,7 +506,8 @@ td {
 
 .newsletter {
     background-color: #f9f9f9;
-    padding: 75px 0;
+    padding: 15px 0;
+
 }
 
 .newsletter .container-xl .align-self-end .col .row .col h3 {
@@ -525,10 +525,6 @@ td {
     text-align: left;
 }
 
-.confiance {
-    margin: 70px 0;
-}
-
 .content-partners {
     text-align: center;
 }
@@ -536,7 +532,6 @@ td {
 .content-partners h2 {
     text-transform: uppercase;
     font-size: 26px;
-    margin: 30px 0 5px;
     color: #0F434E;
     padding: 10px;
 }
@@ -556,7 +551,8 @@ td {
 }
 
 .content-partners p {
-    font-size: 17px;
+    font-size: 16px;
+    font-weight: 500;
     margin: 0 0 1px;
     padding: 5px 20px;
 }
@@ -574,8 +570,6 @@ td {
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
     overflow: hidden;
     border-radius: 15px;
-    height: 280px;
-    margin-bottom: 80px;
 }
 
 .card-partners:hover a h2 {
@@ -596,9 +590,10 @@ td {
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
     overflow: hidden;
     border-radius: 15px;
-    margin-bottom: 80px;
+    margin-bottom: 30px;
     border-top: 5px solid #168896;
     border-bottom: 5px solid #168896;
+    padding: 0 7px;
 }
 
 .card-services img {
@@ -624,7 +619,7 @@ td {
 
 .card-services p {
     padding: 0 20px;
-    font-size: 15px;
+    /* font-size: 15px; */
 }
 
 /*-- CONTACT --*/
@@ -644,41 +639,7 @@ a:hover.contact-telephone {
     text-decoration: underline;
 }
 
-/* -- FORMULAIRES -- */
-
-.form-control {
-    border: none;
-    border-bottom: 1px solid #000000;
-    padding-left: 0;
-    padding-right: 0;
-    border-radius: 0;
-}
-
-.form-contact {
-    margin-top: 20px;
-    margin-bottom: 50px;
-}
-
-.form-check .checkbox,
-.form-check .radio {
-    padding-right: 50px;
-}
-
-#radio label {
-    padding-right: 30px;
-}
-
-.form-control:focus {
-    border-color: #168896;
-    box-shadow: 0 0 0 0.2rem rgba(22, 136, 150, 0.5);
-}
-
-
 /* -- ABOUT -- */
-
-.presentation-marconnet {
-    margin: 100px 0;
-}
 
 .presentation-marconnet p {
     text-align: left;
@@ -690,7 +651,7 @@ a:hover.contact-telephone {
 
 
 .nos-fournisseurs .card-services img {
-    height: 105px;
+    height: 95px;
     width: auto;
 }
 
@@ -710,8 +671,8 @@ a:hover.contact-telephone {
     color: #168896;
 }
 
-.carr {
-    padding-bottom: 70px;
+.row.fournisseur {
+    padding: 30px 0;
 }
 
 .card {
@@ -779,7 +740,7 @@ a:hover.contact-telephone {
 }
 
 .team-members {
-    margin-top: 100px 0;
+    padding-top: 30px;
 }
 
 .distribNational {
@@ -795,14 +756,61 @@ a:hover.contact-telephone {
 }
 
 .distribNational img {
-    width: 350px;
+    max-width: 350px;
     height: auto;
+    width: 100%;
 }
 
 /* -- LOGIN -- */
 
-.connexion-form {
-    padding: 30px 0 600px;
+.bienvenue h4 {
+    font-weight: 500;
+    font-size: 26px;
+}
+
+.image-connexion {
+    width: 250px;
+}
+
+.form-connexion .form-control {
+    border: 1px solid #168896;
+    padding: 11px;
+    margin-top: 14px;
+}
+
+.form-connexion .btn {
+    padding-left: 10%;
+    padding-right: 10%;
+}
+
+.card-login {
+    /* box-shadow: 0 0 10px rgba(0, 0, 0, 0.5); */
+    overflow: hidden;
+    border-radius: 15px;
+    margin-bottom: 20px;
+    border-top: 5px solid #168896;
+    border-top-width: 20%;
+    border-bottom: 5px solid #168896;
+}
+
+.form-connexion label {
+    font-weight: 600;
+}
+
+
+.ici {
+    text-decoration: none;
+    text-decoration: underline;
+    text-decoration-color: #168896;
+    text-decoration-thickness: 2px;
+    color: black;
+    text-transform: uppercase;
+    font-weight: 500;
+    font-size: 14px;
+}
+
+.ici:hover {
+    color: #168896;
 }
 
 /* -- DEMONSTRATION -- */
@@ -959,6 +967,10 @@ a:hover.contact-telephone {
     margin-top: 18px;
 }
 
+.minia-avantages p {
+    font-size: 16px;
+}
+
 .categorie .pictureProduct img {
     border-top: none;
     padding: 10px;
@@ -988,4 +1000,230 @@ a:hover.contact-telephone {
 .youtube {
     width: 550px;
     height: 300px;
+}
+
+/* -- -- */
+/* -- RESPONSIVE -- */
+/* -- -- */
+
+/* -- titres -- */
+
+@media only screen and (max-width: 400px) {
+    h1 {
+        font-size: 23px;
+        padding: 20px 0;
+        font-weight: 100;
+    }
+
+    h2 {
+        padding-bottom: 20px;
+    }
+
+    p {
+        font-size: 0.9rem;
+    }
+}
+
+@media only screen and (min-width: 401px) and (max-width: 575px) {
+    h1 {
+        font-size: 30px;
+        padding: 25px 0;
+    }
+
+    h2 {
+        padding-bottom: 25px;
+    }
+
+    p {
+        font-size: 1rem;
+    }
+}
+
+@media only screen and (min-width: 576px) and (max-width: 767px) {
+    h1 {
+        font-size: 39px;
+        padding: 30px 0;
+    }
+
+    h2 {
+        padding-bottom: 30px;
+    }
+
+    p {
+        font-size: 1.1rem;
+    }
+}
+
+/* -- HOMEPAGE -- */
+
+@media only screen and (max-width: 992px) {
+
+    .newsletter h1,
+    .newsletter p {
+        text-align: center;
+    }
+}
+
+@media only screen and (max-width: 1200px) {
+
+    .desc-carousel h1,
+    .desc-carousel h3 {
+        padding: 0;
+    }
+}
+
+@media only screen and (max-width: 576px) {
+
+    .card-services {
+        border: none;
+        box-shadow: none;
+    }
+}
+
+@media screen and (max-width: 400px) {
+    .confiance img {
+        display: none;
+    }
+}
+
+@media screen and (max-width: 400px) {
+    .partners h2 {
+        font-size: 20px;
+    }
+}
+
+/* -- FOOTER -- */
+
+@media screen and (max-width: 400px) {
+    .footer-logo {
+        width: 170px;
+    }
+}
+
+@media screen and (max-width: 400px) {
+    .titreFooter p {
+        font-size: 1.1em;
+    }
+}
+
+@media only screen and (max-width: 992px) {
+
+    .desc-carousel {
+        text-align: center;
+    }
+}
+
+@media only screen and (max-width: 380px) {
+
+    .top-footer div.col-auto {
+        padding: 0 2px;
+    }
+}
+
+@media only screen and (max-width: 288px) {
+
+    .top-footer {
+        display: none;
+    }
+}
+
+/* -- NAVBAR -- */
+
+@media only screen and (max-width: 992px) {
+
+    .navbar-bottom .a.dropdown-item {
+        text-align: center;
+    }
+}
+
+@media only screen and (max-width: 768px) {
+
+    .breadcrumb {
+        font-size: 13px;
+    }
+
+    .breadcrumb li a {
+        font-size: 13px;
+    }
+}
+
+@media only screen and (max-width: 576px) {
+
+    .breadcrumb {
+        font-size: 11px;
+    }
+
+    .breadcrumb li a {
+        font-size: 11px;
+    }
+}
+
+@media only screen and (max-width: 576px) {
+
+    .dropdown-divider:nth-child(1) {
+        display: none;
+    }
+
+    .dropdown-item {
+        text-align: center;
+    }
+}
+
+/* -- CONTACT */
+
+@media only screen and (max-width: 992px) {
+
+    iframe {
+        display: none;
+    }
+}
+
+/* -- FORMULAIRES -- */
+
+/* on met une marge pr les groupes dans le formulaire sur l'élément du haut */
+@media only screen and (max-width: 576px) {
+    .mb-formulaire {
+        margin-bottom: 0.5rem;
+    }
+}
+
+@media only screen and (max-width: 300px) {
+
+    .form-control {
+        font-size: 14px;
+    }
+}
+
+/* -- ABOUT -- */
+
+@media only screen and (max-width: 576px) {
+
+    .content-partners p {
+        font-size: 14px;
+        font-weight: 100;
+    }
+}
+
+@media only screen and (max-width: 400px) {
+    .main-texte p {
+        font-size: 14px;
+    }
+}
+
+/* -- LOGIN -- */
+
+@media only screen and (max-width: 350px) {
+    .card-login {
+        border-top: none;
+        border-bottom: none;
+    }
+
+    .card-body {
+        padding: 0 !important;
+    }
+
+    .card {
+        box-shadow: none;
+        border: none;
+    }
 }

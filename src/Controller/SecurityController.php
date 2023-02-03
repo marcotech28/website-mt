@@ -15,6 +15,8 @@ class SecurityController extends AbstractController
     {
         $form = $this->createForm(LoginType::class);
 
+        // dd($form->createView());
+
         return $this->render('security/login.html.twig', [
             'formView' => $form->createView(),
             'error' => $utils->getLastAuthenticationError()

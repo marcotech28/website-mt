@@ -1,98 +1,125 @@
-<div
-	class="container-fluid navbar-border">
+{# navbar top #}
 
-	{# navbar-top #}
-	<div class="container-xl navbar-top">
-		<div class="row row justify-content-between align-items-center">
-			<div class="col-auto">
-				<a href="{{path("homepage")}}"><img class="navbar-logo" src="{{asset('images/logo_base_blanc_mt.png')}}"></a>
-			</div>
-			<div class="col-auto">
-				<div class="row">
-					<div class="col-auto align-items-center">
-						<img src="https:picsum.photos/100/100" alt="">
+{# je laisse le bouton hamburger pour l'instant mais je m'en sers pas car je n'affiche pas navbar-top sur petit écran #}
+
+	<nav class="navbar navbar-expand-lg navbar-top d-none d-lg-block"> <div class="container-xl">
+		<button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbartop-toggler">
+			<span class="navbar-toggler-icon"></span>
+		</button>
+		<div
+			class="collapse navbar-collapse" id="navbartop-toggler">
+			<!-- Photo -->
+			<ul class="navbar-nav mb-2 mb-lg-0">
+				<li class="nav-item">
+					<a href="{{path("homepage")}}" class="nav-link mb-2 mb-lg-0"><img src="{{asset('images/logo_base_blanc_mt.png')}}" height="50px" alt=""></a>
+				</li>
+			</ul>
+
+			<!-- Telephone -->
+			<div class="ms-auto">
+				<div class="row phone">
+					<div class="col-auto">
+						<i class="fa-solid fa-phone" style="color: white"></i>
 					</div>
 					<div class="col-auto">
-						<div class="row">
-							<div class="col-2">
-								<i class="fa-solid fa-phone" style="color: white"></i>
-							</div>
-							<div class="col-10">
-								<a class="underline-effect-dark" href="tel:+33245260170">02 45 26 01 70</a>
-							</div>
-						</div>
+						<a href="tel:+33245260170" class="nav-link">02 45 26 01 70</a>
 					</div>
 				</div>
 			</div>
-			<div class="col-auto">
-				<div class="row">
-					<div class="col-auto">
-						<a class="underline-effect-dark" href="{{path("about")}}">À propos</a>
-					</div>
-					<div class="col-auto">
-						<a class="underline-effect-dark" href="{{path("app_actu")}}">Actualités</a>
-					</div>
-					<div class="col-auto">
-						<a class="underline-effect-dark" href="{{path("contact")}}">Contact</a>
-					</div>
-					<div class="col-auto">
-						<a class="underline-effect-dark" href="{{path("demonstration")}}">Démonstration</a>
-					</div>
-					{% if app.user %}
-						<div class="col-auto">
-							<a class="underline-effect-dark" href="#">Gérer mon compte</a>
-						</div>
-					{% else %}
-						<div class="col-auto">
-							<a class="underline-effect-dark" href="{{path("app_register")}}">Créer mon compte</a>
-						</div>
-					{% endif %}
 
+			<!-- liens -->
+			<ul class="ms-auto navbar-nav mb-2 mb-lg-0">
+				<li class="nav-item">
+					<a href="{{path("about")}}" class="nav-link mb-2 mb-lg-0">À propos</a>
+				</li>
+				<li class="nav-item">
+					<a href="{{path("app_actu")}}" class="nav-link mb-2 mb-lg-0">Actualités</a>
+				</li>
+				<li class="nav-item">
+					<a href="{{path("contact")}}" class="nav-link mb-2 mb-lg-0">Contact</a>
+				</li>
+				<li class="nav-item">
+					<a href="{{path("demonstration")}}" class="nav-link mb-2 mb-lg-0">Démonstration</a>
+				</li>
+				{% if app.user %}
+					<li class="nav-item">
+						<a href="#" class="nav-link mb-2 mb-lg-0">Gérer mon compte</a>
+					</li>
+				{% else %}
+					<li class="nav-item">
+						<a href="{{path("app_register")}}" class="nav-link mb-2 mb-lg-0">Créer mon compte</a>
+					</li>
+				{% endif %}
+				{% if app.user %}
+					<li class="nav-item">
+						<a href="{{path("security_logout")}}" class="nav-link mb-2 mb-lg-0">Se déconnecter</a>
+					</li>
+				{% else %}
+					<li class="nav-item">
+						<a href="{{path('security_login')}}" class="nav-link mb-2 mb-lg-0">Se connecter</a>
+					</li>
+				{% endif %}
 
-					{% if app.user %}
-						<div class="col-auto">
-							<a class="underline-effect-dark" href="{{path("security_logout")}}">Se déconnecter</a>
-						</div>
-					{% else %}
-						<div class="col-auto">
-							<a class="underline-effect-dark" href="{{path('security_login')}}">Se connecter</a>
-						</div>
-					{% endif %}
-				</div>
-			</div>
+			</ul>
+
 		</div>
 	</div>
-</div>
-
-{# navbar-bottom #}
-
-
-<nav class="container-fluid navbar-bottom">
-	<ul class="nav justify-content-center">
-		<li class="nav-item border-a">
-			<a href="{{path("homepage")}}" id="house">
-				<i class="fa-solid fa-house"></i>
-			</a>
-		</li>
-		{% for c in categorieRepository.findAll() %}
-			<li class="nav-item border-a">
-				<a href="{{path('app_categorie', {'slug': c.slug})}}" class="nav-link">{{c.libelle}}</a>
-			</li>
-		{% endfor %}
-		<li class="nav-item border-a">
-			<a href="https://www.marconnet-robotique.com/" class="nav-link" target="_notblank">Robots</a>
-		</li>
-		<li class="nav-item border-a">
-			<a href="#" class="nav-link">Autres</a>
-		</li>
-	</ul>
 </nav>
 
+{# navbar bottom #}
+<nav class="navbar navbar-expand-lg navbar-bottom" style="padding: 0 !important;">
+	<div class="container-xl">
+		<button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarbottom-toggler">
+			<span class="navbar-toggler-icon"></span>
+		</button>
+		<div class="collapse navbar-collapse" id="navbarbottom-toggler">
+			<ul
+				class="navbar-nav mb-2 mb-lg-0 w-100 justify-content-between">
 
-{# partie admin #}
-{% if app.user %}
+				<!-- House -->
+				<li class="nav-item w-100 majuscule house">
+					<a href="{{path("homepage")}}" class="nav-link mb-2 mb-lg-0">
+						<i class="fa-solid fa-house"></i>
+					</a>
+				</li>
+
+				{# Catégories #}
+				{% for c in categorieRepository.findAll() %}
+					<li class="nav-item dropdown w-100 nav-link-bordure-gauche">
+						<a class="nav-link dropdown-toggle majuscule" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+							{{ c.libelle }}
+						</a>
+						<ul class="dropdown-menu">
+							<li class="d-none d-md-block">
+								<h6 class="dropdown-header">{{c.description}}</h6>
+							</li>
+							{% for utili in c.utilisations %}
+								<li>
+									<hr class="dropdown-divider">
+								</li>
+								<li>
+									<a class="dropdown-item" href="{{path('app_utilisation', {'category_slug' : c.slug, 'utilisation_slug' : utili.slug})}}"><img src="https://picsum.photos/500/500" height="80px" alt="" class="d-none d-sm-inline">{{utili.libelle}}</a>
+								</li>
+							{% endfor %}
+						</ul>
+					</li>
+				{% endfor %}
+
+
+				<!-- Robots -->
+				<li class="nav-item w-100 nav-link-bordure-gauche majuscule">
+					<a href="#" class="nav-link mb-2 mb-lg-0">Robots</a>
+				</li>
+
+				<!-- House -->
+				<li class="nav-item w-100 nav-link-bordure-gauche majuscule">
+					<a href="#" class="nav-link mb-2 mb-lg-0">Autres</a>
+				</li>
+			</ul>
+		</div>
+	</div>
+</nav>{# partie admin #}{% if app.user %}
 	<div class="container-xl admin">
-
 		{% for role in app.user.roles %}
 			{% if role is same as 'ROLE_ADMIN' %}
 				<strong>

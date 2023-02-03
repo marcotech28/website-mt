@@ -60,9 +60,6 @@ class User implements UserInterface, PasswordAuthenticatedUserInterface
     private ?string $nomSociete = null;
 
     #[ORM\Column(length: 255)]
-    private ?string $siret = null;
-
-    #[ORM\Column(length: 255)]
     private ?string $fonction = null;
 
     public function getId(): ?int
@@ -251,18 +248,6 @@ class User implements UserInterface, PasswordAuthenticatedUserInterface
     public function setNomSociete(string $nomSociete): self
     {
         $this->nomSociete = $nomSociete;
-
-        return $this;
-    }
-
-    public function getSiret(): ?string
-    {
-        return $this->siret;
-    }
-
-    public function setSiret(string $siret): self
-    {
-        $this->siret = $siret;
 
         return $this;
     }

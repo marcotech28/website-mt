@@ -96,10 +96,20 @@ class DemonstrationFormType extends AbstractType
                     'placeholder' => 'Code postal *'
                 ]
             ])
+            ->add('pays', TextType::class, [
+                'label' => false,
+                'attr' => [
+                    'class' => 'form-control',
+                    'placeholder' => 'Pays *'
+                ]
+            ])
             ->add('produitsDemo', ChoiceType::class, [
                 'choices'  => [
                     'Produit 1' => 'prod1',
                     'Produit 2' => 'prod2',
+                    'Produit 3' => 'prod3',
+                    'Produit 4' => 'prod4',
+                    'Produit 5' => 'prod5',
                 ],
                 'expanded' => true,
                 'multiple' => true,

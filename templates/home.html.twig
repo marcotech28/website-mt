@@ -6,8 +6,8 @@
 
 {% block body %}
 
-
-<div class="container-fluid banner">
+{# banniere du haut #}
+<div class="container-fluid banner d-none d-lg-block">
 	<div class="col-md-8 offset-md-2 info">
 		<h1 class="text-center">MARCONNET TECHNOLOGIES™</h1>
 		<p class="text-center">
@@ -17,10 +17,10 @@
 	</div>
 </div>
 
-<div
-	class="container-xl">
-	{# produits préférés #}
-	<div id="produitpref" class="produits-preferes">
+{# produits préférés #}
+<div class="container-xl">
+
+	<div id="produitpref" class="text-center">
 		<div class="row">
 			<div class="col-12">
 				<h1>Les produits préférés de nos clients</h1>
@@ -57,27 +57,31 @@
 	</div>
 </div>
 
-<div class="container-fluid" style=" border-right: 8px solid #0F434E; border-left: 8px solid #0F434E">
-	<div id="mon-carousel" class="carousel slide" data-bs-ride="carousel" style="background: rgb(197, 194, 194)">
+<div
+	class="container-xl">
+
+	{# <div class="container-fluid" style=" border-right: 8px solid #0F434E; border-left: 8px solid #0F434E"> #}
+	<div id="mon-carousel" class="carousel slide" data-bs-ride="carousel">
 		<ol class=" carousel-indicators">
 			<li data-bs-target="#mon-carousel" data-bs-slide-to="0" class="active"></li>
 			<li data-bs-target="#mon-carousel" data-bs-slide-to="1"></li>
 			<li data-bs-target="#mon-carousel" data-bs-slide-to="2"></li>
 		</ol>
+
+
 		<div class="carousel-inner">
 			<div class="carousel-item active" data-bs-interval="10000">
 				<div class="container">
 					<div class="row p-5">
-						<div class="mx-auto col-md-8 col-lg-6 order-lg-last">
+						<div class="mx-auto col-md-8 col-lg-6 order-lg-last d-flex align-items-center">
 							<img class="img-fluid" src="{{asset('images/fun2go.png')}}" alt=" ">
 						</div>
 						<div class="col-lg-6 mb-0 d-flex align-items-center">
-							<div class="text-align-left align-self-center">
+							<div class="text-align-left align-self-center desc-carousel">
 								<h1>Lorem ipsum dolor sit amet.</h1>
 								<h3>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Dolore, optio.</h3>
-								<p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Iusto temporibus blanditiis dolor, dolorem possimus eos!
-								</p>
-								<p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Debitis, incidunt.</p>
+								<p class="d-none d-lg-block">Lorem ipsum dolor sit amet consectetur adipisicing elit. Nihil, architecto!</p>
+								<p class="d-none d-lg-block">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Enim, nobis.</p>
 								<a href="#">
 									<div class="btn btn-outline-primary btn-lg">Voir le produit</div>
 								</a>
@@ -86,6 +90,8 @@
 					</div>
 				</div>
 			</div>
+
+
 			<div class="carousel-item" data-bs-interval="10000">
 				<div class="container">
 					<div class="row p-5">
@@ -93,12 +99,11 @@
 							<img class="img-fluid" src="{{asset('images/easyrider.jpg')}}" alt=" ">
 						</div>
 						<div class="col-lg-6 mb-0 d-flex align-items-center">
-							<div class="text-align-left">
+							<div class="text-align-left align-self-center desc-carousel">
 								<h1>Lorem ipsum dolor sit amet.</h1>
 								<h3>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Labore, beatae.</h3>
-								<p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Quas, dolorum. Suscipit dolor eveniet voluptas. Quos?
-								</p>
-								<p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Eos aliquid architecto, eaque neque aspernatur expedita.</p>
+								<p class="d-none d-lg-block">Lorem ipsum dolor sit amet consectetur adipisicing elit. Nihil, architecto!</p>
+								<p class="d-none d-lg-block">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Enim, nobis.</p>
 								<a href="#">
 									<div class="btn btn-outline-primary btn-lg">Voir le produit</div>
 								</a>
@@ -114,11 +119,11 @@
 							<img class="img-fluid" src="{{asset('images/citymax.jpg')}}" alt="">
 						</div>
 						<div class="col-lg-6 mb-0 d-flex align-items-center">
-							<div class="text-align-left">
+							<div class="text-align-left align-self-center desc-carousel">
 								<h1>Lorem ipsum dolor sit amet.</h1>
 								<h3>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Tenetur, error?</h3>
-								<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Reiciendis, maiores fuga. Officiis temporibus vitae recusandae?</p>
-								<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Architecto, quos iure dignissimos optio suscipit deserunt.</p>
+								<p class="d-none d-lg-block">Lorem ipsum dolor sit amet consectetur adipisicing elit. Nihil, architecto!</p>
+								<p class="d-none d-lg-block">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Enim, nobis.</p>
 								<a href="#">
 									<div class="btn btn-outline-primary btn-lg">Voir le produit</div>
 								</a>
@@ -136,11 +141,12 @@
 		</a>
 	</div>
 </div>
+{# </div> #}
 <div
 	class="container-xl">
 
 	{# a propos #}
-	<div class="a_propos">
+	<div class="a_propos text-center">
 		<div class="row">
 			<div class="col-12">
 				<h1>À propos de Marconnet technologies™</h1>
@@ -176,7 +182,7 @@
 			</div>			
 			<div class="row">
 				<div class="col-12 d-flex justify-content-center">
-					<a class="btn btn-outline-primary" href="{{path('about')}}" role="button">En savoir plus sur Marconnet technologies™</a>
+					<a class="btn btn-primary btn-lg" href="{{path('about')}}" role="button">En savoir plus sur Marconnet technologies™</a>
 				</div>
 			</div>
 		</div>
@@ -184,27 +190,20 @@
 </div>
 
 {# test de materiel #}
-<div class="container-fluid">
-	<div class="test_materiel">
-		<div class="container-xl">
-			<div class="row">
-				<div class="col-12">
-					<h1>Nous vous proposons de tester le matériel avant de l'acheter.</h1>
-					<p>Assurez-vous que le matériel soit parfaitement adapté à vous en essayant nos produits. Vous pouvez venir au showroom, ou alors, c'est le showroom qui viendra à vous.</p>
-					<div class="d-flex justify-content-center align-items-center" style="padding-top: 20px">
-  						<a class="btn btn-outline-primary" href="{{path('demonstration')}}" role="button">Je souhaite tester le matériel</a>
-					</div>
-					
-				</div>
-			</div>
-		</div>
-	</div>
-</div>
+<div class="text-center test_materiel">
+        <h1>Testez le matériel avant de l'acheter.</h1>
+        <div class="col-lg-6 mx-auto">
+            <p class="mb-4">Assurez-vous que le matériel soit parfaitement adapté à vous en essayant nos produits. Vous pouvez venir au showroom, ou alors, c'est le showroom qui viendra à vous.</p>
+            <div class="d-grid gap-2 d-sm-flex justify-content-sm-center">
+                <a class="btn btn-outline-primary btn-lg px-4 gap-3" href="{{path('demonstration')}}">Je souhaite tester le matériel</a>
+            </div>
+        </div>
+    </div>
 
 <div class="container-xl">
 
 	{# entreprises qui nous font confiance #}
-	<div class="confiance">
+	<div class="confiance text-center">
 	<div class="row">
 		<div class="col-12">
 			<h1>Ils nous ont fait confiance</h1>
@@ -292,7 +291,7 @@
 			</div>
 
 			{# newsletter #}
-			<div class="container-fluid newsletter">
+			{# <div class="container-fluid newsletter">
 				<div class="container-xl">
 					<div class="row align-self-end newsletter">
 						<div class="col-4 d-flex flex-column-reverse">
@@ -313,18 +312,40 @@
 								<div class="col">
 									<div class="input-group mb-3">
 										<div class="input-group-prepend">
-											<div class="input-group-prepend">
-												<span class="input-group-text" id="basic-addon1">@</span>
-											</div>
-											</div>
-											<input type="text" class="form-control" placeholder="Mon adresse email" aria-label="" aria-describedby="basic-addon1">
-											<button class="btn btn-outline-primary" type="button">Je m'inscris</button>
+											<span class="input-group-text" id="basic-addon1">@</span>
 										</div>
+										<input type="text" class="form-control" placeholder="Mon adresse email" aria-label="" aria-describedby="basic-addon1">
+										<button class="btn btn-outline-primary" type="button">Je m'inscris</button>
+									</div>
 								</div>
 							</div>
 						</div>
 						
 					</div>
 				</div>
-			</div>
+			</div> #}
+
+			<div class="container-fluid newsletter">
+				<div class="container col-xxl-8 px-4 py-5">
+					<div class="row flex-lg-row-reverse align-items-center g-5 py-5">
+						<div class="col-10 col-sm-8 col-lg-6 d-none d-lg-block">
+							<img src="https://cdn.pixabay.com/photo/2017/09/18/22/04/computer-2763393_960_720.png" class="d-block mx-lg-auto img-fluid"
+								alt="Bootstrap Themes" width="300" height="300" loading="lazy">
+						</div>
+						<div class="col-lg-6">
+							<h1 class="lh-1 mb-3">Inscrivez-vous à notre newsletter</h1>
+							<p>Recevez régulièrement nos actualités et tenez-vous informé des nouveautés.</p>
+							<div class="d-grid gap-2 d-md-flex justify-content-md-start mt-4">
+								<div class="input-group mb-3">
+									<div class="input-group-prepend">
+										<span class="input-group-text h-100 d-none d-sm-block" id="basic-addon1">@</span>
+									</div>
+									<input type="text" class="form-control" placeholder="Mon adresse email">
+									<button class="btn btn-outline-primary btn-lg" type="button">Je m'inscris</button>
+								</div>
+							</div>
+						</div>
+					</div>
+        		</div>
+    		</div>
 		{% endblock %}

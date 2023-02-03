@@ -28,6 +28,7 @@
     border-radius: 15px;
     margin-bottom: 80px;
     border-top: 5px solid #168896;
+    border-top-width: 20%;
     border-bottom: 5px solid #168896;
 }
 
@@ -60,4 +61,9 @@
 
 .btn-outline-primary:hover {
     background-color: #168896 !important;
+}
+
+h2 {
+    border-top: 1px solid red;
+    border-top-width: 20%;
 }

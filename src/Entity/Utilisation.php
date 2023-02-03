@@ -5,6 +5,7 @@ namespace App\Entity;
 use App\Repository\UtilisationRepository;
 use Doctrine\Common\Collections\ArrayCollection;
 use Doctrine\Common\Collections\Collection;
+use Doctrine\DBAL\Types\Types;
 use Doctrine\ORM\Mapping as ORM;
 
 #[ORM\Entity(repositoryClass: UtilisationRepository::class)]
@@ -26,6 +27,12 @@ class Utilisation
 
     #[ORM\OneToMany(mappedBy: 'utilisation', targetEntity: Produit::class)]
     private Collection $produits;
+
+    #[ORM\ManyToOne(inversedBy: 'utilisations')]
+    private ?Categorie $categorie = null;
+
+    #[ORM\Column(type: Types::TEXT, nullable: true)]
+    private ?string $description = null;
 
     public function __construct()
     {
@@ -99,6 +106,30 @@ class Utilisation
                 $produit->setUtilisation(null);
             }
         }
+
+        return $this;
+    }
+
+    public function getCategorie(): ?Categorie
+    {
+        return $this->categorie;
+    }
+
+    public function setCategorie(?Categorie $categorie): self
+    {
+        $this->categorie = $categorie;
+
+        return $this;
+    }
+
+    public function getDescription(): ?string
+    {
+        return $this->description;
+    }
+
+    public function setDescription(?string $description): self
+    {
+        $this->description = $description;
 
         return $this;
     }

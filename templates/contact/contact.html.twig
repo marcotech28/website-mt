@@ -45,26 +45,26 @@
 					</div>
 				</div>
 			</div>
-			<div class="col-11 mx-auto">
+			<div class="col-12 col-sm-11 mx-auto">
 				<div
 					class="row justify-content-center">
 
 
 					{# 1ere colonne #}
-					<div class="col-lg-7 mb-5 mb-lg-0 contact-form">
+					<div class="col-lg-7 mb-5 mb-lg-0">
 						<div class="row mb-2">
 							<div class="col">
 								{{ form_widget(formView.typeUser) }}
 							</div>
 						</div>
 						<div class="row mb-2">
-							<div class="col-6">{{ form_row(formView.societe) }}</div>
-							<div class="col-6">{{ form_row(formView.poste) }}</div>
+							<div class="col-12 col-sm-6 mb-formulaire">{{ form_row(formView.societe) }}</div>
+							<div class="col-12 col-sm-6">{{ form_row(formView.poste) }}</div>
 						</div>
 
 						<div class="row mb-2">
-							<div class="col-6">{{ form_row(formView.nom) }}</div>
-							<div class="col-6">{{ form_row(formView.prenom) }}</div>
+							<div class="col-12 col-sm-6 mb-formulaire">{{ form_row(formView.nom) }}</div>
+							<div class="col-12 col-sm-6">{{ form_row(formView.prenom) }}</div>
 						</div>
 
 						<div class="row mb-2">
@@ -82,8 +82,11 @@
 							<div class="col">{{ form_row(formView.complementAdresse) }}</div>
 						</div>
 						<div class="row mb-2">
-							<div class="col-6">{{ form_row(formView.ville) }}</div>
-							<div class="col-6">{{ form_row(formView.codePostal) }}</div>
+							<div class="col-12 col-sm-6 mb-formulaire">{{ form_row(formView.ville) }}</div>
+							<div class="col-12 col-sm-6">{{ form_row(formView.codePostal) }}</div>
+						</div>
+						<div class="row mb-2">
+							<div class="col">{{ form_row(formView.pays) }}</div>
 						</div>
 						<div class="row mb-2">
 							<div class="col">

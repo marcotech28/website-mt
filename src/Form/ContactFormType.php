@@ -95,6 +95,13 @@ class ContactFormType extends AbstractType
                     'placeholder' => 'Code postal *'
                 ]
             ])
+            ->add('pays', TextType::class, [
+                'label' => false,
+                'attr' => [
+                    'class' => 'form-control',
+                    'placeholder' => 'Pays *'
+                ]
+            ])
             ->add('objet', ChoiceType::class, [
                 'attr' => [
                     'class' => 'form-control form-select',

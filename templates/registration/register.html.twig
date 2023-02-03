@@ -20,27 +20,84 @@
 
 		<p>Nous vous proposons de vous inscrire afin de pouvoir accéder à Espace revendeur et nous vous enverrons régulièrement une newsletter si vous le souhaitez.</p>
 
-		{{ form_start(registrationForm) }}
-		{{ form_row(registrationForm.nomSociete) }}
-		{{ form_row(registrationForm.siret) }}
-		{{ form_row(registrationForm.prenom) }}
-		{{ form_row(registrationForm.nom) }}
-		{{ form_row(registrationForm.fonction) }}
-		{{ form_row(registrationForm.email) }}
-		{{ form_row(registrationForm.telephone) }}
-		{{ form_row(registrationForm.adresse) }}
-		{{ form_row(registrationForm.complementAdresse) }}
-		{{ form_row(registrationForm.ville) }}
-		{{ form_row(registrationForm.codePostal) }}
-		{{ form_row(registrationForm.pays) }}
-		{{ form_row(registrationForm.newsletter) }}
-		{{ form_row(registrationForm.plainPassword, {}) }}
-		{{ form_row(registrationForm.agreeTerms) }}
 
-		<button type="submit" class="btn btn-primary">Je m'inscris</button>
-		{{ form_end(registrationForm) }}
+		<div class="form-demonstration">
+			<div class="col-12 col-sm-11 mx-auto">
+				<div class="col-lg-7 mb-5 mb-lg-0">
 
-		<p>Votre compte sera accessible une fois validé par notre équipe commerciale.</p>
+					<div class="row mb-2">
+						<div class="col-12 col-sm-6 mb-formulaire">{{ form_row(registrationForm.nomSociete) }}</div>
+						<div class="col-12 col-sm-6">{{ form_row(registrationForm.fonction) }}</div>
+					</div>
+
+					<div class="row mb-2">
+						<div class="col-12 col-sm-6 mb-formulaire">{{ form_row(registrationForm.prenom) }}</div>
+						<div class="col-12 col-sm-6">{{ form_row(registrationForm.nom) }}</div>
+					</div>
+
+					<div class="row mb-2">
+						<div class="col">
+							{{ form_row(registrationForm.email) }}
+						</div>
+					</div>
+
+					<div class="row mb-2">
+						<div class="col">
+							{{ form_row(registrationForm.telephone) }}
+						</div>
+					</div>
+
+					<div class="row mb-2">
+						<div class="col">
+							{{ form_row(registrationForm.adresse) }}
+						</div>
+					</div>
+
+					<div class="row mb-2">
+						<div class="col">
+							{{ form_row(registrationForm.complementAdresse) }}
+						</div>
+					</div>
+
+					<div class="row mb-2">
+						<div class="col-12 col-sm-6 mb-formulaire">{{ form_row(registrationForm.ville) }}</div>
+						<div class="col-12 col-sm-6">{{ form_row(registrationForm.codePostal) }}</div>
+					</div>
+
+					<div class="row mb-2">
+						<div class="col">
+							{{ form_row(registrationForm.pays) }}
+						</div>
+					</div>
+
+					<div class="row mb-2">
+						<div class="col-auto">
+							{{ form_label(registrationForm.plainPassword, {}) }}
+						</div>
+						<div class="col">
+							{{ form_widget(registrationForm.plainPassword, {}) }}
+						</div>
+					</div>
+
+					<div class="row mb-2">
+						<div class="col">
+							{{ form_row(registrationForm.newsletter) }}
+						</div>
+					</div>
+
+					<div class="row mb-2">
+						<div class="col">
+							{{ form_row(registrationForm.agreeTerms) }}
+						</div>
+					</div>
+				</div>
+				<p style="font-style: italic">Les champs marqués d'un * sont obligatoires.</p>
+
+				<button type="submit" class="btn btn-outline-primary">Je m'inscris</button>
+				{{ form_end(registrationForm) }}
+				<p>Votre compte sera accessible une fois validé par notre équipe commerciale.</p>
+			</div>
+		</div>
 
 	</div>
 {% endblock %}

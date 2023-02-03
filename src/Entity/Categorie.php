@@ -31,9 +31,13 @@ class Categorie
     #[ORM\Column(type: Types::TEXT, nullable: true)]
     private ?string $description = null;
 
+    #[ORM\OneToMany(mappedBy: 'categorie', targetEntity: Utilisation::class)]
+    private Collection $utilisations;
+
     public function __construct()
     {
         $this->produits = new ArrayCollection();
+        $this->utilisations = new ArrayCollection();
     }
 
     public function getId(): ?int
@@ -116,6 +120,35 @@ class Categorie
     {
         $this->description = $description;
 
+        return $this;
+    }
+
+    /**
+     * @return Collection<int, Utilisation>
+     */
+    public function getUtilisations(): Collection
+    {
+        return $this->utilisations;
+    }
+
+    public function addUtilisation(Utilisation $utilisation): self
+    {
+        if (!$this->utilisations->contains($utilisation)) {
+            $this->utilisations->add($utilisation);
+            $utilisation->setCategorie($this);
+        }
+
+        return $this;
+    }
+
+    public function removeUtilisation(Utilisation $utilisation): self
+    {
+        if ($this->utilisations->removeElement($utilisation)) {
+            // set the owning side to null (unless already changed)
+            if ($utilisation->getCategorie() === $this) {
+                $utilisation->setCategorie(null);
+            }
+        }
         return $this;
     }
 }

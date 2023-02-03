@@ -20,20 +20,82 @@ class RegistrationFormType extends AbstractType
     public function buildForm(FormBuilderInterface $builder, array $options): void
     {
         $builder
-            ->add('email', EmailType::class, [
-                'label' => "Email",
-                'row_attr' => [
-                    'class' => ''
+            ->add('nomSociete', TextType::class, [
+                'label' => false,
+                'attr' => [
+                    'class' => 'form-control',
+                    'placeholder' => 'Société *'
                 ]
             ])
-            ->add('agreeTerms', CheckboxType::class, [
-                'mapped' => false,
-                'constraints' => [
-                    new IsTrue([
-                        'message' => 'Merci d\'accepter nos conditions d\'utilisations',
-                    ]),
-                ],
-                'label' => "J'accepte les conditions Marconnet technologies™"
+            ->add('fonction', TextType::class, [
+                'label' => false,
+                'attr' => [
+                    'class' => 'form-control',
+                    'placeholder' => 'Votre fonction dans la société *'
+                ]
+            ])
+            ->add('nom', TextType::class, [
+                'label' => false,
+                'attr' => [
+                    'class' => 'form-control',
+                    'placeholder' => 'Nom *'
+                ]
+            ])
+            ->add('prenom', TextType::class, [
+                'label' => false,
+                'attr' => [
+                    'class' => 'form-control',
+                    'placeholder' => 'Prénom *'
+                ]
+            ])
+            ->add('email', EmailType::class, [
+                'label' => false,
+                'attr' => [
+                    'class' => 'form-control',
+                    'placeholder' => 'Adresse email *'
+                ]
+            ])
+            ->add('telephone', TextType::class, [
+                'label' => false,
+                'attr' => [
+                    'class' => 'form-control',
+                    'placeholder' => 'Téléphone *'
+                ]
+            ])
+            ->add('adresse', TextType::class, [
+                'label' => false,
+                'attr' => [
+                    'class' => 'form-control',
+                    'placeholder' => 'Adresse *'
+                ]
+            ])
+            ->add('complementAdresse', TextType::class, [
+                'label' => false,
+                'attr' => [
+                    'class' => 'form-control',
+                    'placeholder' => 'Complément d\'adresse'
+                ]
+            ])
+            ->add('ville', TextType::class, [
+                'label' => false,
+                'attr' => [
+                    'class' => 'form-control',
+                    'placeholder' => 'Ville *'
+                ]
+            ])
+            ->add('codePostal', TextType::class, [
+                'label' => false,
+                'attr' => [
+                    'class' => 'form-control',
+                    'placeholder' => 'Code postal *'
+                ]
+            ])
+            ->add('pays', TextType::class, [
+                'label' => false,
+                'attr' => [
+                    'class' => 'form-control',
+                    'placeholder' => 'Pays *'
+                ]
             ])
             ->add('plainPassword', PasswordType::class, [
                 // instead of being set onto the object directly,
@@ -41,7 +103,8 @@ class RegistrationFormType extends AbstractType
                 'label' => "Mot de passe",
                 'mapped' => false,
                 'attr' => [
-                    'autocomplete' => 'new-password'
+                    'autocomplete' => 'new-password',
+                    'class' => 'form-control'
                 ],
                 'constraints' => [
                     new NotBlank([
@@ -55,42 +118,20 @@ class RegistrationFormType extends AbstractType
                     ]),
                 ],
             ])
-            ->add('nom', TextType::class, [
-                'label' => "Nom"
-            ])
-            ->add('prenom', TextType::class, [
-                'label' => "Prénom"
-            ])
-            ->add('telephone', TextType::class, [
-                'label' => "Téléphone"
-            ])
-            ->add('nomSociete', TextType::class, [
-                'label' => "Société"
-            ])
-            ->add('fonction', TextType::class, [
-                'label' => "Fonction"
-            ])
-            ->add('siret', TextType::class, [
-                'label' => "Numéro de SIRET"
-            ])
-            ->add('pays', TextType::class, [
-                'label' => "Pays"
-            ])
-            ->add('adresse', TextType::class, [
-                'label' => "Adresse",
-            ])
-            ->add('complementAdresse', TextType::class, [
-                'label' => "Complément d'adresse"
-            ])
-            ->add('ville', TextType::class, [
-                'label' => "Ville"
-            ])
-            ->add('codePostal', TextType::class, [
-                'label' => "Code postal"
-            ])
             ->add('newsletter', CheckboxType::class, [
                 'label' => 'Je m\'abonne à la newsletter',
-                'required' => false
+                'label_attr' => ['style' => 'display:inline-block; padding-right: 10px;'],
+                'required' => false,
+            ])
+            ->add('agreeTerms', CheckboxType::class, [
+                'mapped' => false,
+                'constraints' => [
+                    new IsTrue([
+                        'message' => 'Merci d\'accepter nos conditions d\'utilisations',
+                    ]),
+                ],
+                'label' => "J'accepte les conditions Marconnet technologies™",
+                'label_attr' => ['style' => 'display:inline-block; padding-right: 10px;']
             ]);
     }
 
