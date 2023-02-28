@@ -1,8 +1,68 @@
+{# partie admin #}
+{% if app.user %}
+	<nav class="navbar navbar-expand-lg navbar-admin" style="padding: 0 !important;">
+		<div class="container-xl">
+			<button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarbottom-toggler">
+				<span class="navbar-toggler-icon"></span>
+			</button>
+			<div class="collapse navbar-collapse" id="navbarbottom-toggler">
+				<ul class="navbar-nav mb-2 mb-lg-0 w-100 justify-content-between">
+
+					<li class="nav-item w-100 majuscule house">
+						<a href="{{path("app_admin_crud_user_index")}}" class="nav-link mb-2 mb-lg-0">
+							UTILISATEURS
+						</a>
+					</li>
+
+					<li class="nav-item w-100 majuscule house">
+						<a href="{{path("app_news")}}" class="nav-link mb-2 mb-lg-0">
+							ACTU
+						</a>
+					</li>
+
+					<li class="nav-item w-100 majuscule house">
+						<a href="{{path("app_admin_crud_produit_index")}}" class="nav-link mb-2 mb-lg-0">
+							PRODUITS
+						</a>
+					</li>
+
+					<li class="nav-item w-100 majuscule house">
+						<a href="{{path("app_admin_crud_categorie_index")}}" class="nav-link mb-2 mb-lg-0">
+							CATÉGORIES
+						</a>
+					</li>
+
+					<li class="nav-item w-100 majuscule house">
+						<a href="{{path("app_admin_crud_utilisation_index")}}" class="nav-link mb-2 mb-lg-0">
+							UTILISATIONS
+						</a>
+					</li>
+
+					<li class="nav-item w-100 majuscule house">
+						<a href="{{path("app_admin_crud_avantage_index")}}" class="nav-link mb-2 mb-lg-0">
+							AVANTAGES
+						</a>
+					</li>
+
+					<li class="nav-item w-100 majuscule house">
+						<a href="{{path("app_admin_crud_marque_index")}}" class="nav-link mb-2 mb-lg-0">
+							MARQUES
+						</a>
+					</li>
+				</ul>
+			</div>
+		</div>
+	</nav>
+
+
+{% endif %}
+
 {# navbar top #}
 
 {# je laisse le bouton hamburger pour l'instant mais je m'en sers pas car je n'affiche pas navbar-top sur petit écran #}
 
-	<nav class="navbar navbar-expand-lg navbar-top d-none d-lg-block"> <div class="container-xl">
+<nav class="navbar navbar-expand-lg navbar-top d-none d-lg-block">
+	<div class="container-xl">
 		<button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbartop-toggler">
 			<span class="navbar-toggler-icon"></span>
 		</button>
@@ -118,36 +178,4 @@
 			</ul>
 		</div>
 	</div>
-</nav>{# partie admin #}{% if app.user %}
-	<div class="container-xl admin">
-		{% for role in app.user.roles %}
-			{% if role is same as 'ROLE_ADMIN' %}
-				<strong>
-					<p>
-						Vous êtes connecté en tant qu'administrateur. Vous possédez donc les droits pour administrer le site.
-						<br>Que voulez-vous faire ?</p>
-				</strong>
-				<ul>
-					<li class="in-line">
-						<a href=" {{path('app_admin_crud_index')}}">Gérer les utilisateurs</a>
-					</li>
-					<li class="in-line">
-						<a href=" {{path('app_admin_crud_produit_index')}}">Gérer les produits</a>
-					</li>
-					<li class="in-line">
-						<a href=" {{path('app_admin_crud_categorie_index')}}">Gérer les catégories</a>
-					</li>
-					<li class="in-line">
-						<a href=" {{path('app_admin_crud_utilisation_index')}}">Gérer les types d'utilisation</a>
-					</li>
-					<li class="in-line">
-						<a href=" {{path('app_admin_crud_avantage_index')}}">Gérer les avantages</a>
-					</li>
-					<li class="in-line">
-						<a href=" {{path('app_admin_crud_marque_index')}}">Gérer les marques</a>
-					</li>
-				</ul>
-			{% endif %}
-		{% endfor %}
-	</div>
-{% endif %}
+</nav>

@@ -62,6 +62,9 @@ class User implements UserInterface, PasswordAuthenticatedUserInterface
     #[ORM\Column(length: 255)]
     private ?string $fonction = null;
 
+    #[ORM\Column(nullable: true)]
+    private ?bool $isConfirmed = null;
+
     public function getId(): ?int
     {
         return $this->id;
@@ -260,6 +263,18 @@ class User implements UserInterface, PasswordAuthenticatedUserInterface
     public function setFonction(string $fonction): self
     {
         $this->fonction = $fonction;
+
+        return $this;
+    }
+
+    public function isIsConfirmed(): ?bool
+    {
+        return $this->isConfirmed;
+    }
+
+    public function setIsConfirmed(?bool $isConfirmed): self
+    {
+        $this->isConfirmed = $isConfirmed;
 
         return $this;
     }

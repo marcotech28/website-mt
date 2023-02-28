@@ -24,6 +24,7 @@
 		<div class="form-demonstration">
 			<div class="col-12 col-sm-11 mx-auto">
 				<div class="col-lg-7 mb-5 mb-lg-0">
+					{{ form_start(registrationForm) }}
 
 					<div class="row mb-2">
 						<div class="col-12 col-sm-6 mb-formulaire">{{ form_row(registrationForm.nomSociete) }}</div>
@@ -90,10 +91,16 @@
 							{{ form_row(registrationForm.agreeTerms) }}
 						</div>
 					</div>
+					<div class="row mb-2">
+						<div class="col">
+							{{ form_row(registrationForm.isConfirmed) }}
+						</div>
+					</div>
 				</div>
 				<p style="font-style: italic">Les champs marqués d'un * sont obligatoires.</p>
 
-				<button type="submit" class="btn btn-outline-primary">Je m'inscris</button>
+				<button type="submit" class="btn btn-primary">Je m'inscris</button>
+
 				{{ form_end(registrationForm) }}
 				<p>Votre compte sera accessible une fois validé par notre équipe commerciale.</p>
 			</div>

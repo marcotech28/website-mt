@@ -73,6 +73,9 @@ class DemonstrationController extends AbstractController
 
 
             $mailer->send($monemail);
+
+            $this->addFlash('success', "Votre demande de démonstration a bien été prise en compte. Notre équipe l'étudiera dans les plus briefs délais. Nous vous répondrons très prochainement par mail.");
+            return $this->redirectToRoute('homepage');
         }
 
 

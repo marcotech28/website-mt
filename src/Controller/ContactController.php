@@ -20,6 +20,7 @@ class ContactController extends AbstractController
         $form->handleRequest($request);
 
         if ($form->isSubmitted() && $form->isValid()) {
+
             $data = $form->getData();
 
             $typeUser = $data['typeUser'];
@@ -41,7 +42,6 @@ class ContactController extends AbstractController
             $monemail->from($email)
                 ->to('antonin@marconnet-robotique.com')
                 ->subject($objet)
-                ->text($message)
                 ->html("
                     <p><strong>Type d'utilisateur:</strong> {$typeUser}</p>
                     <p><strong>Nom:</strong> {$nom}</p>
@@ -55,12 +55,13 @@ class ContactController extends AbstractController
                     <p><strong>Ville:</strong> {$ville}</p>
                     <p><strong>Code postal:</strong> {$codePostal}</p>
                     <p><strong>Pays:</strong> {$pays}</p>
+                    <p><strong>Message:</strong> {$message}</p>
             ");
 
             $mailer->send($monemail);
 
-
-            // dd($data);
+            $this->addFlash('success', "Votre demande de contact a bien été prise en compte. Nous l'étudierons et nous reviendrons vers vous très prochainement.");
+            return $this->redirectToRoute('homepage');
         }
 
         return $this->render(

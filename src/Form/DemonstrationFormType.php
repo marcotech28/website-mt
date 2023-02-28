@@ -137,8 +137,7 @@ class DemonstrationFormType extends AbstractType
                     'class' => 'form-control',
                     'rows' => 4
                 ]
-            ])
-            ->add('Envoyer', SubmitType::class);
+            ]);
     }
 
     public function configureOptions(OptionsResolver $resolver): void

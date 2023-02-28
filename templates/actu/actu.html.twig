@@ -4,7 +4,7 @@
 {% endblock %}
 
 {% block body %}
-	<div class="container-lg">
+	<div class="container-xl">
 		<nav aria-label="breadcrumb">
 			<ol class="breadcrumb">
 				<li class="breadcrumb-item">
@@ -14,6 +14,18 @@
 			</ol>
 		</nav>
 
-		<p>test</p>
+		{% for index, item in listNews %}
+			<h2>{{ item.titre }}</h2>
+			<div>
+				<p>{{ item.content|raw }}</p>
+			</div>
+			<p class="date">{{ item.date|date('Y-m-d') }}</p>
+			<p class="auteur">{{ item.auteur }}</p>
+			{% if index < listNews|length-1 and listNews[index+1] is defined %}
+				<div class="separator"></div>
+			{% endif %}
+		{% endfor %}
+
+
 	</div>
 {% endblock %}

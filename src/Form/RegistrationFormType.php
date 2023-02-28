@@ -132,6 +132,10 @@ class RegistrationFormType extends AbstractType
                 ],
                 'label' => "J'accepte les conditions Marconnet technologies™",
                 'label_attr' => ['style' => 'display:inline-block; padding-right: 10px;']
+            ])
+            ->add('isConfirmed', CheckboxType::class, [
+                'label' => "Je suis un utilisateur confirmé",
+                'required' => false,
             ]);
     }
 

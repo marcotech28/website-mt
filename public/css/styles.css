@@ -1,8 +1,18 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600;700&display=swap');
+
+
+
 html,
 body {
     padding: 0;
     margin: 0;
+    font-family: "Poppins", sans-serif !important;
 }
+
+.container-xl {
+    padding: 0 80px;
+}
+
 
 .container-fluid {
     margin: 0 !important;
@@ -63,11 +73,27 @@ body {
 .nav-item a,
 .nav-link {
     color: white;
-    font-size: 14px;
+    font-size: 12px;
 }
 
 .navbar-bottom {
     background-color: #0f444ee8;
+}
+
+.navbar-admin {
+    background-color: rgb(173, 32, 32);
+}
+
+.navbar-admin .nav-link {
+    color: white;
+    text-align: center;
+    margin: 0 !important;
+    padding: 15px 0;
+}
+
+.navbar-admin .nav-link:hover {
+    background-color: #0F434E;
+    transition: 0.2s;
 }
 
 .navbar-bottom .nav-link {
@@ -181,13 +207,13 @@ footer a {
     text-decoration: none;
     color: white;
     font-weight: 400;
-    font-size: 14px;
+    font-size: 12px;
 }
 
 footer p {
     text-align: left;
     font-weight: 400;
-    font-size: 14px;
+    font-size: 12px;
 }
 
 footer a:hover {
@@ -227,7 +253,9 @@ footer a:hover {
 /* -- BREADCRUMB -- */
 
 .breadcrumb li {
-    padding: 10px 0;
+    padding: 15px 0;
+    text-decoration: underline;
+    font-size: 14px;
 }
 
 .breadcrumb {
@@ -235,7 +263,8 @@ footer a:hover {
 }
 
 .breadcrumb li a {
-    text-decoration: none;
+    text-decoration: underline;
+    font-size: 14px;
     color: #0F434E;
 }
 
@@ -245,14 +274,14 @@ h1 {
     padding: 40px 0;
     line-height: 1.2;
     font-size: 50px;
-    font-weight: 700;
+    font-weight: 500;
     color: #0F434E;
 }
 
 h2 {
     font-weight: 400;
     color: #168896;
-    padding-bottom: 40px;
+    padding: 40px 0;
 }
 
 h3 {
@@ -270,7 +299,7 @@ h4 {
 p,
 td {
     margin-bottom: 5px;
-    font-size: 1.25rem;
+    font-size: 1rem;
     font-weight: 300;
 }
 
@@ -327,8 +356,93 @@ td {
     padding-top: 16px;
 }
 
+
+
 /* -- HOMEPAGE -- */
 
+/* new banniere */
+
+header {
+    height: 80vh;
+    background-color: #0F434E;
+    position: relative;
+    overflow: hidden;
+}
+
+#shape {
+    position: absolute;
+    left: 0;
+    bottom: -2vw;
+}
+
+header img:not(#shape) {
+    position: absolute;
+    left: 0;
+}
+
+header img:nth-child(1) {
+    opacity: 0.4;
+    bottom: -0.1vw;
+}
+
+header img:nth-child(2) {
+    opacity: 0.3;
+    bottom: 0.5vw;
+}
+
+header img:nth-child(3) {
+    bottom: 0.3vw;
+    opacity: 0.2;
+}
+
+header img:nth-child(4) {
+    bottom: 0.1vw;
+    opacity: 0.3;
+}
+
+header h1 {
+    width: 100%;
+    font-family: "Poppins", sans-serif;
+    position: absolute;
+    transform: translate(-50%, -50%);
+    left: 50%;
+    top: 25%;
+    font-size: 59px;
+    text-align: center;
+    color: #ffffff;
+}
+
+header p {
+    width: 100%;
+    font-family: "Poppins", sans-serif;
+    position: absolute;
+    transform: translate(-50%, -50%);
+    left: 50%;
+    top: 36%;
+    font-size: 19px;
+    text-align: center;
+    color: #ffffff;
+}
+
+header button {
+    font-family: "Poppins", sans-serif;
+    position: absolute;
+    transform: translate(-50%, -50%);
+    left: 50%;
+    top: 48%;
+    font-size: 3vmin;
+}
+
+/* header p {
+    font-family: "Poppins", sans-serif;
+    padding: 30px 35px;
+    margin-top: 50px;
+    text-align: justify;
+    line-height: 2em;
+    letter-spacing: 0.5px;
+} */
+
+/* new banniere */
 .banner {
     height: 83vh;
     width: 100%;
@@ -551,8 +665,8 @@ td {
 }
 
 .content-partners p {
-    font-size: 16px;
-    font-weight: 500;
+    font-size: 0.9rem;
+    font-weight: 300;
     margin: 0 0 1px;
     padding: 5px 20px;
 }
@@ -590,10 +704,10 @@ td {
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
     overflow: hidden;
     border-radius: 15px;
-    margin-bottom: 30px;
+    margin-bottom: 18px;
     border-top: 5px solid #168896;
     border-bottom: 5px solid #168896;
-    padding: 0 7px;
+    padding: 0;
 }
 
 .card-services img {
@@ -620,6 +734,46 @@ td {
 .card-services p {
     padding: 0 20px;
     /* font-size: 15px; */
+}
+
+/* -- SEPARATOR -- */
+.separator {
+    position: relative;
+    height: 3px;
+}
+
+.separator::before {
+    content: "";
+    /* ajouter un pseudo-élément pour dessiner la première partie de la ligne */
+    position: absolute;
+    /* définir la position absolue */
+    top: 0;
+    /* aligner la bordure supérieure sur le haut de la ligne */
+    left: 0;
+    /* aligner la bordure sur la gauche de la ligne */
+    width: 33.33%;
+    /* définir la largeur du premier tiers de la ligne */
+    height: 3px;
+    /* définir l'épaisseur de la bordure */
+    background-color: #0F434E;
+    /* définir la couleur de la bordure */
+}
+
+.separator::after {
+    content: "";
+    /* ajouter un pseudo-élément pour dessiner la deuxième partie de la ligne */
+    position: absolute;
+    /* définir la position absolue */
+    top: 1px;
+    /* aligner la bordure inférieure sur le milieu de la ligne */
+    left: 33.33%;
+    /* décaler la bordure d'un tiers de la largeur de la ligne */
+    width: 66.67%;
+    /* définir la largeur des deux tiers restants de la ligne */
+    height: 1px;
+    /* définir l'épaisseur de la bordure */
+    background-color: #168896;
+    /* définir la couleur de la bordure */
 }
 
 /*-- CONTACT --*/
@@ -928,6 +1082,16 @@ a:hover.contact-telephone {
 }
 
 /* -- ADMIN -- */
+
+.alert {
+    margin: 0 !important;
+    border-radius: 0;
+}
+
+.admin td {
+    font-size: 12px;
+}
+
 .in-line {
     display: inline;
     padding: 8px;
@@ -936,6 +1100,25 @@ a:hover.contact-telephone {
 .admin {
     padding-top: 40px;
 }
+
+/* -- ACTUALITÉS -- */
+
+.auteur {
+    font-weight: 400 !important;
+    text-decoration: underline;
+    padding-bottom: 40px;
+}
+
+.date {
+    font-style: italic;
+    font-size: 1rem;
+}
+
+.img-actu {
+    max-width: 100%;
+    height: auto;
+}
+
 
 /* -- CATEGORIE -- */
 
@@ -1005,6 +1188,15 @@ a:hover.contact-telephone {
 /* -- -- */
 /* -- RESPONSIVE -- */
 /* -- -- */
+
+/* -- containers -- */
+
+@media only screen and (max-width: 1300px) {
+
+    .container-xl {
+        padding: 0;
+    }
+}
 
 /* -- titres -- */
 

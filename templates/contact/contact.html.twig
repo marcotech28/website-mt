@@ -49,12 +49,14 @@
 				<div
 					class="row justify-content-center">
 
-
 					{# 1ere colonne #}
 					<div class="col-lg-7 mb-5 mb-lg-0">
+						{{ form_start(formView, {
+							'method': 'POST',
+							'name' : 'contact_form'}) }}
 						<div class="row mb-2">
 							<div class="col">
-								{{ form_start(formView, {'method': 'POST'}) }}
+
 
 								{{ form_widget(formView.typeUser) }}
 							</div>
@@ -100,11 +102,13 @@
 								{{ form_row(formView.message) }}
 							</div>
 						</div>
-						{{form_end(formView)}}
 
 						<p style="font-style: italic">Les champs marqués d’un * sont obligatoires.</p>
 
-						<button type="button" class="btn btn-primary form-contact">Envoyer le message</button>
+						<button type="submit" class="btn btn-primary form-contact">Envoyer le message</button>
+
+						{{ form_end(formView) }}
+
 					</div>
 
 					{# 2eme colonne #}
