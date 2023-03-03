@@ -114,6 +114,10 @@ class AdminCrudUserController extends AbstractController
             $userRepository->remove($user, true);
         }
 
+        else{
+            $userRepository->NotRemove($user, true);
+        }
+
         return $this->redirectToRoute('app_admin_crud_user_index', [], Response::HTTP_SEE_OTHER);
     }
 }

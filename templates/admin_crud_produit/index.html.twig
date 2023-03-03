@@ -1,54 +1,129 @@
+{# {% extends 'base.html.twig' %}
+
+{% block title %}Produit index
+{% endblock %}
+
+{% block body %}
+
+	<div class="container-xxl">
+		<h1>Liste de nos produits</h1>
+
+		<div class="fix-width">
+			<table class="table table-striped">
+				<thead>
+					<tr>
+						<th>Id</th>
+						<th>Description</th>
+						<th>Nom</th>
+						<th>ShortDescription</th>
+						<th>Video1</th>
+						<th>Video2</th>
+						<th>FicheDescriptive</th>
+						<th>Caracteristiques</th>
+						<th>Slug</th>
+						<th>Catégorie</th>
+						<th>Utilisation</th>
+						<th>actions</th>
+					</tr>
+				</thead>
+				<tbody>
+					{% for produit in produits %}
+						<tr>
+							<td>{{ produit.id }}</td>
+							<td>{{ produit.description }}</td>
+							<td>{{ produit.nom }}</td>
+							<td>{{ produit.shortDescription }}</td>
+							<td>{{ produit.video1 }}</td>
+							<td>{{ produit.video2 }}</td>
+							<td>{{ produit.ficheDescriptive }}</td>
+							<td>{{ produit.caracteristiques }}</td>
+							<td>{{ produit.slug }}</td>
+							<td>{{ produit.categorie.libelle }}</td>
+							<td>{{ produit.utilisation.libelle }}</td>
+							<td>
+								<a href="{{ path('app_admin_crud_produit_show', {'id': produit.id}) }}">show</a>
+								<a href="{{ path('app_admin_crud_produit_edit', {'id': produit.id}) }}">edit</a>
+							</td>
+						</tr>
+					{% else %}
+						<tr>
+							<td colspan="10">no records found</td>
+						</tr>
+					{% endfor %}
+				</tbody>
+			</table>
+		</div>
+		<a href="{{ path('app_admin_crud_produit_new') }}">Create new</a>
+	</div>
+{% endblock %} #}
+
+
 {% extends 'base.html.twig' %}
 
 {% block title %}Produit index
 {% endblock %}
 
 {% block body %}
-	<h1>Liste de nos produits</h1>
 
-	<table class="table">
-		<thead>
-			<tr>
-				<th>Id</th>
-				<th>Description</th>
-				<th>Nom</th>
-				<th>ShortDescription</th>
-				<th>Video1</th>
-				<th>Video2</th>
-				<th>FicheDescriptive</th>
-				<th>Caracteristiques</th>
-				<th>Slug</th>
-				<th>Catégorie</th>
-				<th>Utilisation</th>
-				<th>actions</th>
-			</tr>
-		</thead>
-		<tbody>
-			{% for produit in produits %}
-				<tr>
-					<td>{{ produit.id }}</td>
-					<td>{{ produit.description }}</td>
-					<td>{{ produit.nom }}</td>
-					<td>{{ produit.shortDescription }}</td>
-					<td>{{ produit.video1 }}</td>
-					<td>{{ produit.video2 }}</td>
-					<td>{{ produit.ficheDescriptive }}</td>
-					<td>{{ produit.caracteristiques }}</td>
-					<td>{{ produit.slug }}</td>
-					<td>{{ produit.categorie.libelle }}</td>
-					<td>{{ produit.utilisation.libelle }}</td>
-					<td>
-						<a href="{{ path('app_admin_crud_produit_show', {'id': produit.id}) }}">show</a>
-						<a href="{{ path('app_admin_crud_produit_edit', {'id': produit.id}) }}">edit</a>
-					</td>
-				</tr>
-			{% else %}
-				<tr>
-					<td colspan="10">no records found</td>
-				</tr>
-			{% endfor %}
-		</tbody>
-	</table>
+	<div class="container-xxl">
+		<h1>Liste de nos produits</h1>
 
-	<a href="{{ path('app_admin_crud_produit_new') }}">Create new</a>
+		<a href="{{ path('app_admin_crud_produit_new') }}">Créer un nouveau produit</a>
+
+		<p><br></p>
+
+
+		{% for produit in produits %}
+			<p>
+				<strong>Id :</strong>
+				{{ produit.id }}
+			</p>
+			<p>
+				<strong>Description :</strong>
+				{{ produit.description }}
+			</p>
+			<p>
+				<strong>Nom :</strong>
+				{{ produit.nom }}
+			</p>
+			<p>
+				<strong>Courte description :</strong>
+				{{ produit.shortDescription }}
+			</p>
+			<p>
+				<strong>Video 1 :</strong>
+				{{ produit.video1 }}
+			</p>
+			<p>
+				<strong>Video 2 :</strong>
+				{{ produit.video2 }}
+			</p>
+			<p>
+				<strong>Fiche descriptive :</strong>
+				{{ produit.ficheDescriptive }}
+			</p>
+			<p>
+				<strong>Caractéristiques :</strong>
+				{{ produit.caracteristiques }}
+			</p>
+			<p>
+				<strong>Slug :</strong>
+				{{ produit.slug }}
+			</p>
+			<p>
+				<strong>Libelle de la catégorie du produit :</strong>
+				{{ produit.categorie.libelle }}
+			</p>
+			<p>
+				<strong>Libelle de l'utilisation du produit :</strong>
+				{{ produit.utilisation.libelle }}</p>
+			<p>
+				<a href="{{ path('app_admin_crud_produit_show', {'id': produit.id}) }}">show</a>
+				<a href="{{ path('app_admin_crud_produit_edit', {'id': produit.id}) }}">edit</a>
+			</p>
+			<br>
+		{% else %}
+			<p>no records found</p>
+		{% endfor %}
+	</div>
 {% endblock %}

@@ -4,37 +4,37 @@
 {% endblock %}
 
 {% block body %}
-	<h1>Liste des catégories</h1>
 
-	<table class="table table-striped table-bordered">
-		<thead>
-			<tr>
-				<th>Id</th>
-				<th>Libelle</th>
-				<th>Image</th>
-				<th>Slug</th>
-				<th>actions</th>
-			</tr>
-		</thead>
-		<tbody>
-			{% for categorie in categories %}
-				<tr>
-					<td>{{ categorie.id }}</td>
-					<td>{{ categorie.libelle }}</td>
-					<td>{{ categorie.image }}</td>
-					<td>{{ categorie.slug }}</td>
-					<td>
-						<a href="{{ path('app_admin_crud_categorie_show', {'id': categorie.id}) }}">show</a>
-						<a href="{{ path('app_admin_crud_categorie_edit', {'id': categorie.id}) }}">edit</a>
-					</td>
-				</tr>
-			{% else %}
-				<tr>
-					<td colspan="5">no records found</td>
-				</tr>
-			{% endfor %}
-		</tbody>
-	</table>
+	<div class="container-xl">
+		<h1>Liste des catégories</h1>
 
-	<a href="{{ path('app_admin_crud_categorie_new') }}">Créer une nouvelle catégorie</a>
+		<a href="{{ path('app_admin_crud_categorie_new') }}">Créer une nouvelle catégorie</a>
+		<p><br></p>
+
+		{% for categorie in categories %}
+			<p>
+				<strong>Id :</strong>
+				{{ categorie.id }}
+			</p>
+			<p>
+				<strong>Libelle :</strong>
+				{{ categorie.libelle }}
+			</p>
+			<p>
+				<strong>Image :</strong>
+				{{ categorie.image }}
+			</p>
+			<p>
+				<strong>Slug :</strong>
+				{{ categorie.slug }}
+			</p>
+			<p>
+				<a href="{{ path('app_admin_crud_categorie_show', {'id': categorie.id}) }}">show</a>
+				<a href="{{ path('app_admin_crud_categorie_edit', {'id': categorie.id}) }}">edit</a>
+			</p>
+			<br>
+		{% else %}
+			<td colspan="5">no records found</td>
+		{% endfor %}
+	</div>
 {% endblock %}

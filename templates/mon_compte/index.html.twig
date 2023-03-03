@@ -1,0 +1,56 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Mon compte
+{% endblock %}
+
+{% block body %}
+
+	<div class="container-xl" style="padding-bottom : 60px">
+		<h1>Mon compte</h1>
+
+		<div class="row">
+			<div class="col-8">
+
+				{{form_start(formView)}}
+
+				<div class="row">
+					<div class="col-6">{{form_row(formView.prenom)}}</div>
+					<div class="col-6">{{form_row(formView.nom)}}</div>
+				</div>
+
+				<div class="row">
+					<div class="col-6">{{form_row(formView.email)}}</div>
+					<div class="col-6">{{form_row(formView.telephone)}}</div>
+				</div>
+
+				<div class="row">
+					<div class="col-6">{{form_row(formView.nomSociete)}}</div>
+					<div class="col-6">{{form_row(formView.fonction)}}</div>
+				</div>
+
+
+				{# {{form_row(formView.password)}} #}
+
+				{{form_row(formView.pays)}}
+				{{form_row(formView.adresse)}}
+
+				{{form_row(formView.complementAdresse)}}
+
+				<div class="row">
+					<div class="col-6">{{form_row(formView.ville)}}</div>
+					<div class="col-6">{{form_row(formView.codePostal)}}</div>
+				</div>
+
+
+				{{form_row(formView.newsletter)}}
+				<button class="btn btn-primary	" type="submit" style="margin-top: 20px">Mettre à jour</button>
+
+			</div>
+
+			<div class="col-4">
+				<lottie-player src="https://assets4.lottiefiles.com/private_files/lf30_bcVsEA.json" autoplay loop speed="0.3"></lottie-player>
+			</div>
+		</div>
+	</div>
+	<script src="https://unpkg.com/@lottiefiles/lottie-player@1.5.7/dist/lottie-player.js"></script>
+{% endblock %}

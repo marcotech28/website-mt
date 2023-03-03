@@ -40,6 +40,15 @@ body {
     border-radius: 0;
 }
 
+.form-control {
+    margin-bottom: 13px;
+}
+
+/* .form-control label {
+    margin: 15px 0;
+} */
+
+
 .form-control:focus {
     border-color: #168896;
     box-shadow: 0 0 0 0.2rem rgba(22, 136, 150, 0.5);
@@ -248,6 +257,15 @@ footer a:hover {
 
 .footer-logo {
     width: 230px;
+}
+
+/* -- CRUD -- */
+
+.fix-width {
+    width: 100%;
+    overflow-y: hidden;
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
 }
 
 /* -- BREADCRUMB -- */
@@ -1088,9 +1106,9 @@ a:hover.contact-telephone {
     border-radius: 0;
 }
 
-.admin td {
+/* .admin td {
     font-size: 12px;
-}
+} */
 
 .in-line {
     display: inline;
