@@ -138,7 +138,7 @@ body {
     padding: 0 4px !important;
 }
 
-@media screen and (max-width: 991px) {
+@media screen and (max-width: 992px) {
     .nav-link-bordure-gauche {
         border-left: none;
     }
@@ -933,6 +933,10 @@ a:hover.contact-telephone {
     width: 100%;
 }
 
+#about-lottie {
+    height: 300px;
+}
+
 /* -- LOGIN -- */
 
 .bienvenue h4 {
@@ -1435,5 +1439,13 @@ a:hover.contact-telephone {
     .card {
         box-shadow: none;
         border: none;
+    }
+}
+
+/* ABOUT */
+
+@media (max-width: 992px) {
+    #about-lottie {
+        height: 150px;
     }
 }

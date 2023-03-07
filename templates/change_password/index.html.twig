@@ -1,0 +1,19 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Hello ChangePasswordController!
+{% endblock %}
+
+{% block body %}
+	<div class="container-xl">
+		<h1>Change Password</h1>
+
+		{{ form_start(formView) }}
+
+		{{ form_row(formView.oldPassword) }}
+		{{ form_row(formView.newPassword) }}
+
+		{{ form_widget(formView.save) }}
+
+		{{ form_end(formView) }}
+	</div>
+{% endblock %}
