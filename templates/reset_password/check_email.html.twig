@@ -1,0 +1,18 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Mise à jour du mot de passe
+{% endblock %}
+
+{% block body %}
+
+	<div class="container-xl">
+		<p style="padding: 80px 0 20px 0">
+			Si cette adresse email existe dans notre base de données, un email vous sera envoyé. Cet email contient un lien qui vous permettra de choisir un nouveau mot de passe. Le lien expire dans une heure.
+		</p>
+		<p style="padding: 20px 0 80px 0">
+			Si vous n'avez pas reçu d'email de notre part, veuillez regarder dans vos spams. Sinon,
+			<a class="btn btn-primary" href="{{ path('app_forgot_password_request') }}" role="button">je réessaye
+			</a>.
+		</p>
+	</div>
+{% endblock %}
