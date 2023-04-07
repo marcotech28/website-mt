@@ -44,7 +44,7 @@ class User implements UserInterface, PasswordAuthenticatedUserInterface
     #[ORM\Column(length: 255)]
     private ?string $adresse = null;
 
-    #[ORM\Column(length: 255)]
+    #[ORM\Column(length: 255, nullable: true)]
     private ?string $complementAdresse = null;
 
     #[ORM\Column(length: 255)]
@@ -200,7 +200,7 @@ class User implements UserInterface, PasswordAuthenticatedUserInterface
         return $this->complementAdresse;
     }
 
-    public function setComplementAdresse(string $complementAdresse): self
+    public function setComplementAdresse(?string $complementAdresse): self
     {
         $this->complementAdresse = $complementAdresse;
 

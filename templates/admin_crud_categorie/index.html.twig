@@ -11,30 +11,36 @@
 		<a href="{{ path('app_admin_crud_categorie_new') }}">Créer une nouvelle catégorie</a>
 		<p><br></p>
 
-		{% for categorie in categories %}
-			<p>
-				<strong>Id :</strong>
-				{{ categorie.id }}
-			</p>
-			<p>
-				<strong>Libelle :</strong>
-				{{ categorie.libelle }}
-			</p>
-			<p>
-				<strong>Image :</strong>
-				{{ categorie.image }}
-			</p>
-			<p>
-				<strong>Slug :</strong>
-				{{ categorie.slug }}
-			</p>
-			<p>
-				<a href="{{ path('app_admin_crud_categorie_show', {'id': categorie.id}) }}">show</a>
-				<a href="{{ path('app_admin_crud_categorie_edit', {'id': categorie.id}) }}">edit</a>
-			</p>
-			<br>
-		{% else %}
-			<td colspan="5">no records found</td>
-		{% endfor %}
+		<div class="row">
+
+
+			{% for categorie in categories %}
+				<div class="col-6">
+					<p>
+						<strong>Id :</strong>
+						{{ categorie.id }}
+					</p>
+					<p>
+						<strong>Libelle :</strong>
+						{{ categorie.libelle }}
+					</p>
+					<p>
+						<strong>Image :</strong>
+						{{ categorie.image }}
+					</p>
+					<p>
+						<strong>Slug :</strong>
+						{{ categorie.slug }}
+					</p>
+					<p>
+						<a href="{{ path('app_admin_crud_categorie_show', {'id': categorie.id}) }}">show</a>
+						<a href="{{ path('app_admin_crud_categorie_edit', {'id': categorie.id}) }}">edit</a>
+					</p>
+					<br>
+				</div>
+			{% else %}
+				<td colspan="5">no records found</td>
+			{% endfor %}
+		</div>
 	</div>
 {% endblock %}

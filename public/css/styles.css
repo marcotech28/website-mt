@@ -19,12 +19,21 @@ body {
     padding: 0 !important;
 }
 
+.justifier{
+    text-align: justify;
+}
+
+
 /* -- FORMULAIRES -- */
 
 #demonstration_form_produitsDemo input[type="checkbox"] {
     display: block;
     float: left;
-    margin-right: 10px;
+    margin: 6px 5px 0 0 !important;
+}
+
+#demonstration_form_produitsDemo {
+    padding-top: 10px;
 }
 
 #demonstration_form_produitsDemo label {
@@ -47,7 +56,6 @@ body {
 /* .form-control label {
     margin: 15px 0;
 } */
-
 
 .form-control:focus {
     border-color: #168896;
@@ -181,6 +189,12 @@ body {
     transform-origin: bottom left;
 }
 
+/* -- CHANGEMENT DE MOT DE PASSE -- */
+
+.btnSavePswd {
+    margin-bottom: 105px !important;
+}
+
 /* -- FOOTER -- */
 
 .socials a {
@@ -289,17 +303,17 @@ footer a:hover {
 /* -- TITRES -- */
 
 h1 {
-    padding: 40px 0;
+    padding: 40px 0 30px 0;
     line-height: 1.2;
-    font-size: 50px;
-    font-weight: 500;
+    font-size: 48px;
+    font-weight: 700;
     color: #0F434E;
 }
 
 h2 {
     font-weight: 400;
     color: #168896;
-    padding: 40px 0;
+    padding: 20px 0 10px 0;
 }
 
 h3 {
@@ -311,14 +325,14 @@ h3 {
 h4 {
     color: #0F434E;
     padding: 20px 0;
-    font-weight: 200;
+    font-weight: 500;
 }
 
 p,
 td {
     margin-bottom: 5px;
-    font-size: 1rem;
-    font-weight: 300;
+    font-size: 16px;
+    font-weight: 500;
 }
 
 /* -- BOUTONS -- */
@@ -374,153 +388,62 @@ td {
     padding-top: 16px;
 }
 
-
-
 /* -- HOMEPAGE -- */
 
-/* new banniere */
-
-header {
-    height: 80vh;
-    background-color: #0F434E;
-    position: relative;
-    overflow: hidden;
+.banniere{
+    background-color: #168896;
+    height: 85vh;
 }
 
-#shape {
-    position: absolute;
-    left: 0;
-    bottom: -2vw;
+.banniere h1 {
+    color: white;
+    border-bottom: 1px solid white;
+    font-size: 56px;
+    font-weight: 800;
 }
 
-header img:not(#shape) {
-    position: absolute;
-    left: 0;
-}
-
-header img:nth-child(1) {
-    opacity: 0.4;
-    bottom: -0.1vw;
-}
-
-header img:nth-child(2) {
-    opacity: 0.3;
-    bottom: 0.5vw;
-}
-
-header img:nth-child(3) {
-    bottom: 0.3vw;
-    opacity: 0.2;
-}
-
-header img:nth-child(4) {
-    bottom: 0.1vw;
-    opacity: 0.3;
-}
-
-header h1 {
-    width: 100%;
-    font-family: "Poppins", sans-serif;
-    position: absolute;
-    transform: translate(-50%, -50%);
-    left: 50%;
-    top: 25%;
-    font-size: 59px;
-    text-align: center;
-    color: #ffffff;
-}
-
-header p {
-    width: 100%;
-    font-family: "Poppins", sans-serif;
-    position: absolute;
-    transform: translate(-50%, -50%);
-    left: 50%;
-    top: 36%;
-    font-size: 19px;
-    text-align: center;
-    color: #ffffff;
-}
-
-header button {
-    font-family: "Poppins", sans-serif;
-    position: absolute;
-    transform: translate(-50%, -50%);
-    left: 50%;
-    top: 48%;
-    font-size: 3vmin;
-}
-
-/* header p {
-    font-family: "Poppins", sans-serif;
-    padding: 30px 35px;
-    margin-top: 50px;
-    text-align: justify;
-    line-height: 2em;
-    letter-spacing: 0.5px;
-} */
-
-/* new banniere */
-.banner {
-    height: 83vh;
-    width: 100%;
-    background-color: beige;
-    background: url('../images/overlay.png'), url('../images/road.jpg');
-    background-position: top;
-    background-size: cover;
-    background-repeat: no-repeat;
-}
-
-.banner .info h1 {
-    padding-top: 15%;
-    font-size: 3em;
-    font-weight: 700;
-    color: #168896;
-    letter-spacing: 2px;
-}
-
-.banner .info p {
-    font-size: 2em;
+.banniere p {
+    color: #0F434F;
     font-weight: 500;
-    color: white;
-    letter-spacing: 2px;
+    font-size: 20px;
+    margin: 0;
+    padding: 20px 0;
 }
 
-.banner .info a {
-    margin-left: 50%;
-    transform: translateX(-50%);
-    color: white;
-    padding: 10px 20px;
-    font-size: 0.9em;
-    font-weight: 600;
+.banniere .btn {
+    background-color: #EF946C !important;
 }
 
-.banner .info a:hover {
-    color: #168896;
+.banniere .btn:hover {
+    background-color: #ca4c16 !important;
+    transition: 0.2s !important;
 }
 
-#typing-area,
-#cursor {
-
-    font-size: 3em;
-    font-weight: 700;
-    color: #168896;
-    letter-spacing: 2px;
+.banniere .btn,
+.banniere .btn:active,
+.banniere .btn:visited,
+.banniere .btn:focus {
+    background-color: #EF946C !important;
+    border-color: #168896 !important;
 }
-
-.marconnet-keyboard-typing {
-    position: absolute;
-    top: 30%;
-    left: 50%;
-    transform: translateX(-50%);
+.banniere lottie-player {
+    width: 800px;
 }
 
 /* - produits préférés - */
+
+.minia-prod-pref{
+    padding: 15px;
+}
+
 .bannerProduct {
-    height: 60px;
-    background-color: #0F434E;
-    display: flex;
-    align-items: center;
+    background-image: url('../images/background-card.svg');
+  background-size: cover;
+  background-position: center;
+  height: 66px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
     justify-content: center;
 }
 
@@ -529,12 +452,14 @@ header button {
     background-size: cover;
     background-repeat: no-repeat;
     border-top: 2px solid #168896;
+    border-bottom: 2px solid #168896;
 }
 
 .bannerProduct h1 {
     color: white;
     font-size: 16px !important;
     text-align: center;
+    text-transform: uppercase;
 }
 
 .voir-plus {
@@ -570,11 +495,19 @@ header button {
     margin: 25px 10px;
     font-style: italic;
     text-align: center;
-    font-size: 13px;
+    font-size: 12px;
     font-weight: 500;
 }
 
 /* - carousel - */
+
+.carousel-inner h3 {
+    font-size: 18px;
+}
+
+.carousel-inner .btn {
+    margin-top: 20px;
+}
 
 .carousel-item {
     background: #fff;
@@ -640,6 +573,10 @@ header button {
     background-color: #f9f9f9;
     padding: 15px 0;
 
+}
+
+.newsletter lottie-player {
+    height: 200px !important;
 }
 
 .newsletter .container-xl .align-self-end .col .row .col h3 {
@@ -718,11 +655,14 @@ header button {
     margin: 100px 0;
 }
 
+.a_propos .card-services p {
+    padding-bottom: 20px;
+}
+
 .card-services {
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
     overflow: hidden;
     border-radius: 15px;
-    margin-bottom: 18px;
     border-top: 5px solid #168896;
     border-bottom: 5px solid #168896;
     padding: 0;
@@ -811,7 +751,23 @@ a:hover.contact-telephone {
     text-decoration: underline;
 }
 
+/* -- ESPACE PRO -- */
+
+.espace-pro {
+    padding-bottom: 30px;
+}
+
+#btn-espace-pro {
+    color: #EF946C;
+    font-weight: 700;
+    text-decoration: underline;
+}
+
 /* -- ABOUT -- */
+
+.color-sky-blue  {
+    color: #168896;
+}
 
 .presentation-marconnet p {
     text-align: left;
@@ -819,6 +775,10 @@ a:hover.contact-telephone {
 
 .presentation-marconnet #notre-objectif {
     font-weight: bold;
+}
+
+body > div.container-xl > div.nos-fournisseurs > div.row.h-100.fournisseur > div:nth-child(n){
+    margin: 0 !important;
 }
 
 
@@ -844,12 +804,13 @@ a:hover.contact-telephone {
 }
 
 .row.fournisseur {
-    padding: 30px 0;
+    padding: 30px 0 ;
 }
 
 .card {
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
     overflow: hidden;
+    border: none;
     border-radius: 15px;
 }
 
@@ -897,7 +858,7 @@ a:hover.contact-telephone {
 }
 
 .main-texte p {
-    font-size: 16px;
+    font-size: 14px;
     padding: 0 35px;
 }
 
@@ -1147,20 +1108,22 @@ a:hover.contact-telephone {
 .card-body h4 .bg-primary {
     background-color: #0F434E !important;
     border-color: #0F434E !important;
+    font-size: 14px;
 }
 
 .categorie .card {
-    box-shadow: none;
-    border: none;
+    /* box-shadow: none; */
+    /* border: 2px solid #168896; */
+    /* border: none; */
     overflow: hidden;
-    border-radius: 15px;
+    border-radius: 20px;
 }
 
 .categorie .card:hover {
     transition: 0.2s;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
     overflow: hidden;
-    border-radius: 15px;
+    border-radius: 20px;
 }
 
 .btn-center {
@@ -1173,18 +1136,18 @@ a:hover.contact-telephone {
 }
 
 .minia-avantages p {
-    font-size: 16px;
+    font-size: 14px;
 }
 
 .categorie .pictureProduct img {
     border-top: none;
-    padding: 10px;
+    padding: 5px;
     border-radius: 20px;
 }
 
 .fa-check:before {
     content: "\f00c";
-    background-color: green;
+    background-color: #0F434E;
     border-radius: 15px;
     padding: 3px;
 }
@@ -1303,6 +1266,46 @@ a:hover.contact-telephone {
 @media screen and (max-width: 400px) {
     .partners h2 {
         font-size: 20px;
+    }
+}
+
+@media screen and (max-width: 1450px){
+    .banniere lottie-player {
+        width: 650px;
+    }
+
+    .banniere h1 {
+        font-size: 48px;
+        font-weight: 500;
+        border-bottom: none;
+    }
+}
+
+@media screen and (max-width: 1200px){
+    .banniere lottie-player {
+        width: 250px;
+    }
+
+    .banniere{
+        height: 55vh !important;
+    }
+}
+
+@media screen and (max-width: 500px){
+    .banniere h1 {
+        font-size: 25px;
+    }
+
+    .banniere p {
+        font-size: 16px;
+    }
+
+    .banniere{
+        height: 40vh !important;
+    }
+
+    .banniere lottie-player {
+        width: 100px;
     }
 }
 

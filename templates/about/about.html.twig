@@ -22,19 +22,22 @@
 		</div>
 
 		<div class="presentation-marconnet">
-
-
 			<div class="row">
 				<div class="col-12">
 					<h2>Présentation de la société</h2>
 				</div>
 
 				<div class="row">
-					<p>Marconnet technologies™ commercialise depuis plus de 13 ans une large gamme de produits sur mesure destinée aux personnes à mobilité réduite.</p>
-					<p>Notre écoute et nos conseils vous permettront de vous orienter vers le matériel le plus adapté à vos besoins afin de vous satisfaire pleinement.</p>
-					<p>Notre objectif : Votre satisfaction !</p>
-					<p>Les produits commercialisés ont été testés et approuvés par un grand nombre de professionnels de la santé et par les utilisateurs finaux. De nombreux témoignages attestent de la qualité des produits.</p>
-					<p>Nous choisissons uniquement les meilleurs fabricants par gamme de matériels que nous avons soigneusement sélectionnés afin de proposer les meilleurs matériels sur chaque segment de marché.</p>
+					<div class="col-12">
+						<p>Marconnet technologies™ commercialise depuis
+							<span class="color-sky-blue">plus de 13 ans</span>
+							une large gamme de produits sur mesure destinée aux personnes à mobilité réduite.
+							<span class="color-sky-blue">Notre écoute et nos conseils</span>
+							vous permettront de vous orienter vers le matériel le plus adapté à vos besoins afin de vous satisfaire pleinement.</p>
+						<p class="color-sky-blue">Notre objectif : Votre satisfaction !</p>
+						<p>Les produits commercialisés ont été testés et approuvés par un grand nombre de professionnels de la santé et par les utilisateurs finaux. De nombreux témoignages attestent de la qualité des produits.</p>
+						<p>Nous choisissons uniquement les meilleurs fabricants par gamme de matériels que nous avons soigneusement sélectionnés afin de proposer les meilleurs matériels sur chaque segment de marché.</p>
+					</div>
 				</div>
 			</div>
 		</div>
@@ -76,7 +79,7 @@
 
 		{# l'equipe marconnet technologies™ #}
 		<div class="team-members">
-			<h2>Notre équipe</h2>
+			<h2 style="padding-top: 8px">Notre équipe</h2>
 			<div class="row h-100">
 				{% include "about/_members.html.twig" with {
 					'banner' : 'montagne1.jpg',
@@ -169,16 +172,21 @@
 						</div>
 						<div class="row">
 							<div class="col-12">
-								<p>Marconnet technologies™ s'appuie sur un réseau de distribution national avec de grandes enseignes de revendeurs médicaux mais aussi avec les revendeurs indépendants. Vous trouverez près de chez vous la solution adaptée à vos besoins.</p>
+								<p>
+									<span class="color-sky-blue">Marconnet technologies™</span>
+									s'appuie sur un réseau de distribution national avec de grandes enseignes de
+									<span class="color-sky-blue">
+										revendeurs médicaux</span>
+									mais aussi avec les
+									<span class="color-sky-blue">revendeurs indépendants</span>. Vous trouverez près de chez vous la solution adaptée à vos besoins.</p>
 								<p>N'hésiez pas à solliciter votre revendeur habituel pour toutes questions ou essais de matériels.</p>
 							</div>
 						</div>
 					</div>
-					{# <div class="col-12 col-lg-6">
-																																																																																																																																																	<img src="{{asset('images/reseau-vente.jpg')}}" alt="">
-																																																																																																																																																</div> #}
-					<div class="col-12 col-lg-6">
-						<lottie-player src="https://assets1.lottiefiles.com/packages/lf20_benenm47.json" autoplay loop speed="0.6" id="about-lottie"></lottie-player>
+					{# <div class="col-12 col-lg-6"> #}
+					{# <img src="{{asset('images/reseau-vente.jpg')}}" alt=""> #}
+					{# </div> #}
+						<div class="col-12 col-lg-6"> <lottie-player src="https://assets1.lottiefiles.com/packages/lf20_benenm47.json" autoplay loop speed="0.6" id="about-lottie"></lottie-player>
 					</div>
 				</div>
 

@@ -4,28 +4,30 @@
 {% endblock %}
 
 {% block body %}
-	<h1>Marque</h1>
+	<div class="container-xl">
+		<h1>Marque</h1>
 
-	<table class="table">
-		<tbody>
-			<tr>
-				<th>Id</th>
-				<td>{{ marque.id }}</td>
-			</tr>
-			<tr>
-				<th>Libelle</th>
-				<td>{{ marque.libelle }}</td>
-			</tr>
-			<tr>
-				<th>Catalogue</th>
-				<td>{{ marque.catalogue }}</td>
-			</tr>
-		</tbody>
-	</table>
+		<table class="table">
+			<tbody>
+				<tr>
+					<th>Id</th>
+					<td>{{ marque.id }}</td>
+				</tr>
+				<tr>
+					<th>Libelle</th>
+					<td>{{ marque.libelle }}</td>
+				</tr>
+				<tr>
+					<th>Catalogue</th>
+					<td>{{ marque.catalogue }}</td>
+				</tr>
+			</tbody>
+		</table>
 
-	<a href="{{ path('app_admin_crud_marque_index') }}">Retour à la liste des marques</a>
+		<a href="{{ path('app_admin_crud_marque_index') }}">Retour à la liste des marques</a>
 
-	<a href="{{ path('app_admin_crud_marque_edit', {'id': marque.id}) }}">edit</a>
+		<a href="{{ path('app_admin_crud_marque_edit', {'id': marque.id}) }}">edit</a>
 
-	{{ include('admin_crud_marque/_delete_form.html.twig') }}
+		{{ include('admin_crud_marque/_delete_form.html.twig') }}
+	</div>
 {% endblock %}

@@ -2,8 +2,12 @@
 
 namespace App\Controller;
 
+use App\Entity\User;
+use Symfony\Component\Mime\Email;
+use App\Repository\UserRepository;
 use Doctrine\ORM\EntityManagerInterface;
 use Symfony\Component\HttpFoundation\Request;
+use Symfony\Component\Mailer\MailerInterface;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
 use Symfony\Component\Form\Extension\Core\Type\SubmitType;
@@ -18,7 +22,7 @@ use Symfony\Component\Security\Core\User\PasswordAuthenticatedUserInterface;
 class ChangePasswordController extends AbstractController
 {
     #[Route('/change-password', name: 'app_change_password')]
-    public function changePassword(Request $request, UserPasswordHasherInterface $passwordHasher, EntityManagerInterface $entityManager): Response
+    public function changePassword(Request $request, MailerInterface $mailer, UserPasswordHasherInterface $passwordHasher, EntityManagerInterface $entityManager): Response
     {
         $user = $this->getUser();
         if (!$user instanceof PasswordAuthenticatedUserInterface) {
@@ -26,15 +30,28 @@ class ChangePasswordController extends AbstractController
         }
 
         $form = $this->createFormBuilder()
-            ->add('oldPassword', PasswordType::class, ['label' => 'Old Password'])
+            ->add('oldPassword', PasswordType::class, [
+                'label' => 'Mot de passe actuel',
+                'attr' => [
+                    'class' => 'form-control'
+                ]
+            ])
             ->add('newPassword', RepeatedType::class, [
                 'type' => PasswordType::class,
-                'invalid_message' => 'The password fields must match.',
+                'invalid_message' => 'Les mots de passe doivent être identiques.',
                 'required' => true,
-                'first_options'  => ['label' => 'New Password'],
-                'second_options' => ['label' => 'Confirm New Password'],
+                'first_options'  => ['label' => 'Nouveau mot de passe', 'attr' => [
+                    'class' => 'form-control',
+                ]],
+                'second_options' => ['label' => 'Confirmation du nouveau mot de passe', 'attr' => [
+                    'class' => 'form-control',
+                ]],
+
             ])
-            ->add('save', SubmitType::class, ['label' => 'Change Password'])
+            ->add('save', SubmitType::class, ['label' => 'Je change mon mot de passe', 'attr' => [
+                'class' => 'btn btn-primary btnSavePswd',
+
+            ]])
             ->getForm();
 
         $form->handleRequest($request);
@@ -50,7 +67,15 @@ class ChangePasswordController extends AbstractController
             $user->setPassword($hashedPassword);
             $entityManager->flush();
 
-            $this->addFlash('success', 'Your password has been changed.');
+            $this->addFlash('success', 'Votre mot de passe a bien été changé.');
+
+            $monemail = new Email();
+            $monemail->from('antonin@marconnet-robotique.com')
+                ->to($user->getEmail())
+                ->subject('Changement de mot de passe');
+            $monemail->html("<p>Bonjour, votre mot de passe sur Marconnet technologies™ a bien été changé.</p>");
+
+            $mailer->send($monemail);
 
             return $this->redirectToRoute('homepage');
         }

@@ -1,4 +1,22 @@
+{# {{ form_start(form) }}
+{{ form_widget(form) }}
+<button class="btn">{{ button_label|default('Save') }}</button>
+{{ form_end(form) }} #}
+
 {{ form_start(form) }}
-    {{ form_widget(form) }}
-    <button class="btn">{{ button_label|default('Save') }}</button>
+{{ form_row(form.email, {'attr' : {'class' : 'form-control'}}) }}
+{{ form_row(form.roles, {'attr' : {'class' : 'form-control'}}) }}
+{{ form_row(form.prenom, {'attr' : {'class' : 'form-control'}}) }}
+{{ form_row(form.nom, {'attr' : {'class' : 'form-control'}}) }}
+{{ form_row(form.telephone, {'attr' : {'class' : 'form-control'}}) }}
+{{ form_row(form.pays, {'attr' : {'class' : 'form-control'}}) }}
+{{ form_row(form.adresse, {'attr' : {'class' : 'form-control'}}) }}
+{{ form_row(form.complementAdresse, {'attr' : {'class' : 'form-control'}}) }}
+{{ form_row(form.ville, {'attr' : {'class' : 'form-control'}}) }}
+{{ form_row(form.codePostal, {'attr' : {'class' : 'form-control'}}) }}
+{{ form_row(form.newsletter) }}
+{{ form_row(form.nomSociete, {'attr' : {'class' : 'form-control'}}) }}
+{{ form_row(form.fonction, {'attr' : {'class' : 'form-control'}}) }}
+{{ form_row(form.isConfirmed) }}
+<button class="btn">{{ button_label|default('Save') }}</button>
 {{ form_end(form) }}

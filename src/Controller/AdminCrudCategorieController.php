@@ -6,6 +6,7 @@ use App\Entity\Categorie;
 use App\Form\CategorieType;
 use App\Repository\CategorieRepository;
 use Doctrine\ORM\EntityManagerInterface;
+use Symfony\Component\Form\FormInterface;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
@@ -30,6 +31,8 @@ class AdminCrudCategorieController extends AbstractController
         $form->handleRequest($request);
 
         if ($form->isSubmitted() && $form->isValid()) {
+            self::handleImageUpload($categorie, $form, $entityManager);
+
             $entityManager->persist($categorie);
             $entityManager->flush();
 
@@ -57,6 +60,9 @@ class AdminCrudCategorieController extends AbstractController
         $form->handleRequest($request);
 
         if ($form->isSubmitted() && $form->isValid()) {
+
+            self::handleImageUpload($categorie, $form, $entityManager);
+
             $entityManager->flush();
 
             return $this->redirectToRoute('app_admin_crud_categorie_index', [], Response::HTTP_SEE_OTHER);
@@ -77,5 +83,18 @@ class AdminCrudCategorieController extends AbstractController
         }
 
         return $this->redirectToRoute('app_admin_crud_categorie_index', [], Response::HTTP_SEE_OTHER);
+    }
+
+    public function handleImageUpload(Categorie $categorie, FormInterface $form, EntityManagerInterface $entityManager): void
+    {
+        $image = $form->get('image')->getData();
+
+        if ($image) {
+            // récupération du nom d'origine du fichier + son extension
+            $originalImage = pathinfo($image->getClientOriginalName(), PATHINFO_BASENAME);
+
+            // On met à jour l'emplacement de l'image dans l'entité Produit
+            $categorie->setImage($originalImage);
+        }
     }
 }

@@ -34,6 +34,9 @@ class Utilisation
     #[ORM\Column(type: Types::TEXT, nullable: true)]
     private ?string $description = null;
 
+    #[ORM\Column(length: 255, nullable: true)]
+    private ?string $libelleDetail = null;
+
     public function __construct()
     {
         $this->produits = new ArrayCollection();
@@ -130,6 +133,18 @@ class Utilisation
     public function setDescription(?string $description): self
     {
         $this->description = $description;
+
+        return $this;
+    }
+
+    public function getLibelleDetail(): ?string
+    {
+        return $this->libelleDetail;
+    }
+
+    public function setLibelleDetail(?string $libelleDetail): self
+    {
+        $this->libelleDetail = $libelleDetail;
 
         return $this;
     }

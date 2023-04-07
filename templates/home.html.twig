@@ -15,68 +15,44 @@
 </div>
 
 
-{# banniere du haut #}
-{# <div class="container-fluid banner d-none d-lg-block">
-	<div class="col-md-8 offset-md-2 info">
-		<h1 class="text-center">MARCONNET TECHNOLOGIES™</h1>
-		<p class="text-center">
-			Le spécialiste de la mobilité sur mesure dans le monde du handicap
-		</p>
-		<a href="#produitpref" class="btn btn-lg text-center">DECOUVRIR MARCONNET TECHNOLOGIES</a>
-	</div>
-</div> #}
-
-<header>
-	<img src="{{ asset('images/svg/wave-1.svg') }}"/>
-	<img src="{{ asset('images/svg/wave-2.svg') }}"/>
-	<img src="{{ asset('images/svg/wave-3.svg') }}"/>
-	<img src="{{ asset('images/svg/wave-4.svg') }}"/>
-	<img src="{{ asset('images/svg/wave-5.svg') }}" id="shape"/>
-	<h1>Marconnet technologies™</h1>
-	<p>Le spécialiste de la mobilité sur mesure dans le monde du handicap</p>
-	<button type="button" class="btn btn-primary btn-lg">Découvrir Marconnet technologies™</button>
-</header>
-
-{# produits préférés #}
-<div class="container-xl">
-	<div id="produitpref" class="text-center">
-		<div class="row">
-			<div class="col-12">
-				<h1 style="padding-top: 20px">Les produits préférés de nos clients</h1>
+<div class="container-fluid banniere">
+	<div class="container-xl h-100">
+		<div class="row h-100 d-flex align-items-center">
+			<div class="col-xl-5 ">
+				<h1>MARCONNET TECHNOLOGIES™</h1>
+				<p>Le spécialiste de la mobilité sur mesure dans le monde du handicap</p>
+				<div class="d-none d-sm-block">
+					<button type="button" class="btn btn-primary btn-lg">Découvrir Marconnet technologies™</button>
+				</div>
 			</div>
-		</div>
-		<div class="row h-100">
-			{% include "product/_produit_prefere.html.twig" with {
-						'nomProduit' : 'Un nom',
-						'photo' : 'nature.jpg',
-						'description' : 'Une petite description bien sympathique bien sympatoche.',
-						'lien' : '#'
-					}%}
-
-
-			{% include "product/_produit_prefere.html.twig" with {
-						'nomProduit' : 'Un nom',
-						'photo' : 'nature.jpg',
-						'description' : 'Blabla blablablabla blabla blabla blabla blablablablablabla blabla blabla blabla blabla blablablabla blabla blabla blabla blabla blablablabla blabla blabla blabla blabla',
-						'lien' : '#'
-					}%}
-			{% include "product/_produit_prefere.html.twig" with {
-						'nomProduit' : 'Un nom',
-						'photo' : 'nature.jpg',
-						'description' : 'Blabla blablablabla blabla blabla blabla blablablablablabla blabla blabla blabla blabla blablablabla blabla blabla blabla blabla blablablabla blabla blabla blabla blabla',
-						'lien' : '#'
-					}%}
-			{% include "product/_produit_prefere.html.twig" with {
-						'nomProduit' : 'Un nom',
-						'photo' : 'nature.jpg',
-						'description' : 'Une petite description bien sympathique bien sympatoche.',
-						'lien' : '#'
-					}%}
+			<div class="col-xl-7">
+				<lottie-player src="{{ asset('images/HomepageMT_V3.json') }}" autoplay loop speed="1" class="mx-auto d-block"></lottie-player>
+			</div>
 		</div>
 	</div>
 </div>
 
-<div
+{# produits préférés #}
+<div class="container-xl">
+	<div id="produitpref">
+		<div class="row">
+			<div class="col-12">
+				<h1 style="padding-top: 70px; padding-bottom: 30px;" class="text-center">Les produits préférés de nos clients</h1>
+			</div>
+		</div>
+		<div class="row h-100">
+
+
+			{% for p in tabProduits %}
+				{% include "product/_product_card.html.twig" %}
+			{% endfor %}
+
+		</div>
+	</div>
+</div>
+
+
+<divs
 	class="container-xl">
 
 	{# <div class="container-fluid" style=" border-right: 8px solid #0F434E; border-left: 8px solid #0F434E"> #}
@@ -88,19 +64,20 @@
 		</ol>
 
 
-		<div class="carousel-inner">
+		<div class="carousel-inner justifier">
+
 			<div class="carousel-item active" data-bs-interval="10000">
 				<div class="container">
 					<div class="row p-5">
 						<div class="mx-auto col-md-8 col-lg-6 order-lg-last d-flex align-items-center">
-							<img class="img-fluid" src="{{asset('images/fun2go.png')}}" alt=" ">
+							<img class="img-fluid" src="{{asset('images/carousel/atto-sport.png')}}" alt=" ">
 						</div>
 						<div class="col-lg-6 mb-0 d-flex align-items-center">
 							<div class="text-align-left align-self-center desc-carousel">
-								<h1>Lorem ipsum dolor sit amet.</h1>
-								<h3>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Dolore, optio.</h3>
-								<p class="d-none d-lg-block">Lorem ipsum dolor sit amet consectetur adipisicing elit. Nihil, architecto!</p>
-								<p class="d-none d-lg-block">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Enim, nobis.</p>
+								<h1>Scooter électrique Atto Sport</h1>
+								<h3>Un moyen de transport pratique, écologique et compact pour vos déplacements urbains.</h3>
+								<p class="d-none d-lg-block">Le scooter électrique pliable Atto Sport est le moyen de transport idéal pour vos déplacements urbains. Compact, léger et doté d'une batterie au lithium-ion offrant une autonomie d'environ 35 km, il est facile à ranger dans un coffre de voiture ou sous un bureau.
+									<br>Optez pour l'Atto Sport et profitez d'un mode de transport pratique, écologique et économique en ville.</p>
 								<a href="#">
 									<div class="btn btn-primary btn-lg">Voir le produit</div>
 								</a>
@@ -110,19 +87,19 @@
 				</div>
 			</div>
 
-
 			<div class="carousel-item" data-bs-interval="10000">
 				<div class="container">
 					<div class="row p-5">
 						<div class="mx-auto col-md-8 col-lg-6 order-lg-last">
-							<img class="img-fluid" src="{{asset('images/easyrider.jpg')}}" alt=" ">
+							<img class="img-fluid" src="{{asset('images/carousel/crossbike.jpg')}}" alt=" ">
 						</div>
 						<div class="col-lg-6 mb-0 d-flex align-items-center">
 							<div class="text-align-left align-self-center desc-carousel">
-								<h1>Lorem ipsum dolor sit amet.</h1>
-								<h3>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Labore, beatae.</h3>
-								<p class="d-none d-lg-block">Lorem ipsum dolor sit amet consectetur adipisicing elit. Nihil, architecto!</p>
-								<p class="d-none d-lg-block">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Enim, nobis.</p>
+								<h1>La Crossbike de Stricker</h1>
+								<h3>Une solution tout-terrain pour les personnes à mobilité réduite.</h3>
+								<p class="d-none d-lg-block">La Crossbike de Stricker est une roue supplémentaire tout-terrain que l'on peut greffer à l'avant d'un fauteuil roulant, transformant ainsi le fauteuil en un handbike à trois roues.
+									<br>Cette solution innovante offre une plus grande liberté de mouvement pour explorer des terrains variés en ville ou en pleine nature.
+									<br>La Crossbike est facile à monter et à démonter, équipée de pneus larges et d'une suspension adaptée pour une conduite confortable et stable. Choisissez la Crossbike de Stricker pour une solution pratique, polyvalente et tout-terrain pour vos besoins de mobilité.</p>
 								<a href="#">
 									<div class="btn btn-primary btn-lg">Voir le produit</div>
 								</a>
@@ -135,14 +112,15 @@
 				<div class="container">
 					<div class="row p-5">
 						<div class="mx-auto col-md-8 col-lg-6 order-lg-last">
-							<img class="img-fluid" src="{{asset('images/citymax.jpg')}}" alt="">
+							<img class="img-fluid" src="{{asset('images/carousel/fun2go.png')}}" alt="">
 						</div>
 						<div class="col-lg-6 mb-0 d-flex align-items-center">
 							<div class="text-align-left align-self-center desc-carousel">
-								<h1>Lorem ipsum dolor sit amet.</h1>
-								<h3>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Tenetur, error?</h3>
-								<p class="d-none d-lg-block">Lorem ipsum dolor sit amet consectetur adipisicing elit. Nihil, architecto!</p>
-								<p class="d-none d-lg-block">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Enim, nobis.</p>
+								<h1>Tricycle Fun 2 Go</h1>
+								<h3>Un tricycle tandem pour des sorties à deux en toute convivialité</h3>
+								<p class="d-none d-lg-block">Le Fun 2 Go de Van Raam est un tricycle tandem pour deux personnes, offrant une solution de mobilité conviviale et pratique pour vos sorties en ville ou en pleine nature.
+									<br>Disponible avec un moteur électrique en option et un siège pivotant pour un accès facile, le Fun 2 Go est également un choix idéal pour les personnes ayant des besoins de mobilité spécifiques.
+									<br>Optez pour le Fun 2 Go de Van Raam et profitez d'une solution de mobilité pratique pour vos sorties à deux.</p>
 								<a href="#">
 									<div class="btn btn-primary btn-lg">Voir le produit</div>
 								</a>
@@ -160,12 +138,12 @@
 		</a>
 	</div>
 </div>
-{# </div> #}
+{# </divs> #}
 <div
 	class="container-xl">
 
 	{# a propos #}
-	<div class="a_propos text-center">
+	<div class="a_propos">
 		<div class="row">
 			<div class="col-12">
 				<h1>À propos de Marconnet technologies™</h1>
@@ -181,61 +159,68 @@
 			{% include "_home_apropos.html.twig" with {
 					'image' : 'conseil.png',
 					'titre' : 'Conseils personnalisés',
-					'contenu' : 'Notre rôle est de vous conseiller avant de passer à l\'acte d\'achat et c’est pour cela qu\’il faut prendre contact avec nous avant de passer à l\’acte d’achat.'
+					'contenu' : 'Contactez-nous avant l\'achat pour des conseils adaptés à vos besoins et un accompagnement sur-mesure.'
 				} %}
 			{% include "_home_apropos.html.twig" with {
 					'image' : 'innovation.png',
 					'titre' : 'Des produits innovants',
-					'contenu' : 'Notre force est de rechercher des nouveaux produits innovants dans le monde entier et de les proposer en France. Nous choisissons uniquement un fabricant par gamme de matériels que nous avons soigneusement sélectionné afin de proposer les meilleurs matériels sur chaque segment de marché.'
+					'contenu' : 'Sélection rigoureuse de fabricants uniques par gamme pour proposer les meilleures innovations du marché.'
 				} %}
 			{% include "_home_apropos.html.twig" with {
 					'image' : 'client.png',
 					'titre' : 'Nos clients',
-					'contenu' : 'Nos produits de grande qualité nous permettent de cibler aussi bien les particuliers que les professionnels du monde de la santé.'
+					'contenu' : 'Nos clients incluent à la fois des professionnels de la santé et des particuliers, grâce à nos produits de qualité adaptés à tous.'
 				} %}
 			{% include "_home_apropos.html.twig" with {
 					'image' : 'services.png',
 					'titre' : 'Nos services',
-					'contenu' : 'Aujourd\'hui nous vendons, louons et réparons nos matériels dans notre atelier.'
+					'contenu' : 'Vente, location et réparation de matériel, assurées par notre atelier expert et dédié.'
 				} %}
-			</div>			
+			</div>
 			<div class="row">
 				<div class="col-12 d-flex justify-content-center">
-					<a class="btn btn-primary btn-lg" href="{{path('about')}}" role="button">En savoir plus sur Marconnet technologies™</a>
+					<button class="btn btn-primary btn-lg btn-block d-none d-md-block" type="button">En savoir plus sur Marconnet technologies™</button>
+					<button class="btn btn-primary btn-sm btn-block d-md-none" type="button">En savoir plus sur Marconnet technologies™</button>
 				</div>
 			</div>
 		</div>
+	</div>
 
-</div>
+	{# test de materiel #}
+	<div class="text-center test_materiel">
+		<h1>Testez le matériel avant de l'acheter.</h1>
+		<div class="col-lg-6 mx-auto">
+			<p class="mb-4">Assurez-vous que le matériel soit parfaitement adapté à vous en essayant nos produits. Vous pouvez venir au showroom, ou alors, c'est le showroom qui viendra à vous.</p>
+			{# <div class="d-grid gap-2 d-sm-flex justify-content-sm-center">
+																					                <a class="btn btn-primary btn-lg px-4 gap-3" href="{{path('demonstration')}}">Je souhaite tester le matériel</a>
+																					            </div> #}
 
-{# test de materiel #}
-<div class="text-center test_materiel">
-        <h1>Testez le matériel avant de l'acheter.</h1>
-        <div class="col-lg-6 mx-auto">
-            <p class="mb-4">Assurez-vous que le matériel soit parfaitement adapté à vous en essayant nos produits. Vous pouvez venir au showroom, ou alors, c'est le showroom qui viendra à vous.</p>
-            <div class="d-grid gap-2 d-sm-flex justify-content-sm-center">
-                <a class="btn btn-primary btn-lg px-4 gap-3" href="{{path('demonstration')}}">Je souhaite tester le matériel</a>
-            </div>
-        </div>
-    </div>
-
-<div class="container-xl">
-
-	{# entreprises qui nous font confiance #}
-	<div class="confiance text-center">
-	<div class="row">
-		<div class="col-12">
-			<h1>Ils nous ont fait confiance</h1>
+			<div class="d-grid gap-2 d-sm-flex justify-content-sm-center">
+				<button class="btn btn-primary btn-lg btn-block d-none d-md-block" type="button">Je souhaite tester le matériel</button>
+				<button class="btn btn-primary btn-sm btn-block d-md-none" type="button">Je souhaite tester le matériel</button>
+			</div>
 		</div>
 	</div>
-	<div class="row">
-		<div class="col-12">
-			<p>Depuis plus de 15 ans, Marconnet technologies™ travaille avec des acteurs importants du monde de la santé. <br>Nous sommes fiers d’accompagner des marques leaders.</p>
-		</div>
-	</div>
-	<div class="partners">
-		<div class="row h-100">
-				{% include "shared/_home_etab_sante.html.twig" with {
+
+	<div
+		class="container-xl">
+
+		{# entreprises qui nous font confiance #}
+		<div class="confiance text-center">
+			<div class="row">
+				<div class="col-12">
+					<h1>Ils nous ont fait confiance</h1>
+				</div>
+			</div>
+			<div class="row">
+				<div class="col-12">
+					<p>Depuis plus de 15 ans, Marconnet technologies™ travaille avec des acteurs importants du monde de la santé.
+						<br>Nous sommes fiers d’accompagner des marques leaders.</p>
+				</div>
+			</div>
+			<div class="partners">
+				<div class="row h-100">
+					{% include "shared/_home_etab_sante.html.twig" with {
 					'nom' : 'DomusVi',
 					'cat' : 'Établissement de santé',
 					'souscat' : 'EHPAD',
@@ -243,7 +228,7 @@
 					'website' : 'https://www.domusvi.com/'
 				} %}
 
-				{% include "shared/_home_etab_sante.html.twig" with {
+					{% include "shared/_home_etab_sante.html.twig" with {
 					'nom' : 'Korian',
 					'cat' : 'Établissement de santé',
 					'souscat' : 'EHPAD',
@@ -251,7 +236,7 @@
 					'website' : 'https://www.korian.fr/'
 				} %}
 
-				{% include "shared/_home_etab_sante.html.twig" with {
+					{% include "shared/_home_etab_sante.html.twig" with {
 					'nom' : 'Orpea',
 					'cat' : 'Établissement de santé',
 					'souscat' : 'EHPAD',
@@ -259,7 +244,7 @@
 					'website' : 'https://www.orpea-groupe.com/'
 				} %}
 
-				{% include "shared/_home_etab_sante.html.twig" with {
+					{% include "shared/_home_etab_sante.html.twig" with {
 					'nom' : 'Adapei',
 					'cat' : 'Établissement de santé',
 					'souscat' : 'FAM/MAS',
@@ -267,7 +252,7 @@
 					'website' : 'https://www.adapei72.asso.fr/'
 				} %}
 
-				{% include "shared/_home_etab_sante.html.twig" with {
+					{% include "shared/_home_etab_sante.html.twig" with {
 					'nom' : 'Perce-Neige',
 					'cat' : 'Établissement de santé',
 					'souscat' : 'FAM/MAS',
@@ -275,96 +260,62 @@
 					'website' : 'https://www.perce-neige.org/'
 				} %}
 
-				{% include "shared/_home_revendeur.html.twig" with {
+					{% include "shared/_home_revendeur.html.twig" with {
 					'nom' : 'Bastide',
 					'cat' : 'Prestataire de santé',
 					'image' : asset('images/revend/bastide.png'),
 					'website' : 'https://www.bastideleconfortmedical.com/'
 				} %}
 
-				{% include "shared/_home_revendeur.html.twig" with {
+					{% include "shared/_home_revendeur.html.twig" with {
 					'nom' : 'Harmonie Médical Service',
 					'cat' : 'Prestataire de santé',
 					'image' : asset('images/revend/hms.png'),
 					'website' : 'https://www.harmonie-medical-service.fr/'
 				} %}
 
-				{% include "shared/_home_revendeur.html.twig" with {
+					{% include "shared/_home_revendeur.html.twig" with {
 					'nom' : 'Oxypharm',
 					'cat' : 'Prestataire de santé',
 					'image' : asset('images/revend/oxypharm.png'),
 					'website' : 'https://www.vitadomia.com/'
 				} %}
 
-				{% include "shared/_home_revendeur.html.twig" with {
+					{% include "shared/_home_revendeur.html.twig" with {
 					'nom' : 'Paramat',
 					'cat' : 'Prestataire de santé',
 					'image' : asset('images/revend/paramat.png'),
 					'website' : 'https://www.paramat.com/'
 				} %}
 
+				</div>
+			</div>
+
 		</div>
 	</div>
-	
-			</div>
-			</div>
 
-			{# newsletter #}
-			{# <div class="container-fluid newsletter">
-				<div class="container-xl">
-					<div class="row align-self-end newsletter">
-						<div class="col-4 d-flex flex-column-reverse">
-							<img class="img-fluid align-self-end" src="{{asset('images/newsletter.png')}}" alt="">
-						</div>
-						<div class="col-8">	
-							<div class="row">
-								<div class="col">
-									<h1>Inscrivez-vous à notre newsletter</h1>
-								</div>
-							</div>
-							<div class="row">
-								<div class="col">
-									<p>Recevez régulièrement nos actualités et tenez-vous informé des nouveautés.</p>
-								</div>
-							</div>
-							<div class="row">
-								<div class="col">
-									<div class="input-group mb-3">
-										<div class="input-group-prepend">
-											<span class="input-group-text" id="basic-addon1">@</span>
-										</div>
-										<input type="text" class="form-control" placeholder="Mon adresse email" aria-label="" aria-describedby="basic-addon1">
-										<button class="btn btn-outline-primary" type="button">Je m'inscris</button>
-									</div>
-								</div>
-							</div>
-						</div>
-						
+
+	<div class="container-fluid newsletter">
+		<div class="container col-xxl-8 px-4 py-5">
+			<div class="row flex-lg-row-reverse align-items-center g-5 py-1">
+				<div class="col-10 col-sm-8 col-lg-6 d-none d-lg-block">
+					<lottie-player src="https://assets9.lottiefiles.com/packages/lf20_qSqxjDDxpS.json" autoplay loop speed="1" class="mx-auto d-block" style="height: 450px"></lottie-player>
+				</div>
+				<div class="col-lg-6">
+					<h1 class="lh-1 mb-3">Inscrivez-vous à notre newsletter</h1>
+					<p>Recevez régulièrement nos actualités et tenez-vous informé des nouveautés.</p>
+					<div class="d-grid gap-2 d-md-flex justify-content-md-start mt-4">
+
+						{{ form_start(newsletterForm, { 'attr': { 'class': 'input-group flex-nowrap mb-3' } }) }}
+						<span class="input-group-text " id="basic-addon1">@</span>
+						{{ form_widget(newsletterForm.email, { 'attr': { 'class': 'form-control h-100', 'placeholder': 'Votre email', 'aria-label': 'Username', 'aria-describedby': 'basic-addon1' } }) }}
+						<button class="btn btn-primary btn-lg" type="submit">Je m'inscris</button>
+						{{ form_end(newsletterForm) }}
+
 					</div>
 				</div>
-			</div> #}
+			</div>
+		</div>
+	</div>
 
-			<div class="container-fluid newsletter">
-				<div class="container col-xxl-8 px-4 py-5">
-					<div class="row flex-lg-row-reverse align-items-center g-5 py-5">
-						<div class="col-10 col-sm-8 col-lg-6 d-none d-lg-block">
-							<img src="https://cdn.pixabay.com/photo/2017/09/18/22/04/computer-2763393_960_720.png" class="d-block mx-lg-auto img-fluid"
-								alt="Bootstrap Themes" width="300" height="300" loading="lazy">
-						</div>
-						<div class="col-lg-6">
-							<h1 class="lh-1 mb-3">Inscrivez-vous à notre newsletter</h1>
-							<p>Recevez régulièrement nos actualités et tenez-vous informé des nouveautés.</p>
-							<div class="d-grid gap-2 d-md-flex justify-content-md-start mt-4">
-								<div class="input-group mb-3">
-									<div class="input-group-prepend">
-										<span class="input-group-text h-100 d-none d-sm-block" id="basic-addon1">@</span>
-									</div>
-									<input type="text" class="form-control" placeholder="Mon adresse email">
-									<button class="btn btn-primary btn-lg" type="button">Je m'inscris</button>
-								</div>
-							</div>
-						</div>
-					</div>
-        		</div>
-    		</div>
-		{% endblock %}
+{% endblock %}

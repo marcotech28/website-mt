@@ -24,6 +24,7 @@ class MonCompteController extends AbstractController
         $form->handleRequest($request);
 
         if ($form->isSubmitted()) {
+
             $em->flush();
 
             return $this->redirectToRoute('app_mon_compte');

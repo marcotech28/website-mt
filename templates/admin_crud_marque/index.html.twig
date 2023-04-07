@@ -17,7 +17,6 @@
 					<th>Id</th>
 					<th>Libelle</th>
 					<th>Catalogue</th>
-					<th>Logo</th>
 					<th>actions</th>
 				</tr>
 			</thead>
@@ -27,7 +26,6 @@
 						<td>{{ marque.id }}</td>
 						<td>{{ marque.libelle }}</td>
 						<td>{{ marque.catalogue }}</td>
-						<td>{{ marque.logo }}</td>
 						<td>
 							<a href="{{ path('app_admin_crud_marque_show', {'id': marque.id}) }}">show</a>
 							<a href="{{ path('app_admin_crud_marque_edit', {'id': marque.id}) }}">edit</a>

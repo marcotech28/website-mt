@@ -4,9 +4,11 @@
 {% endblock %}
 
 {% block body %}
-	<h1>Créer une catégorie</h1>
+	<div class="container-xl">
+		<h1>Créer une catégorie</h1>
 
-	{{ include('admin_crud_categorie/_form.html.twig') }}
+		{{ include('admin_crud_categorie/_form.html.twig') }}
 
-	<a href="{{ path('app_admin_crud_categorie_index') }}">Retour à la liste des catégories</a>
+		<a href="{{ path('app_admin_crud_categorie_index') }}">Retour à la liste des catégories</a>
+	</div>
 {% endblock %}

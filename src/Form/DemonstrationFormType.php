@@ -32,14 +32,16 @@ class DemonstrationFormType extends AbstractType
                 'attr' => [
                     'class' => 'form-control',
                     'placeholder' => 'Société'
-                ]
+                ],
+                'required' => false
             ])
             ->add('poste', TextType::class, [
                 'label' => false,
                 'attr' => [
                     'class' => 'form-control',
                     'placeholder' => 'Votre poste'
-                ]
+                ],
+                'required' => false
             ])
             ->add('nom', TextType::class, [
                 'label' => false,
@@ -81,7 +83,8 @@ class DemonstrationFormType extends AbstractType
                 'attr' => [
                     'class' => 'form-control',
                     'placeholder' => 'Complément d\'adresse'
-                ]
+                ],
+                'required' => false
             ])
             ->add('ville', TextType::class, [
                 'label' => false,

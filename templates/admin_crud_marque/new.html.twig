@@ -4,9 +4,11 @@
 {% endblock %}
 
 {% block body %}
-	<h1>Créer une nouvelle marque</h1>
+	<div class="container-xl">
+		<h1>Créer une nouvelle marque</h1>
 
-	{{ include('admin_crud_marque/_form.html.twig') }}
+		{{ include('admin_crud_marque/_form.html.twig') }}
 
-	<a href="{{ path('app_admin_crud_marque_index') }}">Retour à la liste des marques</a>
+		<a href="{{ path('app_admin_crud_marque_index') }}">Retour à la liste des marques</a>
+	</div>
 {% endblock %}

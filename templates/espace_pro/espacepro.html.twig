@@ -6,11 +6,73 @@
 {% block body %}
 
 	<div class="container-xl">
-		<h1>Nos tarifs et documentations, destinés aux revendeurs médicaux</h1>
-		<p>Découvrez toutes nos documentations avec les prix hors taxe sur nos produits et nos marques.</p>
+		<div class="espace-pro">
+			<h1>Nos tarifs et documentations, destinés aux revendeurs médicaux</h1>
+			<p>Découvrez toutes nos
+				<span class="color-sky-blue">documentations</span>
+				avec les prix hors taxe sur nos produits et nos marques.</p>
+			<p>
+				<span class="color-sky-blue">La documentation technique</span>
+				concernant les matériels de mobilité est désormais disponible en téléchargement sur notre site pour les professionnels connectés. Ces documents fournissent des informations détaillées sur
+				<span class="color-sky-blue">les caractéristiques, les fonctionnalités et les spécifications</span>
+				des matériels de mobilité que nous proposons.</p>
+			<p>Nous sommes convaincus que ces ressources seront d'une grande aide pour les professionnels qui cherchent à approfondir leurs connaissances sur les produits que nous offrons. Nous espérons que ces documents faciliteront la prise de décision et contribueront à améliorer la qualité de service que nous fournissons à nos clients.</p>
+		</div>
 
-		<a href="#"><img src="https://picsum.photos/200/200" alt=""></a>
-		<a href="#"><img src="https://picsum.photos/200/200" alt=""></a>
-		<a href="#"><img src="https://picsum.photos/200/200" alt=""></a>
+		{% include "espace_pro/_doc.html.twig" with  {
+			'doc' : '',
+			'photo' : 'stricker.png'
+		} %}
+
+		<br>
+
+		{% include "espace_pro/_doc.html.twig" with  {
+			'doc' : '',
+			'photo' : 'fiche-mesure-stricker.png'
+		} %}
+
+
+		<br>
+
+		{% include "espace_pro/_doc.html.twig" with  {
+			'doc' : '',
+			'photo' : 'draisin.jpg'
+		} %}
+
+		<br>
+
+		{% include "espace_pro/_doc.html.twig" with  {
+			'doc' : '',
+			'photo' : 'moving-life.png'
+		} %}
+
+		<br>
+
+		{% include "espace_pro/_doc.html.twig" with  {
+			'doc' : '',
+			'photo' : 'electric-mobility.png'
+		} %}
+
+		<br>
+
+		{% include "espace_pro/_doc.html.twig" with  {
+			'doc' : '',
+			'photo' : 'roues.png'
+		} %}
+
+		<br>
+
+		{% include "espace_pro/_doc.html.twig" with  {
+			'doc' : '',
+			'photo' : 'transat-plage.png'
+		} %}
+
+		<br>
+
+		{% include "espace_pro/_doc.html.twig" with  {
+			'doc' : '',
+			'photo' : 'rampe.png'
+		} %}
+
 	</div>
 {% endblock %}

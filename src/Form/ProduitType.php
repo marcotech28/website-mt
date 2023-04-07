@@ -2,6 +2,7 @@
 
 namespace App\Form;
 
+use App\Entity\Marque;
 use App\Entity\Produit;
 use App\Entity\Categorie;
 use App\Entity\Utilisation;
@@ -9,18 +10,27 @@ use Symfony\Component\Form\AbstractType;
 use Symfony\Component\Form\FormBuilderInterface;
 use Symfony\Bridge\Doctrine\Form\Type\EntityType;
 use Symfony\Component\OptionsResolver\OptionsResolver;
+use Symfony\Component\Form\Extension\Core\Type\FileType;
 
 class ProduitType extends AbstractType
 {
     public function buildForm(FormBuilderInterface $builder, array $options): void
     {
+
+        $produit = $options['data'];
+
         $builder
             ->add('nom')
             ->add('description')
             ->add('shortDescription')
+            ->add('avantages')
             ->add('video1')
             ->add('video2')
-            ->add('ficheDescriptive')
+            ->add('ficheDescriptive', FileType::class, [
+                'label' => 'Fiche Descriptive (PDF file)',
+                'required' => false, // pour autoriser l'envoi de formulaire sans la fiche descriptive
+                'mapped' => false // pour éviter que le champ ne soit mappé sur un attribut de l'entité
+            ])
             ->add('caracteristiques')
             ->add('slug')
             ->add('categorie', EntityType::class, [
@@ -38,6 +48,39 @@ class ProduitType extends AbstractType
                 'choice_label' => function (Utilisation $utilisation) {
                     return $utilisation->getLibelle();
                 }
+            ])
+            ->add('marque', EntityType::class, [
+                'label' => 'Marque',
+                'placeholder' => '-- Choisir une marque --',
+                'class' => Marque::class,
+                'choice_label' => function (Marque $marque) {
+                    return $marque->getLibelle();
+                }
+            ])
+            ->add('image1', FileType::class, [
+                'label' => 'Image 1',
+                'required' => false, // pour autoriser l'envoi de formulaire sans la fiche descriptive
+                'mapped' => false, // pour éviter que le champ ne soit mappé sur un attribut de l'entité
+            ])
+            ->add('image2', FileType::class, [
+                'label' => 'Image 2',
+                'required' => false, // pour autoriser l'envoi de formulaire sans la fiche descriptive
+                'mapped' => false // pour éviter que le champ ne soit mappé sur un attribut de l'entité
+            ])
+            ->add('image3', FileType::class, [
+                'label' => 'Image 3',
+                'required' => false, // pour autoriser l'envoi de formulaire sans la fiche descriptive
+                'mapped' => false // pour éviter que le champ ne soit mappé sur un attribut de l'entité
+            ])
+            ->add('image4', FileType::class, [
+                'label' => 'Image 4',
+                'required' => false, // pour autoriser l'envoi de formulaire sans la fiche descriptive
+                'mapped' => false // pour éviter que le champ ne soit mappé sur un attribut de l'entité
+            ])
+            ->add('image5', FileType::class, [
+                'label' => 'Image 5',
+                'required' => false, // pour autoriser l'envoi de formulaire sans la fiche descriptive
+                'mapped' => false // pour éviter que le champ ne soit mappé sur un attribut de l'entité
             ]);
     }
 

@@ -33,7 +33,7 @@
 				<span class="badge bg-primary">{{produit.marque.libelle}}</span>
 			</h5>
 			<p>
-				{{produit.description}}
+				{{produit.shortDescription}}
 			</p>
 			<p>
 				<a href="#menu">Voir plus d'informations ></a>
@@ -44,23 +44,23 @@
 		<div class="gallery">
 			<div class="row">
 				<div class="col-lg-5">
-					<a href="https://picsum.photos/3000/3000" data-lightbox="mygallery"><img src="https://picsum.photos/3000/3000" alt="" class="img-fluid"></a>
+					<a href="{{ asset('images/prod/' ~ produit.image1 ) }}" data-lightbox="mygallery"><img src="{{ asset('images/prod/' ~ produit.image1 ) }}" alt="" class="img-fluid"></a>
 				</div>
 				<div class="col-lg-5 d-flex justify-content-between flex-column">
 					<div class="row">
 						<div class="col-6">
-							<a href="https://picsum.photos/900/900" data-lightbox="mygallery" data-title><img src="https://picsum.photos/900/900" alt="" class="img-fluid"></a>
+							<a href="{{ asset('images/prod/' ~ produit.image2 ) }}" data-lightbox="mygallery" data-title><img src="{{ asset('images/prod/' ~ produit.image2 ) }}" alt="" class="img-fluid"></a>
 						</div>
 						<div class="col-6">
-							<a href="https://picsum.photos/900/900" data-lightbox="mygallery" data-title><img src="https://picsum.photos/900/900" alt="" class="img-fluid"></a>
+							<a href="{{ asset('images/prod/' ~ produit.image3 ) }}" data-lightbox="mygallery" data-title><img src="{{ asset('images/prod/' ~ produit.image3 ) }}" alt="" class="img-fluid"></a>
 						</div>
 					</div>
 					<div class="row">
 						<div class="col-6">
-							<a href="https://picsum.photos/900/900" data-lightbox="mygallery" data-title><img src="https://picsum.photos/900/900" alt="" class="img-fluid"></a>
+							<a href="{{ asset('images/prod/' ~ produit.image4 ) }}" data-lightbox="mygallery" data-title><img src="{{ asset('images/prod/' ~ produit.image4 ) }}" alt="" class="img-fluid"></a>
 						</div>
 						<div class="col-6">
-							<a href="https://picsum.photos/300/300" data-lightbox="mygallery" data-title><img src="https://picsum.photos/300/300" alt="" class="img-fluid"></a>
+							<a href="{{ asset('images/prod/' ~ produit.image5 ) }}" data-lightbox="mygallery" data-title><img src="{{ asset('images/prod/' ~ produit.image5 ) }}" alt="" class="img-fluid"></a>
 						</div>
 					</div>
 				</div>
@@ -92,65 +92,62 @@
 		</div>
 
 
-		<div class="container-xl">
-			<div class="description" id="description">
-				<h1>Description du produit</h1>
-				{% for description in produit.description|split(';') %}
-					<p>{{ description }}</p>
+		<div class="description" id="description">
+			<h1>Description du produit</h1>
+			{% for description in produit.description|split(';') %}
+				<p>{{ description }}</p>
+			{% endfor %}
+		</div>
+
+		<div class="caracteristiques" id="caracteristiques">
+			<h1>Caractéristiques</h1>
+			<table class="table table-striped">
+				{% for caracteristique in produit.caracteristiques|split(';') %}
+					<p>{{ caracteristique }}</p>
 				{% endfor %}
+			</table>
+		</div>
+
+
+		<div class="video" id="video">
+			<h1>Vidéos</h1>
+			<div class="row">
+				{% if produit.video1 %}
+					<div class="col-auto">
+						<iframe width="444" height="250" src="{{produit.video1}}" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+					</div>
+				{% endif %}
+				{% if produit.video2 %}
+					<div class="col-auto">
+						<iframe width="444" height="250" src="{{produit.video2}}" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+					</div>
+				{% endif %}
+
 			</div>
+			<p>Nous vous informons que Marconnet technologies™ dispose d’une chaîne youtube.</p>
+			<p>N’hésitez pas à vous abonner et à activer les notifications pour ne rater aucune vidéo en cliquant
+				<a href="https://www.youtube.com/channel/UCBVjkgVyozExIOlx5O40zxQ" target="_blank">ici</a>.</p>
+		</div>
 
-			<div class="caracteristiques" id="caracteristiques">
-				<h1>Caractéristiques</h1>
-				<table class="table table-striped">
-					{% for caracteristique in produit.caracteristiques|split(';') %}
-						{% set caracteristique = caracteristique|split(':') %}
-						<tr>
-							<td class="col-3">{{ caracteristique[0] }}</td>
-							<td>{{ caracteristique[1] }}</td>
-						</tr>
-					{% endfor %}
-				</table>
-			</div>
-
-
-			<div class="video" id="video">
-				<h1>Vidéos</h1>
-				<div class="row">
-					{% if produit.video1 %}
-						<div class="col-auto">
-							<iframe width="444" height="250" src="{{produit.video1}}" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-						</div>
-					{% endif %}
-					{% if produit.video2 %}
-						<div class="col-auto">
-							<iframe width="444" height="250" src="{{produit.video2}}" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-						</div>
-					{% endif %}
-
+		<div class="documentation" id="documentation">
+			{% if produit.ficheDescriptive %}
+				<div class="doc">
+					<p>
+						<i class="fa-solid fa-download"></i>
+						<a href="{{ asset('uploads/documents/fiche-descriptive-produit/' ~ produit.ficheDescriptive) }}" download="{{ produit.ficheDescriptive }}">
+							Télécharger la fiche descriptive du produit</a>
+					</p>
 				</div>
-				<p>Nous vous informons que Marconnet technologies™ dispose d’une chaîne youtube.</p>
-				<p>N’hésitez pas à vous abonner et à activer les notifications pour ne rater aucune vidéo en cliquant
-					<a href="https://www.youtube.com/channel/UCBVjkgVyozExIOlx5O40zxQ" target="_blank">ici</a>.</p>
-			</div>
-
-			<div class="documentation" id="documentation">
-				<h1>Documentation</h1>
-				{% if produit.ficheDescriptive %}
-					<div class="doc">
-						<p>
-							<i class="fa-solid fa-download"></i>
-							{{produit.ficheDescriptive}}</p>
-					</div>
-				{% endif %}
-				{% if produit.ficheDescriptive %}
-					<div class="doc">
-						<p>
-							<i class="fa-solid fa-download"></i>
-							{{produit.marque.catalogue}}</p>
-					</div>
-				{% endif %}
-			</div>
+			{% endif %}
+			{% if produit.marque.catalogue %}
+				<div class="doc">
+					<p>
+						<i class="fa-solid fa-download"></i>
+						<a href="{{ asset('uploads/documents/fiche-descriptive-produit/' ~ produit.marque.catalogue) }}" download="{{ produit.marque.catalogue }}">
+							Télécharger la fiche de la marque</a>
+					</p>
+				</div>
+			{% endif %}
 		</div>
 	</div>
 {% endblock %}

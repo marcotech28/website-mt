@@ -5,10 +5,24 @@
 				<h1>{{ nomProduit }}</h1>
 			</div>
 			<div class="pictureProduct">
-				<img src="{{ asset('images/' ~ photo ) }}" alt="">
+				<img src="{{ asset('images/prod/' ~ photo ) }}" alt="">
 			</div>
-			<div class="main-text">
-				<p>{{ description }}</p>
+			<div class="minia-prod-pref">
+
+				{% set advantages = avantages|split(';') %}
+				{% set a = 0 %}
+				{% set break = false %}
+				{% for advantage in advantages %}
+					{% set a = a + 1 %}
+					{% if a > 4 %}
+						{% set break = true %}
+					{% endif %}
+					{% if break == false %}
+						<p>
+							<i style="color: white" class="fa-solid fa-check"></i>
+							{{ advantage }}</p>
+					{% endif %}
+				{% endfor %}
 			</div>
 			<div class="voir-plus">
 				<a href={{ lien }}>En savoir plus</a>

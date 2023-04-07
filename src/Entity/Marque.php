@@ -21,9 +21,6 @@ class Marque
     #[ORM\Column(length: 255, nullable: true)]
     private ?string $catalogue = null;
 
-    #[ORM\Column(length: 255)]
-    private ?string $logo = null;
-
     #[ORM\OneToMany(mappedBy: 'Marque', targetEntity: Produit::class)]
     private Collection $produits;
 
@@ -57,18 +54,6 @@ class Marque
     public function setCatalogue(?string $catalogue): self
     {
         $this->catalogue = $catalogue;
-
-        return $this;
-    }
-
-    public function getLogo(): ?string
-    {
-        return $this->logo;
-    }
-
-    public function setLogo(string $logo): self
-    {
-        $this->logo = $logo;
 
         return $this;
     }

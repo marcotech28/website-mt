@@ -1,11 +1,21 @@
 {% extends 'base.html.twig' %}
 
-{% block title %}New Produit{% endblock %}
+{% block title %}New Produit
+{% endblock %}
 
 {% block body %}
-    <h1>Create new Produit</h1>
+	<div class="container-xl">
+		<h1>Create new Produit</h1>
 
-    {{ include('admin_crud_produit/_form.html.twig') }}
+		<p>Informations :
+		</p>
+		<p>Avantages : écrire sous la forme : "Taille:1m;Poids:40 kg;Couleur:Bleue" (sans les guillemets)</p>
+		<p>Les caractéristiques s'écrivent sur le même format</p>
 
-    <a href="{{ path('app_admin_crud_produit_index') }}">back to list</a>
+		{{ include('admin_crud_produit/_form.html.twig') }}
+
+		<a href="{{ path('app_admin_crud_produit_index') }}">back to list</a>
+
+
+	</div>
 {% endblock %}

@@ -4,12 +4,12 @@ namespace App\Form;
 
 use App\Entity\User;
 use Symfony\Component\Form\AbstractType;
-use Symfony\Component\Form\Extension\Core\Type\CheckboxType;
 use Symfony\Component\Form\FormBuilderInterface;
 use Symfony\Component\OptionsResolver\OptionsResolver;
 use Symfony\Component\Form\Extension\Core\Type\TextType;
 use Symfony\Component\Form\Extension\Core\Type\EmailType;
 use Symfony\Component\Form\Extension\Core\Type\HiddenType;
+use Symfony\Component\Form\Extension\Core\Type\CheckboxType;
 
 class UserType extends AbstractType
 {
@@ -35,7 +35,8 @@ class UserType extends AbstractType
             ->add('password', TextType::class, [
                 'attr' => [
                     'class' => 'form-control',
-                ]
+                ],
+                'mapped' => false
             ])
             ->add('telephone', TextType::class, [
                 'attr' => [
@@ -53,9 +54,10 @@ class UserType extends AbstractType
                 ]
             ])
             ->add('complementAdresse', TextType::class, [
+                'required' => false,
                 'attr' => [
                     'class' => 'form-control',
-                ]
+                ],
             ])
             ->add('ville', TextType::class, [
                 'attr' => [
@@ -81,8 +83,7 @@ class UserType extends AbstractType
                     'class' => 'form-control',
                 ]
             ])
-            // ->add('isConfirmed')
-        ;
+            ->add('isConfirmed', CheckboxType::class, []);
     }
 
     public function configureOptions(OptionsResolver $resolver): void

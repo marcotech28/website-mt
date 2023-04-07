@@ -5,10 +5,16 @@ namespace App\Controller;
 use App\Entity\Produit;
 use App\Form\ProduitType;
 use App\Repository\ProduitRepository;
-use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
+use Doctrine\ORM\EntityManagerInterface;
+use Symfony\Component\Finder\SplFileInfo;
+use Symfony\Component\Form\FormInterface;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
+use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
+use Symfony\Component\HttpFoundation\File\Exception\FileException;
+use Symfony\Component\DependencyInjection\ParameterBag\ParameterBagInterface;
+
 
 #[Route('/admin/crud/produit')]
 class AdminCrudProduitController extends AbstractController
@@ -22,13 +28,21 @@ class AdminCrudProduitController extends AbstractController
     }
 
     #[Route('/new', name: 'app_admin_crud_produit_new', methods: ['GET', 'POST'])]
-    public function new(Request $request, ProduitRepository $produitRepository): Response
+    public function new(Request $request, ProduitRepository $produitRepository, EntityManagerInterface $entityManager): Response
     {
         $produit = new Produit();
         $form = $this->createForm(ProduitType::class, $produit);
         $form->handleRequest($request);
 
         if ($form->isSubmitted() && $form->isValid()) {
+
+            self::handlePDFUpload($produit, $form, $entityManager);
+            self::handleImage1Upload($produit, $form, $entityManager);
+            self::handleImage2Upload($produit, $form, $entityManager);
+            self::handleImage3Upload($produit, $form, $entityManager);
+            self::handleImage4Upload($produit, $form, $entityManager);
+            self::handleImage5Upload($produit, $form, $entityManager);
+
             $produitRepository->save($produit, true);
 
             return $this->redirectToRoute('app_admin_crud_produit_index', [], Response::HTTP_SEE_OTHER);
@@ -49,13 +63,29 @@ class AdminCrudProduitController extends AbstractController
     }
 
     #[Route('/{id}/edit', name: 'app_admin_crud_produit_edit', methods: ['GET', 'POST'])]
-    public function edit(Request $request, Produit $produit, ProduitRepository $produitRepository): Response
+    public function edit(Request $request, Produit $produit, ProduitRepository $produitRepository, EntityManagerInterface $entityManager, ParameterBagInterface $params): Response
     {
         $form = $this->createForm(ProduitType::class, $produit);
         $form->handleRequest($request);
 
         if ($form->isSubmitted() && $form->isValid()) {
+
             $produitRepository->save($produit, true);
+
+
+
+            // --- fiche descriptive et images du produit --- //
+
+            self::handlePDFUpload($produit, $form, $entityManager);
+            self::handleImage1Upload($produit, $form, $entityManager);
+            self::handleImage2Upload($produit, $form, $entityManager);
+            self::handleImage3Upload($produit, $form, $entityManager);
+            self::handleImage4Upload($produit, $form, $entityManager);
+            self::handleImage5Upload($produit, $form, $entityManager);
+
+
+
+
 
             return $this->redirectToRoute('app_admin_crud_produit_index', [], Response::HTTP_SEE_OTHER);
         }
@@ -74,5 +104,110 @@ class AdminCrudProduitController extends AbstractController
         }
 
         return $this->redirectToRoute('app_admin_crud_produit_index', [], Response::HTTP_SEE_OTHER);
+    }
+
+    //methode image 1
+
+    public function handleImage1Upload(Produit $produit, FormInterface $form, EntityManagerInterface $entityManager): void
+    {
+        $image = $form->get('image1')->getData();
+
+        if ($image) {
+            // récupération du nom d'origine du fichier + son extension
+            $originalImage = pathinfo($image->getClientOriginalName(), PATHINFO_BASENAME);
+
+            // On met à jour l'emplacement de l'image dans l'entité Utilisation
+            $produit->setImage1($originalImage);
+
+            $entityManager->flush();
+        }
+    }
+
+    //methode image 2
+
+    public function handleImage2Upload(Produit $produit, FormInterface $form, EntityManagerInterface $entityManager): void
+    {
+        $image = $form->get('image2')->getData();
+
+        if ($image) {
+            // récupération du nom d'origine du fichier + son extension
+            $originalImage = pathinfo($image->getClientOriginalName(), PATHINFO_BASENAME);
+
+            // On met à jour l'emplacement de l'image dans l'entité Utilisation
+            $produit->setImage2($originalImage);
+
+            $entityManager->flush();
+        }
+    }
+
+    //methode image 3
+
+    public function handleImage3Upload(Produit $produit, FormInterface $form, EntityManagerInterface $entityManager): void
+    {
+        $image = $form->get('image3')->getData();
+
+        if ($image) {
+            // récupération du nom d'origine du fichier + son extension
+            $originalImage = pathinfo($image->getClientOriginalName(), PATHINFO_BASENAME);
+
+            // On met à jour l'emplacement de l'image dans l'entité Utilisation
+            $produit->setImage3($originalImage);
+
+            $entityManager->flush();
+        }
+    }
+
+    //methode image 4
+
+    public function handleImage4Upload(Produit $produit, FormInterface $form, EntityManagerInterface $entityManager): void
+    {
+        $image = $form->get('image4')->getData();
+
+        if ($image) {
+            // récupération du nom d'origine du fichier + son extension
+            $originalImage = pathinfo($image->getClientOriginalName(), PATHINFO_BASENAME);
+
+            // On met à jour l'emplacement de l'image dans l'entité Utilisation
+            $produit->setImage4($originalImage);
+
+            $entityManager->flush();
+        }
+    }
+
+    //methode image 5
+
+    public function handleImage5Upload(Produit $produit, FormInterface $form, EntityManagerInterface $entityManager): void
+    {
+        $image = $form->get('image5')->getData();
+
+        if ($image) {
+            // récupération du nom d'origine du fichier + son extension
+            $originalImage = pathinfo($image->getClientOriginalName(), PATHINFO_BASENAME);
+
+            // On met à jour l'emplacement de l'image dans l'entité Utilisation
+            $produit->setImage5($originalImage);
+
+            $entityManager->flush();
+        }
+    }
+
+    //methode PDF
+
+    public function handlePDFUpload(Produit $produit, FormInterface $form, EntityManagerInterface $entityManager): void
+    {
+        // récupération du fichier PDF
+        $ficheDescriptiveFile = $form->get('ficheDescriptive')->getData();
+
+        if ($ficheDescriptiveFile) {
+            // --- ficheDescriptive --- //
+
+            // récupération du nom d'origine du fichier
+            $originalFilename = pathinfo($ficheDescriptiveFile->getClientOriginalName(), PATHINFO_BASENAME);
+
+            // mise à jour de la fiche descriptive du produit
+            $produit->setFicheDescriptive($originalFilename);
+
+            $entityManager->flush();
+        }
     }
 }

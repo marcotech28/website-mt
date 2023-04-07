@@ -45,9 +45,6 @@ class Produit
     private ?string $slug = null;
 
     #[ORM\Column(length: 255, nullable: true)]
-    private ?string $imageMiniature = null;
-
-    #[ORM\Column(length: 255, nullable: true)]
     private ?string $image1 = null;
 
     #[ORM\Column(length: 255, nullable: true)]
@@ -64,6 +61,9 @@ class Produit
 
     #[ORM\ManyToOne(inversedBy: 'produits')]
     private ?Marque $Marque = null;
+
+    #[ORM\Column(type: Types::TEXT, nullable: true)]
+    private ?string $image5 = null;
 
     public function getId(): ?int
     {
@@ -208,18 +208,6 @@ class Produit
         return $this;
     }
 
-    public function getImageMiniature(): ?string
-    {
-        return $this->imageMiniature;
-    }
-
-    public function setImageMiniature(?string $imageMiniature): self
-    {
-        $this->imageMiniature = $imageMiniature;
-
-        return $this;
-    }
-
     public function getImage1(): ?string
     {
         return $this->image1;
@@ -288,6 +276,18 @@ class Produit
     public function setMarque(?Marque $Marque): self
     {
         $this->Marque = $Marque;
+
+        return $this;
+    }
+
+    public function getImage5(): ?string
+    {
+        return $this->image5;
+    }
+
+    public function setImage5(?string $image5): self
+    {
+        $this->image5 = $image5;
 
         return $this;
     }
