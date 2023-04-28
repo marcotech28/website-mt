@@ -26,7 +26,13 @@
 			</div>
 
 			<p class="btn-center">
-				<a href="{{path('product_show', {'category_slug' : p.categorie.slug, 'utilisation_slug' : p.utilisation.slug, 'slug' : p.slug})}}" class="btn btn-primary">Voir ce produit</a>
+				{% if p.utilisation == null %}
+					{# <a href="{{path('product_show', {'category_slug' : p.categorie.slug, 'utilisation_slug' : p.utilisation.slug, 'slug' : p.slug})}}" class="btn btn-primary">Voir ce produit</a> #}
+					salut
+				{% else %}
+					<a href="{{path('product_show', {'category_slug' : p.categorie.slug, 'utilisation_slug' : p.utilisation.slug, 'slug' : p.slug})}}" class="btn btn-primary">Voir ce produit</a>
+				{% endif %}
+
 			</p>
 		</div>
 	</div>

@@ -136,43 +136,54 @@
 				class="navbar-nav mb-2 mb-lg-0 w-100 justify-content-between">
 
 				<!-- House -->
-				<li class="nav-item w-100 majuscule house">
-					<a href="{{path("homepage")}}" class="nav-link mb-2 mb-lg-0">
+				<li class="nav-item w-100 majuscule house text-center d-flex align-items-center">
+					<a href="{{path("homepage")}}" class="nav-link mb-2 mb-lg-0 w-100 h-100 d-flex align-items-center justify-content-center">
 						<i class="fa-solid fa-house"></i>
 					</a>
 				</li>
 
 				{# Catégories #}
 				{% for c in categorieRepository.findAll() %}
-					<li class="nav-item dropdown w-100 nav-link-bordure-gauche">
-						<a class="nav-link dropdown-toggle majuscule" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-							{{ c.libelle }}
-						</a>
-						<ul class="dropdown-menu">
-							<li class="d-none d-md-block">
-								<h6 class="dropdown-header">{{c.description}}</h6>
-							</li>
-							{% for utili in c.utilisations %}
-								<li>
-									<hr class="dropdown-divider">
+					{% if c.utilisations is empty %}
+						<li class="nav-item dropdown w-100 nav-link-bordure-gauche majuscule text-center d-flex align-items-center">
+							<a class="nav-link majuscule w-100 h-100 d-flex align-items-center justify-content-center" href="{{ path('app_categorie', {'slug': c.slug}) }}">
+								{{ c.libelle }}
+							</a>
+						</li>
+					{% else %}
+
+						<li class="nav-item dropdown w-100 nav-link-bordure-gauche text-center d-flex align-items-center">
+							<a class="nav-link dropdown-toggle majuscule w-100 h-100 d-flex align-items-center justify-content-center" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+								{{ c.libelle }}
+							</a>
+							<ul class="dropdown-menu">
+								<li class="d-none d-md-block">
+									<h6 class="dropdown-header">{{c.description}}</h6>
 								</li>
-								<li>
-									<a class="dropdown-item" href="{{path('app_utilisation', {'category_slug' : c.slug, 'utilisation_slug' : utili.slug})}}"><img src="{{ asset('images/utilisation/' ~ utili.image ) }}" height="80px" alt="" class="d-none d-sm-inline">{{utili.libelle}}</a>
-								</li>
-							{% endfor %}
-						</ul>
-					</li>
+
+								{% for utili in c.utilisations %}
+									<li>
+										<hr class="dropdown-divider">
+									</li>
+									<li>
+										<a class="dropdown-item" href="{{path('app_utilisation', {'category_slug' : c.slug, 'utilisation_slug' : utili.slug})}}"><img src="{{ asset('images/utilisation/' ~ utili.image ) }}" height="80px" alt="" class="d-none d-sm-inline">{{utili.libelle}}</a>
+									</li>
+								{% endfor %}
+
+							</ul>
+						</li>
+					{% endif %}
 				{% endfor %}
 
 
 				<!-- Robots -->
-				<li class="nav-item w-100 nav-link-bordure-gauche majuscule">
-					<a href="#" class="nav-link mb-2 mb-lg-0">Robots</a>
+				<li class="nav-item w-100 nav-link-bordure-gauche majuscule text-center d-flex align-items-center">
+					<a href="https://www.marconnet-robotique.com/" class="nav-link mb-2 mb-lg-0 w-100 h-100 d-flex align-items-center justify-content-center" target="_blank">Robots</a>
 				</li>
 
 				<!-- House -->
-				<li class="nav-item w-100 nav-link-bordure-gauche majuscule">
-					<a href="#" class="nav-link mb-2 mb-lg-0">Autres</a>
+				<li class="nav-item w-100 nav-link-bordure-gauche majuscule text-center d-flex align-items-center">
+					<a href="#" class="nav-link mb-2 mb-lg-0 w-100 h-100 d-flex align-items-center justify-content-center">Autres</a>
 				</li>
 			</ul>
 		</div>
