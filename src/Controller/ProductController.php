@@ -11,13 +11,16 @@ use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 class ProductController extends AbstractController
 {
     /**
-     * @Route("/{category_slug}/{utilisation_slug}/{slug}", name="product_show", priority=-1)
+     * @Route("/{category_slug}/{slug}/{id}", name="product_show_no_utilisation", priority=-29)
+     * @Route("/{category_slug}/{utilisation_slug}/{slug}/{id}", name="product_show", priority=-30)
      */
     public function show($slug, ProduitRepository $produitRepository): Response
     {
         $product = $produitRepository->findOneBy([
             'slug' => $slug
         ]);
+
+        // dd($product);
 
         if (!$product) {
             throw $this->createNotFoundException("Le produit demandé n'existe pas");

@@ -14,7 +14,7 @@ use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 
 
 
-#[Route('/admin/utilisation')]
+#[Route('/admin/crud/utilisation')]
 class AdminCrudUtilisationController extends AbstractController
 {
     #[Route('/', name: 'app_admin_crud_utilisation_index', methods: ['GET'])]

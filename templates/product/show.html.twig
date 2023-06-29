@@ -18,9 +18,15 @@
 						<li class="breadcrumb-item">
 							<a href="{{ path('app_categorie', {'slug': produit.categorie.slug}) }} ">{{produit.categorie.libelle}}</a>
 						</li>
-						<li class="breadcrumb-item">
-							<a href="{{ path('app_utilisation', {'category_slug': produit.categorie.slug, 'utilisation_slug': produit.utilisation.slug}) }} ">{{produit.utilisation.libelle}}</a>
-						</li>
+						{# <li class="breadcrumb-item"> #}
+						{# <a href="{{ path('app_utilisation', {'category_slug': produit.categorie.slug, 'utilisation_slug': produit.utilisation.slug}) }} ">{{produit.utilisation.libelle}}</a> #}
+						{# </li> #}
+							{% if produit.utilisation is not null %}
+								<li class="breadcrumb-item"> <a href="{{ path('app_utilisation', {'category_slug': produit.categorie.slug, 'utilisation_slug': produit.utilisation.slug}) }}">
+									{{ produit.utilisation.libelle }}
+								</a>
+							</li>
+						{% endif %}
 						<li class="breadcrumb-item active" aria-current="page">{{produit.nom}}</li>
 					</ol>
 				</nav>
@@ -43,23 +49,23 @@
 		{# gallery images produits #}
 		<div class="gallery">
 			<div class="row">
-				<div class="col-lg-5">
+				<div class="col-12 col-lg-6 mb-1">
 					<a href="{{ asset('images/prod/' ~ produit.image1 ) }}" data-lightbox="mygallery"><img src="{{ asset('images/prod/' ~ produit.image1 ) }}" alt="" class="img-fluid"></a>
 				</div>
-				<div class="col-lg-5 d-flex justify-content-between flex-column">
-					<div class="row">
-						<div class="col-6">
+				<div class="col-12 col-lg-6 d-flex justify-content-between flex-column">
+					<div class="row mb-1">
+						<div class="col-12 col-sm-6">
 							<a href="{{ asset('images/prod/' ~ produit.image2 ) }}" data-lightbox="mygallery" data-title><img src="{{ asset('images/prod/' ~ produit.image2 ) }}" alt="" class="img-fluid"></a>
 						</div>
-						<div class="col-6">
+						<div class="col-12 col-sm-6">
 							<a href="{{ asset('images/prod/' ~ produit.image3 ) }}" data-lightbox="mygallery" data-title><img src="{{ asset('images/prod/' ~ produit.image3 ) }}" alt="" class="img-fluid"></a>
 						</div>
 					</div>
-					<div class="row">
-						<div class="col-6">
+					<div class="row mb-1">
+						<div class="col-12 col-sm-6">
 							<a href="{{ asset('images/prod/' ~ produit.image4 ) }}" data-lightbox="mygallery" data-title><img src="{{ asset('images/prod/' ~ produit.image4 ) }}" alt="" class="img-fluid"></a>
 						</div>
-						<div class="col-6">
+						<div class="col-12 col-sm-6">
 							<a href="{{ asset('images/prod/' ~ produit.image5 ) }}" data-lightbox="mygallery" data-title><img src="{{ asset('images/prod/' ~ produit.image5 ) }}" alt="" class="img-fluid"></a>
 						</div>
 					</div>
@@ -67,14 +73,22 @@
 			</div>
 		</div>
 
-		<div class="sommaire" id="menu">
-			<ul>
-				<li><a href="#avantages">Avantages</a></li>
-				<li><a href="#description">Description</a></li>
-				<li><a href="#caracteristiques">Caractéristiques</a></li>
-				<li><a href="#video">Vidéos</a></li>
-				<li><a href="#documentation">Documentations</a></li>
-			</ul>
+		{# <div class="sommaire" id="menu">
+																								<ul>
+																									<li><a href="#avantages">Avantages</a></li>
+																									<li><a href="#description">Description</a></li>
+																									<li><a href="#caracteristiques">Caractéristiques</a></li>
+																									<li><a href="#video">Vidéos</a></li>
+																									<li><a href="#documentation">Documentations</a></li>
+																								</ul>
+																							</div> #}
+
+		<div class="sommaire d-none d-lg-flex justify-content-between mt-4">
+			<a href="#avantages">Avantages</a>
+			<a href="#description">Description</a>
+			<a href="#caracteristiques">Caractéristiques</a>
+			<a href="#video">Vidéos</a>
+			<a href="#documentation">Documentations</a>
 		</div>
 
 
@@ -103,7 +117,9 @@
 			<h1>Caractéristiques</h1>
 			<table class="table table-striped">
 				{% for caracteristique in produit.caracteristiques|split(';') %}
-					<p>{{ caracteristique }}</p>
+					<p>
+						<i class="fa fa-caret-right" aria-hidden="true"></i>
+						{{ caracteristique }}</p>
 				{% endfor %}
 			</table>
 		</div>

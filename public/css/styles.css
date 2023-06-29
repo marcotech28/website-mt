@@ -4,20 +4,20 @@
 
 html,
 body {
-    padding: 0;
-    margin: 0;
+    padding: 0 !important;
+    margin: 0 !important;
     font-family: "Poppins", sans-serif !important;
 }
 
-.container-xl {
-    padding: 0 80px;
-}
-
+/* .container-xl {
+    padding: 0 0px;
+} */
 
 .container-fluid {
-    margin: 0 !important;
     padding: 0 !important;
+    margin: 0 !important;
 }
+
 
 .justifier{
     text-align: justify;
@@ -565,6 +565,8 @@ td {
     height: auto;
 }
 
+
+
 .revend {
     padding-bottom: 60px;
 }
@@ -579,9 +581,9 @@ td {
     height: 200px !important;
 }
 
-.newsletter .container-xl .align-self-end .col .row .col h3 {
+/* .newsletter .container-xl .align-self-end .col .row .col h3 {
     padding-top: 160px;
-}
+} */
 
 .newsletter img {
     width: 70%;
@@ -600,9 +602,13 @@ td {
 
 .content-partners h2 {
     text-transform: uppercase;
-    font-size: 26px;
+    font-size: 24px;
     color: #0F434E;
     padding: 10px;
+}
+
+.confiance a {
+    text-decoration: none !important;
 }
 
 .content-partners h3 {
@@ -777,9 +783,9 @@ a:hover.contact-telephone {
     font-weight: bold;
 }
 
-body > div.container-xl > div.nos-fournisseurs > div.row.h-100.fournisseur > div:nth-child(n){
+/* body > div.container-xl > div.nos-fournisseurs > div.row.h-100.fournisseur > div:nth-child(n){
     margin: 0 !important;
-}
+} */
 
 
 .nos-fournisseurs .card-services img {
@@ -1003,27 +1009,10 @@ body > div.container-xl > div.nos-fournisseurs > div.row.h-100.fournisseur > div
 
 
 
-
 /* -- sommaire -- */
-
-.sommaire ul {
-    list-style-type: none;
-    display: flex;
-    margin: 0;
-    padding: 16px 0;
-}
-
-.sommaire li {
-    padding-right: 100px;
-}
-
 
 .sommaire a {
     color: #168896;
-    text-decoration: underline;
-    text-decoration-thickness: 2px;
-    font-weight: 500;
-    font-size: 16px;
 }
 
 .sommaire a:hover {
@@ -1119,6 +1108,11 @@ body > div.container-xl > div.nos-fournisseurs > div.row.h-100.fournisseur > div
     border-radius: 20px;
 }
 
+/* .categorie {
+    padding: 0 !important;
+    margin: 0 !important;
+} */
+
 .categorie .card:hover {
     transition: 0.2s;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
@@ -1131,11 +1125,16 @@ body > div.container-xl > div.nos-fournisseurs > div.row.h-100.fournisseur > div
     margin-top: 23px;
 }
 
+#produitpref a {
+    text-decoration: none;
+}
+
 .minia-avantages {
     margin-top: 18px;
 }
 
 .minia-avantages p {
+    color: #0F434E;
     font-size: 14px;
 }
 
@@ -1176,12 +1175,12 @@ body > div.container-xl > div.nos-fournisseurs > div.row.h-100.fournisseur > div
 
 /* -- containers -- */
 
-@media only screen and (max-width: 1300px) {
+/* @media only screen and (max-width: 1300px) {
 
     .container-xl {
         padding: 0;
     }
-}
+} */
 
 /* -- titres -- */
 
@@ -1269,7 +1268,7 @@ body > div.container-xl > div.nos-fournisseurs > div.row.h-100.fournisseur > div
     }
 }
 
-@media screen and (max-width: 1450px){
+/* @media screen and (max-width: 1450px){
     .banniere lottie-player {
         width: 650px;
     }
@@ -1278,10 +1277,19 @@ body > div.container-xl > div.nos-fournisseurs > div.row.h-100.fournisseur > div
         font-size: 48px;
         font-weight: 500;
         border-bottom: none;
+        align-items: center;
+        display: flex;
+        flex-direction: column;
     }
-}
 
-@media screen and (max-width: 1200px){
+    .banniere p {
+        align-items: center;
+        display: flex;
+        flex-direction: column;
+    }
+} */
+
+/* @media screen and (max-width: 1200px){
     .banniere lottie-player {
         width: 250px;
     }
@@ -1289,7 +1297,7 @@ body > div.container-xl > div.nos-fournisseurs > div.row.h-100.fournisseur > div
     .banniere{
         height: 55vh !important;
     }
-}
+} */
 
 @media screen and (max-width: 500px){
     .banniere h1 {
@@ -1450,5 +1458,12 @@ body > div.container-xl > div.nos-fournisseurs > div.row.h-100.fournisseur > div
 @media (max-width: 992px) {
     #about-lottie {
         height: 150px;
+    }
+}
+
+/* HOME */
+@media only screen and (max-width: 1425PX) {
+    .lottie-tricycle {
+        height: 390px;
     }
 }

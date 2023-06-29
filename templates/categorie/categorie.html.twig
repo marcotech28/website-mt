@@ -26,7 +26,9 @@
 		<div class="container-xl">
 			<div class="row">
 				{% for p in categorie.produits %}
-					{% include "product/_product_card.html.twig" %}
+					<div class="col-12 col-sm-6 col-md-4 col-lg-3 mb-3">
+						{% include "product/_product_card.html.twig" %}
+					</div>
 				{% endfor %}
 			</div>
 		</div>

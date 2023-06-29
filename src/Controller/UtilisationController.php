@@ -12,7 +12,7 @@ use Symfony\Component\Routing\Annotation\Route;
 class UtilisationController extends AbstractController
 {
     /**
-     * @Route("/{category_slug}/{utilisation_slug}/", name="app_utilisation")
+     * @Route("/{category_slug}/{utilisation_slug}/", name="app_utilisation", priority=-28)
      */
     public function index($category_slug, $utilisation_slug, CategorieRepository $categorieRepository, UtilisationRepository $utilisationRepository): Response
     {

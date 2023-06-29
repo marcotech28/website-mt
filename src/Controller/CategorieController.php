@@ -20,7 +20,7 @@ class CategorieController extends AbstractController
         $this->slugger = $slugger;
     }
 
-    #[Route('/{slug}', name: 'app_categorie', priority: -1)]
+    #[Route('/{slug}', name: 'app_categorie', priority: -10)]
     public function categorie($slug, CategorieRepository $categorieRepository): Response
     {
         $categorie = $categorieRepository->findOneBy([
@@ -35,24 +35,5 @@ class CategorieController extends AbstractController
             'slug' => $slug,
             'categorie' => $categorie
         ]);
-    }
-
-    //ce code est fait pr mettre à jour les slugs dans la bdd, ca sera à supprimer + tard
-    /**
-     * @Route("/go/slug", name="categorie_slug", priority=-1)
-     */
-    public function slug(EntityManagerInterface $em)
-    {
-        $UtilisationRepository = $em->getRepository(Utilisation::class);
-
-        $utilisations = $UtilisationRepository->findAll();
-
-        foreach ($utilisations as $ut) {
-            $ut->setSlug(strtolower($this->slugger->slug($ut->getLibelle())));
-        }
-
-        $em->flush();
-
-        return $this->render('categorie/categorie.html.twig', []);
     }
 }

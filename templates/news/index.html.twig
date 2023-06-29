@@ -21,8 +21,10 @@
 	<div class="container-xl" style="padding: 50px 0">
 		{{ form_start(form) }}
 		{{ form_row(form.titre) }}
+		{{ form_row(form.sousTitre) }}
 		{{ form_row(form.content) }}
 		{{ form_row(form.date) }}
 		{{ form_row(form.auteur) }}
+		{{ form_end(form) }}
 	</div>
 {% endblock %}

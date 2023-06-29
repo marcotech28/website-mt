@@ -19,44 +19,44 @@
 	<div class="container-xl h-100">
 		<div class="row h-100 d-flex align-items-center">
 			<div class="col-xl-5 ">
-				<h1>MARCONNET TECHNOLOGIES™</h1>
-				<p>Le spécialiste de la mobilité sur mesure dans le monde du handicap</p>
-				<div class="d-none d-sm-block">
-					<button type="button" class="btn btn-primary btn-lg">Découvrir Marconnet technologies™</button>
+				<h1 class="text-center text-md-left">MARCONNET TECHNOLOGIES™</h1>
+				<p class="text-center text-md-left">Le spécialiste de la mobilité sur mesure dans le monde du handicap</p>
+				<div class="d-none d-sm-block text-center text-md-left">
+					<a href="#prodpref" type="button" class="btn btn-primary btn-lg">Découvrir Marconnet technologies™</a>
 				</div>
 			</div>
-			<div class="col-xl-7">
-				<lottie-player src="{{ asset('images/HomepageMT_V3.json') }}" autoplay loop speed="1" class="mx-auto d-block"></lottie-player>
+			<div class="col-xl-7 d-none d-xl-block overflow-hidden">
+				<lottie-player src="{{ asset('images/HomepageMT_V3.json') }}" autoplay loop speed="1" class="mx-auto d-block lottie-tricycle"></lottie-player>
 			</div>
 		</div>
 	</div>
 </div>
 
 {# produits préférés #}
-<div class="container-xl">
+<div class="container-xl container-sm">
 	<div id="produitpref">
 		<div class="row">
 			<div class="col-12">
-				<h1 style="padding-top: 70px; padding-bottom: 30px;" class="text-center">Les produits préférés de nos clients</h1>
+				<h1 style="padding-top: 70px; padding-bottom: 30px;" class="text-center" id="prodpref">Les produits préférés de nos clients</h1>
+				<p class="text-center mb-5">Explorez les choix privilégiés de nos clients en matière de matériels de mobilité adaptés, conçus pour faciliter votre quotidien et vous offrir une plus grande indépendance.</p>
 			</div>
 		</div>
 		<div class="row h-100">
-
-
 			{% for p in tabProduits %}
-				{% include "product/_product_card.html.twig" %}
+				<div class="col-md-6 col-lg-6 col-xl-3 mb-4 categorie">
+					{% include "product/_product_card.html.twig" %}
+				</div>
 			{% endfor %}
-
 		</div>
 	</div>
 </div>
 
 
-<divs
+<div
 	class="container-xl">
 
 	{# <div class="container-fluid" style=" border-right: 8px solid #0F434E; border-left: 8px solid #0F434E"> #}
-	<div id="mon-carousel" class="carousel slide" data-bs-ride="carousel">
+	<div id="mon-carousel" class="carousel slide d-none d-sm-block" data-bs-ride="carousel">
 		<ol class=" carousel-indicators">
 			<li data-bs-target="#mon-carousel" data-bs-slide-to="0" class="active"></li>
 			<li data-bs-target="#mon-carousel" data-bs-slide-to="1"></li>
@@ -78,7 +78,7 @@
 								<h3>Un moyen de transport pratique, écologique et compact pour vos déplacements urbains.</h3>
 								<p class="d-none d-lg-block">Le scooter électrique pliable Atto Sport est le moyen de transport idéal pour vos déplacements urbains. Compact, léger et doté d'une batterie au lithium-ion offrant une autonomie d'environ 35 km, il est facile à ranger dans un coffre de voiture ou sous un bureau.
 									<br>Optez pour l'Atto Sport et profitez d'un mode de transport pratique, écologique et économique en ville.</p>
-								<a href="#">
+								<a href="{{ path('product_show_no_utilisation', {'category_slug': 'scooters', 'slug': 'scooter-electrique-3-roues-atto-sport', 'id': 21}) }}">
 									<div class="btn btn-primary btn-lg">Voir le produit</div>
 								</a>
 							</div>
@@ -96,11 +96,11 @@
 						<div class="col-lg-6 mb-0 d-flex align-items-center">
 							<div class="text-align-left align-self-center desc-carousel">
 								<h1>La Crossbike de Stricker</h1>
-								<h3>Une solution tout-terrain pour les personnes à mobilité réduite.</h3>
+								<h3>Une solution tout-terran pour les personnes à mobilité réduite.</h3>
 								<p class="d-none d-lg-block">La Crossbike de Stricker est une roue supplémentaire tout-terrain que l'on peut greffer à l'avant d'un fauteuil roulant, transformant ainsi le fauteuil en un handbike à trois roues.
 									<br>Cette solution innovante offre une plus grande liberté de mouvement pour explorer des terrains variés en ville ou en pleine nature.
 									<br>La Crossbike est facile à monter et à démonter, équipée de pneus larges et d'une suspension adaptée pour une conduite confortable et stable. Choisissez la Crossbike de Stricker pour une solution pratique, polyvalente et tout-terrain pour vos besoins de mobilité.</p>
-								<a href="#">
+								<a href="{{ path('product_show_no_utilisation', {'category_slug': 'handbikes', 'utilisation_slug': 'handbikes-tout-electrique', 'slug': 'handbike-crossbike-16','id': 31}) }}">
 									<div class="btn btn-primary btn-lg">Voir le produit</div>
 								</a>
 							</div>
@@ -121,7 +121,7 @@
 								<p class="d-none d-lg-block">Le Fun 2 Go de Van Raam est un tricycle tandem pour deux personnes, offrant une solution de mobilité conviviale et pratique pour vos sorties en ville ou en pleine nature.
 									<br>Disponible avec un moteur électrique en option et un siège pivotant pour un accès facile, le Fun 2 Go est également un choix idéal pour les personnes ayant des besoins de mobilité spécifiques.
 									<br>Optez pour le Fun 2 Go de Van Raam et profitez d'une solution de mobilité pratique pour vos sorties à deux.</p>
-								<a href="#">
+								<a href="{{ path('product_show_no_utilisation', {'category_slug': 'tricycles-vanraam', 'utilisation_slug': 'tricycles-vanraam-tandem', 'slug': 'tricycle-tandem-fun2go','id': 35}) }}">
 									<div class="btn btn-primary btn-lg">Voir le produit</div>
 								</a>
 							</div>
@@ -138,19 +138,19 @@
 		</a>
 	</div>
 </div>
-{# </divs> #}
+{# </div> #}
 <div
 	class="container-xl">
 
 	{# a propos #}
 	<div class="a_propos">
 		<div class="row">
-			<div class="col-12">
+			<div class="col-12 text-center text-md-left">
 				<h1>À propos de Marconnet technologies™</h1>
 			</div>
 		</div>
 		<div class="row">
-			<div class="col-12">
+			<div class="col-12 text-center text-md-left">
 				<p>Marconnet technologies™ est spécialisée dans la mobilité et unique sur le marché depuis plus de 18 ans.</p>
 				<p>Nous commercialisons des matériels pour améliorer le déplacement des gens en perte de mobilité.</p>
 			</div>
@@ -179,8 +179,10 @@
 			</div>
 			<div class="row">
 				<div class="col-12 d-flex justify-content-center">
-					<button class="btn btn-primary btn-lg btn-block d-none d-md-block" type="button">En savoir plus sur Marconnet technologies™</button>
-					<button class="btn btn-primary btn-sm btn-block d-md-none" type="button">En savoir plus sur Marconnet technologies™</button>
+					{# <button class="btn btn-primary btn-lg btn-block d-none d-md-block" type="button">En savoir plus sur Marconnet technologies™</button>
+					<button class="btn btn-primary btn-sm btn-block d-md-none" type="button">En savoir plus sur Marconnet tefffchnologies™</button> #}
+					<a class="btn btn-primary btn-lg btn-block d-none d-md-block" href="{{path("about")}}">En savoir plus sur Marconnet technologies™</a>
+					<a class="btn btn-primary btn-sm btn-block d-md-none" href="{{path("about")}}">En savoir plus sur Marconnet technologies™</a>					
 				</div>
 			</div>
 		</div>
@@ -192,12 +194,15 @@
 		<div class="col-lg-6 mx-auto">
 			<p class="mb-4">Assurez-vous que le matériel soit parfaitement adapté à vous en essayant nos produits. Vous pouvez venir au showroom, ou alors, c'est le showroom qui viendra à vous.</p>
 			{# <div class="d-grid gap-2 d-sm-flex justify-content-sm-center">
-																					                <a class="btn btn-primary btn-lg px-4 gap-3" href="{{path('demonstration')}}">Je souhaite tester le matériel</a>
-																					            </div> #}
+				<a class="btn btn-primary btn-lg px-4 gap-3" href="{{path('demonstration')}}">Je souhaite tester le matériel</a>
+			</div> #}
 
-			<div class="d-grid gap-2 d-sm-flex justify-content-sm-center">
-				<button class="btn btn-primary btn-lg btn-block d-none d-md-block" type="button">Je souhaite tester le matériel</button>
-				<button class="btn btn-primary btn-sm btn-block d-md-none" type="button">Je souhaite tester le matériel</button>
+			<div class="col-12 d-flex justify-content-center">
+				{# <button class="btn btn-primary btn-lg btn-block d-none d-md-block" type="button">Je souhaite tester le matériel</button>
+				<button class="btn btn-primary btn-sm btn-block d-md-none" type="button">Je souhaite tester le matériel</button> #}
+				<a class="btn btn-primary btn-lg btn-block d-none d-md-block" href="{{path("demonstration")}}">Je souhaite tester le matériel</a>
+				<a class="btn btn-primary btn-sm btn-block d-md-none" href="{{path("demonstration")}}">Je souhaite tester le matériel</a>
+
 			</div>
 		</div>
 	</div>
@@ -219,76 +224,79 @@
 				</div>
 			</div>
 			<div class="partners">
+			<h2>Les établissements de santé</h2>
 				<div class="row h-100">
-					{% include "shared/_home_etab_sante.html.twig" with {
-					'nom' : 'DomusVi',
-					'cat' : 'Établissement de santé',
-					'souscat' : 'EHPAD',
-					'image' : asset('images/revend/domusvi.png'),
-					'website' : 'https://www.domusvi.com/'
-				} %}
+						{% include "shared/_card_confiance.html.twig" with {
+						'nom' : 'DomusVi',
+						'image' : asset('images/revend/domusvi.png'),
+						'website' : 'https://www.domusvi.com/'
+					} %}
 
-					{% include "shared/_home_etab_sante.html.twig" with {
-					'nom' : 'Korian',
-					'cat' : 'Établissement de santé',
-					'souscat' : 'EHPAD',
-					'image' : asset('images/revend/korian.png'),
-					'website' : 'https://www.korian.fr/'
-				} %}
+						{% include "shared/_card_confiance.html.twig" with {
+						'nom' : 'Korian',
+						'image' : asset('images/revend/korian.png'),
+						'website' : 'https://www.korian.fr/'
+					} %}
 
-					{% include "shared/_home_etab_sante.html.twig" with {
-					'nom' : 'Orpea',
-					'cat' : 'Établissement de santé',
-					'souscat' : 'EHPAD',
-					'image' : asset('images/revend/orpea.png'),
-					'website' : 'https://www.orpea-groupe.com/'
-				} %}
+						{% include "shared/_card_confiance.html.twig" with {
+						'nom' : 'Orpea',
+						'image' : asset('images/revend/orpea.png'),
+						'website' : 'https://www.orpea-groupe.com/'
+					} %}
 
-					{% include "shared/_home_etab_sante.html.twig" with {
-					'nom' : 'Adapei',
-					'cat' : 'Établissement de santé',
-					'souscat' : 'FAM/MAS',
-					'image' : asset('images/revend/adapei.png'),
-					'website' : 'https://www.adapei72.asso.fr/'
-				} %}
+						{% include "shared/_card_confiance.html.twig" with {
+						'nom' : 'Adapei',
+						'image' : asset('images/revend/adapei.png'),
+						'website' : 'https://www.adapei72.asso.fr/'
+					} %}
 
-					{% include "shared/_home_etab_sante.html.twig" with {
-					'nom' : 'Perce-Neige',
-					'cat' : 'Établissement de santé',
-					'souscat' : 'FAM/MAS',
-					'image' : asset('images/revend/perce-neige2.png'),
-					'website' : 'https://www.perce-neige.org/'
-				} %}
+						{% include "shared/_card_confiance.html.twig" with {
+						'nom' : 'Perce-Neige',
+						'image' : asset('images/revend/perce-neige2.png'),
+						'website' : 'https://www.perce-neige.org/'
+					} %}
+						
+						{% include "shared/_card_confiance.html.twig" with {
+						'nom' : 'Fondation Anais',
+						'image' : asset('images/revend/fondation-anais.jpg'),
+						'website' : 'https://www.fondation-anais.org//'
+					} %}
+					
+				</div>
 
-					{% include "shared/_home_revendeur.html.twig" with {
+				<h2>Les prestataires de santé</h2>
+				<div class="row h-100">
+					{% include "shared/_card_confiance.html.twig" with {
 					'nom' : 'Bastide',
-					'cat' : 'Prestataire de santé',
 					'image' : asset('images/revend/bastide.png'),
 					'website' : 'https://www.bastideleconfortmedical.com/'
 				} %}
 
-					{% include "shared/_home_revendeur.html.twig" with {
+					{% include "shared/_card_confiance.html.twig" with {
 					'nom' : 'Harmonie Médical Service',
-					'cat' : 'Prestataire de santé',
 					'image' : asset('images/revend/hms.png'),
 					'website' : 'https://www.harmonie-medical-service.fr/'
 				} %}
 
-					{% include "shared/_home_revendeur.html.twig" with {
+					{% include "shared/_card_confiance.html.twig" with {
 					'nom' : 'Oxypharm',
-					'cat' : 'Prestataire de santé',
 					'image' : asset('images/revend/oxypharm.png'),
 					'website' : 'https://www.vitadomia.com/'
 				} %}
 
-					{% include "shared/_home_revendeur.html.twig" with {
+					{% include "shared/_card_confiance.html.twig" with {
 					'nom' : 'Paramat',
-					'cat' : 'Prestataire de santé',
 					'image' : asset('images/revend/paramat.png'),
 					'website' : 'https://www.paramat.com/'
 				} %}
+				{% include "shared/_card_confiance.html.twig" with {
+					'nom' : 'La Vitrine Médicale',
+					'image' : asset('images/revend/vitrine-med.png'),
+					'website' : 'https://www.lavitrinemedicale-lpa.fr//'
+				} %}
 
 				</div>
+
 			</div>
 
 		</div>
@@ -309,7 +317,12 @@
 						{{ form_start(newsletterForm, { 'attr': { 'class': 'input-group flex-nowrap mb-3' } }) }}
 						<span class="input-group-text " id="basic-addon1">@</span>
 						{{ form_widget(newsletterForm.email, { 'attr': { 'class': 'form-control h-100', 'placeholder': 'Votre email', 'aria-label': 'Username', 'aria-describedby': 'basic-addon1' } }) }}
-						<button class="btn btn-primary btn-lg" type="submit">Je m'inscris</button>
+						{# <button class="btn btn-primary btn-lg" type="submit">Je m'inscris</button> #}
+
+						<button class="btn btn-primary btn-lg d-none d-lg-block" type="submit">Je m'inscris</button>
+						<button class="btn btn-primary btn-sm d-lg-none" type="submit">Je m'inscris</button>
+						{# on utilise 2 boutons pour le responsive du bouton, la taille du bouton s'adapte à la taille de l'écran #}
+
 						{{ form_end(newsletterForm) }}
 
 					</div>
@@ -317,5 +330,4 @@
 			</div>
 		</div>
 	</div>
-
 {% endblock %}

@@ -137,7 +137,12 @@
 			</p>
 			<p>
 				<strong>Libelle de l'utilisation du produit :</strong>
-				{{ produit.utilisation.libelle }}</p>
+				{% if produit.utilisation.libelle is defined %}
+					{{ produit.utilisation.libelle }}
+				{% else %}
+					non définie
+				{% endif %}
+			</p>
 			<p>
 				<a href="{{ path('app_admin_crud_produit_show', {'id': produit.id}) }}">show</a>
 				<a href="{{ path('app_admin_crud_produit_edit', {'id': produit.id}) }}">edit</a>

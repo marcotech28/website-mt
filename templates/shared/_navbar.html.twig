@@ -1,6 +1,6 @@
 {# partie admin #}
-{% if app.user %}
-	<nav class="navbar navbar-expand-lg navbar-admin" style="padding: 0 !important;">
+{% if is_granted('ROLE_ADMIN') %}
+	<nav class="navbar navbar-expand-lg navbar-admin d-none d-lg-block" style="padding: 0 !important;">
 		<div class="container-xl">
 			<button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarbottom-toggler">
 				<span class="navbar-toggler-icon"></span>
@@ -146,7 +146,7 @@
 				{% for c in categorieRepository.findAll() %}
 					{% if c.utilisations is empty %}
 						<li class="nav-item dropdown w-100 nav-link-bordure-gauche majuscule text-center d-flex align-items-center">
-							<a class="nav-link majuscule w-100 h-100 d-flex align-items-center justify-content-center" href="{{ path('app_categorie', {'slug': c.slug}) }}">
+							<a class="nav-link majuscule w-100 h-100 d-flex align-items-center justify-content-center" href="{{ path('app_categorie', {'slug': c.slug }) }}">
 								{{ c.libelle }}
 							</a>
 						</li>

@@ -15,6 +15,7 @@ class NewsType extends AbstractType
     {
         $builder
             ->add('titre')
+            ->add('sousTitre')
             ->add('content', CKEditorType::class)
             ->add('date')
             ->add('auteur')
