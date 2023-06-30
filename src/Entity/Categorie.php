@@ -34,6 +34,9 @@ class Categorie
     #[ORM\OneToMany(mappedBy: 'categorie', targetEntity: Utilisation::class)]
     private Collection $utilisations;
 
+    #[ORM\Column]
+    private ?int $rang = null;
+
     public function __construct()
     {
         $this->produits = new ArrayCollection();
@@ -149,6 +152,18 @@ class Categorie
                 $utilisation->setCategorie(null);
             }
         }
+        return $this;
+    }
+
+    public function getRang(): ?int
+    {
+        return $this->rang;
+    }
+
+    public function setRang(int $rang): self
+    {
+        $this->rang = $rang;
+
         return $this;
     }
 }

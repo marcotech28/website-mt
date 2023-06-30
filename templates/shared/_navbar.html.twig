@@ -15,7 +15,7 @@
 					</li>
 
 					<li class="nav-item w-100 majuscule house">
-						<a href="{{path("app_news")}}" class="nav-link mb-2 mb-lg-0">
+						<a href="{{path("app_admin_crud_news_index")}}" class="nav-link mb-2 mb-lg-0">
 							ACTU
 						</a>
 					</li>
@@ -76,7 +76,7 @@
 						<i class="fa-solid fa-phone" style="color: white"></i>
 					</div>
 					<div class="col-auto">
-						<a href="tel:+33245260170" class="nav-link">02 45 26 01 70</a>
+						<a href="tel:+33245260170" class="nav-link telephone">02 45 26 01 70</a>
 					</div>
 				</div>
 			</div>
@@ -126,7 +126,7 @@
 </nav>
 
 {# navbar bottom #}
-<nav class="navbar navbar-expand-lg navbar-bottom" style="padding: 0 !important;">
+<nav class="navbar navbar-expand-lg navbar-bottom sticky-top" style="padding: 0 !important;">
 	<div class="container-xl">
 		<button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarbottom-toggler">
 			<span class="navbar-toggler-icon"></span>
@@ -143,7 +143,9 @@
 				</li>
 
 				{# Catégories #}
-				{% for c in categorieRepository.findAll() %}
+				{# On boucle sur les catégories par ordre descroissant sur l'attribut rang #}
+				{% for c in categorieRepository.findBy([], {'rang': 'DESC'}) %}
+
 					{% if c.utilisations is empty %}
 						<li class="nav-item dropdown w-100 nav-link-bordure-gauche majuscule text-center d-flex align-items-center">
 							<a class="nav-link majuscule w-100 h-100 d-flex align-items-center justify-content-center" href="{{ path('app_categorie', {'slug': c.slug }) }}">

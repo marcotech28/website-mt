@@ -19,7 +19,9 @@ class CategorieType extends AbstractType
                 'required' => false, // pour autoriser l'envoi de formulaire sans la fiche descriptive
                 'mapped' => false, // pour éviter que le champ ne soit mappé sur un attribut de l'entité
             ])
-            ->add('slug');
+            ->add('slug')
+            ->add('description')
+            ->add('rang');
     }
 
     public function configureOptions(OptionsResolver $resolver): void

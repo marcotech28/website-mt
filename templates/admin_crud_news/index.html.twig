@@ -1,0 +1,48 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Gestionnaire des actualités
+{% endblock %}
+
+{% block body %}
+	<div class="container-xl">
+		<h1>Gestionnaire des actualités</h1>
+		<p>En raison de sa taille, le contenu des actualités ne peut être affiché dans le tableau. Pour découvrir le contenu des actualités, veuillez cliquer sur "show" dans la colonne "actions".</p>
+
+		<a href="{{ path('app_admin_crud_news_new') }}">Créer une nouvelle actualité</a>
+
+		<table class="table">
+			<thead>
+				<tr>
+					<th>Id</th>
+					<th>Titre</th>
+					{# <th>Content</th> #}
+					<th>Date</th>
+					<th>Auteur</th>
+					<th>SousTitre</th>
+					<th>actions</th>
+				</tr>
+			</thead>
+			<tbody>
+				{% for news in news %}
+					<tr>
+						<td>{{ news.id }}</td>
+						<td>{{ news.titre }}</td>
+						{# <td>{{ news.content }}</td> #}
+						<td>{{ news.date ? news.date|date('Y-m-d') : '' }}</td>
+						<td>{{ news.auteur }}</td>
+						<td>{{ news.sousTitre }}</td>
+						<td>
+							<a href="{{ path('app_admin_crud_news_show', {'id': news.id}) }}">show</a>
+							<a href="{{ path('app_admin_crud_news_edit', {'id': news.id}) }}">edit</a>
+						</td>
+					</tr>
+				{% else %}
+					<tr>
+						<td colspan="7">no records found</td>
+					</tr>
+				{% endfor %}
+			</tbody>
+		</table>
+
+	</div>
+{% endblock %}

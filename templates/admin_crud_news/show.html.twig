@@ -1,0 +1,48 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}News
+{% endblock %}
+
+{% block body %}
+
+	<div class="container-xl">
+		<h1>News</h1>
+
+		<p>En raison de sa taille, le contenu des actualités ne peut être affiché dans le tableau. Pour découvrir le contenu des actualités, veuillez cliquer sur "edit" dans la colonne "actions".</p>
+
+
+		<table class="table">
+			<tbody>
+				<tr>
+					<th>Id</th>
+					<td>{{ news.id }}</td>
+				</tr>
+				<tr>
+					<th>Titre</th>
+					<td>{{ news.titre }}</td>
+				</tr>
+				<tr>{# <th>Content</th> #}
+					{# <td>{{ news.content }}</td> #}
+				</tr>
+				<tr>
+					<th>Date</th>
+					<td>{{ news.date ? news.date|date('Y-m-d') : '' }}</td>
+				</tr>
+				<tr>
+					<th>Auteur</th>
+					<td>{{ news.auteur }}</td>
+				</tr>
+				<tr>
+					<th>SousTitre</th>
+					<td>{{ news.sousTitre }}</td>
+				</tr>
+			</tbody>
+		</table>
+
+		<a href="{{ path('app_admin_crud_news_index') }}">back to list</a>
+
+		<a href="{{ path('app_admin_crud_news_edit', {'id': news.id}) }}">edit</a>
+
+		{{ include('admin_crud_news/_delete_form.html.twig') }}
+	</div>
+{% endblock %}

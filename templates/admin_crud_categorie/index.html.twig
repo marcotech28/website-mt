@@ -1,12 +1,12 @@
 {% extends 'base.html.twig' %}
 
-{% block title %}Liste des catégories
+{% block title %}Gestionnaire des catégories
 {% endblock %}
 
 {% block body %}
 
 	<div class="container-xl">
-		<h1>Liste des catégories</h1>
+		<h1>Gestionnaire des catégories</h1>
 
 		<a href="{{ path('app_admin_crud_categorie_new') }}">Créer une nouvelle catégorie</a>
 		<p><br></p>
@@ -31,6 +31,14 @@
 					<p>
 						<strong>Slug :</strong>
 						{{ categorie.slug }}
+					</p>
+					<p>
+						<strong>Description :</strong>
+						{{ categorie.description }}
+					</p>
+					<p>
+						<strong>Rang :</strong>
+						{{ categorie.rang }}
 					</p>
 					<p>
 						<a href="{{ path('app_admin_crud_categorie_show', {'id': categorie.id}) }}">show</a>

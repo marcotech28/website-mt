@@ -206,7 +206,7 @@ class ContactFormType extends AbstractType
                 ],
                 'choices' => [
                     'Demande de devis' => 'devis',
-                    'Demande de renseignement' => 'renseignement'
+                    'Demande de renseignements' => 'renseignement'
                 ],
                 'placeholder' => 'Objet',
             ])

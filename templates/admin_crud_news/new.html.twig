@@ -1,0 +1,15 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}New News
+{% endblock %}
+
+{% block body %}
+	<div class="container-xl">
+		<h1>Create new News</h1>
+
+		{{ include('admin_crud_news/_form.html.twig') }}
+
+		<a href="{{ path('app_admin_crud_news_index') }}">back to list</a>
+
+	</div>
+{% endblock %}

@@ -34,7 +34,7 @@ class AdminCrudMarqueController extends AbstractController
         if ($form->isSubmitted() && $form->isValid()) {
 
             self::handlePDFUpload($marque, $form, $entityManager);
-            self::handleImageUpload($marque, $form, $entityManager);
+            // self::handleImageUpload($marque, $form, $entityManager);
 
             $entityManager->persist($marque);
             $entityManager->flush();
@@ -65,7 +65,7 @@ class AdminCrudMarqueController extends AbstractController
         if ($form->isSubmitted() && $form->isValid()) {
 
             self::handlePDFUpload($marque, $form, $entityManager);
-            self::handleImageUpload($marque, $form, $entityManager);
+            // self::handleImageUpload($marque, $form, $entityManager);
 
 
             $entityManager->flush();
@@ -120,16 +120,16 @@ class AdminCrudMarqueController extends AbstractController
     }
 
 
-    public function handleImageUpload(Marque $marque, FormInterface $form, EntityManagerInterface $entityManager)
-    {
-        $logo = $form->get('logo')->getData();
+    // public function handleImageUpload(Marque $marque, FormInterface $form, EntityManagerInterface $entityManager)
+    // {
+    //     $logo = $form->get('logo')->getData();
 
-        if ($logo) {
-            // récupération du nom d'origine du fichier + son extension
-            $originalLogo = pathinfo($logo->getClientOriginalName(), PATHINFO_BASENAME);
+    //     if ($logo) {
+    //         // récupération du nom d'origine du fichier + son extension
+    //         $originalLogo = pathinfo($logo->getClientOriginalName(), PATHINFO_BASENAME);
 
-            // On met à jour l'emplacement de l'image dans l'entité Produit
-            $marque->setLogo($originalLogo);
-        }
-    }
+    //         // On met à jour l'emplacement de l'image dans l'entité Produit
+    //         $marque->setLogo($originalLogo);
+    //     }
+    // }
 }

@@ -88,7 +88,7 @@ body {
 }
 
 .nav-item a,
-.nav-link {
+.telephone {
     color: white;
     font-size: 12px;
 }
@@ -1075,21 +1075,34 @@ a:hover.contact-telephone {
 
 /* -- ACTUALITÉS -- */
 
+.actu{
+    padding: 50px 0;
+}
+
+.actualites h2 a {
+    text-decoration: none;
+    color: #168896 ;
+}
+
+.actualites h2 a:hover {
+    text-decoration: underline;
+    color: #0F434E ;
+}
+
+
 .auteur {
     font-weight: 400 !important;
     text-decoration: underline;
-    padding-bottom: 40px;
+    padding: 20px 0;
 }
 
 .date {
     font-style: italic;
     font-size: 1rem;
+    padding-top: 20px;
 }
 
-.img-actu {
-    max-width: 100%;
-    height: auto;
-}
+
 
 
 /* -- CATEGORIE -- */
@@ -1398,7 +1411,7 @@ a:hover.contact-telephone {
 
 @media only screen and (max-width: 992px) {
 
-    iframe {
+    .googlemaps iframe {
         display: none;
     }
 }
@@ -1465,5 +1478,23 @@ a:hover.contact-telephone {
 @media only screen and (max-width: 1425PX) {
     .lottie-tricycle {
         height: 390px;
+    }
+}
+
+/* FICHE PRODUIT */
+
+@media only screen and (max-width: 992px) {
+
+    .video iframe {
+        width: 310px;
+        height: 175px;
+    }
+}
+
+@media only screen and (max-width: 370px) {
+
+    .video iframe {
+        width: 222px;
+        height: 125px;
     }
 }

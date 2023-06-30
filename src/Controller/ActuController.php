@@ -13,10 +13,23 @@ class ActuController extends AbstractController
     public function index(NewsRepository $newsRepository): Response
     {
 
-        $listNews = $newsRepository->findAll();
+        $listNews = $newsRepository->findBy([], ['date' => 'DESC']); // Tri par date décroissante
 
         return $this->render('actu/actu.html.twig', [
             'listNews' => $listNews
+        ]);
+    }
+
+    #[Route('/actualites/{id}', name: 'app_actu_show')]
+    public function show(NewsRepository $newsRepository, $id): Response
+    {
+
+        $news = $newsRepository->findOneBy([
+            'id' => $id
+        ]);
+
+        return $this->render('actu/show.html.twig', [
+            'news' => $news
         ]);
     }
 }

@@ -42,6 +42,7 @@ class ProduitType extends AbstractType
                 }
             ])
             ->add('utilisation', EntityType::class, [
+                'required' => false,
                 'label' => 'Utilisation',
                 'placeholder' => '-- Choisir un type d\'utilisation --',
                 'class' => Utilisation::class,
