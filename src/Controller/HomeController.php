@@ -2,8 +2,11 @@
 
 namespace App\Controller;
 
+use App\Data\SearchData;
 use App\Entity\Produit;
 use App\Form\NewsletterType;
+use App\Form\SearchForm;
+use App\Repository\ProduitRepository;
 use Symfony\Component\Mime\Email;
 use Doctrine\ORM\EntityManagerInterface;
 use Symfony\Component\HttpFoundation\Request;
@@ -15,7 +18,7 @@ use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 class HomeController extends AbstractController
 {
     #[Route('/', name: 'homepage')]
-    public function homepage(Request $request, MailerInterface $mailer, EntityManagerInterface $em)
+    public function homepage(Request $request, MailerInterface $mailer, EntityManagerInterface $em, ProduitRepository $produitRepository)
     {
         $produitRepository = $em->getRepository(Produit::class);
 
@@ -43,9 +46,31 @@ class HomeController extends AbstractController
             return $this->redirectToRoute('homepage');
         }
 
+
+        //barre de recherche
+        $data = new SearchData();
+        $formSearch = $this->createForm(SearchForm::class, $data);
+        $formSearch->handleRequest($request);
+        $products = $produitRepository->findSearch($data);
+
+        if ($formSearch->isSubmitted() && $formSearch->isValid()) {
+
+            $productsFilter = $produitRepository->findSearch($data);
+
+            return $this->render('search/search.html.twig', [
+                'formSearch' => $formSearch->createView(),
+                'productsFilter' => $productsFilter,
+
+            ]);
+        }
+
+
+
         return $this->render('home.html.twig', [
             'newsletterForm' => $form->createView(),
-            'tabProduits' => $tableauProduits
+            'tabProduits' => $tableauProduits,
+            'products' => $products,
+            'formSearch' => $formSearch->createView()
         ]);
     }
 }

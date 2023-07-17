@@ -78,6 +78,28 @@ body {
 
 /* -- NAVBAR --  */
 
+.searchBar {
+    width: 150px;
+    margin-bottom: 0 !important;
+    color: white;
+    background-color: rgba(255, 255, 255, 0);
+    border: none !important;
+    margin-left: 15px !important;
+}
+.searchBar::placeholder {
+    color: white; /* Couleur du placeholder */
+
+}
+.searchBar:focus {
+    width: 150px;
+    margin-bottom: 0 !important;
+    color: white;
+    background-color: rgba(255, 255, 255, 0);
+    border: noredne !important;
+    margin-left: 15px !important;
+}
+
+
 .dropdown-item .navbar a:hover {
     text-decoration: underline;
     color: white;
@@ -117,7 +139,7 @@ body {
     color: white;
     text-align: center;
     margin: 0 !important;
-    padding: 15px 0;
+    padding: 20px 0;
 }
 
 .navbar-bottom .nav-link:hover {
