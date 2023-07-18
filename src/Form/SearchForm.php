@@ -18,8 +18,9 @@ class SearchForm extends AbstractType
                 'label' => false,
                 'required' => false,
                 'attr' => [
-                    'placeholder' => 'Rechercher...',
-                    'class' => 'form-control searchBar'
+                    'placeholder' => 'Rechercher',
+                    'class' => 'form-control searchBar',
+                    'style' => 'font-size: 12px; text-transform: uppercase;'
                 ]
             ]);
     }
