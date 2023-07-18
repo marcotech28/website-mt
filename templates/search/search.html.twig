@@ -2,11 +2,15 @@
 
 {% block body %}
 	<div class="container-xl">
-		<h1>Résultat de la recherche</h1>
+		<h1>Résultat de la recherche pour "{{searchTerm}}"</h1>
 		<div class="row">
 			{% if productsFilter is empty %}
 				<div class="alert alert-warning">
 					Aucun produit trouvé.
+				</div>
+			{% elseif nbProdTotal ==  productsFilter|length %}
+				<div class="alert alert-warning">
+					Veuillez entrer un terme de recherche dans la barre de recherche.
 				</div>
 			{% else %}
 				{% for p in productsFilter %}

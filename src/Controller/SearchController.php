@@ -20,6 +20,7 @@ class SearchController extends AbstractController
         $formSearch = $this->createForm(SearchForm::class, $data);
         $formSearch->handleRequest($request);
         $products = $produitRepository->findSearch($data);
+        $nbProduitsTotal = $produitRepository->count([]);
 
         if ($formSearch->isSubmitted() && $formSearch->isValid()) {
             $productsFilter = $produitRepository->findSearch($data);
@@ -27,6 +28,8 @@ class SearchController extends AbstractController
             return $this->render('search/search.html.twig', [
                 'formSearch' => $formSearch->createView(),
                 'productsFilter' => $productsFilter,
+                'nbProdTotal' => $nbProduitsTotal,
+                'searchTerm' => $data->q,  // passez la chaîne de recherche à la vue
             ]);
         }
 
