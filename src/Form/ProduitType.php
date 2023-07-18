@@ -11,6 +11,7 @@ use Symfony\Component\Form\FormBuilderInterface;
 use Symfony\Bridge\Doctrine\Form\Type\EntityType;
 use Symfony\Component\OptionsResolver\OptionsResolver;
 use Symfony\Component\Form\Extension\Core\Type\FileType;
+use Symfony\Component\Form\Extension\Core\Type\MoneyType;
 
 class ProduitType extends AbstractType
 {
@@ -21,6 +22,7 @@ class ProduitType extends AbstractType
 
         $builder
             ->add('nom')
+            ->add('prix')
             ->add('description')
             ->add('shortDescription')
             ->add('avantages')

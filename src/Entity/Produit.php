@@ -65,6 +65,9 @@ class Produit
     #[ORM\Column(type: Types::TEXT, nullable: true)]
     private ?string $image5 = null;
 
+    #[ORM\Column(type: Types::DECIMAL, precision: 8, scale: 2)]
+    private ?string $prix = null;
+
     public function getId(): ?int
     {
         return $this->id;
@@ -288,6 +291,18 @@ class Produit
     public function setImage5(?string $image5): self
     {
         $this->image5 = $image5;
+
+        return $this;
+    }
+
+    public function getPrix(): ?string
+    {
+        return $this->prix;
+    }
+
+    public function setPrix(string $prix): self
+    {
+        $this->prix = $prix;
 
         return $this;
     }

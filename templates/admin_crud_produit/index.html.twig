@@ -1,63 +1,3 @@
-{# {% extends 'base.html.twig' %}
-
-{% block title %}Produit index
-{% endblock %}
-
-{% block body %}
-
-	<div class="container-xxl">
-		<h1>Liste de nos produits</h1>
-
-		<div class="fix-width">
-			<table class="table table-striped">
-				<thead>
-					<tr>
-						<th>Id</th>
-						<th>Description</th>
-						<th>Nom</th>
-						<th>ShortDescription</th>
-						<th>Video1</th>
-						<th>Video2</th>
-						<th>FicheDescriptive</th>
-						<th>Caracteristiques</th>
-						<th>Slug</th>
-						<th>Catégorie</th>
-						<th>Utilisation</th>
-						<th>actions</th>
-					</tr>
-				</thead>
-				<tbody>
-					{% for produit in produits %}
-						<tr>
-							<td>{{ produit.id }}</td>
-							<td>{{ produit.description }}</td>
-							<td>{{ produit.nom }}</td>
-							<td>{{ produit.shortDescription }}</td>
-							<td>{{ produit.video1 }}</td>
-							<td>{{ produit.video2 }}</td>
-							<td>{{ produit.ficheDescriptive }}</td>
-							<td>{{ produit.caracteristiques }}</td>
-							<td>{{ produit.slug }}</td>
-							<td>{{ produit.categorie.libelle }}</td>
-							<td>{{ produit.utilisation.libelle }}</td>
-							<td>
-								<a href="{{ path('app_admin_crud_produit_show', {'id': produit.id}) }}">show</a>
-								<a href="{{ path('app_admin_crud_produit_edit', {'id': produit.id}) }}">edit</a>
-							</td>
-						</tr>
-					{% else %}
-						<tr>
-							<td colspan="10">no records found</td>
-						</tr>
-					{% endfor %}
-				</tbody>
-			</table>
-		</div>
-		<a href="{{ path('app_admin_crud_produit_new') }}">Create new</a>
-	</div>
-{% endblock %} #}
-
-
 {% extends 'base.html.twig' %}
 
 {% block title %}Produit index
@@ -82,6 +22,10 @@
 			<p>
 				<strong>Nom :</strong>
 				{{ produit.nom }}
+			</p>
+			<p>
+				<strong>Prix :</strong>
+				{{ produit.prix }}€ HT
 			</p>
 			<p>
 				<strong>Slug :</strong>

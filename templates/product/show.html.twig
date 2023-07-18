@@ -18,11 +18,10 @@
 						<li class="breadcrumb-item">
 							<a href="{{ path('app_categorie', {'slug': produit.categorie.slug}) }} ">{{produit.categorie.libelle}}</a>
 						</li>
-						{# <li class="breadcrumb-item"> #}
-						{# <a href="{{ path('app_utilisation', {'category_slug': produit.categorie.slug, 'utilisation_slug': produit.utilisation.slug}) }} ">{{produit.utilisation.libelle}}</a> #}
-						{# </li> #}
-							{% if produit.utilisation is not null %}
-								<li class="breadcrumb-item"> <a href="{{ path('app_utilisation', {'category_slug': produit.categorie.slug, 'utilisation_slug': produit.utilisation.slug}) }}">
+
+						{% if produit.utilisation is not null %}
+							<li class="breadcrumb-item">
+								<a href="{{ path('app_utilisation', {'category_slug': produit.categorie.slug, 'utilisation_slug': produit.utilisation.slug}) }}">
 									{{ produit.utilisation.libelle }}
 								</a>
 							</li>
@@ -35,6 +34,9 @@
 
 		<div class="intro-produit">
 			<h1>{{produit.nom}}</h1>
+			{% if app.user %}
+				<h2>{{produit.prix}}€ HT</h2>
+			{% endif %}
 			<h5>
 				<span class="badge bg-primary">{{produit.marque.libelle}}</span>
 			</h5>
