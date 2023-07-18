@@ -1,12 +1,35 @@
-# Marconnet-Technologies-Website
-Marconnet technologies™'s website.
+# README - Projet Symfony
 
-pb: justify-content-between mettre les élements de facon homogene sur toute la largeur du containeur
+## Prérequis
 
-align-items-center pour centrer verticalement les éléments dans une rangée
+Assurez-vous d'avoir installé les éléments suivants avant de commencer :
 
-col-md-8 col-12 : 8 de largeur en médium et plus, et prend toute la largeur en dessous de médium
+- [Git](https://git-scm.com/)
+- [Composer](https://getcomposer.org/)
+- [PHP](https://www.php.net/)
+- [MySQL](https://www.mysql.com/)
 
-d-none d-sm none d-md-block : on supprime la colonne sur petit écran
+## Installation
 
-symfony.exe server:ca:install
+1. Clonez le dépôt Git :
+
+```bash
+git clone https://github.com/37anton/Marconnet-Technologies-Website.git)https://github.com/37anton/Marconnet-Technologies-Website.git
+
+2. Installez les dépendances via Composer :
+
+```bash
+composer install
+
+3. Configuration de la base de données :
+
+```bash
+php bin/console doctrine:database:create
+php bin/console make:migration
+php bin/console doctrine:migrations:migrate
+
+
+4. Exécution du serveur Symfony
+
+```bash
+symfony serve
