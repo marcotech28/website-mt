@@ -188,10 +188,15 @@
 					<a href="#" class="nav-link mb-2 mb-lg-0 w-100 h-100 d-flex align-items-center justify-content-center">Autres</a>
 				</li>
 				<li class="d-flex align-items-center nav-link-bordure-gauche">
-					{{ form_start(formSearch) }}
-					{{ form_end(formSearch) }}
-				</li>
-			</ul>
-		</div>
-	</div>
-</nav>
+					{# {{ form_start(formSearch) }} #}
+					{# {{ form_end(formSearch) }} #}
+					{# {{ form(search_form()) }} #}
+					{{ form_start(search_form(), {'action': path('search')}) }}
+					{# {{ form_widget(search_form()) }} #}
+					{# <button type="submit" class="btn btn-primary"> Rechercher</button> #}
+				{{ form_end(search_form()) }}
+
+			</li>
+		</li>
+	</ul>
+</div></div></nav>

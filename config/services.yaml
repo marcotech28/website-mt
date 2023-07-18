@@ -7,6 +7,10 @@ services:
     autowire: true
     autoconfigure: true
 
+  App\Twig\AppExtension:
+    tags:
+      - { name: twig.extension }
+
   App\:
     resource: "../src/*"
     exclude:
