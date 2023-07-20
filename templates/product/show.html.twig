@@ -4,6 +4,14 @@
 	{{produit.nom}}
 {% endblock %}
 
+
+{% block meta %}
+	{% if produit.metaDesc is not null %}
+		<meta name="description" content="{{ produit.metaDesc }}">
+	{% endif %}
+{% endblock %}
+
+
 {% block body %}
 
 	<div class="container-xl">
@@ -85,7 +93,7 @@
 
 
 		<div class="avantages" id="avantages">
-			<h1>Avantages</h1>
+			<h2>Avantages</h2>
 
 			{% set advantages = produit	.avantages|split(';') %}
 
@@ -99,14 +107,14 @@
 
 
 		<div class="description" id="description">
-			<h1>Description du produit</h1>
+			<h2>Description du produit</h2>
 			{% for description in produit.description|split(';') %}
 				<p>{{ description }}</p>
 			{% endfor %}
 		</div>
 
 		<div class="caracteristiques" id="caracteristiques">
-			<h1>Caractéristiques</h1>
+			<h2>Caractéristiques</h2>
 			<table class="table table-striped">
 				{% for caracteristique in produit.caracteristiques|split(';') %}
 					<p>
@@ -118,7 +126,7 @@
 
 
 		<div class="video" id="video">
-			<h1>Vidéos</h1>
+			<h2>Vidéos</h2>
 			<div class="row">
 				{% if produit.video1 %}
 					<div class="col-auto">

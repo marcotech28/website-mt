@@ -68,6 +68,9 @@ class Produit
     #[ORM\Column(type: Types::DECIMAL, precision: 8, scale: 2)]
     private ?string $prix = null;
 
+    #[ORM\Column(type: Types::TEXT, nullable: true)]
+    private ?string $metaDesc = null;
+
     public function getId(): ?int
     {
         return $this->id;
@@ -303,6 +306,18 @@ class Produit
     public function setPrix(string $prix): self
     {
         $this->prix = $prix;
+
+        return $this;
+    }
+
+    public function getMetaDesc(): ?string
+    {
+        return $this->metaDesc;
+    }
+
+    public function setMetaDesc(?string $metaDesc): self
+    {
+        $this->metaDesc = $metaDesc;
 
         return $this;
     }

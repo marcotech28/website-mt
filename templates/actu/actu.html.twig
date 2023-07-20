@@ -16,10 +16,10 @@
 
 		<div class="actualites">
 			{% for index, item in listNews %}
-				<h2>
+				<h1>
 					<a href="{{ path('app_actu_show', {'id' : item.id}) }}">{{ item.titre }}</a>
-				</h2>
-				<h3 style="padding: 0">{{ item.sousTitre }}</h3>
+				</h1>
+				<h4 style="padding: 0">{{ item.sousTitre }}</h4>
 				<p class="date">{{ item.date|date('Y-m-d') }}</p>
 				<p class="auteur">{{ item.auteur }}</p>
 				{% if index < listNews|length-1 and listNews[index+1] is defined %}
