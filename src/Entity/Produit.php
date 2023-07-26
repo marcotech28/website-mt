@@ -71,6 +71,9 @@ class Produit
     #[ORM\Column(type: Types::TEXT, nullable: true)]
     private ?string $metaDesc = null;
 
+    #[ORM\Column(type: Types::TEXT, nullable: true)]
+    private ?string $motsCles = null;
+
     public function getId(): ?int
     {
         return $this->id;
@@ -318,6 +321,18 @@ class Produit
     public function setMetaDesc(?string $metaDesc): self
     {
         $this->metaDesc = $metaDesc;
+
+        return $this;
+    }
+
+    public function getMotsCles(): ?string
+    {
+        return $this->motsCles;
+    }
+
+    public function setMotsCles(?string $motsCles): self
+    {
+        $this->motsCles = $motsCles;
 
         return $this;
     }

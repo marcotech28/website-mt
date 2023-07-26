@@ -46,14 +46,37 @@ class ProduitRepository extends ServiceEntityRepository
      */
     public function findSearch(SearchData $search): array
     {
+        // $query = $this
+        //     ->createQueryBuilder('produit')
+        //     ->select('produit');
+
+        // if (!empty($search->q)) {
+        //     $query = $query
+        //         ->andWhere('produit.nom LIKE :q')
+        //         ->setParameter('q', "%{$search->q}%");
+        // }
+
+        // $results = $query->getQuery()->getResult();
+
+        // return $results;
+
         $query = $this
             ->createQueryBuilder('produit')
             ->select('produit');
 
         if (!empty($search->q)) {
-            $query = $query
-                ->andWhere('produit.nom LIKE :q')
-                ->setParameter('q', "%{$search->q}%");
+            // On divise la chaîne de recherche en mots clés individuels
+            $keywords = explode(' ', $search->q);
+
+            // On construit une condition OR pour chaque mot clé
+            $orConditions = [];
+            foreach ($keywords as $index => $keyword) {
+                $orConditions[] = "produit.nom LIKE :q{$index} OR produit.motsCles LIKE :q{$index}";
+                $query->setParameter("q{$index}", "%{$keyword}%");
+            }
+
+            // On ajoute les conditions OR à la requête
+            $query = $query->andWhere(implode(' OR ', $orConditions));
         }
 
         $results = $query->getQuery()->getResult();
