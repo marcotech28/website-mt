@@ -20,12 +20,13 @@ class ActuController extends AbstractController
         ]);
     }
 
-    #[Route('/actualites/{id}', name: 'app_actu_show')]
-    public function show(NewsRepository $newsRepository, $id): Response
+    #[Route('/actualites/{titreSlug}/{id}', name: 'app_actu_show')]
+    public function show(NewsRepository $newsRepository, $id, $titreSlug): Response
     {
 
         $news = $newsRepository->findOneBy([
-            'id' => $id
+            'id' => $id,
+            'titreSlug' => $titreSlug
         ]);
 
         return $this->render('actu/show.html.twig', [

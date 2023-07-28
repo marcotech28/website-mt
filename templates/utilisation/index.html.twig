@@ -4,6 +4,12 @@
 	{{utilisation.libelle}}
 {% endblock %}
 
+{% block meta %}
+	{% if utilisation.metaDesc is not null %}
+		<meta name="description" content="{{ utilisation.metaDesc }}">
+	{% endif %}
+{% endblock %}
+
 {% block body %}
 
 	<div class="container-xl">
@@ -43,5 +49,13 @@
 			</div>
 		</div>
 	</div>
+
+	{% if utilisation.texteDeFin %}
+		<div class="container-fluid">
+			<div class="container-xl">
+				<p>{{ utilisation.texteDeFin|nl2br }}</p>
+			</div>
+		</div>
+	{% endif %}
 
 {% endblock %}

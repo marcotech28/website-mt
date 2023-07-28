@@ -21,6 +21,8 @@ class CategorieType extends AbstractType
             ])
             ->add('slug')
             ->add('description')
+            ->add('texteDeFin')
+            ->add('metaDesc')
             ->add('rang');
     }
 

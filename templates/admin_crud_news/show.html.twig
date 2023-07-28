@@ -21,8 +21,21 @@
 					<th>Titre</th>
 					<td>{{ news.titre }}</td>
 				</tr>
-				<tr>{# <th>Content</th> #}
-					{# <td>{{ news.content }}</td> #}
+				<tr>
+					<th>Slug du titre</th>
+					<td>{{ news.titreSlug }}</td>
+				</tr>
+				<tr>
+					<th>SousTitre</th>
+					<td>{{ news.sousTitre }}</td>
+				</tr>
+				<tr>
+					<th>Contenu</th>
+					<td>{{ news.contenu }}</td>
+				</tr>
+				<tr>
+					<th>Image</th>
+					<td>{{ news.image }}</td>
 				</tr>
 				<tr>
 					<th>Date</th>
@@ -33,9 +46,11 @@
 					<td>{{ news.auteur }}</td>
 				</tr>
 				<tr>
-					<th>SousTitre</th>
-					<td>{{ news.sousTitre }}</td>
+					<th>Meta description</th>
+					<td>{{ news.metaDesc }}</td>
 				</tr>
+
+
 			</tbody>
 		</table>
 

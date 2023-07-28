@@ -15,6 +15,7 @@
 					<th>Image</th>
 					<th>Slug</th>
 					<th>Categorie</th>
+					<th>Meta description</th>
 					<th>actions</th>
 				</tr>
 			</thead>
@@ -26,6 +27,7 @@
 						<td>{{ utilisation.image }}</td>
 						<td>{{ utilisation.slug }}</td>
 						<td>{{ utilisation.categorie.libelle }}</td>
+						<td>{{ utilisation.metaDesc }}</td>
 						<td>
 							<a href="{{ path('app_admin_crud_utilisation_show', {'id': utilisation.id}) }}">show</a>
 							<a href="{{ path('app_admin_crud_utilisation_edit', {'id': utilisation.id}) }}">edit</a>

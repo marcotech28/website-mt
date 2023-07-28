@@ -78,6 +78,10 @@ body {
 
 /* -- NAVBAR --  */
 
+.dropdown-header a{
+    color: #6c757d !important;
+}
+
 .searchBar {
     width: 150px;
     margin-bottom: 0 !important;
@@ -1102,9 +1106,6 @@ a:hover.contact-telephone {
 
 /* -- ACTUALITÉS -- */
 
-.actu{
-    padding: 50px 0;
-}
 
 .actualites h2 a {
     text-decoration: none;

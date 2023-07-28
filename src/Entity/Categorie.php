@@ -37,6 +37,12 @@ class Categorie
     #[ORM\Column]
     private ?int $rang = null;
 
+    #[ORM\Column(length: 255)]
+    private ?string $metaDesc = null;
+
+    #[ORM\Column(type: Types::TEXT, nullable: true)]
+    private ?string $texteDeFin = null;
+
     public function __construct()
     {
         $this->produits = new ArrayCollection();
@@ -163,6 +169,30 @@ class Categorie
     public function setRang(int $rang): self
     {
         $this->rang = $rang;
+
+        return $this;
+    }
+
+    public function getMetaDesc(): ?string
+    {
+        return $this->metaDesc;
+    }
+
+    public function setMetaDesc(string $metaDesc): self
+    {
+        $this->metaDesc = $metaDesc;
+
+        return $this;
+    }
+
+    public function getTexteDeFin(): ?string
+    {
+        return $this->texteDeFin;
+    }
+
+    public function setTexteDeFin(?string $texteDeFin): self
+    {
+        $this->texteDeFin = $texteDeFin;
 
         return $this;
     }

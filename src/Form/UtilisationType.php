@@ -16,6 +16,7 @@ class UtilisationType extends AbstractType
     {
         $builder
             ->add('libelle')
+            ->add('metaDesc')
             ->add('image', FileType::class, [
                 'label' => 'Image',
                 'required' => false, // pour autoriser l'envoi de formulaire sans la fiche descriptive
@@ -30,6 +31,7 @@ class UtilisationType extends AbstractType
                     return $categorie->getLibelle();
                 }
             ])
+            ->add('texteDeFin')
             ->add('description');
     }
 

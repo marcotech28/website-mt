@@ -1,9 +1,3 @@
-{# {{ form_start(form) }}
-{{ form_widget(form) }}
-<button class="btn">{{ button_label|default('Save') }}</button>
-{{ form_end(form) }} #}
-
-
 {{ form_start(form) }}
 {{ form_row(form.nom, {'attr' : {'class' : 'form-control'}}) }}
 {{ form_row(form.prix, {'attr' : {'class' : 'form-control'}}) }}
@@ -21,6 +15,7 @@
 {{ form_row(form.video1, {'attr' : {'class' : 'form-control'}}) }}
 {{ form_row(form.video2, {'attr' : {'class' : 'form-control'}}) }}
 {{ form_row(form.ficheDescriptive, {'attr' : {'class' : 'form-control'}}) }}
+{{ form_row(form.motsCles, {'attr' : {'class' : 'form-control'}}) }}
 {{ form_row(form.caracteristiques, {'attr' : {'class' : 'form-control'}}) }}
 {{ form_row(form.categorie, {'attr' : {'class' : 'form-control'}}) }}
 {{ form_row(form.utilisation, {'attr' : {'class' : 'form-control'}}) }}

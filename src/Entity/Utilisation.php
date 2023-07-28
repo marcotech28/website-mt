@@ -37,6 +37,12 @@ class Utilisation
     #[ORM\Column(length: 255, nullable: true)]
     private ?string $libelleDetail = null;
 
+    #[ORM\Column(length: 255)]
+    private ?string $metaDesc = null;
+
+    #[ORM\Column(type: Types::TEXT, nullable: true)]
+    private ?string $texteDeFin = null;
+
     public function __construct()
     {
         $this->produits = new ArrayCollection();
@@ -145,6 +151,30 @@ class Utilisation
     public function setLibelleDetail(?string $libelleDetail): self
     {
         $this->libelleDetail = $libelleDetail;
+
+        return $this;
+    }
+
+    public function getMetaDesc(): ?string
+    {
+        return $this->metaDesc;
+    }
+
+    public function setMetaDesc(string $metaDesc): self
+    {
+        $this->metaDesc = $metaDesc;
+
+        return $this;
+    }
+
+    public function getTexteDeFin(): ?string
+    {
+        return $this->texteDeFin;
+    }
+
+    public function setTexteDeFin(?string $texteDeFin): self
+    {
+        $this->texteDeFin = $texteDeFin;
 
         return $this;
     }

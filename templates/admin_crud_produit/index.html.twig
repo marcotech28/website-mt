@@ -33,11 +33,11 @@
 			</p>
 			<p>
 				<strong>Description :</strong>
-				{{ produit.description }}
+				{{ produit.description |slice(0, 50) ~ '...'}}
 			</p>
 			<p>
 				<strong>Courte description :</strong>
-				{{ produit.shortDescription }}
+				{{ produit.shortDescription|slice(0, 50) ~ '...' }}
 			</p>
 			<p>
 				<strong>META description :</strong>
@@ -74,6 +74,10 @@
 			<p>
 				<strong>Fiche descriptive :</strong>
 				{{ produit.ficheDescriptive }}
+			</p>
+			<p>
+				<strong>Mots clés</strong>
+				{{ produit.motsCles }}
 			</p>
 			<p>
 				<strong>Caractéristiques :</strong>

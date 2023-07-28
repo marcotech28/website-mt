@@ -1,6 +1,10 @@
 {% extends 'base.html.twig' %}
 
-{% block title %}Actualités
+{% block title %}Actualités - Marconnet Technologies
+{% endblock %}
+
+{% block meta %}
+	<meta name="description" content="Découvrez les dernières actualités et nouveautés chez Marconnet Technologies, votre spécialiste de la mobilité sur mesure pour les personnes à mobilité réduite. Restez informé sur nos produits adaptés en suivant nos actualités.">
 {% endblock %}
 
 {% block body %}
@@ -16,10 +20,10 @@
 
 		<div class="actualites">
 			{% for index, item in listNews %}
-				<h1>
-					<a href="{{ path('app_actu_show', {'id' : item.id}) }}">{{ item.titre }}</a>
-				</h1>
-				<h4 style="padding: 0">{{ item.sousTitre }}</h4>
+				<h2>
+					<a href="{{ path('app_actu_show', {'id' : item.id, 'titreSlug' : item.titreSlug}) }}">{{ item.titre }}</a>
+				</h2>
+				<p style="padding: 0">{{ item.sousTitre }}</p>
 				<p class="date">{{ item.date|date('Y-m-d') }}</p>
 				<p class="auteur">{{ item.auteur }}</p>
 				{% if index < listNews|length-1 and listNews[index+1] is defined %}

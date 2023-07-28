@@ -4,6 +4,12 @@
 	{{news.titre}}
 {% endblock %}
 
+{% block meta %}
+	{% if news.metaDesc is not null %}
+		<meta name="description" content="{{ news.metaDesc }}">
+	{% endif %}
+{% endblock %}
+
 {% block body %}
 
 	<div class="container-xl">
@@ -23,8 +29,11 @@
 		<div class="actu">
 
 			<h1>{{ news.titre }}</h1>
-			<h2>{{ news.sousTitre }}</h2>
-			<p>{{ news.content|raw }}</p>
+			<h4>{{ news.sousTitre }}</h4>
+			{% if news.image is not null %}
+				{# code pour afficher l'image #}
+			{% endif %}
+			<p>{{ news.contenu|nl2br  }}</p>
 			<p class="date">{{ news.date|date('Y-m-d') }}</p>
 
 			<p class="auteur">{{ news.auteur }}</p>

@@ -16,10 +16,12 @@ class NewsType extends AbstractType
         $builder
             ->add('titre')
             ->add('sousTitre')
-            ->add('content', CKEditorType::class)
+            ->add('titreSlug')
+            ->add('contenu')
+            ->add('image')
+            ->add('metaDesc')
             ->add('date')
-            ->add('auteur')
-            ->add('save', SubmitType::class);
+            ->add('auteur');
     }
 
     public function configureOptions(OptionsResolver $resolver): void

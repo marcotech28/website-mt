@@ -26,6 +26,7 @@ class ProduitType extends AbstractType
             ->add('description')
             ->add('shortDescription')
             ->add('metaDesc')
+            ->add('motsCles')
             ->add('avantages')
             ->add('video1')
             ->add('video2')

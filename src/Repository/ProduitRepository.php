@@ -46,19 +46,6 @@ class ProduitRepository extends ServiceEntityRepository
      */
     public function findSearch(SearchData $search): array
     {
-        // $query = $this
-        //     ->createQueryBuilder('produit')
-        //     ->select('produit');
-
-        // if (!empty($search->q)) {
-        //     $query = $query
-        //         ->andWhere('produit.nom LIKE :q')
-        //         ->setParameter('q', "%{$search->q}%");
-        // }
-
-        // $results = $query->getQuery()->getResult();
-
-        // return $results;
 
         $query = $this
             ->createQueryBuilder('produit')

@@ -16,7 +16,6 @@ class UtilisationController extends AbstractController
      */
     public function index($category_slug, $utilisation_slug, CategorieRepository $categorieRepository, UtilisationRepository $utilisationRepository): Response
     {
-
         $categorie = $categorieRepository->findOneBy([
             'slug' => $category_slug
         ]);

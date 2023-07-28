@@ -1,7 +1,34 @@
 {% extends "base.html.twig" %}
 
+{% block meta %}
+	<meta name="description" content="Bienvenue sur le site de Marconnet Technologies, votre spécialiste de la mobilité sur mesure pour les personnes à mobilité réduite. Découvrez nos produits adaptés, tels que handbikes, tricycles Van Raam, scooters électriques, fauteuils tout-terrain, robots et plus encore. Bénéficiez de conseils personnalisés pour trouver la meilleure solution à vos besoins.">
+{% endblock %}
+
 {% block title %}
 	Accueil
+{% endblock %}
+
+{% block donneesStructurees %}
+	<script type="application/ld+json">
+		{
+					"@context": "https://schema.org",
+					"@type": "Organization",
+					"name": "Marconnet Technologies",
+					"url": "http://www.marconnet-technologies.com/",
+						"logo": "",
+					"contactPoint": {
+					"@type": "ContactPoint",
+					"telephone": "+33245260170",
+					"contactType": "Service client"
+					},
+					"sameAs": [
+					"https://www.instagram.com/marconnet_technologies/",
+					"https://fr.linkedin.com/company/marconnet-technologies%E2%84%A2",
+					"https://fr-fr.facebook.com/marconnettechnologies/",
+					"https://www.youtube.com/channel/UCBVjkgVyozExIOlx5O40zxQ"
+					]
+					}
+	</script>
 {% endblock %}
 
 {% block body %}
@@ -330,4 +357,5 @@
 			</div>
 		</div>
 	</div>
+    
 {% endblock %}

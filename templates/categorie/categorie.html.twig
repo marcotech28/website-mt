@@ -4,6 +4,12 @@
 	{{categorie.libelle}}
 {% endblock %}
 
+{% block meta %}
+	{% if categorie.metaDesc is not null %}
+		<meta name="description" content="{{ categorie.metaDesc }}">
+	{% endif %}
+{% endblock %}
+
 {% block body %}
 	<div class="container-xl">
 		<div class="row">
@@ -19,7 +25,7 @@
 			</div>
 		</div>
 		<h1>{{categorie.libelle}}</h1>
-		<p>{{categorie.description}}</p>
+		<p>{{categorie.description|nl2br }}</p>
 	</div>
 
 	<div class="container-fluid" style="background-color: #F3F3F3; padding: 50px 0 !important;">
@@ -33,6 +39,15 @@
 			</div>
 		</div>
 	</div>
+
+
+	{% if categorie.texteDeFin %}
+		<div class="container-fluid">
+			<div class="container-xl">
+				<p>{{ categorie.texteDeFin|nl2br }}</p>
+			</div>
+		</div>
+	{% endif %}
 
 
 {% endblock %}

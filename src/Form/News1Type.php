@@ -13,11 +13,9 @@ class News1Type extends AbstractType
     {
         $builder
             ->add('titre')
-            ->add('content')
             ->add('date')
             ->add('auteur')
-            ->add('sousTitre')
-        ;
+            ->add('sousTitre');
     }
 
     public function configureOptions(OptionsResolver $resolver): void

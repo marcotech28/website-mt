@@ -17,9 +17,6 @@ class News
     #[ORM\Column(length: 255)]
     private ?string $titre = null;
 
-    #[ORM\Column(type: Types::TEXT)]
-    private ?string $content = null;
-
     #[ORM\Column(type: Types::DATE_MUTABLE)]
     private ?\DateTimeInterface $date = null;
 
@@ -28,6 +25,18 @@ class News
 
     #[ORM\Column(length: 255)]
     private ?string $sousTitre = null;
+
+    #[ORM\Column(length: 255)]
+    private ?string $titreSlug = null;
+
+    #[ORM\Column(length: 255)]
+    private ?string $metaDesc = null;
+
+    #[ORM\Column(type: Types::TEXT)]
+    private ?string $contenu = null;
+
+    #[ORM\Column(length: 255, nullable: true)]
+    private ?string $image = null;
 
     public function getId(): ?int
     {
@@ -42,18 +51,6 @@ class News
     public function setTitre(string $titre): self
     {
         $this->titre = $titre;
-
-        return $this;
-    }
-
-    public function getContent(): ?string
-    {
-        return $this->content;
-    }
-
-    public function setContent(string $content): self
-    {
-        $this->content = $content;
 
         return $this;
     }
@@ -90,6 +87,54 @@ class News
     public function setSousTitre(string $sousTitre): self
     {
         $this->sousTitre = $sousTitre;
+
+        return $this;
+    }
+
+    public function getTitreSlug(): ?string
+    {
+        return $this->titreSlug;
+    }
+
+    public function setTitreSlug(string $titreSlug): self
+    {
+        $this->titreSlug = $titreSlug;
+
+        return $this;
+    }
+
+    public function getMetaDesc(): ?string
+    {
+        return $this->metaDesc;
+    }
+
+    public function setMetaDesc(string $metaDesc): self
+    {
+        $this->metaDesc = $metaDesc;
+
+        return $this;
+    }
+
+    public function getContenu(): ?string
+    {
+        return $this->contenu;
+    }
+
+    public function setContenu(string $contenu): self
+    {
+        $this->contenu = $contenu;
+
+        return $this;
+    }
+
+    public function getImage(): ?string
+    {
+        return $this->image;
+    }
+
+    public function setImage(?string $image): self
+    {
+        $this->image = $image;
 
         return $this;
     }

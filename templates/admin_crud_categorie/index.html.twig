@@ -34,11 +34,19 @@
 					</p>
 					<p>
 						<strong>Description :</strong>
-						{{ categorie.description }}
+						{{ categorie.description|slice(0, 40) ~ '...' }}
+					</p>
+					<p>
+						<strong>Texte de fin :</strong>
+						{{ categorie.texteDeFin }}
 					</p>
 					<p>
 						<strong>Rang :</strong>
 						{{ categorie.rang }}
+					</p>
+					<p>
+						<strong>Meta description</strong>
+						{{ categorie.metaDesc }}
 					</p>
 					<p>
 						<a href="{{ path('app_admin_crud_categorie_show', {'id': categorie.id}) }}">show</a>
