@@ -19,5 +19,6 @@
 {{ form_row(form.caracteristiques, {'attr' : {'class' : 'form-control'}}) }}
 {{ form_row(form.categorie, {'attr' : {'class' : 'form-control'}}) }}
 {{ form_row(form.utilisation, {'attr' : {'class' : 'form-control'}}) }}
-<button class="btn">{{ button_label|default('Save') }}</button>
+{{ form_row(form.produitsSimilaires, {'attr' : {'class' : 'form-control', 'size' : 20}}) }}
+<button class="btn btn-primary">{{ button_label|default('Save') }}</button>
 {{ form_end(form) }}

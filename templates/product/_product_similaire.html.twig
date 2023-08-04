@@ -1,0 +1,15 @@
+{% if similarProduct.utilisation is not empty %}
+	<a href="{{path('product_show', {'category_slug' : similarProduct.categorie.slug, 'utilisation_slug' : similarProduct.utilisation.slug, 'slug' : similarProduct.slug, 'id' : similarProduct.id })}}">
+	{% else %}
+		<a href="{{path('product_show_no_utilisation', {'category_slug' : similarProduct.categorie.slug, 'slug' : similarProduct.slug, 'id' : similarProduct.id })}}">
+
+		{% endif %}
+		<div class="card h-100" style="width: 18rem;">
+			<img src="{{ asset('images/prod/' ~ similarProduct.image1 ) }}" class="card-img-top" alt="...">
+			<div class="card-body">
+				<h6 class="text-center">
+					<span class="badge bg-secondary">{{similarProduct.nom}}</span>
+				</h6>
+			</div>
+		</div>
+	</a>

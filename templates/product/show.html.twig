@@ -164,5 +164,19 @@
 				</div>
 			{% endif %}
 		</div>
+
+		{% if produit.produitsSimilaires|length > 0 %}
+			<div class="prodComplementaires">
+				<div class="row h-100">
+					<h2>Ces produits pourraient vous plaire</h2>
+					{% for similarProduct in produit.produitsSimilaires %}
+						<div class="col-md-6 col-lg-6 col-xl-3 mb-4 categorie">
+							{% include "product/_product_similaire.html.twig" %}
+						</div>
+					{% endfor %}
+				</div>
+			</div>
+		{% endif %}
+
 	</div>
 {% endblock %}

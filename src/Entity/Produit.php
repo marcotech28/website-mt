@@ -3,6 +3,8 @@
 namespace App\Entity;
 
 use App\Repository\ProduitRepository;
+use Doctrine\Common\Collections\ArrayCollection;
+use Doctrine\Common\Collections\Collection;
 use Doctrine\DBAL\Types\Types;
 use Doctrine\ORM\Mapping as ORM;
 
@@ -73,6 +75,14 @@ class Produit
 
     #[ORM\Column(type: Types::TEXT, nullable: true)]
     private ?string $motsCles = null;
+
+    #[ORM\ManyToMany(targetEntity: self::class, inversedBy: 'produitsSimilaires')]
+    private Collection $produitsSimilaires;
+
+    public function __construct()
+    {
+        $this->produitsSimilaires = new ArrayCollection();
+    }
 
     public function getId(): ?int
     {
@@ -335,5 +345,34 @@ class Produit
         $this->motsCles = $motsCles;
 
         return $this;
+    }
+
+    /**
+     * @return Collection<int, self>
+     */
+    public function getProduitsSimilaires(): Collection
+    {
+        return $this->produitsSimilaires;
+    }
+
+    public function addProduitsSimilaire(self $produitsSimilaire): self
+    {
+        if (!$this->produitsSimilaires->contains($produitsSimilaire)) {
+            $this->produitsSimilaires->add($produitsSimilaire);
+        }
+
+        return $this;
+    }
+
+    public function removeProduitsSimilaire(self $produitsSimilaire): self
+    {
+        $this->produitsSimilaires->removeElement($produitsSimilaire);
+
+        return $this;
+    }
+
+    public function __toString(): string
+    {
+        return $this->nom;
     }
 }

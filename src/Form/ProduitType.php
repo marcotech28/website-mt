@@ -86,6 +86,12 @@ class ProduitType extends AbstractType
                 'label' => 'Image 5',
                 'required' => false, // pour autoriser l'envoi de formulaire sans la fiche descriptive
                 'mapped' => false // pour éviter que le champ ne soit mappé sur un attribut de l'entité
+            ])
+            ->add('produitsSimilaires', EntityType::class, [
+                'class' => Produit::class,
+                'choice_label' => 'nom',
+                'multiple' => true,
+                'expanded' => false, //on met ça à true pour avoir une liste à puce
             ]);
     }
 

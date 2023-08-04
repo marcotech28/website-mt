@@ -1028,6 +1028,10 @@ a:hover.contact-telephone {
     margin-bottom: 1rem;
 }
 
+.bg-secondary{
+    background-color: #168896 !important;
+}
+
 .product_small_infos a {
     text-decoration: none;
     font-weight: 600;
@@ -1072,16 +1076,18 @@ a:hover.contact-telephone {
 
 /* -- documentation -- */
 
-.documentation {
-    padding-bottom: 120px;
-}
-
 .documentation i {
     color: #168896;
 }
 
 .doc {
     padding: 10px 0;
+}
+
+/* -- produits similaires -- */
+
+.prodComplementaires{
+    padding-bottom: 120px;
 }
 
 /* -- ADMIN -- */

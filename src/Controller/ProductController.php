@@ -20,7 +20,11 @@ class ProductController extends AbstractController
             'slug' => $slug
         ]);
 
-        // dd($product);
+        // $myProducts = $product->getProduitsSimilaires();
+        // $myProducts->initialize();  // Force Doctrine à charger les produits similaires
+
+        // dd($myProducts);
+
 
         if (!$product) {
             throw $this->createNotFoundException("Le produit demandé n'existe pas");
