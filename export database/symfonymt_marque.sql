@@ -26,9 +26,8 @@ CREATE TABLE `marque` (
   `id` int NOT NULL AUTO_INCREMENT,
   `libelle` varchar(100) COLLATE utf8mb4_unicode_ci NOT NULL,
   `catalogue` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
-  `logo` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=9 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -37,7 +36,7 @@ CREATE TABLE `marque` (
 
 LOCK TABLES `marque` WRITE;
 /*!40000 ALTER TABLE `marque` DISABLE KEYS */;
-INSERT INTO `marque` VALUES (1,'Draisin','Catalogue de draisin','le logo'),(2,'Van RAAM','catalogue','logo'),(3,'Stricker','catalogue','logo');
+INSERT INTO `marque` VALUES (1,'Draisin','test'),(2,'Vanraam','catalogue'),(3,'Stricker','catalogue'),(6,'Moving Life','cata'),(7,'Huka','cata'),(8,'Chaland Palmieri',NULL);
 /*!40000 ALTER TABLE `marque` ENABLE KEYS */;
 UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
@@ -50,4 +49,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2023-02-03 16:53:46
+-- Dump completed on 2023-08-04 16:29:42

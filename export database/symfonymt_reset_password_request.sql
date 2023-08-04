@@ -16,27 +16,33 @@
 /*!40111 SET @OLD_SQL_NOTES=@@SQL_NOTES, SQL_NOTES=0 */;
 
 --
--- Table structure for table `avantage`
+-- Table structure for table `reset_password_request`
 --
 
-DROP TABLE IF EXISTS `avantage`;
+DROP TABLE IF EXISTS `reset_password_request`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!50503 SET character_set_client = utf8mb4 */;
-CREATE TABLE `avantage` (
+CREATE TABLE `reset_password_request` (
   `id` int NOT NULL AUTO_INCREMENT,
-  `libelle` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
-  PRIMARY KEY (`id`)
+  `user_id` int NOT NULL,
+  `selector` varchar(20) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `hashed_token` varchar(100) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `requested_at` datetime NOT NULL COMMENT '(DC2Type:datetime_immutable)',
+  `expires_at` datetime NOT NULL COMMENT '(DC2Type:datetime_immutable)',
+  PRIMARY KEY (`id`),
+  KEY `IDX_7CE748AA76ED395` (`user_id`),
+  CONSTRAINT `FK_7CE748AA76ED395` FOREIGN KEY (`user_id`) REFERENCES `user` (`id`)
 ) ENGINE=InnoDB AUTO_INCREMENT=7 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
--- Dumping data for table `avantage`
+-- Dumping data for table `reset_password_request`
 --
 
-LOCK TABLES `avantage` WRITE;
-/*!40000 ALTER TABLE `avantage` DISABLE KEYS */;
-INSERT INTO `avantage` VALUES (1,'Manoeuvrable et léger'),(2,'Stable et facile à diriger'),(3,'Adultes'),(4,'Sécuritaire et fonctionnel'),(5,'Porte bagage'),(6,'Robuste et élégant');
-/*!40000 ALTER TABLE `avantage` ENABLE KEYS */;
+LOCK TABLES `reset_password_request` WRITE;
+/*!40000 ALTER TABLE `reset_password_request` DISABLE KEYS */;
+INSERT INTO `reset_password_request` VALUES (6,3,'WpPpTl01cxgmOKlP8ROC','e+PASf+kc24o/eWP3AnqJwPcUT1RPPqnRwXBgqDo/MM=','2023-03-07 10:56:41','2023-03-07 11:56:41');
+/*!40000 ALTER TABLE `reset_password_request` ENABLE KEYS */;
 UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
 
@@ -48,4 +54,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2023-02-03 16:53:45
+-- Dump completed on 2023-08-04 16:29:42

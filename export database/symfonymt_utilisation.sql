@@ -29,10 +29,13 @@ CREATE TABLE `utilisation` (
   `slug` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
   `categorie_id` int DEFAULT NULL,
   `description` longtext COLLATE utf8mb4_unicode_ci,
+  `libelle_detail` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `meta_desc` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `texte_de_fin` longtext COLLATE utf8mb4_unicode_ci,
   PRIMARY KEY (`id`),
   KEY `IDX_B02A3C43BCF5E72D` (`categorie_id`),
   CONSTRAINT `FK_B02A3C43BCF5E72D` FOREIGN KEY (`categorie_id`) REFERENCES `categorie` (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=11 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=13 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -41,7 +44,7 @@ CREATE TABLE `utilisation` (
 
 LOCK TABLES `utilisation` WRITE;
 /*!40000 ALTER TABLE `utilisation` DISABLE KEYS */;
-INSERT INTO `utilisation` VALUES (1,'Handbikes manuels','a','handbikes-manuels',11,'Les handbikes manuels'),(2,'Handbikes hybrides','a','handbikes-hybrides',11,'Les handbikes hybrides'),(3,'Lomo 360','a','lomo-360',12,'Les lomo 360'),(4,'Handbikes Tout Électrique','a','handbikes-tout-electrique',12,'Les handbikes tout électrique'),(5,'Tricycles Van Raam Adulte','a','trycicles-vanraam-adule',13,'Les trycicles Van Raam Adulte'),(6,'Tricycles Van Raam Tandem','a','tricycles-vanraam-tandem',14,'Les tricycles Van Raam Tandem'),(7,'Tricycles Van Raam Transport','a','tricycles-vanraam-transport',15,'Les tricycles Van Raam Transport'),(8,'Tricycles Draisin Adulte','a','tricycles-draisin-adulte',16,'Les tricycles Draisin Adulte'),(9,'Tricycles Draisin Sénior','a','tricycles-draisin-senior',16,'Les tricycles Draisin Sénior'),(10,'Vélo - Tricycles Tandem Draisin','a','velo-tricycles-tandem-draisin',16,'Les Vélo et Tricycles Tandem Draisin');
+INSERT INTO `utilisation` VALUES (1,'Handbikes manuels','handbike-manuel.jpg','handbikes-manuels',11,'Découvrez notre sélection de handbikes manuels, des vélos adaptés pour tous ceux qui recherchent une expérience de conduite unique et pleine de liberté. Grâce à leur système de propulsion manuelle et leur design ergonomique, ces vélos sont conçus pour offrir une conduite fluide et agréable, que ce soit pour le sport ou les loisirs.','Handbikes manuels','test meta','t'),(2,'Handbikes hybrides','handbike-hybride.png','handbikes-hybrides',11,'Les handbikes hybrides','Handbikes hybrides','test meta','t'),(4,'Handbikes Tout Électrique','handbike-tout-elec.png','handbikes-tout-electrique',11,'Les handbikes tout électrique','Handbikes tout électrique','test meta','t'),(5,'Tricycles individuels','tricycle-vr.png','trycicles-vanraam-adule',12,'Les tricycles Vanraam Adulte.... à faire','Tricycles individuels VR','test meta','t'),(6,'Tricycles Tandem','tricycle-vr-tandem.png','tricycles-vanraam-tandem',12,'Les tricycles Van Raam Tandem','Tricycles tandem VR','test meta','t'),(7,'Tricycles Transport','tricycle-vr-transport.png','tricycles-vanraam-transport',12,'Les tricycles Van Raam Transport','Tricycles transport VR','test meta','t'),(8,'Lomo 360','lomo-360.png','lomo-360',11,'Découvrez nos Lomo 360 !','Lomo 360','test meta','t');
 /*!40000 ALTER TABLE `utilisation` ENABLE KEYS */;
 UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
@@ -54,4 +57,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2023-02-03 16:53:46
+-- Dump completed on 2023-08-04 16:29:42
