@@ -1304,7 +1304,7 @@ a:hover.contact-telephone {
     }
 }
 
-@media screen and (max-width: 400px) {
+@media screen and (max-width: 415px) {
     .confiance img {
         display: none;
     }
