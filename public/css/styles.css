@@ -435,7 +435,7 @@ td {
 
 .banniere p {
     color: #0F434F;
-    font-weight: 500;
+    font-weight: 600;
     font-size: 20px;
     margin: 0;
     padding: 20px 0;
@@ -469,12 +469,12 @@ td {
 
 .bannerProduct {
     background-image: url('../images/background-card.svg');
-  background-size: cover;
-  background-position: center;
-  height: 66px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
+    background-size: cover;
+    background-position: center;
+    height: 66px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
     justify-content: center;
 }
 
@@ -1316,36 +1316,35 @@ a:hover.contact-telephone {
     }
 }
 
-/* @media screen and (max-width: 1450px){
-    .banniere lottie-player {
-        width: 650px;
-    }
-
+@media (max-width: 1000px) {
     .banniere h1 {
         font-size: 48px;
-        font-weight: 500;
-        border-bottom: none;
         align-items: center;
         display: flex;
         flex-direction: column;
+        /* color: red !important; */
     }
 
     .banniere p {
         align-items: center;
         display: flex;
         flex-direction: column;
-    }
-} */
-
-/* @media screen and (max-width: 1200px){
-    .banniere lottie-player {
-        width: 250px;
+        /* color: red !important; */
     }
 
+    .banniere img {
+        height: 205px !important;
+    }
+}
+
+@media (max-width: 850px) {
+    .banniere img {
+        height: 190px !important;
+    }
     .banniere{
-        height: 55vh !important;
+        height: 75vh !important;
     }
-} */
+}
 
 @media screen and (max-width: 500px){
     .banniere h1 {
@@ -1357,11 +1356,17 @@ a:hover.contact-telephone {
     }
 
     .banniere{
-        height: 40vh !important;
+        height: 45vh !important;
     }
 
-    .banniere lottie-player {
-        width: 100px;
+    .banniere img {
+        height: 120px !important;
+    }
+}
+
+@media screen and (max-width: 400px){
+    .banniere img {
+        height: 90px !important;
     }
 }
 
@@ -1473,7 +1478,7 @@ a:hover.contact-telephone {
 
     .content-partners p {
         font-size: 14px;
-        font-weight: 100;
+        font-weight: 400;
     }
 }
 
@@ -1517,14 +1522,6 @@ a:hover.contact-telephone {
 }
 
 /* FICHE PRODUIT */
-
-@media only screen and (max-width: 992px) {
-
-    .video iframe {
-        width: 310px;
-        height: 175px;
-    }
-}
 
 @media only screen and (max-width: 370px) {
 
