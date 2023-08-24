@@ -39,6 +39,9 @@ class RegistrationController extends AbstractController
                     $form->get('plainPassword')->getData()
                 )
             );
+
+            $user->setIsConfirmed(false);
+
             $monemail = new Email();
             $monemail->from('antonin@marconnet-robotique.com')
                 ->to('antonin@marconnet-robotique.com')
