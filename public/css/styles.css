@@ -23,6 +23,17 @@ body {
     text-align: justify;
 }
 
+.site-container {
+    display: flex;
+    flex-direction: column;
+    min-height: 80vh;
+}
+
+.content {
+    flex: 1;
+}
+
+
 
 /* -- FORMULAIRES -- */
 
@@ -331,6 +342,12 @@ footer a:hover {
     color: #0F434E;
 }
 
+/* -- SEARCH -- */
+
+.no-product{
+    font-weight: bold;
+}
+
 /* -- TITRES -- */
 
 h1 {
@@ -342,9 +359,10 @@ h1 {
 }
 
 h2 {
-    font-weight: 400;
+    font-weight: 500;
     color: #168896;
     padding: 20px 0 10px 0;
+    font-size: 50px;
 }
 
 h3 {
@@ -596,6 +614,9 @@ td {
     height: auto;
 }
 
+.confiance {
+    margin: 70px 0;
+}
 
 
 .revend {
@@ -682,14 +703,10 @@ td {
     color: #0F434E;
 }
 
-.partners {
-    margin: 90px 0;
-}
-
 /* - conseils - */
 
 .a_propos {
-    margin: 100px 0;
+    margin: 70px 0;
 }
 
 .a_propos .card-services p {
@@ -851,6 +868,7 @@ a:hover.contact-telephone {
     border-radius: 15px;
 }
 
+
 .img11 img {
     height: 100px;
     object-fit: cover;
@@ -936,6 +954,10 @@ a:hover.contact-telephone {
 }
 
 /* -- LOGIN -- */
+
+.connection{
+    padding-top: 40px;
+}
 
 .bienvenue h4 {
     font-weight: 500;
@@ -1172,6 +1194,11 @@ a:hover.contact-telephone {
     margin-top: 18px;
 }
 
+.mycard a {
+    text-decoration: none;
+}
+
+
 .minia-avantages p {
     color: #0F434E;
     font-size: 14px;
@@ -1232,6 +1259,7 @@ a:hover.contact-telephone {
 
     h2 {
         padding-bottom: 20px;
+        font-size: 33px;
     }
 
     p {
@@ -1278,6 +1306,15 @@ a:hover.contact-telephone {
         text-align: center;
     }
 }
+@media only screen and (max-width: 576px) {
+    .a_propos {
+        margin-top: 0px;
+    }
+
+    .confiance {
+        margin-top: 20px;
+    }
+}
 
 @media only screen and (max-width: 1200px) {
 
@@ -1294,12 +1331,15 @@ a:hover.contact-telephone {
         box-shadow: none;
     }
 
+    .pictureProduct img {
+        border-top: none;
+        border-bottom: none;
+    }
+
     .card {
-        border-radius: 0 !important;
+        border: none !important;
         border-bottom: 1px solid black;
-        border-radius: 90%;
         box-shadow: none !important;
-        border-radius: 0;
         border-top: none !important;
     }
 }
@@ -1489,6 +1529,16 @@ a:hover.contact-telephone {
 }
 
 /* -- LOGIN -- */
+@media only screen and (max-width: 992px) {
+    .connection{
+        padding-top: 10px;
+    }
+
+    .form-connexion{
+        padding-top: 10px !important;
+    }
+}
+
 
 @media only screen and (max-width: 350px) {
     .card-login {
@@ -1503,6 +1553,21 @@ a:hover.contact-telephone {
     .card {
         box-shadow: none;
         border: none;
+    }
+}
+
+/* ACTUALITÉS */
+@media only screen and (max-width: 500px) {
+    .actualites h2 {
+        padding: 10px 0;
+    }
+    
+    .date {
+        padding-top: 0px;
+    }
+
+    .auteur{
+        padding-top: 0px;
     }
 }
 

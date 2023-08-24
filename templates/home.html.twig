@@ -11,23 +11,23 @@
 {% block donneesStructurees %}
 	<script type="application/ld+json">
 		{
-																																																																																																								"@context": "https://schema.org",
-																																																																																																								"@type": "Organization",
-																																																																																																								"name": "Marconnet Technologies",
-																																																																																																								"url": "http://www.marconnet-technologies.com/",
-																																																																																																									"logo": "",
-																																																																																																								"contactPoint": {
-																																																																																																								"@type": "ContactPoint",
-																																																																																																								"telephone": "+33245260170",
-																																																																																																								"contactType": "Service client"
-																																																																																																								},
-																																																																																																								"sameAs": [
-																																																																																																								"https://www.instagram.com/marconnet_technologies/",
-																																																																																																								"https://fr.linkedin.com/company/marconnet-technologies%E2%84%A2",
-																																																																																																								"https://fr-fr.facebook.com/marconnettechnologies/",
-																																																																																																								"https://www.youtube.com/channel/UCBVjkgVyozExIOlx5O40zxQ"
-																																																																																																								]
-																																																																																																								}
+																						"@context": "https://schema.org",
+																						"@type": "Organization",
+																						"name": "Marconnet Technologies",
+																						"url": "http://www.marconnet-technologies.com/",
+																							"logo": "",
+																						"contactPoint": {
+																						"@type": "ContactPoint",
+																						"telephone": "+33245260170",
+																						"contactType": "Service client"
+																						},
+																						"sameAs": [
+																						"https://www.instagram.com/marconnet_technologies/",
+																						"https://fr.linkedin.com/company/marconnet-technologies%E2%84%A2",
+																						"https://fr-fr.facebook.com/marconnettechnologies/",
+																						"https://www.youtube.com/channel/UCBVjkgVyozExIOlx5O40zxQ"
+																						]
+																						}
 	</script>
 {% endblock %}
 
@@ -55,7 +55,7 @@
 			<div class="d-none d-xl-block col-xl-7 overflow-hidden">
 				<lottie-player src="{{ asset('images/HomepageMT_V3.json') }}" autoplay loop speed="1" class="mx-auto d-block lottie-tricycle"></lottie-player>
 			</div>
-			<div class="d-xl-none col-lg-5 col-md-5 col-sm-12 text-center">
+			<div class="d-xl-none col-lg-5 col-md-5 col-sm-12 text-center mb-5">
 				<img src="{{ asset('images/img-velo.png') }}" alt="" srcset="" style="height: 230px">
 			</div>
 		</div>
@@ -67,8 +67,8 @@
 	<div id="produitpref">
 		<div class="row">
 			<div class="col-12">
-				<h2 style="padding-top: 70px; padding-bottom: 30px;" class="text-center" id="prodpref">Les produits préférés de nos clients</h2>
-				<p class="text-center mb-5">Explorez les choix privilégiés de nos clients en matière de matériels de mobilité adaptés, conçus pour faciliter votre quotidien et vous offrir une plus grande indépendance.</p>
+				<h2 style="padding-top: 70px; padding-bottom: 30px;" id="prodpref">Les produits préférés de nos clients</h2>
+				<p class="mb-5">Explorez les choix privilégiés de nos clients en matière de matériels de mobilité adaptés, conçus pour faciliter votre quotidien et vous offrir une plus grande indépendance.</p>
 			</div>
 		</div>
 		<div class="row h-100">
@@ -175,17 +175,17 @@
 	{# a propos #}
 	<div class="a_propos">
 		<div class="row">
-			<div class="col-12 text-center text-md-left">
+			<div class="col-12 text-sm-center">
 				<h2>À propos de Marconnet technologies™</h2>
 			</div>
 		</div>
 		<div class="row">
-			<div class="col-12 text-center text-md-left">
+			<div class="col-12 text-sm-center">
 				<p>Marconnet technologies™ est spécialisée dans la mobilité et unique sur le marché depuis plus de 18 ans.</p>
 				<p>Nous commercialisons des matériels pour améliorer le déplacement des gens en perte de mobilité.</p>
 			</div>
 		</div>
-		<div class="row h-100" style="padding-top: 40px; padding-bottom: 40px">
+		<div class="row h-100" style="padding-top: 40px; padding-bottom: 0px">
 			{% include "_home_apropos.html.twig" with {
 					'image' : 'conseil.png',
 					'titre' : 'Conseils personnalisés',
@@ -241,7 +241,7 @@
 		class="container-xl">
 
 		{# entreprises qui nous font confiance #}
-		<div class="confiance text-center">
+		<div class="confiance">
 			<div class="row">
 				<div class="col-12">
 					<h2>Ils nous ont fait confiance</h2>

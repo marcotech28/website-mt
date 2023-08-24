@@ -2,27 +2,27 @@
 
 {% block body %}
 	<div class="container-xl">
-		<h1>Résultat de la recherche pour "{{searchTerm}}"</h1>
-		<div class="row">
-			{% if productsFilter is empty %}
-				<div class="alert alert-warning">
-					Aucun produit trouvé.
+		<h2>Résultat de la recherche pour "{{searchTerm}}"</h2>
+
+
+		{% if productsFilter is empty %}
+			<div class="no-product">
+				Aucun produit trouvé.
+			</div>
+
+		{% elseif nbProdTotal ==  productsFilter|length %}
+			<div class="no-product">
+				Veuillez entrer un terme de recherche dans la barre de recherche.
+			</div>
+
+
+		{% else %}
+			{% for p in productsFilter %}
+
+				<div class="col-12 col-sm-6 col-md-4 col-lg-3 mb-3">
+					{% include "product/_product_card.html.twig" %}
 				</div>
-			{% elseif nbProdTotal ==  productsFilter|length %}
-				<div class="alert alert-warning">
-					Veuillez entrer un terme de recherche dans la barre de recherche.
-				</div>
-			{% else %}
-				{% for p in productsFilter %}
-
-					<div class="col-12 col-sm-6 col-md-4 col-lg-3 mb-3">
-						{% include "product/_product_card.html.twig" %}
-					</div>
-
-
-				{% endfor %}
-			{% endif %}
-		</div>
+			{% endfor %}
+		{% endif %}
 	</div>
-
-{% endblock %}
+</div>{% endblock %}

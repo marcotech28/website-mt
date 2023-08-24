@@ -1,66 +1,69 @@
 {% if p.utilisation is null %}
-	<a href="{{path('product_show_no_utilisation', {'category_slug' : p.categorie.slug, 'slug' : p.slug, 'id' : p.id })}}">
-		<div class="card h-100">
-			<div class="pictureProduct">
-				<img src="{{ asset('images/prod/' ~ p.image1 ) }}" alt="">
-			</div>
-			<div class="card-body">
-				<h4 class="d-inline-block mr-2" style="padding: 0">
-					<span class="badge bg-primary">{{p.nom}}</span>
-				</h4><br>
-				<span class="badge bg-primary">{{p.marque.libelle}}</span>
-				<div class="minia-avantages">
-					{% set advantages = p.avantages|split(';') %}
-					{% set a = 0 %}
-					{% set break = false %}
-					{% for advantage in advantages %}
-						{% set a = a + 1 %}
-						{% if a > 4 %}
-							{% set break = true %}
-						{% endif %}
-						{% if break == false %}
-							<p>
-								<i style="color: white" class="fa-solid fa-check"></i>
-								{{ advantage }}</p>
-						{% endif %}
-					{% endfor %}
+	<div class="mycard">
+		<a href="{{path('product_show_no_utilisation', {'category_slug' : p.categorie.slug, 'slug' : p.slug, 'id' : p.id })}}">
+			<div class="card h-100">
+				<div class="pictureProduct">
+					<img src="{{ asset('images/prod/' ~ p.image1 ) }}" alt="">
+				</div>
+				<div class="card-body">
+					<h4 class="d-inline-block mr-2" style="padding: 0">
+						<span class="badge bg-primary">{{p.nom}}</span>
+					</h4><br>
+					<span class="badge bg-primary">{{p.marque.libelle}}</span>
+					<div class="minia-avantages">
+						{% set advantages = p.avantages|split(';') %}
+						{% set a = 0 %}
+						{% set break = false %}
+						{% for advantage in advantages %}
+							{% set a = a + 1 %}
+							{% if a > 4 %}
+								{% set break = true %}
+							{% endif %}
+							{% if break == false %}
+								<p>
+									<i style="color: white" class="fa-solid fa-check"></i>
+									{{ advantage }}</p>
+							{% endif %}
+						{% endfor %}
+					</div>
 				</div>
 			</div>
-		</div>
 
 
-	</a>
+		</a>
+	</div>
 {% else %}
-	<a href="{{path('product_show', {'category_slug' : p.categorie.slug, 'utilisation_slug' : p.utilisation.slug, 'slug' : p.slug, 'id' : p.id })}}">
-		<div class="card h-100">
-			<div class="pictureProduct">
-				<img src="{{ asset('images/prod/' ~ p.image1 ) }}" alt="">
-			</div>
-			<div class="card-body">
-				<h4 class="d-inline-block mr-2" style="padding: 0">
-					<span class="badge bg-primary">{{p.nom}}</span>
-				</h4><br>
-				<span class="badge bg-primary">{{p.marque.libelle}}</span>
-				<div class="minia-avantages">
-					{% set advantages = p.avantages|split(';') %}
-					{% set a = 0 %}
-					{% set break = false %}
-					{% for advantage in advantages %}
-						{% set a = a + 1 %}
-						{% if a > 4 %}
-							{% set break = true %}
-						{% endif %}
-						{% if break == false %}
-							<p>
-								<i style="color: white" class="fa-solid fa-check"></i>
-								{{ advantage }}</p>
-						{% endif %}
-					{% endfor %}
+	<div class="mycard">
+		<a href="{{path('product_show', {'category_slug' : p.categorie.slug, 'utilisation_slug' : p.utilisation.slug, 'slug' : p.slug, 'id' : p.id })}}">
+			<div class="card h-100">
+				<div class="pictureProduct">
+					<img src="{{ asset('images/prod/' ~ p.image1 ) }}" alt="">
+				</div>
+				<div class="card-body">
+					<h4 class="d-inline-block mr-2" style="padding: 0">
+						<span class="badge bg-primary">{{p.nom}}</span>
+					</h4><br>
+					<span class="badge bg-primary">{{p.marque.libelle}}</span>
+					<div class="minia-avantages">
+						{% set advantages = p.avantages|split(';') %}
+						{% set a = 0 %}
+						{% set break = false %}
+						{% for advantage in advantages %}
+							{% set a = a + 1 %}
+							{% if a > 4 %}
+								{% set break = true %}
+							{% endif %}
+							{% if break == false %}
+								<p>
+									<i style="color: white" class="fa-solid fa-check"></i>
+									{{ advantage }}</p>
+							{% endif %}
+						{% endfor %}
+					</div>
 				</div>
 			</div>
-		</div>
 
 
-	</a>
-
+		</a>
+	</div>
 {% endif %}
