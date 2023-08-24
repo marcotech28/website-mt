@@ -1266,6 +1266,9 @@ a:hover.contact-telephone {
     p {
         font-size: 0.9rem;
     }
+    h3 {
+        font-size: 28px !important;
+    }
 }
 
 @media only screen and (min-width: 401px) and (max-width: 575px) {
@@ -1281,6 +1284,9 @@ a:hover.contact-telephone {
     p {
         font-size: 1rem;
     }
+    h3 {
+        font-size: 30px !important;
+    }
 }
 
 @media only screen and (min-width: 576px) and (max-width: 767px) {
@@ -1295,6 +1301,9 @@ a:hover.contact-telephone {
 
     p {
         font-size: 1.1rem;
+    }
+    h3 {
+        font-size: 33px;
     }
 }
 
