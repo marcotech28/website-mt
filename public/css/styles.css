@@ -1492,8 +1492,12 @@ a:hover.contact-telephone {
 
 @media only screen and (max-width: 992px) {
 
+    .googlemaps {
+        width: 100%;
+    }
+
     .googlemaps iframe {
-        display: none;
+        height: 350px !important;
     }
 }
 
