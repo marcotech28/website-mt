@@ -18,3 +18,4 @@ services:
       - "../src/Entity/"
       - "../src/Kernel.php"
       - "../src/Tests/"
+  App\Security\UserValidationChecker: ~
