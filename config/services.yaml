@@ -18,4 +18,9 @@ services:
       - "../src/Entity/"
       - "../src/Kernel.php"
       - "../src/Tests/"
-  App\Security\UserValidationChecker: ~
+  App\Security\UserValidationChecker:
+    arguments:
+      $session: '@Symfony\Component\HttpFoundation\Session\SessionInterface'
+
+  Symfony\Component\HttpFoundation\Session\SessionInterface:
+    class: Symfony\Component\HttpFoundation\Session\Session

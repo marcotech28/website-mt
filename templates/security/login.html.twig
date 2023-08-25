@@ -5,6 +5,16 @@
 
 {% block body %}
 
+	{% for label, messages in app.flashes %}
+		{% for message in messages %}
+			<div class="alert alert-{{ label }}">
+				<div class="container-xl">
+					{{ message }}
+				</div>
+			</div>
+		{% endfor %}
+	{% endfor %}
+
 	<div class="container-xl">
 
 		<div class="connection">
@@ -12,6 +22,7 @@
 			<div class="row">
 				<h2>Se connecter</h2>
 			</div>
+
 
 			<div class="row">
 				<div class="col">

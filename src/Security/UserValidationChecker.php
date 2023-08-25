@@ -3,12 +3,21 @@
 namespace App\Security;
 
 use App\Entity\User;
-use Symfony\Component\Security\Core\Exception\CustomUserMessageAuthenticationException;
-use Symfony\Component\Security\Core\User\UserCheckerInterface;
 use Symfony\Component\Security\Core\User\UserInterface;
+use Symfony\Component\HttpFoundation\Session\SessionInterface;
+use Symfony\Component\Security\Core\User\UserCheckerInterface;
+use Symfony\Component\HttpFoundation\Session\Flash\FlashBagInterface;
+use Symfony\Component\Security\Core\Exception\CustomUserMessageAuthenticationException;
 
 class UserValidationChecker implements UserCheckerInterface
 {
+    private $session;
+
+    public function __construct(SessionInterface $session)
+    {
+        $this->session = $session;
+    }
+
     public function checkPreAuth(UserInterface $user): void
     {
         if (!$user instanceof User) {
@@ -17,6 +26,8 @@ class UserValidationChecker implements UserCheckerInterface
 
         // Vérifiez si l'utilisateur a été validé
         if (!$user->isIsConfirmed()) {
+            $this->session->getFlashBag()->add('warning', 'Mot de passe incorrect ou alors votre compte est en cours de validation par notre équipe.');
+
             throw new CustomUserMessageAuthenticationException(
                 'Votre compte n\'a pas encore été validé par l\'administrateur.'
             );
