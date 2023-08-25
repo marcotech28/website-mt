@@ -24,3 +24,7 @@ services:
 
   Symfony\Component\HttpFoundation\Session\SessionInterface:
     class: Symfony\Component\HttpFoundation\Session\Session
+
+  App\Security\LoginFormAuthenticator:
+    arguments:
+      $userChecker: "@security.user_checker" # Utilisez le service par défaut

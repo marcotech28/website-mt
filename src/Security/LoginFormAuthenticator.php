@@ -43,11 +43,20 @@ class LoginFormAuthenticator extends AbstractAuthenticator implements Authentica
     public function authenticate(Request $request): Passport
     {
 
-        $loginData = $request->request->get('login');
+        $loginData = $request->request->all('login');
+
         $email = $loginData['email'];
         $password = $loginData['password'];
 
+
+
+
+
         $user = $this->userRepository->findOneBy(['email' => $email]);
+
+        if (!$user) {
+            throw new CustomUserMessageAuthenticationException('Email could not be found.');
+        }
 
         $this->userChecker->checkPreAuth($user); // Utilisation du UserChecker
 
@@ -63,12 +72,14 @@ class LoginFormAuthenticator extends AbstractAuthenticator implements Authentica
 
     public function onAuthenticationSuccess(Request $request, TokenInterface $token, string $firewallName): ?Response
     {
+
         return new RedirectResponse('/');
     }
 
     public function onAuthenticationFailure(Request $request, AuthenticationException $exception): ?Response
     {
         $request->getSession()->set(Security::AUTHENTICATION_ERROR, $exception);
+
         return new RedirectResponse(
             $this->router->generate('security_login')
         );

@@ -17,7 +17,8 @@ security:
       lazy: true
       provider: app_user_provider
       user_checker: App\Security\UserValidationChecker
-      #custom_authenticator: App\Security\LoginFormAuthenticator
+      custom_authenticator: App\Security\LoginFormAuthenticator
+      entry_point: App\Security\LoginFormAuthenticator
       form_login:
         login_path: security_login #endroit du formulaire de login
         check_path: security_login #endroit où on check que les infos sont bien les bonnes

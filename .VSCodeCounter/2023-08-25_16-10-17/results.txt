@@ -1,0 +1,615 @@
+Date : 2023-08-25 16:10:17
+Directory : c:\projets-info\MarconnetTechnologies
+Total : 515 files,  31026 codes, 1509 comments, 2581 blanks, all 35116 lines
+
+Languages
++--------------+------------+------------+------------+------------+------------+
+| language     | files      | code       | comment    | blank      | total      |
++--------------+------------+------------+------------+------------+------------+
+| XML          |        313 |     10,883 |        306 |        307 |     11,496 |
+| JSON         |          4 |      8,430 |          0 |          2 |      8,432 |
+| PHP          |         65 |      3,879 |        610 |        939 |      5,428 |
+| HTML (Twig)  |         79 |      3,131 |        126 |        611 |      3,868 |
+| Shell Script |          1 |      1,609 |          1 |         15 |      1,625 |
+| CSS          |          6 |      1,599 |         97 |        424 |      2,120 |
+| SQL          |         17 |        679 |        204 |        136 |      1,019 |
+| HTML         |          4 |        520 |         23 |         69 |        612 |
+| YAML         |         23 |        264 |         75 |         57 |        396 |
+| Markdown     |          1 |         22 |          0 |         14 |         36 |
+| Properties   |          1 |          5 |         32 |          6 |         43 |
+| JavaScript   |          1 |          5 |         35 |          1 |         41 |
++--------------+------------+------------+------------+------------+------------+
+
+Directories
++-----------------------------------------------------------------------------------------------------------+------------+------------+------------+------------+------------+
+| path                                                                                                      | files      | code       | comment    | blank      | total      |
++-----------------------------------------------------------------------------------------------------------+------------+------------+------------+------------+------------+
+| .                                                                                                         |        515 |     31,026 |      1,509 |      2,581 |     35,116 |
+| . (Files)                                                                                                 |          6 |      8,475 |         43 |         28 |      8,546 |
+| config                                                                                                    |         23 |        266 |         64 |         55 |        385 |
+| config (Files)                                                                                            |          4 |         47 |          0 |         10 |         57 |
+| config\packages                                                                                           |         16 |        206 |         64 |         42 |        312 |
+| config\routes                                                                                             |          3 |         13 |          0 |          3 |         16 |
+| export database                                                                                           |          9 |        361 |        108 |         72 |        541 |
+| export mysql                                                                                              |          8 |        318 |         96 |         64 |        478 |
+| formulaire de contact bootstrap epure                                                                     |          2 |        196 |         17 |         55 |        268 |
+| formulaire de contact bootstrap epure\contact-form-11                                                     |          2 |        196 |         17 |         55 |        268 |
+| formulaire de contact bootstrap epure\contact-form-11 (Files)                                             |          1 |        101 |         16 |         37 |        154 |
+| formulaire de contact bootstrap epure\contact-form-11\css                                                 |          1 |         95 |          1 |         18 |        114 |
+| icones sympa                                                                                              |        301 |     12,192 |        301 |        316 |     12,809 |
+| icones sympa\CSH                                                                                          |          1 |      1,609 |          1 |         15 |      1,625 |
+| icones sympa\SVG                                                                                          |        300 |     10,583 |        300 |        301 |     11,184 |
+| migrations                                                                                                |          1 |         48 |          5 |          7 |         60 |
+| page login bootstrap                                                                                      |          2 |        115 |          4 |         26 |        145 |
+| public                                                                                                    |         19 |      1,648 |        134 |        377 |      2,159 |
+| public (Files)                                                                                            |          2 |         11 |         35 |          5 |         51 |
+| public\css                                                                                                |          2 |      1,335 |         93 |        366 |      1,794 |
+| public\images                                                                                             |         15 |        302 |          6 |          6 |        314 |
+| public\images (Files)                                                                                     |          9 |        296 |          6 |          6 |        308 |
+| public\images\revend                                                                                      |          1 |          1 |          0 |          0 |          1 |
+| public\images\svg                                                                                         |          5 |          5 |          0 |          0 |          5 |
+| src                                                                                                       |         61 |      3,803 |        605 |        924 |      5,332 |
+| src (Files)                                                                                               |          1 |          9 |          0 |          4 |         13 |
+| src\Controller                                                                                            |         24 |      1,207 |        121 |        377 |      1,705 |
+| src\Data                                                                                                  |          1 |          6 |          3 |          3 |         12 |
+| src\DataFixtures                                                                                          |          1 |         19 |          2 |          8 |         29 |
+| src\Entity                                                                                                |          7 |        955 |         42 |        319 |      1,316 |
+| src\Form                                                                                                  |         17 |      1,268 |        246 |        101 |      1,615 |
+| src\Repository                                                                                            |          7 |        219 |        181 |         78 |        478 |
+| src\Security                                                                                              |          2 |         95 |         10 |         26 |        131 |
+| src\Twig                                                                                                  |          1 |         25 |          0 |          8 |         33 |
+| templates                                                                                                 |         80 |      3,320 |        131 |        622 |      4,073 |
+| templates (Files)                                                                                         |          3 |        355 |         17 |         60 |        432 |
+| templates\about                                                                                           |          4 |        204 |          6 |         30 |        240 |
+| templates\actu                                                                                            |          2 |         64 |          1 |         19 |         84 |
+| templates\admin_crud_categorie                                                                            |          6 |        133 |          4 |         30 |        167 |
+| templates\admin_crud_marque                                                                               |          6 |         94 |          4 |         29 |        127 |
+| templates\admin_crud_news                                                                                 |          6 |        133 |          0 |         34 |        167 |
+| templates\admin_crud_produit                                                                              |          6 |        219 |          0 |         32 |        251 |
+| templates\admin_crud_user                                                                                 |          6 |        161 |         72 |         53 |        286 |
+| templates\admin_crud_utilisation                                                                          |          6 |        120 |          0 |         25 |        145 |
+| templates\bundles                                                                                         |          3 |         74 |          0 |         11 |         85 |
+| templates\bundles\TwigBundle                                                                              |          3 |         74 |          0 |         11 |         85 |
+| templates\bundles\TwigBundle\Exception                                                                    |          3 |         74 |          0 |         11 |         85 |
+| templates\categorie                                                                                       |          1 |         45 |          0 |          9 |         54 |
+| templates\change_password                                                                                 |          1 |         13 |          0 |          7 |         20 |
+| templates\contact                                                                                         |          1 |        105 |          2 |         17 |        124 |
+| templates\demonstration                                                                                   |          2 |        442 |          6 |         34 |        482 |
+| templates\documentation                                                                                   |          2 |         28 |          4 |          8 |         40 |
+| templates\espace_pro                                                                                      |          2 |         52 |          0 |         17 |         69 |
+| templates\legal                                                                                           |          1 |         44 |          0 |         15 |         59 |
+| templates\mon_compte                                                                                      |          1 |         38 |          1 |         22 |         61 |
+| templates\news                                                                                            |          1 |         14 |          0 |          4 |         18 |
+| templates\partenaire                                                                                      |          3 |         99 |          0 |         15 |        114 |
+| templates\product                                                                                         |          4 |        267 |          1 |         34 |        302 |
+| templates\registration                                                                                    |          1 |         83 |          0 |         23 |        106 |
+| templates\reset_password                                                                                  |          4 |         60 |          0 |         18 |         78 |
+| templates\search                                                                                          |          2 |         39 |          0 |         13 |         52 |
+| templates\security                                                                                        |          1 |         66 |          0 |         13 |         79 |
+| templates\shared                                                                                          |          4 |        318 |         13 |         38 |        369 |
+| templates\utilisation                                                                                     |          1 |         50 |          0 |         12 |         62 |
+| test-css                                                                                                  |          1 |         74 |          0 |         17 |         91 |
+| test-css2                                                                                                 |          2 |        210 |          1 |         18 |        229 |
++-----------------------------------------------------------------------------------------------------------+------------+------------+------------+------------+------------+
+
+Files
++-----------------------------------------------------------------------------------------------------------+--------------+------------+------------+------------+------------+
+| filename                                                                                                  | language     | code       | comment    | blank      | total      |
++-----------------------------------------------------------------------------------------------------------+--------------+------------+------------+------------+------------+
+| c:\projets-info\MarconnetTechnologies\.env                                                                | Properties   |          5 |         32 |          6 |         43 |
+| c:\projets-info\MarconnetTechnologies\README.md                                                           | Markdown     |         22 |          0 |         14 |         36 |
+| c:\projets-info\MarconnetTechnologies\composer.json                                                       | JSON         |        108 |          0 |          1 |        109 |
+| c:\projets-info\MarconnetTechnologies\composer.lock                                                       | JSON         |      8,320 |          0 |          1 |      8,321 |
+| c:\projets-info\MarconnetTechnologies\config\bundles.php                                                  | PHP          |         18 |          0 |          2 |         20 |
+| c:\projets-info\MarconnetTechnologies\config\packages\cache.yaml                                          | YAML         |          2 |         13 |          5 |         20 |
+| c:\projets-info\MarconnetTechnologies\config\packages\debug.yaml                                          | YAML         |          3 |          2 |          1 |          6 |
+| c:\projets-info\MarconnetTechnologies\config\packages\doctrine.yaml                                       | YAML         |         34 |          4 |          5 |         43 |
+| c:\projets-info\MarconnetTechnologies\config\packages\doctrine_migrations.yaml                            | YAML         |          4 |          2 |          1 |          7 |
+| c:\projets-info\MarconnetTechnologies\config\packages\fm_elfinder.yaml                                    | YAML         |         16 |          0 |          0 |         16 |
+| c:\projets-info\MarconnetTechnologies\config\packages\framework.yaml                                      | YAML         |         15 |          6 |          4 |         25 |
+| c:\projets-info\MarconnetTechnologies\config\packages\mailer.yaml                                         | YAML         |          3 |          0 |          1 |          4 |
+| c:\projets-info\MarconnetTechnologies\config\packages\monolog.yaml                                        | YAML         |         50 |          8 |          4 |         62 |
+| c:\projets-info\MarconnetTechnologies\config\packages\reset_password.yaml                                 | YAML         |          2 |          0 |          1 |          3 |
+| c:\projets-info\MarconnetTechnologies\config\packages\routing.yaml                                        | YAML         |          7 |          3 |          3 |         13 |
+| c:\projets-info\MarconnetTechnologies\config\packages\security.yaml                                       | YAML         |         33 |         15 |          6 |         54 |
+| c:\projets-info\MarconnetTechnologies\config\packages\sensio_framework_extra.yaml                         | YAML         |          3 |          0 |          1 |          4 |
+| c:\projets-info\MarconnetTechnologies\config\packages\translation.yaml                                    | YAML         |          6 |          7 |          1 |         14 |
+| c:\projets-info\MarconnetTechnologies\config\packages\twig.yaml                                           | YAML         |          7 |          0 |          2 |          9 |
+| c:\projets-info\MarconnetTechnologies\config\packages\validator.yaml                                      | YAML         |          7 |          4 |          3 |         14 |
+| c:\projets-info\MarconnetTechnologies\config\packages\web_profiler.yaml                                   | YAML         |         14 |          0 |          4 |         18 |
+| c:\projets-info\MarconnetTechnologies\config\preload.php                                                  | PHP          |          4 |          0 |          2 |          6 |
+| c:\projets-info\MarconnetTechnologies\config\routes.yaml                                                  | YAML         |          3 |          0 |          1 |          4 |
+| c:\projets-info\MarconnetTechnologies\config\routes\fm_elfinder.yaml                                      | YAML         |          2 |          0 |          0 |          2 |
+| c:\projets-info\MarconnetTechnologies\config\routes\framework.yaml                                        | YAML         |          4 |          0 |          1 |          5 |
+| c:\projets-info\MarconnetTechnologies\config\routes\web_profiler.yaml                                     | YAML         |          7 |          0 |          2 |          9 |
+| c:\projets-info\MarconnetTechnologies\config\services.yaml                                                | YAML         |         22 |          0 |          5 |         27 |
+| c:\projets-info\MarconnetTechnologies\docker-compose.override.yml                                         | YAML         |          8 |          4 |          3 |         15 |
+| c:\projets-info\MarconnetTechnologies\docker-compose.yml                                                  | YAML         |         12 |          7 |          3 |         22 |
+| c:\projets-info\MarconnetTechnologies\export database\symfonymt_categorie.sql                             | SQL          |         38 |         12 |          8 |         58 |
+| c:\projets-info\MarconnetTechnologies\export database\symfonymt_doctrine_migration_versions.sql           | SQL          |         32 |         12 |          8 |         52 |
+| c:\projets-info\MarconnetTechnologies\export database\symfonymt_marque.sql                                | SQL          |         33 |         12 |          8 |         53 |
+| c:\projets-info\MarconnetTechnologies\export database\symfonymt_news.sql                                  | SQL          |         39 |         12 |          8 |         59 |
+| c:\projets-info\MarconnetTechnologies\export database\symfonymt_produit.sql                               | SQL          |         57 |         12 |          8 |         77 |
+| c:\projets-info\MarconnetTechnologies\export database\symfonymt_produit_produit.sql                       | SQL          |         36 |         12 |          8 |         56 |
+| c:\projets-info\MarconnetTechnologies\export database\symfonymt_reset_password_request.sql                | SQL          |         38 |         12 |          8 |         58 |
+| c:\projets-info\MarconnetTechnologies\export database\symfonymt_user.sql                                  | SQL          |         47 |         12 |          8 |         67 |
+| c:\projets-info\MarconnetTechnologies\export database\symfonymt_utilisation.sql                           | SQL          |         41 |         12 |          8 |         61 |
+| c:\projets-info\MarconnetTechnologies\export mysql\symfonymt_categorie.sql                                | SQL          |         36 |         12 |          8 |         56 |
+| c:\projets-info\MarconnetTechnologies\export mysql\symfonymt_doctrine_migration_versions.sql              | SQL          |         33 |         12 |          8 |         53 |
+| c:\projets-info\MarconnetTechnologies\export mysql\symfonymt_marque.sql                                   | SQL          |         33 |         12 |          8 |         53 |
+| c:\projets-info\MarconnetTechnologies\export mysql\symfonymt_news.sql                                     | SQL          |         36 |         12 |          8 |         56 |
+| c:\projets-info\MarconnetTechnologies\export mysql\symfonymt_produit.sql                                  | SQL          |         56 |         12 |          8 |         76 |
+| c:\projets-info\MarconnetTechnologies\export mysql\symfonymt_reset_password_request.sql                   | SQL          |         38 |         12 |          8 |         58 |
+| c:\projets-info\MarconnetTechnologies\export mysql\symfonymt_user.sql                                     | SQL          |         47 |         12 |          8 |         67 |
+| c:\projets-info\MarconnetTechnologies\export mysql\symfonymt_utilisation.sql                              | SQL          |         39 |         12 |          8 |         59 |
+| c:\projets-info\MarconnetTechnologies\formulaire de contact bootstrap epure\contact-form-11\css\style.css | CSS          |         95 |          1 |         18 |        114 |
+| c:\projets-info\MarconnetTechnologies\formulaire de contact bootstrap epure\contact-form-11\index.html    | HTML         |        101 |         16 |         37 |        154 |
+| c:\projets-info\MarconnetTechnologies\icones sympa\CSH\ikons.csh                                          | Shell Script |      1,609 |          1 |         15 |      1,625 |
+| c:\projets-info\MarconnetTechnologies\icones sympa\SVG\alarm.svg                                          | XML          |         19 |          1 |          1 |         21 |
+| c:\projets-info\MarconnetTechnologies\icones sympa\SVG\alt.svg                                            | XML          |         12 |          1 |          1 |         14 |
+| c:\projets-info\MarconnetTechnologies\icones sympa\SVG\android.svg                                        | XML          |         25 |          1 |          1 |         27 |
+| c:\projets-info\MarconnetTechnologies\icones sympa\SVG\apple.svg                                          | XML          |         17 |          1 |          1 |         19 |
+| c:\projets-info\MarconnetTechnologies\icones sympa\SVG\appstore.svg                                       | XML          |         28 |          1 |          1 |         30 |
+| c:\projets-info\MarconnetTechnologies\icones sympa\SVG\arrow_1.svg                                        | XML          |         16 |          1 |          1 |         18 |
+| c:\projets-info\MarconnetTechnologies\icones sympa\SVG\arrow_2.svg                                        | XML          |         15 |          1 |          1 |         17 |
+| c:\projets-info\MarconnetTechnologies\icones sympa\SVG\arrow_down.svg                                     | XML          |         15 |          1 |          1 |         17 |
+| c:\projets-info\MarconnetTechnologies\icones sympa\SVG\arrow_left.svg                                     | XML          |         15 |          1 |          1 |         17 |
+| c:\projets-info\MarconnetTechnologies\icones sympa\SVG\arrow_right.svg                                    | XML          |         15 |          1 |          1 |         17 |
+| c:\projets-info\MarconnetTechnologies\icones sympa\SVG\arrow_up.svg                                       | XML          |         15 |          1 |          1 |         17 |
+| c:\projets-info\MarconnetTechnologies\icones sympa\SVG\arrows.svg                                         | XML          |         21 |          1 |          1 |         23 |
+| c:\projets-info\MarconnetTechnologies\icones sympa\SVG\arrows_horizontal.svg                              | XML          |         18 |          1 |          1 |         20 |
+| c:\projets-info\MarconnetTechnologies\icones sympa\SVG\arrows_horizontal_2.svg                            | XML          |         17 |          1 |          1 |         19 |
+| c:\projets-info\MarconnetTechnologies\icones sympa\SVG\arrows_vertical.svg                                | XML          |         18 |          1 |          1 |         20 |
+| c:\projets-info\MarconnetTechnologies\icones sympa\SVG\arrows_vertical_2.svg                              | XML          |         17 |          1 |          1 |         19 |
+| c:\projets-info\MarconnetTechnologies\icones sympa\SVG\bar_chart_1.svg                                    | XML          |         14 |          1 |          1 |         16 |
+| c:\projets-info\MarconnetTechnologies\icones sympa\SVG\bar_chart_2.svg                                    | XML          |         14 |          1 |          1 |         16 |
+| c:\projets-info\MarconnetTechnologies\icones sympa\SVG\bar_chart_3.svg                                    | XML          |         14 |          1 |          1 |         16 |
+| c:\projets-info\MarconnetTechnologies\icones sympa\SVG\bar_graph.svg                                      | XML          |         15 |          1 |          1 |         17 |
+| c:\projets-info\MarconnetTechnologies\icones sympa\SVG\basket.svg                                         | XML          |         20 |          1 |          1 |         22 |
+| c:\projets-info\MarconnetTechnologies\icones sympa\SVG\basket_add.svg                                     | XML          |         21 |          1 |          1 |         23 |
+| c:\projets-info\MarconnetTechnologies\icones sympa\SVG\basket_delete.svg                                  | XML          |         23 |          1 |          1 |         25 |
+| c:\projets-info\MarconnetTechnologies\icones sympa\SVG\basket_ok.svg                                      | XML          |         22 |          1 |          1 |         24 |
+| c:\projets-info\MarconnetTechnologies\icones sympa\SVG\basket_remove.svg                                  | XML          |         20 |          1 |          1 |         22 |
+| c:\projets-info\MarconnetTechnologies\icones sympa\SVG\battery_1_3.svg                                    | XML          |         13 |          1 |          1 |         15 |
+| c:\projets-info\MarconnetTechnologies\icones sympa\SVG\battery_2_3.svg                                    | XML          |         13 |          1 |          1 |         15 |
+| c:\projets-info\MarconnetTechnologies\icones sympa\SVG\battery_empty.svg                                  | XML          |         13 |          1 |          1 |         15 |
+| c:\projets-info\MarconnetTechnologies\icones sympa\SVG\battery_full.svg                                   | XML          |         13 |          1 |          1 |         15 |
+| c:\projets-info\MarconnetTechnologies\icones sympa\SVG\behance.svg                                        | XML          |         19 |          1 |          1 |         21 |
+| c:\projets-info\MarconnetTechnologies\icones sympa\SVG\bell.svg                                           | XML          |         14 |          1 |          1 |         16 |
+| c:\projets-info\MarconnetTechnologies\icones sympa\SVG\bin.svg                                            | XML          |         15 |          1 |          1 |         17 |
+| c:\projets-info\MarconnetTechnologies\icones sympa\SVG\block.svg                                          | XML          |         14 |          1 |          1 |         16 |
+| c:\projets-info\MarconnetTechnologies\icones sympa\SVG\bluetooth.svg                                      | XML          |         15 |          1 |          1 |         17 |
+| c:\projets-info\MarconnetTechnologies\icones sympa\SVG\book.svg                                           | XML          |         16 |          1 |          1 |         18 |
+| c:\projets-info\MarconnetTechnologies\icones sympa\SVG\book_1.svg                                         | XML          |         16 |          1 |          1 |         18 |
+| c:\projets-info\MarconnetTechnologies\icones sympa\SVG\book_2.svg                                         | XML          |         27 |          1 |          1 |         29 |
+| c:\projets-info\MarconnetTechnologies\icones sympa\SVG\bookmark.svg                                       | XML          |         12 |          1 |          1 |         14 |
+| c:\projets-info\MarconnetTechnologies\icones sympa\SVG\brightness_high.svg                                | XML          |         25 |          1 |          1 |         27 |
+| c:\projets-info\MarconnetTechnologies\icones sympa\SVG\brightness_low.svg                                 | XML          |         24 |          1 |          1 |         26 |
+| c:\projets-info\MarconnetTechnologies\icones sympa\SVG\browser.svg                                        | XML          |         14 |          1 |          1 |         16 |
+| c:\projets-info\MarconnetTechnologies\icones sympa\SVG\browser_add.svg                                    | XML          |         16 |          1 |          1 |         18 |
+| c:\projets-info\MarconnetTechnologies\icones sympa\SVG\browser_delete.svg                                 | XML          |         17 |          1 |          1 |         19 |
+| c:\projets-info\MarconnetTechnologies\icones sympa\SVG\browser_layout_1.svg                               | XML          |         15 |          1 |          1 |         17 |
+| c:\projets-info\MarconnetTechnologies\icones sympa\SVG\browser_layout_2.svg                               | XML          |         15 |          1 |          1 |         17 |
+| c:\projets-info\MarconnetTechnologies\icones sympa\SVG\browser_layout_3.svg                               | XML          |         15 |          1 |          1 |         17 |
+| c:\projets-info\MarconnetTechnologies\icones sympa\SVG\browser_ok.svg                                     | XML          |         17 |          1 |          1 |         19 |
+| c:\projets-info\MarconnetTechnologies\icones sympa\SVG\browser_remove.svg                                 | XML          |         15 |          1 |          1 |         17 |
+| c:\projets-info\MarconnetTechnologies\icones sympa\SVG\bullseye.svg                                       | XML          |         14 |          1 |          1 |         16 |
+| c:\projets-info\MarconnetTechnologies\icones sympa\SVG\calendar.svg                                       | XML          |         33 |          1 |          1 |         35 |
+| c:\projets-info\MarconnetTechnologies\icones sympa\SVG\calendar_add.svg                                   | XML          |         17 |          1 |          1 |         19 |
+| c:\projets-info\MarconnetTechnologies\icones sympa\SVG\calendar_ok.svg                                    | XML          |         17 |          1 |          1 |         19 |
+| c:\projets-info\MarconnetTechnologies\icones sympa\SVG\camera.svg                                         | XML          |         15 |          1 |          1 |         17 |
+| c:\projets-info\MarconnetTechnologies\icones sympa\SVG\cassette.svg                                       | XML          |         14 |          1 |          1 |         16 |
+| c:\projets-info\MarconnetTechnologies\icones sympa\SVG\chart.svg                                          | XML          |         15 |          1 |          1 |         17 |
+| c:\projets-info\MarconnetTechnologies\icones sympa\SVG\chart_1_2.svg                                      | XML          |         13 |          1 |          1 |         15 |
+| c:\projets-info\MarconnetTechnologies\icones sympa\SVG\chart_1_4.svg                                      | XML          |         13 |          1 |          1 |         15 |
+| c:\projets-info\MarconnetTechnologies\icones sympa\SVG\chart_1_8.svg                                      | XML          |         13 |          1 |          1 |         15 |
+| c:\projets-info\MarconnetTechnologies\icones sympa\SVG\chart_3_4.svg                                      | XML          |         12 |          1 |          1 |         14 |
+| c:\projets-info\MarconnetTechnologies\icones sympa\SVG\chart_3_8.svg                                      | XML          |         13 |          1 |          1 |         15 |
+| c:\projets-info\MarconnetTechnologies\icones sympa\SVG\chart_5_8.svg                                      | XML          |         13 |          1 |          1 |         15 |
+| c:\projets-info\MarconnetTechnologies\icones sympa\SVG\chart_7_8.svg                                      | XML          |         13 |          1 |          1 |         15 |
+| c:\projets-info\MarconnetTechnologies\icones sympa\SVG\circle.svg                                         | XML          |         13 |          1 |          1 |         15 |
+| c:\projets-info\MarconnetTechnologies\icones sympa\SVG\circle_delete.svg                                  | XML          |         17 |          1 |          1 |         19 |
+| c:\projets-info\MarconnetTechnologies\icones sympa\SVG\circle_down.svg                                    | XML          |         16 |          1 |          1 |         18 |
+| c:\projets-info\MarconnetTechnologies\icones sympa\SVG\circle_fast_forward.svg                            | XML          |         17 |          1 |          1 |         19 |
+| c:\projets-info\MarconnetTechnologies\icones sympa\SVG\circle_left.svg                                    | XML          |         16 |          1 |          1 |         18 |
+| c:\projets-info\MarconnetTechnologies\icones sympa\SVG\circle_minus.svg                                   | XML          |         14 |          1 |          1 |         16 |
+| c:\projets-info\MarconnetTechnologies\icones sympa\SVG\circle_ok.svg                                      | XML          |         16 |          1 |          1 |         18 |
+| c:\projets-info\MarconnetTechnologies\icones sympa\SVG\circle_pause.svg                                   | XML          |         16 |          1 |          1 |         18 |
+| c:\projets-info\MarconnetTechnologies\icones sympa\SVG\circle_play.svg                                    | XML          |         19 |          1 |          1 |         21 |
+| c:\projets-info\MarconnetTechnologies\icones sympa\SVG\circle_plus.svg                                    | XML          |         14 |          1 |          1 |         16 |
+| c:\projets-info\MarconnetTechnologies\icones sympa\SVG\circle_rewind.svg                                  | XML          |         17 |          1 |          1 |         19 |
+| c:\projets-info\MarconnetTechnologies\icones sympa\SVG\circle_right.svg                                   | XML          |         16 |          1 |          1 |         18 |
+| c:\projets-info\MarconnetTechnologies\icones sympa\SVG\circle_skip_next.svg                               | XML          |         15 |          1 |          1 |         17 |
+| c:\projets-info\MarconnetTechnologies\icones sympa\SVG\circle_skip_previous.svg                           | XML          |         15 |          1 |          1 |         17 |
+| c:\projets-info\MarconnetTechnologies\icones sympa\SVG\circle_stop.svg                                    | XML          |         14 |          1 |          1 |         16 |
+| c:\projets-info\MarconnetTechnologies\icones sympa\SVG\circle_up.svg                                      | XML          |         16 |          1 |          1 |         18 |
+| c:\projets-info\MarconnetTechnologies\icones sympa\SVG\clip.svg                                           | XML          |         16 |          1 |          1 |         18 |
+| c:\projets-info\MarconnetTechnologies\icones sympa\SVG\close.svg                                          | XML          |         15 |          1 |          1 |         17 |
+| c:\projets-info\MarconnetTechnologies\icones sympa\SVG\cloud.svg                                          | XML          |         30 |          1 |          1 |         32 |
+| c:\projets-info\MarconnetTechnologies\icones sympa\SVG\cloud_download.svg                                 | XML          |         34 |          1 |          1 |         36 |
+| c:\projets-info\MarconnetTechnologies\icones sympa\SVG\cloud_fail.svg                                     | XML          |         34 |          1 |          1 |         36 |
+| c:\projets-info\MarconnetTechnologies\icones sympa\SVG\cloud_ok.svg                                       | XML          |         32 |          1 |          1 |         34 |
+| c:\projets-info\MarconnetTechnologies\icones sympa\SVG\cloud_upload.svg                                   | XML          |         40 |          1 |          1 |         42 |
+| c:\projets-info\MarconnetTechnologies\icones sympa\SVG\code.svg                                           | XML          |         20 |          1 |          1 |         22 |
+| c:\projets-info\MarconnetTechnologies\icones sympa\SVG\cog.svg                                            | XML          |         22 |          1 |          1 |         24 |
+| c:\projets-info\MarconnetTechnologies\icones sympa\SVG\columns.svg                                        | XML          |         13 |          1 |          1 |         15 |
+| c:\projets-info\MarconnetTechnologies\icones sympa\SVG\command.svg                                        | XML          |         15 |          1 |          1 |         17 |
+| c:\projets-info\MarconnetTechnologies\icones sympa\SVG\compass.svg                                        | XML          |         14 |          1 |          1 |         16 |
+| c:\projets-info\MarconnetTechnologies\icones sympa\SVG\computer_add.svg                                   | XML          |         14 |          1 |          1 |         16 |
+| c:\projets-info\MarconnetTechnologies\icones sympa\SVG\computer_delete.svg                                | XML          |         17 |          1 |          1 |         19 |
+| c:\projets-info\MarconnetTechnologies\icones sympa\SVG\computer_download.svg                              | XML          |         15 |          1 |          1 |         17 |
+| c:\projets-info\MarconnetTechnologies\icones sympa\SVG\computer_ok.svg                                    | XML          |         15 |          1 |          1 |         17 |
+| c:\projets-info\MarconnetTechnologies\icones sympa\SVG\computer_remove.svg                                | XML          |         13 |          1 |          1 |         15 |
+| c:\projets-info\MarconnetTechnologies\icones sympa\SVG\computer_upload.svg                                | XML          |         16 |          1 |          1 |         18 |
+| c:\projets-info\MarconnetTechnologies\icones sympa\SVG\copy_1.svg                                         | XML          |         12 |          1 |          1 |         14 |
+| c:\projets-info\MarconnetTechnologies\icones sympa\SVG\copy_2.svg                                         | XML          |         12 |          1 |          1 |         14 |
+| c:\projets-info\MarconnetTechnologies\icones sympa\SVG\credit_card.svg                                    | XML          |         13 |          1 |          1 |         15 |
+| c:\projets-info\MarconnetTechnologies\icones sympa\SVG\crop.svg                                           | XML          |         14 |          1 |          1 |         16 |
+| c:\projets-info\MarconnetTechnologies\icones sympa\SVG\diskette.svg                                       | XML          |         13 |          1 |          1 |         15 |
+| c:\projets-info\MarconnetTechnologies\icones sympa\SVG\document.svg                                       | XML          |         13 |          1 |          1 |         15 |
+| c:\projets-info\MarconnetTechnologies\icones sympa\SVG\document_add.svg                                   | XML          |         15 |          1 |          1 |         17 |
+| c:\projets-info\MarconnetTechnologies\icones sympa\SVG\document_delete.svg                                | XML          |         19 |          1 |          1 |         21 |
+| c:\projets-info\MarconnetTechnologies\icones sympa\SVG\document_download.svg                              | XML          |         17 |          1 |          1 |         19 |
+| c:\projets-info\MarconnetTechnologies\icones sympa\SVG\document_ok.svg                                    | XML          |         16 |          1 |          1 |         18 |
+| c:\projets-info\MarconnetTechnologies\icones sympa\SVG\document_remove.svg                                | XML          |         14 |          1 |          1 |         16 |
+| c:\projets-info\MarconnetTechnologies\icones sympa\SVG\document_upload.svg                                | XML          |         17 |          1 |          1 |         19 |
+| c:\projets-info\MarconnetTechnologies\icones sympa\SVG\documents.svg                                      | XML          |         14 |          1 |          1 |         16 |
+| c:\projets-info\MarconnetTechnologies\icones sympa\SVG\download.svg                                       | XML          |         16 |          1 |          1 |         18 |
+| c:\projets-info\MarconnetTechnologies\icones sympa\SVG\dribbble.svg                                       | XML          |         35 |          1 |          1 |         37 |
+| c:\projets-info\MarconnetTechnologies\icones sympa\SVG\drop.svg                                           | XML          |         11 |          1 |          1 |         13 |
+| c:\projets-info\MarconnetTechnologies\icones sympa\SVG\dropbox.svg                                        | XML          |         15 |          1 |          1 |         17 |
+| c:\projets-info\MarconnetTechnologies\icones sympa\SVG\eject.svg                                          | XML          |         15 |          1 |          1 |         17 |
+| c:\projets-info\MarconnetTechnologies\icones sympa\SVG\equalizer.svg                                      | XML          |         17 |          1 |          1 |         19 |
+| c:\projets-info\MarconnetTechnologies\icones sympa\SVG\facebook_1.svg                                     | XML          |         15 |          1 |          1 |         17 |
+| c:\projets-info\MarconnetTechnologies\icones sympa\SVG\facebook_2.svg                                     | XML          |         16 |          1 |          1 |         18 |
+| c:\projets-info\MarconnetTechnologies\icones sympa\SVG\fast_forward.svg                                   | XML          |         16 |          1 |          1 |         18 |
+| c:\projets-info\MarconnetTechnologies\icones sympa\SVG\first_aid.svg                                      | XML          |         14 |          1 |          1 |         16 |
+| c:\projets-info\MarconnetTechnologies\icones sympa\SVG\folder.svg                                         | XML          |         13 |          1 |          1 |         15 |
+| c:\projets-info\MarconnetTechnologies\icones sympa\SVG\folder_add.svg                                     | XML          |         15 |          1 |          1 |         17 |
+| c:\projets-info\MarconnetTechnologies\icones sympa\SVG\folder_delete.svg                                  | XML          |         18 |          1 |          1 |         20 |
+| c:\projets-info\MarconnetTechnologies\icones sympa\SVG\folder_ok.svg                                      | XML          |         16 |          1 |          1 |         18 |
+| c:\projets-info\MarconnetTechnologies\icones sympa\SVG\folder_remove.svg                                  | XML          |         14 |          1 |          1 |         16 |
+| c:\projets-info\MarconnetTechnologies\icones sympa\SVG\followers.svg                                      | XML          |         24 |          1 |          1 |         26 |
+| c:\projets-info\MarconnetTechnologies\icones sympa\SVG\following.svg                                      | XML          |         22 |          1 |          1 |         24 |
+| c:\projets-info\MarconnetTechnologies\icones sympa\SVG\font_size_down.svg                                 | XML          |         14 |          1 |          1 |         16 |
+| c:\projets-info\MarconnetTechnologies\icones sympa\SVG\font_size_up.svg                                   | XML          |         15 |          1 |          1 |         17 |
+| c:\projets-info\MarconnetTechnologies\icones sympa\SVG\forrst.svg                                         | XML          |         16 |          1 |          1 |         18 |
+| c:\projets-info\MarconnetTechnologies\icones sympa\SVG\foursquare.svg                                     | XML          |         17 |          1 |          1 |         19 |
+| c:\projets-info\MarconnetTechnologies\icones sympa\SVG\frame.svg                                          | XML          |         25 |          1 |          1 |         27 |
+| c:\projets-info\MarconnetTechnologies\icones sympa\SVG\globe.svg                                          | XML          |      1,118 |          1 |          1 |      1,120 |
+| c:\projets-info\MarconnetTechnologies\icones sympa\SVG\google_plus.svg                                    | XML          |         20 |          1 |          1 |         22 |
+| c:\projets-info\MarconnetTechnologies\icones sympa\SVG\graph_fall.svg                                     | XML          |         14 |          1 |          1 |         16 |
+| c:\projets-info\MarconnetTechnologies\icones sympa\SVG\graph_rise.svg                                     | XML          |         14 |          1 |          1 |         16 |
+| c:\projets-info\MarconnetTechnologies\icones sympa\SVG\grid_1.svg                                         | XML          |         16 |          1 |          1 |         18 |
+| c:\projets-info\MarconnetTechnologies\icones sympa\SVG\grid_2.svg                                         | XML          |         15 |          1 |          1 |         17 |
+| c:\projets-info\MarconnetTechnologies\icones sympa\SVG\hashtag.svg                                        | XML          |         17 |          1 |          1 |         19 |
+| c:\projets-info\MarconnetTechnologies\icones sympa\SVG\heart.svg                                          | XML          |         16 |          1 |          1 |         18 |
+| c:\projets-info\MarconnetTechnologies\icones sympa\SVG\home.svg                                           | XML          |         17 |          1 |          1 |         19 |
+| c:\projets-info\MarconnetTechnologies\icones sympa\SVG\imac.svg                                           | XML          |         13 |          1 |          1 |         15 |
+| c:\projets-info\MarconnetTechnologies\icones sympa\SVG\image.svg                                          | XML          |         16 |          1 |          1 |         18 |
+| c:\projets-info\MarconnetTechnologies\icones sympa\SVG\inbox.svg                                          | XML          |         15 |          1 |          1 |         17 |
+| c:\projets-info\MarconnetTechnologies\icones sympa\SVG\inbox_in.svg                                       | XML          |         17 |          1 |          1 |         19 |
+| c:\projets-info\MarconnetTechnologies\icones sympa\SVG\inbox_out.svg                                      | XML          |         18 |          1 |          1 |         20 |
+| c:\projets-info\MarconnetTechnologies\icones sympa\SVG\instagram.svg                                      | XML          |         22 |          1 |          1 |         24 |
+| c:\projets-info\MarconnetTechnologies\icones sympa\SVG\ipad.svg                                           | XML          |         13 |          1 |          1 |         15 |
+| c:\projets-info\MarconnetTechnologies\icones sympa\SVG\iphone.svg                                         | XML          |         13 |          1 |          1 |         15 |
+| c:\projets-info\MarconnetTechnologies\icones sympa\SVG\layers.svg                                         | XML          |         25 |          1 |          1 |         27 |
+| c:\projets-info\MarconnetTechnologies\icones sympa\SVG\line_graph.svg                                     | XML          |         17 |          1 |          1 |         19 |
+| c:\projets-info\MarconnetTechnologies\icones sympa\SVG\line_graph_square.svg                              | XML          |         17 |          1 |          1 |         19 |
+| c:\projets-info\MarconnetTechnologies\icones sympa\SVG\link.svg                                           | XML          |         20 |          1 |          1 |         22 |
+| c:\projets-info\MarconnetTechnologies\icones sympa\SVG\linkedin.svg                                       | XML          |         15 |          1 |          1 |         17 |
+| c:\projets-info\MarconnetTechnologies\icones sympa\SVG\list.svg                                           | XML          |         14 |          1 |          1 |         16 |
+| c:\projets-info\MarconnetTechnologies\icones sympa\SVG\list_2.svg                                         | XML          |         16 |          1 |          1 |         18 |
+| c:\projets-info\MarconnetTechnologies\icones sympa\SVG\loading.svg                                        | XML          |         20 |          1 |          1 |         22 |
+| c:\projets-info\MarconnetTechnologies\icones sympa\SVG\location.svg                                       | XML          |         14 |          1 |          1 |         16 |
+| c:\projets-info\MarconnetTechnologies\icones sympa\SVG\lock.svg                                           | XML          |         15 |          1 |          1 |         17 |
+| c:\projets-info\MarconnetTechnologies\icones sympa\SVG\login.svg                                          | XML          |         16 |          1 |          1 |         18 |
+| c:\projets-info\MarconnetTechnologies\icones sympa\SVG\logout.svg                                         | XML          |         16 |          1 |          1 |         18 |
+| c:\projets-info\MarconnetTechnologies\icones sympa\SVG\macbook.svg                                        | XML          |         13 |          1 |          1 |         15 |
+| c:\projets-info\MarconnetTechnologies\icones sympa\SVG\magnifying_glass.svg                               | XML          |         15 |          1 |          1 |         17 |
+| c:\projets-info\MarconnetTechnologies\icones sympa\SVG\magnifying_glass_add.svg                           | XML          |         16 |          1 |          1 |         18 |
+| c:\projets-info\MarconnetTechnologies\icones sympa\SVG\magnifying_glass_remove.svg                        | XML          |         15 |          1 |          1 |         17 |
+| c:\projets-info\MarconnetTechnologies\icones sympa\SVG\mail.svg                                           | XML          |         15 |          1 |          1 |         17 |
+| c:\projets-info\MarconnetTechnologies\icones sympa\SVG\mail_incoming.svg                                  | XML          |         20 |          1 |          1 |         22 |
+| c:\projets-info\MarconnetTechnologies\icones sympa\SVG\mail_outgoing.svg                                  | XML          |         20 |          1 |          1 |         22 |
+| c:\projets-info\MarconnetTechnologies\icones sympa\SVG\map.svg                                            | XML          |         17 |          1 |          1 |         19 |
+| c:\projets-info\MarconnetTechnologies\icones sympa\SVG\map_add.svg                                        | XML          |         20 |          1 |          1 |         22 |
+| c:\projets-info\MarconnetTechnologies\icones sympa\SVG\map_delete.svg                                     | XML          |         22 |          1 |          1 |         24 |
+| c:\projets-info\MarconnetTechnologies\icones sympa\SVG\map_ok.svg                                         | XML          |         21 |          1 |          1 |         23 |
+| c:\projets-info\MarconnetTechnologies\icones sympa\SVG\map_remove.svg                                     | XML          |         19 |          1 |          1 |         21 |
+| c:\projets-info\MarconnetTechnologies\icones sympa\SVG\microphone.svg                                     | XML          |         16 |          1 |          1 |         18 |
+| c:\projets-info\MarconnetTechnologies\icones sympa\SVG\microphone_off.svg                                 | XML          |         22 |          1 |          1 |         24 |
+| c:\projets-info\MarconnetTechnologies\icones sympa\SVG\microsoft.svg                                      | XML          |         21 |          1 |          1 |         23 |
+| c:\projets-info\MarconnetTechnologies\icones sympa\SVG\minus.svg                                          | XML          |         12 |          1 |          1 |         14 |
+| c:\projets-info\MarconnetTechnologies\icones sympa\SVG\more.svg                                           | XML          |         15 |          1 |          1 |         17 |
+| c:\projets-info\MarconnetTechnologies\icones sympa\SVG\more_2.svg                                         | XML          |         15 |          1 |          1 |         17 |
+| c:\projets-info\MarconnetTechnologies\icones sympa\SVG\moustache.svg                                      | XML          |         15 |          1 |          1 |         17 |
+| c:\projets-info\MarconnetTechnologies\icones sympa\SVG\music.svg                                          | XML          |         14 |          1 |          1 |         16 |
+| c:\projets-info\MarconnetTechnologies\icones sympa\SVG\notepad.svg                                        | XML          |         18 |          1 |          1 |         20 |
+| c:\projets-info\MarconnetTechnologies\icones sympa\SVG\notepad_add.svg                                    | XML          |         20 |          1 |          1 |         22 |
+| c:\projets-info\MarconnetTechnologies\icones sympa\SVG\notepad_delete.svg                                 | XML          |         24 |          1 |          1 |         26 |
+| c:\projets-info\MarconnetTechnologies\icones sympa\SVG\notepad_ok.svg                                     | XML          |         22 |          1 |          1 |         24 |
+| c:\projets-info\MarconnetTechnologies\icones sympa\SVG\notepad_remove.svg                                 | XML          |         20 |          1 |          1 |         22 |
+| c:\projets-info\MarconnetTechnologies\icones sympa\SVG\pause.svg                                          | XML          |         13 |          1 |          1 |         15 |
+| c:\projets-info\MarconnetTechnologies\icones sympa\SVG\paypal.svg                                         | XML          |         23 |          1 |          1 |         25 |
+| c:\projets-info\MarconnetTechnologies\icones sympa\SVG\pen_1.svg                                          | XML          |         14 |          1 |          1 |         16 |
+| c:\projets-info\MarconnetTechnologies\icones sympa\SVG\pen_2.svg                                          | XML          |         14 |          1 |          1 |         16 |
+| c:\projets-info\MarconnetTechnologies\icones sympa\SVG\pen_3.svg                                          | XML          |         15 |          1 |          1 |         17 |
+| c:\projets-info\MarconnetTechnologies\icones sympa\SVG\picture.svg                                        | XML          |         26 |          1 |          1 |         28 |
+| c:\projets-info\MarconnetTechnologies\icones sympa\SVG\pie_chart.svg                                      | XML          |         13 |          1 |          1 |         15 |
+| c:\projets-info\MarconnetTechnologies\icones sympa\SVG\pill.svg                                           | XML          |         13 |          1 |          1 |         15 |
+| c:\projets-info\MarconnetTechnologies\icones sympa\SVG\pin_1.svg                                          | XML          |         13 |          1 |          1 |         15 |
+| c:\projets-info\MarconnetTechnologies\icones sympa\SVG\pin_2.svg                                          | XML          |         14 |          1 |          1 |         16 |
+| c:\projets-info\MarconnetTechnologies\icones sympa\SVG\pin_zoom_in.svg                                    | XML          |         14 |          1 |          1 |         16 |
+| c:\projets-info\MarconnetTechnologies\icones sympa\SVG\pin_zoom_out.svg                                   | XML          |         14 |          1 |          1 |         16 |
+| c:\projets-info\MarconnetTechnologies\icones sympa\SVG\pinterest_1.svg                                    | XML          |         28 |          1 |          1 |         30 |
+| c:\projets-info\MarconnetTechnologies\icones sympa\SVG\pinterest_2.svg                                    | XML          |         19 |          1 |          1 |         21 |
+| c:\projets-info\MarconnetTechnologies\icones sympa\SVG\play.svg                                           | XML          |         14 |          1 |          1 |         16 |
+| c:\projets-info\MarconnetTechnologies\icones sympa\SVG\plug.svg                                           | XML          |         13 |          1 |          1 |         15 |
+| c:\projets-info\MarconnetTechnologies\icones sympa\SVG\plus.svg                                           | XML          |         13 |          1 |          1 |         15 |
+| c:\projets-info\MarconnetTechnologies\icones sympa\SVG\polaroid.svg                                       | XML          |         13 |          1 |          1 |         15 |
+| c:\projets-info\MarconnetTechnologies\icones sympa\SVG\polaroids.svg                                      | XML          |         13 |          1 |          1 |         15 |
+| c:\projets-info\MarconnetTechnologies\icones sympa\SVG\power.svg                                          | XML          |         16 |          1 |          1 |         18 |
+| c:\projets-info\MarconnetTechnologies\icones sympa\SVG\presentation.svg                                   | XML          |         14 |          1 |          1 |         16 |
+| c:\projets-info\MarconnetTechnologies\icones sympa\SVG\printer.svg                                        | XML          |         18 |          1 |          1 |         20 |
+| c:\projets-info\MarconnetTechnologies\icones sympa\SVG\progress.svg                                       | XML          |         15 |          1 |          1 |         17 |
+| c:\projets-info\MarconnetTechnologies\icones sympa\SVG\record.svg                                         | XML          |         12 |          1 |          1 |         14 |
+| c:\projets-info\MarconnetTechnologies\icones sympa\SVG\repeat.svg                                         | XML          |         18 |          1 |          1 |         20 |
+| c:\projets-info\MarconnetTechnologies\icones sympa\SVG\repeat_1.svg                                       | XML          |         14 |          1 |          1 |         16 |
+| c:\projets-info\MarconnetTechnologies\icones sympa\SVG\repeat_2.svg                                       | XML          |         16 |          1 |          1 |         18 |
+| c:\projets-info\MarconnetTechnologies\icones sympa\SVG\resize_1.svg                                       | XML          |         20 |          1 |          1 |         22 |
+| c:\projets-info\MarconnetTechnologies\icones sympa\SVG\resize_2.svg                                       | XML          |         20 |          1 |          1 |         22 |
+| c:\projets-info\MarconnetTechnologies\icones sympa\SVG\resize_3.svg                                       | XML          |         15 |          1 |          1 |         17 |
+| c:\projets-info\MarconnetTechnologies\icones sympa\SVG\resize_4.svg                                       | XML          |         15 |          1 |          1 |         17 |
+| c:\projets-info\MarconnetTechnologies\icones sympa\SVG\resize_5.svg                                       | XML          |         16 |          1 |          1 |         18 |
+| c:\projets-info\MarconnetTechnologies\icones sympa\SVG\resize_6.svg                                       | XML          |         16 |          1 |          1 |         18 |
+| c:\projets-info\MarconnetTechnologies\icones sympa\SVG\rewind.svg                                         | XML          |         15 |          1 |          1 |         17 |
+| c:\projets-info\MarconnetTechnologies\icones sympa\SVG\rss.svg                                            | XML          |         13 |          1 |          1 |         15 |
+| c:\projets-info\MarconnetTechnologies\icones sympa\SVG\screen_expand_1.svg                                | XML          |         14 |          1 |          1 |         16 |
+| c:\projets-info\MarconnetTechnologies\icones sympa\SVG\screen_expand_2.svg                                | XML          |         14 |          1 |          1 |         16 |
+| c:\projets-info\MarconnetTechnologies\icones sympa\SVG\screen_expand_3.svg                                | XML          |         16 |          1 |          1 |         18 |
+| c:\projets-info\MarconnetTechnologies\icones sympa\SVG\share.svg                                          | XML          |         16 |          1 |          1 |         18 |
+| c:\projets-info\MarconnetTechnologies\icones sympa\SVG\share_2.svg                                        | XML          |         16 |          1 |          1 |         18 |
+| c:\projets-info\MarconnetTechnologies\icones sympa\SVG\shop.svg                                           | XML          |         18 |          1 |          1 |         20 |
+| c:\projets-info\MarconnetTechnologies\icones sympa\SVG\shopping_bag.svg                                   | XML          |         13 |          1 |          1 |         15 |
+| c:\projets-info\MarconnetTechnologies\icones sympa\SVG\shopping_cart.svg                                  | XML          |         15 |          1 |          1 |         17 |
+| c:\projets-info\MarconnetTechnologies\icones sympa\SVG\shopping_cart_add.svg                              | XML          |      4,443 |          1 |          2 |      4,446 |
+| c:\projets-info\MarconnetTechnologies\icones sympa\SVG\shopping_cart_delete.svg                           | XML          |         20 |          1 |          1 |         22 |
+| c:\projets-info\MarconnetTechnologies\icones sympa\SVG\shopping_cart_ok.svg                               | XML          |         18 |          1 |          1 |         20 |
+| c:\projets-info\MarconnetTechnologies\icones sympa\SVG\shopping_cart_remove.svg                           | XML          |         16 |          1 |          1 |         18 |
+| c:\projets-info\MarconnetTechnologies\icones sympa\SVG\shuffle.svg                                        | XML          |         20 |          1 |          1 |         22 |
+| c:\projets-info\MarconnetTechnologies\icones sympa\SVG\skip_next.svg                                      | XML          |         14 |          1 |          1 |         16 |
+| c:\projets-info\MarconnetTechnologies\icones sympa\SVG\skip_previous.svg                                  | XML          |         13 |          1 |          1 |         15 |
+| c:\projets-info\MarconnetTechnologies\icones sympa\SVG\skype.svg                                          | XML          |         30 |          1 |          1 |         32 |
+| c:\projets-info\MarconnetTechnologies\icones sympa\SVG\slideshow.svg                                      | XML          |         16 |          1 |          1 |         18 |
+| c:\projets-info\MarconnetTechnologies\icones sympa\SVG\speech_1.svg                                       | XML          |         16 |          1 |          1 |         18 |
+| c:\projets-info\MarconnetTechnologies\icones sympa\SVG\speech_2.svg                                       | XML          |         16 |          1 |          1 |         18 |
+| c:\projets-info\MarconnetTechnologies\icones sympa\SVG\speech_3.svg                                       | XML          |         18 |          1 |          1 |         20 |
+| c:\projets-info\MarconnetTechnologies\icones sympa\SVG\speech_4.svg                                       | XML          |         21 |          1 |          1 |         23 |
+| c:\projets-info\MarconnetTechnologies\icones sympa\SVG\speech_bubble_1.svg                                | XML          |         14 |          1 |          1 |         16 |
+| c:\projets-info\MarconnetTechnologies\icones sympa\SVG\speech_bubble_2.svg                                | XML          |         16 |          1 |          1 |         18 |
+| c:\projets-info\MarconnetTechnologies\icones sympa\SVG\speech_bubbles.svg                                 | XML          |         18 |          1 |          1 |         20 |
+| c:\projets-info\MarconnetTechnologies\icones sympa\SVG\spotify.svg                                        | XML          |         23 |          1 |          1 |         25 |
+| c:\projets-info\MarconnetTechnologies\icones sympa\SVG\square.svg                                         | XML          |         13 |          1 |          1 |         15 |
+| c:\projets-info\MarconnetTechnologies\icones sympa\SVG\square_add.svg                                     | XML          |         14 |          1 |          1 |         16 |
+| c:\projets-info\MarconnetTechnologies\icones sympa\SVG\square_dashed.svg                                  | XML          |         18 |          1 |          1 |         20 |
+| c:\projets-info\MarconnetTechnologies\icones sympa\SVG\square_delete.svg                                  | XML          |         16 |          1 |          1 |         18 |
+| c:\projets-info\MarconnetTechnologies\icones sympa\SVG\square_down.svg                                    | XML          |         21 |          1 |          1 |         23 |
+| c:\projets-info\MarconnetTechnologies\icones sympa\SVG\square_left.svg                                    | XML          |         21 |          1 |          1 |         23 |
+| c:\projets-info\MarconnetTechnologies\icones sympa\SVG\square_ok.svg                                      | XML          |         16 |          1 |          1 |         18 |
+| c:\projets-info\MarconnetTechnologies\icones sympa\SVG\square_remove.svg                                  | XML          |         13 |          1 |          1 |         15 |
+| c:\projets-info\MarconnetTechnologies\icones sympa\SVG\square_right.svg                                   | XML          |         21 |          1 |          1 |         23 |
+| c:\projets-info\MarconnetTechnologies\icones sympa\SVG\square_up.svg                                      | XML          |         22 |          1 |          1 |         24 |
+| c:\projets-info\MarconnetTechnologies\icones sympa\SVG\star.svg                                           | XML          |         15 |          1 |          1 |         17 |
+| c:\projets-info\MarconnetTechnologies\icones sympa\SVG\stop.svg                                           | XML          |         12 |          1 |          1 |         14 |
+| c:\projets-info\MarconnetTechnologies\icones sympa\SVG\suitcase.svg                                       | XML          |         14 |          1 |          1 |         16 |
+| c:\projets-info\MarconnetTechnologies\icones sympa\SVG\tag.svg                                            | XML          |         18 |          1 |          1 |         20 |
+| c:\projets-info\MarconnetTechnologies\icones sympa\SVG\tags.svg                                           | XML          |         20 |          1 |          1 |         22 |
+| c:\projets-info\MarconnetTechnologies\icones sympa\SVG\target.svg                                         | XML          |         18 |          1 |          1 |         20 |
+| c:\projets-info\MarconnetTechnologies\icones sympa\SVG\terminal.svg                                       | XML          |         14 |          1 |          1 |         16 |
+| c:\projets-info\MarconnetTechnologies\icones sympa\SVG\text_center.svg                                    | XML          |         15 |          1 |          1 |         17 |
+| c:\projets-info\MarconnetTechnologies\icones sympa\SVG\text_justify.svg                                   | XML          |         14 |          1 |          1 |         16 |
+| c:\projets-info\MarconnetTechnologies\icones sympa\SVG\text_left.svg                                      | XML          |         14 |          1 |          1 |         16 |
+| c:\projets-info\MarconnetTechnologies\icones sympa\SVG\text_right.svg                                     | XML          |         15 |          1 |          1 |         17 |
+| c:\projets-info\MarconnetTechnologies\icones sympa\SVG\tick.svg                                           | XML          |         14 |          1 |          1 |         16 |
+| c:\projets-info\MarconnetTechnologies\icones sympa\SVG\time.svg                                           | XML          |         14 |          1 |          1 |         16 |
+| c:\projets-info\MarconnetTechnologies\icones sympa\SVG\timer.svg                                          | XML          |         12 |          1 |          1 |         14 |
+| c:\projets-info\MarconnetTechnologies\icones sympa\SVG\tumblr.svg                                         | XML          |         16 |          1 |          1 |         18 |
+| c:\projets-info\MarconnetTechnologies\icones sympa\SVG\twitter.svg                                        | XML          |         24 |          1 |          1 |         26 |
+| c:\projets-info\MarconnetTechnologies\icones sympa\SVG\unlock.svg                                         | XML          |         15 |          1 |          1 |         17 |
+| c:\projets-info\MarconnetTechnologies\icones sympa\SVG\upload.svg                                         | XML          |         15 |          1 |          1 |         17 |
+| c:\projets-info\MarconnetTechnologies\icones sympa\SVG\user.svg                                           | XML          |         18 |          1 |          1 |         20 |
+| c:\projets-info\MarconnetTechnologies\icones sympa\SVG\user_add.svg                                       | XML          |         21 |          1 |          1 |         23 |
+| c:\projets-info\MarconnetTechnologies\icones sympa\SVG\user_circle.svg                                    | XML          |         18 |          1 |          1 |         20 |
+| c:\projets-info\MarconnetTechnologies\icones sympa\SVG\user_delete.svg                                    | XML          |         22 |          1 |          1 |         24 |
+| c:\projets-info\MarconnetTechnologies\icones sympa\SVG\user_ok.svg                                        | XML          |         23 |          1 |          1 |         25 |
+| c:\projets-info\MarconnetTechnologies\icones sympa\SVG\user_remove.svg                                    | XML          |         20 |          1 |          1 |         22 |
+| c:\projets-info\MarconnetTechnologies\icones sympa\SVG\user_square.svg                                    | XML          |         16 |          1 |          1 |         18 |
+| c:\projets-info\MarconnetTechnologies\icones sympa\SVG\users.svg                                          | XML          |         25 |          1 |          1 |         27 |
+| c:\projets-info\MarconnetTechnologies\icones sympa\SVG\view.svg                                           | XML          |         22 |          1 |          1 |         24 |
+| c:\projets-info\MarconnetTechnologies\icones sympa\SVG\view_off.svg                                       | XML          |         27 |          1 |          1 |         29 |
+| c:\projets-info\MarconnetTechnologies\icones sympa\SVG\vimeo.svg                                          | XML          |         16 |          1 |          1 |         18 |
+| c:\projets-info\MarconnetTechnologies\icones sympa\SVG\voicemail.svg                                      | XML          |         14 |          1 |          1 |         16 |
+| c:\projets-info\MarconnetTechnologies\icones sympa\SVG\volume_1.svg                                       | XML          |         15 |          1 |          1 |         17 |
+| c:\projets-info\MarconnetTechnologies\icones sympa\SVG\volume_2.svg                                       | XML          |         17 |          1 |          1 |         19 |
+| c:\projets-info\MarconnetTechnologies\icones sympa\SVG\volume_3.svg                                       | XML          |         18 |          1 |          1 |         20 |
+| c:\projets-info\MarconnetTechnologies\icones sympa\SVG\volume_down.svg                                    | XML          |         14 |          1 |          1 |         16 |
+| c:\projets-info\MarconnetTechnologies\icones sympa\SVG\volume_mute.svg                                    | XML          |         18 |          1 |          1 |         20 |
+| c:\projets-info\MarconnetTechnologies\icones sympa\SVG\volume_off.svg                                     | XML          |         16 |          1 |          1 |         18 |
+| c:\projets-info\MarconnetTechnologies\icones sympa\SVG\volume_up.svg                                      | XML          |         15 |          1 |          1 |         17 |
+| c:\projets-info\MarconnetTechnologies\icones sympa\SVG\warning.svg                                        | XML          |         15 |          1 |          1 |         17 |
+| c:\projets-info\MarconnetTechnologies\icones sympa\SVG\wifi_1.svg                                         | XML          |         14 |          1 |          1 |         16 |
+| c:\projets-info\MarconnetTechnologies\icones sympa\SVG\wifi_2.svg                                         | XML          |         15 |          1 |          1 |         17 |
+| c:\projets-info\MarconnetTechnologies\icones sympa\SVG\wifi_3.svg                                         | XML          |         16 |          1 |          1 |         18 |
+| c:\projets-info\MarconnetTechnologies\icones sympa\SVG\windows.svg                                        | XML          |         13 |          1 |          1 |         15 |
+| c:\projets-info\MarconnetTechnologies\icones sympa\SVG\youtube.svg                                        | XML          |         14 |          1 |          1 |         16 |
+| c:\projets-info\MarconnetTechnologies\icones sympa\SVG\zoom_in.svg                                        | XML          |         14 |          1 |          1 |         16 |
+| c:\projets-info\MarconnetTechnologies\icones sympa\SVG\zoom_out.svg                                       | XML          |         13 |          1 |          1 |         15 |
+| c:\projets-info\MarconnetTechnologies\migrations\Version20230804132415.php                                | PHP          |         48 |          5 |          7 |         60 |
+| c:\projets-info\MarconnetTechnologies\page login bootstrap\index.html                                     | HTML         |         60 |          1 |         15 |         76 |
+| c:\projets-info\MarconnetTechnologies\page login bootstrap\styles.css                                     | CSS          |         55 |          3 |         11 |         69 |
+| c:\projets-info\MarconnetTechnologies\public\css\lightbox.min.css                                         | CSS          |        172 |          0 |         26 |        198 |
+| c:\projets-info\MarconnetTechnologies\public\css\styles.css                                               | CSS          |      1,163 |         93 |        340 |      1,596 |
+| c:\projets-info\MarconnetTechnologies\public\images\HomepageMT_V3.json                                    | JSON         |          1 |          0 |          0 |          1 |
+| c:\projets-info\MarconnetTechnologies\public\images\background-card.svg                                   | XML          |          1 |          0 |          0 |          1 |
+| c:\projets-info\MarconnetTechnologies\public\images\facebook-logo.svg                                     | XML          |         43 |          1 |          1 |         45 |
+| c:\projets-info\MarconnetTechnologies\public\images\instagram-logo.svg                                    | XML          |         49 |          1 |          1 |         51 |
+| c:\projets-info\MarconnetTechnologies\public\images\linkedin-logo.svg                                     | XML          |         48 |          1 |          1 |         50 |
+| c:\projets-info\MarconnetTechnologies\public\images\lottie-homepage.json                                  | JSON         |          1 |          0 |          0 |          1 |
+| c:\projets-info\MarconnetTechnologies\public\images\revend\perce-neige.svg                                | XML          |          1 |          0 |          0 |          1 |
+| c:\projets-info\MarconnetTechnologies\public\images\svg\wave-1.svg                                        | XML          |          1 |          0 |          0 |          1 |
+| c:\projets-info\MarconnetTechnologies\public\images\svg\wave-2.svg                                        | XML          |          1 |          0 |          0 |          1 |
+| c:\projets-info\MarconnetTechnologies\public\images\svg\wave-3.svg                                        | XML          |          1 |          0 |          0 |          1 |
+| c:\projets-info\MarconnetTechnologies\public\images\svg\wave-4.svg                                        | XML          |          1 |          0 |          0 |          1 |
+| c:\projets-info\MarconnetTechnologies\public\images\svg\wave-5.svg                                        | XML          |          1 |          0 |          0 |          1 |
+| c:\projets-info\MarconnetTechnologies\public\images\telephone.svg                                         | XML          |         51 |          1 |          1 |         53 |
+| c:\projets-info\MarconnetTechnologies\public\images\website-logo.svg                                      | XML          |         58 |          1 |          1 |         60 |
+| c:\projets-info\MarconnetTechnologies\public\images\youtube-logo.svg                                      | XML          |         44 |          1 |          1 |         46 |
+| c:\projets-info\MarconnetTechnologies\public\index.php                                                    | PHP          |          6 |          0 |          4 |         10 |
+| c:\projets-info\MarconnetTechnologies\public\lightbox-plus-jquery.min.js                                  | JavaScript   |          5 |         35 |          1 |         41 |
+| c:\projets-info\MarconnetTechnologies\src\Controller\AboutController.php                                  | PHP          |         13 |          0 |          4 |         17 |
+| c:\projets-info\MarconnetTechnologies\src\Controller\ActuController.php                                   | PHP          |         28 |          0 |          8 |         36 |
+| c:\projets-info\MarconnetTechnologies\src\Controller\AdminCrudCategorieController.php                     | PHP          |         78 |          2 |         21 |        101 |
+| c:\projets-info\MarconnetTechnologies\src\Controller\AdminCrudMarqueController.php                        | PHP          |         86 |         19 |         31 |        136 |
+| c:\projets-info\MarconnetTechnologies\src\Controller\AdminCrudNewsController.php                          | PHP          |         64 |          1 |         15 |         80 |
+| c:\projets-info\MarconnetTechnologies\src\Controller\AdminCrudProduitController.php                       | PHP          |        135 |         21 |         58 |        214 |
+| c:\projets-info\MarconnetTechnologies\src\Controller\AdminCrudUserController.php                          | PHP          |         80 |         17 |         27 |        124 |
+| c:\projets-info\MarconnetTechnologies\src\Controller\AdminCrudUtilisationController.php                   | PHP          |         79 |          3 |         28 |        110 |
+| c:\projets-info\MarconnetTechnologies\src\Controller\CategorieController.php                              | PHP          |         31 |          1 |          8 |         40 |
+| c:\projets-info\MarconnetTechnologies\src\Controller\ChangePasswordController.php                         | PHP          |         71 |          0 |         17 |         88 |
+| c:\projets-info\MarconnetTechnologies\src\Controller\ContactController.php                                | PHP          |         63 |          0 |         12 |         75 |
+| c:\projets-info\MarconnetTechnologies\src\Controller\DemonstrationController.php                          | PHP          |         70 |          0 |         19 |         89 |
+| c:\projets-info\MarconnetTechnologies\src\Controller\DocumentationController.php                          | PHP          |         13 |          0 |          4 |         17 |
+| c:\projets-info\MarconnetTechnologies\src\Controller\EspaceProController.php                              | PHP          |         13 |          0 |          4 |         17 |
+| c:\projets-info\MarconnetTechnologies\src\Controller\HomeController.php                                   | PHP          |         57 |          1 |         19 |         77 |
+| c:\projets-info\MarconnetTechnologies\src\Controller\LegalController.php                                  | PHP          |         13 |          0 |          4 |         17 |
+| c:\projets-info\MarconnetTechnologies\src\Controller\MonCompteController.php                              | PHP          |         27 |          1 |         13 |         41 |
+| c:\projets-info\MarconnetTechnologies\src\Controller\PartenaireController.php                             | PHP          |         13 |          0 |          4 |         17 |
+| c:\projets-info\MarconnetTechnologies\src\Controller\ProductController.php                                | PHP          |         22 |         12 |         11 |         45 |
+| c:\projets-info\MarconnetTechnologies\src\Controller\RegistrationController.php                           | PHP          |         47 |          7 |         18 |         72 |
+| c:\projets-info\MarconnetTechnologies\src\Controller\ResetPasswordController.php                          | PHP          |        119 |         28 |         31 |        178 |
+| c:\projets-info\MarconnetTechnologies\src\Controller\SearchController.php                                 | PHP          |         31 |          2 |          7 |         40 |
+| c:\projets-info\MarconnetTechnologies\src\Controller\SecurityController.php                               | PHP          |         22 |          3 |          6 |         31 |
+| c:\projets-info\MarconnetTechnologies\src\Controller\UtilisationController.php                            | PHP          |         32 |          3 |          8 |         43 |
+| c:\projets-info\MarconnetTechnologies\src\DataFixtures\AppFixtures.php                                    | PHP          |         19 |          2 |          8 |         29 |
+| c:\projets-info\MarconnetTechnologies\src\Data\SearchData.php                                             | PHP          |          6 |          3 |          3 |         12 |
+| c:\projets-info\MarconnetTechnologies\src\Entity\Categorie.php                                            | PHP          |        147 |          8 |         45 |        200 |
+| c:\projets-info\MarconnetTechnologies\src\Entity\Marque.php                                               | PHP          |         67 |          4 |         20 |         91 |
+| c:\projets-info\MarconnetTechnologies\src\Entity\News.php                                                 | PHP          |        105 |          0 |         37 |        142 |
+| c:\projets-info\MarconnetTechnologies\src\Entity\Produit.php                                              | PHP          |        277 |          6 |         96 |        379 |
+| c:\projets-info\MarconnetTechnologies\src\Entity\ResetPasswordRequest.php                                 | PHP          |         31 |          0 |          9 |         40 |
+| c:\projets-info\MarconnetTechnologies\src\Entity\User.php                                                 | PHP          |        194 |         20 |         68 |        282 |
+| c:\projets-info\MarconnetTechnologies\src\Entity\Utilisation.php                                          | PHP          |        134 |          4 |         44 |        182 |
+| c:\projets-info\MarconnetTechnologies\src\Form\Avantage1Type.php                                          | PHP          |         20 |          0 |          5 |         25 |
+| c:\projets-info\MarconnetTechnologies\src\Form\CategorieType.php                                          | PHP          |         31 |          0 |          5 |         36 |
+| c:\projets-info\MarconnetTechnologies\src\Form\ChangePasswordType.php                                     | PHP          |         39 |          1 |          5 |         45 |
+| c:\projets-info\MarconnetTechnologies\src\Form\ContactFormType.php                                        | PHP          |        227 |        110 |         10 |        347 |
+| c:\projets-info\MarconnetTechnologies\src\Form\DemonstrationFormType.php                                  | PHP          |        269 |        127 |         11 |        407 |
+| c:\projets-info\MarconnetTechnologies\src\Form\LoginType.php                                              | PHP          |         33 |          1 |          5 |         39 |
+| c:\projets-info\MarconnetTechnologies\src\Form\MarqueType.php                                             | PHP          |         26 |          0 |          5 |         31 |
+| c:\projets-info\MarconnetTechnologies\src\Form\News1Type.php                                              | PHP          |         23 |          0 |          5 |         28 |
+| c:\projets-info\MarconnetTechnologies\src\Form\NewsType.php                                               | PHP          |         29 |          0 |          5 |         34 |
+| c:\projets-info\MarconnetTechnologies\src\Form\NewsletterType.php                                         | PHP          |         24 |          1 |          5 |         30 |
+| c:\projets-info\MarconnetTechnologies\src\Form\ProduitType.php                                            | PHP          |         98 |          0 |          7 |        105 |
+| c:\projets-info\MarconnetTechnologies\src\Form\RegistrationFormType.php                                   | PHP          |        213 |          4 |          6 |        223 |
+| c:\projets-info\MarconnetTechnologies\src\Form\ResetPasswordRequestFormType.php                           | PHP          |         29 |          0 |          5 |         34 |
+| c:\projets-info\MarconnetTechnologies\src\Form\SearchForm.php                                             | PHP          |         35 |          0 |          7 |         42 |
+| c:\projets-info\MarconnetTechnologies\src\Form\User1Type.php                                              | PHP          |         42 |          1 |          5 |         48 |
+| c:\projets-info\MarconnetTechnologies\src\Form\UserType.php                                               | PHP          |         90 |          1 |          5 |         96 |
+| c:\projets-info\MarconnetTechnologies\src\Form\UtilisationType.php                                        | PHP          |         40 |          0 |          5 |         45 |
+| c:\projets-info\MarconnetTechnologies\src\Kernel.php                                                      | PHP          |          9 |          0 |          4 |         13 |
+| c:\projets-info\MarconnetTechnologies\src\Repository\CategorieRepository.php                              | PHP          |         26 |         31 |         10 |         67 |
+| c:\projets-info\MarconnetTechnologies\src\Repository\MarqueRepository.php                                 | PHP          |         26 |         31 |         10 |         67 |
+| c:\projets-info\MarconnetTechnologies\src\Repository\NewsRepository.php                                   | PHP          |         26 |         31 |         10 |         67 |
+| c:\projets-info\MarconnetTechnologies\src\Repository\ProduitRepository.php                                | PHP          |         44 |         15 |         15 |         74 |
+| c:\projets-info\MarconnetTechnologies\src\Repository\ResetPasswordRequestRepository.php                   | PHP          |         34 |          8 |         10 |         52 |
+| c:\projets-info\MarconnetTechnologies\src\Repository\UserRepository.php                                   | PHP          |         37 |         34 |         13 |         84 |
+| c:\projets-info\MarconnetTechnologies\src\Repository\UtilisationRepository.php                            | PHP          |         26 |         31 |         10 |         67 |
+| c:\projets-info\MarconnetTechnologies\src\Security\LoginFormAuthenticator.php                             | PHP          |         64 |          8 |         17 |         89 |
+| c:\projets-info\MarconnetTechnologies\src\Security\UserValidationChecker.php                              | PHP          |         31 |          2 |          9 |         42 |
+| c:\projets-info\MarconnetTechnologies\src\Twig\AppExtension.php                                           | PHP          |         25 |          0 |          8 |         33 |
+| c:\projets-info\MarconnetTechnologies\templates\_home_apropos.html.twig                                   | HTML (Twig)  |          9 |          0 |          1 |         10 |
+| c:\projets-info\MarconnetTechnologies\templates\about\_about_marques_partenaires.html.twig                | HTML (Twig)  |          9 |          1 |          1 |         11 |
+| c:\projets-info\MarconnetTechnologies\templates\about\_about_partenaires.html.twig                        | HTML (Twig)  |          8 |          0 |          1 |          9 |
+| c:\projets-info\MarconnetTechnologies\templates\about\_members.html.twig                                  | HTML (Twig)  |         20 |          0 |          2 |         22 |
+| c:\projets-info\MarconnetTechnologies\templates\about\about.html.twig                                     | HTML (Twig)  |        167 |          5 |         26 |        198 |
+| c:\projets-info\MarconnetTechnologies\templates\actu\actu.html.twig                                       | HTML (Twig)  |         31 |          0 |          7 |         38 |
+| c:\projets-info\MarconnetTechnologies\templates\actu\show.html.twig                                       | HTML (Twig)  |         33 |          1 |         12 |         46 |
+| c:\projets-info\MarconnetTechnologies\templates\admin_crud_categorie\_delete_form.html.twig               | HTML (Twig)  |          4 |          0 |          1 |          5 |
+| c:\projets-info\MarconnetTechnologies\templates\admin_crud_categorie\_form.html.twig                      | HTML (Twig)  |         10 |          4 |          3 |         17 |
+| c:\projets-info\MarconnetTechnologies\templates\admin_crud_categorie\edit.html.twig                       | HTML (Twig)  |         11 |          0 |          6 |         17 |
+| c:\projets-info\MarconnetTechnologies\templates\admin_crud_categorie\index.html.twig                      | HTML (Twig)  |         55 |          0 |          8 |         63 |
+| c:\projets-info\MarconnetTechnologies\templates\admin_crud_categorie\new.html.twig                        | HTML (Twig)  |         10 |          0 |          5 |         15 |
+| c:\projets-info\MarconnetTechnologies\templates\admin_crud_categorie\show.html.twig                       | HTML (Twig)  |         43 |          0 |          7 |         50 |
+| c:\projets-info\MarconnetTechnologies\templates\admin_crud_marque\_delete_form.html.twig                  | HTML (Twig)  |          4 |          0 |          1 |          5 |
+| c:\projets-info\MarconnetTechnologies\templates\admin_crud_marque\_form.html.twig                         | HTML (Twig)  |          5 |          4 |          3 |         12 |
+| c:\projets-info\MarconnetTechnologies\templates\admin_crud_marque\edit.html.twig                          | HTML (Twig)  |         11 |          0 |          6 |         17 |
+| c:\projets-info\MarconnetTechnologies\templates\admin_crud_marque\index.html.twig                         | HTML (Twig)  |         37 |          0 |          7 |         44 |
+| c:\projets-info\MarconnetTechnologies\templates\admin_crud_marque\new.html.twig                           | HTML (Twig)  |         10 |          0 |          5 |         15 |
+| c:\projets-info\MarconnetTechnologies\templates\admin_crud_marque\show.html.twig                          | HTML (Twig)  |         27 |          0 |          7 |         34 |
+| c:\projets-info\MarconnetTechnologies\templates\admin_crud_news\_delete_form.html.twig                    | HTML (Twig)  |          4 |          0 |          1 |          5 |
+| c:\projets-info\MarconnetTechnologies\templates\admin_crud_news\_form.html.twig                           | HTML (Twig)  |         11 |          0 |          3 |         14 |
+| c:\projets-info\MarconnetTechnologies\templates\admin_crud_news\edit.html.twig                            | HTML (Twig)  |         11 |          0 |          6 |         17 |
+| c:\projets-info\MarconnetTechnologies\templates\admin_crud_news\index.html.twig                           | HTML (Twig)  |         45 |          0 |          6 |         51 |
+| c:\projets-info\MarconnetTechnologies\templates\admin_crud_news\new.html.twig                             | HTML (Twig)  |         10 |          0 |          6 |         16 |
+| c:\projets-info\MarconnetTechnologies\templates\admin_crud_news\show.html.twig                            | HTML (Twig)  |         52 |          0 |         12 |         64 |
+| c:\projets-info\MarconnetTechnologies\templates\admin_crud_produit\_delete_form.html.twig                 | HTML (Twig)  |          4 |          0 |          1 |          5 |
+| c:\projets-info\MarconnetTechnologies\templates\admin_crud_produit\_form.html.twig                        | HTML (Twig)  |         24 |          0 |          1 |         25 |
+| c:\projets-info\MarconnetTechnologies\templates\admin_crud_produit\edit.html.twig                         | HTML (Twig)  |         11 |          0 |          6 |         17 |
+| c:\projets-info\MarconnetTechnologies\templates\admin_crud_produit\index.html.twig                        | HTML (Twig)  |         99 |          0 |          9 |        108 |
+| c:\projets-info\MarconnetTechnologies\templates\admin_crud_produit\new.html.twig                          | HTML (Twig)  |         14 |          0 |          8 |         22 |
+| c:\projets-info\MarconnetTechnologies\templates\admin_crud_produit\show.html.twig                         | HTML (Twig)  |         67 |          0 |          7 |         74 |
+| c:\projets-info\MarconnetTechnologies\templates\admin_crud_user\_delete_form.html.twig                    | HTML (Twig)  |          4 |          0 |          1 |          5 |
+| c:\projets-info\MarconnetTechnologies\templates\admin_crud_user\_form.html.twig                           | HTML (Twig)  |         17 |          4 |          2 |         23 |
+| c:\projets-info\MarconnetTechnologies\templates\admin_crud_user\edit.html.twig                            | HTML (Twig)  |         11 |          0 |          7 |         18 |
+| c:\projets-info\MarconnetTechnologies\templates\admin_crud_user\index.html.twig                           | HTML (Twig)  |         38 |         68 |         28 |        134 |
+| c:\projets-info\MarconnetTechnologies\templates\admin_crud_user\new.html.twig                             | HTML (Twig)  |         10 |          0 |          5 |         15 |
+| c:\projets-info\MarconnetTechnologies\templates\admin_crud_user\show.html.twig                            | HTML (Twig)  |         81 |          0 |         10 |         91 |
+| c:\projets-info\MarconnetTechnologies\templates\admin_crud_utilisation\_delete_form.html.twig             | HTML (Twig)  |          4 |          0 |          1 |          5 |
+| c:\projets-info\MarconnetTechnologies\templates\admin_crud_utilisation\_form.html.twig                    | HTML (Twig)  |         10 |          0 |          1 |         11 |
+| c:\projets-info\MarconnetTechnologies\templates\admin_crud_utilisation\edit.html.twig                     | HTML (Twig)  |         11 |          0 |          6 |         17 |
+| c:\projets-info\MarconnetTechnologies\templates\admin_crud_utilisation\index.html.twig                    | HTML (Twig)  |         42 |          0 |          5 |         47 |
+| c:\projets-info\MarconnetTechnologies\templates\admin_crud_utilisation\new.html.twig                      | HTML (Twig)  |         10 |          0 |          5 |         15 |
+| c:\projets-info\MarconnetTechnologies\templates\admin_crud_utilisation\show.html.twig                     | HTML (Twig)  |         43 |          0 |          7 |         50 |
+| c:\projets-info\MarconnetTechnologies\templates\base.html.twig                                            | HTML (Twig)  |         38 |          2 |         17 |         57 |
+| c:\projets-info\MarconnetTechnologies\templates\bundles\TwigBundle\Exception\error.html copy.twig         | HTML (Twig)  |          8 |          0 |          3 |         11 |
+| c:\projets-info\MarconnetTechnologies\templates\bundles\TwigBundle\Exception\error403.html.twig           | HTML (Twig)  |         33 |          0 |          3 |         36 |
+| c:\projets-info\MarconnetTechnologies\templates\bundles\TwigBundle\Exception\error404.html.twig           | HTML (Twig)  |         33 |          0 |          5 |         38 |
+| c:\projets-info\MarconnetTechnologies\templates\categorie\categorie.html.twig                             | HTML (Twig)  |         45 |          0 |          9 |         54 |
+| c:\projets-info\MarconnetTechnologies\templates\change_password\index.html.twig                           | HTML (Twig)  |         13 |          0 |          7 |         20 |
+| c:\projets-info\MarconnetTechnologies\templates\contact\contact.html.twig                                 | HTML (Twig)  |        105 |          2 |         17 |        124 |
+| c:\projets-info\MarconnetTechnologies\templates\demonstration\demonstration.html.twig                     | HTML (Twig)  |        253 |          1 |         23 |        277 |
+| c:\projets-info\MarconnetTechnologies\templates\demonstration\les 2 modals tarifs demonstration.html      | HTML         |        189 |          5 |         11 |        205 |
+| c:\projets-info\MarconnetTechnologies\templates\documentation\_marqueCatalogue.html.twig                  | HTML (Twig)  |          3 |          0 |          1 |          4 |
+| c:\projets-info\MarconnetTechnologies\templates\documentation\documentation.html.twig                     | HTML (Twig)  |         25 |          4 |          7 |         36 |
+| c:\projets-info\MarconnetTechnologies\templates\espace_pro\_doc.html.twig                                 | HTML (Twig)  |          3 |          0 |          1 |          4 |
+| c:\projets-info\MarconnetTechnologies\templates\espace_pro\espacepro.html.twig                            | HTML (Twig)  |         49 |          0 |         16 |         65 |
+| c:\projets-info\MarconnetTechnologies\templates\home.html.twig                                            | HTML (Twig)  |        308 |         15 |         42 |        365 |
+| c:\projets-info\MarconnetTechnologies\templates\legal\mentions-legales.html.twig                          | HTML (Twig)  |         44 |          0 |         15 |         59 |
+| c:\projets-info\MarconnetTechnologies\templates\mon_compte\index.html.twig                                | HTML (Twig)  |         38 |          1 |         22 |         61 |
+| c:\projets-info\MarconnetTechnologies\templates\news\index.html.twig                                      | HTML (Twig)  |         14 |          0 |          4 |         18 |
+| c:\projets-info\MarconnetTechnologies\templates\partenaire\_partenaires_bottom.html.twig                  | HTML (Twig)  |         34 |          0 |          1 |         35 |
+| c:\projets-info\MarconnetTechnologies\templates\partenaire\_partenaires_top.html.twig                     | HTML (Twig)  |          8 |          0 |          1 |          9 |
+| c:\projets-info\MarconnetTechnologies\templates\partenaire\partenaires.html.twig                          | HTML (Twig)  |         57 |          0 |         13 |         70 |
+| c:\projets-info\MarconnetTechnologies\templates\product\_product_card.html.twig                           | HTML (Twig)  |         65 |          0 |          5 |         70 |
+| c:\projets-info\MarconnetTechnologies\templates\product\_product_similaire.html.twig                      | HTML (Twig)  |         14 |          0 |          2 |         16 |
+| c:\projets-info\MarconnetTechnologies\templates\product\_produit_prefere.html.twig                        | HTML (Twig)  |         31 |          0 |          2 |         33 |
+| c:\projets-info\MarconnetTechnologies\templates\product\show.html.twig                                    | HTML (Twig)  |        157 |          1 |         25 |        183 |
+| c:\projets-info\MarconnetTechnologies\templates\registration\register.html.twig                           | HTML (Twig)  |         83 |          0 |         23 |        106 |
+| c:\projets-info\MarconnetTechnologies\templates\reset_password\check_email.html.twig                      | HTML (Twig)  |         15 |          0 |          4 |         19 |
+| c:\projets-info\MarconnetTechnologies\templates\reset_password\email.html.twig                            | HTML (Twig)  |          5 |          0 |          5 |         10 |
+| c:\projets-info\MarconnetTechnologies\templates\reset_password\request.html.twig                          | HTML (Twig)  |         24 |          0 |          5 |         29 |
+| c:\projets-info\MarconnetTechnologies\templates\reset_password\reset.html.twig                            | HTML (Twig)  |         16 |          0 |          4 |         20 |
+| c:\projets-info\MarconnetTechnologies\templates\search\index.html.twig                                    | HTML (Twig)  |         16 |          0 |          5 |         21 |
+| c:\projets-info\MarconnetTechnologies\templates\search\search.html.twig                                   | HTML (Twig)  |         23 |          0 |          8 |         31 |
+| c:\projets-info\MarconnetTechnologies\templates\security\login.html.twig                                  | HTML (Twig)  |         66 |          0 |         13 |         79 |
+| c:\projets-info\MarconnetTechnologies\templates\shared\_card_confiance.html.twig                          | HTML (Twig)  |         10 |          0 |          1 |         11 |
+| c:\projets-info\MarconnetTechnologies\templates\shared\_home_revendeur.html.twig                          | HTML (Twig)  |         11 |          0 |          2 |         13 |
+| c:\projets-info\MarconnetTechnologies\templates\shared\_navbar.html.twig                                  | HTML (Twig)  |        170 |          6 |         28 |        204 |
+| c:\projets-info\MarconnetTechnologies\templates\shared\footer.html.twig                                   | HTML (Twig)  |        127 |          7 |          7 |        141 |
+| c:\projets-info\MarconnetTechnologies\templates\utilisation\index.html.twig                               | HTML (Twig)  |         50 |          0 |         12 |         62 |
+| c:\projets-info\MarconnetTechnologies\test-css2\index.html                                                | HTML         |        170 |          1 |          6 |        177 |
+| c:\projets-info\MarconnetTechnologies\test-css2\style.css                                                 | CSS          |         40 |          0 |         12 |         52 |
+| c:\projets-info\MarconnetTechnologies\test-css\style.css                                                  | CSS          |         74 |          0 |         17 |         91 |
+| Total                                                                                                     |              |     31,026 |      1,509 |      2,581 |     35,116 |
++-----------------------------------------------------------------------------------------------------------+--------------+------------+------------+------------+------------+
