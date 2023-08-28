@@ -42,27 +42,28 @@ class LoginFormAuthenticator extends AbstractAuthenticator implements Authentica
 
     public function authenticate(Request $request): Passport
     {
-
         $loginData = $request->request->all('login');
 
         $email = $loginData['email'];
         $password = $loginData['password'];
 
-
-
-
-
         $user = $this->userRepository->findOneBy(['email' => $email]);
 
         if (!$user) {
+            $request->getSession()->getFlashBag()->add(
+                'warning',
+                'E-mail ou mot de passe inconnu.'
+            );
+
             throw new CustomUserMessageAuthenticationException('Email could not be found.');
         }
 
         $this->userChecker->checkPreAuth($user); // Utilisation du UserChecker
 
-        if (!$user->isIsConfirmed()) {
-            throw new CustomUserMessageAuthenticationException('Your account is not confirmed yet.');
-        }
+        // if (!$user->isIsConfirmed()) {
+
+        //     throw new CustomUserMessageAuthenticationException('Your account is not confirmed yet.');
+        // }
 
         return new Passport(
             new UserBadge($email),

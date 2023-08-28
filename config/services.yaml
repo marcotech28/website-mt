@@ -21,6 +21,8 @@ services:
   App\Security\UserValidationChecker:
     arguments:
       $session: '@Symfony\Component\HttpFoundation\Session\SessionInterface'
+    tags:
+      - { name: "security.user_checker" }
 
   Symfony\Component\HttpFoundation\Session\SessionInterface:
     class: Symfony\Component\HttpFoundation\Session\Session

@@ -26,7 +26,13 @@ class UserValidationChecker implements UserCheckerInterface
 
         // Vérifiez si l'utilisateur a été validé
         if (!$user->isIsConfirmed()) {
-            $this->session->getFlashBag()->add('warning', 'Mot de passe incorrect ou compte est en cours de validation par notre équipe.');
+
+            // dd("ssddef");
+
+            $this->session->getFlashBag()->add(
+                'warning',
+                'Votre e-mail n\'a toujours pas été validé par notre équipe, veuillez patienter ou veuillez nous contacter.'
+            );
 
             throw new CustomUserMessageAuthenticationException(
                 'Votre compte n\'a pas encore été validé par l\'administrateur.'
