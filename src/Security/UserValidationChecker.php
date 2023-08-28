@@ -27,8 +27,6 @@ class UserValidationChecker implements UserCheckerInterface
         // Vérifiez si l'utilisateur a été validé
         if (!$user->isIsConfirmed()) {
 
-            // dd("ssddef");
-
             $this->session->getFlashBag()->add(
                 'warning',
                 'Votre e-mail n\'a toujours pas été validé par notre équipe, veuillez patienter ou veuillez nous contacter.'

@@ -205,6 +205,16 @@ body {
     font-weight: 500 !important;
 }
 
+.navbar-minimaliste {
+    background-color: #168896 !important;
+}
+
+.navbar-minimaliste a {
+    text-decoration: none;
+    color: white;
+    font-size: 12px;
+}
+
 /* -- EFFECT UNDERLINE DARK -- */
 
 .underline-effect-dark {
@@ -1391,7 +1401,7 @@ a:hover.contact-telephone {
     
 
     .banniere{
-        height: 45vh !important;
+        height: 63vh !important;
     }
 
     .banniere img {

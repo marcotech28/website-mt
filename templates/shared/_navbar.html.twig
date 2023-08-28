@@ -53,8 +53,6 @@
 
 {# navbar top #}
 
-{# je laisse le bouton hamburger pour l'instant mais je m'en sers pas car je n'affiche pas navbar-top sur petit écran #}
-
 <nav class="navbar navbar-expand-lg navbar-top d-none d-lg-block">
 	<div class="container-xl">
 		<button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbartop-toggler">
@@ -197,7 +195,27 @@
 					{{ form_start(search_form(), {'action': path('search')}) }}
 					{{ form_end(search_form()) }}
 				</li>
-			</li>
-		</ul>
+			</ul>
+		</div>
 	</div>
-</div></nav>
+</nav>
+
+<div class="d-lg-none">
+	<div class="navbar-minimaliste">
+		<div class="container-lg">
+			<div class="justify-content-center pt-1">
+				<a class="mx-2" href="{{path("about")}}">À propos</a>
+				<a class="mx-2" href="{{path("app_actu")}}">Actualités</a>
+				<a class="mx-2" href="{{path("contact")}}">Contact</a>
+				<a class="mx-2" href="{{path("demonstration")}}">Démonstration</a>
+				{% if app.user %}
+					<a class="mx-2" href="{{path('app_mon_compte')}}">Gérer mon compte</a>
+					<a class="mx-2" href="{{path("security_logout")}}">Se déconnecter</a>
+				{% else %}
+					<a class="mx-2" href="{{path("app_register")}}">Créer mon compte</a>
+					<a class="mx-2" href="{{path('security_login')}}">Se connecter</a>
+				{% endif %}
+			</div>
+		</div>
+	</div>
+</div>
