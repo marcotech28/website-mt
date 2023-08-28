@@ -1,9 +1,3 @@
-{# {{ form_start(form) }}
-{{ form_widget(form) }}
-<button class="btn">{{ button_label|default('Enregistrer') }}</button>
-{{ form_end(form) }} #}
-
-
 {{ form_start(form) }}
 {{ form_row(form.libelle, {'attr' : {'class' : 'form-control'}}) }}
 {{ form_row(form.slug, {'attr' : {'class' : 'form-control'}}) }}

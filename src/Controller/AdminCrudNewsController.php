@@ -6,10 +6,13 @@ use App\Entity\News;
 // use App\Form\News1Type;
 use App\Form\NewsType;
 use App\Repository\NewsRepository;
-use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
+use Doctrine\ORM\EntityManager;
+use Doctrine\ORM\EntityManagerInterface;
+use Symfony\Component\Form\FormInterface;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
+use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 
 #[Route('/admin/crud/news')]
 class AdminCrudNewsController extends AbstractController
@@ -23,7 +26,7 @@ class AdminCrudNewsController extends AbstractController
     }
 
     #[Route('/new', name: 'app_admin_crud_news_new', methods: ['GET', 'POST'])]
-    public function new(Request $request, NewsRepository $newsRepository): Response
+    public function new(Request $request, NewsRepository $newsRepository, EntityManagerInterface $entityManager): Response
     {
         $news = new News();
         $form = $this->createForm(NewsType::class, $news);
@@ -31,6 +34,11 @@ class AdminCrudNewsController extends AbstractController
 
         if ($form->isSubmitted() && $form->isValid()) {
             $newsRepository->save($news, true);
+
+            self::handleImageUpload($news, $form, $entityManager);
+
+            $entityManager->persist($news);
+            $entityManager->flush();
 
             return $this->redirectToRoute('app_admin_crud_news_index', [], Response::HTTP_SEE_OTHER);
         }
@@ -50,13 +58,22 @@ class AdminCrudNewsController extends AbstractController
     }
 
     #[Route('/{id}/edit', name: 'app_admin_crud_news_edit', methods: ['GET', 'POST'])]
-    public function edit(Request $request, News $news, NewsRepository $newsRepository): Response
+    public function edit(Request $request, News $news, NewsRepository $newsRepository, EntityManagerInterface $entityManager): Response
     {
-        $form = $this->createForm(NewsType::class, $news);
+
+        $form = $this->createForm(NewsType::class, $news, [
+            'image_filename' => $news->getImage() // ou la méthode que vous utilisez pour obtenir le nom du fichier
+        ]);
+
         $form->handleRequest($request);
 
         if ($form->isSubmitted() && $form->isValid()) {
             $newsRepository->save($news, true);
+
+            self::handleImageUpload($news, $form, $entityManager);
+
+            $entityManager->persist($news);
+            $entityManager->flush();
 
             return $this->redirectToRoute('app_admin_crud_news_index', [], Response::HTTP_SEE_OTHER);
         }
@@ -75,5 +92,20 @@ class AdminCrudNewsController extends AbstractController
         }
 
         return $this->redirectToRoute('app_admin_crud_news_index', [], Response::HTTP_SEE_OTHER);
+    }
+
+    public function handleImageUpload(News $news, FormInterface $form, EntityManagerInterface $entityManager): void
+    {
+        $image = $form->get('image')->getData();
+
+        if ($image) {
+            // récupération du nom d'origine du fichier + son extension
+            $originalImage = pathinfo($image->getClientOriginalName(), PATHINFO_BASENAME);
+
+            // On met à jour l'emplacement de l'image dans l'entité Utilisation
+            $news->setImage($originalImage);
+
+            $entityManager->flush();
+        }
     }
 }
