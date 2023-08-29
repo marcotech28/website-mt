@@ -9,7 +9,7 @@ use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 
 class EspaceProController extends AbstractController
 {
-    #[Route('/espace-professionnel', name: 'espcepro')]
+    #[Route('/espace-professionnel', name: 'espacepro')]
     #[IsGranted('ROLE_USER')]
     public function index(): Response
     {

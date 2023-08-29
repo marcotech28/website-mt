@@ -824,8 +824,8 @@ a:hover.contact-telephone {
     padding-bottom: 30px;
 }
 
-#btn-espace-pro {
-    color: #EF946C;
+.btn-espace-pro {
+    color: #EF946C !important;
     font-weight: 700;
     text-decoration: underline;
 }
