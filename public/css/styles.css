@@ -436,6 +436,12 @@ td {
 
 /* -- FICHE PRODUIT -- */
 
+.video iframe {
+    width: 444px;
+    height: 252px;
+    max-width: 100%;
+}
+
 .intro-produit a {
     color: black;
     font-weight: 500;
@@ -1289,6 +1295,7 @@ a:hover.contact-telephone {
 
     h2 {
         padding-bottom: 25px;
+        font-size: 40px;
     }
 
     p {
@@ -1596,15 +1603,5 @@ a:hover.contact-telephone {
 @media only screen and (max-width: 1425PX) {
     .lottie-tricycle {
         height: 390px;
-    }
-}
-
-/* FICHE PRODUIT */
-
-@media only screen and (max-width: 370px) {
-
-    .video iframe {
-        width: 222px;
-        height: 125px;
     }
 }
