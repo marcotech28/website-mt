@@ -10,24 +10,23 @@
 
 {% block donneesStructurees %}
 	<script type="application/ld+json">
-		{
-																										"@context": "https://schema.org",
-																										"@type": "Organization",
-																										"name": "Marconnet Technologies",
-																										"url": "http://www.marconnet-technologies.com/",
-																											"logo": "",
-																										"contactPoint": {
-																										"@type": "ContactPoint",
-																										"telephone": "+33245260170",
-																										"contactType": "Service client"
-																										},
-																										"sameAs": [
-																										"https://www.instagram.com/marconnet_technologies/",
-																										"https://fr.linkedin.com/company/marconnet-technologies%E2%84%A2",
-																										"https://fr-fr.facebook.com/marconnettechnologies/",
-																										"https://www.youtube.com/channel/UCBVjkgVyozExIOlx5O40zxQ"
-																										]
-																										}
+		{"@context": "https://schema.org",
+		"@type": "Organization",
+		"name": "Marconnet Technologies",
+		"url": "http://www.marconnet-technologies.com/",
+		"logo": "",
+		"contactPoint": {
+		"@type": "ContactPoint",
+		"telephone": "+33245260170",
+		"contactType": "Service client"
+		},
+		"sameAs": [
+		"https://www.instagram.com/marconnet_technologies/",
+		"https://fr.linkedin.com/company/marconnet-technologies%E2%84%A2",
+		"https://fr-fr.facebook.com/marconnettechnologies/",
+		"https://www.youtube.com/channel/UCBVjkgVyozExIOlx5O40zxQ"
+		]
+		}
 	</script>
 {% endblock %}
 
@@ -67,17 +66,27 @@
 	<div id="produitpref">
 		<div class="row">
 			<div class="col-12">
-				<h2 style="padding-top: 70px; padding-bottom: 30px;" id="prodpref">Les produits préférés de nos clients</h2>
-				<p class="mb-5">Explorez les choix privilégiés de nos clients en matière de matériels de mobilité adaptés, conçus pour faciliter votre quotidien et vous offrir une plus grande indépendance.</p>
+				<h2 id="prodpref">Les produits préférés de nos clients</h2>
+				{# <p class="mb-5">Explorez les choix privilégiés de nos clients en matière de matériels de mobilité adaptés, conçus pour faciliter votre quotidien et vous offrir une plus grande indépendance.</p> #}
+				<p>Chez
+					<span class="fst-italic fw-bold">Marconnet Technologies</span>, nous nous engageons à améliorer la mobilité et la qualité de vie des personnes à mobilité réduite, qu'elles soient âgées ou handicapées. Notre sélection de produits a été soigneusement élaborée pour répondre aux besoins spécifiques de nos clients, offrant des solutions pratiques et innovantes qui font une réelle différence.</p>
+				<p class="fst-italic fw-bold">Notre Engagement envers la Mobilité et le Confort</p>
+				<p>Nous comprenons à quel point la mobilité est essentielle pour vivre pleinement et en toute autonomie. C'est pourquoi nous avons rassemblé une collection de produits préférés qui allient qualité, durabilité et facilité d'utilisation. Notre équipe experte s'efforce de rechercher et de proposer les dernières avancées en matière de technologie de mobilité, garantissant que nos clients aient accès aux options les plus avancées du marché.</p>
+				<p class="fst-italic fw-bold">Une Sélection Soigneusement Choisie</p>
+				<p>Les produits présentés dans notre section "Les produits préférés de nos clients" sont le fruit de réactions positives et de retours enthousiastes de la part de nos clients fidèles. De fauteuils roulants ergonomiques à des dispositifs de déplacement assisté, en passant par des aides à la marche innovantes, chaque produit a été sélectionné pour sa qualité supérieure et son potentiel à améliorer la vie quotidienne.</p>
 			</div>
 		</div>
-		<div class="row h-100">
+		<div class="row h-100 row-pref">
 			{% for p in tabProduits %}
 				<div class="col-12 col-sm-4 col-lg-3 mb-4 categorie">
 					{% include "product/_product_card.html.twig" %}
 				</div>
 			{% endfor %}
 		</div>
+
+		<p class="fst-italic fw-bold">Expérience et Expertise</p>
+		<p>Forts de nombreuses années d'expérience dans le domaine de la mobilité, nous sommes fiers de partager nos connaissances et notre expertise pour vous aider à prendre des décisions éclairées. Notre équipe est à votre disposition pour répondre à vos questions, vous conseiller sur le choix des produits adaptés à vos besoins spécifiques et vous guider tout au long du processus.</p>
+
 	</div>
 </div>
 
@@ -102,7 +111,7 @@
 						<div class="mx-auto col-md-8 col-lg-6 order-lg-last d-flex align-items-center">
 							<img class="img-fluid" src="{{asset('images/carousel/atto-sport.png')}}" alt=" ">
 						</div>
-						<div class="col-lg-6 mb-0 d-flex align-items-center">
+						<div class="col-lg-6 mb-0 d-flex align-items-center" style="padding-left: 50px">
 							<div class="text-align-left align-self-center desc-carousel">
 								<h2>Scooter électrique Atto Sport</h2>
 								<p>Un moyen de transport pratique, écologique et compact pour vos déplacements urbains.</p>
@@ -123,7 +132,7 @@
 						<div class="mx-auto col-md-8 col-lg-6 order-lg-last">
 							<img class="img-fluid" src="{{asset('images/carousel/crossbike.jpg')}}" alt=" ">
 						</div>
-						<div class="col-lg-6 mb-0 d-flex align-items-center">
+						<div class="col-lg-6 mb-0 d-flex align-items-center" style="padding-left: 50px">
 							<div class="text-align-left align-self-center desc-carousel">
 								<h2>Crossbike Stricker</h2>
 								<p>Une solution tout-terran pour les personnes à mobilité réduite.</p>
@@ -144,7 +153,7 @@
 						<div class="mx-auto col-md-8 col-lg-6 order-lg-last">
 							<img class="img-fluid" src="{{asset('images/carousel/fun2go.png')}}" alt="">
 						</div>
-						<div class="col-lg-6 mb-0 d-flex align-items-center">
+						<div class="col-lg-6 mb-0 d-flex align-items-center" style="padding-left: 50px">
 							<div class="text-align-left align-self-center desc-carousel">
 								<h2>Tricycle Fun 2 Go</h2>
 								<p>Un tricycle tandem pour des sorties à deux en toute convivialité</p>
@@ -181,11 +190,15 @@
 		</div>
 		<div class="row">
 			<div class="col-12 text-sm-center">
-				<p>Marconnet technologies™ est spécialisée dans la mobilité et unique sur le marché depuis plus de 18 ans.</p>
+				<p>
+					<span class="fw-bold fst-italic">Marconnet technologies™</span>
+					est spécialisée dans la mobilité et unique sur le marché depuis
+					<span class="fw-bold fst-italic">plus de 18 ans.</span>
+				</p>
 				<p>Nous commercialisons des matériels pour améliorer le déplacement des gens en perte de mobilité.</p>
 			</div>
 		</div>
-		<div class="row h-100" style="padding-top: 40px; padding-bottom: 0px">
+		<div class="row h-100" style="padding-top: 40px; padding-bottom: 40px">
 			{% include "_home_apropos.html.twig" with {
 					'image' : 'conseil.png',
 					'titre' : 'Conseils personnalisés',
@@ -249,7 +262,7 @@
 			</div>
 			<div class="row">
 				<div class="col-12">
-					<p>Depuis plus de 15 ans, Marconnet technologies™ travaille avec des acteurs importants du monde de la santé.
+					<p>Depuis plus de 18 ans, <span class="fw-bold fst-italic">Marconnet technologies™</span> travaille avec des acteurs importants du monde de la santé.
 						<br>Nous sommes fiers d’accompagner des marques leaders.</p>
 				</div>
 			</div>
@@ -341,7 +354,7 @@
 				</div>
 				<div class="col-lg-6">
 					<h2 class="lh-1 mb-3">Inscrivez-vous à notre newsletter</h2>
-					<p>Recevez régulièrement nos actualités et tenez-vous informé des nouveautés.</p>
+					<p>Recevez régulièrement <span class="fw-bold fst-italic">nos actualités</span> et tenez-vous informé des <span class="fw-bold fst-italic">nouveautés.</span></p>
 					<div class="d-grid gap-2 d-md-flex justify-content-md-start mt-4">
 
 						{{ form_start(newsletterForm, { 'attr': { 'class': 'input-group flex-nowrap mb-3' } }) }}
