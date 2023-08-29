@@ -830,6 +830,10 @@ a:hover.contact-telephone {
     text-decoration: underline;
 }
 
+.espace-pro a img {
+    max-width: 100% !important;
+}
+
 /* -- ABOUT -- */
 
 .color-sky-blue  {
