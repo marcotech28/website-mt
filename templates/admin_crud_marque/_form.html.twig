@@ -6,6 +6,15 @@
 
 {{ form_start(form) }}
 {{ form_row(form.libelle, {'attr' : {'class' : 'form-control'}}) }}
-{{ form_row(form.catalogue, {'attr' : {'class' : 'form-control'}}) }}
+
+{# {{ form_row(form.catalogue, {'attr' : {'class' : 'form-control'}}) }} #}
+{{ form_label(form.catalogue) }}
+{% if form.catalogue.vars.attr['data-filename'] %}
+	<div>Fichier actuel :
+		{{ form.catalogue.vars.attr['data-filename'] }}</div>
+{% endif %}
+{{ form_widget(form.catalogue) }}
+{{ form_errors(form.catalogue) }}
+
 <button class="btn">{{ button_label|default('Save') }}</button>
 {{ form_end(form) }}

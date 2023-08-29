@@ -17,7 +17,11 @@ class MarqueType extends AbstractType
             ->add('catalogue', FileType::class, [
                 'label' => 'Fiche Descriptive (PDF file)',
                 'required' => false, // pour autoriser l'envoi de formulaire sans la fiche descriptive
-                'mapped' => false // pour éviter que le champ ne soit mappé sur un attribut de l'entité
+                'mapped' => false, // pour éviter que le champ ne soit mappé sur un attribut de l'entité
+                'data_class' => null,
+                'attr' => [
+                    'data-filename' => $options['catalogue_filename'] ?? null,
+                ],
             ]);
     }
 
@@ -25,6 +29,7 @@ class MarqueType extends AbstractType
     {
         $resolver->setDefaults([
             'data_class' => Marque::class,
+            'catalogue_filename' => null,
         ]);
     }
 }

@@ -59,7 +59,9 @@ class AdminCrudMarqueController extends AbstractController
     #[Route('/{id}/edit', name: 'app_admin_crud_marque_edit', methods: ['GET', 'POST'])]
     public function edit(Request $request, Marque $marque, EntityManagerInterface $entityManager): Response
     {
-        $form = $this->createForm(MarqueType::class, $marque);
+        $form = $this->createForm(MarqueType::class, $marque, [
+            'catalogue_filename' => $marque->getCatalogue() // ou la méthode que vous utilisez pour obtenir le nom du fichier
+        ]);
         $form->handleRequest($request);
 
         if ($form->isSubmitted() && $form->isValid()) {
@@ -91,45 +93,20 @@ class AdminCrudMarqueController extends AbstractController
     }
 
 
+    // upload pdf
 
-    // fonction upload PDF
-    public function handlePDFUpload(Marque $marque, FormInterface $form, EntityManagerInterface $entityManager)
+    public function handlePDFUpload(Marque $marque, FormInterface $form, EntityManagerInterface $entityManager): void
     {
-        // récupération du fichier PDF
-        $ficheDescriptiveFile = $form->get('catalogue')->getData();
+        $catalogue = $form->get('catalogue')->getData();
 
-        if ($ficheDescriptiveFile) {
-            // récupération du nom d'origine du fichier
-            $originalFilename = pathinfo($ficheDescriptiveFile->getClientOriginalName(), PATHINFO_FILENAME);
+        if ($catalogue) {
+            // récupération du nom d'origine du fichier + son extension
+            $originalDoc = pathinfo($catalogue->getClientOriginalName(), PATHINFO_BASENAME);
 
+            // On met à jour l'emplacement de l'image dans l'entité Utilisation
+            $marque->setCatalogue($originalDoc);
 
-            try {
-                // déplacement du fichier dans un dossier d'upload
-                $ficheDescriptiveFile->move(
-                    $this->getParameter('upload_directory'),
-                    $originalFilename
-                );
-            } catch (FileException $e) {
-                // erreur lors du déplacement du fichier
-                // à gérer ici...
-            }
-
-            // mise à jour de la fiche descriptive du produit
-            $marque->setCatalogue($originalFilename);
+            $entityManager->flush();
         }
     }
-
-
-    // public function handleImageUpload(Marque $marque, FormInterface $form, EntityManagerInterface $entityManager)
-    // {
-    //     $logo = $form->get('logo')->getData();
-
-    //     if ($logo) {
-    //         // récupération du nom d'origine du fichier + son extension
-    //         $originalLogo = pathinfo($logo->getClientOriginalName(), PATHINFO_BASENAME);
-
-    //         // On met à jour l'emplacement de l'image dans l'entité Produit
-    //         $marque->setLogo($originalLogo);
-    //     }
-    // }
 }

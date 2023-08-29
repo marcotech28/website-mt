@@ -7,18 +7,72 @@
 {{ form_row(form.shortDescription, {'attr' : {'class' : 'form-control'}}) }}
 {{ form_row(form.metaDesc, {'attr' : {'class' : 'form-control'}}) }}
 {{ form_row(form.avantages, {'attr' : {'class' : 'form-control'}}) }}
-{{ form_row(form.image1, {'attr' : {'class' : 'form-control'}}) }}
-{{ form_row(form.image2, {'attr' : {'class' : 'form-control'}}) }}
-{{ form_row(form.image3, {'attr' : {'class' : 'form-control'}}) }}
-{{ form_row(form.image4, {'attr' : {'class' : 'form-control'}}) }}
-{{ form_row(form.image5, {'attr' : {'class' : 'form-control'}}) }}
+
+{# {{ form_row(form.image1, {'attr' : {'class' : 'form-control'}}) }} #}
+{{ form_label(form.image1) }}
+{% if form.image1.vars.attr['data-filename'] %}
+	<div>Fichier actuel :
+		{{ form.image1.vars.attr['data-filename'] }}</div>
+{% endif %}
+{{ form_widget(form.image1) }}
+{{ form_errors(form.image1) }}
+
+
+{# {{ form_row(form.image2, {'attr' : {'class' : 'form-control'}}) }} #}
+{{ form_label(form.image2) }}
+{% if form.image2.vars.attr['data-filename'] %}
+	<div>Fichier actuel :
+		{{ form.image2.vars.attr['data-filename'] }}</div>
+{% endif %}
+{{ form_widget(form.image2) }}
+{{ form_errors(form.image2) }}
+{# {{ form_row(form.image3, {'attr' : {'class' : 'form-control'}}) }} #}
+{{ form_label(form.image3) }}
+{% if form.image3.vars.attr['data-filename'] %}
+	<div>Fichier actuel :
+		{{ form.image3.vars.attr['data-filename'] }}</div>
+{% endif %}
+{{ form_widget(form.image3) }}
+{{ form_errors(form.image3) }}
+
+
+{# {{ form_row(form.image4, {'attr' : {'class' : 'form-control'}}) }} #}
+{{ form_label(form.image4) }}
+{% if form.image4.vars.attr['data-filename'] %}
+	<div>Fichier actuel :
+		{{ form.image4.vars.attr['data-filename'] }}</div>
+{% endif %}
+{{ form_widget(form.image4) }}
+{{ form_errors(form.image4) }}
+
+{# {{ form_row(form.image5, {'attr' : {'class' : 'form-control'}}) }} #}
+{{ form_label(form.image5) }}
+{% if form.image5.vars.attr['data-filename'] %}
+	<div>Fichier actuel :
+		{{ form.image5.vars.attr['data-filename'] }}</div>
+{% endif %}
+{{ form_widget(form.image5) }}
+{{ form_errors(form.image5) }}
+
 {{ form_row(form.video1, {'attr' : {'class' : 'form-control'}}) }}
 {{ form_row(form.video2, {'attr' : {'class' : 'form-control'}}) }}
-{{ form_row(form.ficheDescriptive, {'attr' : {'class' : 'form-control'}}) }}
+
+{# {{ form_row(form.ficheDescriptive, {'attr' : {'class' : 'form-control'}}) }} #}
+{{ form_label(form.ficheDescriptive) }}
+{% if form.ficheDescriptive.vars.attr['data-filename'] %}
+	<div>Fichier actuel :
+		{{ form.ficheDescriptive.vars.attr['data-filename'] }}</div>
+{% endif %}
+{{ form_widget(form.ficheDescriptive) }}
+{{ form_errors(form.ficheDescriptive) }}
+
+
 {{ form_row(form.motsCles, {'attr' : {'class' : 'form-control'}}) }}
 {{ form_row(form.caracteristiques, {'attr' : {'class' : 'form-control'}}) }}
 {{ form_row(form.categorie, {'attr' : {'class' : 'form-control'}}) }}
 {{ form_row(form.utilisation, {'attr' : {'class' : 'form-control'}}) }}
 {{ form_row(form.produitsSimilaires, {'attr' : {'class' : 'form-control', 'size' : 20}}) }}
-<button class="btn btn-primary">{{ button_label|default('Save') }}</button>
+
+<button class="btn btn-primary">
+	{{ button_label|default('Save') }}</button>
 {{ form_end(form) }}

@@ -12,6 +12,7 @@ use Symfony\Bridge\Doctrine\Form\Type\EntityType;
 use Symfony\Component\OptionsResolver\OptionsResolver;
 use Symfony\Component\Form\Extension\Core\Type\FileType;
 use Symfony\Component\Form\Extension\Core\Type\MoneyType;
+use Symfony\Component\Form\Extension\Core\Type\TextareaType;
 
 class ProduitType extends AbstractType
 {
@@ -23,7 +24,12 @@ class ProduitType extends AbstractType
         $builder
             ->add('nom')
             ->add('prix')
-            ->add('description')
+            ->add('description', TextareaType::class, [
+                'attr' => [
+                    'rows' => '10',  // Définit le nombre de lignes visibles sans avoir à défiler
+                    'class' => 'form-control'  // Classe Bootstrap pour styliser le textarea
+                ],
+            ])
             ->add('shortDescription')
             ->add('metaDesc')
             ->add('motsCles')
@@ -33,7 +39,11 @@ class ProduitType extends AbstractType
             ->add('ficheDescriptive', FileType::class, [
                 'label' => 'Fiche Descriptive (PDF file)',
                 'required' => false, // pour autoriser l'envoi de formulaire sans la fiche descriptive
-                'mapped' => false // pour éviter que le champ ne soit mappé sur un attribut de l'entité
+                'mapped' => false, // pour éviter que le champ ne soit mappé sur un attribut de l'entité
+                'data_class' => null,
+                'attr' => [
+                    'data-filename' => $options['ficheDescriptive_filename'] ?? null,
+                ],
             ])
             ->add('caracteristiques')
             ->add('slug')
@@ -66,26 +76,50 @@ class ProduitType extends AbstractType
                 'label' => 'Image 1',
                 'required' => false, // pour autoriser l'envoi de formulaire sans la fiche descriptive
                 'mapped' => false, // pour éviter que le champ ne soit mappé sur un attribut de l'entité
+                'data_class' => null,
+                'attr' => [
+                    'data-filename' => $options['image1_filename'] ?? null,
+                ],
+
             ])
             ->add('image2', FileType::class, [
                 'label' => 'Image 2',
                 'required' => false, // pour autoriser l'envoi de formulaire sans la fiche descriptive
-                'mapped' => false // pour éviter que le champ ne soit mappé sur un attribut de l'entité
+                'mapped' => false, // pour éviter que le champ ne soit mappé sur un attribut de l'entité
+                'data_class' => null,
+                'attr' => [
+                    'data-filename' => $options['image2_filename'] ?? null,
+                ],
+
             ])
             ->add('image3', FileType::class, [
                 'label' => 'Image 3',
                 'required' => false, // pour autoriser l'envoi de formulaire sans la fiche descriptive
-                'mapped' => false // pour éviter que le champ ne soit mappé sur un attribut de l'entité
+                'mapped' => false, // pour éviter que le champ ne soit mappé sur un attribut de l'entité
+                'data_class' => null,
+                'attr' => [
+                    'data-filename' => $options['image3_filename'] ?? null,
+                ],
+
             ])
             ->add('image4', FileType::class, [
                 'label' => 'Image 4',
                 'required' => false, // pour autoriser l'envoi de formulaire sans la fiche descriptive
-                'mapped' => false // pour éviter que le champ ne soit mappé sur un attribut de l'entité
+                'mapped' => false, // pour éviter que le champ ne soit mappé sur un attribut de l'entité
+                'data_class' => null,
+                'attr' => [
+                    'data-filename' => $options['image4_filename'] ?? null,
+                ],
+
             ])
             ->add('image5', FileType::class, [
                 'label' => 'Image 5',
                 'required' => false, // pour autoriser l'envoi de formulaire sans la fiche descriptive
-                'mapped' => false // pour éviter que le champ ne soit mappé sur un attribut de l'entité
+                'mapped' => false, // pour éviter que le champ ne soit mappé sur un attribut de l'entité
+                'data_class' => null,
+                'attr' => [
+                    'data-filename' => $options['image5_filename'] ?? null,
+                ],
             ])
             ->add('produitsSimilaires', EntityType::class, [
                 'class' => Produit::class,
@@ -99,6 +133,12 @@ class ProduitType extends AbstractType
     {
         $resolver->setDefaults([
             'data_class' => Produit::class,
+            'image1_filename' => null,
+            'image2_filename' => null,
+            'image3_filename' => null,
+            'image4_filename' => null,
+            'image5_filename' => null,
+            'ficheDescriptive_filename' => null,
         ]);
     }
 }

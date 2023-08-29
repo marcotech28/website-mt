@@ -40,7 +40,7 @@
 		</div>
 
 		<div class="intro-produit">
-			<h1>{{produit.nom}}</h1>
+			<h2>{{produit.nom}}</h2>
 			{% if app.user %}
 				<h2>{{produit.prix}}€ HT</h2>
 			{% endif %}
@@ -150,7 +150,7 @@
 					<p>
 						<i class="fa-solid fa-download"></i>
 						<a href="{{ asset('uploads/documents/fiche-descriptive-produit/' ~ produit.ficheDescriptive) }}" download="{{ produit.ficheDescriptive }}">
-							Télécharger la fiche descriptive du produit</a>
+							Télécharger fiche descriptive</a>
 					</p>
 				</div>
 			{% endif %}
@@ -158,8 +158,8 @@
 				<div class="doc">
 					<p>
 						<i class="fa-solid fa-download"></i>
-						<a href="{{ asset('uploads/documents/fiche-descriptive-produit/' ~ produit.marque.catalogue) }}" download="{{ produit.marque.catalogue }}">
-							Télécharger la fiche de la marque</a>
+						<a href="{{ asset('uploads/documents/marque-catalogue/' ~ produit.marque.catalogue) }}" download="{{ produit.marque.catalogue }}">
+							Télécharger catalogue</a>
 					</p>
 				</div>
 			{% endif %}

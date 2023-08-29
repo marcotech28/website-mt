@@ -9,6 +9,7 @@ use Symfony\Component\Form\FormBuilderInterface;
 use Symfony\Bridge\Doctrine\Form\Type\EntityType;
 use Symfony\Component\OptionsResolver\OptionsResolver;
 use Symfony\Component\Form\Extension\Core\Type\FileType;
+use Symfony\Component\Form\Extension\Core\Type\TextareaType;
 
 class UtilisationType extends AbstractType
 {
@@ -20,7 +21,11 @@ class UtilisationType extends AbstractType
             ->add('image', FileType::class, [
                 'label' => 'Image',
                 'required' => false, // pour autoriser l'envoi de formulaire sans la fiche descriptive
-                'mapped' => false // pour éviter que le champ ne soit mappé sur un attribut de l'entité
+                'mapped' => false, // pour éviter que le champ ne soit mappé sur un attribut de l'entité
+                'data_class' => null,
+                'attr' => [
+                    'data-filename' => $options['image_filename'] ?? null,
+                ],
             ])
             ->add('slug')
             ->add('categorie', EntityType::class, [
@@ -32,13 +37,19 @@ class UtilisationType extends AbstractType
                 }
             ])
             ->add('texteDeFin')
-            ->add('description');
+            ->add('description', TextareaType::class, [
+                'attr' => [
+                    'rows' => '7',  // Définit le nombre de lignes visibles sans avoir à défiler
+                    'class' => 'form-control'  // Classe Bootstrap pour styliser le textarea
+                ],
+            ]);
     }
 
     public function configureOptions(OptionsResolver $resolver): void
     {
         $resolver->setDefaults([
             'data_class' => Utilisation::class,
+            'image_filename' => null,
         ]);
     }
 }

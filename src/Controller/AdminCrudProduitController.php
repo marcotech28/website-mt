@@ -43,7 +43,10 @@ class AdminCrudProduitController extends AbstractController
             self::handleImage4Upload($produit, $form, $entityManager);
             self::handleImage5Upload($produit, $form, $entityManager);
 
-            $produitRepository->save($produit, true);
+            $entityManager->persist($produit);
+            $entityManager->flush();
+
+            // $produitRepository->save($produit, true);
 
             return $this->redirectToRoute('app_admin_crud_produit_index', [], Response::HTTP_SEE_OTHER);
         }
@@ -65,14 +68,20 @@ class AdminCrudProduitController extends AbstractController
     #[Route('/{id}/edit', name: 'app_admin_crud_produit_edit', methods: ['GET', 'POST'])]
     public function edit(Request $request, Produit $produit, ProduitRepository $produitRepository, EntityManagerInterface $entityManager, ParameterBagInterface $params): Response
     {
-        $form = $this->createForm(ProduitType::class, $produit);
+        $form = $this->createForm(ProduitType::class, $produit, [
+            'image1_filename' => $produit->getImage1(), // ou la méthode que vous utilisez pour obtenir le nom du fichier
+            'image2_filename' => $produit->getImage2(), // ou la méthode que vous utilisez pour obtenir le nom du fichier
+            'image3_filename' => $produit->getImage3(), // ou la méthode que vous utilisez pour obtenir le nom du fichier
+            'image4_filename' => $produit->getImage4(), // ou la méthode que vous utilisez pour obtenir le nom du fichier
+            'image5_filename' => $produit->getImage5(), // ou la méthode que vous utilisez pour obtenir le nom du fichier
+            'ficheDescriptive_filename' => $produit->getFicheDescriptive(), // ou la méthode que vous utilisez pour obtenir le nom du fichier
+        ]);
+
         $form->handleRequest($request);
 
         if ($form->isSubmitted() && $form->isValid()) {
 
-            $produitRepository->save($produit, true);
-
-
+            // $produitRepository->save($produit, true);
 
             // --- fiche descriptive et images du produit --- //
 
@@ -83,9 +92,7 @@ class AdminCrudProduitController extends AbstractController
             self::handleImage4Upload($produit, $form, $entityManager);
             self::handleImage5Upload($produit, $form, $entityManager);
 
-
-
-
+            $entityManager->flush();
 
             return $this->redirectToRoute('app_admin_crud_produit_index', [], Response::HTTP_SEE_OTHER);
         }
