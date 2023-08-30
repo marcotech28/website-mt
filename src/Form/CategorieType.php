@@ -15,11 +15,6 @@ class CategorieType extends AbstractType
     {
         $builder
             ->add('libelle')
-            ->add('image', FileType::class, [
-                'label' => 'Image',
-                'required' => false, // pour autoriser l'envoi de formulaire sans la fiche descriptive
-                'mapped' => false, // pour éviter que le champ ne soit mappé sur un attribut de l'entité
-            ])
             ->add('slug')
             ->add('description', TextareaType::class, [
                 'attr' => [
@@ -27,7 +22,12 @@ class CategorieType extends AbstractType
                     'class' => 'form-control'  // Classe Bootstrap pour styliser le textarea
                 ],
             ])
-            ->add('texteDeFin')
+            ->add('texteDeFin', TextareaType::class, [
+                'attr' => [
+                    'rows' => '10',  // Définit le nombre de lignes visibles sans avoir à défiler
+                    'class' => 'form-control'  // Classe Bootstrap pour styliser le textarea
+                ],
+            ])
             ->add('metaDesc')
             ->add('rang');
     }

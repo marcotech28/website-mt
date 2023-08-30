@@ -372,7 +372,7 @@ h1 {
 h2 {
     font-weight: 500;
     color: #168896;
-    padding: 50px 0 50px 0;
+    padding: 50px 0 30px 0;
     font-size: 50px;
 }
 
@@ -435,6 +435,10 @@ td {
 }
 
 /* -- FICHE PRODUIT -- */
+
+.img-fluid {
+    height: 100% !important;
+}
 
 .video iframe {
     width: 444px;

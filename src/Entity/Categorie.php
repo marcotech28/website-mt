@@ -20,9 +20,6 @@ class Categorie
     private ?string $libelle = null;
 
     #[ORM\Column(length: 255)]
-    private ?string $image = null;
-
-    #[ORM\Column(length: 255)]
     private ?string $slug = null;
 
     #[ORM\OneToMany(mappedBy: 'categorie', targetEntity: Produit::class)]
@@ -62,18 +59,6 @@ class Categorie
     public function setLibelle(string $libelle): self
     {
         $this->libelle = $libelle;
-
-        return $this;
-    }
-
-    public function getImage(): ?string
-    {
-        return $this->image;
-    }
-
-    public function setImage(string $image): self
-    {
-        $this->image = $image;
 
         return $this;
     }

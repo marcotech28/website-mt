@@ -42,7 +42,7 @@
 		<div class="intro-produit">
 			<h2>{{produit.nom}}</h2>
 			{% if app.user %}
-				<h2>{{produit.prix}}€ HT</h2>
+				<h4>{{produit.prix}}€ HT</h4>
 			{% endif %}
 			<h5>
 				<span class="badge bg-primary">{{produit.marque.libelle}}</span>
@@ -63,18 +63,18 @@
 				</div>
 				<div class="col-12 col-lg-6 d-flex justify-content-between flex-column">
 					<div class="row mb-1">
-						<div class="col-12 col-sm-6">
+						<div class="col-12 col-sm-6 mb-1">
 							<a href="{{ asset('images/prod/' ~ produit.image2 ) }}" data-lightbox="mygallery" data-title><img src="{{ asset('images/prod/' ~ produit.image2 ) }}" alt="" class="img-fluid"></a>
 						</div>
-						<div class="col-12 col-sm-6">
+						<div class="col-12 col-sm-6 mb-1">
 							<a href="{{ asset('images/prod/' ~ produit.image3 ) }}" data-lightbox="mygallery" data-title><img src="{{ asset('images/prod/' ~ produit.image3 ) }}" alt="" class="img-fluid"></a>
 						</div>
 					</div>
 					<div class="row mb-1">
-						<div class="col-12 col-sm-6">
+						<div class="col-12 col-sm-6 mb-1">
 							<a href="{{ asset('images/prod/' ~ produit.image4 ) }}" data-lightbox="mygallery" data-title><img src="{{ asset('images/prod/' ~ produit.image4 ) }}" alt="" class="img-fluid"></a>
 						</div>
-						<div class="col-12 col-sm-6">
+						<div class="col-12 col-sm-6 mb-1">
 							<a href="{{ asset('images/prod/' ~ produit.image5 ) }}" data-lightbox="mygallery" data-title><img src="{{ asset('images/prod/' ~ produit.image5 ) }}" alt="" class="img-fluid"></a>
 						</div>
 					</div>

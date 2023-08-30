@@ -36,7 +36,12 @@ class UtilisationType extends AbstractType
                     return $categorie->getLibelle();
                 }
             ])
-            ->add('texteDeFin')
+            ->add('texteDeFin', TextareaType::class, [
+                'attr' => [
+                    'rows' => '7',  // Définit le nombre de lignes visibles sans avoir à défiler
+                    'class' => 'form-control'  // Classe Bootstrap pour styliser le textarea
+                ],
+            ])
             ->add('description', TextareaType::class, [
                 'attr' => [
                     'rows' => '7',  // Définit le nombre de lignes visibles sans avoir à défiler

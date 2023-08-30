@@ -25,10 +25,6 @@
 						{{ categorie.libelle }}
 					</p>
 					<p>
-						<strong>Image :</strong>
-						{{ categorie.image }}
-					</p>
-					<p>
 						<strong>Slug :</strong>
 						{{ categorie.slug }}
 					</p>
@@ -38,7 +34,7 @@
 					</p>
 					<p>
 						<strong>Texte de fin :</strong>
-						{{ categorie.texteDeFin }}
+						{{ categorie.texteDeFin|slice(0, 40) ~ '...' }}
 					</p>
 					<p>
 						<strong>Rang :</strong>

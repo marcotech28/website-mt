@@ -33,7 +33,7 @@
 
 
 		<h2>{{utilisation.libelle}}</h2>
-		<p>{{utilisation.description}}</p>
+		<p>{{utilisation.description|raw}}</p>
 	</div>
 
 	<div class="container-fluid" style="background-color: #F3F3F3; padding: 50px 0 !important;">
@@ -52,8 +52,8 @@
 
 	{% if utilisation.texteDeFin %}
 		<div class="container-fluid">
-			<div class="container-xl">
-				<p>{{ utilisation.texteDeFin|nl2br }}</p>
+			<div class="container-xl pt-5 pb-5">
+				<p>{{ utilisation.texteDeFin|raw }}</p>
 			</div>
 		</div>
 	{% endif %}

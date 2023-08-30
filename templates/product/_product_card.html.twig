@@ -1,5 +1,5 @@
 {% if p.utilisation is null %}
-	<div class="mycard">
+	<div class="mycard h-100">
 		<a href="{{path('product_show_no_utilisation', {'category_slug' : p.categorie.slug, 'slug' : p.slug, 'id' : p.id })}}">
 			<div class="card h-100">
 				<div class="pictureProduct">
@@ -33,7 +33,7 @@
 		</a>
 	</div>
 {% else %}
-	<div class="mycard">
+	<div class="mycard h-100">
 		<a href="{{path('product_show', {'category_slug' : p.categorie.slug, 'utilisation_slug' : p.utilisation.slug, 'slug' : p.slug, 'id' : p.id })}}">
 			<div class="card h-100">
 				<div class="pictureProduct">
