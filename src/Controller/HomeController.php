@@ -22,10 +22,10 @@ class HomeController extends AbstractController
     {
         $produitRepository = $em->getRepository(Produit::class);
 
-        $produit1 = $produitRepository->find(21);
-        $produit2 = $produitRepository->find(18);
-        $produit3 = $produitRepository->find(31);
-        $produit4 = $produitRepository->find(35);
+        $produit1 = $produitRepository->find(19);
+        $produit2 = $produitRepository->find(20);
+        $produit3 = $produitRepository->find(21);
+        $produit4 = $produitRepository->find(22);
         $tableauProduits = array($produit1, $produit2, $produit3, $produit4);
 
         $form = $this->createForm(NewsletterType::class);
