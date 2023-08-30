@@ -142,7 +142,7 @@
 
 				{# Catégories #}
 				{# On boucle sur les catégories par ordre descroissant sur l'attribut rang #}
-				{% for c in categorieRepository.findBy([], {'rang': 'DESC'}) %}
+				{% for c in categorieRepository.findBy([], {'rang': 'ASC'}) %}
 
 					{% if c.utilisations is empty %}
 						<li class="nav-item dropdown w-100 nav-link-bordure-gauche majuscule text-center d-flex align-items-center">
