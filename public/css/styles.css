@@ -177,6 +177,7 @@ body {
 
 .dropdown-menu {
     background-color: #F3F3F3 !important;
+    overflow-y: auto !important;
 }
 
 .dropdown-header {
