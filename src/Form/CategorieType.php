@@ -7,6 +7,7 @@ use Symfony\Component\Form\AbstractType;
 use Symfony\Component\Form\FormBuilderInterface;
 use Symfony\Component\OptionsResolver\OptionsResolver;
 use Symfony\Component\Form\Extension\Core\Type\FileType;
+use Symfony\Component\Form\Extension\Core\Type\TextareaType;
 
 class CategorieType extends AbstractType
 {
@@ -20,7 +21,12 @@ class CategorieType extends AbstractType
                 'mapped' => false, // pour éviter que le champ ne soit mappé sur un attribut de l'entité
             ])
             ->add('slug')
-            ->add('description')
+            ->add('description', TextareaType::class, [
+                'attr' => [
+                    'rows' => '10',  // Définit le nombre de lignes visibles sans avoir à défiler
+                    'class' => 'form-control'  // Classe Bootstrap pour styliser le textarea
+                ],
+            ])
             ->add('texteDeFin')
             ->add('metaDesc')
             ->add('rang');

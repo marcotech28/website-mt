@@ -25,7 +25,9 @@
 			</div>
 		</div>
 		<h2>{{categorie.libelle}}</h2>
-		<p>{{categorie.description|nl2br }}</p>
+		{# <p>{{categorie.description|nl2br }}</p> #}
+		{{ categorie.description|raw }}
+
 	</div>
 
 	<div class="container-fluid" style="background-color: #F3F3F3; padding: 50px 0 !important;">
@@ -43,8 +45,10 @@
 
 	{% if categorie.texteDeFin %}
 		<div class="container-fluid">
-			<div class="container-xl">
-				<p>{{ categorie.texteDeFin|nl2br }}</p>
+			<div
+				class="container-xl">
+				{# <p>{{ categorie.texteDeFin|nl2br }}</p> #}
+				{{ categorie.texteDeFin|raw }}
 			</div>
 		</div>
 	{% endif %}
