@@ -126,6 +126,7 @@ class ProduitType extends AbstractType
                 'choice_label' => 'nom',
                 'multiple' => true,
                 'expanded' => false, //on met ça à true pour avoir une liste à puce
+                'required' => false
             ]);
     }
 
