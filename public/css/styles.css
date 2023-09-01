@@ -1164,6 +1164,7 @@ a:hover.contact-telephone {
 
 .actu img{
     max-width: 100% !important; 
+    max-height: 600px;
 }
 
 .actualites h2 a {
