@@ -41,7 +41,9 @@
 
 		{# si l'admin est connecté, un bouton redirige vers la page edit du crud #}
 		{% if is_granted('ROLE_ADMIN') %}
-			<a href="{{ path('app_admin_crud_produit_edit', {'id': produit.id}) }}" class="btn btn-primary">Editer le produit</a>
+			<div class="edit-admin">
+				<a href="{{ path('app_admin_crud_produit_edit', {'id': produit.id}) }}" class="btn btn-primary">Editer le produit</a>
+			</div>
 		{% endif %}
 
 

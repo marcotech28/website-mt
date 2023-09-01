@@ -24,6 +24,15 @@
 				</nav>
 			</div>
 		</div>
+
+
+		{% if is_granted('ROLE_ADMIN') %}
+			<div class="edit-admin">
+				<a href="{{ path('app_admin_crud_categorie_edit', {'id': categorie.id}) }}" class="btn btn-primary">Editer la catégorie</a>
+			</div>
+		{% endif %}
+
+
 		<h2>{{categorie.libelle}}</h2>
 		{# <p>{{categorie.description|nl2br }}</p> #}
 		{{ categorie.description|raw }}

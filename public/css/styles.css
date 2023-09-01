@@ -477,10 +477,12 @@ td {
     padding: 20px 0;
 }
 
+.edit-admin .btn,
 .banniere .btn {
     background-color: #EF946C !important;
 }
 
+.edit-admin .btn,
 .banniere .btn:hover {
     background-color: #ca4c16 !important;
     transition: 0.2s !important;

@@ -31,6 +31,12 @@
 			</div>
 		</div>
 
+		{% if is_granted('ROLE_ADMIN') %}
+			<div class="edit-admin">
+				<a href="{{ path('app_admin_crud_utilisation_edit', {'id': utilisation.id}) }}" class="btn btn-primary">Editer l'utilisation</a>
+			</div>
+		{% endif %}
+
 
 		<h2>{{utilisation.libelle}}</h2>
 		<p>{{utilisation.description|raw}}</p>
