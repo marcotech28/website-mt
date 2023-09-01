@@ -5,259 +5,263 @@
 
 {% block body %}
 
-<div class="container-xl">
+	<div class="container-xl">
 
-	<nav aria-label="breadcrumb">
-		<ol class="breadcrumb">
-			<li class="breadcrumb-item">
-				<a href="{{path('homepage')}}">Accueil</a>
-			</li>
-			<li class="breadcrumb-item active" aria-current="page">Demande de démonstration</li>
-		</ol>
-	</nav>
-
-	<div class="row">
-		<div class="col-12">
-			<h2>Demander une démonstration</h2>
-		</div>
-	</div>
-
-	<div class="row">
-		<div class="col-12">
-			<p style="padding-top: 20px">Vous souhaitez essayer un matériel avant de l'acheter ? Vous avez entièrement raison !</p>
-		</div>
-	</div>
-
-	<div class="row">
-		<div class="col-12">
-			<p>Deux possibilités s'offrent à vous :</p>
-			<ul class="demonstration-list">
-				<li>
-					<p>
-						<i class="fa-solid fa-chevron-right" style="color: #EF946C "></i>Vous essayez le matériel dans notre showroom à Epernon en prenant RDV via le formulaire ci-dessous. Si vous vous déplacez jusqu’à notre showroom, nous vous offrirons un bon d’achat. Voir détails
-						<a href="#" data-bs-toggle="modal" data-bs-target="#modalShowroom">ICI</a>.
-					</p>
+		<nav aria-label="breadcrumb">
+			<ol class="breadcrumb">
+				<li class="breadcrumb-item">
+					<a href="{{path('homepage')}}">Accueil</a>
 				</li>
-				<li>
-					<p>
-						<i class="fa-solid fa-chevron-right" style="color: #EF946C"></i>Nous venons vous rencontrer directement à votre domicile : les essais sont payants en fonction de la zone géographique. Voir détails
-						<a href="#" data-bs-toggle="modal" data-bs-target="#modalDeplaceClients">ICI</a>.
-					</p>
+				<li class="breadcrumb-item active" aria-current="page">Demande de démonstration</li>
+			</ol>
+		</nav>
 
-				</li>
-			</p>
-		</ul>
-	</div>
-</div>
-
-<div class="row">
-	<div class="col-12">
-		<p>Veuillez dûment compléter le formulaire pour traiter votre demande dans les meilleurs délais. Dès la demande reçue, nous vous recontacterons dans les plus brefs délais.</p>
-	</div>
-</div>
-
-<div class="row">
-	<div class="col-12">
-		<p>Pour les professionnels, nous pouvons vous envoyer directement le matériel à votre magasin.</p>
-	</div>
-</div>
-
-
-<div class="form-demonstration">
-	<div class="col-12 col-sm-11 mx-auto">
-		<div class="col-lg-7 mb-5 mb-lg-0">
-			<div class="row mb-2">
-				<div class="col">
-					{{ form_start(formView, {'method': 'POST'}) }}
-					{{ form_widget(formView.typeUser) }}
-				</div>
-			</div>
-			<div class="row mb-2">
-				<div class="col-12 col-sm-6 mb-formulaire">{{ form_row(formView.societe) }}</div>
-				<div class="col-12 col-sm-6">{{ form_row(formView.poste) }}</div>
-			</div>
-
-			<div class="row mb-2">
-				<div class="col-12 col-sm-6 mb-formulaire">{{ form_row(formView.nom) }}</div>
-				<div class="col-12 col-sm-6">{{ form_row(formView.prenom) }}</div>
-			</div>
-
-			<div class="row mb-2">
-				<div class="col">
-					{{ form_row(formView.email) }}
-				</div>
-			</div>
-			<div class="row mb-2">
-				<div class="col">{{ form_row(formView.telephone) }}</div>
-			</div>
-			<div class="row mb-2">
-				<div class="col">{{ form_row(formView.adresse) }}</div>
-			</div>
-			<div class="row mb-2">
-				<div class="col">{{ form_row(formView.complementAdresse) }}</div>
-			</div>
-			<div class="row mb-2">
-				<div class="col-12 col-sm-6 mb-formulaire">{{ form_row(formView.ville) }}</div>
-				<div class="col-12 col-sm-6">{{ form_row(formView.codePostal) }}</div>
-			</div>
-			<div class="row mb-2">
-				<div class="col">{{ form_row(formView.pays) }}</div>
-			</div>
-			<div class="row mb-2">
-				<div id="radio" class="col">
-					{{ form_label(formView.produitsDemo) }}
-					{{ form_widget(formView.produitsDemo) }}
-				</div>
-			</div>
-			<div class="row mb-2">
-				<div id="radio" class="col">
-					{{ form_label(formView.lieuDemo) }}
-					{{ form_widget(formView.lieuDemo) }}
-				</div>
-			</div>
-			<div class="row mb-2">
-				<div class="col">
-					{{ form_row(formView.message) }}
-				</div>
-			</div>
-		</div>
-		<p style="font-style: italic">Les champs marqués d'un * sont obligatoires.</p>
-
-		<button type="submit" class="btn btn-primary form-contact">Demander une démonstration</button>
-		{{form_end(formView)}}
-	</div>
-</div></div><!-- modal bon d'achat --><div class="modal modal-lg fade" id="modalShowroom" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-<div class="modal-dialog">
-	<div class="modal-content">
-		<div class="modal-header">
-			<h5 class="modal-title" id="exampleModalLabel">Bons d'achat en cas de venue au showroom.</h5>
-			<button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-		</div>
-		<div class="modal-body">
-			<p>Pour connaître la valeur de votre bon d'achat, veuillez vous diriger sous le tableau et sélectionner votre zone géographique.</p>
+		<div class="row">
 			<div class="col-12">
-				<table class="table table-bordered border-primary">
-					<thead>
-						<tr>
-							<th>Zone</th>
-							<th>Départements associés</th>
-						</tr>
-					</thead>
-					<tbody>
-						<tr>
-							<td>Zone 1</td>
-							<td>28-45-75-78-91-92-94</td>
-						</tr>
-						<tr>
-							<td>Zone 2</td>
-							<td>10-27-41-60-77-89-93-95</td>
-						</tr>
-						<tr>
-							<td>Zone 3</td>
-							<td>02-08-14-18-21-36-37-51-52-53-55-58-61-72-76-80</td>
-						</tr>
-						<tr>
-							<td>Zone 4</td>
-							<td>01-03-08-15-16-17-19-23-24-25-35-39-42-43-44-50-54-59-62-63-67-69-70-71-79-85-86-87
-							</td>
-						</tr>
-						<tr>
-							<td>Zone 5</td>
-							<td>Tous les autres départements.</td>
-						</tr>
-					</tbody>
-				</table>
+				<h2>Demander une démonstration</h2>
 			</div>
+		</div>
 
-			<nav>
-				<div class="nav nav-pills mb-3 modals" id="pills-tab" role="tablist">
-					<button class="nav-link active" id="nav-zone1-tab-2" data-bs-toggle="tab" data-bs-target="#nav-zone1" type="button" role="tab" aria-controls="nav-zone1" aria-selected="true">Zone 1</button>
-					<button class="nav-link" id="nav-zone2-tab-2" data-bs-toggle="tab" data-bs-target="#nav-zone2" type="button" role="tab" aria-controls="nav-zone2" aria-selected="false">Zone 2</button>
-					<button class="nav-link" id="nav-zone3-tab-2" data-bs-toggle="tab" data-bs-target="#nav-zone3" type="button" role="tab" aria-controls="nav-zone3" aria-selected="false">Zone 3</button>
-					<button class="nav-link" id="nav-zone4-tab-2" data-bs-toggle="tab" data-bs-target="#nav-zone4" type="button" role="tab" aria-controls="nav-zone4" aria-selected="false">Zone 4</button>
-					<button class="nav-link" id="nav-zone5-tab-2" data-bs-toggle="tab" data-bs-target="#nav-zone5" type="button" role="tab" aria-controls="nav-zone5" aria-selected="false">Zone 5</button>
-				</div>
-			</nav>
-			<div class="tab-content" id="nav-tabContent">
-				<div class="tab-pane fade show active" id="nav-zone1" role="tabpanel" aria-labelledby="nav-zone1-tab-2">
-					Félicitations ! Vous bénéficiez d'un bon d'achat de 50 € valable 6 mois à partir de 900 € d'achat si vous venez réaliser l'essai dans notre showroom.</div>
-				<div class="tab-pane fade" id="nav-zone2" role="tabpanel" aria-labelledby="nav-zone2-tab-2">
-					Félicitations ! Vous bénéficiez d'un bon d'achat de 100 € valable 6 mois à partir de 900€ d'achat si vous venez réaliser l'essai dans notre showroom.</div>
-				<div class="tab-pane fade" id="nav-zone3" role="tabpanel" aria-labelledby="nav-zone3-tab-2">
-					Félicitations ! Vous bénéficiez d'un bon d'achat de 150 € valable 6 mois à partir de 900€ d'achat si vous venez réaliser l'essai dans notre showroom.</div>
-				<div class="tab-pane fade" id="nav-zone4" role="tabpanel" aria-labelledby="nav-zone4-tab-2">
-					Félicitations ! Vous bénéficiez d'un bon d'achat de 200 € valable 6 mois à partir de 900 € d'achat si vous venez réaliser l'essai dans notre showroom.</div>
-				<div class="tab-pane fade" id="nav-zone5" role="tabpanel" aria-labelledby="nav-zone5-tab-2">
-					Félicitations ! Vous bénéficiez d'un bon d'achat de 250 € valable 6 mois à partir de 900€ d'achat si vous venez réaliser l'essai dans notre showroom.</div>
-			</div>
-		</div>
-		<div class="modal-footer">
-			<button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Fermer</button>
-		</div>
-	</div>
-</div></div>{# modal frais de déplacement #}<div class="modal modal-lg fade" id="modalDeplaceClients" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-<div class="modal-dialog">
-	<div class="modal-content">
-		<div class="modal-header">
-			<h5 class="modal-title" id="exampleModalLabel">Participation des frais de déplacement dans le cadre d'une démonstration.</h5>
-			<button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-		</div>
-		<div class="modal-body">
-			<p>Pour connaître les tarifs des déplacements dans le cadre d'une démonstration chez vous, veuillez vous diriger sous le tableau et sélectionner votre zone géographique.</p>
+		<div class="row">
 			<div class="col-12">
-				<table class="table table-bordered border-primary">
-					<thead>
-						<tr>
-							<th>Zone</th>
-							<th>Départements associés</th>
-						</tr>
-					</thead>
-					<tbody>
-						<tr>
-							<td>Zone 1</td>
-							<td>28-45-75-78-91-92-94</td>
-						</tr>
-						<tr>
-							<td>Zone 2</td>
-							<td>10-27-41-60-77-89-93-95</td>
-						</tr>
-						<tr>
-							<td>Zone 3</td>
-							<td>02-08-14-18-21-36-37-51-52-53-55-58-61-72-76-80</td>
-						</tr>
-						<tr>
-							<td>Zone 4</td>
-							<td>01-03-08-15-16-17-19-23-24-25-35-39-42-43-44-50-54-59-62-63-67-69-70-71-79-85-86-87
-							</td>
-						</tr>
-						<tr>
-							<td>Zone 5</td>
-							<td>Tous les autres départements.</td>
-						</tr>
-					</tbody>
-				</table>
-			</div>
-
-			<nav>
-				<div class="nav nav-pills mb-3" id="pills-tab" role="tablist">
-					<button class="nav-link active" id="nav-zone1-tab" data-bs-toggle="tab" data-bs-target="#nav-zone1-2" type="button" role="tab" aria-controls="nav-zone1" aria-selected="true">Zone 1</button>
-					<button class="nav-link" id="nav-zone2-tab" data-bs-toggle="tab" data-bs-target="#nav-zone2-2" type="button" role="tab" aria-controls="nav-zone2" aria-selected="false">Zone 2</button>
-					<button class="nav-link" id="nav-zone3-tab" data-bs-toggle="tab" data-bs-target="#nav-zone3-2" type="button" role="tab" aria-controls="nav-zone3" aria-selected="false">Zone 3</button>
-					<button class="nav-link" id="nav-zone4-tab" data-bs-toggle="tab" data-bs-target="#nav-zone4-2" type="button" role="tab" aria-controls="nav-zone4" aria-selected="false">Zone 4</button>
-					<button class="nav-link" id="nav-zone5-tab" data-bs-toggle="tab" data-bs-target="#nav-zone5-2" type="button" role="tab" aria-controls="nav-zone5" aria-selected="false">Zone 5</button>
-				</div>
-			</nav>
-			<div class="tab-content" id="nav-tabContent">
-				<div class="tab-pane fade show active" id="nav-zone1-2" role="tabpanel" aria-labelledby="nav-zone1-tab">Les frais de déplacement chez vous sont de 108 euros.</div>
-				<div class="tab-pane fade" id="nav-zone2-2" role="tabpanel" aria-labelledby="nav-zone2-tab">Les frais de déplacement chez vous sont de 132 euros.</div>
-				<div class="tab-pane fade" id="nav-zone3-2" role="tabpanel" aria-labelledby="nav-zone3-tab">Les frais de déplacement chez vous sont de 156 euros.</div>
-				<div class="tab-pane fade" id="nav-zone4-2" role="tabpanel" aria-labelledby="nav-zone4-tab">Les frais de déplacement chez vous sont de 180 euros.</div>
-				<div class="tab-pane fade" id="nav-zone5-2" role="tabpanel" aria-labelledby="nav-zone5-tab">Les frais de déplacement chez vous sont de 192 euros.</div>
+				<p style="padding-top: 20px">Vous souhaitez essayer un matériel avant de l'acheter ? Vous avez entièrement raison !</p>
 			</div>
 		</div>
-		<div class="modal-footer">
-			<button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Fermer</button>
+
+		<div class="row">
+			<div class="col-12">
+				<p>Deux possibilités s'offrent à vous :</p>
+				<ul class="demonstration-list">
+					<li>
+						<p>
+							<i class="fa-solid fa-chevron-right" style="color: #EF946C "></i>Vous essayez le matériel dans notre showroom à Epernon en prenant RDV via le formulaire ci-dessous. Si vous vous déplacez jusqu’à notre showroom, nous vous offrirons un bon d’achat. Voir détails
+							<a href="#" data-bs-toggle="modal" data-bs-target="#modalShowroom">ICI</a>.
+						</p>
+					</li>
+					<li>
+						<p>
+							<i class="fa-solid fa-chevron-right" style="color: #EF946C"></i>Nous venons vous rencontrer directement à votre domicile : les essais sont payants en fonction de la zone géographique. Voir détails
+							<a href="#" data-bs-toggle="modal" data-bs-target="#modalDeplaceClients">ICI</a>.
+						</p>
+
+					</li>
+				</p>
+			</ul>
 		</div>
 	</div>
-</div></div>{# <!-- JavaScript Bundle with Popper -->
-				<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-OERcA2EqjJCMA+/3y+gxIOqMEjwtxJY7qPCqsdltbNJuaOe923+mo//f6V8Qbsw3" crossorigin="anonymous"></script>{% endblock %} #}
+
+	<div class="row">
+		<div class="col-12">
+			<p>Veuillez dûment compléter le formulaire pour traiter votre demande dans les meilleurs délais. Dès la demande reçue, nous vous recontacterons dans les plus brefs délais.</p>
+		</div>
+	</div>
+
+	<div class="row">
+		<div class="col-12">
+			<p>Pour les professionnels, nous pouvons vous envoyer directement le matériel à votre magasin.</p>
+		</div>
+	</div>
+
+
+	<div class="form-demonstration">
+		<div class="col-12 col-sm-11 mx-auto">
+			<div class="col-lg-7 mb-5 mb-lg-0">
+				<div class="row mb-2">
+					<div class="col">
+						{{ form_start(formView, {'method': 'POST'}) }}
+						{{ form_widget(formView.typeUser) }}
+					</div>
+				</div>
+				<div class="row mb-2">
+					<div class="col-12 col-sm-6 mb-formulaire">{{ form_row(formView.societe) }}</div>
+					<div class="col-12 col-sm-6">{{ form_row(formView.poste) }}</div>
+				</div>
+
+				<div class="row mb-2">
+					<div class="col-12 col-sm-6 mb-formulaire">{{ form_row(formView.nom) }}</div>
+					<div class="col-12 col-sm-6">{{ form_row(formView.prenom) }}</div>
+				</div>
+
+				<div class="row mb-2">
+					<div class="col">
+						{{ form_row(formView.email) }}
+					</div>
+				</div>
+				<div class="row mb-2">
+					<div class="col">{{ form_row(formView.telephone) }}</div>
+				</div>
+				<div class="row mb-2">
+					<div class="col">{{ form_row(formView.adresse) }}</div>
+				</div>
+				<div class="row mb-2">
+					<div class="col">{{ form_row(formView.complementAdresse) }}</div>
+				</div>
+				<div class="row mb-2">
+					<div class="col-12 col-sm-6 mb-formulaire">{{ form_row(formView.ville) }}</div>
+					<div class="col-12 col-sm-6">{{ form_row(formView.codePostal) }}</div>
+				</div>
+				<div class="row mb-2">
+					<div class="col">{{ form_row(formView.pays) }}</div>
+				</div>
+				<div class="row mb-2">
+					<div id="radio" class="col">
+						{{ form_label(formView.produitsDemo) }}
+						{{ form_widget(formView.produitsDemo) }}
+					</div>
+				</div>
+				<div class="row mb-2">
+					<div id="radio" class="col">
+						{{ form_label(formView.lieuDemo) }}
+						{{ form_widget(formView.lieuDemo) }}
+					</div>
+				</div>
+				<div class="row mb-2">
+					<div class="col">
+						{{ form_row(formView.message) }}
+					</div>
+				</div>
+			</div>
+			<p style="font-style: italic">Les champs marqués d'un * sont obligatoires.</p>
+
+			<button type="submit" class="btn btn-primary form-contact">Demander une démonstration</button>
+			{{form_end(formView)}}
+		</div>
+	</div>
+</div><!-- modal bon d'achat --><div class="modal modal-lg fade" id="modalShowroom" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+	<div class="modal-dialog">
+		<div class="modal-content">
+			<div class="modal-header">
+				<h5 class="modal-title" id="exampleModalLabel">Bons d'achat en cas de venue au showroom.</h5>
+				<button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+			</div>
+			<div class="modal-body">
+				<p>Pour connaître la valeur de votre bon d'achat, veuillez vous diriger sous le tableau et sélectionner votre zone géographique.</p>
+				<div class="col-12">
+					<table class="table table-bordered border-primary">
+						<thead>
+							<tr>
+								<th>Zone</th>
+								<th>Départements associés</th>
+							</tr>
+						</thead>
+						<tbody>
+							<tr>
+								<td>Zone 1</td>
+								<td>28-45-75-78-91-92-94</td>
+							</tr>
+							<tr>
+								<td>Zone 2</td>
+								<td>10-27-41-60-77-89-93-95</td>
+							</tr>
+							<tr>
+								<td>Zone 3</td>
+								<td>02-08-14-18-21-36-37-51-52-53-55-58-61-72-76-80</td>
+							</tr>
+							<tr>
+								<td>Zone 4</td>
+								<td>01-03-08-15-16-17-19-23-24-25-35-39-42-43-44-50-54-59-62-63-67-69-70-71-79-85-86-87
+								</td>
+							</tr>
+							<tr>
+								<td>Zone 5</td>
+								<td>Tous les autres départements.</td>
+							</tr>
+						</tbody>
+					</table>
+				</div>
+
+				<nav>
+					<div class="nav nav-pills mb-3 modals" id="pills-tab" role="tablist">
+						<button class="nav-link active" id="nav-zone1-tab-2" data-bs-toggle="tab" data-bs-target="#nav-zone1" type="button" role="tab" aria-controls="nav-zone1" aria-selected="true">Zone 1</button>
+						<button class="nav-link" id="nav-zone2-tab-2" data-bs-toggle="tab" data-bs-target="#nav-zone2" type="button" role="tab" aria-controls="nav-zone2" aria-selected="false">Zone 2</button>
+						<button class="nav-link" id="nav-zone3-tab-2" data-bs-toggle="tab" data-bs-target="#nav-zone3" type="button" role="tab" aria-controls="nav-zone3" aria-selected="false">Zone 3</button>
+						<button class="nav-link" id="nav-zone4-tab-2" data-bs-toggle="tab" data-bs-target="#nav-zone4" type="button" role="tab" aria-controls="nav-zone4" aria-selected="false">Zone 4</button>
+						<button class="nav-link" id="nav-zone5-tab-2" data-bs-toggle="tab" data-bs-target="#nav-zone5" type="button" role="tab" aria-controls="nav-zone5" aria-selected="false">Zone 5</button>
+					</div>
+				</nav>
+				<div class="tab-content" id="nav-tabContent">
+					<div class="tab-pane fade show active" id="nav-zone1" role="tabpanel" aria-labelledby="nav-zone1-tab-2">
+						Félicitations ! Vous bénéficiez d'un bon d'achat de 50 € valable 6 mois à partir de 900 € d'achat si vous venez réaliser l'essai dans notre showroom.</div>
+					<div class="tab-pane fade" id="nav-zone2" role="tabpanel" aria-labelledby="nav-zone2-tab-2">
+						Félicitations ! Vous bénéficiez d'un bon d'achat de 100 € valable 6 mois à partir de 900€ d'achat si vous venez réaliser l'essai dans notre showroom.</div>
+					<div class="tab-pane fade" id="nav-zone3" role="tabpanel" aria-labelledby="nav-zone3-tab-2">
+						Félicitations ! Vous bénéficiez d'un bon d'achat de 150 € valable 6 mois à partir de 900€ d'achat si vous venez réaliser l'essai dans notre showroom.</div>
+					<div class="tab-pane fade" id="nav-zone4" role="tabpanel" aria-labelledby="nav-zone4-tab-2">
+						Félicitations ! Vous bénéficiez d'un bon d'achat de 200 € valable 6 mois à partir de 900 € d'achat si vous venez réaliser l'essai dans notre showroom.</div>
+					<div class="tab-pane fade" id="nav-zone5" role="tabpanel" aria-labelledby="nav-zone5-tab-2">
+						Félicitations ! Vous bénéficiez d'un bon d'achat de 250 € valable 6 mois à partir de 900€ d'achat si vous venez réaliser l'essai dans notre showroom.</div>
+				</div>
+			</div>
+			<div class="modal-footer">
+				<button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Fermer</button>
+			</div>
+		</div>
+	</div>
+</div>{# modal frais de déplacement #}<div class="modal modal-lg fade" id="modalDeplaceClients" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+	<div class="modal-dialog">
+		<div class="modal-content">
+			<div class="modal-header">
+				<h5 class="modal-title" id="exampleModalLabel">Participation des frais de déplacement dans le cadre d'une démonstration.</h5>
+				<button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+			</div>
+			<div class="modal-body">
+				<p>Pour connaître les tarifs des déplacements dans le cadre d'une démonstration chez vous, veuillez vous diriger sous le tableau et sélectionner votre zone géographique.</p>
+				<div class="col-12">
+					<table class="table table-bordered border-primary">
+						<thead>
+							<tr>
+								<th>Zone</th>
+								<th>Départements associés</th>
+							</tr>
+						</thead>
+						<tbody>
+							<tr>
+								<td>Zone 1</td>
+								<td>28-45-75-78-91-92-94</td>
+							</tr>
+							<tr>
+								<td>Zone 2</td>
+								<td>10-27-41-60-77-89-93-95</td>
+							</tr>
+							<tr>
+								<td>Zone 3</td>
+								<td>02-08-14-18-21-36-37-51-52-53-55-58-61-72-76-80</td>
+							</tr>
+							<tr>
+								<td>Zone 4</td>
+								<td>01-03-08-15-16-17-19-23-24-25-35-39-42-43-44-50-54-59-62-63-67-69-70-71-79-85-86-87
+								</td>
+							</tr>
+							<tr>
+								<td>Zone 5</td>
+								<td>Tous les autres départements.</td>
+							</tr>
+						</tbody>
+					</table>
+				</div>
+
+				<nav>
+					<div class="nav nav-pills mb-3" id="pills-tab" role="tablist">
+						<button class="nav-link active" id="nav-zone1-tab" data-bs-toggle="tab" data-bs-target="#nav-zone1-2" type="button" role="tab" aria-controls="nav-zone1" aria-selected="true">Zone 1</button>
+						<button class="nav-link" id="nav-zone2-tab" data-bs-toggle="tab" data-bs-target="#nav-zone2-2" type="button" role="tab" aria-controls="nav-zone2" aria-selected="false">Zone 2</button>
+						<button class="nav-link" id="nav-zone3-tab" data-bs-toggle="tab" data-bs-target="#nav-zone3-2" type="button" role="tab" aria-controls="nav-zone3" aria-selected="false">Zone 3</button>
+						<button class="nav-link" id="nav-zone4-tab" data-bs-toggle="tab" data-bs-target="#nav-zone4-2" type="button" role="tab" aria-controls="nav-zone4" aria-selected="false">Zone 4</button>
+						<button class="nav-link" id="nav-zone5-tab" data-bs-toggle="tab" data-bs-target="#nav-zone5-2" type="button" role="tab" aria-controls="nav-zone5" aria-selected="false">Zone 5</button>
+					</div>
+				</nav>
+				<div class="tab-content" id="nav-tabContent">
+					<div class="tab-pane fade show active" id="nav-zone1-2" role="tabpanel" aria-labelledby="nav-zone1-tab">Les frais de déplacement chez vous sont de 108 euros.</div>
+					<div class="tab-pane fade" id="nav-zone2-2" role="tabpanel" aria-labelledby="nav-zone2-tab">Les frais de déplacement chez vous sont de 132 euros.</div>
+					<div class="tab-pane fade" id="nav-zone3-2" role="tabpanel" aria-labelledby="nav-zone3-tab">Les frais de déplacement chez vous sont de 156 euros.</div>
+					<div class="tab-pane fade" id="nav-zone4-2" role="tabpanel" aria-labelledby="nav-zone4-tab">Les frais de déplacement chez vous sont de 180 euros.</div>
+					<div class="tab-pane fade" id="nav-zone5-2" role="tabpanel" aria-labelledby="nav-zone5-tab">Les frais de déplacement chez vous sont de 192 euros.</div>
+				</div>
+			</div>
+			<div class="modal-footer">
+				<button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Fermer</button>
+			</div>
+		</div>
+	</div>
+</div>
+<!-- JavaScript Bundle with Popper -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-OERcA2EqjJCMA+/3y+gxIOqMEjwtxJY7qPCqsdltbNJuaOe923+mo//f6V8Qbsw3" crossorigin="anonymous"></script>{% endblock %}
