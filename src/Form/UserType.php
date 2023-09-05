@@ -57,6 +57,7 @@ class UserType extends AbstractType
                 'required' => false,
                 'attr' => [
                     'class' => 'form-control',
+                    'required' => false
                 ],
             ])
             ->add('ville', TextType::class, [
@@ -80,7 +81,7 @@ class UserType extends AbstractType
             ])
             ->add('nomSociete', TextType::class, [
                 'attr' => [
-                    'class' => 'form-control',
+                    'class' => 'form-control'
                 ]
             ])
             ->add('isConfirmed', CheckboxType::class, []);
