@@ -19,7 +19,7 @@ class Categorie
 
     #[ORM\Column(length: 255)]
     #[Assert\NotBlank(message: "Libelle obligatoire")]
-    #[Assert\Length(min: 4, max: 255, exactMessage: "Le nom de la catégorie doit faire en 4 et 255 caractères.")]
+    #[Assert\Length(min: 4, max: 255, minMessage: "Le libelle doit faire au moins 3 caractères", maxMessage: "Le libelle doit faire moins de 255 caractères")]
     private ?string $libelle = null;
 
     #[ORM\Column(length: 255)]
