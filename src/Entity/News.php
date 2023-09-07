@@ -24,7 +24,7 @@ class News
     private ?\DateTimeInterface $date = null;
 
     #[ORM\Column(length: 255)]
-    #[Assert\Length(min: 4, max: 30, message: "L'auteur doit faire entre 4 et 30 caractères")]
+    #[Assert\Length(min: 4, max: 30, minMessage: "L'auteur doit faire entre 4 et 30 caractères", maxMessage: "L'auteur doit faire entre 4 et 30 caractères")]
     private ?string $auteur = null;
 
     #[ORM\Column(length: 255)]
