@@ -7,9 +7,10 @@ use Doctrine\ORM\Mapping as ORM;
 use Symfony\Bridge\Doctrine\Validator\Constraints\UniqueEntity;
 use Symfony\Component\Security\Core\User\PasswordAuthenticatedUserInterface;
 use Symfony\Component\Security\Core\User\UserInterface;
+use Symfony\Component\Validator\Constraints as Assert;
 
 #[ORM\Entity(repositoryClass: UserRepository::class)]
-#[UniqueEntity(fields: ['email'], message: 'There is already an account with this email')]
+#[UniqueEntity(fields: ['email'], message: 'Un utilisateur possède déjà cet email.')]
 class User implements UserInterface, PasswordAuthenticatedUserInterface
 {
     #[ORM\Id]
@@ -18,6 +19,7 @@ class User implements UserInterface, PasswordAuthenticatedUserInterface
     private ?int $id = null;
 
     #[ORM\Column(length: 180, unique: true)]
+    #[Assert\Email(message: "Email non valide")]
     private ?string $email = null;
 
     #[ORM\Column]
@@ -27,39 +29,50 @@ class User implements UserInterface, PasswordAuthenticatedUserInterface
      * @var string The hashed password
      */
     #[ORM\Column]
+    #[Assert\Length(min: 6, max: 255, minMessage: "Le mot de passe doit faire au minimum 6 caractères", maxMessage: "Le mot de passe doit faire au maximum 255 caractères")]
     private ?string $password = null;
 
     #[ORM\Column(length: 255)]
+    #[Assert\Length(min: 4, max: 255, minMessage: "Le prénom doit faire au moins 4 caractères", maxMessage: "Le prénom doit faire moins de 255 caractères")]
     private ?string $prenom = null;
 
     #[ORM\Column(length: 255)]
+    #[Assert\Length(min: 4, max: 255, minMessage: "Le nom doit faire au moins 4 caractères", maxMessage: "Le nom doit faire moins de 255 caractères")]
     private ?string $nom = null;
 
     #[ORM\Column(length: 255)]
+    #[Assert\Length(min: 4, max: 30, minMessage: "Le téléphone doit faire au moins 4 caractères", maxMessage: "Le téléphone doit faire moins de 30 caractères")]
     private ?string $telephone = null;
 
     #[ORM\Column(length: 255)]
+    #[Assert\Length(min: 3, max: 30, minMessage: "Le pays doit faire au moins 3 caractères", maxMessage: "Le pays doit faire moins de 30 caractères")]
     private ?string $pays = null;
 
     #[ORM\Column(length: 255)]
+    #[Assert\Length(min: 3, max: 50, minMessage: "L\'adresse doit faire au moins 3 caractères", maxMessage: "L\'adresse doit faire moins de 50 caractères")]
     private ?string $adresse = null;
 
     #[ORM\Column(length: 255, nullable: true)]
+    #[Assert\Length(min: 3, max: 50, minMessage: "Le complément d\'adresse doit faire au moins 3 caractères", maxMessage: "Le complément d\'adresse doit faire moins de 50 caractères")]
     private ?string $complementAdresse = null;
 
     #[ORM\Column(length: 255)]
+    #[Assert\Length(min: 3, max: 30, minMessage: "La ville doit faire au moins 3 caractères", maxMessage: "La ville doit faire moins de 30 caractères")]
     private ?string $ville = null;
 
     #[ORM\Column(length: 255)]
+    #[Assert\Length(min: 3, max: 30, minMessage: "Le code postal doit faire au moins 3 caractères", maxMessage: "Le code postal doit faire moins de 30 caractères")]
     private ?string $codePostal = null;
 
     #[ORM\Column]
     private ?bool $newsletter = null;
 
     #[ORM\Column(length: 255)]
+    #[Assert\Length(min: 2, max: 30, minMessage: "Le nom de société doit faire au moins 2 caractères", maxMessage: "Le nom de société est trop grand")]
     private ?string $nomSociete = null;
 
     #[ORM\Column(length: 255)]
+    #[Assert\Length(min: 3, max: 30, minMessage: "Votre fonction doit faire au moins 3 caractères", maxMessage: "Votre fonction est trop longue")]
     private ?string $fonction = null;
 
     #[ORM\Column(nullable: true)]
