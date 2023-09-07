@@ -30,26 +30,32 @@ class User implements UserInterface, PasswordAuthenticatedUserInterface
      */
     #[ORM\Column]
     #[Assert\Length(min: 6, max: 255, minMessage: "Le mot de passe doit faire au minimum 6 caractères", maxMessage: "Le mot de passe doit faire au maximum 255 caractères")]
+    #[Assert\NotBlank(message: "Le mot de passe est obligatoire")]
     private ?string $password = null;
 
     #[ORM\Column(length: 255)]
     #[Assert\Length(min: 4, max: 255, minMessage: "Le prénom doit faire au moins 4 caractères", maxMessage: "Le prénom doit faire moins de 255 caractères")]
+    #[Assert\NotBlank(message: "Le prénom est obligatoire")]
     private ?string $prenom = null;
 
     #[ORM\Column(length: 255)]
     #[Assert\Length(min: 4, max: 255, minMessage: "Le nom doit faire au moins 4 caractères", maxMessage: "Le nom doit faire moins de 255 caractères")]
+    #[Assert\NotBlank(message: "Le nom est obligatoire")]
     private ?string $nom = null;
 
     #[ORM\Column(length: 255)]
     #[Assert\Length(min: 4, max: 30, minMessage: "Le téléphone doit faire au moins 4 caractères", maxMessage: "Le téléphone doit faire moins de 30 caractères")]
+    #[Assert\NotBlank(message: "Le téléphone est obligatoire")]
     private ?string $telephone = null;
 
     #[ORM\Column(length: 255)]
     #[Assert\Length(min: 3, max: 30, minMessage: "Le pays doit faire au moins 3 caractères", maxMessage: "Le pays doit faire moins de 30 caractères")]
+    #[Assert\NotBlank(message: "Le pays est obligatoire")]
     private ?string $pays = null;
 
     #[ORM\Column(length: 255)]
     #[Assert\Length(min: 3, max: 50, minMessage: "L'adresse doit faire au moins 3 caractères", maxMessage: "L\'adresse doit faire moins de 50 caractères")]
+    #[Assert\NotBlank(message: "L'adresse est obligatoire")]
     private ?string $adresse = null;
 
     #[ORM\Column(length: 255, nullable: true)]
@@ -58,10 +64,12 @@ class User implements UserInterface, PasswordAuthenticatedUserInterface
 
     #[ORM\Column(length: 255)]
     #[Assert\Length(min: 3, max: 30, minMessage: "La ville doit faire au moins 3 caractères", maxMessage: "La ville doit faire moins de 30 caractères")]
+    #[Assert\NotBlank(message: "La ville est obligatoire")]
     private ?string $ville = null;
 
     #[ORM\Column(length: 255)]
     #[Assert\Length(min: 3, max: 30, minMessage: "Le code postal doit faire au moins 3 caractères", maxMessage: "Le code postal doit faire moins de 30 caractères")]
+    #[Assert\NotBlank(message: "Le code postal est obligatoire")]
     private ?string $codePostal = null;
 
     #[ORM\Column]
@@ -69,10 +77,12 @@ class User implements UserInterface, PasswordAuthenticatedUserInterface
 
     #[ORM\Column(length: 255)]
     #[Assert\Length(min: 2, max: 30, minMessage: "Le nom de société doit faire au moins 2 caractères", maxMessage: "Le nom de société est trop grand")]
+    #[Assert\NotBlank(message: "Le nom de la société est obligatoire")]
     private ?string $nomSociete = null;
 
     #[ORM\Column(length: 255)]
     #[Assert\Length(min: 3, max: 30, minMessage: "Votre fonction doit faire au moins 3 caractères", maxMessage: "Votre fonction est trop longue")]
+    #[Assert\NotBlank(message: "Votre fonction dans la société est obligatoire")]
     private ?string $fonction = null;
 
     #[ORM\Column(nullable: true)]

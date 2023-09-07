@@ -17,7 +17,7 @@ class News
     private ?int $id = null;
 
     #[ORM\Column(length: 255)]
-    #[Assert\NotBlank(message: "La description courte est obligatoire")]
+    #[Assert\NotBlank(message: "Le titre est obligatoire")]
     #[Assert\Length(min: 4, max: 255, minMessage: "Le titre doit faire au moins 4 caractères", maxMessage: "Le titre doit faire moins de 255 caractères")]
     private ?string $titre = null;
 
@@ -25,14 +25,17 @@ class News
     private ?\DateTimeInterface $date = null;
 
     #[ORM\Column(length: 255)]
+    #[Assert\NotBlank(message: "L'auteur est obligatoire")]
     #[Assert\Length(min: 4, max: 30, minMessage: "L'auteur doit faire entre 4 et 30 caractères", maxMessage: "L'auteur doit faire entre 4 et 30 caractères")]
     private ?string $auteur = null;
 
     #[ORM\Column(length: 255)]
     #[Assert\Length(min: 4, max: 255, minMessage: "Le sous titre doit faire au minimum 4 caractères", maxMessage: "Le sous titre doit faire au maximum 255 caractères")]
+    #[Assert\NotBlank(message: "Le sous titre est obligatoire")]
     private ?string $sousTitre = null;
 
     #[ORM\Column(length: 255)]
+    #[Assert\NotBlank(message: "Le slug est obligatoire")]
     #[Regex(
         pattern: "/\s/",
         match: false,
@@ -42,10 +45,12 @@ class News
 
     #[ORM\Column(length: 255)]
     #[Assert\Length(min: 4, max: 255, minMessage: "La méta description doit faire entre 4 et 255 caractères", maxMessage: "La méta description doit faire entre 4 et 255 caractères")]
+    #[Assert\NotBlank(message: "La méta description est obligatoire")]
     private ?string $metaDesc = null;
 
     #[ORM\Column(type: Types::TEXT)]
     #[Assert\Length(min: 5, minMessage: "Contenu invalide", maxMessage: "Contenu invalide")]
+    #[Assert\NotBlank(message: "Le contenu est obligatoire")]
     private ?string $contenu = null;
 
     #[ORM\Column(length: 255, nullable: true)]
