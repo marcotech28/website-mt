@@ -32,15 +32,15 @@ class News
     private ?string $sousTitre = null;
 
     #[ORM\Column(length: 255)]
-    // #[Regex(
-    //     pattern: "/\s/",
-    //     match: false,
-    //     message: "Le titre slug ne peut pas contenir d'espaces."
-    // )]
+    #[Regex(
+        pattern: "/\s/",
+        match: false,
+        message: "Le titre slug ne peut pas contenir d'espaces."
+    )]
     private ?string $titreSlug = null;
 
     #[ORM\Column(length: 255)]
-    #[Assert\Length(min: 4, max: 255, min: "La méta description doit faire entre 4 et 255 caractères")]
+    #[Assert\Length(min: 4, max: 255, message: "La méta description doit faire entre 4 et 255 caractères")]
     private ?string $metaDesc = null;
 
     #[ORM\Column(type: Types::TEXT)]
