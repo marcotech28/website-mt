@@ -17,6 +17,7 @@ class News
     private ?int $id = null;
 
     #[ORM\Column(length: 255)]
+    #[Assert\NotBlank(message: "La description courte est obligatoire")]
     #[Assert\Length(min: 4, max: 255, minMessage: "Le titre doit faire au moins 4 caractères", maxMessage: "Le titre doit faire moins de 255 caractères")]
     private ?string $titre = null;
 
@@ -32,11 +33,11 @@ class News
     private ?string $sousTitre = null;
 
     #[ORM\Column(length: 255)]
-    // #[Regex(
-    //     pattern: "/\s/",
-    //     match: false,
-    //     message: "Le titre slug ne peut pas contenir d'espaces."
-    // )]
+    #[Regex(
+        pattern: "/\s/",
+        match: false,
+        message: "Le titre slug ne peut pas contenir d'espaces."
+    )]
     private ?string $titreSlug = null;
 
     #[ORM\Column(length: 255)]
