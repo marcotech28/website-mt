@@ -4,7 +4,8 @@
 {{ form_end(form) }} #}
 
 
-{{ form_start(form) }}
+{{form_start(form, {'attr': {'novalidate': 'novalidate'}})}}
+{{ form_errors(form) }}
 {{ form_row(form.libelle, {'attr' : {'class' : 'form-control'}}) }}
 
 {# {{ form_row(form.catalogue, {'attr' : {'class' : 'form-control'}}) }} #}
