@@ -98,7 +98,7 @@ class Produit
     #[ORM\Column(type: Types::DECIMAL, precision: 8, scale: 2)]
     #[Assert\NotBlank(message: "Le prix est obligatoire")]
     #[Type(type: "float", message: "Le prix doit être un nombre décimal.")]
-    private ?string $prix = null;
+    private ?float $prix = null;
 
     #[ORM\Column(type: Types::TEXT, nullable: true)]
     #[Assert\NotBlank(message: "La méta description est obligatoire")]
