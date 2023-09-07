@@ -49,11 +49,11 @@ class User implements UserInterface, PasswordAuthenticatedUserInterface
     private ?string $pays = null;
 
     #[ORM\Column(length: 255)]
-    #[Assert\Length(min: 3, max: 50, minMessage: "L\'adresse doit faire au moins 3 caractères", maxMessage: "L\'adresse doit faire moins de 50 caractères")]
+    #[Assert\Length(min: 3, max: 50, minMessage: "L'adresse doit faire au moins 3 caractères", maxMessage: "L\'adresse doit faire moins de 50 caractères")]
     private ?string $adresse = null;
 
     #[ORM\Column(length: 255, nullable: true)]
-    #[Assert\Length(min: 3, max: 50, minMessage: "Le complément d\'adresse doit faire au moins 3 caractères", maxMessage: "Le complément d\'adresse doit faire moins de 50 caractères")]
+    #[Assert\Length(min: 3, max: 50, minMessage: "Le complément d'adresse doit faire au moins 3 caractères", maxMessage: "Le complément d'adresse doit faire moins de 50 caractères")]
     private ?string $complementAdresse = null;
 
     #[ORM\Column(length: 255)]
