@@ -6,6 +6,7 @@ use App\Repository\MarqueRepository;
 use Doctrine\Common\Collections\ArrayCollection;
 use Doctrine\Common\Collections\Collection;
 use Doctrine\ORM\Mapping as ORM;
+use Symfony\Component\Validator\Constraints as Assert;
 
 #[ORM\Entity(repositoryClass: MarqueRepository::class)]
 class Marque
@@ -16,9 +17,12 @@ class Marque
     private ?int $id = null;
 
     #[ORM\Column(length: 100)]
+    #[Assert\NotBlank(message: "Le libelle est obligatoire")]
+    #[Assert\Length(min: 4, max: 40, minMessage: "Le libelle doit faire au minimum 4 caractères", maxMessage: "Le libelle doit faire au maximum 40 caractères")]
     private ?string $libelle = null;
 
     #[ORM\Column(length: 255, nullable: true)]
+    #[Assert\NotBlank(message: "Le catalogue est obligatoire")]
     private ?string $catalogue = null;
 
     #[ORM\OneToMany(mappedBy: 'Marque', targetEntity: Produit::class)]

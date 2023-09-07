@@ -2,11 +2,14 @@
 
 namespace App\Entity;
 
-use App\Repository\ProduitRepository;
-use Doctrine\Common\Collections\ArrayCollection;
-use Doctrine\Common\Collections\Collection;
 use Doctrine\DBAL\Types\Types;
 use Doctrine\ORM\Mapping as ORM;
+use App\Repository\ProduitRepository;
+use Doctrine\Common\Collections\Collection;
+use Doctrine\Common\Collections\ArrayCollection;
+use Symfony\Component\Validator\Constraints\Type;
+use Symfony\Component\Validator\Constraints\Regex;
+use Symfony\Component\Validator\Constraints as Assert;
 
 #[ORM\Entity(repositoryClass: ProduitRepository::class)]
 class Produit
@@ -17,12 +20,18 @@ class Produit
     private ?int $id = null;
 
     #[ORM\Column(type: Types::TEXT)]
+    #[Assert\NotBlank(message: "La description est obligatoire")]
+    #[Assert\Length(min: 4, minMessage: "Le titre doit faire au moins 4 caractères")]
     private ?string $description = null;
 
     #[ORM\Column(length: 255)]
+    #[Assert\NotBlank(message: "Le nom est obligatoire")]
+    #[Assert\Length(min: 4, max: 255, minMessage: "Le nom doit faire au moins 4 caractères", maxMessage: "Le nom doit faire moins de 255 caractères")]
     private ?string $nom = null;
 
     #[ORM\Column(type: Types::TEXT)]
+    #[Assert\NotBlank(message: "La courte description est obligatoire")]
+    #[Assert\Length(min: 4, minMessage: "La description courte doit faire au moins 4 caractères")]
     private ?string $shortDescription = null;
 
     #[ORM\Column(type: Types::TEXT, nullable: true)]
@@ -35,45 +44,70 @@ class Produit
     private ?string $ficheDescriptive = null;
 
     #[ORM\Column(type: Types::TEXT)]
+    #[Assert\NotBlank(message: "Les caractéristiques sont obligatoires")]
+    #[Assert\Length(min: 4, minMessage: "Les caractéristiques doivent faire au moins 4 caractères")]
     private ?string $caracteristiques = null;
 
     #[ORM\ManyToOne(inversedBy: 'produits')]
+    #[Assert\NotBlank(message: "La catégorie est obligatoire")]
     private ?Categorie $categorie = null;
 
     #[ORM\ManyToOne(inversedBy: 'produits')]
+    #[Assert\NotBlank(message: "Le choix de type d'utilisation est obligatoire")]
     private ?Utilisation $utilisation = null;
 
     #[ORM\Column(length: 255, nullable: true)]
+    #[Assert\NotBlank(message: "Le slug est obligatoire")]
+    #[Regex(
+        pattern: "/\s/",
+        match: false,
+        message: "Le slug ne peut pas contenir d'espaces."
+    )]
     private ?string $slug = null;
 
     #[ORM\Column(length: 255, nullable: true)]
+    #[Assert\NotBlank(message: "L'image 1 est obligatoire")]
     private ?string $image1 = null;
 
     #[ORM\Column(length: 255, nullable: true)]
+    #[Assert\NotBlank(message: "L'image 2 est obligatoire")]
     private ?string $image2 = null;
 
     #[ORM\Column(length: 255, nullable: true)]
+    #[Assert\NotBlank(message: "L'image 3 est obligatoire")]
     private ?string $image3 = null;
 
     #[ORM\Column(length: 255, nullable: true)]
+    #[Assert\NotBlank(message: "L'image 4 est obligatoire")]
     private ?string $image4 = null;
 
     #[ORM\Column(type: Types::TEXT, nullable: true)]
+    #[Assert\NotBlank(message: "Les avantages sont obligatoires")]
+    #[Assert\Length(min: 4, minMessage: "Les avantages doivent faire au moins 4 caractères")]
     private ?string $avantages = null;
 
     #[ORM\ManyToOne(inversedBy: 'produits')]
+    #[Assert\NotBlank(message: "La marque est obligatoire")]
+    #[Assert\Length(min: 4, minMessage: "La marque doit faire au moins 4 caractères")]
     private ?Marque $Marque = null;
 
     #[ORM\Column(type: Types::TEXT, nullable: true)]
+    #[Assert\NotBlank(message: "L'image 5 est obligatoire")]
     private ?string $image5 = null;
 
     #[ORM\Column(type: Types::DECIMAL, precision: 8, scale: 2)]
+    #[Assert\NotBlank(message: "Le prix est obligatoire")]
+    #[Type(type: "float", message: "Le prix doit être un nombre décimal.")]
     private ?string $prix = null;
 
     #[ORM\Column(type: Types::TEXT, nullable: true)]
+    #[Assert\NotBlank(message: "La méta description est obligatoire")]
+    #[Assert\Length(min: 4, minMessage: "La méta description doit faire au moins 4 caractères")]
     private ?string $metaDesc = null;
 
     #[ORM\Column(type: Types::TEXT, nullable: true)]
+    #[Assert\NotBlank(message: "Les mots clés sont obligatoires")]
+    #[Assert\Length(min: 4, minMessage: "Les mots clés doivent faire au moins 4 caractères")]
     private ?string $motsCles = null;
 
     #[ORM\ManyToMany(targetEntity: self::class, inversedBy: 'produitsSimilaires')]

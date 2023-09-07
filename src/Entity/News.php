@@ -39,7 +39,7 @@ class News
     #[Regex(
         pattern: "/\s/",
         match: false,
-        message: "Le titre slug ne peut pas contenir d'espaces."
+        message: "Le slug du titre ne peut pas contenir d'espaces."
     )]
     private ?string $titreSlug = null;
 

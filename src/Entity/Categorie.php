@@ -23,12 +23,16 @@ class Categorie
     private ?string $libelle = null;
 
     #[ORM\Column(length: 255)]
+    #[Assert\NotBlank(message: "Le slug est obligatoire")]
+    #[Assert\Length(min: 4, max: 40, minMessage: "Le slug doit faire au minimum 4 caractères", maxMessage: "Le slug doit faire au maximum 40 caractères")]
     private ?string $slug = null;
 
     #[ORM\OneToMany(mappedBy: 'categorie', targetEntity: Produit::class)]
     private Collection $produits;
 
     #[ORM\Column(type: Types::TEXT, nullable: true)]
+    #[Assert\NotBlank(message: "La description est obligatoire")]
+    #[Assert\Length(min: 4, minMessage: "Le description doit faire au minimum 4 caractères")]
     private ?string $description = null;
 
     #[ORM\OneToMany(mappedBy: 'categorie', targetEntity: Utilisation::class)]
