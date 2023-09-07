@@ -17,6 +17,9 @@ class Categorie
     #[ORM\Column]
     private ?int $id = null;
 
+    #[ORM\Column(length: 255)]
+    #[Assert\NotBlank(message: "Libelle obligatoire")]
+    #[Assert\Length(min: 4, max: 255)]
     private ?string $libelle = null;
 
     #[ORM\Column(length: 255)]
