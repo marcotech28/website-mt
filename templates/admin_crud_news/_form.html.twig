@@ -1,5 +1,5 @@
-{{ form_start(form) }}
-
+{{form_start(form, {'attr': {'novalidate': 'novalidate'}})}}
+{{ form_errors(form) }}
 {{ form_row(form.titre, {'attr' : {'class' : 'form-control'}}) }}
 {{ form_row(form.sousTitre, {'attr' : {'class' : 'form-control'}}) }}
 {{ form_row(form.titreSlug, {'attr' : {'class' : 'form-control'}}) }}
