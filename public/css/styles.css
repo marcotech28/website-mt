@@ -93,31 +93,6 @@ body {
     color: #6c757d !important;
 }
 
-.searchBar {
-    width: 150px;
-    margin-bottom: 0 !important;
-    color: white !important;
-    background-color: rgba(255, 255, 255, 0);
-    border: none !important;
-    margin-left: 15px !important;
-}
-.searchBar::placeholder {
-    color: white; /* Couleur du placeholder */
-
-}
-.searchBar:focus {
-    width: 150px;
-    margin-bottom: 0 !important;
-    color: white;
-    background-color: rgba(255, 255, 255, 0);
-    border: 1px solid red !important;
-    margin-left: 15px !important;
-}
-
-.searchBar:hover::placeholder {
-    color: #EF946C;
-    transition: 0.2s;
-}
 
  
 .dropdown-item .navbar a:hover {
@@ -214,6 +189,38 @@ body {
     text-decoration: none;
     color: white;
     font-size: 12px;
+}
+
+
+.searchBar {
+    width: 150px;
+    margin-bottom: 0 !important;
+    color: white !important;
+    background-color: rgba(255, 255, 255, 0);
+    border: none !important;
+    margin-left: 15px !important;
+}
+.searchBar::placeholder {
+    color: white; /* Couleur du placeholder */
+
+}
+.searchBar:focus {
+    width: 150px;
+    margin-bottom: 0 !important;
+    color: white;
+    background-color: rgba(255, 255, 255, 0);
+    border: 1px solid red !important;
+    margin-left: 15px !important;
+}
+
+.searchBar:hover::placeholder {
+    color: #EF946C;
+    transition: 0.2s;
+}
+
+.form-mb-3 .mb-3 {
+    background-color: grey;
+    margin-bottom: 0 !important;
 }
 
 /* -- EFFECT UNDERLINE DARK -- */

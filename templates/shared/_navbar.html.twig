@@ -190,10 +190,16 @@
 				<li class="nav-item w-100 nav-link-bordure-gauche majuscule text-center d-flex align-items-center">
 					<a href="#" class="nav-link mb-2 mb-lg-0 w-100 h-100 d-flex align-items-center justify-content-center">Autres</a>
 				</li>
-				<li class="d-flex align-items-center nav-link-bordure-gauche" style="padding-left: 15px; color: white">
-					<i class="fa-solid fa-magnifying-glass"></i>
-					{{ form_start(search_form(), {'action': path('search')}) }}
-					{{ form_end(search_form()) }}
+
+
+				<li class="d-flex align-items-center nav-link-bordure-gauche" style="padding-left: 15px; color: black">
+					<div class="h-100 d-flex align-items-center">
+						<i class="fa-solid fa-magnifying-glass"></i>
+					</div>
+					<div class="h-100 d-flex align-items-center form-mb-3" style="margin-bottom: 0 !important">
+						{{ form_start(search_form(), {'action': path('search')}) }}
+						{{ form_end(search_form()) }}
+					</div>
 				</li>
 			</ul>
 		</div>
