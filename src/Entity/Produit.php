@@ -41,6 +41,8 @@ class Produit
     private ?string $video2 = null;
 
     #[ORM\Column(type: Types::TEXT, nullable: true)]
+    #[Assert\Length(min: 4, max: 255, minMessage: "La fiche descriptive doit faire au moins 4 caractères", maxMessage: "Lafiche descriptive doit faire moins de 255 caractères")]
+    #[Assert\NotBlank(message: "La fiche descriptive est obligatoire")]
     private ?string $ficheDescriptive = null;
 
     #[ORM\Column(type: Types::TEXT)]
@@ -67,18 +69,22 @@ class Produit
 
     #[ORM\Column(length: 255, nullable: true)]
     #[Assert\NotBlank(message: "L'image 1 est obligatoire")]
+    #[Assert\Length(min: 4, max: 255, minMessage: "L'image 1 doit faire entre 4 et 255 caractères", maxMessage: "L'image 1 doit faire entre 4 et 255 caractères")]
     private ?string $image1 = null;
 
     #[ORM\Column(length: 255, nullable: true)]
     #[Assert\NotBlank(message: "L'image 2 est obligatoire")]
+    #[Assert\Length(min: 4, max: 255, minMessage: "L'image 2 doit faire entre 4 et 255 caractères", maxMessage: "L'image 2 doit faire entre 4 et 255 caractères")]
     private ?string $image2 = null;
 
     #[ORM\Column(length: 255, nullable: true)]
     #[Assert\NotBlank(message: "L'image 3 est obligatoire")]
+    #[Assert\Length(min: 4, max: 255, minMessage: "L'image 3 doit faire entre 4 et 255 caractères", maxMessage: "L'image 3 doit faire entre 4 et 255 caractères")]
     private ?string $image3 = null;
 
     #[ORM\Column(length: 255, nullable: true)]
     #[Assert\NotBlank(message: "L'image 4 est obligatoire")]
+    #[Assert\Length(min: 4, max: 255, minMessage: "L'image 4 doit faire entre 4 et 255 caractères", maxMessage: "L'image 4 doit faire entre 4 et 255 caractères")]
     private ?string $image4 = null;
 
     #[ORM\Column(type: Types::TEXT, nullable: true)]
@@ -93,6 +99,7 @@ class Produit
 
     #[ORM\Column(type: Types::TEXT, nullable: true)]
     #[Assert\NotBlank(message: "L'image 5 est obligatoire")]
+    #[Assert\Length(min: 4, max: 255, minMessage: "L'image 5 doit faire entre 4 et 255 caractères", maxMessage: "L'image 5 doit faire entre 4 et 255 caractères")]
     private ?string $image5 = null;
 
     #[ORM\Column(type: Types::DECIMAL, precision: 8, scale: 2)]

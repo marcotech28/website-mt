@@ -54,6 +54,8 @@ class News
     private ?string $contenu = null;
 
     #[ORM\Column(length: 255, nullable: true)]
+    #[Assert\NotBlank(message: "L'image est obligatoire")]
+    #[Assert\Length(min: 4, max: 255, minMessage: "L'image doit faire entre 4 et 255 caractères", maxMessage: "L'image doit faire entre 4 et 255 caractères")]
     private ?string $image = null;
 
     public function getId(): ?int

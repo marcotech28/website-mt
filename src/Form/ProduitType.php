@@ -36,14 +36,10 @@ class ProduitType extends AbstractType
             ->add('avantages')
             ->add('video1')
             ->add('video2')
-            ->add('ficheDescriptive', FileType::class, [
+            ->add('ficheDescriptive', TextareaType::class, [
                 'label' => 'Fiche Descriptive (PDF file)',
                 'required' => false, // pour autoriser l'envoi de formulaire sans la fiche descriptive
-                'mapped' => false, // pour éviter que le champ ne soit mappé sur un attribut de l'entité
-                'data_class' => null,
-                'attr' => [
-                    'data-filename' => $options['ficheDescriptive_filename'] ?? null,
-                ],
+                'class' => 'form-control'  // Classe Bootstrap pour styliser le textarea
             ])
             ->add('caracteristiques')
             ->add('slug')
@@ -72,20 +68,10 @@ class ProduitType extends AbstractType
                     return $marque->getLibelle();
                 }
             ])
-            ->add('image1', FileType::class, [
-                'label' => 'Image 1',
-                'required' => false, // pour autoriser l'envoi de formulaire sans la fiche descriptive
-                'mapped' => false, // pour éviter que le champ ne soit mappé sur un attribut de l'entité
-                'data_class' => null,
-                'attr' => [
-                    'data-filename' => $options['image1_filename'] ?? null,
-                ],
-
-            ])
+            ->add('image1', TextareaType::class, [])
             ->add('image2', FileType::class, [
                 'label' => 'Image 2',
                 'required' => false, // pour autoriser l'envoi de formulaire sans la fiche descriptive
-                'mapped' => false, // pour éviter que le champ ne soit mappé sur un attribut de l'entité
                 'data_class' => null,
                 'attr' => [
                     'data-filename' => $options['image2_filename'] ?? null,
