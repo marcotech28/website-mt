@@ -27,13 +27,12 @@ class NewsType extends AbstractType
                     'class' => 'form-control'  // Classe Bootstrap pour styliser le textarea
                 ],
             ])
-            ->add('image', FileType::class, [
+            ->add('image', TextareaType::class, [
                 'label' => 'Image',
                 'required' => false, // pour autoriser l'envoi de formulaire sans la fiche descriptive
                 'mapped' => false, // pour éviter que le champ ne soit mappé sur un attribut de l'entité
-                'data_class' => null,
                 'attr' => [
-                    'data-filename' => $options['image_filename'] ?? null,
+                    'class' => 'form-control'
                 ],
             ])
             ->add('metaDesc')
@@ -45,7 +44,6 @@ class NewsType extends AbstractType
     {
         $resolver->setDefaults([
             'data_class' => News::class,
-            'image_filename' => null,
         ]);
     }
 }

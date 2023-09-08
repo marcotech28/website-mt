@@ -39,9 +39,12 @@ class Categorie
     private Collection $utilisations;
 
     #[ORM\Column]
+    #[Assert\NotBlank(message: "Le rang est obligatoire")]
     private ?int $rang = null;
 
     #[ORM\Column(length: 255)]
+    #[Assert\NotBlank(message: "La meta description est obligatoire")]
+    #[Assert\Length(min: 4, minMessage: "La meta description doit faire au minimum 4 caractères")]
     private ?string $metaDesc = null;
 
     #[ORM\Column(type: Types::TEXT, nullable: true)]
