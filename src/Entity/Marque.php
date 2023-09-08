@@ -23,6 +23,7 @@ class Marque
 
     #[ORM\Column(length: 255, nullable: true)]
     #[Assert\NotBlank(message: "Le catalogue est obligatoire")]
+    #[Assert\Length(min: 4, max: 255, minMessage: "Le catalogue doit faire entre 4 et 255 caractères", maxMessage: "Le catalogue doit faire entre 4 et 255 caractères")]
     private ?string $catalogue = null;
 
     #[ORM\OneToMany(mappedBy: 'Marque', targetEntity: Produit::class)]

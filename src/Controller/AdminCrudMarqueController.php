@@ -33,9 +33,6 @@ class AdminCrudMarqueController extends AbstractController
 
         if ($form->isSubmitted() && $form->isValid()) {
 
-            self::handlePDFUpload($marque, $form, $entityManager);
-            // self::handleImageUpload($marque, $form, $entityManager);
-
             $entityManager->persist($marque);
             $entityManager->flush();
 
@@ -59,16 +56,10 @@ class AdminCrudMarqueController extends AbstractController
     #[Route('/{id}/edit', name: 'app_admin_crud_marque_edit', methods: ['GET', 'POST'])]
     public function edit(Request $request, Marque $marque, EntityManagerInterface $entityManager): Response
     {
-        $form = $this->createForm(MarqueType::class, $marque, [
-            'catalogue_filename' => $marque->getCatalogue() // ou la méthode que vous utilisez pour obtenir le nom du fichier
-        ]);
+        $form = $this->createForm(MarqueType::class, $marque);
         $form->handleRequest($request);
 
         if ($form->isSubmitted() && $form->isValid()) {
-
-            self::handlePDFUpload($marque, $form, $entityManager);
-            // self::handleImageUpload($marque, $form, $entityManager);
-
 
             $entityManager->flush();
 
@@ -90,23 +81,5 @@ class AdminCrudMarqueController extends AbstractController
         }
 
         return $this->redirectToRoute('app_admin_crud_marque_index', [], Response::HTTP_SEE_OTHER);
-    }
-
-
-    // upload pdf
-
-    public function handlePDFUpload(Marque $marque, FormInterface $form, EntityManagerInterface $entityManager): void
-    {
-        $catalogue = $form->get('catalogue')->getData();
-
-        if ($catalogue) {
-            // récupération du nom d'origine du fichier + son extension
-            $originalDoc = pathinfo($catalogue->getClientOriginalName(), PATHINFO_BASENAME);
-
-            // On met à jour l'emplacement de l'image dans l'entité Utilisation
-            $marque->setCatalogue($originalDoc);
-
-            $entityManager->flush();
-        }
     }
 }
