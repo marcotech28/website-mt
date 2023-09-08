@@ -61,16 +61,12 @@ class AdminCrudNewsController extends AbstractController
     public function edit(Request $request, News $news, NewsRepository $newsRepository, EntityManagerInterface $entityManager): Response
     {
 
-        $form = $this->createForm(NewsType::class, $news, [
-            'image_filename' => $news->getImage() // ou la méthode que vous utilisez pour obtenir le nom du fichier
-        ]);
+        $form = $this->createForm(NewsType::class, $news);
 
         $form->handleRequest($request);
 
         if ($form->isSubmitted() && $form->isValid()) {
             $newsRepository->save($news, true);
-
-            self::handleImageUpload($news, $form, $entityManager);
 
             $entityManager->persist($news);
             $entityManager->flush();
