@@ -20,13 +20,13 @@ class ProduitType extends AbstractType
     {
 
         $builder
-            // ->add('nom', TextareaType::class, [
-            //     'label' => 'Nom',
-            //     'required' => false,
-            //     'attr' => [
-            //         'class' => 'form-control'
-            //     ],
-            // ])
+            ->add('nom', TextareaType::class, [
+                'label' => 'Nom',
+                'required' => false,
+                'attr' => [
+                    'class' => 'form-control'
+                ],
+            ])
             ->add('prix')
             ->add('description', TextareaType::class, [
                 'attr' => [

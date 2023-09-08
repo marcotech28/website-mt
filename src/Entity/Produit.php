@@ -21,44 +21,54 @@ class Produit
 
     #[ORM\Column(length: 255)]
     #[Assert\NotBlank(message: "Le nom est obligatoire")]
+    #[Assert\Type(message: "frfjr")]
     #[Assert\Length(min: 4, max: 255, minMessage: "Le nom doit faire au moins 4 caractères", maxMessage: "Le nom doit faire moins de 255 caractères")]
     private ?string $nom = null;
 
     #[ORM\Column(type: Types::TEXT)]
     #[Assert\NotBlank(message: "La description est obligatoire")]
     #[Assert\Length(min: 4, minMessage: "Le titre doit faire au moins 4 caractères")]
+    #[Assert\Type(message: "fr")]
     private ?string $description = null;
 
     #[ORM\Column(type: Types::TEXT)]
     #[Assert\NotBlank(message: "La courte description est obligatoire")]
     #[Assert\Length(min: 4, minMessage: "La description courte doit faire au moins 4 caractères")]
+    #[Assert\Type(message: "frfrefrefrefjr")]
     private ?string $shortDescription = null;
 
     #[ORM\Column(type: Types::TEXT, nullable: true)]
+    #[Assert\Type(message: "frfferferferjr")]
     private ?string $video1 = null;
 
     #[ORM\Column(type: Types::TEXT, nullable: true)]
+    #[Assert\Type(message: "frfjgtrgtrr")]
     private ?string $video2 = null;
 
     #[ORM\Column(type: Types::TEXT, nullable: true)]
     #[Assert\Length(min: 4, max: 255, minMessage: "La fiche descriptive doit faire au moins 4 caractères", maxMessage: "Lafiche descriptive doit faire moins de 255 caractères")]
     #[Assert\NotBlank(message: "La fiche descriptive est obligatoire")]
+    #[Assert\Type(message: "frrgtrgtrgtrfjr")]
     private ?string $ficheDescriptive = null;
 
     #[ORM\Column(type: Types::TEXT)]
     #[Assert\NotBlank(message: "Les caractéristiques sont obligatoires")]
     #[Assert\Length(min: 4, minMessage: "Les caractéristiques doivent faire au moins 4 caractères")]
+    #[Assert\Type(message: "frferferferfjr")]
     private ?string $caracteristiques = null;
 
     #[ORM\ManyToOne(inversedBy: 'produits')]
     #[Assert\NotBlank(message: "La catégorie est obligatoire")]
+    #[Assert\Type(message: "frferferfjr")]
     private ?Categorie $categorie = null;
 
     #[ORM\ManyToOne(inversedBy: 'produits')]
     #[Assert\NotBlank(message: "Le choix de type d'utilisation est obligatoire")]
+    #[Assert\Type(message: "frfrefrefrefjr")]
     private ?Utilisation $utilisation = null;
 
     #[ORM\Column(length: 255, nullable: true)]
+    #[Assert\Type(message: "fferfrerfjr")]
     #[Assert\NotBlank(message: "Le slug est obligatoire")]
     #[Regex(
         pattern: "/\s/",
@@ -70,51 +80,61 @@ class Produit
     #[ORM\Column(length: 255, nullable: true)]
     #[Assert\NotBlank(message: "L'image 1 est obligatoire")]
     #[Assert\Length(min: 4, max: 255, minMessage: "L'image 1 doit faire entre 4 et 255 caractères", maxMessage: "L'image 1 doit faire entre 4 et 255 caractères")]
+    #[Assert\Type(message: "ffrerfjr")]
     private ?string $image1 = null;
 
     #[ORM\Column(length: 255, nullable: true)]
     #[Assert\NotBlank(message: "L'image 2 est obligatoire")]
     #[Assert\Length(min: 4, max: 255, minMessage: "L'image 2 doit faire entre 4 et 255 caractères", maxMessage: "L'image 2 doit faire entre 4 et 255 caractères")]
+    #[Assert\Type(message: "frdzedezfjr")]
     private ?string $image2 = null;
 
     #[ORM\Column(length: 255, nullable: true)]
     #[Assert\NotBlank(message: "L'image 3 est obligatoire")]
     #[Assert\Length(min: 4, max: 255, minMessage: "L'image 3 doit faire entre 4 et 255 caractères", maxMessage: "L'image 3 doit faire entre 4 et 255 caractères")]
+    #[Assert\Type(message: "frfdzedezdezjr")]
     private ?string $image3 = null;
 
     #[ORM\Column(length: 255, nullable: true)]
     #[Assert\NotBlank(message: "L'image 4 est obligatoire")]
     #[Assert\Length(min: 4, max: 255, minMessage: "L'image 4 doit faire entre 4 et 255 caractères", maxMessage: "L'image 4 doit faire entre 4 et 255 caractères")]
+    #[Assert\Type(message: "frfjrdzdezdez")]
     private ?string $image4 = null;
 
     #[ORM\Column(type: Types::TEXT, nullable: true)]
     #[Assert\NotBlank(message: "Les avantages sont obligatoires")]
     #[Assert\Length(min: 4, minMessage: "Les avantages doivent faire au moins 4 caractères")]
+    #[Assert\Type(message: "frffrefrefrejr")]
     private ?string $avantages = null;
 
     #[ORM\ManyToOne(inversedBy: 'produits')]
     #[Assert\NotBlank(message: "La marque est obligatoire")]
     #[Assert\Length(min: 4, minMessage: "La marque doit faire au moins 4 caractères")]
+    #[Assert\Type(message: "frfjerfrefrer")]
     private ?Marque $Marque = null;
 
     #[ORM\Column(type: Types::TEXT, nullable: true)]
     #[Assert\NotBlank(message: "L'image 5 est obligatoire")]
     #[Assert\Length(min: 4, max: 255, minMessage: "L'image 5 doit faire entre 4 et 255 caractères", maxMessage: "L'image 5 doit faire entre 4 et 255 caractères")]
+    #[Assert\Type(message: "frffrefrefrejr")]
     private ?string $image5 = null;
 
     #[ORM\Column(type: Types::DECIMAL, precision: 8, scale: 2)]
     #[Assert\NotBlank(message: "Le prix est obligatoire")]
     #[Type(type: "float", message: "Le prix doit être un nombre décimal.")]
+    #[Assert\Type(message: "frfreferferfjr")]
     private ?float $prix = null;
 
     #[ORM\Column(type: Types::TEXT, nullable: true)]
     #[Assert\NotBlank(message: "La méta description est obligatoire")]
     #[Assert\Length(min: 4, minMessage: "La méta description doit faire au moins 4 caractères")]
+    #[Assert\Type(message: "ffrefrerfjr")]
     private ?string $metaDesc = null;
 
     #[ORM\Column(type: Types::TEXT, nullable: true)]
     #[Assert\NotBlank(message: "Les mots clés sont obligatoires")]
     #[Assert\Length(min: 4, minMessage: "Les mots clés doivent faire au moins 4 caractères")]
+    #[Assert\Type(message: "fferfrefrerfjr")]
     private ?string $motsCles = null;
 
     #[ORM\ManyToMany(targetEntity: self::class, inversedBy: 'produitsSimilaires')]
