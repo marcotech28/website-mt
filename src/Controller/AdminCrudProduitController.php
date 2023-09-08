@@ -39,8 +39,6 @@ class AdminCrudProduitController extends AbstractController
             $entityManager->persist($produit);
             $entityManager->flush();
 
-            // $produitRepository->save($produit, true);
-
             return $this->redirectToRoute('app_admin_crud_produit_index', [], Response::HTTP_SEE_OTHER);
         }
 

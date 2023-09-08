@@ -37,9 +37,11 @@ class ProduitType extends AbstractType
             ->add('video1')
             ->add('video2')
             ->add('ficheDescriptive', TextareaType::class, [
-                'label' => 'Fiche Descriptive (PDF file)',
+                'label' => 'Image',
                 'required' => false, // pour autoriser l'envoi de formulaire sans la fiche descriptive
-                'class' => 'form-control'  // Classe Bootstrap pour styliser le textarea
+                'attr' => [
+                    'class' => 'form-control'
+                ],
             ])
             ->add('caracteristiques')
             ->add('slug')
@@ -68,11 +70,41 @@ class ProduitType extends AbstractType
                     return $marque->getLibelle();
                 }
             ])
-            ->add('image1', TextareaType::class, [])
-            ->add('image2', TextareaType::class, [])
-            ->add('image3', TextareaType::class, [])
-            ->add('image4', TextareaType::class, [])
-            ->add('image5', TextareaType::class, [])
+            ->add('image1', TextareaType::class, [
+                'label' => 'Image',
+                'required' => false, // pour autoriser l'envoi de formulaire sans la fiche descriptive
+                'attr' => [
+                    'class' => 'form-control'
+                ],
+            ])
+            ->add('image2', TextareaType::class, [
+                'label' => 'Image',
+                'required' => false, // pour autoriser l'envoi de formulaire sans la fiche descriptive
+                'attr' => [
+                    'class' => 'form-control'
+                ],
+            ])
+            ->add('image3', TextareaType::class, [
+                'label' => 'Image',
+                'required' => false, // pour autoriser l'envoi de formulaire sans la fiche descriptive
+                'attr' => [
+                    'class' => 'form-control'
+                ],
+            ])
+            ->add('image4', TextareaType::class, [
+                'label' => 'Image',
+                'required' => false, // pour autoriser l'envoi de formulaire sans la fiche descriptive
+                'attr' => [
+                    'class' => 'form-control'
+                ],
+            ])
+            ->add('image5', TextareaType::class, [
+                'label' => 'Image',
+                'required' => false, // pour autoriser l'envoi de formulaire sans la fiche descriptive
+                'attr' => [
+                    'class' => 'form-control'
+                ],
+            ])
 
             ->add('produitsSimilaires', EntityType::class, [
                 'class' => Produit::class,
