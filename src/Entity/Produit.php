@@ -138,6 +138,7 @@ class Produit
     private ?string $motsCles = null;
 
     #[ORM\ManyToMany(targetEntity: self::class, inversedBy: 'produitsSimilaires')]
+    #[Assert\Type(type: "object", message: "fferfrefrefrefrerfjr")]
     private Collection $produitsSimilaires;
 
     public function __construct()
