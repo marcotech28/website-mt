@@ -67,12 +67,6 @@ class AdminCrudProduitController extends AbstractController
 
         if ($form->isSubmitted() && $form->isValid()) {
 
-            // $produitRepository->save($produit, true);
-
-            // --- fiche descriptive et images du produit --- //
-
-
-
             $entityManager->flush();
 
             return $this->redirectToRoute('app_admin_crud_produit_index', [], Response::HTTP_SEE_OTHER);
