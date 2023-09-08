@@ -22,7 +22,7 @@ class ProduitType extends AbstractType
         $produit = $options['data'];
 
         $builder
-            ->add('nom')
+            ->add('nom', TextareaType::class, [])
             ->add('prix')
             ->add('description', TextareaType::class, [
                 'attr' => [
@@ -38,7 +38,7 @@ class ProduitType extends AbstractType
             ->add('video2')
             ->add('ficheDescriptive', TextareaType::class, [
                 'label' => 'Image',
-                'required' => false, // pour autoriser l'envoi de formulaire sans la fiche descriptive
+                'required' => false,
                 'attr' => [
                     'class' => 'form-control'
                 ],
@@ -72,35 +72,35 @@ class ProduitType extends AbstractType
             ])
             ->add('image1', TextareaType::class, [
                 'label' => 'Image',
-                'required' => false, // pour autoriser l'envoi de formulaire sans la fiche descriptive
+                'required' => false,
                 'attr' => [
                     'class' => 'form-control'
                 ],
             ])
             ->add('image2', TextareaType::class, [
                 'label' => 'Image',
-                'required' => false, // pour autoriser l'envoi de formulaire sans la fiche descriptive
+                'required' => false,
                 'attr' => [
                     'class' => 'form-control'
                 ],
             ])
             ->add('image3', TextareaType::class, [
                 'label' => 'Image',
-                'required' => false, // pour autoriser l'envoi de formulaire sans la fiche descriptive
+                'required' => false,
                 'attr' => [
                     'class' => 'form-control'
                 ],
             ])
             ->add('image4', TextareaType::class, [
                 'label' => 'Image',
-                'required' => false, // pour autoriser l'envoi de formulaire sans la fiche descriptive
+                'required' => false,
                 'attr' => [
                     'class' => 'form-control'
                 ],
             ])
             ->add('image5', TextareaType::class, [
                 'label' => 'Image',
-                'required' => false, // pour autoriser l'envoi de formulaire sans la fiche descriptive
+                'required' => false,
                 'attr' => [
                     'class' => 'form-control'
                 ],
