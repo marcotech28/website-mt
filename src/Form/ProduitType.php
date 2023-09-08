@@ -69,44 +69,11 @@ class ProduitType extends AbstractType
                 }
             ])
             ->add('image1', TextareaType::class, [])
-            ->add('image2', FileType::class, [
-                'label' => 'Image 2',
-                'required' => false, // pour autoriser l'envoi de formulaire sans la fiche descriptive
-                'data_class' => null,
-                'attr' => [
-                    'data-filename' => $options['image2_filename'] ?? null,
-                ],
+            ->add('image2', TextareaType::class, [])
+            ->add('image3', TextareaType::class, [])
+            ->add('image4', TextareaType::class, [])
+            ->add('image5', TextareaType::class, [])
 
-            ])
-            ->add('image3', FileType::class, [
-                'label' => 'Image 3',
-                'required' => false, // pour autoriser l'envoi de formulaire sans la fiche descriptive
-                'mapped' => false, // pour éviter que le champ ne soit mappé sur un attribut de l'entité
-                'data_class' => null,
-                'attr' => [
-                    'data-filename' => $options['image3_filename'] ?? null,
-                ],
-
-            ])
-            ->add('image4', FileType::class, [
-                'label' => 'Image 4',
-                'required' => false, // pour autoriser l'envoi de formulaire sans la fiche descriptive
-                'mapped' => false, // pour éviter que le champ ne soit mappé sur un attribut de l'entité
-                'data_class' => null,
-                'attr' => [
-                    'data-filename' => $options['image4_filename'] ?? null,
-                ],
-
-            ])
-            ->add('image5', FileType::class, [
-                'label' => 'Image 5',
-                'required' => false, // pour autoriser l'envoi de formulaire sans la fiche descriptive
-                'mapped' => false, // pour éviter que le champ ne soit mappé sur un attribut de l'entité
-                'data_class' => null,
-                'attr' => [
-                    'data-filename' => $options['image5_filename'] ?? null,
-                ],
-            ])
             ->add('produitsSimilaires', EntityType::class, [
                 'class' => Produit::class,
                 'choice_label' => 'nom',
@@ -120,12 +87,6 @@ class ProduitType extends AbstractType
     {
         $resolver->setDefaults([
             'data_class' => Produit::class,
-            'image1_filename' => null,
-            'image2_filename' => null,
-            'image3_filename' => null,
-            'image4_filename' => null,
-            'image5_filename' => null,
-            'ficheDescriptive_filename' => null,
         ]);
     }
 }
