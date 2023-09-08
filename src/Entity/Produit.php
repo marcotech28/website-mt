@@ -109,7 +109,6 @@ class Produit
 
     #[ORM\ManyToOne(inversedBy: 'produits')]
     #[Assert\NotBlank(message: "La marque est obligatoire")]
-    #[Assert\Length(min: 4, minMessage: "La marque doit faire au moins 4 caractères")]
     #[Assert\Type(type: "object", message: "frfjerfrefrer")]
     private ?Marque $Marque = null;
 
