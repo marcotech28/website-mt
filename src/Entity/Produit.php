@@ -63,7 +63,6 @@ class Produit
     private ?Categorie $categorie = null;
 
     #[ORM\ManyToOne(inversedBy: 'produits')]
-    #[Assert\NotBlank(message: "Le choix de type d'utilisation est obligatoire")]
     #[Assert\Type(type: "object", message: "frfrefrefrefjr")]
     private ?Utilisation $utilisation = null;
 
