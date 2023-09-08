@@ -19,15 +19,15 @@ class Produit
     #[ORM\Column]
     private ?int $id = null;
 
-    #[ORM\Column(type: Types::TEXT)]
-    #[Assert\NotBlank(message: "La description est obligatoire")]
-    #[Assert\Length(min: 4, minMessage: "Le titre doit faire au moins 4 caractères")]
-    private ?string $description = null;
-
     #[ORM\Column(length: 255)]
     #[Assert\NotBlank(message: "Le nom est obligatoire")]
     #[Assert\Length(min: 4, max: 255, minMessage: "Le nom doit faire au moins 4 caractères", maxMessage: "Le nom doit faire moins de 255 caractères")]
     private ?string $nom = null;
+
+    #[ORM\Column(type: Types::TEXT)]
+    #[Assert\NotBlank(message: "La description est obligatoire")]
+    #[Assert\Length(min: 4, minMessage: "Le titre doit faire au moins 4 caractères")]
+    private ?string $description = null;
 
     #[ORM\Column(type: Types::TEXT)]
     #[Assert\NotBlank(message: "La courte description est obligatoire")]

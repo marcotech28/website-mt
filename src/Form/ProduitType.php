@@ -35,7 +35,7 @@ class ProduitType extends AbstractType
             ->add('video1')
             ->add('video2')
             ->add('ficheDescriptive', TextareaType::class, [
-                'label' => 'Image',
+                'label' => 'Fiche descriptive',
                 'required' => false,
                 'attr' => [
                     'class' => 'form-control'
