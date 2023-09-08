@@ -34,8 +34,6 @@ class AdminCrudUtilisationController extends AbstractController
 
         if ($form->isSubmitted() && $form->isValid()) {
 
-            self::handleImageUpload($utilisation, $form, $entityManager);
-
             $entityManager->persist($utilisation);
             $entityManager->flush();
 
@@ -66,8 +64,6 @@ class AdminCrudUtilisationController extends AbstractController
 
         if ($form->isSubmitted() && $form->isValid()) {
 
-            self::handleImageUpload($utilisation, $form, $entityManager);
-
             $entityManager->flush();
 
             return $this->redirectToRoute('app_admin_crud_utilisation_index', [], Response::HTTP_SEE_OTHER);
@@ -88,24 +84,5 @@ class AdminCrudUtilisationController extends AbstractController
         }
 
         return $this->redirectToRoute('app_admin_crud_utilisation_index', [], Response::HTTP_SEE_OTHER);
-    }
-
-
-
-    // upload image
-
-    public function handleImageUpload(Utilisation $utilisation, FormInterface $form, EntityManagerInterface $entityManager): void
-    {
-        $image = $form->get('image')->getData();
-
-        if ($image) {
-            // récupération du nom d'origine du fichier + son extension
-            $originalImage = pathinfo($image->getClientOriginalName(), PATHINFO_BASENAME);
-
-            // On met à jour l'emplacement de l'image dans l'entité Utilisation
-            $utilisation->setImage($originalImage);
-
-            $entityManager->flush();
-        }
     }
 }
