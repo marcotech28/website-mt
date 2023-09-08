@@ -68,6 +68,8 @@ class AdminCrudNewsController extends AbstractController
         if ($form->isSubmitted() && $form->isValid()) {
             $newsRepository->save($news, true);
 
+            self::handleImageUpload($news, $form, $entityManager);
+
             $entityManager->persist($news);
             $entityManager->flush();
 

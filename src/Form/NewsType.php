@@ -30,7 +30,6 @@ class NewsType extends AbstractType
             ->add('image', TextareaType::class, [
                 'label' => 'Image',
                 'required' => false, // pour autoriser l'envoi de formulaire sans la fiche descriptive
-                'mapped' => false, // pour éviter que le champ ne soit mappé sur un attribut de l'entité
                 'attr' => [
                     'class' => 'form-control'
                 ],
