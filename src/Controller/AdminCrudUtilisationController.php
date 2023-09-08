@@ -57,9 +57,7 @@ class AdminCrudUtilisationController extends AbstractController
     #[Route('/{id}/edit', name: 'app_admin_crud_utilisation_edit', methods: ['GET', 'POST'])]
     public function edit(Request $request, Utilisation $utilisation, EntityManagerInterface $entityManager): Response
     {
-        $form = $this->createForm(UtilisationType::class, $utilisation, [
-            'image_filename' => $utilisation->getImage() // ou la méthode que vous utilisez pour obtenir le nom du fichier
-        ]);
+        $form = $this->createForm(UtilisationType::class, $utilisation);
         $form->handleRequest($request);
 
         if ($form->isSubmitted() && $form->isValid()) {
