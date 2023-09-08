@@ -14,13 +14,11 @@ class MarqueType extends AbstractType
     {
         $builder
             ->add('libelle')
-            ->add('catalogue', FileType::class, [
-                'label' => 'Fiche Descriptive (PDF file)',
-                'required' => false, // pour autoriser l'envoi de formulaire sans la fiche descriptive
-                'mapped' => false, // pour éviter que le champ ne soit mappé sur un attribut de l'entité
-                'data_class' => null,
+            ->add('catalogue', TextareaType::class, [
+                'label' => 'Catalogue',
+                'required' => false, // pour autoriser l'envoi de formulaire sans le catalogue
                 'attr' => [
-                    'data-filename' => $options['catalogue_filename'] ?? null,
+                    'class' => 'form-control'
                 ],
             ]);
     }
