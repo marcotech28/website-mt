@@ -31,7 +31,7 @@
 			<h2>{{ news.titre }}</h2>
 			<h4>{{ news.sousTitre }}</h4>
 			{% if news.image is not null %}
-				<img class="actu-image mb-3" src="{{ asset('images/actu/' ~ news.image ) }}" alt="" srcset="">
+				<img class="actu-image mb-3" src="{{ news.image }}" alt="" srcset="">
 			{% endif %}
 			<p>{{ news.contenu|nl2br  }}</p>
 			<p class="date">{{ news.date|date('Y-m-d') }}</p>

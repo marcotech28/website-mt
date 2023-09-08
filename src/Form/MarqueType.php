@@ -26,8 +26,7 @@ class MarqueType extends AbstractType
     public function configureOptions(OptionsResolver $resolver): void
     {
         $resolver->setDefaults([
-            'data_class' => Marque::class,
-            'catalogue_filename' => null,
+            'data_class' => Marque::class
         ]);
     }
 }
