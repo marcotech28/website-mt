@@ -71,35 +71,35 @@ class ProduitType extends AbstractType
                 }
             ])
             ->add('image1', TextareaType::class, [
-                'label' => 'Image',
+                'label' => 'Image 1',
                 'required' => false,
                 'attr' => [
                     'class' => 'form-control'
                 ],
             ])
             ->add('image2', TextareaType::class, [
-                'label' => 'Image',
+                'label' => 'Image 2',
                 'required' => false,
                 'attr' => [
                     'class' => 'form-control'
                 ],
             ])
             ->add('image3', TextareaType::class, [
-                'label' => 'Image',
+                'label' => 'Image 3',
                 'required' => false,
                 'attr' => [
                     'class' => 'form-control'
                 ],
             ])
             ->add('image4', TextareaType::class, [
-                'label' => 'Image',
+                'label' => 'Image 4',
                 'required' => false,
                 'attr' => [
                     'class' => 'form-control'
                 ],
             ])
             ->add('image5', TextareaType::class, [
-                'label' => 'Image',
+                'label' => 'Image 5',
                 'required' => false,
                 'attr' => [
                     'class' => 'form-control'
