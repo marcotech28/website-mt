@@ -18,13 +18,11 @@ class UtilisationType extends AbstractType
         $builder
             ->add('libelle')
             ->add('metaDesc')
-            ->add('image', FileType::class, [
+            ->add('image', TextareaType::class, [
                 'label' => 'Image',
                 'required' => false, // pour autoriser l'envoi de formulaire sans la fiche descriptive
-                'mapped' => false, // pour éviter que le champ ne soit mappé sur un attribut de l'entité
-                'data_class' => null,
                 'attr' => [
-                    'data-filename' => $options['image_filename'] ?? null,
+                    'class' => 'form-control'
                 ],
             ])
             ->add('slug')
@@ -54,7 +52,6 @@ class UtilisationType extends AbstractType
     {
         $resolver->setDefaults([
             'data_class' => Utilisation::class,
-            'image_filename' => null,
         ]);
     }
 }
