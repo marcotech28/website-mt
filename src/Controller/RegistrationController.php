@@ -54,14 +54,6 @@ class RegistrationController extends AbstractController
 
             $this->addFlash('success', "Votre demande de création de compte a bien été prise en compte. Notre équipe l'étudiera dans les plus briefs délais. Un email vous sera envoyé lors de la validation de votre compte.");
             return $this->redirectToRoute('homepage');
-
-            // do anything else you need here, like send an email
-
-            // return $userAuthenticator->authenticateUser(
-            //     $user,
-            //     $authenticator,
-            //     $request
-            // );
         }
 
         return $this->render('registration/register.html.twig', [
