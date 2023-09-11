@@ -11,6 +11,7 @@ use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\Mailer\MailerInterface;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
+use App\Repository\ResetPasswordRequestRepository;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 
 #[Route('/admin/crud/user')]
@@ -108,13 +109,16 @@ class AdminCrudUserController extends AbstractController
     }
 
     #[Route('/{id}', name: 'app_admin_crud_user_delete', methods: ['POST'])]
-    public function delete(Request $request, User $user, UserRepository $userRepository): Response
+    public function delete(Request $request, User $user, UserRepository $userRepository, ResetPasswordRequestRepository $resetPasswordRequestRepository): Response
     {
         if ($this->isCsrfTokenValid('delete' . $user->getId(), $request->request->get('_token'))) {
-            $userRepository->remove($user, true);
-        }
 
-        else{
+            $resetPasswordRequests = $resetPasswordRequestRepository->findBy(['user' => $user]);
+            foreach ($resetPasswordRequests as $resetPasswordRequest) {
+                $resetPasswordRequestRepository->remove($resetPasswordRequest, true);
+            }
+            $userRepository->remove($user, true);
+        } else {
             $userRepository->NotRemove($user, true);
         }
 
