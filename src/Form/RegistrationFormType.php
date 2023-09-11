@@ -73,6 +73,7 @@ class RegistrationFormType extends AbstractType
             ])
             ->add('complementAdresse', TextType::class, [
                 'label' => false,
+                'required' => false,
                 'attr' => [
                     'class' => 'form-control',
                     'placeholder' => 'Complément d\'adresse'
@@ -101,7 +102,7 @@ class RegistrationFormType extends AbstractType
             ])
             ->add('password', PasswordType::class, [
                 'label' => "Mot de passe",
-                'mapped' => false,
+                'mapped' => true,
                 'attr' => [
                     'autocomplete' => 'new-password',
                     'class' => 'form-control'
