@@ -99,7 +99,7 @@ class RegistrationFormType extends AbstractType
                     'placeholder' => 'Pays *'
                 ],
             ])
-            ->add('plainPassword', PasswordType::class, [
+            ->add('password', PasswordType::class, [
                 'label' => "Mot de passe",
                 'mapped' => false,
                 'attr' => [
