@@ -24,6 +24,154 @@ DirectoryIndex index.php
 
     RewriteEngine On
 
+    RedirectMatch 301 ^/PBCPPlayer\.asp\?ID=402750$ https://marconnet-technologies.com/
+    RedirectMatch 301 ^/PBCPPlayer\.asp\?ID=1811909$ https://marconnet-technologies.com/demonstration
+    RedirectMatch 301 ^/tricycle-velo-plus-c2x38620164$ https://marconnet-technologies.com/tricycles-vanraam/tricycles-vanraam-transport/tricycle-velo-plus/40
+
+
+    RedirectMatch 301 ^/paire-de-roue-confort-cache-moyeux-noirs-c2x22976769 https://marconnet-technologies.com/
+    RedirectMatch 301 ^/rampe-enroulable-336x-120cm-acces-handicape-c2x15410739 https://marconnet-technologies.com/
+    RedirectMatch 301 ^/rampe-enroulable-244x-120cm-acces-handicape-c2x15410703 https://marconnet-technologies.com/
+    RedirectMatch 301 ^/PBSCCatalog.asp?CatID=2336996 https://marconnet-technologies.com/
+    RedirectMatch 301 ^/PBSCCatalog.asp?CatID=2496054&CategoryName=ACCESSOIRES+DIVERS https://marconnet-technologies.com/
+    RedirectMatch 301 ^/PBSCCatalog.asp?CatID=2455324&CategoryName=D%C9MONSTRATION+MAT%C9RIELS+ https://marconnet-technologies.com/
+    RedirectMatch 301 ^/PBSCCatalog.asp?CatID=2918914&CategoryName=GILETS+DE+FLOTTAISON+POSITION+HORIZONTALE https://marconnet-technologies.com/
+    RedirectMatch 301 ^/rampe-enroulable-214x76-cm-c2x14490122 https://marconnet-technologies.com/
+    RedirectMatch 301 ^/PBSCCatalog.asp?CatID=2338971&CategoryName=ENROULABLES https://marconnet-technologies.com/
+    RedirectMatch 301 ^/gilet-de-flottaison-taille-m-pour-personnes-polyhandicapees-c2x14424375 https://marconnet-technologies.com/
+    RedirectMatch 301 ^/bouton-d-appel-personne-handicape-c2x20547164 https://marconnet-technologies.com/
+    RedirectMatch 301 ^/gilet-de-flottaison-taille-m-etroit-pour-personnes-polyhandicapees-c2x14424372 https://marconnet-technologies.com/
+    RedirectMatch 301 ^/PBSCCatalog.asp?CatID=2399194&CategoryName=HOME+TRAINER https://marconnet-technologies.com/
+    RedirectMatch 301 ^/PBSCCatalog.asp?CatID=2349695&CategoryName=TRICYCLES+ADULTES https://marconnet-technologies.com/
+    RedirectMatch 301 ^/tricycle-adulte-relaxino-20-adolescent-hemiplegique-velo-c2x14597595 https://marconnet-technologies.com/
+    RedirectMatch 301 ^/voyant-lumineux-bouton-appel-handicape-c2x20547819 https://marconnet-technologies.com/
+    RedirectMatch 301 ^/PBSCCatalog.asp?CatID=2376067&CategoryName=BATTERIS+PLOMB%2FLITHIUM https://marconnet-technologies.com/
+    RedirectMatch 301 ^/rampe-enroulable-122x-120cm-acces-handicape-c2x15410652 https://marconnet-technologies.com/
+    RedirectMatch 301 ^/rampe-enroulable-305x-120cm-acces-handicape-c2x15410722 https://marconnet-technologies.com/
+    RedirectMatch 301 ^/bouton-d-appel-personne-handicape-c2x20547021 https://marconnet-technologies.com/
+    RedirectMatch 301 ^/rampe-enroulable-214x-120cm-acces-handicape-c2x15410701 https://marconnet-technologies.com/
+    RedirectMatch 301 ^/sabot-sans-tuteur-gauche-avec-fixation-rapide-type-snowboard-et-contrepoids-c2x15332911 https://marconnet-technologies.com/
+    RedirectMatch 301 ^/PBSCCatalog.asp?CatID=2336995&CategoryName=TRICYCLES+TH%C9RAPEUTIQUES https://marconnet-technologies.com/
+    RedirectMatch 301 ^/PBSCCatalog.asp?CatID=2337035&CategoryName=COMPRESSEUR+AUTONOME+18+BARS+PORTATIF https://marconnet-technologies.com/
+    RedirectMatch 301 ^/PBSCCatalog.asp?CatID=2339995&CategoryName=HYBRIDES https://marconnet-technologies.com/
+    RedirectMatch 301 ^/PBSCCatalog.asp?CatID=2346968&CategoryName=LARGEUR+76+cm https://marconnet-technologies.com/
+    RedirectMatch 301 ^/PBSCCatalog.asp?CatID=2878353&CategoryName=TRANSPORTEUR+PERSONNEL+ASSIS+%2D+GYROPODE+NINO https://marconnet-technologies.com/
+    RedirectMatch 301 ^/assistance-electrique-shopi-c2x22514178 https://marconnet-technologies.com/
+    RedirectMatch 301 ^/scooter-atto-lithium-c2x30798355 https://marconnet-technologies.com/
+    RedirectMatch 301 ^/PBSCCatalog.asp?CatID=600106&CategoryName=HANDBIKES+MANUELS%2D+HYBRIDES+%2D+TOUT+ELECTRIQUE https://marconnet-technologies.com/
+    RedirectMatch 301 ^/paire-de-poignees-avec-systeme-de-fixations-pour-fauteuil-roulant-c2x15501536 https://marconnet-technologies.com/
+    RedirectMatch 301 ^/PBSCCatalog.asp?CatID=3319375&CategoryName=SCOOTERS+ELECTRIQUES+PLIABLES+ET+COMPACTS https://marconnet-technologies.com/
+    RedirectMatch 301 ^/rampe-enroulable-397x-91cm-acces-handicape-c2x15410633 https://marconnet-technologies.com/
+    RedirectMatch 301 ^/gilet-de-flottaison-handicape-sauvetage-position-verticale-c2x19637287 https://marconnet-technologies.com/
+    RedirectMatch 301 ^/PBSCCatalog.asp?CatID=2336996&CategoryName=ACCESSOIRES+DRAISIN https://marconnet-technologies.com/
+    RedirectMatch 301 ^/rampe-enroulable-305x-91cm-acces-handicape-c2x15400000 https://marconnet-technologies.com/
+    RedirectMatch 301 ^/reglage-coulissant-du-siege-c2x22514246 https://marconnet-technologies.com/
+    RedirectMatch 301 ^/tricycle-therapeutique-enfant-claude-20-c2x14597435 https://marconnet-technologies.com/
+    RedirectMatch 301 ^/gilet-de-flottaison-handicape-sauvetage-position-verticale-c2x19637284 https://marconnet-technologies.com/
+    RedirectMatch 301 ^/rampe-enroulable-183x-91cm-acces-handicape-c2x15399633 https://marconnet-technologies.com/
+    RedirectMatch 301 ^/PBSCCatalog.asp?CatID=2918915&CategoryName=GILETS+DE+FLOTTAISON+POSITION+VERTICALE+avec+mouvements+possibles https://marconnet-technologies.com/
+    RedirectMatch 301 ^/paire-de-roue-confort-cache-moyeux-blancs-c2x22976771 https://marconnet-technologies.com/
+    RedirectMatch 301 ^/rampe-enroulable-336x76-cm-c2x14490127 https://marconnet-technologies.com/
+    RedirectMatch 301 ^/gilet-de-flottaison-handicape-sauvetage-position-verticale-c2x19637226 https://marconnet-technologies.com/
+    RedirectMatch 301 ^/PBGuestBook.asp https://marconnet-technologies.com/
+    RedirectMatch 301 ^/rampe-enroulable-397x-120cm-acces-handicape-c2x15410751 https://marconnet-technologies.com/
+    RedirectMatch 301 ^/PBSCCatalog.asp?CatID=2349694&CategoryName=V%C9LOS+%2D+TRICYCLES+ENFANTS%2FADOLESCENTS https://marconnet-technologies.com/
+    RedirectMatch 301 ^/gilet-de-flottaison-taille-l-polyhandicapees-c2x14424386 https://marconnet-technologies.com/
+    RedirectMatch 301 ^/montre-connectee-bouton-appel-c2x20547470 https://marconnet-technologies.com/
+    RedirectMatch 301 ^/rampe-enroulable-183x-120cm-acces-handicape-c2x15410697 https://marconnet-technologies.com/
+    RedirectMatch 301 ^/PBSCCatalog.asp?CatID=2349696&CategoryName=TRICYCLES+SENIORS https://marconnet-technologies.com/
+    RedirectMatch 301 ^/tricycle-therapeutique-shopi-c2x16213890 https://marconnet-technologies.com/
+    RedirectMatch 301 ^/guidon-ahs-multi-positions-reglable-tous-les-sens-c2x15330441 https://marconnet-technologies.com/
+    RedirectMatch 301 ^/chargeur-stricker-12v-3a-avec-prise-neutrick-c2x22426040 https://marconnet-technologies.com/
+    RedirectMatch 301 ^/rampe-enroulable-397x76-cm-c2x14490141 https://marconnet-technologies.com/
+    RedirectMatch 301 ^/rampe-enroulable-183x76-cm-c2x14490117 https://marconnet-technologies.com/
+    RedirectMatch 301 ^/bouton-d-appel-pour-rampes-d-acces-pmr-c2x17691164 https://marconnet-technologies.com/
+    RedirectMatch 301 ^/rampe-enroulable-122x-91cm-acces-handicape-c2x15399511 https://marconnet-technologies.com/
+    RedirectMatch 301 ^/PBSponsorship.asp https://marconnet-technologies.com/
+    RedirectMatch 301 ^/gilet-de-flottaison-handicape-sauvetage-position-verticale-c2x19637220 https://marconnet-technologies.com/
+    RedirectMatch 301 ^/PBSCCatalog.asp?CatID=2336994 https://marconnet-technologies.com/
+    RedirectMatch 301 ^/gant-tetraplegique-gauche-taille-xs-c2x17561040 https://marconnet-technologies.com/
+    RedirectMatch 301 ^/bouton-d-appel-personne-handicape-c2x20547127 https://marconnet-technologies.com/
+    RedirectMatch 301 ^/PBSCCatalog.asp?CatID=2346969 https://marconnet-technologies.com/
+    RedirectMatch 301 ^/rampe-enroulable-153x-91cm-acces-handicape-c2x15399579 https://marconnet-technologies.com/
+    RedirectMatch 301 ^/PBSCCatalog.asp?CatID=2918916&CategoryName=GILETS+DE+FLOTTAISON+POSITION+VERTICALE+sans+mouvements+possibles https://marconnet-technologies.com/
+    RedirectMatch 301 ^/gilet-de-flottaison-handicape-sauvetage-position-verticale-c2x19637204 https://marconnet-technologies.com/
+    RedirectMatch 301 ^/PBSCCatalog.asp?CatID=3319376&CategoryName=SCOOTER+3+ROUES+PENDEL+FD https://marconnet-technologies.com/
+    RedirectMatch 301 ^/rampe-enroulable-122x76-cm-acces-handicapee-c2x14490012 https://marconnet-technologies.com/
+    RedirectMatch 301 ^/adaptation-tetra-pour-tetraplegique-puma-c2x14582301 https://marconnet-technologies.com/
+    RedirectMatch 301 ^/sabot-sans-tuteur-droit-avec-fixation-rapide-type-snowboard-et-contrepoids-c2x15332915 https://marconnet-technologies.com/
+    RedirectMatch 301 ^/PBSCCatalog.asp?CatID=2338970&CategoryName=PLIABLES https://marconnet-technologies.com/
+    RedirectMatch 301 ^/gant-tetraplegique-droit-taille-xs-c2x17560417 https://marconnet-technologies.com/
+    RedirectMatch 301 ^/produit-test-ne-pas-commander-c2x21049051 https://marconnet-technologies.com/
+    RedirectMatch 301 ^/PBPartners.asp https://marconnet-technologies.com/
+    RedirectMatch 301 ^/PBSCCatalog.asp?CatID=2918914 https://marconnet-technologies.com/
+    RedirectMatch 301 ^/PBSCCatalog.asp?CatID=2349697&CategoryName=V%C9LO+%2D+TRICYCLES+TANDEMS https://marconnet-technologies.com/
+    RedirectMatch 301 ^/gilet-de-flottaison-handicape-sauvetage-position-verticale-c2x19634282 https://marconnet-technologies.com/
+    RedirectMatch 301 ^/rampe-enroulable-305x76-cm-c2x14490126 https://marconnet-technologies.com/
+    RedirectMatch 301 ^/PBSCCatalog.asp?CatID=3698432&CategoryName=SCOOTERS+ELECTRIQUES+4+ROUES+COMPACT https://marconnet-technologies.com/
+    RedirectMatch 301 ^/gilet-de-flottaison-taille-xxs-pour-personnes-polyhandicapees-c2x14424296 https://marconnet-technologies.com/
+    RedirectMatch 301 ^/PBSCCatalog.asp?CatID=2918916 https://marconnet-technologies.com/
+    RedirectMatch 301 ^/gant-tetraplegique-gauche-taille-s-c2x17560404 https://marconnet-technologies.com/
+    RedirectMatch 301 ^/PBSCCatalog.asp?CatID=3319377&CategoryName=SCOOTER+ELECTRIQUE+4+ROUES+TOUT+CHEMIN https://marconnet-technologies.com/
+    RedirectMatch 301 ^/rampe-enroulable-366x76-cm-c2x14490130 https://marconnet-technologies.com/
+    RedirectMatch 301 ^/rampe-enroulable-275x76-cm-c2x14490125 https://marconnet-technologies.com/
+    RedirectMatch 301 ^/PBSCCatalog.asp?CatID=2496053&CategoryName=TRANSPORTEUR https://marconnet-technologies.com/
+    RedirectMatch 301 ^/gant-tetraplegique-droit-taille-m-c2x17560378 https://marconnet-technologies.com/
+    RedirectMatch 301 ^/puma-c2x16317123 https://marconnet-technologies.com/
+    RedirectMatch 301 ^/tricycle-therapeutique-adulte-mathias-20-c2x14597483 https://marconnet-technologies.com/
+    RedirectMatch 301 ^/bouton-d-appel-personne-handicape-c2x20547151 https://marconnet-technologies.com/
+    RedirectMatch 301 ^/transporteur-personnel-assis-type-gyropode-assis-handicape-c2x19252743 https://marconnet-technologies.com/
+    RedirectMatch 301 ^/PBSCCatalog.asp?CatID=2338970 https://marconnet-technologies.com/
+    RedirectMatch 301 ^/PBSCCatalog.asp?CatID=2375975&CategoryName=BATTERIES+LITHIUM https://marconnet-technologies.com/
+    RedirectMatch 301 ^/PBSCCatalog.asp?CatID=2335864&CategoryName=GILETS+DE+FLOTTAISON+POSITION+HORIZONTALE%2FVERTICALE https://marconnet-technologies.com/
+    RedirectMatch 301 ^/tricycle-therapeutique-ecoline-enfants-adultes-c2x14597313 https://marconnet-technologies.com/
+    RedirectMatch 301 ^/PBSCCatalog.asp?CatID=2918915 https://marconnet-technologies.com/
+    RedirectMatch 301 ^/PBSCCatalog.asp?CatID=2525727&CategoryName=FAUTEUIL+%C9LECTRIQUE+TOUT+TERRAIN+E%2DBUGGY https://marconnet-technologies.com/
+    RedirectMatch 301 ^/systeme-de-fixation-pour-poignee-a-l-unite-c2x15501529 https://marconnet-technologies.com/
+    RedirectMatch 301 ^/rampe-enroulable-214x-91cm-acces-handicape-c2x15399670 https://marconnet-technologies.com/
+    RedirectMatch 301 ^/PBSCCatalog.asp?CatID=600107&CategoryName=TOUT+%C9LECTRIQUE https://marconnet-technologies.com/
+    RedirectMatch 301 ^/rampe-enroulable-275x-91cm-acces-handicape-c2x15399808 https://marconnet-technologies.com/
+    RedirectMatch 301 ^/PBSCCatalog.asp?CatID=3319374&CategoryName=SCOOTERS+%C9LECTRIQUES+3+et+4+ROUES+ https://marconnet-technologies.com/
+    RedirectMatch 301 ^/PBSCCatalog.asp?CatID=2375974&CategoryName=BATTERIES+GEL%2DPLOMB+ https://marconnet-technologies.com/
+    RedirectMatch 301 ^/gant-tetraplegique-droit-taille-s-c2x17560400 https://marconnet-technologies.com/
+    RedirectMatch 301 ^/gant-tetraplegique-gauche-taille-l-c2x17560374 https://marconnet-technologies.com/
+    RedirectMatch 301 ^/PBSCCatalog.asp?CatID=2346969&CategoryName=LARGEUR+91+cm https://marconnet-technologies.com/
+    RedirectMatch 301 ^/tricycle-therapeutique-claude-one-20-c2x16439152 https://marconnet-technologies.com/
+    RedirectMatch 301 ^/gilet-de-flottaison-handicape-sauvetage-position-verticale-c2x19637230 https://marconnet-technologies.com/
+    RedirectMatch 301 ^/rampe-enroulable-366x-91cm-acces-handicape-c2x15400456 https://marconnet-technologies.com/
+    RedirectMatch 301 ^/PBSCCatalog.asp?CatID=2346970 https://marconnet-technologies.com/
+    RedirectMatch 301 ^/afficheur-bouton-appel-handicape-c2x20547251 https://marconnet-technologies.com/
+    RedirectMatch 301 ^/rampe-enroulable-336x-91cm-acces-handicape-c2x15400252 https://marconnet-technologies.com/
+    RedirectMatch 301 ^/tricycle-handbike-hybride-tout-terrain-c2x16317123 https://marconnet-technologies.com/
+    RedirectMatch 301 ^/PBSCCatalog.asp?CatID=600108&CategoryName=MANUELS https://marconnet-technologies.com/
+    RedirectMatch 301 ^/PBSCCatalog.asp?CatID=2346970&CategoryName=LARGEUR+120+cm https://marconnet-technologies.com/
+    RedirectMatch 301 ^/rampe-enroulable-153x-120cm-acces-handicape-c2x15410679 https://marconnet-technologies.com/
+    RedirectMatch 301 ^/amplificateur-bouton-appel-handicape-c2x20547840 https://marconnet-technologies.com/
+    RedirectMatch 301 ^/PBSCCatalog.asp?CatID=2336994&CategoryName=ACCESSOIRES+STRICKER https://marconnet-technologies.com/
+    RedirectMatch 301 ^/rampe-enroulable-153x76-cm-c2x14490115 https://marconnet-technologies.com/
+    RedirectMatch 301 ^/gilet-de-flottaison-handicape-sauvetage-position-verticale-c2x19637215 https://marconnet-technologies.com/
+    RedirectMatch 301 ^/rampe-enroulable-244x-91cm-acces-handicape-c2x15399771 https://marconnet-technologies.com/
+    RedirectMatch 301 ^/reglage-coulissant-du-siege-avec-fonction-dossier-reglable-c2x22514320 https://marconnet-technologies.com/
+    RedirectMatch 301 ^/PBHotNews.asp https://marconnet-technologies.com/
+    RedirectMatch 301 ^/PBEvents.asp https://marconnet-technologies.com/
+    RedirectMatch 301 ^/tumboroller-transat-de-plage-et-de-piscine-pour-pmr-handicapee-personne-c2x15525287 https://marconnet-technologies.com/
+    RedirectMatch 301 ^/rampe-enroulable-275x-120cm-acces-handicape-c2x15410705 https://marconnet-technologies.com/
+    RedirectMatch 301 ^/handbike-tout-electrique-ultra-legere-8-pouces-nino-one-c2x23981171 https://marconnet-technologies.com/
+    RedirectMatch 301 ^/tumboroller-transat-de-plage-et-de-piscine-pour-pmr-handicapee-personne-c2x14503239 https://marconnet-technologies.com/
+    RedirectMatch 301 ^/rampe-enroulable-366x-120cm-acces-handicape-c2x15410748 https://marconnet-technologies.com/
+    RedirectMatch 301 ^/PBSCCatalog.asp?CatID=2336870&CategoryName=PRODUITS+ADAPT%C9S+POUR+LA+PLAGE%2FNEIGE https://marconnet-technologies.com/
+    RedirectMatch 301 ^/rampe-enroulable-244x76-cm-c2x14490123 https://marconnet-technologies.com/
+    RedirectMatch 301 ^/PBSCCatalog.asp?CatID=2338969&CategoryName=RAMPES+ENROULABLES+%2F+PLIABLES https://marconnet-technologies.com/
+    RedirectMatch 301 ^/gant-tetraplegique-gauche-taille-m-c2x17560382 https://marconnet-technologies.com/
+    RedirectMatch 301 ^/fauteuil-roulant-tout-terrain-manuel-puma-c2x14582248 https://marconnet-technologies.com/
+    RedirectMatch 301 ^/PBSCCatalog.asp?CatID=2399195&CategoryName=ADAPTATION+G%C9N%C9RALE+pour+fauteuils+%E0+potences+escamotables https://marconnet-technologies.com/
+    RedirectMatch 301 ^/gilet-de-flottaison-taille-s-pour-personnes-polyhandicapees-c2x14424362 https://marconnet-technologies.com/
+    RedirectMatch 301 ^/PBSCCatalog.asp?CatID=2346968 https://marconnet-technologies.com/
+
+
+
+
+
     # Determine the RewriteBase automatically and set it as environment variable.
     # If you are using Apache aliases to do mass virtual hosting or installed the
     # project in a subdirectory, the base path will be prepended to allow proper
@@ -68,3 +216,5 @@ DirectoryIndex index.php
         # RedirectTemp cannot be used instead
     </IfModule>
 </IfModule>
+
+
