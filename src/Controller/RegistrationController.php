@@ -43,8 +43,8 @@ class RegistrationController extends AbstractController
             $user->setIsConfirmed(false);
 
             $monemail = new Email();
-            $monemail->from('antonin@marconnet-robotique.com')
-                ->to('antonin@marconnet-robotique.com')
+            $monemail->from('info@marconnet-robotique.com')
+                ->to('info@marconnet-robotique.com')
                 ->subject('Demande d\'inscription sur le site Marconnet technologies™ !');
             $monemail->html("<p>Une nouvelle personne souhaite s'inscrire sur le site Internet. <p>");
             $mailer->send($monemail);

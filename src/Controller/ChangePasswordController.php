@@ -70,7 +70,7 @@ class ChangePasswordController extends AbstractController
             $this->addFlash('success', 'Votre mot de passe a bien été changé.');
 
             $monemail = new Email();
-            $monemail->from('antonin@marconnet-robotique.com')
+            $monemail->from('info@marconnet-robotique.com')
                 ->to($user->getEmail())
                 ->subject('Changement de mot de passe');
             $monemail->html("<p>Bonjour, votre mot de passe sur Marconnet technologies™ a bien été changé.</p>");

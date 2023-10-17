@@ -35,7 +35,7 @@ class HomeController extends AbstractController
             $emailAddress = $form->get('email')->getData();
             $message = (new Email())
                 ->from($emailAddress)
-                ->to('antonin@marconnet-robotique.com')
+                ->to('info@marconnet-robotique.com')
                 ->subject('Inscription à la newsletter')
                 ->text("La personne qui possède l'adresse email {$emailAddress} souhaite s'inscrire à la newsletter");
 

@@ -77,7 +77,7 @@ class AdminCrudUserController extends AbstractController
         $confirmedAvant = $user->isIsConfirmed();
 
         $monemail = new Email();
-        $monemail->from('antonin@marconnet-robotique.com')
+        $monemail->from('info@marconnet-robotique.com')
             ->to($user->getEmail())
             ->subject('Votre inscription chez Marconnet technologies™ confirmée !');
         $monemail->html("<p>Bonjour, votre compte chez Marconnet technologies™ a été validé par notre équipe !</p>");
