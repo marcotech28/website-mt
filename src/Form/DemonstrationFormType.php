@@ -226,11 +226,11 @@ class DemonstrationFormType extends AbstractType
             ])
             ->add('produitsDemo', ChoiceType::class, [
                 'choices'  => [
-                    'Handbikes Stricker' => 'prod1',
-                    'Tricycles VanRaam' => 'prod2',
-                    'Tricycles VanRaam' => 'prod3',
-                    'Scooters' => 'prod4',
-                    'Fauteil tout terrain' => 'prod5',
+                    'Handbikes Stricker' => 'Handbikes Stricker',
+                    'Tricycles VanRaam' => 'Tricycles VanRaam',
+                    'Tricycles VanRaam' => 'Tricycles VanRaam',
+                    'Scooters' => 'Scooters',
+                    'Fauteil tout terrain' => 'Fauteil tout terrain',
                 ],
                 'expanded' => true,
                 'multiple' => true,
