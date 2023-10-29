@@ -5,83 +5,83 @@
 
 {% block body %}
 
-<div class="container-xl">
-	<nav aria-label="breadcrumb">
-		<ol class="breadcrumb">
-			<li class="breadcrumb-item">
-				<a href="{{path('homepage')}}">Accueil</a>
-			</li>
-			<li class="breadcrumb-item active" aria-current="page">Qui sommes-nous ?</li>
-		</ol>
-	</nav>
+	<div class="container-xl">
+		<nav aria-label="breadcrumb">
+			<ol class="breadcrumb">
+				<li class="breadcrumb-item">
+					<a href="{{path('homepage')}}">Accueil</a>
+				</li>
+				<li class="breadcrumb-item active" aria-current="page">Qui sommes-nous ?</li>
+			</ol>
+		</nav>
 
-	<div class="row">
-		<div class="col-12">
-			<h2>À propos de Marconnet technologies™</h2>
-		</div>
-	</div>
-
-	<div class="presentation-marconnet">
 		<div class="row">
 			<div class="col-12">
-				<h3>Présentation de la société</h3>
+				<h2>À propos de Marconnet technologies™</h2>
 			</div>
+		</div>
 
+		<div class="presentation-marconnet">
 			<div class="row">
 				<div class="col-12">
-					<p>Marconnet technologies™ commercialise
-						<span class="color-sky-blue">depuis 2004</span>
-						une large gamme de produits sur mesure destinée aux personnes à mobilité réduite.
-						<span class="color-sky-blue">Notre écoute et nos conseils</span>
-						vous permettront de vous orienter vers le matériel le plus adapté à vos besoins afin de vous satisfaire pleinement.</p>
-					<p class="color-sky-blue">Notre objectif : Votre satisfaction !</p>
-					<p>Les produits commercialisés ont été testés et approuvés par un grand nombre de professionnels de la santé et par les utilisateurs finaux. De nombreux témoignages attestent de la qualité des produits.</p>
-					<p>Nous choisissons uniquement les meilleurs fabricants par gamme de matériels que nous avons soigneusement sélectionnés afin de proposer les meilleurs matériels sur chaque segment de marché.</p>
+					<h3>Présentation de la société</h3>
+				</div>
+
+				<div class="row">
+					<div class="col-12">
+						<p>Marconnet technologies™ commercialise
+							<span class="color-sky-blue">depuis 2004</span>
+							une large gamme de produits sur mesure destinée aux personnes à mobilité réduite.
+							<span class="color-sky-blue">Notre écoute et nos conseils</span>
+							vous permettront de vous orienter vers le matériel le plus adapté à vos besoins afin de vous satisfaire pleinement.</p>
+						<p class="color-sky-blue">Notre objectif : Votre satisfaction !</p>
+						<p>Les produits commercialisés ont été testés et approuvés par un grand nombre de professionnels de la santé et par les utilisateurs finaux. De nombreux témoignages attestent de la qualité des produits.</p>
+						<p>Nous choisissons uniquement les meilleurs fabricants par gamme de matériels que nous avons soigneusement sélectionnés afin de proposer les meilleurs matériels sur chaque segment de marché.</p>
+					</div>
 				</div>
 			</div>
 		</div>
-	</div>
 
 
-	<div class="nos-fournisseurs">
-		<div class="row h-100 fournisseur">
-			{% include "about/_about_marques_partenaires.html.twig" with {
+		<div class="nos-fournisseurs">
+			<div class="row h-100 fournisseur">
+				{% include "about/_about_marques_partenaires.html.twig" with {
 					'logo' : 'stricker.png',
 					'marque' : 'Stricker',
-					'contenu' : 'Stricker, le spécialiste des handbikes manuel, à assistance électrique et tout électrique.'
+					'contenu' : 'Depuis 1993, Stricker est le pionnier dans la fabrication des handbikes manuels, à assistance électrique et tout électrique. Son objectif : votre satisfaction.'
 				} %}
-			{% include "about/_about_marques_partenaires.html.twig" with {
-					'logo' : 'draisin.png',
-					'marque' : 'Draisin',
-					'contenu' : 'Draisin, notre partenaire historique spécialisé dans les tricycles. Nous travaillons avec Draisin depuis plus de 20 ans !'
+				{% include "about/_about_marques_partenaires.html.twig" with {
+					'logo' : 'chaland.jpg',
+					'marque' : 'Chaland Palmieri',
+					'contenu' : 'Chaland-Palmieri, constructeur français depuis plus de 25 ans conçoit et produit un véhicule électrique tout terrain adapté aux PMR.'
 				} %}
-			{% include "about/_about_marques_partenaires.html.twig" with {
+				{% include "about/_about_marques_partenaires.html.twig" with {
 					'logo' : 'vanraam.png',
 					'marque' : 'Van Raam',
-					'contenu' : 'Van Raam est une marque néerlandaise de vélos et de tricycles adaptés aux personnes à mobilité réduite.'
+					'contenu' : 'Van Raam, marque néerlandaise, propose depuis 1909 des vélos et de tricycles adaptés aux personnes en situation de handicap.'
 				} %}
-			{% include "about/_about_marques_partenaires.html.twig" with {
+				{% include "about/_about_marques_partenaires.html.twig" with {
 					'logo' : 'moving-life.png',
 					'marque' : 'Moving Life',
-					'contenu' : 'Moving Life est une marque de véhicules de mobilité personnelle, notamment de scooters électriques portables et pliables. Ils sont conçus pour être faciles à transporter et à utiliser dans les déplacements quotidiens.'
+					'contenu' : 'Moving life, fabricant israélien, développe et conçoit le révolutionnaire scooter électrique pliable et transportable . Facile à transporter même en avion.'
 				} %}</div>
 
-		<div class="row">
-			<div class="col">
-				<p>N'attendez plus et
-					<a href="{{path('contact')}}">contactez-nous</a>
-					pour plus d’informations sur nos différents matériels.
-				</p>
+			<div class="row">
+				<div class="col">
+					<p>N'attendez plus et
+						<a href="{{path('contact')}}">contactez-nous</a>
+						pour plus d’informations sur nos différents matériels.
+					</p>
+				</div>
 			</div>
 		</div>
-	</div>
 
 
-	{# l'equipe marconnet technologies™ #}
-	<div class="team-members">
-		<h3 style="padding-top: 8px">Notre équipe</h3>
-		<div class="row h-100">
-			{% include "about/_members.html.twig" with {
+		{# l'equipe marconnet technologies™ #}
+		<div class="team-members">
+			<h3 style="padding-top: 8px">Notre équipe</h3>
+			<div class="row h-100">
+				{% include "about/_members.html.twig" with {
 					'profilePicture' : 'benjamin.png',
 					'nom' : 'Benjamin MARCONNET',
 					'fonction' : 'Gérant',
@@ -89,7 +89,7 @@
 					'linkedin' : 'https://fr.linkedin.com/in/benjamin-marconnet'
 				} %}
 
-			{% include "about/_members.html.twig" with {
+				{% include "about/_members.html.twig" with {
 					'profilePicture' : 'luigi.png',
 					'nom' : 'Luigi LENFANT-HOUICHE',
 					'fonction' : 'Responsable commercial réseau BtoB',
@@ -97,7 +97,7 @@
 					'linkedin' : 'https://fr.linkedin.com/in/luigi-lenfant-houiche'
 				} %}
 
-			{% include "about/_members.html.twig" with {
+				{% include "about/_members.html.twig" with {
 					'profilePicture' : 'pierre.jpg',
 					'nom' : 'Pierre PALANT',
 					'fonction' : 'Responsable SAV et maintenance',
@@ -105,7 +105,7 @@
 					'linkedin' : '#'
 				} %}
 
-			{% include "about/_members.html.twig" with {
+				{% include "about/_members.html.twig" with {
 					'profilePicture' : 'emmanuelle.jpg',
 					'nom' : 'Emmanuelle BENAZET',
 					'fonction' : 'Assistante ADV et commerciale',
@@ -113,7 +113,7 @@
 					'linkedin' : '#'
 				} %}
 
-			{% include "about/_members.html.twig" with {
+				{% include "about/_members.html.twig" with {
 					'profilePicture' : 'charlie.png',
 					'nom' : 'Charlie NASSAR',
 					'fonction' : 'Responsable stratégie et marketing',
@@ -143,7 +143,15 @@
 					'fonction' : 'Conseiller technique handicap',
 					'presentationMember' : 'Commercial en charge de la prospection et du développement du réseau de prestataires de santé',
 					'linkedin' : 'https://www.linkedin.com/in/isma%C3%ABl-ancelin-10979527b/'
-				} %}
+				} 
+				
+				{% include "about/_members.html.twig" with {
+					'profilePicture' : 'manon.jpg',
+					'nom' : 'Manon Chesneau',
+					'fonction' : 'Chargée de Communication',
+					'presentationMember' : 'En charge de mettre en œuvre la stratégie de communication ainsi que l\'analyse des performances de nos opérations',
+					'linkedin' : 'https://www.linkedin.com/in/manon-chesneau-/'
+				}%}
 			</div>
 		</div>
 	</div>
