@@ -50,7 +50,8 @@
 		<div class="intro-produit">
 			<h2>{{produit.nom}}</h2>
 			{% if app.user %}
-				<h4>{{produit.prix}}€ HT</h4>
+				<h4>À partir de
+					{{produit.prix}}€ HT</h4>
 			{% endif %}
 			<h5>
 				<span class="badge bg-primary">{{produit.marque.libelle}}</span>
