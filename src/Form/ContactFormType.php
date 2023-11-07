@@ -42,6 +42,8 @@ class ContactFormType extends AbstractType
                     new Assert\Length([
                         'min' => 2,
                         'max' => 30,
+                        'minMessage' => 'La société doit comporter au moins {{ limit }} caractères.',
+                        'maxMessage' => 'La société ne peut pas dépasser {{ limit }} caractères.',
                     ]),
                 ],
             ])
@@ -56,6 +58,8 @@ class ContactFormType extends AbstractType
                     new Assert\Length([
                         'min' => 2,
                         'max' => 20,
+                        'minMessage' => 'Le poste doit comporter au moins {{ limit }} caractères.',
+                        'maxMessage' => 'Le poste ne peut pas dépasser {{ limit }} caractères.',
                     ]),
                 ],
             ])
@@ -70,10 +74,8 @@ class ContactFormType extends AbstractType
                     new Assert\Length([
                         'min' => 2,
                         'max' => 20,
-                    ]),
-                    new Assert\Regex([
-                        'pattern' => '/^[a-zA-Z\s]*$/',
-                        'message' => 'Le nom ne peut contenir que des lettres',
+                        'minMessage' => 'Le nom doit comporter au moins {{ limit }} caractères.',
+                        'maxMessage' => 'Le nom ne peut pas dépasser {{ limit }} caractères.',
                     ]),
                 ],
             ])
@@ -88,10 +90,8 @@ class ContactFormType extends AbstractType
                     new Assert\Length([
                         'min' => 2,
                         'max' => 20,
-                    ]),
-                    new Assert\Regex([
-                        'pattern' => '/^[a-zA-Z\s]*$/',
-                        'message' => 'Le prénom ne peut contenir que des lettres',
+                        'minMessage' => 'Le prénom doit comporter au moins {{ limit }} caractères.',
+                        'maxMessage' => 'Le prénom ne peut pas dépasser {{ limit }} caractères.',
                     ]),
                 ],
             ])
@@ -106,6 +106,8 @@ class ContactFormType extends AbstractType
                     new Assert\Length([
                         'min' => 5,
                         'max' => 50,
+                        'minMessage' => 'L\'email doit comporter au moins {{ limit }} caractères.',
+                        'maxMessage' => 'L\'email ne peut pas dépasser {{ limit }} caractères.',
                     ]),
                     new Assert\Email(),
                 ],
@@ -121,10 +123,8 @@ class ContactFormType extends AbstractType
                     new Assert\Length([
                         'min' => 5,
                         'max' => 15,
-                    ]),
-                    new Assert\Regex([
-                        'pattern' => '/^[0-9]*$/',
-                        'message' => 'Le téléphone ne peut contenir que des chiffres',
+                        'minMessage' => 'Le téléphone doit comporter au moins {{ limit }} caractères.',
+                        'maxMessage' => 'Le téléphone ne peut pas dépasser {{ limit }} caractères.',
                     ]),
                 ],
             ])
@@ -139,6 +139,8 @@ class ContactFormType extends AbstractType
                     new Assert\Length([
                         'min' => 3,
                         'max' => 30,
+                        'minMessage' => 'L\'adresse doit comporter au moins {{ limit }} caractères.',
+                        'maxMessage' => 'L\'adresse ne peut pas dépasser {{ limit }} caractères.',
                     ]),
                 ],
             ])
@@ -153,6 +155,8 @@ class ContactFormType extends AbstractType
                     new Assert\Length([
                         'min' => 5,
                         'max' => 30,
+                        'minMessage' => 'Le complément d\'adresse doit comporter au moins {{ limit }} caractères.',
+                        'maxMessage' => 'Le complément d\'adresse ne peut pas dépasser {{ limit }} caractères.',
                     ]),
                 ],
             ])
@@ -167,6 +171,8 @@ class ContactFormType extends AbstractType
                     new Assert\Length([
                         'min' => 3,
                         'max' => 40,
+                        'minMessage' => 'La ville doit comporter au moins {{ limit }} caractères.',
+                        'maxMessage' => 'La ville ne peut pas dépasser {{ limit }} caractères.',
                     ]),
                 ],
             ])
@@ -193,10 +199,8 @@ class ContactFormType extends AbstractType
                     new Assert\Length([
                         'min' => 3,
                         'max' => 30,
-                    ]),
-                    new Assert\Regex([
-                        'pattern' => '/^[a-zA-Z\s]*$/',
-                        'message' => 'Le pays ne peut contenir que des lettres',
+                        'minMessage' => 'Le pays doit comporter au moins {{ limit }} caractères.',
+                        'maxMessage' => 'Le pays ne peut pas dépasser {{ limit }} caractères.',
                     ]),
                 ],
             ])
@@ -221,6 +225,7 @@ class ContactFormType extends AbstractType
                     new Assert\NotBlank(),
                     new Assert\Length([
                         'min' => 5,
+                        'minMessage' => 'Le message doit comporter au moins {{ limit }} caractères.',
                     ]),
                 ],
             ]);

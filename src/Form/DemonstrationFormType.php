@@ -3,7 +3,6 @@
 namespace App\Form;
 
 use Symfony\Component\Validator\Constraints\Length;
-use Symfony\Component\Validator\Constraints\Regex;
 use Symfony\Component\Validator\Constraints\Email;
 
 
@@ -63,10 +62,6 @@ class DemonstrationFormType extends AbstractType
                         'minMessage' => 'Le poste doit contenir au moins {{ limit }} caractères',
                         'maxMessage' => 'Le poste ne peut pas dépasser {{ limit }} caractères'
                     ]),
-                    new Regex([
-                        'pattern' => '/^[a-zA-Z]+$/',
-                        'message' => 'Le poste doit contenir uniquement des lettres'
-                    ])
                 ]
             ])
             ->add('nom', TextType::class, [
@@ -82,10 +77,6 @@ class DemonstrationFormType extends AbstractType
                         'minMessage' => 'Le nom doit contenir au moins {{ limit }} caractères',
                         'maxMessage' => 'Le nom ne peut pas dépasser {{ limit }} caractères'
                     ]),
-                    new Regex([
-                        'pattern' => '/^[a-zA-Z]+$/',
-                        'message' => 'Le nom doit contenir uniquement des lettres'
-                    ])
                 ]
             ])
             ->add('prenom', TextType::class, [
@@ -101,11 +92,6 @@ class DemonstrationFormType extends AbstractType
                         'minMessage' => 'Le prénom doit contenir au moins {{ limit }} caractères',
                         'maxMessage' => 'Le prénom ne peut pas dépasser {{ limit }} caractères'
                     ]),
-                    new Regex([
-                        'pattern' => '/^[a-zA-Z]+$/',
-                        'message' => 'Le prénom doit contenir uniquement des lettres'
-                    ])
-                ]
             ])
             ->add('email', EmailType::class, [
                 'label' => false,
@@ -184,10 +170,6 @@ class DemonstrationFormType extends AbstractType
                         'minMessage' => 'La ville doit contenir au moins {{ limit }} caractères',
                         'maxMessage' => 'La ville ne peut pas dépasser {{ limit }} caractères'
                     ]),
-                    new Regex([
-                        'pattern' => '/^[a-zA-Z]+$/',
-                        'message' => 'La ville doit contenir uniquement des lettres'
-                    ])
                 ]
             ])
             ->add('codePostal', TextType::class, [
@@ -218,10 +200,6 @@ class DemonstrationFormType extends AbstractType
                         'minMessage' => 'Le pays doit contenir au moins {{ limit }} caractères',
                         'maxMessage' => 'Le pays ne peut pas dépasser {{ limit }} caractères'
                     ]),
-                    new Regex([
-                        'pattern' => '/^[a-zA-Z]+$/',
-                        'message' => 'Le pays doit contenir uniquement des lettres'
-                    ])
                 ]
             ])
             ->add('produitsDemo', ChoiceType::class, [
