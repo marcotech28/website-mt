@@ -92,6 +92,7 @@ class DemonstrationFormType extends AbstractType
                         'minMessage' => 'Le prénom doit contenir au moins {{ limit }} caractères',
                         'maxMessage' => 'Le prénom ne peut pas dépasser {{ limit }} caractères'
                     ]),
+                ]
             ])
             ->add('email', EmailType::class, [
                 'label' => false,
