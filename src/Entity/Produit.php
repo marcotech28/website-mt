@@ -139,9 +139,13 @@ class Produit
     #[Assert\Type(type: "object", message: "fferfrefrefrefrerfjr")]
     private Collection $produitsSimilaires;
 
+    #[ORM\OneToMany(mappedBy: 'produit', targetEntity: Image::class)]
+    private Collection $images;
+
     public function __construct()
     {
         $this->produitsSimilaires = new ArrayCollection();
+        $this->images = new ArrayCollection();
     }
 
     public function getId(): ?int
@@ -434,5 +438,35 @@ class Produit
     public function __toString(): string
     {
         return $this->nom;
+    }
+
+    /**
+     * @return Collection<int, Image>
+     */
+    public function getImages(): Collection
+    {
+        return $this->images;
+    }
+
+    public function addImage(Image $image): static
+    {
+        if (!$this->images->contains($image)) {
+            $this->images->add($image);
+            $image->setProduit($this);
+        }
+
+        return $this;
+    }
+
+    public function removeImage(Image $image): static
+    {
+        if ($this->images->removeElement($image)) {
+            // set the owning side to null (unless already changed)
+            if ($image->getProduit() === $this) {
+                $image->setProduit(null);
+            }
+        }
+
+        return $this;
     }
 }
