@@ -4,21 +4,20 @@ namespace App\Form;
 
 use App\Entity\Marque;
 use App\Entity\Produit;
+use App\Form\ImageType;
 use App\Entity\Categorie;
 use App\Entity\Utilisation;
 use Symfony\Component\Form\AbstractType;
 use Symfony\Component\Form\FormBuilderInterface;
 use Symfony\Bridge\Doctrine\Form\Type\EntityType;
 use Symfony\Component\OptionsResolver\OptionsResolver;
-use Symfony\Component\Form\Extension\Core\Type\FileType;
-use Symfony\Component\Form\Extension\Core\Type\MoneyType;
 use Symfony\Component\Form\Extension\Core\Type\TextareaType;
+use Symfony\Component\Form\Extension\Core\Type\CollectionType;
 
 class ProduitType extends AbstractType
 {
     public function buildForm(FormBuilderInterface $builder, array $options): void
     {
-
         $builder
             ->add('nom', TextareaType::class, [
                 'label' => 'Nom',
@@ -30,8 +29,8 @@ class ProduitType extends AbstractType
             ->add('prix')
             ->add('description', TextareaType::class, [
                 'attr' => [
-                    'rows' => '10',  // Définit le nombre de lignes visibles sans avoir à défiler
-                    'class' => 'form-control'  // Classe Bootstrap pour styliser le textarea
+                    'rows' => '10',
+                    'class' => 'form-control'
                 ],
             ])
             ->add('shortDescription')
@@ -74,47 +73,20 @@ class ProduitType extends AbstractType
                     return $marque->getLibelle();
                 }
             ])
-            ->add('image1', TextareaType::class, [
-                'label' => 'Image 1',
-                'required' => false,
-                'attr' => [
-                    'class' => 'form-control'
-                ],
+            ->add('images', CollectionType::class, [
+                'entry_type' => ImageType::class,
+                'entry_options' => ['label' => false],
+                'allow_add' => true,
+                'allow_delete' => true,
+                'by_reference' => false,
+                'prototype' => true,
+                'prototype_name' => '__name__',
             ])
-            ->add('image2', TextareaType::class, [
-                'label' => 'Image 2',
-                'required' => false,
-                'attr' => [
-                    'class' => 'form-control'
-                ],
-            ])
-            ->add('image3', TextareaType::class, [
-                'label' => 'Image 3',
-                'required' => false,
-                'attr' => [
-                    'class' => 'form-control'
-                ],
-            ])
-            ->add('image4', TextareaType::class, [
-                'label' => 'Image 4',
-                'required' => false,
-                'attr' => [
-                    'class' => 'form-control'
-                ],
-            ])
-            ->add('image5', TextareaType::class, [
-                'label' => 'Image 5',
-                'required' => false,
-                'attr' => [
-                    'class' => 'form-control'
-                ],
-            ])
-
             ->add('produitsSimilaires', EntityType::class, [
                 'class' => Produit::class,
                 'choice_label' => 'nom',
                 'multiple' => true,
-                'expanded' => false, //on met ça à true pour avoir une liste à puce
+                'expanded' => false,
                 'required' => false
             ]);
     }

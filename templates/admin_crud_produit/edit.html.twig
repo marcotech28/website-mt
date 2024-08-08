@@ -1,16 +1,55 @@
 {% extends 'base.html.twig' %}
 
-{% block title %}Edit Produit
-{% endblock %}
+{% block title %}Edit Produit{% endblock %}
 
 {% block body %}
-	<div class="container-xl">
-		<h1>Edit Produit</h1>
+    <div class="container-xl">
+        <h1>Edit Produit</h1>
 
-		{{ include('admin_crud_produit/_form.html.twig', {'button_label': 'Update'}) }}
+        {{ include('admin_crud_produit/_form.html.twig', {'button_label': 'Update'}) }}
 
-		<a href="{{ path('app_admin_crud_produit_index') }}">back to list</a>
+        <a href="{{ path('app_admin_crud_produit_index') }}">back to list</a>
 
-		{{ include('admin_crud_produit/_delete_form.html.twig') }}
-	</div>
+        {{ include('admin_crud_produit/_delete_form.html.twig') }}
+    </div>
+
+    <script>
+    document.addEventListener('DOMContentLoaded', function() {
+        let imageCollectionHolder = document.querySelector('#image-collection');
+        let addImageButton = document.getElementById('add-image');
+        let newImageIndex = {{ form.images|length }};
+
+        let prototypeTemplate = imageCollectionHolder.dataset.prototype;
+
+        addImageButton.addEventListener('click', function() {
+            let newForm = prototypeTemplate.replace(/__name__/g, newImageIndex);
+            newImageIndex++;
+
+            let newFormElement = document.createElement('div');
+            newFormElement.innerHTML = newForm;
+            imageCollectionHolder.appendChild(newFormElement);
+
+            addRemoveButton(newFormElement);
+        });
+
+        function addRemoveButton(element) {
+            let removeButton = document.createElement('button');
+            removeButton.type = 'button';
+            removeButton.classList.add('remove-image');
+            removeButton.innerText = 'Supprimer l\'image';
+
+            element.appendChild(removeButton);
+
+            removeButton.addEventListener('click', function() {
+                element.remove();
+            });
+        }
+
+        document.querySelectorAll('.remove-image').forEach(function(button) {
+            button.addEventListener('click', function() {
+                button.parentElement.remove();
+            });
+        });
+    });
+    </script>
 {% endblock %}
