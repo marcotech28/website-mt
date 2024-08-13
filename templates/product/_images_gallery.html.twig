@@ -1,0 +1,54 @@
+{% set images = produit.images %}
+{% set imageCount = images|length %}
+
+<div class="gallery">
+    <div class="row">
+        {% if imageCount == 5 %}
+            <div class="col-12 col-lg-6 mb-1">
+                <a href="{{ images[0].url }}" data-lightbox="mygallery"><img src="{{ images[0].url }}" alt="{{ images[0].alt }}" class="img-fluid"></a>
+            </div>
+            <div class="col-12 col-lg-6 d-flex justify-content-between flex-column">
+                <div class="row mb-1">
+                    <div class="col-12 col-sm-6 mb-1">
+                        <a href="{{ images[1].url }}" data-lightbox="mygallery"><img src="{{ images[1].url }}" alt="{{ images[1].alt }}" class="img-fluid"></a>
+                    </div>
+                    <div class="col-12 col-sm-6 mb-1">
+                        <a href="{{ images[2].url }}" data-lightbox="mygallery"><img src="{{ images[2].url }}" alt="{{ images[2].alt }}" class="img-fluid"></a>
+                    </div>
+                </div>
+                <div class="row mb-1">
+                    <div class="col-12 col-sm-6 mb-1">
+                        <a href="{{ images[3].url }}" data-lightbox="mygallery"><img src="{{ images[3].url }}" alt="{{ images[3].alt }}" class="img-fluid"></a>
+                    </div>
+                    <div class="col-12 col-sm-6 mb-1">
+                        <a href="{{ images[4].url }}" data-lightbox="mygallery"><img src="{{ images[4].url }}" alt="{{ images[4].alt }}" class="img-fluid"></a>
+                    </div>
+                </div>
+            </div>
+        {% elseif imageCount == 4 %}
+            {% for i in 0..3 %}
+                <div class="col-12 col-md-6 col-lg-3 mb-1">
+                    <a href="{{ images[i].url }}" data-lightbox="mygallery"><img src="{{ images[i].url }}" alt="{{ images[i].alt }}" class="img-fluid"></a>
+                </div>
+            {% endfor %}
+        {% elseif imageCount == 3 %}
+            {% for i in 0..2 %}
+                <div class="col-12 col-sm-4 mb-1">
+                    <a href="{{ images[i].url }}" data-lightbox="mygallery"><img src="{{ images[i].url }}" alt="{{ images[i].alt }}" class="img-fluid"></a>
+                </div>
+            {% endfor %}
+        {% elseif imageCount == 2 %}
+            {% for i in 0..1 %}
+                <div class="col-12 col-sm-6 mb-1">
+                    <a href="{{ images[i].url }}" data-lightbox="mygallery"><img src="{{ images[i].url }}" alt="{{ images[i].alt }}" class="img-fluid"></a>
+                </div>
+            {% endfor %}
+        {% elseif imageCount == 1 %}
+            <div class="col-12 mb-1">
+                <a href="{{ images[0].url }}" data-lightbox="mygallery">
+                    <img src="{{ images[0].url }}" alt="{{ images[0].alt }}" class="img-fluid" style="max-height: 600px; object-fit: cover;">
+                </a>
+            </div>
+        {% endif %}
+    </div>
+</div>
