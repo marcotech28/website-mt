@@ -34,7 +34,6 @@ class DemonstrationController extends AbstractController
             $ville = $data['ville'];
             $codePostal = $data['codePostal'];
             $pays = $data['pays'];
-            $produitsDemo = $data['produitsDemo'];
             $lieuDemo = $data['lieuDemo'];
             $message = $data['message'];
 
@@ -60,16 +59,11 @@ class DemonstrationController extends AbstractController
                     <ul>
             ";
 
-            $b = "";
-            foreach ($produitsDemo as $produit) {
-                $b = $b . "<li>" . $produit . "</li>";
-            }
-
-            $c = "</ul>
+            $b = "</ul>
             <p><strong>Lieu démo:</strong> {$lieuDemo}</p>
             <p><strong>Message:</strong> {$message}</p>";
 
-            $monemail->html($a . $b . $c);
+            $monemail->html($a . $b);
 
 
             $mailer->send($monemail);

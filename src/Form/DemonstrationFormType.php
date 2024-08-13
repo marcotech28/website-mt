@@ -203,21 +203,6 @@ class DemonstrationFormType extends AbstractType
                     ]),
                 ]
             ])
-            ->add('produitsDemo', ChoiceType::class, [
-                'choices'  => [
-                    'Handbikes Stricker' => 'Handbikes Stricker',
-                    'Tricycles VanRaam' => 'Tricycles VanRaam',
-                    'Tricycles VanRaam' => 'Tricycles VanRaam',
-                    'Scooters' => 'Scooters',
-                    'Fauteil tout terrain' => 'Fauteil tout terrain',
-                ],
-                'expanded' => true,
-                'multiple' => true,
-                'label' => 'La gamme que vous voulez tester',
-                'attr' => [
-                    'class' => 'form-control',
-                ],
-            ])
             ->add('lieuDemo', ChoiceType::class, [
                 'attr' => [
                     'class' => 'form-control form-select',
