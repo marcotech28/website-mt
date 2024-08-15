@@ -9,6 +9,7 @@ use App\Repository\ProduitRepository;
 use Doctrine\ORM\EntityManagerInterface;
 use Symfony\Component\Finder\SplFileInfo;
 use Symfony\Component\Form\FormInterface;
+use Knp\Component\Pager\PaginatorInterface;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
@@ -22,10 +23,18 @@ use Symfony\Component\DependencyInjection\ParameterBag\ParameterBagInterface;
 class AdminCrudProduitController extends AbstractController
 {
     #[Route('/', name: 'app_admin_crud_produit_index', methods: ['GET'])]
-    public function index(ProduitRepository $produitRepository): Response
+    public function index(ProduitRepository $produitRepository, PaginatorInterface $paginator, Request $request): Response
     {
+        $products = $produitRepository->findAll();
+
+        $pagination = $paginator->paginate(
+            $products,
+            $request->query->getInt('page', 1),
+            10
+        );
+
         return $this->render('admin_crud_produit/index.html.twig', [
-            'produits' => $produitRepository->findAll(),
+            'pagination' => $pagination,
         ]);
     }
 
