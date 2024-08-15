@@ -7,6 +7,7 @@ use App\Form\CategorieType;
 use App\Repository\CategorieRepository;
 use Doctrine\ORM\EntityManagerInterface;
 use Symfony\Component\Form\FormInterface;
+use Knp\Component\Pager\PaginatorInterface;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
@@ -16,10 +17,18 @@ use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 class AdminCrudCategorieController extends AbstractController
 {
     #[Route('/', name: 'app_admin_crud_categorie_index', methods: ['GET'])]
-    public function index(CategorieRepository $categorieRepository): Response
+    public function index(CategorieRepository $categorieRepository, PaginatorInterface $paginator, Request $request): Response
     {
+        $categories = $categorieRepository->findAll();
+
+        $pagination = $paginator->paginate(
+            $categories,
+            $request->query->getInt('page', 1),
+            20
+        );
+
         return $this->render('admin_crud_categorie/index.html.twig', [
-            'categories' => $categorieRepository->findAll(),
+            'pagination' => $pagination,
         ]);
     }
 

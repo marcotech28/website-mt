@@ -6,53 +6,42 @@
 {% block body %}
 
 	<div class="container-xl">
-		<h1>Gestionnaire des catégories</h1>
+		<h4>Gestionnaire des catégories</h4>
 
-		<a href="{{ path('app_admin_crud_categorie_new') }}">Créer une nouvelle catégorie</a>
-		<p><br></p>
+		<a href="{{ path('app_admin_crud_categorie_new') }}" class="btn btn-primary mb-3">Créer une nouvelle catégorie</a>
 
-		<div class="row">
+		{% if pagination.items %}
+            <table class="table">
+                <thead>
+                    <tr>
+                        <th>Id</th>
+                        <th>Libelle</th>
+                        <th>Slug</th>
+						<th>Rang</th>
+                        <th>Actions</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {% for categorie in pagination.items %}
+                        <tr>
+                            <td>{{ categorie.id }}</td>
+                            <td>{{ categorie.libelle }}</td>
+                            <td>{{ categorie.slug }}€ HT</td>
+							<td>{{ categorie.rang }}</td>
+                            <td>
+                                <a href="{{ path('app_admin_crud_categorie_show', {'id': categorie.id}) }}" class="btn btn-outline-primary btn-sm">Voir</a>
+                                <a href="{{ path('app_admin_crud_categorie_edit', {'id': categorie.id}) }}" class="btn btn-outline-primary btn-sm">Éditer</a>
+                            </td>
+                        </tr>
+                    {% endfor %}
+                </tbody>
+            </table>
 
-
-			{% for categorie in categories %}
-				<div class="col-6">
-					<p>
-						<strong>Id :</strong>
-						{{ categorie.id }}
-					</p>
-					<p>
-						<strong>Libelle :</strong>
-						{{ categorie.libelle }}
-					</p>
-					<p>
-						<strong>Slug :</strong>
-						{{ categorie.slug }}
-					</p>
-					<p>
-						<strong>Description :</strong>
-						{{ categorie.description|slice(0, 40) ~ '...' }}
-					</p>
-					<p>
-						<strong>Texte de fin :</strong>
-						{{ categorie.texteDeFin|slice(0, 40) ~ '...' }}
-					</p>
-					<p>
-						<strong>Rang :</strong>
-						{{ categorie.rang }}
-					</p>
-					<p>
-						<strong>Meta description</strong>
-						{{ categorie.metaDesc }}
-					</p>
-					<p>
-						<a href="{{ path('app_admin_crud_categorie_show', {'id': categorie.id}) }}">show</a>
-						<a href="{{ path('app_admin_crud_categorie_edit', {'id': categorie.id}) }}">edit</a>
-					</p>
-					<br>
-				</div>
-			{% else %}
-				<td colspan="5">no records found</td>
-			{% endfor %}
-		</div>
+            <div class="d-flex justify-content-center my-5">
+                {{ knp_pagination_render(pagination) }}
+            </div>
+        {% else %}
+            <p>no records found</p>
+        {% endif %}
 	</div>
 {% endblock %}

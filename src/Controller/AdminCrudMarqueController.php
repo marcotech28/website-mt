@@ -7,6 +7,7 @@ use App\Form\MarqueType;
 use App\Repository\MarqueRepository;
 use Doctrine\ORM\EntityManagerInterface;
 use Symfony\Component\Form\FormInterface;
+use Knp\Component\Pager\PaginatorInterface;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
@@ -17,10 +18,18 @@ use Symfony\Component\HttpFoundation\File\Exception\FileException;
 class AdminCrudMarqueController extends AbstractController
 {
     #[Route('/', name: 'app_admin_crud_marque_index', methods: ['GET'])]
-    public function index(MarqueRepository $marqueRepository): Response
+    public function index(MarqueRepository $marqueRepository, PaginatorInterface $paginator, Request $request): Response
     {
+        $marques = $marqueRepository->findAll();
+
+        $pagination = $paginator->paginate(
+            $marques,
+            $request->query->getInt('page', 1),
+            20
+        );
+
         return $this->render('admin_crud_marque/index.html.twig', [
-            'marques' => $marqueRepository->findAll(),
+            'pagination' => $pagination,
         ]);
     }
 

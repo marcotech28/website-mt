@@ -5,46 +5,43 @@
 
 {% block body %}
 	<div class="container-xl">
-		<h1>Gestionnaire des actualités</h1>
-		<p>En raison de sa taille, le contenu des actualités et de la méta description ne peuvent être affichés dans le tableau. Pour découvrir les contenus des actualités et les méta descriptions, veuillez cliquer sur "show" dans la colonne "actions".</p>
+		<h4>Gestionnaire des actualités</h4>
 
-		<a href="{{ path('app_admin_crud_news_new') }}">Créer une nouvelle actualité</a>
+		<a href="{{ path('app_admin_crud_news_new') }}" class="btn btn-primary mb-3">Créer une nouvelle actualité</a>
 
-		<table class="table">
-			<thead>
-				<tr>
-					<th>Id</th>
-					<th>Titre</th>
-					<th>Date</th>
-					<th>Auteur</th>
-					<th>SousTitre</th>
-					<th>Slug</th>
-					<th>Image</th>
-					<th>actions</th>
-				</tr>
-			</thead>
-			<tbody>
-				{% for news in news %}
-					<tr>
-						<td>{{ news.id }}</td>
-						<td>{{ news.titre }}</td>
-						<td>{{ news.date ? news.date|date('Y-m-d') : '' }}</td>
-						<td>{{ news.auteur }}</td>
-						<td>{{ news.sousTitre }}</td>
-						<td>{{ news.titreSlug }}</td>
-						<td>{{ news.image }}</td>
-						<td>
-							<a href="{{ path('app_admin_crud_news_show', {'id': news.id}) }}">show</a>
-							<a href="{{ path('app_admin_crud_news_edit', {'id': news.id}) }}">edit</a>
-						</td>
-					</tr>
-				{% else %}
-					<tr>
-						<td colspan="7">no records found</td>
-					</tr>
-				{% endfor %}
-			</tbody>
-		</table>
+		{% if pagination.items %}
+            <table class="table">
+                <thead>
+                    <tr>
+                        <th>Id</th>
+                        <th>Titre</th>
+                        <th>Date</th>
+						<th>Auteur</th>
+                        <th>Actions</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {% for actu in pagination.items %}
+                        <tr>
+                            <td>{{ actu.id }}</td>
+                            <td>{{ actu.titre }}</td>
+                            <td>{{ actu.date ? actu.date|date('Y-m-d') : '' }}</td>
+							<td>{{ actu.auteur }}</td>
+                            <td>
+                                <a href="{{ path('app_admin_crud_news_show', {'id': actu.id}) }}" class="btn btn-outline-primary btn-sm">Voir</a>
+                                <a href="{{ path('app_admin_crud_news_edit', {'id': actu.id}) }}" class="btn btn-outline-primary btn-sm">Éditer</a>
+                            </td>
+                        </tr>
+                    {% endfor %}
+                </tbody>
+            </table>
+
+            <div class="d-flex justify-content-center my-5">
+                {{ knp_pagination_render(pagination) }}
+            </div>
+        {% else %}
+            <p>no records found</p>
+        {% endif %}
 
 	</div>
 {% endblock %}
