@@ -233,7 +233,7 @@ class DemonstrationFormType extends AbstractType
             ])
             ->add('recaptcha', HiddenType::class, [
                 'mapped' => false,
-            ]);
+            ])
         ;
     }
 

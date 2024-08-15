@@ -30,7 +30,7 @@ class AdminCrudProduitController extends AbstractController
         $pagination = $paginator->paginate(
             $products,
             $request->query->getInt('page', 1),
-            10
+            20
         );
 
         return $this->render('admin_crud_produit/index.html.twig', [

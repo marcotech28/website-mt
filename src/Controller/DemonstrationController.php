@@ -16,7 +16,6 @@ class DemonstrationController extends AbstractController
     #[Route('/demonstration', name: 'demonstration')]
     public function index(Request $request, MailerInterface $mailer, RecaptchaValidator $recaptchaValidator): Response
     {
-        dump($_ENV['GOOGLE_RECAPTCHA_SITE_KEY']);
         $form = $this->createForm(DemonstrationFormType::class);
 
         $form->handleRequest($request);
