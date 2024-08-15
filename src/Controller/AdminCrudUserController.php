@@ -7,6 +7,7 @@ use App\Form\User1Type;
 use Symfony\Component\Mime\Email;
 use App\Repository\UserRepository;
 use Doctrine\ORM\EntityManagerInterface;
+use Knp\Component\Pager\PaginatorInterface;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\Mailer\MailerInterface;
 use Symfony\Component\HttpFoundation\Response;
@@ -18,10 +19,18 @@ use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 class AdminCrudUserController extends AbstractController
 {
     #[Route('/', name: 'app_admin_crud_user_index', methods: ['GET'])]
-    public function index(UserRepository $userRepository): Response
+    public function index(UserRepository $userRepository, PaginatorInterface $paginator, Request $request): Response
     {
+        $users = $userRepository->findAll();
+
+        $pagination = $paginator->paginate(
+            $users,
+            $request->query->getInt('page', 1),
+            20
+        );
+
         return $this->render('admin_crud_user/index.html.twig', [
-            'users' => $userRepository->findAll(),
+            'pagination' => $pagination,
         ]);
     }
 
