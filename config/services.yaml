@@ -1,6 +1,8 @@
 parameters:
   upload_directory: "%kernel.project_dir%/public/uploads/documents"
   images_directory: "%kernel.project_dir%/public/images"
+  google_recaptcha_site_key: '%env(GOOGLE_RECAPTCHA_SITE_KEY)%'
+  google_recaptcha_secret_key: '%env(GOOGLE_RECAPTCHA_SECRET_KEY)%'
 
 services:
   _defaults:
@@ -18,6 +20,7 @@ services:
       - "../src/Entity/"
       - "../src/Kernel.php"
       - "../src/Tests/"
+
   App\Security\UserValidationChecker:
     arguments:
       $session: '@Symfony\Component\HttpFoundation\Session\SessionInterface'
@@ -30,3 +33,7 @@ services:
   App\Security\LoginFormAuthenticator:
     arguments:
       $userChecker: "@security.user_checker" # Utilisez le service par défaut
+
+  App\Service\RecaptchaValidator:
+    arguments:
+      $secretKey: '%google_recaptcha_secret_key%'
