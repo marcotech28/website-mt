@@ -65,31 +65,7 @@
 		</div>
 
 		{# gallery images produits #}
-		<div class="gallery">
-			<div class="row">
-				<div class="col-12 col-lg-6 mb-1">
-					<a href="{{ produit.image1 }}" data-lightbox="mygallery"><img src="{{ produit.image1 }}" alt="" class="img-fluid"></a>
-				</div>
-				<div class="col-12 col-lg-6 d-flex justify-content-between flex-column">
-					<div class="row mb-1">
-						<div class="col-12 col-sm-6 mb-1">
-							<a href="{{ produit.image2 }}" data-lightbox="mygallery" data-title><img src="{{ produit.image2 }}" alt="" class="img-fluid"></a>
-						</div>
-						<div class="col-12 col-sm-6 mb-1">
-							<a href="{{ produit.image3 }}" data-lightbox="mygallery" data-title><img src="{{ produit.image3 }}" alt="" class="img-fluid"></a>
-						</div>
-					</div>
-					<div class="row mb-1">
-						<div class="col-12 col-sm-6 mb-1">
-							<a href="{{ produit.image4 }}" data-lightbox="mygallery" data-title><img src="{{ produit.image4 }}" alt="" class="img-fluid"></a>
-						</div>
-						<div class="col-12 col-sm-6 mb-1">
-							<a href="{{ produit.image5 }}" data-lightbox="mygallery" data-title><img src="{{ produit.image5 }}" alt="" class="img-fluid"></a>
-						</div>
-					</div>
-				</div>
-			</div>
-		</div>
+		{% include "product/_images_gallery.html.twig" %}
 
 		<div class="sommaire d-none d-lg-flex justify-content-between mt-4">
 			<a href="#avantages">Avantages</a>

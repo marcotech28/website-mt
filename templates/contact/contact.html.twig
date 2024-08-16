@@ -103,6 +103,11 @@
 								{{ form_row(formView.message) }}
 							</div>
 						</div>
+						<div class="row mb-2">
+							<div class="col">
+								<div class="g-recaptcha" data-sitekey="{{ google_recaptcha_site_key }}"></div>
+							</div>
+						</div>
 
 						<p style="font-style: italic">Les champs marqués d’un * sont obligatoires.</p>
 
@@ -120,4 +125,8 @@
 			</div>
 		</div>
 	</div>
+{% endblock %}
+
+{% block javascripts %}
+    <script src="https://www.google.com/recaptcha/api.js" async defer></script>
 {% endblock %}

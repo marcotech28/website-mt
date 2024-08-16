@@ -4,6 +4,7 @@ namespace App\Controller;
 
 use App\Form\ContactFormType;
 use Symfony\Component\Mime\Email;
+use App\Service\RecaptchaValidator;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\Mailer\MailerInterface;
 use Symfony\Component\HttpFoundation\Response;
@@ -13,13 +14,19 @@ use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 class ContactController extends AbstractController
 {
     #[Route('/contact', name: 'contact')]
-    public function index(Request $request, MailerInterface $mailer): Response
+    public function index(Request $request, MailerInterface $mailer, RecaptchaValidator $recaptchaValidator): Response
     {
         $form = $this->createForm(ContactFormType::class);
 
         $form->handleRequest($request);
 
         if ($form->isSubmitted() && $form->isValid()) {
+
+            $recaptchaResponse = $request->request->get('g-recaptcha-response');
+            if (!$recaptchaValidator->validate($recaptchaResponse)) {
+                $this->addFlash('error', 'Le reCAPTCHA n\'a pas été validé.');
+                return $this->redirectToRoute('contact');
+            }
 
             $data = $form->getData();
 
@@ -64,10 +71,9 @@ class ContactController extends AbstractController
             return $this->redirectToRoute('homepage');
         }
 
-        return $this->render(
-            'contact/contact.html.twig',
-            [
-                'formView' => $form->createView()
+        return $this->render('contact/contact.html.twig', [
+                'formView' => $form->createView(),
+                'google_recaptcha_site_key' => $_ENV['GOOGLE_RECAPTCHA_SITE_KEY']
             ]
         );
     }

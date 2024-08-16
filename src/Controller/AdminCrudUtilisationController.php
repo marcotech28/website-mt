@@ -7,6 +7,7 @@ use App\Form\UtilisationType;
 use Doctrine\ORM\EntityManagerInterface;
 use App\Repository\UtilisationRepository;
 use Symfony\Component\Form\FormInterface;
+use Knp\Component\Pager\PaginatorInterface;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
@@ -18,10 +19,18 @@ use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 class AdminCrudUtilisationController extends AbstractController
 {
     #[Route('/', name: 'app_admin_crud_utilisation_index', methods: ['GET'])]
-    public function index(UtilisationRepository $utilisationRepository): Response
+    public function index(UtilisationRepository $utilisationRepository, PaginatorInterface $paginator, Request $request): Response
     {
+        $utilisations = $utilisationRepository->findAll();
+
+        $pagination = $paginator->paginate(
+            $utilisations,
+            $request->query->getInt('page', 1),
+            20
+        );
+
         return $this->render('admin_crud_utilisation/index.html.twig', [
-            'utilisations' => $utilisationRepository->findAll(),
+            'pagination' => $pagination,
         ]);
     }
 

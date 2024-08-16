@@ -5,42 +5,42 @@
 
 {% block body %}
 	<div class="container-xl">
-		<h1>Gestionnaire des utilisations (sous catégories)</h1>
+		<h4>Gestionnaire des utilisations (sous catégories)</h4>
 
-		<table class="table table-striped table-bordered">
-			<thead>
-				<tr>
-					<th>Id</th>
-					<th>Libelle</th>
-					<th>Image</th>
-					<th>Slug</th>
-					<th>Categorie</th>
-					<th>Meta description</th>
-					<th>actions</th>
-				</tr>
-			</thead>
-			<tbody>
-				{% for utilisation in utilisations %}
-					<tr>
-						<td>{{ utilisation.id }}</td>
-						<td>{{ utilisation.libelle }}</td>
-						<td>{{ utilisation.image }}</td>
-						<td>{{ utilisation.slug }}</td>
-						<td>{{ utilisation.categorie.libelle }}</td>
-						<td>{{ utilisation.metaDesc }}</td>
-						<td>
-							<a href="{{ path('app_admin_crud_utilisation_show', {'id': utilisation.id}) }}">show</a>
-							<a href="{{ path('app_admin_crud_utilisation_edit', {'id': utilisation.id}) }}">edit</a>
-						</td>
-					</tr>
-				{% else %}
-					<tr>
-						<td colspan="5">no records found</td>
-					</tr>
-				{% endfor %}
-			</tbody>
-		</table>
+		<a href="{{ path('app_admin_crud_utilisation_new') }}" class="btn btn-primary mb-3">Créer un nouveau type d'utilisation</a>
 
-		<a href="{{ path('app_admin_crud_utilisation_new') }}">Créer un nouveau type d'utilisation</a>
+		{% if pagination.items %}
+            <table class="table">
+                <thead>
+                    <tr>
+                        <th>Id</th>
+                        <th>Libelle</th>
+                        <th>Slug</th>
+						<th>Catégorie</th>
+                        <th>Actions</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {% for utilisation in pagination.items %}
+                        <tr>
+                            <td>{{ utilisation.id }}</td>
+                            <td>{{ utilisation.libelle }}</td>
+                            <td>{{ utilisation.slug }}</td>
+							<td>{{ utilisation.categorie.libelle }}</td>
+                            <td>
+                                <a href="{{ path('app_admin_crud_utilisation_show', {'id':utilisation.id}) }}" class="btn btn-outline-primary btn-sm">Voir</a>
+                                <a href="{{ path('app_admin_crud_utilisation_edit', {'id':utilisation.id}) }}" class="btn btn-outline-primary btn-sm">Éditer</a>
+                            </td>
+                        </tr>
+                    {% endfor %}
+                </tbody>
+            </table>
+
+            <div class="d-flex justify-content-center my-5">
+                {{ knp_pagination_render(pagination) }}
+            </div>
+        {% else %}
+            <p>no records found</p>
+        {% endif %}
 	</div>
 {% endblock %}

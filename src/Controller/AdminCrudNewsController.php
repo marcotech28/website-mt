@@ -5,10 +5,11 @@ namespace App\Controller;
 use App\Entity\News;
 // use App\Form\News1Type;
 use App\Form\NewsType;
-use App\Repository\NewsRepository;
 use Doctrine\ORM\EntityManager;
+use App\Repository\NewsRepository;
 use Doctrine\ORM\EntityManagerInterface;
 use Symfony\Component\Form\FormInterface;
+use Knp\Component\Pager\PaginatorInterface;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
@@ -18,10 +19,18 @@ use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 class AdminCrudNewsController extends AbstractController
 {
     #[Route('/', name: 'app_admin_crud_news_index', methods: ['GET'])]
-    public function index(NewsRepository $newsRepository): Response
+    public function index(NewsRepository $newsRepository, PaginatorInterface $paginator, Request $request): Response
     {
+        $news = $newsRepository->findAll();
+
+        $pagination = $paginator->paginate(
+            $news,
+            $request->query->getInt('page', 1),
+            10
+        );
+
         return $this->render('admin_crud_news/index.html.twig', [
-            'news' => $newsRepository->findAll(),
+            'pagination' => $pagination,
         ]);
     }
 

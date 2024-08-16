@@ -4,104 +4,43 @@
 {% endblock %}
 
 {% block body %}
+    <div class="container-xl">
+        <h4>Liste de nos produits</h4>
 
-	<div class="container-xxl">
-		<h1>Liste de nos produits</h1>
+        <a href="{{ path('app_admin_crud_produit_new') }}" class="btn btn-primary mb-3">Créer un nouveau produit</a>
 
-		<a href="{{ path('app_admin_crud_produit_new') }}">Créer un nouveau produit</a>
+        {% if pagination.items %}
+            <table class="table">
+                <thead>
+                    <tr>
+                        <th>Id</th>
+                        <th>Nom</th>
+                        <th>Prix</th>
+						<th>Catégorie</th>
+                        <th>Actions</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {% for produit in pagination.items %}
+                        <tr>
+                            <td>{{ produit.id }}</td>
+                            <td>{{ produit.nom }}</td>
+                            <td>{{ produit.prix }}€ HT</td>
+							<td>{{ produit.categorie.libelle }}</td>
+                            <td>
+                                <a href="{{ path('app_admin_crud_produit_show', {'id': produit.id}) }}" class="btn btn-outline-primary btn-sm">Voir</a>
+                                <a href="{{ path('app_admin_crud_produit_edit', {'id': produit.id}) }}" class="btn btn-outline-primary btn-sm">Éditer</a>
+                            </td>
+                        </tr>
+                    {% endfor %}
+                </tbody>
+            </table>
 
-		<p><br></p>
-
-
-		{% for produit in produits %}
-			<p>
-				<strong>Id :</strong>
-				{{ produit.id }}
-			</p>
-
-			<p>
-				<strong>Nom :</strong>
-				{{ produit.nom }}
-			</p>
-			<p>
-				<strong>Prix :</strong>
-				{{ produit.prix }}€ HT
-			</p>
-			<p>
-				<strong>Slug :</strong>
-				{{ produit.slug }}
-			</p>
-			<p>
-				<strong>Description :</strong>
-				{{ produit.description |slice(0, 50) ~ '...'}}
-			</p>
-			<p>
-				<strong>Courte description :</strong>
-				{{ produit.shortDescription|slice(0, 50) ~ '...' }}
-			</p>
-			<p>
-				<strong>META description :</strong>
-				{{ produit.metaDesc }}
-			</p>
-			<p>
-				<strong>Image 1 :</strong>
-				{{ produit.image1 }}
-			</p>
-			<p>
-				<strong>Image 2 :</strong>
-				{{ produit.image2 }}
-			</p>
-			<p>
-				<strong>Image 3 :</strong>
-				{{ produit.image3 }}
-			</p>
-			<p>
-				<strong>Image 4 :</strong>
-				{{ produit.image4 }}
-			</p>
-			<p>
-				<strong>Image 5 :</strong>
-				{{ produit.image5 }}
-			</p>
-			<p>
-				<strong>Video 1 :</strong>
-				{{ produit.video1 }}
-			</p>
-			<p>
-				<strong>Video 2 :</strong>
-				{{ produit.video2 }}
-			</p>
-			<p>
-				<strong>Fiche descriptive :</strong>
-				{{ produit.ficheDescriptive }}
-			</p>
-			<p>
-				<strong>Mots clés</strong>
-				{{ produit.motsCles }}
-			</p>
-			<p>
-				<strong>Caractéristiques :</strong>
-				{{ produit.caracteristiques }}
-			</p>
-			<p>
-				<strong>Libelle de la catégorie du produit :</strong>
-				{{ produit.categorie.libelle }}
-			</p>
-			<p>
-				<strong>Libelle de l'utilisation du produit :</strong>
-				{% if produit.utilisation.libelle is defined %}
-					{{ produit.utilisation.libelle }}
-				{% else %}
-					non définie
-				{% endif %}
-			</p>
-			<p>
-				<a href="{{ path('app_admin_crud_produit_show', {'id': produit.id}) }}">show</a>
-				<a href="{{ path('app_admin_crud_produit_edit', {'id': produit.id}) }}">edit</a>
-			</p>
-			<br>
-		{% else %}
-			<p>no records found</p>
-		{% endfor %}
-	</div>
+            <div class="d-flex justify-content-center my-5">
+                {{ knp_pagination_render(pagination) }}
+            </div>
+        {% else %}
+            <p>no records found</p>
+        {% endif %}
+    </div>
 {% endblock %}
