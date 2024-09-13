@@ -2,15 +2,23 @@
 
 namespace App\Controller;
 
-use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
+use App\Repository\FournisseurRepository;
+use App\Repository\CollaborateurRepository;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
+use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 
 class AboutController extends AbstractController
 {
     #[Route('/qui-sommes-nous', name: 'about')]
-    public function index(): Response
+    public function index(FournisseurRepository $fournisseurRepository, CollaborateurRepository $collaborateurRepository): Response
     {
-        return $this->render('about/about.html.twig', []);
+        $fournisseurs = $fournisseurRepository->findAll();
+        $collaborateurs = $collaborateurRepository->findAll();
+
+        return $this->render('about/about.html.twig', [
+            'fournisseurs' => $fournisseurs,
+            'collaborateurs' => $collaborateurs,
+        ]);
     }
 }

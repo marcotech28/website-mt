@@ -1,0 +1,47 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Collaborateur index{% endblock %}
+
+{% block body %}
+    <div class="container-xl">
+
+        <h1>Gestionnaire des collaborateurs</h1>
+
+        <a href="{{ path('app_collaborateur_new') }}" class="btn btn-primary mb-3">Créer un nouveau collaborateur</a>
+
+        {% if pagination.items %}
+            <table class="table">
+                <thead>
+                    <tr>
+                        <th>Id</th>
+                        <th>Nom</th>
+                        <th>Role</th>
+                        <th>Description</th>
+                        <th>Actions</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {% for collaborateur in pagination.items %}
+                        <tr>
+                            <td>{{ collaborateur.id }}</td>
+                            <td>{{ collaborateur.nom }}</td>
+                            <td>{{ collaborateur.role }}</td>
+                            <td>{{ collaborateur.description }}</td>
+                            <td>
+                                <a href="{{ path('app_collaborateur_show', {'id': collaborateur.id}) }}" class="btn btn-outline-primary btn-sm">Voir</a>
+                                <a href="{{ path('app_collaborateur_edit', {'id': collaborateur.id}) }}" class="btn btn-outline-primary btn-sm">Éditer</a>
+                            </td>
+                        </tr>
+                    {% endfor %}
+                </tbody>
+            </table>
+
+            <div class="d-flex justify-content-center my-5">
+                {{ knp_pagination_render(pagination) }}
+            </div>
+        {% else %}
+            <p>no records found</p>
+        {% endif %}
+
+    </div>
+{% endblock %}
