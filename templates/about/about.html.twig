@@ -45,26 +45,14 @@
 
 		<div class="nos-fournisseurs">
 			<div class="row h-100 fournisseur">
-				{% include "about/_about_marques_partenaires.html.twig" with {
-					'logo' : 'stricker.png',
-					'marque' : 'Stricker',
-					'contenu' : 'Depuis 1993, Stricker est le pionnier dans la fabrication des handbikes manuels, à assistance électrique et tout électrique. Son objectif : votre satisfaction.'
-				} %}
-				{% include "about/_about_marques_partenaires.html.twig" with {
-					'logo' : 'chaland.jpg',
-					'marque' : 'Chaland Palmieri',
-					'contenu' : 'Chaland-Palmieri, constructeur français depuis plus de 25 ans conçoit et produit un véhicule électrique tout terrain adapté aux PMR.'
-				} %}
-				{% include "about/_about_marques_partenaires.html.twig" with {
-					'logo' : 'vanraam.png',
-					'marque' : 'Van Raam',
-					'contenu' : 'Van Raam, marque néerlandaise, propose depuis 1909 des vélos et de tricycles adaptés aux personnes en situation de handicap.'
-				} %}
-				{% include "about/_about_marques_partenaires.html.twig" with {
-					'logo' : 'moving-life.png',
-					'marque' : 'Moving Life',
-					'contenu' : 'Moving life, fabricant israélien, développe et conçoit le révolutionnaire scooter électrique pliable et transportable . Facile à transporter même en avion.'
-				} %}</div>
+				{% for fournisseur in fournisseurs %}
+					{% include "about/_about_marques_partenaires.html.twig" with {
+						'logo' : fournisseur.image,
+						'marque' : fournisseur.libelle,
+						'contenu' : fournisseur.description,
+					} %}
+				{% endfor %}
+			</div>
 
 			<div class="row">
 				<div class="col">
@@ -81,62 +69,15 @@
 		<div class="team-members">
 			<h3 style="padding-top: 8px">Notre équipe</h3>
 			<div class="row h-100">
-				{% include "about/_members.html.twig" with {
-					'profilePicture' : 'benjamin.png',
-					'nom' : 'Benjamin MARCONNET',
-					'fonction' : 'Gérant',
-					'presentationMember' : 'En recherche constante de solutions et produits innovants à proposer à nos clients.',
-					'linkedin' : 'https://fr.linkedin.com/in/benjamin-marconnet'
-				} %}
-
-				{% include "about/_members.html.twig" with {
-					'profilePicture' : 'luigi.png',
-					'nom' : 'Luigi LENFANT-HOUICHE',
-					'fonction' : 'Responsable commercial réseau BtoB',
-					'presentationMember' : 'En charge du développement commercial du réseau de prestataires de santé.',
-					'linkedin' : 'https://fr.linkedin.com/in/luigi-lenfant-houiche'
-				} %}
-
-				{% include "about/_members.html.twig" with {
-					'profilePicture' : 'emmanuelle.jpg',
-					'nom' : 'Emmanuelle BENAZET',
-					'fonction' : 'Assistante ADV et commerciale',
-					'presentationMember' : 'Assure le bon déroulement des opérations administratives',
-					'linkedin' : '#'
-				} %}
-
-				{% include "about/_members.html.twig" with {
-					'profilePicture' : 'charlie.png',
-					'nom' : 'Charlie NASSAR',
-					'fonction' : 'Responsable stratégie et marketing',
-					'presentationMember' : 'Participe à la stratégie générale de l\'entreprise et à la communication.',
-					'linkedin' : 'https://fr.linkedin.com/in/charlie-nassar-ba68b8165'
-				} %}
-
-
-				{% include "about/_members.html.twig" with {
-					'profilePicture' : 'victor.jpg',
-					'nom' : 'Victor Bruneau',
-					'fonction' : 'Conseiller technique handicap',
-					'presentationMember' : 'Commercial en charge de la prospection et du développement sur la gamme des tricycles.',
-					'linkedin' : 'https://www.linkedin.com/in/victor-bruneau/'
-				} %}
-
-				{% include "about/_members.html.twig" with {
-					'profilePicture' : 'ismael.jpg',
-					'nom' : 'Ismael Ancelin',
-					'fonction' : 'Conseiller technique handicap',
-					'presentationMember' : 'Commercial en charge de la prospection et du développement du réseau de prestataires de santé',
-					'linkedin' : 'https://www.linkedin.com/in/isma%C3%ABl-ancelin-10979527b/'
-				} %}
-				
-				{% include "about/_members.html.twig" with {
-					'profilePicture' : 'manon.png',
-					'nom' : 'Manon Chesneau',
-					'fonction' : 'Chargée de Communication',
-					'presentationMember' : 'En charge de mettre en œuvre la stratégie de communication ainsi que l\'analyse des performances de nos opérations',
-					'linkedin' : 'https://www.linkedin.com/in/manon-chesneau-/'
-				}%}
+				{% for collaborateur in collaborateurs %}
+					{% include "about/_members.html.twig" with {
+						'profilePicture' : collaborateur.image,
+						'nom' : collaborateur.nom,
+						'fonction' : collaborateur.role,
+						'presentationMember' : collaborateur.description,
+						'linkedin' : collaborateur.linkedin
+					}%}
+				{% endfor %}
 			</div>
 		</div>
 	</div>
