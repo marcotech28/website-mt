@@ -2,6 +2,7 @@
 
 namespace App\Controller;
 
+use App\Repository\FournisseurRepository;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\IsGranted;
@@ -11,8 +12,12 @@ class EspaceProController extends AbstractController
 {
     #[Route('/espace-professionnel', name: 'espacepro')]
     #[IsGranted('ROLE_USER')]
-    public function index(): Response
+    public function index(FournisseurRepository $fournisseurRepository): Response
     {
-        return $this->render('espace_pro/espacepro.html.twig', []);
+        $fournisseurs = $fournisseurRepository->findAllWithDocuments();
+
+        return $this->render('espace_pro/espacepro.html.twig', [
+            'fournisseurs' => $fournisseurs
+        ]);
     }
 }

@@ -3,7 +3,7 @@
 		<a href="{{path('product_show_no_utilisation', {'category_slug' : p.categorie.slug, 'slug' : p.slug, 'id' : p.id })}}">
 			<div class="card h-100">
 				<div class="pictureProduct">
-					<img src="{{ p.image1 }}" alt="">
+					<img src="{{ p.images|first.url }}" alt="">
 				</div>
 				<div class="card-body">
 					<h4 class="d-inline-block mr-2" style="padding: 0">
@@ -37,7 +37,7 @@
 		<a href="{{path('product_show', {'category_slug' : p.categorie.slug, 'utilisation_slug' : p.utilisation.slug, 'slug' : p.slug, 'id' : p.id })}}">
 			<div class="card h-100">
 				<div class="pictureProduct">
-					<img src="{{ p.image1 }}" alt="">
+					<img src="{{ p.images|first.url }}" alt="">
 				</div>
 				<div class="card-body">
 					<h4 class="d-inline-block mr-2" style="padding: 0">

@@ -47,6 +47,12 @@ class AdminCrudProduitController extends AbstractController
 
         if ($form->isSubmitted() && $form->isValid()) {
 
+            // Gestion des images
+            foreach ($produit->getImages() as $image) {
+                $image->setProduit($produit);
+                $entityManager->persist($image);
+            }
+
             $entityManager->persist($produit);
             $entityManager->flush();
 

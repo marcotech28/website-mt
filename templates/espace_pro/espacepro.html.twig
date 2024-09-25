@@ -18,47 +18,27 @@
 				des matériels de mobilité que nous proposons.</p>
 			<p>Nous sommes convaincus que ces ressources seront d'une grande aide pour les professionnels qui cherchent à approfondir leurs connaissances sur les produits que nous offrons. Nous espérons que ces documents faciliteront la prise de décision et contribueront à améliorer la qualité de service que nous fournissons à nos clients.</p>
 
+			<div class="documents-fournisseurs">
+				{% for fournisseur in fournisseurs %}
+					<div class="row">
+						<div class="col-12 mx-auto">
+							<div class="d-flex justify-content-between align-items-center mb-3 mt-5">
+							<h4 class="mb-0">{{ fournisseur.libelle }}</h4>
+							<img src="{{ fournisseur.image }}" alt="Image de {{ fournisseur.libelle }}" class="img-fluid" style="max-width: 50px;">
+						</div>
+							{% for document in fournisseur.documents %}
+								<li class="list-group-item d-flex justify-content-between align-items-center mb-2">
+									<span>{{ document.name }}</span>
+									<a href="{{ document.url }}" class="btn btn-sm btn-outline-primary" download>Télécharger</a>
+								</li>
+							{% endfor %}
 
-			Tarifs Stricker
-			{% include "espace_pro/_doc.html.twig" with  {
-			'doc' : '',
-			'photo' : 'stricker.png'
-		} %}
-
-			<br>
-
-			Fiche de mesure Stricker
-			{% include "espace_pro/_doc.html.twig" with  {
-			'doc' : '',
-			'photo' : 'fiche-mesure-stricker.png'
-		} %}
-
-
-			<br>
-			Tarifs Draisin
-			{% include "espace_pro/_doc.html.twig" with  {
-			'doc' : '',
-			'photo' : 'draisin.jpg'
-		} %}
-
-			<br>
-
-			Tarifs Atto
-			{% include "espace_pro/_doc.html.twig" with  {
-			'doc' : '',
-			'photo' : 'moving-life.png'
-		} %}
-
-			<br>
-
-			Tarifs transat de plage
-			{% include "espace_pro/_doc.html.twig" with  {
-			'doc' : '',
-			'photo' : 'transat-plage.png'
-		} %}
-
-			<br>
-		</div>
-
+						</ul>
+						</div>
+					</div>
+				{% endfor %}
+			</div>
+			
+    	</div>
 	</div>
 {% endblock %}
