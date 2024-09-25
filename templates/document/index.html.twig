@@ -1,0 +1,46 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Document index{% endblock %}
+
+{% block body %}
+
+    <div class="container-xl">
+        <h1>Gestionnaire des documents</h1>
+
+        <a href="{{ path('app_document_new') }}" class="btn btn-primary mb-3">Créer un nouveau document</a>
+
+        {% if pagination.items %}
+            <table class="table">
+                <thead>
+                    <tr>
+                        <th>Id</th>
+                        <th>Name</th>
+                        <th>Url</th>
+                        <th>Actions</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {% for document in pagination.items %}
+                        <tr>
+                            <td>{{ document.id }}</td>
+                            <td>{{ document.name }}</td>
+                            <td>{{ document.url }}</td>
+                            <td>
+                                <a href="{{ path('app_document_show', {'id': document.id}) }}" class="btn btn-outline-primary btn-sm">Voir</a>
+                                <a href="{{ path('app_document_edit', {'id': document.id}) }}" class="btn btn-outline-primary btn-sm">Éditer</a>
+                            </td>
+                        </tr>
+                    {% endfor %}
+                </tbody>
+            </table>
+
+            <div class="d-flex justify-content-center my-5">
+                {{ knp_pagination_render(pagination) }}
+            </div>
+        {% else %}
+            <p>no records found</p>
+        {% endif %}
+    </div>
+    
+
+{% endblock %}

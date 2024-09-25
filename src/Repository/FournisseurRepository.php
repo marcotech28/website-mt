@@ -45,4 +45,15 @@ class FournisseurRepository extends ServiceEntityRepository
 //            ->getOneOrNullResult()
 //        ;
 //    }
+
+    public function findAllWithDocuments(): array
+    {
+        return $this->createQueryBuilder('f')
+            ->leftJoin('f.documents', 'd')
+            ->addSelect('d')
+            ->where('d.id IS NOT NULL') // S'assure que le fournisseur a au moins un document
+            ->getQuery()
+            ->getResult();
+    }
+
 }
