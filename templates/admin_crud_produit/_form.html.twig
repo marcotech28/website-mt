@@ -29,7 +29,7 @@
 	
 
 	{# Place for rendering the images #}
-	<div id="image-collection" data-prototype="{{ form_widget(form.images.vars.prototype)|e('html_attr') }}">
+	<div id="image-collection" data-prototype="{{ form_widget(form.images.vars.prototype)|e('html_attr') }}" data-new-image-index="{{ form.images|length }}">
 		{% for imageForm in form.images %}
 			<div class="image-form">
 				{{ form_row(imageForm.url) }}

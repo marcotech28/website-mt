@@ -20,12 +20,6 @@ class ProductController extends AbstractController
             'slug' => $slug
         ]);
 
-        // $myProducts = $product->getProduitsSimilaires();
-        // $myProducts->initialize();  // Force Doctrine à charger les produits similaires
-
-        // dd($myProducts);
-
-
         if (!$product) {
             throw $this->createNotFoundException("Le produit demandé n'existe pas");
         }
@@ -34,11 +28,5 @@ class ProductController extends AbstractController
             'produit' => $product
         ]);
     }
-
-    // #[Route('/products', name: 'product_product')]
-    // public function listeProduits(): Response
-    // {
-    //     return $this->render('product/liste.html.twig');
-    // }
 
 }
