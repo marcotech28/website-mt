@@ -121,10 +121,20 @@ class AdminCrudProduitController extends AbstractController
     }
 
     #[Route('/{id}', name: 'app_admin_crud_produit_delete', methods: ['POST'])]
-    public function delete(Request $request, Produit $produit, ProduitRepository $produitRepository): Response
+    public function delete(Request $request, Produit $produit, ProduitRepository $produitRepository, EntityManagerInterface $entityManager): Response
     {
         if ($this->isCsrfTokenValid('delete' . $produit->getId(), $request->request->get('_token'))) {
+            // On commence par supprimer toutes les images associées au produit
+            // On peut supprimer les 4 prochaines lignes et à la place mettre cascade: ['remove'] dans l'entité Produit
+            foreach ($produit->getImages() as $image) {
+                $entityManager->remove($image);
+            }
+            $entityManager->flush();
+
+            // Ensuite on supprime le produit
             $produitRepository->remove($produit, true);
+
+            $this->addFlash('success', 'Le produit a bien été supprimé.');
         }
 
         return $this->redirectToRoute('app_admin_crud_produit_index', [], Response::HTTP_SEE_OTHER);
