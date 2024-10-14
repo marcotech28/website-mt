@@ -56,11 +56,14 @@
 
 			{% block body %}{% endblock %}
 
+			{% include "shared/_cookie-consent.html.twig" %}
+
 			{% include "shared/footer.html.twig" %}
 		</div>
 
 		<script src="{{ asset('lightbox-plus-jquery.min.js') }}"></script>
 		<script src="https://unpkg.com/@lottiefiles/lottie-player@1.5.7/dist/lottie-player.js"></script>
+		<script src="{{ asset('js/cookie-consent.js') }}"></script>
 
 
 	</body>

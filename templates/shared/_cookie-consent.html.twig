@@ -1,0 +1,52 @@
+<!-- Modal améliorée -->
+<div class="modal top fade" id="cookieConsentModal" tabindex="-1" aria-labelledby="cookieConsentModalLabel" aria-hidden="true" data-mdb-backdrop="static" data-mdb-keyboard="false">
+    <div class="modal-dialog modal-xl">
+        <div class="modal-content d-block text-start p-3" style="border-radius: 15px;">
+            <div class="modal-header d-block text-center">
+                <h5 class="modal-title" id="cookieConsentModalLabel" style="font-size: 24px; font-weight: bold;">Consentement aux cookies 🍪</h5>
+                <p class="mt-3">
+                    Ce site utilise des cookies pour assurer la meilleure expérience utilisateur possible.
+                </p>
+                <p>
+                    <a href="{{ path('cookies') }}" style="color: #0F434E; font-weight: bold;">En savoir plus sur les cookies</a>
+                </p>
+            </div>
+            <div class="modal-body">
+                <!-- Necessary cookies section -->
+                <div class="form-check mb-4 d-flex align-items-center">
+                    <div class="mr-3">
+                        <input class="form-check-input" type="checkbox" value="necessary" id="necessary" checked disabled />
+                    </div>
+                    <div>
+                        <label class="form-check-label" for="necessary">
+                            <p style="font-size: 18px;">
+                                <strong>Cookies nécessaires</strong>
+                                <muted> (toujours activés)</muted>
+                            </p>
+                        </label>
+                    </div>
+                </div>
+
+                <!-- Marketing cookies section -->
+                <div class="form-check mb-4 d-flex align-items-center">
+                    <div class="mr-3">
+                        <input class="form-check-input" type="checkbox" value="marketing" id="marketing" checked />
+                    </div>
+                    <div>
+                        <label class="form-check-label" for="marketing">
+                            <p style="font-size: 18px;">
+                                <strong>Cookies marketing</strong>
+                                <muted> (nécessaires pour afficher Google Maps, qui peut collecter des données à des fins publicitaires et de suivi)</muted>
+                            </p>
+                        </label>
+                    </div>
+                </div>
+            </div>
+            <div class="modal-footer justify-content-center">
+                <button type="button" class="btn btn-outline-primary" id="acceptCookies" data-mdb-dismiss="modal" style="border-radius: 20px; padding: 10px 20px;">
+                    Accepter
+                </button>
+            </div>
+        </div>
+    </div>
+</div>
