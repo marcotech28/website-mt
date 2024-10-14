@@ -119,7 +119,8 @@
 
 					{# 2eme colonne #}
 					<div class="col-12 col-sm-5 col-lg-5 d-block googlemaps">
-						<iframe src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d168885.17109920242!2d1.5924522480468892!3d48.593938518257396!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0xc4a74471adfe7ab2!2sMARCONNET%20TECHNOLOGIES%E2%84%A2!5e0!3m2!1sfr!2sfr!4v1672922455052!5m2!1sfr!2sfr" width="100%" height="90%" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+						<!-- Conteneur vide pour Google Maps, il sera rempli par JS si le consentement est donné -->
+						<div id="map-container" style="width: 100%; height: 90%;"></div>
 					</div>
 				</div>
 			</div>
@@ -129,4 +130,31 @@
 
 {% block javascripts %}
     <script src="https://www.google.com/recaptcha/api.js" async defer></script>
+
+	<script>
+        document.addEventListener('DOMContentLoaded', function () {
+            // Vérifier le consentement des cookies dans le localStorage
+            const consentData = JSON.parse(localStorage.getItem('cookieConsent'));
+
+            // Si le consentement pour les cookies marketing est donné, charger Google Maps
+            if (consentData && consentData.marketing) {
+                loadGoogleMaps();
+            }
+
+            // Fonction pour charger Google Maps dynamiquement
+            function loadGoogleMaps() {
+                const iframe = document.createElement('iframe');
+                iframe.src = "https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d168885.17109920242!2d1.5924522480468892!3d48.593938518257396!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0xc4a74471adfe7ab2!2sMARCONNET%20TECHNOLOGIES%E2%84%A2!5e0!3m2!1sfr!2sfr!4v1672922455052!5m2!1sfr!2sfr";
+                iframe.width = "100%";
+                iframe.height = "100%";
+                iframe.style.border = "0";
+                iframe.allowFullscreen = "";
+                iframe.loading = "lazy";
+                iframe.referrerpolicy = "no-referrer-when-downgrade";
+
+                // Ajouter l'iframe dans le conteneur
+                document.getElementById('map-container').appendChild(iframe);
+            }
+        });
+    </script>
 {% endblock %}
