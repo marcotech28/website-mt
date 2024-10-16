@@ -30,10 +30,15 @@ class ProduitType extends AbstractType
             ->add('description', TextareaType::class, [
                 'attr' => [
                     'rows' => '10',
-                    'class' => 'form-control'
+                    'class' => 'tinymce'
                 ],
             ])
-            ->add('shortDescription')
+            ->add('shortDescription', TextareaType::class, [
+                'attr' => [
+                    'rows' => '3',
+                    'class' => 'tinymce'
+                ],
+            ])
             ->add('metaDesc')
             ->add('motsCles')
             ->add('avantages')

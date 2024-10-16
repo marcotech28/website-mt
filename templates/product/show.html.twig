@@ -56,9 +56,9 @@
 			<h5>
 				<span class="badge bg-primary">{{produit.marque.libelle}}</span>
 			</h5>
-			<p>
-				{{produit.shortDescription}}
-			</p>
+			<div>
+				{{produit.shortDescription|raw}}
+			</div>
 			<p>
 				<a href="#menu">Voir plus d'informations ></a>
 			</p>
@@ -92,9 +92,9 @@
 
 		<div class="description" id="description">
 			<h2>Description du produit</h2>
-			{% for description in produit.description|split(';') %}
-				<p>{{ description }}</p>
-			{% endfor %}
+			<div>
+				{{produit.description|raw}}
+			</div>
 		</div>
 
 		<div class="caracteristiques" id="caracteristiques">

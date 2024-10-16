@@ -34,8 +34,9 @@
 
 
 		<h2>{{categorie.libelle}}</h2>
-		{# <p>{{categorie.description|nl2br }}</p> #}
-		{{ categorie.description|raw }}
+		<div class="mb-5">
+			{{ categorie.description|raw }}
+		</div>
 
 	</div>
 

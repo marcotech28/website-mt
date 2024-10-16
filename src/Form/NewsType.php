@@ -24,14 +24,15 @@ class NewsType extends AbstractType
             ->add('contenu', TextareaType::class, [
                 'attr' => [
                     'rows' => '7',  // Définit le nombre de lignes visibles sans avoir à défiler
-                    'class' => 'form-control'  // Classe Bootstrap pour styliser le textarea
+                    'class' => 'tinymce'  // Classe Bootstrap pour styliser le textarea
                 ],
+                'required' => false
             ])
             ->add('image', TextareaType::class, [
                 'label' => 'Image',
                 'required' => false, // pour autoriser l'envoi de formulaire sans la fiche descriptive
                 'attr' => [
-                    'class' => 'form-control'
+                    'class' => ''
                 ],
             ])
             ->add('metaDesc')
