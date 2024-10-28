@@ -110,17 +110,17 @@
                         {{ form_row(formView.message) }}
                     </div>
                 </div>
-                
-                {{ form_row(formView.recaptcha) }}
+
                 <div class="row mb-2">
                     <div class="col">
                         <div class="g-recaptcha" data-sitekey="{{ google_recaptcha_site_key }}"></div>
                     </div>
                 </div>
-            </div>
-            <p style="font-style: italic">Les champs marqués d'un * sont obligatoires.</p>
 
-            <button type="submit" class="btn btn-primary form-contact">Demander une démonstration</button>
+                <p style="font-style: italic">Les champs marqués d'un * sont obligatoires.</p>
+
+                <button type="submit" class="btn btn-primary form-contact">Demander une démonstration</button>
+            </div>
             {{ form_end(formView) }}
         </div>
     </div>
