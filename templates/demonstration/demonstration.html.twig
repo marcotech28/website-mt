@@ -61,10 +61,10 @@
 
     <div class="form-demonstration">
         <div class="col-12 col-sm-11 mx-auto">
+            {{ form_start(formView, {'method': 'POST'}) }}
             <div class="col-lg-7 mb-5 mb-lg-0">
                 <div class="row mb-2">
                     <div class="col">
-                        {{ form_start(formView, {'method': 'POST'}) }}
                         {{ form_widget(formView.typeUser) }}
                     </div>
                 </div>
@@ -110,6 +110,7 @@
                         {{ form_row(formView.message) }}
                     </div>
                 </div>
+
 
                 <div class="row mb-2">
                     <div class="col">
