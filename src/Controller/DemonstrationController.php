@@ -2,7 +2,6 @@
 
 namespace App\Controller;
 
-use Psr\Log\LoggerInterface;
 use Symfony\Component\Mime\Email;
 use App\Form\DemonstrationFormType;
 use App\Service\RecaptchaValidator;
@@ -15,7 +14,7 @@ use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 class DemonstrationController extends AbstractController
 {
     #[Route('/demonstration', name: 'demonstration')]
-    public function index(Request $request, MailerInterface $mailer, RecaptchaValidator $recaptchaValidator, LoggerInterface $logger): Response
+    public function index(Request $request, MailerInterface $mailer, RecaptchaValidator $recaptchaValidator): Response
     {
         $form = $this->createForm(DemonstrationFormType::class);
 
@@ -23,7 +22,6 @@ class DemonstrationController extends AbstractController
 
         if ($form->isSubmitted() && $form->isValid()) {
             $recaptchaResponse = $request->request->get('g-recaptcha-response');
-            $logger->info('Token reCAPTCHA reçu:', ['token' => $recaptchaResponse]);
             
             if (!$recaptchaResponse) {
                 $this->addFlash('error', 'Le reCAPTCHA est requis.');
