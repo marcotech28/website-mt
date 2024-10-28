@@ -22,6 +22,12 @@ class DemonstrationController extends AbstractController
 
         if ($form->isSubmitted() && $form->isValid()) {
             $recaptchaResponse = $request->request->get('g-recaptcha-response');
+            
+            if (!$recaptchaResponse) {
+                $this->addFlash('error', 'Le reCAPTCHA est requis.');
+                return $this->redirectToRoute('demonstration');
+            }
+
             if (!$recaptchaValidator->validate($recaptchaResponse)) {
                 $this->addFlash('error', 'Le reCAPTCHA n\'a pas été validé.');
                 return $this->redirectToRoute('demonstration');
