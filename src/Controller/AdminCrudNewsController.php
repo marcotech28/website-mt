@@ -3,7 +3,6 @@
 namespace App\Controller;
 
 use App\Entity\News;
-// use App\Form\News1Type;
 use App\Form\NewsType;
 use Doctrine\ORM\EntityManager;
 use App\Repository\NewsRepository;

@@ -36,14 +36,14 @@ class UtilisationType extends AbstractType
             ])
             ->add('texteDeFin', TextareaType::class, [
                 'attr' => [
-                    'rows' => '7',  // Définit le nombre de lignes visibles sans avoir à défiler
-                    'class' => 'form-control'  // Classe Bootstrap pour styliser le textarea
+                    'rows' => '7', 
+                    'class' => 'tinymce'
                 ],
             ])
             ->add('description', TextareaType::class, [
                 'attr' => [
-                    'rows' => '7',  // Définit le nombre de lignes visibles sans avoir à défiler
-                    'class' => 'form-control'  // Classe Bootstrap pour styliser le textarea
+                    'rows' => '7', 
+                    'class' => 'tinymce'
                 ],
             ]);
     }

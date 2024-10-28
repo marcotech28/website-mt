@@ -367,9 +367,8 @@ footer a:hover {
 
 /* -- TITRES -- */
 
-h1 {
+.homepage h1 {
     line-height: 1.2;
-
     color: white;
     border-bottom: 1px solid white;
     font-size: 56px;

@@ -1,14 +1,14 @@
-{{form_start(form, {'attr': {'novalidate': 'novalidate'}})}}
-{{ form_errors(form) }}
-{{ form_row(form.titre, {'attr' : {'class' : 'form-control'}}) }}
-{{ form_row(form.sousTitre, {'attr' : {'class' : 'form-control'}}) }}
-{{ form_row(form.titreSlug, {'attr' : {'class' : 'form-control'}}) }}
-{{ form_row(form.contenu, {'attr' : {'class' : 'form-control'}}) }}
-{{ form_row(form.image, {'attr' : {'class' : 'form-control'}}) }}
+{{form_start(form)}}
+    {{ form_errors(form) }}
+    {{ form_row(form.titre) }}
+    {{ form_row(form.sousTitre) }}
+    {{ form_row(form.titreSlug) }}
+    {{ form_row(form.contenu) }}
+    {{ form_row(form.image) }}
 
-{{ form_row(form.metaDesc, {'attr' : {'class' : 'form-control'}}) }}
-{{ form_row(form.date, {'attr' : {'class' : 'form-control'}}) }}
-{{ form_row(form.auteur, {'attr' : {'class' : 'form-control'}}) }}
+    {{ form_row(form.metaDesc) }}
+    {{ form_row(form.date) }}
+    {{ form_row(form.auteur) }}
 
 <button class="btn btn-primary">{{ button_label|default('Save') }}</button>
 {{ form_end(form) }}

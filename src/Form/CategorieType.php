@@ -18,14 +18,14 @@ class CategorieType extends AbstractType
             ->add('slug')
             ->add('description', TextareaType::class, [
                 'attr' => [
-                    'rows' => '10',  // Définit le nombre de lignes visibles sans avoir à défiler
-                    'class' => 'form-control'  // Classe Bootstrap pour styliser le textarea
+                    'rows' => '5',
+                    'class' => 'tinymce'
                 ],
             ])
             ->add('texteDeFin', TextareaType::class, [
                 'attr' => [
-                    'rows' => '10',  // Définit le nombre de lignes visibles sans avoir à défiler
-                    'class' => 'form-control'  // Classe Bootstrap pour styliser le textarea
+                    'rows' => '5',
+                    'class' => 'tinymce' 
                 ],
             ])
             ->add('metaDesc')

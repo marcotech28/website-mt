@@ -1,10 +1,10 @@
 {{form_start(form, {'attr': {'novalidate': 'novalidate'}})}}
 {{ form_errors(form) }}
-{{ form_row(form.libelle, {'attr' : {'class' : 'form-control'}}) }}
-{{ form_row(form.slug, {'attr' : {'class' : 'form-control'}}) }}
-{{ form_row(form.description, {'attr' : {'class' : 'form-control'}}) }}
-{{ form_row(form.texteDeFin, {'attr' : {'class' : 'form-control'}}) }}
-{{ form_row(form.rang, {'attr' : {'class' : 'form-control'}}) }}
-{{ form_row(form.metaDesc, {'attr' : {'class' : 'form-control'}}) }}
+{{ form_row(form.libelle) }}
+{{ form_row(form.slug) }}
+{{ form_row(form.description) }}
+{{ form_row(form.texteDeFin) }}
+{{ form_row(form.rang) }}
+{{ form_row(form.metaDesc) }}
 <button class="btn">{{ button_label|default('Save') }}</button>
 {{ form_end(form) }}

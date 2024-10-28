@@ -12,3 +12,8 @@
 		<a href="{{ path('app_admin_crud_categorie_index') }}">Retour à la liste des catégories</a>
 	</div>
 {% endblock %}
+
+{% block javascripts %}
+	<script src="https://cdn.tiny.cloud/1/l0pzn1807q2e1dmwlw0ejix4dbjl5om7kcztlm43h6k72f8h/tinymce/7/tinymce.min.js" referrerpolicy="origin"></script>
+	<script src="{{ asset('js/tinymce-basic-config.js') }}"></script>
+{% endblock %}
