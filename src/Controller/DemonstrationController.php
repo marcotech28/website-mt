@@ -5,7 +5,6 @@ namespace App\Controller;
 use Symfony\Component\Mime\Email;
 use App\Form\DemonstrationFormType;
 use App\Service\RecaptchaValidator;
-use Psr\Log\LoggerInterface;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\Mailer\MailerInterface;
 use Symfony\Component\HttpFoundation\Response;
@@ -15,20 +14,13 @@ use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 class DemonstrationController extends AbstractController
 {
     #[Route('/demonstration', name: 'demonstration')]
-    public function index(Request $request, MailerInterface $mailer, RecaptchaValidator $recaptchaValidator, LoggerInterface $loggerInterface): Response
+    public function index(Request $request, MailerInterface $mailer, RecaptchaValidator $recaptchaValidator): Response
     {
         $form = $this->createForm(DemonstrationFormType::class);
 
         $form->handleRequest($request);
 
         if ($form->isSubmitted() && $form->isValid()) {
-            $loggerInterface->error('Détails de la requête HTTP', [
-                'method' => $request->getMethod(),
-                'uri' => $request->getRequestUri(),
-                'headers' => $request->headers->all(),
-                'parameters' => $request->request->all(),
-            ]);
-
             $recaptchaResponse = $request->request->get('g-recaptcha-response');
             
             if (!$recaptchaResponse) {
