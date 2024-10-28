@@ -52,7 +52,7 @@ class DemonstrationController extends AbstractController
 
             $monemail = (new Email())
                 ->from($email)
-                ->to('antonin.cavanne@outlook.fr')
+                ->to('info@marconnet-technologies.com')
                 ->subject('Demande de démonstration')
                 ->html("
                     <p><strong>Type d'utilisateur:</strong> {$typeUser}</p>
