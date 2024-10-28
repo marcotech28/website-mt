@@ -110,6 +110,8 @@
                         {{ form_row(formView.message) }}
                     </div>
                 </div>
+                
+                {{ form_row(formView.recaptcha) }}
                 <div class="row mb-2">
                     <div class="col">
                         <div class="g-recaptcha" data-sitekey="{{ google_recaptcha_site_key }}"></div>
