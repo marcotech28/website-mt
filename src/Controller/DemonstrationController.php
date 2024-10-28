@@ -22,7 +22,11 @@ class DemonstrationController extends AbstractController
         $form->handleRequest($request);
 
         if ($form->isSubmitted() && $form->isValid()) {
-            $loggerInterface->info($request);
+            $loggerInterface->info('Requête soumise', [
+                'method' => $request->getMethod(),
+                'uri' => $request->getRequestUri(),
+                'parameters' => $request->request->all(),
+            ]);
             $recaptchaResponse = $request->request->get('g-recaptcha-response');
             
             if (!$recaptchaResponse) {
