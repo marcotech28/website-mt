@@ -52,7 +52,7 @@ class ContactController extends AbstractController
             $message = $data['message'];
 
             $monemail = new Email();
-            $monemail->from($email)
+            $monemail->from('info@marconnet-robotique.com')
                 ->to('info@marconnet-robotique.com')
                 ->subject($objet)
                 ->html("
