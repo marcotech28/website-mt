@@ -51,7 +51,7 @@ class DemonstrationController extends AbstractController
             $message = $data['message'];
 
             $monemail = (new Email())
-                ->from($email)
+                ->from('info@marconnet-robotique.com')
                 ->to('info@marconnet-robotique.com')
                 ->subject('Demande de démonstration')
                 ->html("
