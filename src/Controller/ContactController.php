@@ -52,8 +52,8 @@ class ContactController extends AbstractController
             $message = $data['message'];
 
             $monemail = new Email();
-            $monemail->from('communication@marconnet-technologies.com')
-                ->to('communication@marconnet-technologies.com')
+            $monemail->from('info@marconnet-robotique.com')
+                ->to('info@marconnet-robotique.com')
                 ->subject($objet)
                 ->html("
                     <p><strong>Type d'utilisateur:</strong> {$typeUser}</p>
