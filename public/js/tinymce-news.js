@@ -4,9 +4,9 @@ tinymce.init({
     // Core editing features
     'anchor', 'autolink', 'charmap', 'codesample', 'emoticons', 'image', 'link', 'lists', 'media', 'searchreplace', 'table', 'visualblocks', 'wordcount',
     // Your account includes a free trial of TinyMCE premium features
-    'checklist', 'mediaembed', 'casechange', 'export', 'formatpainter', 'pageembed', 'permanentpen', 'powerpaste', 'advtable', 'advcode', 'editimage', 'advtemplate', 'ai', 'mentions', 'tableofcontents', 'footnotes', 'autocorrect', 'inlinecss', 'markdown',
+    
   ],
-  toolbar: 'undo redo | blocks | bold italic underline strikethrough | link image media table | forecolor backcolor | spellcheckdialog a11ycheck | align | checklist bullist | emoticons charmap | removeformat',
+  toolbar: 'undo redo | blocks | bold italic underline strikethrough | link image media table | forecolor backcolor | spellcheckdialog a11ycheck | align | bullist | emoticons charmap | removeformat',
   menubar: false,  // Désactive la barre de menu
   tinycomments_mode: 'embedded',
   tinycomments_author: 'Author name',
