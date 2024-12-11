@@ -1,15 +1,15 @@
 {% extends 'base.html.twig' %}
 
-{% block title %}Edit News
+{% block title %}Mettre à jour l'actualité
 {% endblock %}
 
 {% block body %}
 	<div class="container-xl">
-		<h1>Edit News</h1>
+		<h1>Mettre à jour l'actualité</h1>
 
-		{{ include('admin_crud_news/_form.html.twig', {'button_label': 'Update'}) }}
+		{{ include('admin_crud_news/_form.html.twig', {'button_label': 'Mettre à jour'}) }}
 
-		<a href="{{ path('app_admin_crud_news_index') }}">back to list</a>
+		<a href="{{ path('app_admin_crud_news_index') }}">Retour à la liste des actualités</a>
 
 		{{ include('admin_crud_news/_delete_form.html.twig') }}
 	</div>
