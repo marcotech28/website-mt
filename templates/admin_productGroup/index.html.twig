@@ -1,0 +1,34 @@
+{% extends 'admin.html.twig' %}
+
+{% block title %}Liste des groupes de produits{% endblock %}
+
+{% block body %}
+
+<div class="container-xl mt-3 mb-3">
+    <h4>Liste des groupes de produits</h4>
+
+    <table class="table table-striped">
+        <thead>
+            <tr>
+                <th>Libellé</th>
+                <th>Actions</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for productGroup in productGroups %}
+                <tr>
+                    <td>{{ productGroup.libelle }}</td>
+                    <td>
+                        <a href="{{ path('app_admin_product_group_edit', {'id': productGroup.id}) }}" class="btn btn-primary btn-sm">Éditer</a>
+                    </td>
+                </tr>
+            {% else %}
+                <tr>
+                    <td colspan="2" class="text-center">Aucun groupe de produits trouvé</td>
+                </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+</div>
+
+{% endblock %}

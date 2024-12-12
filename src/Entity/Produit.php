@@ -128,10 +128,17 @@ class Produit
     #[ORM\OneToMany(mappedBy: 'produit', targetEntity: Image::class)]
     private Collection $images;
 
+    #[ORM\Column(nullable: true)]
+    private ?bool $isDraft = null;
+
+    #[ORM\ManyToMany(targetEntity: ProductGroup::class, mappedBy: 'produits')]
+    private Collection $productGroups;
+
     public function __construct()
     {
         $this->produitsSimilaires = new ArrayCollection();
         $this->images = new ArrayCollection();
+        $this->productGroups = new ArrayCollection();
     }
 
     public function getId(): ?int
@@ -451,6 +458,45 @@ class Produit
             if ($image->getProduit() === $this) {
                 $image->setProduit(null);
             }
+        }
+
+        return $this;
+    }
+
+    public function isIsDraft(): ?bool
+    {
+        return $this->isDraft;
+    }
+
+    public function setIsDraft(?bool $isDraft): static
+    {
+        $this->isDraft = $isDraft;
+
+        return $this;
+    }
+
+    /**
+     * @return Collection<int, ProductGroup>
+     */
+    public function getProductGroups(): Collection
+    {
+        return $this->productGroups;
+    }
+
+    public function addProductGroup(ProductGroup $productGroup): static
+    {
+        if (!$this->productGroups->contains($productGroup)) {
+            $this->productGroups->add($productGroup);
+            $productGroup->addProduit($this);
+        }
+
+        return $this;
+    }
+
+    public function removeProductGroup(ProductGroup $productGroup): static
+    {
+        if ($this->productGroups->removeElement($productGroup)) {
+            $productGroup->removeProduit($this);
         }
 
         return $this;

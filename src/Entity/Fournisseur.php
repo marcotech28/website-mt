@@ -28,6 +28,15 @@ class Fournisseur
     #[ORM\OneToMany(mappedBy: 'fournisseur', targetEntity: Document::class)]
     private Collection $documents;
 
+    #[ORM\Column(nullable: true)]
+    private ?bool $isVisibleOnAboutPage = null;
+
+    #[ORM\Column(length: 255, nullable: true)]
+    private ?string $website = null;
+
+    #[ORM\Column(nullable: true)]
+    private ?int $orderDisplay = null;
+
     public function __construct()
     {
         $this->documents = new ArrayCollection();
@@ -107,6 +116,42 @@ class Fournisseur
     public function __toString(): string
     {
         return $this->libelle ?? '';
+    }
+
+    public function isIsVisibleOnAboutPage(): ?bool
+    {
+        return $this->isVisibleOnAboutPage;
+    }
+
+    public function setIsVisibleOnAboutPage(?bool $isVisibleOnAboutPage): static
+    {
+        $this->isVisibleOnAboutPage = $isVisibleOnAboutPage;
+
+        return $this;
+    }
+
+    public function getWebsite(): ?string
+    {
+        return $this->website;
+    }
+
+    public function setWebsite(?string $website): static
+    {
+        $this->website = $website;
+
+        return $this;
+    }
+
+    public function getOrderDisplay(): ?int
+    {
+        return $this->orderDisplay;
+    }
+
+    public function setOrderDisplay(?int $orderDisplay): static
+    {
+        $this->orderDisplay = $orderDisplay;
+
+        return $this;
     }
 
 }

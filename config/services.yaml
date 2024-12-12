@@ -37,3 +37,7 @@ services:
   App\Service\RecaptchaValidator:
     arguments:
       $secretKey: '%google_recaptcha_secret_key%'
+
+twig:
+  globals:
+    current_route: '@request_stack'

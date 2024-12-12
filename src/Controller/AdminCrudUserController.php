@@ -61,25 +61,6 @@ class AdminCrudUserController extends AbstractController
         ]);
     }
 
-    // #[Route('/{id}/edit', name: 'app_admin_crud_user_edit', methods: ['GET', 'POST'])]
-    // public function edit(Request $request, User $user, UserRepository $userRepository): Response
-    // {
-
-    //     $form = $this->createForm(User1Type::class, $user);
-    //     $form->handleRequest($request);
-
-    //     if ($form->isSubmitted() && $form->isValid()) {
-    //         $userRepository->save($user, true);
-
-    //         return $this->redirectToRoute('app_admin_crud_user_index', [], Response::HTTP_SEE_OTHER);
-    //     }
-
-    //     return $this->renderForm('admin_crud_user/edit.html.twig', [
-    //         'user' => $user,
-    //         'form' => $form,
-    //     ]);
-    // }
-
     #[Route('/{id}/edit', name: 'app_admin_crud_user_edit', methods: ['GET', 'POST'])]
     public function edit(Request $request, User $user, UserRepository $userRepository, MailerInterface $mailer, EntityManagerInterface $em): Response
     {
@@ -96,10 +77,6 @@ class AdminCrudUserController extends AbstractController
 
         if ($form->isSubmitted() && $form->isValid()) {
             $userRepository->save($user, true);
-
-            // $unitOfWork = $em->getUnitOfWork();
-            // $originalData = $unitOfWork->getOriginalEntityData($user);
-            // $isConfirmedChanged = $originalData['isConfirmed'] !== $user->isisConfirmed();
 
             $confirmedApres = $user->isIsConfirmed();
 

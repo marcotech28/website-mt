@@ -40,15 +40,14 @@
 	{% endfor %}
 </div>
 
-
 <div class="container-fluid banniere">
 	<div class="container-xl h-100">
 		<div class="row h-100 d-flex align-items-center">
 			<div class="col-xl-5 col-lg-7 col-md-7 col-sm-12 col-xs-12">
 				<h1 class="text-center text-md-left homepage text-white">MARCONNET TECHNOLOGIES™</h1>
-				<p class="text-center text-md-left">Le spécialiste de la mobilité sur mesure dans le monde du handicap</p>
+				<p class="text-center text-md-left">Le spécialiste de la mobilité sur mesure</p>
 				<div class="d-none d-sm-block text-center text-md-left">
-					<a href="#prodpref" type="button" class="btn btn-primary btn-lg">Découvrir Marconnet technologies™</a>
+					<a href="{{ path('about') }}" type="button" class="btn btn-primary btn-lg">Découvrir Marconnet Technologies™</a>
 				</div>
 			</div>
 			<div class="d-none d-xl-block col-xl-7 overflow-hidden">
@@ -77,7 +76,7 @@
 			</div>
 		</div>
 		<div class="row h-100 row-pref">
-			{% for p in tabProduits %}
+			{% for p in favouritesProducts %}
 				<div class="col-12 col-sm-4 col-lg-3 mb-4 categorie">
 					{% include "product/_product_card.html.twig" %}
 				</div>
@@ -90,91 +89,61 @@
 </div>
 
 
-<div
-	class="container-xl">
+<div class="container-xl">
 
 	{# <div class="container-fluid" style=" border-right: 8px solid #0F434E; border-left: 8px solid #0F434E"> #}
 	<div id="mon-carousel" class="carousel slide d-none d-sm-block" data-bs-ride="carousel">
-		<ol class=" carousel-indicators">
-			<li data-bs-target="#mon-carousel" data-bs-slide-to="0" class="active"></li>
-			<li data-bs-target="#mon-carousel" data-bs-slide-to="1"></li>
-			<li data-bs-target="#mon-carousel" data-bs-slide-to="2"></li>
-		</ol>
+    <ol class="carousel-indicators">
+        {% for produit in carouselProduits %}
+            <li data-bs-target="#mon-carousel" data-bs-slide-to="{{ loop.index0 }}" class="{{ loop.first ? 'active' : '' }}"></li>
+        {% endfor %}
+    </ol>
 
-
-		<div class="carousel-inner justifier">
-
-			<div class="carousel-item active" data-bs-interval="10000">
-				<div class="container">
-					<div class="row p-5">
-						<div class="mx-auto col-md-8 col-lg-6 order-lg-last d-flex align-items-center">
-							<img class="img-fluid" src="{{asset('images/carousel/atto-sport.png')}}" alt=" ">
-						</div>
-						<div class="col-lg-6 mb-0 d-flex align-items-center" style="padding-left: 50px">
-							<div class="text-align-left align-self-center desc-carousel">
-								<h2>Scooter électrique Atto Sport</h2>
-								<p>Un moyen de transport pratique, écologique et compact pour vos déplacements urbains.</p>
-								<p class="d-none d-lg-block">Le scooter électrique pliable Atto Sport est le moyen de transport idéal pour vos déplacements urbains. Compact, léger et doté d'une batterie au lithium-ion offrant une autonomie d'environ 35 km, il est facile à ranger dans un coffre de voiture ou sous un bureau.
-									<br>Optez pour l'Atto Sport et profitez d'un mode de transport pratique, écologique et économique en ville.</p>
-								<a href="{{ path('product_show_no_utilisation', {'category_slug': 'scooters', 'slug': 'scooter-electrique-3-roues-atto-sport', 'id': 21}) }}">
+    <div class="carousel-inner">
+        {% for produit in carouselProduits %}
+            <div class="carousel-item {{ loop.first ? 'active' : '' }}" data-bs-interval="10000">
+                <div class="container">
+                    <div class="row p-5">
+                        <div class="mx-auto col-md-8 col-lg-6 order-lg-last d-flex align-items-center">
+                            {% set firstImage = produit.getImages|first %}
+                            <img class="img-fluid" src="{{ asset(firstImage.url) }}" alt="{{ produit.nom }}">
+                        </div>
+                        <div class="col-lg-6 mb-0 d-flex align-items-center" style="padding-left: 50px">
+                            <div class="text-align-left align-self-center desc-carousel">
+                                <h2>{{ produit.nom }}</h2>
+                                <p>{{ produit.shortDescription | raw }}</p>
+                                <a href="{% if produit.getUtilisation %}
+									{{ path('product_show', {
+										'category_slug': produit.getCategorie.slug,
+										'utilisation_slug': produit.getUtilisation.slug,
+										'slug': produit.slug,
+										'id': produit.id
+									}) }}
+								{% else %}
+									{{ path('product_show_no_utilisation', {
+										'category_slug': produit.getCategorie.slug,
+										'slug': produit.slug,
+										'id': produit.id
+									}) }}
+								{% endif %}">
 									<div class="btn btn-primary btn-lg">Voir le produit</div>
 								</a>
-							</div>
-						</div>
-					</div>
-				</div>
-			</div>
 
-			<div class="carousel-item" data-bs-interval="10000">
-				<div class="container">
-					<div class="row p-5">
-						<div class="mx-auto col-md-8 col-lg-6 order-lg-last">
-							<img class="img-fluid" src="{{asset('images/carousel/crossbike.jpg')}}" alt=" ">
-						</div>
-						<div class="col-lg-6 mb-0 d-flex align-items-center" style="padding-left: 50px">
-							<div class="text-align-left align-self-center desc-carousel">
-								<h2>Crossbike Stricker</h2>
-								<p>Une solution tout-terrain pour les personnes à mobilité réduite.</p>
-								<p class="d-none d-lg-block">La Crossbike de Stricker est une roue supplémentaire tout-terrain que l'on peut greffer à l'avant d'un fauteuil roulant, transformant ainsi le fauteuil en un handbike à trois roues.
-									<br>Cette solution innovante offre une plus grande liberté de mouvement pour explorer des terrains variés en ville ou en pleine nature.
-									<br>La Crossbike est facile à monter et à démonter, équipée de pneus larges et d'une suspension adaptée pour une conduite confortable et stable. Choisissez la Crossbike de Stricker pour une solution pratique, polyvalente et tout-terrain pour vos besoins de mobilité.</p>
-								<a href="{{ path('product_show_no_utilisation', {'category_slug': 'handbikes', 'utilisation_slug': 'handbikes-tout-electrique', 'slug': 'handbike-crossbike-16','id': 31}) }}">
-									<div class="btn btn-primary btn-lg">Voir le produit</div>
-								</a>
-							</div>
-						</div>
-					</div>
-				</div>
-			</div>
-			<div class="carousel-item" data-bs-interval="10000">
-				<div class="container">
-					<div class="row p-5">
-						<div class="mx-auto col-md-8 col-lg-6 order-lg-last">
-							<img class="img-fluid" src="{{asset('images/carousel/fun2go.png')}}" alt="">
-						</div>
-						<div class="col-lg-6 mb-0 d-flex align-items-center" style="padding-left: 50px">
-							<div class="text-align-left align-self-center desc-carousel">
-								<h2>Tricycle Fun 2 Go</h2>
-								<p>Un tricycle tandem pour des sorties à deux en toute convivialité</p>
-								<p class="d-none d-lg-block">Le Fun 2 Go de Van Raam est un tricycle tandem pour deux personnes, offrant une solution de mobilité conviviale et pratique pour vos sorties en ville ou en pleine nature.
-									<br>Disponible avec un moteur électrique en option et un siège pivotant pour un accès facile, le Fun 2 Go est également un choix idéal pour les personnes ayant des besoins de mobilité spécifiques.
-									<br>Optez pour le Fun 2 Go de Van Raam et profitez d'une solution de mobilité pratique pour vos sorties à deux.</p>
-								<a href="{{ path('product_show_no_utilisation', {'category_slug': 'tricycles-vanraam', 'utilisation_slug': 'tricycles-vanraam-tandem', 'slug': 'tricycle-tandem-fun2go','id': 35}) }}">
-									<div class="btn btn-primary btn-lg">Voir le produit</div>
-								</a>
-							</div>
-						</div>
-					</div>
-				</div>
-			</div>
-		</div>
-		<a class="carousel-control-prev text-decoration-none w-auto ps-3" href="#mon-carousel" role="button" data-bs-slide="prev">
-			<i class="fas fa-chevron-left"></i>
-		</a>
-		<a class="carousel-control-next text-decoration-none w-auto pe-3" href="#mon-carousel" role="button" data-bs-slide="next">
-			<i class="fas fa-chevron-right"></i>
-		</a>
-	</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        {% endfor %}
+    </div>
+
+    <a class="carousel-control-prev text-decoration-none w-auto ps-3" href="#mon-carousel" role="button" data-bs-slide="prev">
+        <i class="fas fa-chevron-left"></i>
+    </a>
+    <a class="carousel-control-next text-decoration-none w-auto pe-3" href="#mon-carousel" role="button" data-bs-slide="next">
+        <i class="fas fa-chevron-right"></i>
+    </a>
+</div>
 </div>
 {# </div> #}
 <div
@@ -265,82 +234,30 @@
 						<br>Nous sommes fiers d’accompagner des marques leaders.</p>
 				</div>
 			</div>
+
 			<div class="partners">
-			<h3>Les établissements de santé</h3>
+				<h3>Les établissements de santé</h3>
 				<div class="row h-100">
+					{% for company in etablissementsDeSante %}
 						{% include "shared/_card_confiance.html.twig" with {
-						'nom' : 'DomusVi',
-						'image' : asset('images/revend/domusvi.png'),
-						'website' : 'https://www.domusvi.com/'
-					} %}
-
-						{% include "shared/_card_confiance.html.twig" with {
-						'nom' : 'Korian',
-						'image' : asset('images/revend/korian.png'),
-						'website' : 'https://www.korian.fr/'
-					} %}
-
-						{% include "shared/_card_confiance.html.twig" with {
-						'nom' : 'Orpea',
-						'image' : asset('images/revend/orpea.png'),
-						'website' : 'https://www.orpea-groupe.com/'
-					} %}
-
-						{% include "shared/_card_confiance.html.twig" with {
-						'nom' : 'Adapei',
-						'image' : asset('images/revend/adapei.png'),
-						'website' : 'https://www.adapei72.asso.fr/'
-					} %}
-
-						{% include "shared/_card_confiance.html.twig" with {
-						'nom' : 'Perce-Neige',
-						'image' : asset('images/revend/perce-neige2.png'),
-						'website' : 'https://www.perce-neige.org/'
-					} %}
-						
-						{% include "shared/_card_confiance.html.twig" with {
-						'nom' : 'Fondation Anais',
-						'image' : asset('images/revend/fondation-anais.jpg'),
-						'website' : 'https://www.fondation-anais.org//'
-					} %}
-					
+							'nom': company.libelle,
+							'image': company.urlImage,
+							'website': company.website
+						} %}
+					{% endfor %}
 				</div>
 
 				<h3>Les prestataires de santé</h3>
 				<div class="row h-100">
-					{% include "shared/_card_confiance.html.twig" with {
-					'nom' : 'Bastide',
-					'image' : asset('images/revend/bastide.png'),
-					'website' : 'https://www.bastideleconfortmedical.com/'
-				} %}
-
-					{% include "shared/_card_confiance.html.twig" with {
-					'nom' : 'Harmonie Médical Service',
-					'image' : asset('images/revend/hms.png'),
-					'website' : 'https://www.harmonie-medical-service.fr/'
-				} %}
-
-					{% include "shared/_card_confiance.html.twig" with {
-					'nom' : 'Oxypharm',
-					'image' : asset('images/revend/oxypharm.png'),
-					'website' : 'https://www.vitadomia.com/'
-				} %}
-
-					{% include "shared/_card_confiance.html.twig" with {
-					'nom' : 'Paramat',
-					'image' : asset('images/revend/paramat.png'),
-					'website' : 'https://www.paramat.com/'
-				} %}
-				{% include "shared/_card_confiance.html.twig" with {
-					'nom' : 'La Vitrine Médicale',
-					'image' : asset('images/revend/vitrine-med.png'),
-					'website' : 'https://www.lavitrinemedicale-lpa.fr//'
-				} %}
-
+					{% for company in prestatairesDeSante %}
+						{% include "shared/_card_confiance.html.twig" with {
+							'nom': company.libelle,
+							'image': company.urlImage,
+							'website': company.website
+						} %}
+					{% endfor %}
 				</div>
-
 			</div>
-
 		</div>
 	</div>
 

@@ -1,15 +1,14 @@
-{% extends 'base.html.twig' %}
+{% extends 'admin.html.twig' %}
 
-{% block title %}News
+{% block title %}Actualités
 {% endblock %}
 
 {% block body %}
 
 	<div class="container-xl">
-		<h1>News</h1>
+		<h1>Actualités</h1>
 
 		<p>En raison de sa taille, le contenu des actualités ne peut être affiché dans le tableau. Pour découvrir le contenu des actualités, veuillez cliquer sur "edit" dans la colonne "actions".</p>
-
 
 		<table class="table">
 			<tbody>
@@ -31,7 +30,7 @@
 				</tr>
 				<tr>
 					<th>Contenu</th>
-					<td>{{ news.contenu }}</td>
+					<td>{{ news.contenu | raw }}</td>
 				</tr>
 				<tr>
 					<th>Image</th>
@@ -49,14 +48,21 @@
 					<th>Meta description</th>
 					<td>{{ news.metaDesc }}</td>
 				</tr>
-
+				<tr>
+					<th>Date création article ou de dernière mise à jour</th>
+				    <td>{{ news.date|date('d/m/Y') }}</td>
+				</tr>
+				<tr>
+					<th>Est-ce un brouillon ?</th>
+					<td>{{ news.isDraft ? 'Oui' : 'Non' }}</td>
+				</tr>
 
 			</tbody>
 		</table>
 
-		<a href="{{ path('app_admin_crud_news_index') }}">back to list</a>
+		<a href="{{ path('app_admin_crud_news_index') }}">Retour à la liste des actualités</a>
 
-		<a href="{{ path('app_admin_crud_news_edit', {'id': news.id}) }}">edit</a>
+		<a href="{{ path('app_admin_crud_news_edit', {'id': news.id}) }}">Éditer</a>
 
 		{{ include('admin_crud_news/_delete_form.html.twig') }}
 	</div>

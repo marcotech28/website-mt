@@ -1,10 +1,10 @@
-{% extends 'base.html.twig' %}
+{% extends 'admin.html.twig' %}
 
 {% block title %}Mettre à jour l'actualité
 {% endblock %}
 
 {% block body %}
-	<div class="container-xl">
+	<div class="container-xl mt-3 mb-3">
 		<h1>Mettre à jour l'actualité</h1>
 
 		{{ include('admin_crud_news/_form.html.twig', {'button_label': 'Mettre à jour'}) }}

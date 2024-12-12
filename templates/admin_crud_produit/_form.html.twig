@@ -23,15 +23,14 @@
 		<div class="col-6">{{ form_row(form.categorie) }}</div>
 		<div class="col-12">{{ form_row(form.utilisation) }}</div>
 		<div class="col-12">{{ form_row(form.produitsSimilaires, {'attr' : {'size' : 20}}) }}</div>
+		<div class="col-12">{{ form_row(form.isDraft) }}</div>
 	</div>
-	
-	
-	
+		
 
 	{# Place for rendering the images #}
 	<div id="image-collection" data-prototype="{{ form_widget(form.images.vars.prototype)|e('html_attr') }}" data-new-image-index="{{ form.images|length }}">
 		{% for imageForm in form.images %}
-			<div class="image-form">
+			<div class="image-form m-3 p-4 rounded" style="background-color: #ebeae6">
 				{{ form_row(imageForm.url) }}
 				{{ form_row(imageForm.alt) }}
 				<button type="button" class="remove-image btn btn-outline-primary">Supprimer l'image</button>

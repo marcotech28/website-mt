@@ -56,4 +56,30 @@ class FournisseurRepository extends ServiceEntityRepository
             ->getResult();
     }
 
+    /**
+     * Récupère tous les fournisseurs dans l'ordre d'affichage voulu par le tri
+     * Les NULL dans orderDisplay sont placés en dernier.
+     */
+    public function findAllOrdered(): array
+    {
+        return $this->createQueryBuilder('f')
+            ->where('f.isVisibleOnAboutPage = true')
+            ->addOrderBy('CASE WHEN f.orderDisplay IS NULL THEN 1 ELSE 0 END', 'ASC') // NULLs last
+            ->addOrderBy('f.orderDisplay', 'ASC') // Ordre croissant pour les valeurs non NULL
+            ->getQuery()
+            ->getResult();
+    }
+
+    /**
+     * Renvoie le orderDisplay le plus élevé
+     */
+    public function findMaxOrderDisplay(): ?int
+    {
+        return $this->createQueryBuilder('f')
+            ->select('MAX(f.orderDisplay)')
+            ->getQuery()
+            ->getSingleScalarResult();
+    }
+
+
 }

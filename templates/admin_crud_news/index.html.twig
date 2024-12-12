@@ -1,4 +1,4 @@
-{% extends 'base.html.twig' %}
+{% extends 'admin.html.twig' %}
 
 {% block title %}Gestionnaire des actualités
 {% endblock %}
@@ -17,6 +17,7 @@
                         <th>Titre</th>
                         <th>Date</th>
 						<th>Auteur</th>
+                        <th>Brouillon</th>
                         <th>Actions</th>
                     </tr>
                 </thead>
@@ -27,6 +28,7 @@
                             <td>{{ actu.titre }}</td>
                             <td>{{ actu.date ? actu.date|date('Y-m-d') : '' }}</td>
 							<td>{{ actu.auteur }}</td>
+                            <td>{{ actu.isDraft ? 'Oui' : 'Non' }}</td>
                             <td>
                                 <a href="{{ path('app_admin_crud_news_show', {'id': actu.id}) }}" class="btn btn-outline-primary btn-sm">Voir</a>
                                 <a href="{{ path('app_admin_crud_news_edit', {'id': actu.id}) }}" class="btn btn-outline-primary btn-sm">Éditer</a>

@@ -1,0 +1,14 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Créer entreprise partenaire{% endblock %}
+
+{% block body %}
+    <div class="container-xl">
+        <h1>Créer une nouvelle entreprise partenaire</h1>
+
+        {{ include('company/_form.html.twig') }}
+
+        <a href="{{ path('app_company_index') }}">Retour à la liste des entreprises partenaire</a>
+    </div>
+    
+{% endblock %}

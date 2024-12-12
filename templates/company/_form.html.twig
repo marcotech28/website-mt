@@ -1,0 +1,7 @@
+{{ form_start(form) }}
+    {{ form_row(form.libelle) }}
+    {{ form_row(form.urlImage) }}
+    {{ form_row(form.website) }}
+    {{ form_row(form.type) }}
+    <button class="btn btn-primary">{{ button_label|default('Enregistrer') }}</button>
+{{ form_end(form) }}

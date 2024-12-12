@@ -6,6 +6,7 @@ use App\Entity\News;
 use App\Form\NewsType;
 use Doctrine\ORM\EntityManager;
 use App\Repository\NewsRepository;
+use DateTime;
 use Doctrine\ORM\EntityManagerInterface;
 use Symfony\Component\Form\FormInterface;
 use Knp\Component\Pager\PaginatorInterface;
@@ -42,6 +43,8 @@ class AdminCrudNewsController extends AbstractController
 
         if ($form->isSubmitted() && $form->isValid()) {
 
+            $news->setDate(new \DateTime('today'));
+
             $entityManager->persist($news);
             $entityManager->flush();
 
@@ -71,6 +74,8 @@ class AdminCrudNewsController extends AbstractController
         $form->handleRequest($request);
 
         if ($form->isSubmitted() && $form->isValid()) {
+
+            $news->setDate(new DateTime('today'));
 
             $entityManager->flush();
 

@@ -11,6 +11,7 @@ use Symfony\Component\Form\AbstractType;
 use Symfony\Component\Form\FormBuilderInterface;
 use Symfony\Bridge\Doctrine\Form\Type\EntityType;
 use Symfony\Component\OptionsResolver\OptionsResolver;
+use Symfony\Component\Form\Extension\Core\Type\CheckboxType;
 use Symfony\Component\Form\Extension\Core\Type\TextareaType;
 use Symfony\Component\Form\Extension\Core\Type\CollectionType;
 
@@ -89,10 +90,14 @@ class ProduitType extends AbstractType
             ])
             ->add('produitsSimilaires', EntityType::class, [
                 'class' => Produit::class,
-                'choice_label' => 'nom',
-                'multiple' => true,
-                'expanded' => false,
-                'required' => false
+                'choice_label' => 'nom',  // Propriété affichée comme label
+                'multiple' => true,       // Permet plusieurs choix
+                'expanded' => true,       // Affiche les options comme des cases à cocher
+                'required' => false       // Rendre le champ facultatif
+            ])
+            ->add('isDraft', CheckboxType::class, [
+                'label' => 'Est-ce un brouillon ? Cocher si oui',
+                'required' => false,
             ]);
     }
 

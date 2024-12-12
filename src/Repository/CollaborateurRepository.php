@@ -45,4 +45,26 @@ class CollaborateurRepository extends ServiceEntityRepository
 //            ->getOneOrNullResult()
 //        ;
 //    }
+
+    /**
+     * Récupère tous les collaborateurs dans l'ordre d'affichage voulu par le tri
+     */
+    public function findAllOrdered(): array
+    {
+        return $this->createQueryBuilder('c')
+            ->orderBy('c.orderDisplay', 'ASC') 
+            ->getQuery()
+            ->getResult();
+    }
+
+    /**
+     * Renvoie le orderDisplay le plus élevé
+     */
+    public function findMaxOrderDisplay(): ?int
+    {
+        return $this->createQueryBuilder('c')
+            ->select('MAX(c.orderDisplay)')
+            ->getQuery()
+            ->getSingleScalarResult();
+    }
 }

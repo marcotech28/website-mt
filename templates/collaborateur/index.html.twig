@@ -1,13 +1,15 @@
-{% extends 'base.html.twig' %}
+{% extends 'admin.html.twig' %}
 
 {% block title %}Collaborateur index{% endblock %}
 
 {% block body %}
-    <div class="container-xl">
+    <div class="container-xl mt-3 mb-3">
 
-        <h1>Gestionnaire des collaborateurs</h1>
+        <h4>Gestionnaire des collaborateurs</h4>
 
         <a href="{{ path('app_collaborateur_new') }}" class="btn btn-primary mb-3">Créer un nouveau collaborateur</a>
+
+        <a href="{{ path('admin_collaborateur_order_display') }}" class="btn btn-primary mb-3">Gérer l'ordre d'affichage des collaborateurs</a>
 
         {% if pagination.items %}
             <table class="table">

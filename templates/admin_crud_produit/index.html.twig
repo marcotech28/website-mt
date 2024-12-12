@@ -1,4 +1,4 @@
-{% extends 'base.html.twig' %}
+{% extends 'admin.html.twig' %}
 
 {% block title %}Produit index
 {% endblock %}
@@ -17,6 +17,7 @@
                         <th>Nom</th>
                         <th>Prix</th>
 						<th>Catégorie</th>
+						<th>Brouillon</th>
                         <th>Actions</th>
                     </tr>
                 </thead>
@@ -27,6 +28,7 @@
                             <td>{{ produit.nom }}</td>
                             <td>{{ produit.prix }}€ HT</td>
 							<td>{{ produit.categorie.libelle }}</td>
+							<td>{{ produit.isDraft ? 'Oui' : 'Non' }}</td>
                             <td>
                                 <a href="{{ path('app_admin_crud_produit_show', {'id': produit.id}) }}" class="btn btn-outline-primary btn-sm">Voir</a>
                                 <a href="{{ path('app_admin_crud_produit_edit', {'id': produit.id}) }}" class="btn btn-outline-primary btn-sm">Éditer</a>

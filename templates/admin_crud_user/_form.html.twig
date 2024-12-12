@@ -1,8 +1,3 @@
-{# {{ form_start(form) }}
-{{ form_widget(form) }}
-<button class="btn">{{ button_label|default('Save') }}</button>
-{{ form_end(form) }} #}
-
 {{ form_start(form) }}
 {{ form_row(form.email, {'attr' : {'class' : 'form-control'}}) }}
 {{ form_row(form.roles, {'attr' : {'class' : 'form-control'}}) }}
@@ -18,5 +13,5 @@
 {{ form_row(form.nomSociete, {'attr' : {'class' : 'form-control'}}) }}
 {{ form_row(form.fonction, {'attr' : {'class' : 'form-control'}}) }}
 {{ form_row(form.isConfirmed) }}
-<button class="btn">{{ button_label|default('Save') }}</button>
+<button class="btn btn-primary">{{ button_label|default('Enregistrer') }}</button>
 {{ form_end(form) }}
