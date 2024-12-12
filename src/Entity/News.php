@@ -58,6 +58,9 @@ class News
     #[Assert\Length(min: 4, max: 255, minMessage: "L'image doit faire entre 4 et 255 caractères", maxMessage: "L'image doit faire entre 4 et 255 caractères")]
     private ?string $image = null;
 
+    #[ORM\Column(nullable: true)]
+    private ?bool $isDraft = null;
+
     public function getId(): ?int
     {
         return $this->id;
@@ -155,6 +158,18 @@ class News
     public function setImage(?string $image): self
     {
         $this->image = $image;
+
+        return $this;
+    }
+
+    public function isIsDraft(): ?bool
+    {
+        return $this->isDraft;
+    }
+
+    public function setIsDraft(?bool $isDraft): static
+    {
+        $this->isDraft = $isDraft;
 
         return $this;
     }

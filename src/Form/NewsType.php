@@ -10,6 +10,7 @@ use App\Form\DataTransformer\StringToFileTransformer;
 use Symfony\Component\OptionsResolver\OptionsResolver;
 use Symfony\Component\Form\Extension\Core\Type\FileType;
 use Symfony\Component\Form\Extension\Core\Type\SubmitType;
+use Symfony\Component\Form\Extension\Core\Type\CheckboxType;
 use Symfony\Component\Form\Extension\Core\Type\TextareaType;
 
 class NewsType extends AbstractType
@@ -36,8 +37,11 @@ class NewsType extends AbstractType
                 ],
             ])
             ->add('metaDesc')
-            ->add('date')
-            ->add('auteur');
+            ->add('auteur')
+            ->add('isDraft', CheckboxType::class, [
+                'label' => 'Est-ce un brouillon ? Cocher si oui',
+                'required' => false,
+            ]);
     }
 
     public function configureOptions(OptionsResolver $resolver): void

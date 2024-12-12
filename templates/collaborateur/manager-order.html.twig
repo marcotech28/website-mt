@@ -1,0 +1,73 @@
+{% extends 'admin.html.twig' %}
+
+{% block title %}Ordre des collaborateurs{% endblock %}
+
+{% block body %}
+
+    <style>
+        #sortable-list {
+            border: 1px solid #ddd;
+            padding: 10px;
+            background-color: #f9f9f9;
+            margin-top: 15px;
+        }
+
+        .sortable-item {
+            padding: 10px;
+            border: 1px solid #ccc;
+            background-color: #fff;
+            margin-bottom: 5px;
+            cursor: grab;
+        }
+    </style>
+
+    <div class="container-xl mt-5 mb-5">
+        <h1>Gérer l'ordre des membres</h1>
+
+        <div id="sortable-list">
+            {% for collaborateur in collaborateurs %}
+                <div class="sortable-item" data-id="{{ collaborateur.id }}">
+                    {{ collaborateur.nom }}
+                </div>
+            {% endfor %}
+        </div>
+
+        <button id="save-order" class="btn btn-primary mt-4">Enregistrer l'ordre</button>
+    </div>
+{% endblock %}
+
+{% block javascripts %}
+    <script src="https://cdn.jsdelivr.net/npm/sortablejs@latest/Sortable.min.js"></script>
+
+    <script>
+        // Initialiser SortableJS
+        document.addEventListener('DOMContentLoaded', function () {
+            const sortable = new Sortable(document.getElementById('sortable-list'), {
+                animation: 150,
+            });
+
+            // Sauvegarder l'ordre
+            document.getElementById('save-order').addEventListener('click', function () {
+                const order = Array.from(document.querySelectorAll('.sortable-item')).map(item => item.dataset.id);
+
+                fetch('{{ path('admin_update_order_collaborateur') }}', {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json',
+                    },
+                    body: JSON.stringify({ order: order }),
+                })
+                .then(response => response.json())
+                .then(data => {
+                    if (data.success) {
+                        alert('Ordre enregistré avec succès !');
+                    } else {
+                        alert('Erreur lors de la sauvegarde.');
+                    }
+                });
+            });
+        });
+
+        
+    </script>
+{% endblock %}

@@ -10,7 +10,8 @@ document.addEventListener('DOMContentLoaded', function() {
         newImageIndex++; // Incrémentez l'index
 
         let newFormElement = document.createElement('div');
-        newFormElement.classList.add('image-form'); // Ajout d'une classe pour mieux gérer l'affichage
+        newFormElement.classList.add('image-form', 'm-3', 'p-4', 'rounded');
+        newFormElement.style.backgroundColor = '#ebeae6';
         newFormElement.innerHTML = newForm;
         imageCollectionHolder.appendChild(newFormElement);
 

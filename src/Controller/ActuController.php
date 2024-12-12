@@ -12,7 +12,8 @@ class ActuController extends AbstractController
     #[Route('/actualites', name: 'app_actu')]
     public function index(NewsRepository $newsRepository): Response
     {
-        $listNews = $newsRepository->findBy([], ['date' => 'DESC']); // Tri par date décroissante
+        // Ne récupère pas les brouillons
+        $listNews = $newsRepository->findPublishedNews();
 
         return $this->render('actu/actu.html.twig', [
             'listNews' => $listNews

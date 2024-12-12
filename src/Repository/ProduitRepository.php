@@ -4,6 +4,8 @@ namespace App\Repository;
 
 use App\Entity\Produit;
 use App\Data\SearchData;
+use App\Entity\Categorie;
+use App\Entity\Utilisation;
 use Doctrine\Persistence\ManagerRegistry;
 use Doctrine\Bundle\DoctrineBundle\Repository\ServiceEntityRepository;
 
@@ -70,4 +72,29 @@ class ProduitRepository extends ServiceEntityRepository
 
         return $results;
     }
+
+    public function findByCategorieAndDraft(Categorie $categorie): array
+    {
+        return $this->createQueryBuilder('p')
+            ->where('p.categorie = :categorie')
+            ->andWhere('p.isDraft = true OR p.isDraft IS NULL')
+            ->setParameter('categorie', $categorie)
+            ->getQuery()
+            ->getResult();
+    }
+
+    public function findByCategorieAndUtilisationAndDraft(Categorie $categorie, Utilisation $utilisation): array
+    {
+        return $this->createQueryBuilder('p')
+            ->where('p.categorie = :categorie')
+            ->andWhere('p.utilisation = :utilisation')
+            ->andWhere('p.isDraft = true OR p.isDraft IS NULL')
+            ->setParameters([
+                'categorie' => $categorie,
+                'utilisation' => $utilisation,
+            ])
+            ->getQuery()
+            ->getResult();
+    }
+
 }

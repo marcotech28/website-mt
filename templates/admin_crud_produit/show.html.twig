@@ -1,4 +1,4 @@
-{% extends 'base.html.twig' %}
+{% extends 'admin.html.twig' %}
 
 {% block title %}Produit
 {% endblock %}
@@ -15,7 +15,7 @@
 				</tr>
 				<tr>
 					<th>Description</th>
-					<td>{{ produit.description }}</td>
+					<td>{{ produit.description | raw}}</td>
 				</tr>
 				<tr>
 					<th>Nom</th>
@@ -27,7 +27,7 @@
 				</tr>
 				<tr>
 					<th>ShortDescription</th>
-					<td>{{ produit.shortDescription }}</td>
+					<td>{{ produit.shortDescription | raw }}</td>
 				</tr>
 				<tr>
 					<th>META Description</th>
@@ -61,12 +61,16 @@
 					<th>Utilisation</th>
 					<td>{{ produit.utilisation.libelle }}</td>
 				</tr>
+				<tr>
+					<th>Est-ce un brouillon ?</th>
+					<td>{{ produit.isDraft ? 'Oui' : 'Non' }}</td>
+				</tr>
 			</tbody>
 		</table>
 
-		<a href="{{ path('app_admin_crud_news_index') }}" class="btn btn-primary">back to list</a>
+		<a href="{{ path('app_admin_crud_news_index') }}" class="btn btn-primary">Retour à la liste des produits</a>
 
-		<a href="{{ path('app_admin_crud_produit_edit', {'id': produit.id}) }}" class="btn btn-primary">edit</a>
+		<a href="{{ path('app_admin_crud_produit_edit', {'id': produit.id}) }}" class="btn btn-primary">Éditer</a>
 
 		{{ include('admin_crud_produit/_delete_form.html.twig') }}
 	</div>

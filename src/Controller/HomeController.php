@@ -6,6 +6,8 @@ use App\Data\SearchData;
 use App\Entity\Produit;
 use App\Form\NewsletterType;
 use App\Form\SearchForm;
+use App\Repository\CompanyRepository;
+use App\Repository\ProductGroupRepository;
 use App\Repository\ProduitRepository;
 use Symfony\Component\Mime\Email;
 use Doctrine\ORM\EntityManagerInterface;
@@ -18,16 +20,20 @@ use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 class HomeController extends AbstractController
 {
     #[Route('/', name: 'homepage')]
-    public function homepage(Request $request, MailerInterface $mailer, EntityManagerInterface $em, ProduitRepository $produitRepository)
+    public function homepage(Request $request, MailerInterface $mailer, CompanyRepository $companyRepository, ProduitRepository $produitRepository, ProductGroupRepository $productGroupRepository)
     {
-        $produitRepository = $em->getRepository(Produit::class);
+        // Carousel
+        $carouselGroup = $productGroupRepository->findOneBy(['libelle' => 'CarouselHomepage']);
+        $carouselProduits = $carouselGroup ? $carouselGroup->getProduits() : [];
+   
+        // Produits préférés
+        $favouritesProductsGroup = $productGroupRepository->findOneBy(['libelle' => 'FavouriteProducts']);
+        $favouritesProducts = $favouritesProductsGroup ? $favouritesProductsGroup->getProduits() : [];
 
-        $produit1 = $produitRepository->find(21);
-        $produit2 = $produitRepository->find(18);
-        $produit3 = $produitRepository->find(31);
-        $produit4 = $produitRepository->find(35);
-        $tableauProduits = array($produit1, $produit2, $produit3, $produit4);
-
+        // Partenaires
+        $etablissementsDeSante = $companyRepository->findBy(['type' => 'Établissement de santé']);
+        $prestatairesDeSante = $companyRepository->findBy(['type' => 'Prestataire de santé']);
+        
         $form = $this->createForm(NewsletterType::class);
         $form->handleRequest($request);
 
@@ -64,13 +70,14 @@ class HomeController extends AbstractController
             ]);
         }
 
-
-
         return $this->render('home.html.twig', [
-            'newsletterForm' => $form->createView(),
-            'tabProduits' => $tableauProduits,
-            'products' => $products,
-            'formSearch' => $formSearch->createView()
+            'newsletterForm'        => $form->createView(),
+            'favouritesProducts'    => $favouritesProducts,
+            'products'              => $products,
+            'formSearch'            => $formSearch->createView(),
+            'carouselProduits'      => $carouselProduits,
+            'etablissementsDeSante' => $etablissementsDeSante,
+            'prestatairesDeSante'   => $prestatairesDeSante,
         ]);
     }
 }

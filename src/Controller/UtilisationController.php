@@ -14,7 +14,7 @@ class UtilisationController extends AbstractController
     /**
      * @Route("/{category_slug}/{utilisation_slug}/", name="app_utilisation", priority=-28)
      */
-    public function index($category_slug, $utilisation_slug, CategorieRepository $categorieRepository, UtilisationRepository $utilisationRepository): Response
+    public function index($category_slug, $utilisation_slug, CategorieRepository $categorieRepository, UtilisationRepository $utilisationRepository, ProduitRepository $produitRepository): Response
     {
         $categorie = $categorieRepository->findOneBy([
             'slug' => $category_slug
@@ -32,11 +32,14 @@ class UtilisationController extends AbstractController
             throw $this->createNotFoundException(("L'utilisation demandée n'existe pas"));
         }
 
+        $produits = $produitRepository->findByCategorieAndUtilisationAndDraft($categorie, $utilisation);
+
         return $this->render('utilisation/index.html.twig', [
-            'categorie' => $categorie,
-            'utilisation' => $utilisation,
+            'categorie'        => $categorie,
+            'utilisation'      => $utilisation,
             'utilisation_slug' => $utilisation_slug,
-            'categorie_slug' => $category_slug
+            'categorie_slug'   => $category_slug,
+            'produits'         => $produits
         ]);
     }
 }

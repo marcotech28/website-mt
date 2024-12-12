@@ -1,0 +1,47 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Gestionnaire des entreprises{% endblock %}
+
+{% block body %}
+
+    <div class="container-xl">
+
+        <h1>Gestionnaire des entreprises</h1>
+
+        <a href="{{ path('app_company_new') }}" class="btn btn-primary mb-3">Créer une nouvelle entreprise partenaire</a>
+
+        {% if pagination.items %}
+            <table class="table">
+                <thead>
+                    <tr>
+                        <th>Id</th>
+                        <th>UrlImage</th>
+                        <th>Website</th>
+                        <th>Type</th>
+                        <th>actions</th>
+                    </tr>
+                </thead>
+                <tbody>
+                {% for company in pagination.items %}
+                    <tr>
+                        <td>{{ company.id }}</td>
+                        <td>{{ company.urlImage }}</td>
+                        <td>{{ company.website }}</td>
+                        <td>{{ company.type }}</td>
+                        <td>
+                            <a href="{{ path('app_company_show', {'id': company.id}) }}" class="btn btn-outline-primary btn-sm">Voir</a>
+                            <a href="{{ path('app_company_edit', {'id': company.id}) }}" class="btn btn-outline-primary btn-sm">Éditer</a>
+                        </td>
+                    </tr>
+                {% endfor %}
+                </tbody>
+            </table>
+        {% else %}
+            <p>no records found</p>
+        {% endif %}
+
+        
+    
+    </div>
+
+{% endblock %}

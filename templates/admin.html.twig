@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<!-- Google Tag Manager -->
+		<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+		new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+		j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+		'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+		})(window,document,'script','dataLayer','GTM-5QPDRN8V');</script>
+		<!-- End Google Tag Manager -->
+
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+
+		<meta charset="UTF-8">
+		<title>
+			{% block title %}Marconnet technologies™
+			{% endblock %}
+		</title>
+		{% block meta %}{% endblock %}
+		<link
+		rel="icon" href="{{asset('images/favicon.ico')}}">
+		{# Run `composer require symfony/webpack-encore-bundle` to start using Symfony UX #}
+
+		<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi" crossorigin="anonymous">
+
+		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css" integrity="sha512-MV7K8+y+gLIBoVD59lQIYicR65iaqukzvf/nwasF0nqhPay5w/9lJmVM2hMDcnK1OnMGCdVK+iQrJ7lzPJQd1w==" crossorigin="anonymous" referrerpolicy="no-referrer"/>
+
+		<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js" integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN" crossorigin="anonymous"></script>
+
+		<script src="https://use.fontawesome.com/07ff43aa05.js"></script>
+
+		<link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+
+		{% block stylesheets %}
+
+			<link rel="stylesheet" href="{{ asset('css/lightbox.min.css') }} ">
+
+			<link
+			rel="stylesheet" href="{{ asset('css/styles.css') }}?v=<?php echo filemtime('css/styles.css'); ?>">
+			{# le php echo c'est pour rajouter des parametres dans mon css ds le but de forcer le navigateur à recharger le css #}
+
+			{{ encore_entry_link_tags('app') }}
+		{% endblock %}
+
+		{% block javascripts %}
+			{{ encore_entry_script_tags('app') }}
+		{% endblock %}
+		{% block donneesStructurees %}{% endblock %}
+	</head>
+
+	<body>
+		<!-- Google Tag Manager (noscript) -->
+		<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-5QPDRN8V"
+		height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+		<!-- End Google Tag Manager (noscript) -->
+
+		<div class="site-container">
+			{% include "shared/_navbar.html.twig" %}
+
+			<div class="container-xl">
+				{% for label, messages in app.flashes %}
+					{% for message in messages %}
+						<div class="alert alert-{{ label }}">
+							{{ message }}
+						</div>
+					{% endfor %}
+				{% endfor %}
+			</div>
+
+			<div class="row m-0">
+				<div class="col-2 min-vh-100 d-flex">
+					{% include "dashboard/_sidebar.html.twig" %}
+				</div>
+				<div class="col-10">
+					{% block body %}{% endblock %}
+				</div>
+			</div>
+
+			{% include "shared/_cookie-consent.html.twig" %}
+
+			{% include "shared/footer.html.twig" %}
+		</div>
+
+		<script src="{{ asset('lightbox-plus-jquery.min.js') }}"></script>
+		<script src="https://unpkg.com/@lottiefiles/lottie-player@1.5.7/dist/lottie-player.js"></script>
+		<script src="{{ asset('js/cookie-consent.js') }}"></script>
+		<script src="https://www.google.com/recaptcha/api.js" async defer></script>
+	</body>
+</html>

@@ -1,0 +1,15 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Mettre à jour l'entreprise{% endblock %}
+
+{% block body %}
+    <div class="container-xl">
+        <h1>Mettre à jour l'entreprise</h1>
+
+        {{ include('company/_form.html.twig', {'button_label': 'Mettre à jour'}) }}
+
+        <a href="{{ path('app_company_index') }}">Retour à la liste des entreprises partenaires</a>
+
+        {{ include('company/_delete_form.html.twig') }}
+    </div>
+{% endblock %}

@@ -15,6 +15,10 @@ class FournisseurType extends AbstractType
             ->add('libelle')
             ->add('image')
             ->add('description')
+            ->add('isVisibleOnAboutPage', null, [
+                'label' => "Cocher si ce fournisseur doit être visible sur la page 'À propos'",
+            ])
+            ->add('website')
         ;
     }
 

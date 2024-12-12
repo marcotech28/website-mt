@@ -1,0 +1,74 @@
+<style>
+    a{
+        text-decoration: none;
+        color: black;
+    }
+
+    a.d-block:hover {
+        background-color: #e9ecef;
+    }
+
+    a.d-block {
+        transition: background-color 0.1s ease;
+    }
+</style>
+
+<div class="row m-0">
+    <div class="col-12" style="border-right: 1px solid #6c757d;">
+        <div class="row">
+            <div class="col-12 my-2 text-muted">
+                Gestion du site
+            </div>
+            <div class="col-12">
+                <a href="{{ path('app_admin_crud_user_index') }}" class="d-block p-2 text-dark" style="text-decoration: none;">
+                    <i class="fas fa-chevron-left"></i> Utilisateur
+                </a>
+            </div>
+            <div class="col-12">
+                <a href="{{ path('app_admin_crud_news_index') }}" class="d-block p-2 text-dark" style="text-decoration: none;">
+                    <i class="fas fa-chevron-left"></i> Actualités
+                </a>
+            </div>
+            <div class="col-12">
+                <a href="{{ path('app_admin_crud_produit_index') }}" class="d-block p-2 text-dark" style="text-decoration: none;">
+                    <i class="fas fa-chevron-left"></i> Produits
+                </a>
+            </div>
+            <div class="col-12">
+                <a href="{{ path('app_admin_crud_categorie_index') }}" class="d-block p-2 text-dark" style="text-decoration: none;">
+                    <i class="fas fa-chevron-left"></i> Catégories
+                </a>
+            </div>
+            <div class="col-12">
+                <a href="{{ path('app_admin_crud_utilisation_index') }}" class="d-block p-2 text-dark" style="text-decoration: none;">
+                    <i class="fas fa-chevron-left"></i> Utilisations
+                </a>
+            </div>
+            <div class="col-12">
+                <a href="{{ path('app_admin_crud_marque_index') }}" class="d-block p-2 text-dark" style="text-decoration: none;">
+                    <i class="fas fa-chevron-left"></i> Marques
+                </a>
+            </div>
+            <div class="col-12">
+                <a href="{{ path('app_document_index') }}" class="d-block p-2 text-dark" style="text-decoration: none;">
+                    <i class="fas fa-chevron-left"></i> Documents
+                </a>
+            </div>
+            <div class="col-12">
+                <a href="{{ path('app_fournisseur_index') }}" class="d-block p-2 text-dark" style="text-decoration: none;">
+                    <i class="fas fa-chevron-left"></i> Fournisseurs
+                </a>
+            </div>
+            <div class="col-12">
+                <a href="{{ path('app_collaborateur_index') }}" class="d-block p-2 text-dark" style="text-decoration: none;">
+                    <i class="fas fa-chevron-left"></i> Collaborateurs
+                </a>
+            </div>
+            <div class="col-12">
+                <a href="{{ path('app_admin_product_group') }}" class="d-block p-2 text-dark" style="text-decoration: none;">
+                    <i class="fas fa-chevron-left"></i> Gérer les groupes de produits
+                </a>
+            </div>
+        </div>
+    </div>
+</div>

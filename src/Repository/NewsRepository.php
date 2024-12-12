@@ -63,4 +63,15 @@ class NewsRepository extends ServiceEntityRepository
 //            ->getOneOrNullResult()
 //        ;
 //    }
+
+    public function findPublishedNews(): array
+    {
+        return $this->createQueryBuilder('n')
+            ->where('n.isDraft = :isDraftFalse OR n.isDraft IS NULL')
+            ->setParameter('isDraftFalse', false)
+            ->orderBy('n.date', 'DESC')
+            ->getQuery()
+            ->getResult();
+    }
+
 }

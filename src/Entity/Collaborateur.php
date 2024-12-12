@@ -29,6 +29,9 @@ class Collaborateur
     #[ORM\Column(length: 255, nullable: true)]
     private ?string $linkedin = null;
 
+    #[ORM\Column]
+    private ?int $orderDisplay = null;
+
     public function getId(): ?int
     {
         return $this->id;
@@ -90,6 +93,18 @@ class Collaborateur
     public function setLinkedin(string $linkedin): static
     {
         $this->linkedin = $linkedin;
+
+        return $this;
+    }
+
+    public function getOrderDisplay(): ?int
+    {
+        return $this->orderDisplay;
+    }
+
+    public function setOrderDisplay(int $orderDisplay): static
+    {
+        $this->orderDisplay = $orderDisplay;
 
         return $this;
     }

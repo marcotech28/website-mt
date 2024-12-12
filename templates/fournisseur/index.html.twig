@@ -1,13 +1,14 @@
-{% extends 'base.html.twig' %}
+{% extends 'admin.html.twig' %}
 
-{% block title %}Fournisseur index{% endblock %}
+{% block title %}Gestionnaire des fournisseurs{% endblock %}
 
 {% block body %}
 
-    <div class="container-xl mt-5 mb-5">
-        <h1>Gestionnaire des fournisseurs</h1>
+    <div class="container-xl mt-3 mb-3">
+        <h4>Gestionnaire des fournisseurs</h4>
 
         <a href="{{ path('app_fournisseur_new') }}" class="btn btn-primary mb-3">Créer un nouveau fournisseur</a>
+        <a href="{{ path('admin_fournisseur_order_display') }}" class="btn btn-primary mb-3">Gérer l'ordre d'affichage des fournisseurs</a>
 
         {% if pagination.items %}
             <table class="table">
