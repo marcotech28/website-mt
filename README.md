@@ -33,3 +33,9 @@ php bin/console doctrine:migrations:migrate
 
 ```bash
 symfony serve
+
+
+Faire les migrations à la suite d'une mise en prod sur heroku : 
+
+1/ php bin/console doctrine:migrations:diff
+2/ php bin/console doctrine:migrations:migrate --no-interaction
