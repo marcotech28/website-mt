@@ -1,0 +1,52 @@
+{% extends 'admin.html.twig' %}
+
+{% block title %}Demandes de contact{% endblock %}
+
+{% block body %}
+
+    <div class="container-xl mt-3 mb-3">
+        <h4>Demandes de contact</h4>
+
+        {% if pagination.items %}
+            <table class="table align-middle">
+                <thead>
+                    <tr>
+                        <th>Nom</th>
+                        <th>Prénom</th>
+                        <th>Email</th>
+						<th>Téléphone</th>
+                        <th>Date</th>
+                        <th>Traitée</th>
+                        <th>Actions</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {% for contactReq in pagination.items %}
+                        <tr>
+                            <td>{{ contactReq.nom }}</td>
+                            <td>{{ contactReq.prenom }}</td>
+                            <td>{{ contactReq.email }}</td>
+                            <td>{{ contactReq.telephone }}</td>
+                            <td>{{ contactReq.createdAt ? contactReq.createdAt|date('Y-m-d') : '' }}</td>
+                            <td>{{ contactReq.estTraitee ? 'Oui' : 'Non' }}</td>
+                            <td>
+                                <a href="{{ path('app_admin_contact-request_show', { id: contactReq.id }) }}" class="btn btn-outline-primary btn-sm">Voir</a>
+                                <form action="{{ path('app_admin_contact-request_delete', { id: contactReq.id }) }}" method="post" onsubmit="return confirm('Êtes-vous sûr de vouloir supprimer cette demande ?');" style="display: inline;">
+                                    <input type="hidden" name="_token" value="{{ csrf_token('delete' ~ contactReq.id) }}">
+                                    <button type="submit" class="btn btn-outline-danger btn-sm">Supprimer</button>
+                                </form>
+                            </td>
+                        </tr>
+                    {% endfor %}
+                </tbody>
+            </table>
+
+            <div class="d-flex justify-content-center my-5">
+                {{ knp_pagination_render(pagination) }}
+            </div>
+        {% else %}
+            <p>Aucune demande de contact trouvée.</p>
+        {% endif %}
+    </div>
+
+{% endblock %}

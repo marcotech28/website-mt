@@ -1,0 +1,98 @@
+{% extends 'admin.html.twig' %}
+
+{% block title %}Détails de la demande de démonstration{% endblock %}
+
+{% block body %}
+
+    <div class="container-xl mt-3 mb-3">
+        <h4>Détails de la demande de démonstration</h4>
+
+        <table class="table">
+            <tbody>
+                <tr>
+                    <th>ID</th>
+                    <td>{{ demonstrationRequest.id }}</td>
+                </tr>
+                <tr>
+                    <th>Type d'utilisateur</th>
+                    <td>{{ demonstrationRequest.typeUser ?: 'Non défini' }}</td>
+                </tr>
+                <tr>
+                    <th>Société</th>
+                    <td>{{ demonstrationRequest.societe ?: 'Non défini' }}</td>
+                </tr>
+                <tr>
+                    <th>Poste</th>
+                    <td>{{ demonstrationRequest.poste ?: 'Non défini' }}</td>
+                </tr>
+                <tr>
+                    <th>Nom</th>
+                    <td>{{ demonstrationRequest.nom ?: 'Non défini' }}</td>
+                </tr>
+                <tr>
+                    <th>Prénom</th>
+                    <td>{{ demonstrationRequest.prenom ?: 'Non défini' }}</td>
+                </tr>
+                <tr>
+                    <th>Email</th>
+                    <td>{{ demonstrationRequest.email ?: 'Non défini' }}</td>
+                </tr>
+                <tr>
+                    <th>Téléphone</th>
+                    <td>{{ demonstrationRequest.telephone ?: 'Non défini' }}</td>
+                </tr>
+                <tr>
+                    <th>Adresse</th>
+                    <td>{{ demonstrationRequest.adresse ?: 'Non défini' }}</td>
+                </tr>
+                <tr>
+                    <th>Complément d'adresse</th>
+                    <td>{{ demonstrationRequest.complementAdresse ?: 'Non défini' }}</td>
+                </tr>
+                <tr>
+                    <th>Ville</th>
+                    <td>{{ demonstrationRequest.ville ?: 'Non défini' }}</td>
+                </tr>
+                <tr>
+                    <th>Code postal</th>
+                    <td>{{ demonstrationRequest.codePostal ?: 'Non défini' }}</td>
+                </tr>
+                <tr>
+                    <th>Pays</th>
+                    <td>{{ demonstrationRequest.pays ?: 'Non défini' }}</td>
+                </tr>
+                <tr>
+                    <th>Lieu de démonstration</th>
+                    <td>{{ demonstrationRequest.lieuDemonstration ?: 'Non défini' }}</td>
+                </tr>
+                <tr>
+                    <th>Message</th>
+                    <td>{{ demonstrationRequest.message ?: 'Non défini' }}</td>
+                </tr>
+                <tr>
+                    <th>Créée le</th>
+                    <td>{{ demonstrationRequest.createdAt ? demonstrationRequest.createdAt|date('d/m/Y H:i') : 'Non défini' }}</td>
+                </tr>
+                <tr>
+                    <th>Traitée</th>
+                    <td>{{ demonstrationRequest.estTraitee ? 'Oui' : 'Non' }}</td>
+                </tr>
+            </tbody>
+        </table>
+
+        {% if demonstrationRequest.estTraitee %}
+            <a href="{{ path('app_admin_demonstration_toggle', { id: demonstrationRequest.id }) }}" 
+            class="btn btn-danger btn">
+                Ne pas traiter la demande et revenir à la liste
+            </a>
+        {% else %}
+            <a href="{{ path('app_admin_demonstration_toggle', { id: demonstrationRequest.id }) }}" 
+            class="btn btn-primary btn">
+                Traiter la demande et revenir à la liste
+            </a>
+        {% endif %}
+
+        <a href="{{ path('app_admin_demonstration') }}" class="btn btn-primary btn">Revenir à la liste</a>
+    </div>
+
+{% endblock %}

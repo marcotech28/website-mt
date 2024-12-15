@@ -5,6 +5,8 @@ namespace App\Controller;
 use Symfony\Component\Mime\Email;
 use App\Form\DemonstrationFormType;
 use App\Service\RecaptchaValidator;
+use App\Entity\DemonstrationRequest;
+use Doctrine\ORM\EntityManagerInterface;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\Mailer\MailerInterface;
 use Symfony\Component\HttpFoundation\Response;
@@ -14,21 +16,17 @@ use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 class DemonstrationController extends AbstractController
 {
     #[Route('/demonstration', name: 'demonstration')]
-    public function index(Request $request, MailerInterface $mailer, RecaptchaValidator $recaptchaValidator): Response
+    public function index(Request $request, MailerInterface $mailer, RecaptchaValidator $recaptchaValidator, EntityManagerInterface $entityManager): Response
     {
         $form = $this->createForm(DemonstrationFormType::class);
-
+        
         $form->handleRequest($request);
 
         if ($form->isSubmitted() && $form->isValid()) {
+            // Validation du reCAPTCHA
             $recaptchaResponse = $request->request->get('g-recaptcha-response');
-            
-            if (!$recaptchaResponse) {
-                $this->addFlash('error', 'Le reCAPTCHA est requis.');
-                return $this->redirectToRoute('demonstration');
-            }
 
-            if (!$recaptchaValidator->validate($recaptchaResponse)) {
+            if (!$recaptchaResponse || !$recaptchaValidator->validate($recaptchaResponse)) {
                 $this->addFlash('error', 'Le reCAPTCHA n\'a pas été validé.');
                 return $this->redirectToRoute('demonstration');
             }
@@ -50,6 +48,31 @@ class DemonstrationController extends AbstractController
             $lieuDemo = $data['lieuDemo'];
             $message = $data['message'];
 
+            // On créé une nouvelle instance de DemonstrationRequest
+            $demonstrationRequest = new DemonstrationRequest();
+            $demonstrationRequest
+                ->setTypeUser($data['typeUser'])
+                ->setSociete($data['societe'])
+                ->setPoste($data['poste'])
+                ->setNom($data['nom'])
+                ->setPrenom($data['prenom'])
+                ->setEmail($data['email'])
+                ->setTelephone($data['telephone'])
+                ->setAdresse($data['adresse'])
+                ->setComplementAdresse($data['complementAdresse'])
+                ->setVille($data['ville'])
+                ->setCodePostal($data['codePostal'])
+                ->setPays($data['pays'])
+                ->setLieuDemonstration($data['lieuDemo'])
+                ->setMessage($data['message'])
+                ->setCreatedAt(new \DateTime())
+                ->setEstTraitee(false);
+
+            // On enregistrer en BDD
+            $entityManager->persist($demonstrationRequest);
+            $entityManager->flush();
+
+            // Envoi de l'e-mail
             $monemail = (new Email())
                 ->from('info@marconnet-robotique.com')
                 ->to('info@marconnet-robotique.com')
