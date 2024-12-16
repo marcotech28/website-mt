@@ -108,33 +108,33 @@
 					</li>
 				{% endif %}
 				<li class="nav-item">
-					<a href="{{path("about")}}" class="nav-link mb-2 mb-lg-0">À propos</a>
+					<a href="{{path("about")}}" class="nav-link mb-2 mb-lg-0 text-white">À propos</a>
 				</li>
 				<li class="nav-item">
-					<a href="{{path("app_actu")}}" class="nav-link mb-2 mb-lg-0">Actualités</a>
+					<a href="{{path("app_actu")}}" class="nav-link mb-2 mb-lg-0 text-white">Actualités</a>
 				</li>
 				<li class="nav-item">
-					<a href="{{path("contact")}}" class="nav-link mb-2 mb-lg-0">Contact</a>
+					<a href="{{path("contact")}}" class="nav-link mb-2 mb-lg-0 text-white">Contact</a>
 				</li>
 				<li class="nav-item">
-					<a href="{{path("demonstration")}}" class="nav-link mb-2 mb-lg-0">Démonstration</a>
+					<a href="{{path("demonstration")}}" class="nav-link mb-2 mb-lg-0 text-white">Démonstration</a>
 				</li>
 				{% if app.user %}
 					<li class="nav-item">
-						<a href="{{path('app_mon_compte')}}" class="nav-link mb-2 mb-lg-0">Gérer mon compte</a>
+						<a href="{{path('app_mon_compte')}}" class="nav-link mb-2 mb-lg-0 text-white">Gérer mon compte</a>
 					</li>
 				{% else %}
 					<li class="nav-item">
-						<a href="{{path("app_register")}}" class="nav-link mb-2 mb-lg-0">Créer mon compte</a>
+						<a href="{{path("app_register")}}" class="nav-link mb-2 mb-lg-0 text-white">Créer mon compte</a>
 					</li>
 				{% endif %}
 				{% if app.user %}
 					<li class="nav-item">
-						<a href="{{path("security_logout")}}" class="nav-link mb-2 mb-lg-0">Se déconnecter</a>
+						<a href="{{path("security_logout")}}" class="nav-link mb-2 mb-lg-0 text-white">Se déconnecter</a>
 					</li>
 				{% else %}
 					<li class="nav-item">
-						<a href="{{path('security_login')}}" class="nav-link mb-2 mb-lg-0">Se connecter</a>
+						<a href="{{path('security_login')}}" class="nav-link mb-2 mb-lg-0 text-white">Se connecter</a>
 					</li>
 				{% endif %}
 
