@@ -1,0 +1,42 @@
+{% extends 'admin.html.twig' %}
+
+{% block title %}Newsletter{% endblock %}
+
+{% block body %}
+
+    <div class="container-xl mt-3 mb-3">
+        <h4>Newsletters</h4>
+
+        {% if pagination.items %}
+            <table class="table align-middle">
+                <thead>
+                    <tr>
+                        <th>Email</th>
+                        <th>Date de la demande</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {% for newsletter in pagination.items %}
+                        <tr>
+                            <td>{{ newsletter.email }}</td>
+                            <td>{{ newsletter.createdAt ? newsletter.createdAt|date('Y-m-d') : '' }}</td>
+                            <td>
+                                <form action="{{ path('app_admin_newsletter_delete', { id: newsletter.id }) }}" method="post" onsubmit="return confirm('Êtes-vous sûr de vouloir supprimer cet email ?');" style="display: inline;">
+                                    <input type="hidden" name="_token" value="{{ csrf_token('delete' ~ newsletter.id) }}">
+                                    <button type="submit" class="btn btn-outline-danger btn-sm">Supprimer</button>
+                                </form>
+                            </td>
+                        </tr>
+                    {% endfor %}
+                </tbody>
+            </table>
+
+            <div class="d-flex justify-content-center my-5">
+                {{ knp_pagination_render(pagination) }}
+            </div>
+        {% else %}
+            <p>Aucune newsletter trouvée.</p>
+        {% endif %}
+    </div>
+
+{% endblock %}
