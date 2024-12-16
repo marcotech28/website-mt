@@ -1,0 +1,98 @@
+{% extends 'admin.html.twig' %}
+
+{% block title %}Détails de la demande de contact{% endblock %}
+
+{% block body %}
+
+    <div class="container-xl mt-3 mb-3">
+        <h4>Détails de la demande de contact</h4>
+
+        <table class="table">
+            <tbody>
+                <tr>
+                    <th>ID</th>
+                    <td>{{ contactRequest.id }}</td>
+                </tr>
+                <tr>
+                    <th>Type d'utilisateur</th>
+                    <td>{{ contactRequest.typeUser ?: 'Non défini' }}</td>
+                </tr>
+                <tr>
+                    <th>Société</th>
+                    <td>{{ contactRequest.societe ?: 'Non défini' }}</td>
+                </tr>
+                <tr>
+                    <th>Poste</th>
+                    <td>{{ contactRequest.poste ?: 'Non défini' }}</td>
+                </tr>
+                <tr>
+                    <th>Nom</th>
+                    <td>{{ contactRequest.nom ?: 'Non défini' }}</td>
+                </tr>
+                <tr>
+                    <th>Prénom</th>
+                    <td>{{ contactRequest.prenom ?: 'Non défini' }}</td>
+                </tr>
+                <tr>
+                    <th>Email</th>
+                    <td>{{ contactRequest.email ?: 'Non défini' }}</td>
+                </tr>
+                <tr>
+                    <th>Téléphone</th>
+                    <td>{{ contactRequest.telephone ?: 'Non défini' }}</td>
+                </tr>
+                <tr>
+                    <th>Adresse</th>
+                    <td>{{ contactRequest.adresse ?: 'Non défini' }}</td>
+                </tr>
+                <tr>
+                    <th>Complément d'adresse</th>
+                    <td>{{ contactRequest.complementAdresse ?: 'Non défini' }}</td>
+                </tr>
+                <tr>
+                    <th>Ville</th>
+                    <td>{{ contactRequest.ville ?: 'Non défini' }}</td>
+                </tr>
+                <tr>
+                    <th>Code postal</th>
+                    <td>{{ contactRequest.codePostal ?: 'Non défini' }}</td>
+                </tr>
+                <tr>
+                    <th>Pays</th>
+                    <td>{{ contactRequest.pays ?: 'Non défini' }}</td>
+                </tr>
+                <tr>
+                    <th>Objet</th>
+                    <td>{{ contactRequest.objet ?: 'Non défini' }}</td>
+                </tr>
+                <tr>
+                    <th>Message</th>
+                    <td>{{ contactRequest.message ?: 'Non défini' }}</td>
+                </tr>
+                <tr>
+                    <th>Créée le</th>
+                    <td>{{ contactRequest.createdAt ? contactRequest.createdAt|date('d/m/Y H:i') : 'Non défini' }}</td>
+                </tr>
+                <tr>
+                    <th>Traitée</th>
+                    <td>{{ contactRequest.estTraitee ? 'Oui' : 'Non' }}</td>
+                </tr>
+            </tbody>
+        </table>
+
+        {% if contactRequest.estTraitee %}
+            <a href="{{ path('app_admin_contact-request_toggle', { id: contactRequest.id }) }}" 
+            class="btn btn-danger btn">
+                Ne pas traiter la demande et revenir à la liste
+            </a>
+        {% else %}
+            <a href="{{ path('app_admin_contact-request_toggle', { id: contactRequest.id }) }}" 
+            class="btn btn-primary btn">
+                Traiter la demande et revenir à la liste
+            </a>
+        {% endif %}
+
+        <a href="{{ path('app_admin_contact-request') }}" class="btn btn-primary btn">Revenir à la liste</a>
+    </div>
+
+{% endblock %}
