@@ -27,7 +27,7 @@
                             <td>{{ contactReq.prenom }}</td>
                             <td>{{ contactReq.email }}</td>
                             <td>{{ contactReq.telephone }}</td>
-                            <td>{{ contactReq.createdAt ? contactReq.createdAt|date('Y-m-d') : '' }}</td>
+                            <td>{{ contactReq.createdAt ? contactReq.createdAt|date('d/m/Y H:i') : '' }}</td>
                             <td>{{ contactReq.estTraitee ? 'Oui' : 'Non' }}</td>
                             <td>
                                 <a href="{{ path('app_admin_contact-request_show', { id: contactReq.id }) }}" class="btn btn-outline-primary btn-sm">Voir</a>

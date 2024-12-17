@@ -19,7 +19,7 @@
                     {% for newsletter in pagination.items %}
                         <tr>
                             <td>{{ newsletter.email }}</td>
-                            <td>{{ newsletter.createdAt ? newsletter.createdAt|date('Y-m-d') : '' }}</td>
+                            <td>{{ newsletter.createdAt ? newsletter.createdAt|date('d/m/Y H:i') : '' }}</td>
                             <td>
                                 <form action="{{ path('app_admin_newsletter_delete', { id: newsletter.id }) }}" method="post" onsubmit="return confirm('Êtes-vous sûr de vouloir supprimer cet email ?');" style="display: inline;">
                                     <input type="hidden" name="_token" value="{{ csrf_token('delete' ~ newsletter.id) }}">

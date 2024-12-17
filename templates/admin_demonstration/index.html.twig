@@ -27,7 +27,7 @@
                             <td>{{ demRequest.prenom }}</td>
                             <td>{{ demRequest.email }}</td>
                             <td>{{ demRequest.telephone }}</td>
-                            <td>{{ demRequest.createdAt ? demRequest.createdAt|date('Y-m-d') : '' }}</td>
+                            <td>{{ demRequest.createdAt ? demRequest.createdAt|date('d/m/Y H:i') : '' }}</td>
                             <td>{{ demRequest.estTraitee ? 'Oui' : 'Non' }}</td>
                             <td>
                                 <a href="{{ path('app_admin_demonstration_show', { id: demRequest.id }) }}" class="btn btn-outline-primary btn-sm">Voir</a>
