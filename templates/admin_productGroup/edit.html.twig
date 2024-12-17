@@ -5,7 +5,7 @@
 {% block body %}
 
 <div class="container-xl mt-3 mb-3">
-    <h1>Modifier le groupe de produit : {{ productGroup.libelle }}</h1>
+    <h4>Modifier le groupe de produit : {{ productGroup.libelle }}</h4>
 
     {% for message in app.flashes('success') %}
         <div class="alert alert-success">{{ message }}</div>

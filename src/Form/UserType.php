@@ -84,7 +84,9 @@ class UserType extends AbstractType
                     'class' => 'form-control'
                 ]
             ])
-            ->add('isConfirmed', CheckboxType::class, []);
+            ->add('isConfirmed', CheckboxType::class, [
+                'label' => 'Utilisateur validé'
+            ]);
     }
 
     public function configureOptions(OptionsResolver $resolver): void
