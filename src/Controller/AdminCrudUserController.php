@@ -3,7 +3,7 @@
 namespace App\Controller;
 
 use App\Entity\User;
-use App\Form\User1Type;
+use App\Form\UserType;
 use Symfony\Component\Mime\Email;
 use App\Repository\UserRepository;
 use Doctrine\ORM\EntityManagerInterface;
@@ -34,25 +34,6 @@ class AdminCrudUserController extends AbstractController
         ]);
     }
 
-    #[Route('/new', name: 'app_admin_crud_user_new', methods: ['GET', 'POST'])]
-    public function new(Request $request, UserRepository $userRepository): Response
-    {
-        $user = new User();
-        $form = $this->createForm(User1Type::class, $user);
-        $form->handleRequest($request);
-
-        if ($form->isSubmitted() && $form->isValid()) {
-            $userRepository->save($user, true);
-
-            return $this->redirectToRoute('app_admin_crud_user_index', [], Response::HTTP_SEE_OTHER);
-        }
-
-        return $this->renderForm('admin_crud_user/new.html.twig', [
-            'user' => $user,
-            'form' => $form,
-        ]);
-    }
-
     #[Route('/{id}', name: 'app_admin_crud_user_show', methods: ['GET'])]
     public function show(User $user): Response
     {
@@ -72,7 +53,8 @@ class AdminCrudUserController extends AbstractController
             ->subject('Votre inscription chez Marconnet technologies™ confirmée !');
         $monemail->html("<p>Bonjour, votre compte chez Marconnet technologies™ a été validé par notre équipe !</p>");
 
-        $form = $this->createForm(User1Type::class, $user);
+        $form = $this->createForm(UserType::class, $user, ['is_admin' => true]);
+
         $form->handleRequest($request);
 
         if ($form->isSubmitted() && $form->isValid()) {

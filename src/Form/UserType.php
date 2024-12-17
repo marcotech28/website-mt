@@ -8,6 +8,7 @@ use Symfony\Component\Form\FormBuilderInterface;
 use Symfony\Component\OptionsResolver\OptionsResolver;
 use Symfony\Component\Form\Extension\Core\Type\TextType;
 use Symfony\Component\Form\Extension\Core\Type\EmailType;
+use Symfony\Component\Form\Extension\Core\Type\ChoiceType;
 use Symfony\Component\Form\Extension\Core\Type\HiddenType;
 use Symfony\Component\Form\Extension\Core\Type\CheckboxType;
 
@@ -30,13 +31,6 @@ class UserType extends AbstractType
                 'attr' => [
                     'class' => 'form-control',
                 ]
-            ])
-            // ->add('roles')
-            ->add('password', TextType::class, [
-                'attr' => [
-                    'class' => 'form-control',
-                ],
-                'mapped' => false
             ])
             ->add('telephone', TextType::class, [
                 'attr' => [
@@ -83,16 +77,32 @@ class UserType extends AbstractType
                 'attr' => [
                     'class' => 'form-control'
                 ]
-            ])
-            ->add('isConfirmed', CheckboxType::class, [
-                'label' => 'Utilisateur validé'
             ]);
+
+            // Champs spécifiques pour l'admin
+            if ($options['is_admin']) {
+                $builder
+                    ->add('roles', ChoiceType::class, [
+                        'choices' => [
+                            'ROLE_USER' => 'ROLE_USER',
+                            'ROLE_ADMIN' => 'ROLE_ADMIN',
+                            'ROLE_SUPER_ADMIN' => 'ROLE_SUPER_ADMIN',
+                        ],
+                        'multiple' => true,
+                        'expanded' => true,
+                    ])
+                    ->add('isConfirmed', CheckboxType::class, [
+                        'label' => 'Utilisateur validé',
+                        'required' => false,
+                    ]);
+            }
     }
 
     public function configureOptions(OptionsResolver $resolver): void
     {
         $resolver->setDefaults([
             'data_class' => User::class,
+            'is_admin' => false,
         ]);
     }
 }
