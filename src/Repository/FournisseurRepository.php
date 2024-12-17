@@ -52,9 +52,13 @@ class FournisseurRepository extends ServiceEntityRepository
             ->leftJoin('f.documents', 'd')
             ->addSelect('d')
             ->where('d.id IS NOT NULL') // S'assure que le fournisseur a au moins un document
+            ->addOrderBy('CASE WHEN f.libelle = :specialLibelle THEN 0 ELSE 1 END', 'ASC')
+            ->addOrderBy('f.orderDisplay', 'ASC')
+            ->setParameter('specialLibelle', 'Marconnet Technologies™')
             ->getQuery()
             ->getResult();
     }
+
 
     /**
      * Récupère tous les fournisseurs dans l'ordre d'affichage voulu par le tri
