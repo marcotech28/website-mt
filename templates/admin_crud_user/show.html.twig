@@ -76,10 +76,29 @@
 						<th>IsConfirmed</th>
 						<td>{{ user.isConfirmed ? 'Yes' : 'No' }}</td>
 					</tr>
+					<tr>
+						<th>Date de création</th>
+						<td>
+							{% if user.createdAt %}
+								{{ user.createdAt|date('d/m/Y H:i') }}
+							{% else %}
+								Non renseignée
+							{% endif %}<br>
+						</td>
+					</tr>
+					<tr>
+						<th>Date de consentement</th>
+						<td>
+							{% if user.consentAt %}
+								{{ user.consentAt|date('d/m/Y H:i') }}
+							{% else %}
+								Non renseignée
+							{% endif %}
+						</td>
+					</tr>
 				</tbody>
 			</table>
 		</div>
-
 
 		<a href="{{ path('app_admin_crud_user_index') }}">back to list</a>
 

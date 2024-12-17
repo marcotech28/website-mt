@@ -5,12 +5,14 @@ namespace App\Form;
 use App\Entity\User;
 use Symfony\Component\Form\AbstractType;
 use Symfony\Component\Form\FormBuilderInterface;
+use Symfony\Component\Validator\Constraints\IsTrue;
 use Symfony\Component\OptionsResolver\OptionsResolver;
 use Symfony\Component\Form\Extension\Core\Type\TextType;
 use Symfony\Component\Form\Extension\Core\Type\EmailType;
 use Symfony\Component\Form\Extension\Core\Type\ChoiceType;
 use Symfony\Component\Form\Extension\Core\Type\HiddenType;
 use Symfony\Component\Form\Extension\Core\Type\CheckboxType;
+use Symfony\Component\Form\Extension\Core\Type\PasswordType;
 
 class UserType extends AbstractType
 {
@@ -79,6 +81,23 @@ class UserType extends AbstractType
                 ]
             ]);
 
+            // Champs spécifiques pour l'inscription
+            if ($options['is_registration']) {
+                $builder
+                    ->add('password', PasswordType::class, [
+                        'label' => 'Mot de passe',
+                        'mapped' => true,
+                        'attr' => ['autocomplete' => 'new-password', 'class' => 'form-control']
+                    ])
+                    ->add('agreeTerms', CheckboxType::class, [
+                        'mapped' => false,
+                        'constraints' => [
+                            new IsTrue(['message' => 'Vous devez accepter les conditions.'])
+                        ],
+                        'label' => 'J\'accepte les conditions Marconnet technologies™',
+                    ]);
+            };
+
             // Champs spécifiques pour l'admin
             if ($options['is_admin']) {
                 $builder
@@ -103,6 +122,7 @@ class UserType extends AbstractType
         $resolver->setDefaults([
             'data_class' => User::class,
             'is_admin' => false,
+            'is_registration' => false,
         ]);
     }
 }

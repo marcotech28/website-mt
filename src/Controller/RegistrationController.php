@@ -3,13 +3,9 @@
 namespace App\Controller;
 
 use App\Entity\User;
-use App\Form\ChanInterfaceType;
+use App\Form\UserType;
 
 use Symfony\Component\Mime\Email;
-
-
-
-use App\Form\RegistrationFormType;
 use App\Security\LoginFormAuthenticator;
 use Doctrine\ORM\EntityManagerInterface;
 use Symfony\Component\HttpFoundation\Request;
@@ -25,13 +21,18 @@ class RegistrationController extends AbstractController
     #[Route('/sinscrire', name: 'app_register')]
     public function register(Request $request, UserPasswordHasherInterface $userPasswordHasher, UserAuthenticatorInterface $userAuthenticator, LoginFormAuthenticator $authenticator, EntityManagerInterface $entityManager,  MailerInterface $mailer): Response
     {
-
-
         $user = new User();
-        $form = $this->createForm(RegistrationFormType::class, $user);
+        $form = $this->createForm(UserType::class, $user, ['is_registration' => true]);
         $form->handleRequest($request);
 
         if ($form->isSubmitted() && $form->isValid()) {
+            $user->setCreatedAt(new \DateTimeImmutable());
+
+            // Définir la date de consentement si agreeTerms est coché
+            if ($form->get('agreeTerms')->getData()) {
+                $user->setConsentAt(new \DateTimeImmutable());
+            }
+
             // encode the plain password
             $user->setPassword(
                 $userPasswordHasher->hashPassword(

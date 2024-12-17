@@ -3,6 +3,7 @@
 namespace App\Entity;
 
 use App\Repository\UserRepository;
+use Doctrine\DBAL\Types\Types;
 use Doctrine\ORM\Mapping as ORM;
 use Symfony\Bridge\Doctrine\Validator\Constraints\UniqueEntity;
 use Symfony\Component\Security\Core\User\PasswordAuthenticatedUserInterface;
@@ -87,6 +88,12 @@ class User implements UserInterface, PasswordAuthenticatedUserInterface
 
     #[ORM\Column(nullable: true)]
     private ?bool $isConfirmed = null;
+
+    #[ORM\Column(type: Types::DATETIME_MUTABLE, nullable: true)]
+    private ?\DateTimeInterface $createdAt = null;
+
+    #[ORM\Column(type: Types::DATETIME_MUTABLE, nullable: true)]
+    private ?\DateTimeInterface $consentAt = null;
 
     public function getId(): ?int
     {
@@ -298,6 +305,30 @@ class User implements UserInterface, PasswordAuthenticatedUserInterface
     public function setIsConfirmed(?bool $isConfirmed): self
     {
         $this->isConfirmed = $isConfirmed;
+
+        return $this;
+    }
+
+    public function getCreatedAt(): ?\DateTimeInterface
+    {
+        return $this->createdAt;
+    }
+
+    public function setCreatedAt(?\DateTimeInterface $createdAt): static
+    {
+        $this->createdAt = $createdAt;
+
+        return $this;
+    }
+
+    public function getConsentAt(): ?\DateTimeInterface
+    {
+        return $this->consentAt;
+    }
+
+    public function setConsentAt(?\DateTimeInterface $consentAt): static
+    {
+        $this->consentAt = $consentAt;
 
         return $this;
     }
