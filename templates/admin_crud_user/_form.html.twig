@@ -13,5 +13,20 @@
 {{ form_row(form.nomSociete, {'attr' : {'class' : 'form-control'}}) }}
 {{ form_row(form.fonction, {'attr' : {'class' : 'form-control'}}) }}
 {{ form_row(form.isConfirmed) }}
+<p>
+    <strong>Date de création :</strong>
+    {% if user.createdAt %}
+        {{ user.createdAt|date('d/m/Y H:i') }}
+    {% else %}
+        Non renseignée
+    {% endif %}<br>
+
+    <strong>Date de consentement :</strong>
+    {% if user.consentAt %}
+        {{ user.consentAt|date('d/m/Y H:i') }}
+    {% else %}
+        Non renseignée
+    {% endif %}
+</p>
 <button class="btn btn-primary">{{ button_label|default('Enregistrer') }}</button>
 {{ form_end(form) }}
