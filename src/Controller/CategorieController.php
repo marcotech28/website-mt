@@ -25,7 +25,7 @@ class CategorieController extends AbstractController
             throw $this->createNotFoundException(("La catégorie demandée n'existe pas"));
         }
 
-        $produits = $produitRepository->findByCategorieAndDraft($categorie);
+        $produits = $produitRepository->findByCategorieWithoutDraft($categorie);
 
         return $this->render('categorie/categorie.html.twig', [
             'slug'      => $slug,

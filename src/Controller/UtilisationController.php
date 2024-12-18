@@ -32,7 +32,7 @@ class UtilisationController extends AbstractController
             throw $this->createNotFoundException(("L'utilisation demandée n'existe pas"));
         }
 
-        $produits = $produitRepository->findByCategorieAndUtilisationAndDraft($categorie, $utilisation);
+        $produits = $produitRepository->findByCategorieAndUtilisationWithoutDraft($categorie, $utilisation);
 
         return $this->render('utilisation/index.html.twig', [
             'categorie'        => $categorie,

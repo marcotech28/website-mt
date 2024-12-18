@@ -51,8 +51,9 @@ class ProduitRepository extends ServiceEntityRepository
 
         $query = $this
             ->createQueryBuilder('produit')
-            ->select('produit');
-
+            ->select('produit')
+            ->andWhere('produit.isDraft IS NULL OR produit.isDraft = false'); // On ne prend pas les brouillons
+            
         if (!empty($search->q)) {
             // On divise la chaîne de recherche en mots clés individuels
             $keywords = explode(' ', $search->q);
@@ -73,22 +74,23 @@ class ProduitRepository extends ServiceEntityRepository
         return $results;
     }
 
-    public function findByCategorieAndDraft(Categorie $categorie): array
+    // Récupère les produits par catégorie sans prendre les brouillons
+    public function findByCategorieWithoutDraft(Categorie $categorie): array
     {
         return $this->createQueryBuilder('p')
             ->where('p.categorie = :categorie')
-            ->andWhere('p.isDraft = true OR p.isDraft IS NULL')
+            ->andWhere('p.isDraft = false OR p.isDraft IS NULL')
             ->setParameter('categorie', $categorie)
             ->getQuery()
             ->getResult();
     }
 
-    public function findByCategorieAndUtilisationAndDraft(Categorie $categorie, Utilisation $utilisation): array
+    public function findByCategorieAndUtilisationWithoutDraft(Categorie $categorie, Utilisation $utilisation): array
     {
         return $this->createQueryBuilder('p')
             ->where('p.categorie = :categorie')
             ->andWhere('p.utilisation = :utilisation')
-            ->andWhere('p.isDraft = true OR p.isDraft IS NULL')
+            ->andWhere('p.isDraft = false OR p.isDraft IS NULL')
             ->setParameters([
                 'categorie' => $categorie,
                 'utilisation' => $utilisation,
