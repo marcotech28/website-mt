@@ -1,10 +1,10 @@
-{% extends 'base.html.twig' %}
+{% extends 'admin.html.twig' %}
 
 {% block title %}Mettre à jour l'entreprise{% endblock %}
 
 {% block body %}
-    <div class="container-xl">
-        <h1>Mettre à jour l'entreprise</h1>
+    <div class="container-xl mt-3 mb-3">
+        <h4>Mettre à jour l'entreprise</h4>
 
         {{ include('company/_form.html.twig', {'button_label': 'Mettre à jour'}) }}
 
