@@ -20,7 +20,7 @@ class ProductController extends AbstractController
             'slug' => $slug
         ]);
 
-        if (!$product) {
+        if (!$product || $product->isIsDraft() === true) {
             throw $this->createNotFoundException("Le produit demandé n'existe pas");
         }
 
