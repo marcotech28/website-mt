@@ -2,13 +2,12 @@
 
 namespace App\Controller;
 
-use Symfony\Component\Mime\Email;
 use App\Form\DemonstrationFormType;
 use App\Service\RecaptchaValidator;
 use App\Entity\DemonstrationRequest;
+use App\Service\EmailService;
 use Doctrine\ORM\EntityManagerInterface;
 use Symfony\Component\HttpFoundation\Request;
-use Symfony\Component\Mailer\MailerInterface;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
@@ -16,7 +15,7 @@ use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 class DemonstrationController extends AbstractController
 {
     #[Route('/demonstration', name: 'demonstration')]
-    public function index(Request $request, MailerInterface $mailer, RecaptchaValidator $recaptchaValidator, EntityManagerInterface $entityManager): Response
+    public function index(Request $request, EmailService $emailService, RecaptchaValidator $recaptchaValidator, EntityManagerInterface $entityManager): Response
     {
         $form = $this->createForm(DemonstrationFormType::class);
         
@@ -72,29 +71,29 @@ class DemonstrationController extends AbstractController
             $entityManager->persist($demonstrationRequest);
             $entityManager->flush();
 
-            // Envoi de l'e-mail
-            $monemail = (new Email())
-                ->from('info@marconnet-robotique.com')
-                ->to('info@marconnet-robotique.com')
-                ->subject('Demande de démonstration')
-                ->html("
-                    <p><strong>Type d'utilisateur:</strong> {$typeUser}</p>
-                    <p><strong>Nom:</strong> {$nom}</p>
-                    <p><strong>Prénom:</strong> {$prenom}</p>
-                    <p><strong>Email:</strong> {$email}</p>
-                    <p><strong>Société:</strong> {$societe}</p>
-                    <p><strong>Poste:</strong> {$poste}</p>
-                    <p><strong>Téléphone:</strong> {$telephone}</p>
-                    <p><strong>Adresse:</strong> {$adresse}</p>
-                    <p><strong>Complément d'adresse:</strong> {$complementAdresse}</p>
-                    <p><strong>Ville:</strong> {$ville}</p>
-                    <p><strong>Code postal:</strong> {$codePostal}</p>
-                    <p><strong>Pays:</strong> {$pays}</p>
-                    <p><strong>Lieu démo:</strong> {$lieuDemo}</p>
-                    <p><strong>Message:</strong> {$message}</p>
-                ");
+            $htmlContent = "
+                <p><strong>Type d'utilisateur:</strong> {$typeUser}</p>
+                <p><strong>Nom:</strong> {$nom}</p>
+                <p><strong>Prénom:</strong> {$prenom}</p>
+                <p><strong>Email:</strong> {$email}</p>
+                <p><strong>Société:</strong> {$societe}</p>
+                <p><strong>Poste:</strong> {$poste}</p>
+                <p><strong>Téléphone:</strong> {$telephone}</p>
+                <p><strong>Adresse:</strong> {$adresse}</p>
+                <p><strong>Complément d'adresse:</strong> {$complementAdresse}</p>
+                <p><strong>Ville:</strong> {$ville}</p>
+                <p><strong>Code postal:</strong> {$codePostal}</p>
+                <p><strong>Pays:</strong> {$pays}</p>
+                <p><strong>Lieu démo:</strong> {$lieuDemo}</p>
+                <p><strong>Message:</strong> {$message}</p>
+            ";
 
-            $mailer->send($monemail);
+            // Envoi de l'email
+            $emailService->sendEmail(
+                'info@marconnet-robotique.com', // Destinataire
+                'Demande de démonstration',     // Sujet
+                $htmlContent                    // Contenu HTML
+            );
 
             $this->addFlash('success', "Votre demande de démonstration a bien été prise en compte. Notre équipe l'étudiera dans les plus brefs délais. Nous vous répondrons très prochainement par mail.");
             return $this->redirectToRoute('homepage');
